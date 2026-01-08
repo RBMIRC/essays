@@ -1,0 +1,13 @@
+---
+title: "Vertical Work"
+type: glossary
+aliases: []
+tags:
+  - glossary
+  - author-term
+  - _nodal-thinking
+---
+
+Author's term: the labor of digging into a concept rather than connecting it to others. Reading a difficult text for three hours, returning to the same sentence, testing its resistances, refusing to move on until something yields. The diagram cannot represent this work; it necessarily flattens it into a simple node among others. The node labeled "Hegel" may represent five minutes of Wikipedia or five years of study—the diagram cannot distinguish. (*Nodal Thinking*)
+
+See also: [[Line vs. Well]], [[Depth]]

@@ -1,0 +1,13 @@
+---
+title: "Contracted Time"
+type: glossary
+aliases: []
+tags:
+  - glossary
+  - author-term
+  - _the-workshop-as-form
+---
+
+Author's term: the temporal compression that defines the workshop form. Not simple acceleration (doing the same thing faster) but qualitative modification of experience. Where the semester project allows deferral, procrastination, and gradual correction, the workshop eliminates the buffer. There is no time to bypass difficulties; one must traverse them. This compression paradoxically opens possibilities: when one has only five days, one can allow oneself to change everything on the third. (*The Workshop as Form*)
+
+See also: [[Bifurcation]], [[Temporal Compression]]
