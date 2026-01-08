@@ -4,12 +4,8 @@ var __name = (target, value) => __defProp(target, "name", { value, configurable:
 // quartz/worker.ts
 import sourceMapSupport from "source-map-support";
 
-// quartz/plugins/transformers/glossaryAutoLink.ts
-import { visit } from "unist-util-visit";
-import matter from "gray-matter";
-
 // quartz/plugins/transformers/frontmatter.ts
-import matter2 from "gray-matter";
+import matter from "gray-matter";
 import remarkFrontmatter from "remark-frontmatter";
 import yaml from "js-yaml";
 import toml from "toml";
@@ -2864,7 +2860,7 @@ var FrontMatter = /* @__PURE__ */ __name((userOpts) => {
         () => {
           return (_, file) => {
             const fileData = Buffer.from(file.value);
-            const { data } = matter2(fileData, {
+            const { data } = matter(fileData, {
               ...opts,
               engines: {
                 yaml: /* @__PURE__ */ __name((s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }), "yaml"),
@@ -2993,7 +2989,7 @@ var GitHubFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
 
 // quartz/plugins/transformers/citations.ts
 import rehypeCitation from "rehype-citation";
-import { visit as visit2 } from "unist-util-visit";
+import { visit } from "unist-util-visit";
 
 // quartz/plugins/transformers/lastmod.ts
 import fs from "fs";
@@ -3156,7 +3152,7 @@ var unescapeHTML = /* @__PURE__ */ __name((html) => {
 }, "unescapeHTML");
 
 // quartz/plugins/transformers/description.ts
-import { visit as visit3, SKIP } from "unist-util-visit";
+import { visit as visit2, SKIP } from "unist-util-visit";
 var defaultOptions4 = {
   descriptionLength: 150,
   maxDescriptionLength: 300,
@@ -3186,7 +3182,7 @@ var Description = /* @__PURE__ */ __name((userOpts) => {
           return async (tree, file) => {
             let frontMatterDescription = file.data.frontmatter?.description;
             const filteredTree = structuredClone(tree);
-            visit3(filteredTree, "element", (node, index, parent) => {
+            visit2(filteredTree, "element", (node, index, parent) => {
               if (hasExcludedClass(node)) {
                 if (parent && typeof index === "number") {
                   parent.children.splice(index, 1);
@@ -3234,7 +3230,7 @@ var Description = /* @__PURE__ */ __name((userOpts) => {
 
 // quartz/plugins/transformers/links.ts
 import path2 from "path";
-import { visit as visit4 } from "unist-util-visit";
+import { visit as visit3 } from "unist-util-visit";
 import isAbsoluteUrl from "is-absolute-url";
 var defaultOptions5 = {
   markdownLinkResolution: "absolute",
@@ -3258,7 +3254,7 @@ var CrawlLinks = /* @__PURE__ */ __name((userOpts) => {
               strategy: opts.markdownLinkResolution,
               allSlugs: ctx.allSlugs
             };
-            visit4(tree, "element", (node, _index, _parent) => {
+            visit3(tree, "element", (node, _index, _parent) => {
               if (node.tagName === "a" && node.properties && typeof node.properties.href === "string") {
                 let dest = node.properties.href;
                 const classes = node.properties.className ?? [];
@@ -3344,7 +3340,7 @@ var CrawlLinks = /* @__PURE__ */ __name((userOpts) => {
 // quartz/plugins/transformers/ofm.ts
 import { findAndReplace as mdastFindReplace } from "mdast-util-find-and-replace";
 import rehypeRaw from "rehype-raw";
-import { SKIP as SKIP2, visit as visit5 } from "unist-util-visit";
+import { SKIP as SKIP2, visit as visit4 } from "unist-util-visit";
 import path3 from "path";
 
 // quartz/components/scripts/callout.inline.ts
@@ -3635,7 +3631,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
             ]);
           }
           if (opts.enableInHtmlEmbed) {
-            visit5(tree, "html", (node) => {
+            visit4(tree, "html", (node) => {
               for (const [regex, replace] of replacements) {
                 if (typeof replace === "string") {
                   node.value = node.value.replace(regex, replace);
@@ -3662,7 +3658,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
       if (opts.enableVideoEmbed) {
         plugins.push(() => {
           return (tree, _file) => {
-            visit5(tree, "image", (node, index, parent) => {
+            visit4(tree, "image", (node, index, parent) => {
               if (parent && index != void 0 && videoExtensionRegex.test(node.url)) {
                 const newNode = {
                   type: "html",
@@ -3678,7 +3674,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
       if (opts.callouts) {
         plugins.push(() => {
           return (tree, _file) => {
-            visit5(tree, "blockquote", (node) => {
+            visit4(tree, "blockquote", (node) => {
               if (node.children.length === 0) {
                 return;
               }
@@ -3767,7 +3763,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
       if (opts.mermaid) {
         plugins.push(() => {
           return (tree, file) => {
-            visit5(tree, "code", (node) => {
+            visit4(tree, "code", (node) => {
               if (node.lang === "mermaid") {
                 file.data.hasMermaidDiagram = true;
                 node.data = {
@@ -3791,7 +3787,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
           const blockTagTypes = /* @__PURE__ */ new Set(["blockquote"]);
           return (tree, file) => {
             file.data.blocks = {};
-            visit5(tree, "element", (node, index, parent) => {
+            visit4(tree, "element", (node, index, parent) => {
               if (blockTagTypes.has(node.tagName)) {
                 const nextChild = parent?.children.at(index + 2);
                 if (nextChild && nextChild.tagName === "p") {
@@ -3856,7 +3852,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
       if (opts.enableYouTubeEmbed) {
         plugins.push(() => {
           return (tree) => {
-            visit5(tree, "element", (node) => {
+            visit4(tree, "element", (node) => {
               if (node.tagName === "img" && typeof node.properties.src === "string") {
                 const match = node.properties.src.match(ytLinkRegex);
                 const videoId = match && match[2].length == 11 ? match[2] : null;
@@ -3888,7 +3884,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
       if (opts.enableCheckbox) {
         plugins.push(() => {
           return (tree, _file) => {
-            visit5(tree, "element", (node) => {
+            visit4(tree, "element", (node) => {
               if (node.tagName === "input" && node.properties.type === "checkbox") {
                 const isChecked = node.properties?.checked ?? false;
                 node.properties = {
@@ -3905,7 +3901,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
       if (opts.mermaid) {
         plugins.push(() => {
           return (tree, _file) => {
-            visit5(tree, "element", (node, _idx, parent) => {
+            visit4(tree, "element", (node, _idx, parent) => {
               if (node.tagName === "code" && (node.properties?.className ?? [])?.includes("mermaid")) {
                 parent.children = [
                   {
@@ -4036,7 +4032,7 @@ var SyntaxHighlighting = /* @__PURE__ */ __name((userOpts) => {
 }, "SyntaxHighlighting");
 
 // quartz/plugins/transformers/toc.ts
-import { visit as visit6 } from "unist-util-visit";
+import { visit as visit5 } from "unist-util-visit";
 import { toString as toString2 } from "mdast-util-to-string";
 import Slugger from "github-slugger";
 var defaultOptions8 = {
@@ -4059,7 +4055,7 @@ var TableOfContents = /* @__PURE__ */ __name((userOpts) => {
               slugAnchor2.reset();
               const toc = [];
               let highestDepth = opts.maxDepth;
-              visit6(tree, "heading", (node) => {
+              visit5(tree, "heading", (node) => {
                 if (node.depth <= opts.maxDepth) {
                   const text = toString2(node);
                   highestDepth = Math.min(highestDepth, node.depth);
@@ -4089,7 +4085,7 @@ var TableOfContents = /* @__PURE__ */ __name((userOpts) => {
 import remarkBreaks from "remark-breaks";
 
 // quartz/plugins/transformers/roam.ts
-import { visit as visit7 } from "unist-util-visit";
+import { visit as visit6 } from "unist-util-visit";
 import { findAndReplace as mdastFindReplace2 } from "mdast-util-find-and-replace";
 var orRegex = new RegExp(/{{or:(.*?)}}/, "g");
 var TODORegex = new RegExp(/{{.*?\bTODO\b.*?}}/, "g");
@@ -4099,7 +4095,7 @@ var roamHighlightRegex = new RegExp(/\^\^(.+)\^\^/, "g");
 var roamItalicRegex = new RegExp(/__(.+)__/, "g");
 
 // quartz/plugins/transformers/sidenotes.ts
-import { visit as visit8 } from "unist-util-visit";
+import { visit as visit7 } from "unist-util-visit";
 var defaultOptions9 = {
   enabled: true
 };
@@ -4114,10 +4110,10 @@ var Sidenotes = /* @__PURE__ */ __name((userOpts) => {
           return (tree) => {
             const footnotes = /* @__PURE__ */ new Map();
             let footnotesSection = null;
-            visit8(tree, "element", (node) => {
+            visit7(tree, "element", (node) => {
               if (node.tagName === "section" && node.properties?.dataFootnotes !== void 0) {
                 footnotesSection = node;
-                visit8(node, "element", (li) => {
+                visit7(node, "element", (li) => {
                   if (li.tagName === "li" && li.properties?.id) {
                     const id = String(li.properties.id);
                     const match = id.match(/fn-(\d+)$/) || id.match(/fn-(.+)$/);
@@ -4143,7 +4139,7 @@ var Sidenotes = /* @__PURE__ */ __name((userOpts) => {
                 });
               }
             });
-            visit8(tree, "element", (node, index, parent) => {
+            visit7(tree, "element", (node, index, parent) => {
               if (node.tagName === "sup" && parent && typeof index === "number") {
                 const link = node.children?.find(
                   (child) => child.type === "element" && child.tagName === "a"
@@ -4209,7 +4205,7 @@ var Sidenotes = /* @__PURE__ */ __name((userOpts) => {
               }
             });
             if (footnotesSection) {
-              visit8(tree, "element", (node, index, parent) => {
+              visit7(tree, "element", (node, index, parent) => {
                 if (node === footnotesSection && parent && typeof index === "number") {
                   ;
                   parent.children.splice(index, 1);
@@ -4327,7 +4323,7 @@ function concatenateResources(...resources) {
 __name(concatenateResources, "concatenateResources");
 
 // quartz/components/renderPage.tsx
-import { visit as visit9 } from "unist-util-visit";
+import { visit as visit8 } from "unist-util-visit";
 import { styleText as styleText2 } from "util";
 import { jsx as jsx4, jsxs } from "preact/jsx-runtime";
 var headerRegex = new RegExp(/h[1-6]/);
@@ -4367,7 +4363,7 @@ function pageResources(baseDir, staticResources) {
 }
 __name(pageResources, "pageResources");
 function renderTranscludes(root, cfg, slug, componentData, visited) {
-  visit9(root, "element", (node, _index, _parent) => {
+  visit8(root, "element", (node, _index, _parent) => {
     if (node.tagName === "blockquote") {
       const classNames2 = node.properties?.className ?? [];
       if (classNames2.includes("transclude")) {
@@ -7772,12 +7768,6 @@ var config = {
       Description(),
       Latex({ renderEngine: "katex" }),
       Sidenotes()
-      // Plugin.GlossaryAutoLink({
-      //   glossaryPath: "en/lexicon/terms",
-      //   linkMode: "first",
-      //   caseSensitive: false,
-      //   excludeTags: ["code", "pre", "h1", "h2", "h3", "a"],
-      // }),
     ],
     filters: [RemoveDrafts()],
     emitters: [

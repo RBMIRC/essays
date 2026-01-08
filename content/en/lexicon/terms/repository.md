@@ -1,10 +1,15 @@
 ---
 title: "Repository"
 type: glossary
-aliases: []
+aliases: ["repo"]
 tags:
   - glossary
   - _heredoc-manifesto
 ---
 
-The digital space where a software project lives: a structured library containing all files, the complete history of modifications (who changed what, when, and why), and the project's governing rules (licenses, contribution guidelines, codes of conduct). The repository is not merely storage but infrastructure for collective production—it enables the coordination of many contributors across time and space. GitHub hosts millions of repositories; their contents constitute the training corpus for code-generating AI. (*Heredoc Manifesto*)
+The digital space where a software project lives: a library containing all files, the history of modifications, and the project's rules. The repository materializes the genealogy of code—every change tracked, every contributor recorded. Yet AI training dissolves this careful provenance into statistical distributions. (*The Heredoc Manifesto*)
+
+**See also:**
+- [[/en/lexicon/terms/fork|Fork]]
+- [[/en/lexicon/terms/maintainers|Maintainers]]
+- [[/en/lexicon/terms/pull-request|Pull Request]]

@@ -1,10 +1,15 @@
 ---
 title: "Training"
 type: glossary
-aliases: []
+aliases: ["model training"]
 tags:
   - glossary
-  - _heredoc-manifesto*-*the-recursive-archive
+  - _heredoc-manifesto
 ---
 
-The process by which a machine learning model learns—iteratively adjusting billions of weights to minimize the difference between predictions and targets. Training a large model requires massive computational resources: GPT-4's training reportedly cost ~$100 million and consumed energy equivalent to thousands of homes for a year. The corpus emphasizes this ecological cost as integral to understanding what statistical commons are: not immaterial, not costless, but dependent on vast physical infrastructures of energy, cooling, and rare earth minerals. Training is where private data becomes common weight. (*Heredoc Manifesto*, *The Recursive Archive*)
+The process by which models learn by iteratively adjusting billions of weights to minimize error. The Heredoc Manifesto emphasizes the massive ecological cost of this knowledge transformation—energy consumed to convert human-authored code into statistical distributions. Training is the industrial process through which private code becomes statistical commons. (*The Heredoc Manifesto*)
+
+**See also:**
+- [[/en/lexicon/terms/dataset-training-corpus|Dataset / Training Corpus]]
+- [[/en/lexicon/terms/parameter-weight|Parameter / Weight]]
+- [[/en/lexicon/terms/llm-large-language-model|LLM]]

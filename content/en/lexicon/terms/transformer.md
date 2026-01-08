@@ -1,13 +1,18 @@
 ---
 title: "Transformer"
 type: glossary
-aliases: []
+aliases: ["transformer architecture"]
 tags:
   - glossary
   - _heredoc-manifesto
 ---
 
-A neural network architecture introduced in 2017 that made modern large language models possible. The key innovation is the "attention mechanism"—the ability to weigh the relevance of different parts of the input when producing each part of the output. Transformers process sequences in parallel (unlike earlier recurrent architectures), enabling training on much larger datasets. The architecture accelerated the compression and recombination that dissolves attribution: more data, more parameters, more thorough mixing. (*Heredoc Manifesto*)
+Neural network architecture (2017) that made modern LLMs possible through the attention mechanism. The transformer accelerates compression and recombination, enabling models to process vast contexts and generate coherent outputs. This architecture is the technical condition of possibility for the statistical commons described in the manifesto. (*The Heredoc Manifesto*)
 
 **References:**
-- VASWANI, Ashish et al. Attention Is All You Need. In: *Advances in Neural Information Processing Systems 30 (NIPS 2017)*. 2017.
+- VASWANI, Ashish et al. Attention Is All You Need. *Advances in Neural Information Processing Systems*. 2017, vol. 30.
+
+**See also:**
+- [[/en/lexicon/terms/llm-large-language-model|LLM]]
+- [[/en/lexicon/terms/artificial-neural-network|Artificial Neural Network]]
+- [[/en/lexicon/terms/deep-learning|Deep Learning]]

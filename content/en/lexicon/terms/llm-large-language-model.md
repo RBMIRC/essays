@@ -1,10 +1,15 @@
 ---
 title: "LLM (Large Language Model)"
 type: glossary
-aliases: []
+aliases: ["LLM", "large language model", "language model"]
 tags:
   - glossary
-  - _heredoc-manifesto*-*the-recursive-archive
+  - _heredoc-manifesto
 ---
 
-A very large language model trained on billions of words and code—GPT-4, Claude, Llama, and others. LLMs are the primary agents of what the corpus terms the transmutation of private code into statistical commons. Their scale (hundreds of billions of parameters) ensures that no individual training instance can be recovered; their capability (generating novel, functional code) ensures that the commons they create is productive rather than merely archival. The LLM is simultaneously the most sophisticated compression algorithm ever created and an inadvertent engine of socialization. (*Heredoc Manifesto*, *The Recursive Archive*)
+Very large language model trained on billions of words and code. LLMs are the main agents of the transmutation of private code into statistical commons. They compress the collective output of human programming into probability distributions, then regenerate code that is statistically derived yet legally novel. (*The Heredoc Manifesto*)
+
+**See also:**
+- [[/en/lexicon/terms/transformer|Transformer]]
+- [[/en/lexicon/terms/training|Training]]
+- [[/en/lexicon/terms/inference|Inference]]

@@ -5,9 +5,12 @@ aliases: []
 tags:
   - glossary
   - _nodal-thinking
+  - _heredoc-manifesto
 ---
 
 Gilles Deleuze and Félix Guattari's concept: a structure without fixed foundation, with principles of connection (any point can connect to any other), heterogeneity (different kinds of things can be connected), multiplicity (the rhizome is not a unity but a multiplicity that changes nature as it grows), and asignifying rupture (the rhizome can be broken and will start up again). Often invoked to describe diagrammatic practice, but the rhizome *works*—it is a mode of operation, not a representation. What students often produce is a contemplative rhizome—something to look at rather than something to think with. (*Nodal Thinking*)
+
+In the Heredoc Manifesto context: a philosophical concept materialized through technical architecture—structure without fixed center or hierarchy, where knowledge circulates between equal peers, opposed to the centralized model of maintainer authority. (*Heredoc Manifesto*)
 
 **References:**
 - DELEUZE, Gilles and GUATTARI, Félix. *Mille plateaux: Capitalisme et schizophrénie 2*. Paris: Minuit, 1980.

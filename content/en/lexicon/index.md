@@ -28,11 +28,13 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [[/en/lexicon/terms/abduction|Abduction]] — Speculative reasoning from incomplete information
 - [[/en/lexicon/terms/adherent-referent|Adherent Referent]] — Barthes's concept of photography's physical link to its subject
 - [[/en/lexicon/terms/affective-bonds|Affective Bonds]] — Caswell's concept of care relationships in community archives
+- [[/en/lexicon/terms/ai-artificial-intelligence|AI (Artificial Intelligence)]] — Scientific field aimed at creating systems capable of performing complex tasks. In the Heredoc Manifesto, it is a "pharmakon" (remedy and poison) and a political apparatus that structurally transforms intellectual property
 - [[/en/lexicon/terms/algorithmic-governmentality|Algorithmic Governmentality]] — Rouvroy and Berns's concept (2010-2013) analyzing new forms of power operating through statistical prediction and pre-emption
 - [[/en/lexicon/terms/algorithmic-hallucination|Algorithmic Hallucination]] — Transposition of clinical "hallucination" to computational systems; describes AI filling archival gaps through statistical continuity, producing plausible but unfounded outputs. Term circulating in AI discourse; Author's specific application to archival theory
 - [[/en/lexicon/terms/amplification-vs-extraction|Amplification (vs. Extraction)]] — Author's term opposing extractivist logics (cf. Couldry/Mejias's Data Colonialism); directing attention toward sources rather than absorbing them into new outputs. Methodological counterpoint to appropriation
 - [[/en/lexicon/terms/apparatus-dispositif|Apparatus (dispositif)]] — Foucault's concept of material-social arrangements
 - [[/en/lexicon/terms/archival-phantasm|Archival Phantasm]] — Author's term combining Derrida's archive (Archive Fever) with psychoanalytic phantasm; the spectral image produced from statistical distributions, neither present nor absent
+- [[/en/lexicon/terms/artificial-neural-network|Artificial Neural Network]] — Computational architecture composed of layers of interconnected "neurons." Knowledge compresses in the weights of these connections
 
 ## B
 
@@ -56,7 +58,8 @@ Key concepts and terminology used throughout the research project. Terms marked 
 ## D
 
 - [[/en/lexicon/terms/data-colonialism|Data Colonialism]] — Couldry/Mejias's concept of data as new form of colonial extraction
-- [[/en/lexicon/terms/deep-learning|Deep Learning]] — Machine learning through layered neural networks
+- [[/en/lexicon/terms/dataset-training-corpus|Dataset / Training Corpus]] — Massive set of data used to train models. The preponderance of open source code (~60%) imbues models with a "tropism toward sharing"
+- [[/en/lexicon/terms/deep-learning|Deep Learning]] — Machine learning through layered neural networks; depth makes extracting data provenance mathematically intractable
 - [[/en/lexicon/terms/deproletarianization|Deproletarianization]] — Stiegler's concept of recovering lost knowledge capacities
 - [[/en/lexicon/terms/diffraction-method|Diffraction (Method)]] — Haraway's alternative to reflection for thinking difference
 - [[/en/lexicon/terms/distributed-cognition|Distributed Cognition]] — Hutchins's concept of thinking across human-technical systems
@@ -65,13 +68,14 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 - [[/en/lexicon/terms/ecology-of-friction|Ecology of Friction]] — Author's term inverting "frictionless" design ideology (cf. platform capitalism's seamlessness); resistance as pedagogical resource rather than obstacle to overcome
 - [[/en/lexicon/terms/embodied-knowledge|Embodied Knowledge]] — Knowledge held in the body through practice
+- [[/en/lexicon/terms/embedding|Embedding]] — Dense vector representation of an element in latent space; where "license ghosts" persist as spectral traces, now mathematically inextricable
 - [[/en/lexicon/terms/epiphylogenesis|Epiphylogenesis]] — Stiegler's concept of evolution through technical memory
 - [[/en/lexicon/terms/epistemic-extractivism|Epistemic Extractivism]] — Rivera Cusicanqui's concept of knowledge appropriation
 - [[/en/lexicon/terms/exposed-teacher|Exposed Teacher]] — Author's term opposing the "master" who demonstrates finished competence; pedagogue who shows process, uncertainty, and vulnerability rather than mastery. Resonates with Rancière's ignorant schoolmaster but emphasizes visibility of struggle
 
 ## F
 
-- [[/en/lexicon/terms/fork|Fork]] — Creating independent version while maintaining genealogical link
+- [[/en/lexicon/terms/fork|Fork]] — Copying a project entirely to create an independent version; maintains genealogical link with original while allowing autonomous evolution (a plant "cutting")
 - [[/en/lexicon/terms/free-labor|Free Labor]] — Terranova's concept of unpaid digital work
 - [[/en/lexicon/terms/friction-pedagogical|Friction (Pedagogical)]] — *Author's term*: productive resistance in learning
 
@@ -92,6 +96,7 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [[/en/lexicon/terms/incomputability|Incomputability]] — Chaitin's concept of irreducible complexity
 - [[/en/lexicon/terms/indexical-dispensation|Indexical Dispensation]] — Author's term for the historical regime of photography-as-evidence; the epistemological contract (now dissolving) that images testify to what was physically present before the lens
 - [[/en/lexicon/terms/individuation|Individuation]] — Simondon's concept of becoming through process
+- [[/en/lexicon/terms/inference|Inference]] — Phase where models generate new data in response to a prompt; the probabilistic process through which AI "manufactures public domain"
 - [[/en/lexicon/terms/inflection|Inflection]] — Deleuze's concept of intensive change within continuity
 
 ## J
@@ -105,14 +110,17 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 ## L
 
-- [[/en/lexicon/terms/latent-space|Latent Space]] — Mathematical space where AI stores compressed representations
+- [[/en/lexicon/terms/latent-space|Latent Space]] — Abstract mathematical space where data is represented in compressed form; "a probabilistic ocean where all solutions ever written float in a state of pure virtuality"
 - [[/en/lexicon/terms/liquid-archive|Liquid Archive]] — Author's theoretical concept (distinct from artistic projects using this title, e.g., MIT Museum 2022); archive that generates rather than stores, extending Bauman's liquid modernity to archival practice
 - [[/en/lexicon/terms/liquid-modernity|Liquid Modernity]] — Bauman's concept of fluid contemporary social forms
+- [[/en/lexicon/terms/llm-large-language-model|LLM (Large Language Model)]] — Very large language model trained on billions of words and code; the main agents of the transmutation of private code into statistical commons
 - [[/en/lexicon/terms/lost-futures|Lost Futures]] — Fisher's concept of unrealized historical possibilities
 - [[/en/lexicon/terms/lumbung|Lumbung]] — Indonesian concept of collective resource sharing
 
 ## M
 
+- [[/en/lexicon/terms/machine-learning|Machine Learning]] — AI subdomain where systems learn from data (patterns) rather than explicit programming; the paradigm that makes the dissolution of attribution possible
+- [[/en/lexicon/terms/maintainers|Maintainers]] — Guardians of original projects who decide which contributions to accept or reject; representing the central authority contested by the Heredoc Manifesto
 - [[/en/lexicon/terms/mean-image|Mean Image]] — Steyerl's term (2023) playing on "mean" as both mathematical average and cruelty; statistical composites in AI-generated images that erase singularity. Shows how generative models flatten difference into normative representations
 - [[/en/lexicon/terms/model-collapse|Model Collapse]] — Shumailov et al.'s term (Nature, 2024) for degenerative process when generative models train recursively on synthetic data; causes irreversible loss of distributional tails and minority information. Also called "Habsburg AI" or "AI inbreeding"
 - [[/en/lexicon/terms/monotechnics|Monotechnics]] — Single technological paradigm imposed as universal
@@ -129,24 +137,29 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 ## P
 
+- [[/en/lexicon/terms/parameter-weight|Parameter / Weight]] — Adjustable floating-point number constituting neural network "memory"; encodes complex statistical correlations, the physical materialization of statistical commons
 - [[/en/lexicon/terms/pharmacological|Pharmacological]] — Stiegler's concept of technology as both poison and cure
 - [[/en/lexicon/terms/pluriverse|Pluriverse]] — Multiple coexisting cosmologies vs. single universe
 - [[/en/lexicon/terms/post-indexical-image|Post-Indexical Image]] — Author's term for images without indexical structure; neither "fake" (implying a true original) nor "synthetic" (implying artificiality), but operating in a different ontological register altogether
 - [[/en/lexicon/terms/prismatic-archive|Prismatic Archive]] — Author's term opposing both "dissolved" archive (lost to entropy) and "frozen" archive (fixed in time); archive that diffracts rather than dissolves, producing spectra rather than unities
 - [[/en/lexicon/terms/proletarianization-of-the-mind|Proletarianization (of the Mind)]] — Stiegler's concept of knowledge loss through automation
+- [[/en/lexicon/terms/prompt-engineering|Prompt Engineering]] — The art of formulating optimal instructions to obtain results from an LLM; the prompt as "new literacy" and "incantation" addressed to compressed collective intelligence
+- [[/en/lexicon/terms/pull-request|Pull Request]] — Modification proposal in software development: "Here are the improvements I made in my fork, would you like to integrate them into your version?"
 
 ## R
 
 - [[/en/lexicon/terms/reactivation|Reactivation]] — Making latent archival possibilities available for present use
 - [[/en/lexicon/terms/recursive-archive|Recursive Archive]] — Author's term for archive that queries itself; where traditional archives await external interrogation, recursive archives generate questions about their own conditions and gaps
+- [[/en/lexicon/terms/repository|Repository]] — Digital space where a software project lives: a library containing all files, the history of modifications, and the project's rules
 - [[/en/lexicon/terms/retcon|Retcon]] — Retroactive continuity as creative-critical method
-- [[/en/lexicon/terms/rhizome|Rhizome]] — Deleuze/Guattari's concept of non-hierarchical connection
+- [[/en/lexicon/terms/rhizome|Rhizome]] — Deleuze/Guattari's concept (A Thousand Plateaus) materialized through technical architecture: structure without fixed center or hierarchy, where knowledge circulates between equal peers
 
 ## S
 
 - [[/en/lexicon/terms/situated-knowledge|Situated Knowledge]] — Haraway's concept of knowledge from embodied position
 - [[/en/lexicon/terms/statistical-commons|Statistical Commons]] — Author's term for shared probability distributions produced by AI training; commons created not through intentional sharing but through mechanical aggregation of human expression into collective statistical patterns
 - [[/en/lexicon/terms/statistical-unconscious|Statistical Unconscious]] — Schröter's term (2023) transposing Benjamin's Optical Unconscious to AI image generation; what machine learning reveals in aggregate patterns that escapes conscious human perception. Where Benjamin's camera revealed hidden gestures, AI reveals hidden distributions
+- [[/en/lexicon/terms/statistics|Statistics]] — Sciences of data analysis and interpretation (etym. "sciences of the State"); in AI context, emphasizes that knowledge emerges through sedimentation and probabilistic recombination
 - [[/en/lexicon/terms/surveillance-capitalism|Surveillance Capitalism]] — Zuboff's concept of economy based on behavioral prediction
 - [[/en/lexicon/terms/symbiotic-algorithm|Symbiotic Algorithm]] — Author's term opposing extractive computation; algorithm as relation rather than extraction, mutual transformation of human and machine
 
@@ -158,7 +171,10 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [[/en/lexicon/terms/technodiversity|Technodiversity]] — Hui's concept of multiple technical traditions
 - [[/en/lexicon/terms/tertiary-retention|Tertiary Retention]] — Stiegler's concept of externalized technical memory
 - [[/en/lexicon/terms/tertiary-protention|Tertiary Protention]] — Hui's concept (2016) supplementing Stiegler's tertiary retention; where Stiegler theorized externalized memory (retention), Hui adds externalized anticipation—technologies that structure futurity, from debt to algorithmic prediction
+- [[/en/lexicon/terms/token-tokenization|Token / Tokenization]] — Process of fragmenting text or code into elementary units that algorithms manipulate mathematically; the first step in dissolving semantic integrity
+- [[/en/lexicon/terms/training|Training]] — Process by which models learn by iteratively adjusting billions of weights to minimize error; emphasizes the massive ecological cost of this knowledge transformation
 - [[/en/lexicon/terms/transduction|Transduction]] — Simondon's concept of propagating transformation
+- [[/en/lexicon/terms/transformer|Transformer]] — Neural network architecture (2017) that made modern LLMs possible through the attention mechanism; accelerating compression and recombination
 - [[/en/lexicon/terms/transindividuation|Transindividuation]] — Stiegler's concept of individual-collective co-constitution
 
 ## U

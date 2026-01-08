@@ -1,10 +1,15 @@
 ---
 title: "Inference"
 type: glossary
-aliases: []
+aliases: ["model inference"]
 tags:
   - glossary
   - _heredoc-manifesto
 ---
 
-The phase where a trained model generates new data (text, code, images) in response to a prompt. Distinguished from training (learning from data) by its direction: training moves from data to weights; inference moves from weights to output. Inference is probabilistic: the model samples from a distribution of possible continuations. This is how AI "manufactures public domain"—generating outputs that cannot be traced to any single source because they are statistical interpolations across millions of sources. (*Heredoc Manifesto*)
+The phase where models generate new data (code) in response to a prompt. This probabilistic process is how AI "manufactures public domain"—outputs that are legally novel yet statistically derived from the compressed collective. Inference transforms the latent statistical commons into actualized code that belongs to no one and everyone. (*The Heredoc Manifesto*)
+
+**See also:**
+- [[/en/lexicon/terms/prompt-engineering|Prompt Engineering]]
+- [[/en/lexicon/terms/latent-space|Latent Space]]
+- [[/en/lexicon/terms/statistical-commons|Statistical Commons]]

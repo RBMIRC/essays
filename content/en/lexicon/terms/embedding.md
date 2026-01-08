@@ -1,13 +1,15 @@
 ---
 title: "Embedding"
 type: glossary
-aliases: []
+aliases: ["embeddings", "vector embedding"]
 tags:
   - glossary
-  - _heredoc-manifesto*-*larchive-liquide
+  - _heredoc-manifesto
 ---
 
-A dense vector representation of an element (word, image, code snippet) in latent space—typically hundreds or thousands of floating-point numbers encoding semantic relationships. Similar items have similar embeddings; the distance between vectors corresponds to conceptual distance. It is at this level that what the corpus calls "license ghosts" persist: spectral traces of original works that are now mathematically inextricable from each other. The embedding dissolves discrete identity while preserving relational structure. (*Heredoc Manifesto*, *L'Archive Liquide*)
+Dense vector representation of an element in latent space. It is at this level that "license ghosts" persist—spectral traces of original code, now mathematically inextricable from the collective distribution. The embedding transforms discrete legal entities (licensed code) into continuous mathematical objects where boundaries dissolve. (*The Heredoc Manifesto*)
 
-**References:**
-- MIKOLOV, Tomas et al. Distributed Representations of Words and Phrases and their Compositionality. In: *Advances in Neural Information Processing Systems 26 (NIPS 2013)*. 2013.
+**See also:**
+- [[/en/lexicon/terms/latent-space|Latent Space]]
+- [[/en/lexicon/terms/parameter-weight|Parameter / Weight]]
+- [[/en/lexicon/terms/statistical-commons|Statistical Commons]]
