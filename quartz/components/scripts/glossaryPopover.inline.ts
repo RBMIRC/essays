@@ -172,15 +172,22 @@ function createPopup(content: HTMLElement, title: string, url: string, link: HTM
 
 // Fetch content and show popup on hover
 async function showGlossaryPopup(link: HTMLAnchorElement) {
+  console.log("[GlossaryPopover] showGlossaryPopup called for", link.href)
+
   // Don't create duplicate for same link if already showing
-  if (hoverLink === link && hoverPopup) return
+  if (hoverLink === link && hoverPopup) {
+    console.log("[GlossaryPopover] Popup already showing for this link")
+    return
+  }
 
   const targetUrl = new URL(link.href)
   targetUrl.hash = ""
   targetUrl.search = ""
+  console.log("[GlossaryPopover] Fetching", targetUrl.toString())
 
   try {
     const response = await fetchCanonical(targetUrl)
+    console.log("[GlossaryPopover] Response:", response?.status)
     if (!response) return
 
     // Check if we're still hovering this link
@@ -231,6 +238,7 @@ async function showGlossaryPopup(link: HTMLAnchorElement) {
 
 // Mouse enter handler
 function glossaryMouseEnterHandler(this: HTMLAnchorElement) {
+  console.log("[GlossaryPopover] mouseenter on", this.href)
   if (!isGlossaryLink(this)) return
 
   // Clear any pending hide
@@ -269,6 +277,8 @@ function glossaryClickHandler(this: HTMLAnchorElement, e: MouseEvent) {
 }
 
 document.addEventListener("nav", () => {
+  console.log("[GlossaryPopover] nav event fired")
+
   // Clear all popups on navigation
   document.querySelectorAll(".glossary-popup").forEach(el => el.remove())
   hoverPopup = null
@@ -281,8 +291,10 @@ document.addEventListener("nav", () => {
 
   // Get all links (internal and external) and filter for glossary links
   const allLinks = [...document.querySelectorAll("a[href]")] as HTMLAnchorElement[]
+  let glossaryCount = 0
   for (const link of allLinks) {
     if (isGlossaryLink(link) && !link.classList.contains("glossary-link")) {
+      glossaryCount++
       link.classList.add("glossary-link")
       // Disable native Quartz popover for glossary links
       link.dataset.noPopover = "true"
@@ -297,4 +309,5 @@ document.addEventListener("nav", () => {
       })
     }
   }
+  console.log(`[GlossaryPopover] Found ${glossaryCount} glossary links`)
 })
