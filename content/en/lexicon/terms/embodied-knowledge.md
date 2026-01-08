@@ -12,4 +12,4 @@ Knowledge that is bodily, situated, and relational—acquired in the situation o
 **References:**
 - POLANYI, Michael. *The Tacit Dimension*. Garden City, NY: Doubleday, 1966. ISBN 0-226-67298-0.
 
-See also: [[Tacit Knowledge]], [[Know-How]]
+See also: [[/en/lexicon/terms/tacit-knowledge|Tacit Knowledge]], [[/en/lexicon/terms/know-how-vs-know-that|Know-How]]

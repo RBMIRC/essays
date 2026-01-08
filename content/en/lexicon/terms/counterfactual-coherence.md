@@ -10,4 +10,4 @@ tags:
 
 Author's term: what *retcon* produces when applied to archival practice. Not falsification of history but activation of latent possibilities in documentary traces—rearranging already-given facts into a new logically coherent constellation. The documents are not altered; their relations are reconfigured to reveal what they might have meant, what trajectories they might have supported, what futures they might have enabled. (*The Recursive Archive*, *Index*)
 
-See also: [[Retcon]], [[Speculative Archive]]
+See also: [[/en/lexicon/terms/retcon|Retcon]], [[/en/lexicon/terms/speculative-archive|Speculative Archive]]
