@@ -42,19 +42,19 @@ tags:
 <details class="heredoc-block">
 <summary>◈ IMAGE-CONTINUUM v1.0</summary>
 
-**Title:** The Image Continuum
-**Subtitle:** On the Ontological Transformation of the Photograph in the Age of Generative Systems
-**Author:** Sylvain Couzinet-Jacques
-**Date:** 2024
-**Intent:** From analog photograph to AI generated image
-**Provenance:** Institut pour la Photographie, Lille
-**Genealogy:** Barthes (Camera Lucida) → Stiegler (Technics and Time) → Simondon (Individuation) → Flusser (Technical Images) → Hui (Cosmotechnics)
-**Ethics:** Acknowledgment · Speculation · Technodiversity
-**License:** GPL-3.0-or-later
-**Fork-chain:** [Philosophy of technics] → current → [awaiting next fork]
-**Contamination:** Infused with {indexical theory, media archaeology, process philosophy, imaginary media}
-**Confidence:** Theoretical synthesis oriented toward practice
-**Notes:** The singular does not disappear; it is transformed
+**Title:** The Image Continuum  
+**Subtitle:** On the Ontological Transformation of the Photograph in the Age of Generative Systems  
+**Author:** Sylvain Couzinet-Jacques  
+**Date:** 2024  
+**Intent:** From analog photograph to AI generated image  
+**Provenance:** Institut pour la Photographie, Lille  
+**Genealogy:** Barthes (Camera Lucida) → Stiegler (Technics and Time) → Simondon (Individuation) → Flusser (Technical Images) → Hui (Cosmotechnics)  
+**Ethics:** Acknowledgment · Speculation · Technodiversity  
+**License:** GPL-3.0-or-later  
+**Fork-chain:** [Philosophy of technics] → current → [awaiting next fork]  
+**Contamination:** Infused with {indexical theory, media archaeology, process philosophy, imaginary media}  
+**Confidence:** Theoretical synthesis oriented toward practice  
+**Notes:** The singular does not disappear; it is transformed  
 
 </details>
 

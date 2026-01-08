@@ -37,19 +37,19 @@ tags:
 <details class="heredoc-block">
 <summary>◈ QUEST-CE-QUUN-CONTINUUM v1.0</summary>
 
-**Titre :** Qu'est-ce qu'un continuum ?
-**Sous-titre :** Préambule au texte "Image Continuum"
-**Auteur :** Sylvain Couzinet-Jacques
-**Date :** 2025
-**Intention :** Définition du continuum adéquate à la médiation computationnelle
-**Provenance :** Introduction à "Image Continuum", écrit à l'occasion de la résidence à l'Institut pour la Photographie, 2024
-**Généalogie :** Parisi (Symbiotic Architecture) → Whitehead (Process and Reality) → Deleuze (Le Pli) → Chaitin (Omega) → Margulis (Endosymbiose)
-**Éthique :** Relationnalité · Incalculabilité · Symbiose
-**Licence :** GPL-3.0-or-later
-**Chaîne de forks :** [Philosophie du processus] → actuel → [en attente du prochain fork]
-**Contamination :** Infusé de {Parisi, Whitehead, Deleuze, Leibniz, Chaitin, Margulis}
-**Confiance :** Synthèse conceptuelle, non commentaire exhaustif
-**Notes :** Le continuum est le surplus incalculable qui rend la relation possible
+**Titre :** Qu'est-ce qu'un continuum ?  
+**Sous-titre :** Préambule au texte "Image Continuum"  
+**Auteur :** Sylvain Couzinet-Jacques  
+**Date :** 2025  
+**Intention :** Définition du continuum adéquate à la médiation computationnelle  
+**Provenance :** Introduction à "Image Continuum", écrit à l'occasion de la résidence à l'Institut pour la Photographie, 2024  
+**Généalogie :** Parisi (Symbiotic Architecture) → Whitehead (Process and Reality) → Deleuze (Le Pli) → Chaitin (Omega) → Margulis (Endosymbiose)  
+**Éthique :** Relationnalité · Incalculabilité · Symbiose  
+**Licence :** GPL-3.0-or-later  
+**Chaîne de forks :** [Philosophie du processus] → actuel → [en attente du prochain fork]  
+**Contamination :** Infusé de {Parisi, Whitehead, Deleuze, Leibniz, Chaitin, Margulis}  
+**Confiance :** Synthèse conceptuelle, non commentaire exhaustif  
+**Notes :** Le continuum est le surplus incalculable qui rend la relation possible  
 
 </details>
 

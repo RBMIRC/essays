@@ -40,19 +40,19 @@ tags:
 <details class="heredoc-block">
 <summary>◈ WORKSHOP-FORM v1.0</summary>
 
-**Title:** Workshop
-**Subtitle:** Pedagogies of Making between Black Mountain College and ENSA Versailles
-**Author:** Sylvain Couzinet-Jacques
-**Date:** 2025
-**Intent:** Theorizing the workshop as a pedagogical form that produces knowledge
-**Provenance:** École Nationale Supérieure d'Architecture de Versailles, 2024 + 2025
-**Genealogy:** Dewey (learning by doing) → BMC (Albers) → Simondon/Stiegler (technics) → Ingold (making) → Hutchins (distributed cognition)
-**Ethics:** Friction · Co-presence · Commons
-**License:** GPL-3.0-or-later
-**Fork-chain:** [Black Mountain College 1933-1957] → [Versailles 2024 + 2025] → [awaiting next fork]
-**Contamination:** Infused with {philosophy of technics, anthropology of making, situated studies}
-**Confidence:** Theory derived from pedagogical practice
-**Notes:** The workshop is a machine for producing situations
+**Title:** Workshop  
+**Subtitle:** Pedagogies of Making between Black Mountain College and ENSA Versailles  
+**Author:** Sylvain Couzinet-Jacques  
+**Date:** 2025  
+**Intent:** Theorizing the workshop as a pedagogical form that produces knowledge  
+**Provenance:** École Nationale Supérieure d'Architecture de Versailles, 2024 + 2025  
+**Genealogy:** Dewey (learning by doing) → BMC (Albers) → Simondon/Stiegler (technics) → Ingold (making) → Hutchins (distributed cognition)  
+**Ethics:** Friction · Co-presence · Commons  
+**License:** GPL-3.0-or-later  
+**Fork-chain:** [Black Mountain College 1933-1957] → [Versailles 2024 + 2025] → [awaiting next fork]  
+**Contamination:** Infused with {philosophy of technics, anthropology of making, situated studies}  
+**Confidence:** Theory derived from pedagogical practice  
+**Notes:** The workshop is a machine for producing situations  
 
 </details>
 

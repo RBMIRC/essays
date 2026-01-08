@@ -44,19 +44,19 @@ tags:
 <details class="heredoc-block">
 <summary>◈ RECURSIVE-ARCHIVE v1.0</summary>
 
-**Title:** The Recursive Archive
-**Subtitle:** Ontology, Technique, Temporalities
-**Author:** Sylvain Couzinet-Jacques
-**Date:** 2025
-**Intent:** Analyzing the transformation of archival ontology under conditions of generative AI and recursive computation
-**Provenance:** Research seminar at L'École des Beaux-Arts de Marseille, with Vanessa Brito and Cy Lecerf Maulpoix
-**Genealogy:** Foucault (archaeology) → Derrida (archive fever) → Stiegler (tertiary retention) → Hui (recursivity/cosmotechnics) → Simondon (individuation) → Wiener (cybernetics)
-**Ethics:** Diffraction · Friction · Opacity
-**License:** GPL-3.0-or-later
-**Fork-chain:** [Media archaeology] → [Philosophy of technology] → current → [awaiting next fork]
-**Contamination:** Infused with {indigenous data sovereignty, Afrofuturism, platform studies, algorithmic governmentality}
-**Confidence:** Theoretical framework grounded in extensive philosophical and technical analysis
-**Notes:** The archive no longer merely stores the past; it hallucinates the future probabilistically
+**Title:** The Recursive Archive  
+**Subtitle:** Ontology, Technique, Temporalities  
+**Author:** Sylvain Couzinet-Jacques  
+**Date:** 2025  
+**Intent:** Analyzing the transformation of archival ontology under conditions of generative AI and recursive computation  
+**Provenance:** Research seminar at L'École des Beaux-Arts de Marseille, with Vanessa Brito and Cy Lecerf Maulpoix  
+**Genealogy:** Foucault (archaeology) → Derrida (archive fever) → Stiegler (tertiary retention) → Hui (recursivity/cosmotechnics) → Simondon (individuation) → Wiener (cybernetics)  
+**Ethics:** Diffraction · Friction · Opacity  
+**License:** GPL-3.0-or-later  
+**Fork-chain:** [Media archaeology] → [Philosophy of technology] → current → [awaiting next fork]  
+**Contamination:** Infused with {indigenous data sovereignty, Afrofuturism, platform studies, algorithmic governmentality}  
+**Confidence:** Theoretical framework grounded in extensive philosophical and technical analysis  
+**Notes:** The archive no longer merely stores the past; it hallucinates the future probabilistically  
 
 </details>
 

@@ -44,19 +44,19 @@ tags:
 <details class="heredoc-block">
 <summary>◈ ARCHIVE-RECURSIVE v1.0</summary>
 
-**Titre :** L'Archive Récursive
-**Sous-titre :** Ontologie, Technique, Temporalités
-**Auteur :** Sylvain Couzinet-Jacques
-**Date :** 2025
-**Intention :** Analyser la transformation de l'ontologie archivistique sous les conditions de l'IA générative et de la computation récursive
-**Provenance :** Séminaire de recherche à L'École des Beaux-Arts de Marseille, avec Vanessa Brito et Cy Lecerf Maulpoix
-**Généalogie :** Foucault (archéologie) → Derrida (mal d'archive) → Stiegler (rétention tertiaire) → Hui (récursivité/cosmotechnique) → Simondon (individuation) → Wiener (cybernétique)
-**Éthique :** Diffraction · Friction · Opacité
-**Licence :** GPL-3.0-or-later
-**Chaîne de forks :** [Archéologie des médias] → [Philosophie de la technique] → actuel → [en attente du prochain fork]
-**Contamination :** Infusé de {souveraineté des données indigènes, afrofuturisme, études des plateformes, gouvernementalité algorithmique}
-**Confiance :** Cadre théorique ancré dans une analyse philosophique et technique approfondie
-**Notes :** L'archive ne se contente plus de stocker le passé ; elle hallucine le futur de manière probabiliste
+**Titre :** L'Archive Récursive  
+**Sous-titre :** Ontologie, Technique, Temporalités  
+**Auteur :** Sylvain Couzinet-Jacques  
+**Date :** 2025  
+**Intention :** Analyser la transformation de l'ontologie archivistique sous les conditions de l'IA générative et de la computation récursive  
+**Provenance :** Séminaire de recherche à L'École des Beaux-Arts de Marseille, avec Vanessa Brito et Cy Lecerf Maulpoix  
+**Généalogie :** Foucault (archéologie) → Derrida (mal d'archive) → Stiegler (rétention tertiaire) → Hui (récursivité/cosmotechnique) → Simondon (individuation) → Wiener (cybernétique)  
+**Éthique :** Diffraction · Friction · Opacité  
+**Licence :** GPL-3.0-or-later  
+**Chaîne de forks :** [Archéologie des médias] → [Philosophie de la technique] → actuel → [en attente du prochain fork]  
+**Contamination :** Infusé de {souveraineté des données indigènes, afrofuturisme, études des plateformes, gouvernementalité algorithmique}  
+**Confiance :** Cadre théorique ancré dans une analyse philosophique et technique approfondie  
+**Notes :** L'archive ne se contente plus de stocker le passé ; elle hallucine le futur de manière probabiliste  
 
 </details>
 

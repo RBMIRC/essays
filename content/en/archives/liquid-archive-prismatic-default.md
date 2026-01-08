@@ -48,20 +48,19 @@ tags:
 <details class="heredoc-block">
 <summary>◈ LIQUID-ARCHIVE v1.0</summary>
 
-**Title:** L'Archive Liquide
-**Subtitle:** Workshop Retcon Black Mountain, École Nationale Supérieure de la Photographie, Arles
-**Author:** Sylvain Couzinet-Jacques
-**Date:** 2025
-**Intent:** Analyzing the transformation of the image when it loses its documentary function through generative AI
-**Provenance:** Workshop ENSP Arles 2024, with Mabe Bethonico
-**Genealogy:** Benjamin (optical unconscious) → Barthes (punctum) → Flusser (apparatus) → Bauman (liquid modernity) → Stiegler (proletarianization)
-**Ethics:** Diffraction · Friction · Opacity
-**License:** GPL-3.0-or-later
-**Fork-chain:** [Philosophy of photography] → current → [awaiting next fork]
-**Contamination:** Infused with {New Aesthetic, media archaeology, platform studies, cosmotechnics}
-**Confidence:** Workshop observations grounded in theoretical framework
-**Notes:** The image no longer testifies to distance; it renders "proximal" what is statistically probable
-
+**Title:** L'Archive Liquide  
+**Subtitle:** Workshop Retcon Black Mountain, École Nationale Supérieure de la Photographie, Arles  
+**Author:** Sylvain Couzinet-Jacques  
+**Date:** 2025  
+**Intent:** Analyzing the transformation of the image when it loses its documentary function through generative AI  
+**Provenance:** Workshop ENSP Arles 2024, with Mabe Bethonico  
+**Genealogy:** Benjamin (optical unconscious) → Barthes (punctum) → Flusser (apparatus) → Bauman (liquid modernity) → Stiegler (proletarianization)  
+**Ethics:** Diffraction · Friction · Opacity  
+**License:** GPL-3.0-or-later  
+**Fork-chain:** [Philosophy of photography] → current → [awaiting next fork]  
+**Contamination:** Infused with {New Aesthetic, media archaeology, platform studies, cosmotechnics}  
+**Confidence:** Workshop observations grounded in theoretical framework  
+**Notes:** The image no longer testifies to distance; it renders "proximal" what is statistically probable  
 </details>
 
 ---

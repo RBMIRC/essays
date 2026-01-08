@@ -14,19 +14,19 @@ draft: true
 <details class="heredoc-block">
 <summary>◈ METHODOLOGIE-RETCON v0.1</summary>
 
-**Titre :** Méthodologie Retcon
-**Sous-titre :** La continuité rétroactive comme pratique de recherche-création
-**Auteur :** Sylvain Couzinet-Jacques
-**Date :** Janvier 2025
-**Intention :** Proposer le retcon comme cadre théorique et méthodologie opérationnelle pour la recherche-création
-**Provenance :** Projet de recherche Black Mountain College
-**Généalogie :** Techniques narratives de la bande dessinée → historiographie → méthodologies de recherche-création
-**Éthique :** Diffraction · Friction · Opacité
-**Licence :** GPL-3.0-or-later
-**Chaîne de forks :** [Théorie narrative] → actuel → [en attente de développement]
-**Contamination :** Infusé de {fiction spéculative, historiographie alternative, futuralité computationnelle}
-**Confiance :** Brouillon - méthodologie en développement
-**Notes :** La question n'est pas « que s'est-il vraiment passé ? » mais « quelles continuités peuvent être construites ? »
+**Titre :** Méthodologie Retcon  
+**Sous-titre :** La continuité rétroactive comme pratique de recherche-création  
+**Auteur :** Sylvain Couzinet-Jacques  
+**Date :** Janvier 2025  
+**Intention :** Proposer le retcon comme cadre théorique et méthodologie opérationnelle pour la recherche-création  
+**Provenance :** Projet de recherche Black Mountain College  
+**Généalogie :** Techniques narratives de la bande dessinée → historiographie → méthodologies de recherche-création  
+**Éthique :** Diffraction · Friction · Opacité  
+**Licence :** GPL-3.0-or-later  
+**Chaîne de forks :** [Théorie narrative] → actuel → [en attente de développement]  
+**Contamination :** Infusé de {fiction spéculative, historiographie alternative, futuralité computationnelle}  
+**Confiance :** Brouillon - méthodologie en développement  
+**Notes :** La question n'est pas « que s'est-il vraiment passé ? » mais « quelles continuités peuvent être construites ? »  
 
 </details>
 

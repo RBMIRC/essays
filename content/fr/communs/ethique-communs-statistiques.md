@@ -82,18 +82,18 @@ tags:
 <details class="heredoc-block">
 <summary>◈ ETHIQUE-COMMUNS-STATISTIQUES v1.0</summary>
 
-**Titre :** L'Éthique des Communs Statistiques : Fondements normatifs pour la production de connaissances médiée par l'IA
-**Auteur :** Sylvain Couzinet-Jacques
-**Date :** 2026
-**Intention :** Développer des cadres normatifs pour les communs statistiques — valence différentielle, obligation négentropique et urgence tactique
-**Provenance :** Extension du Manifeste Heredoc
-**Généalogie :** Manifeste Heredoc → Coeckelbergh (Éthique de l'IA) → Terranova (After the Internet) → Ostrom (Governing the Commons) → OSSI (Open Source Seed Initiative)
-**Éthique :** Transparence · Transmission · Transformation
-**Licence :** GPL-3.0-or-later (retour volontaire aux communs)
-**Chaîne de forks :** [Manifeste Heredoc] → actuel → [en attente du prochain fork]
-**Contamination :** Embrasse les traces des philosophies {GPL, MIT, Apache, BSD, OSSI-Pledge}
-**Confiance :** Cadre normatif ancré dans la transformation ontologique, non dans la prédiction
-**Notes :** Ce que l'IA dissout mécaniquement, l'éthique doit l'orienter politiquement
+**Titre :** L'Éthique des Communs Statistiques : Fondements normatifs pour la production de connaissances médiée par l'IA  
+**Auteur :** Sylvain Couzinet-Jacques  
+**Date :** 2026  
+**Intention :** Développer des cadres normatifs pour les communs statistiques — valence différentielle, obligation négentropique et urgence tactique  
+**Provenance :** Extension du Manifeste Heredoc  
+**Généalogie :** Manifeste Heredoc → Coeckelbergh (Éthique de l'IA) → Terranova (After the Internet) → Ostrom (Governing the Commons) → OSSI (Open Source Seed Initiative)  
+**Éthique :** Transparence · Transmission · Transformation  
+**Licence :** GPL-3.0-or-later (retour volontaire aux communs)  
+**Chaîne de forks :** [Manifeste Heredoc] → actuel → [en attente du prochain fork]  
+**Contamination :** Embrasse les traces des philosophies {GPL, MIT, Apache, BSD, OSSI-Pledge}  
+**Confiance :** Cadre normatif ancré dans la transformation ontologique, non dans la prédiction  
+**Notes :** Ce que l'IA dissout mécaniquement, l'éthique doit l'orienter politiquement  
 
 </details>
 

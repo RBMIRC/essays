@@ -40,19 +40,19 @@ tags:
 <details class="heredoc-block">
 <summary>◈ WORKSHOP-FORME v1.0</summary>
 
-**Titre :** Workshop
-**Sous-titre :** Pédagogies du faire entre Black Mountain College et ENSA Versailles
-**Auteur :** Sylvain Couzinet-Jacques
-**Date :** 2025
-**Intention :** Théoriser le workshop comme forme pédagogique productrice de savoir
-**Provenance :** École Nationale Supérieure d'Architecture de Versailles, 2024 + 2025
-**Généalogie :** Dewey (apprendre en faisant) → BMC (Albers) → Simondon/Stiegler (technique) → Ingold (faire) → Hutchins (cognition distribuée)
-**Éthique :** Friction · Co-présence · Communs
-**Licence :** GPL-3.0-or-later
-**Chaîne de forks :** [Black Mountain College 1933-1957] → [Versailles 2024 + 2025] → [en attente du prochain fork]
-**Contamination :** Infusé de {philosophie de la technique, anthropologie du faire, études situées}
-**Confiance :** Théorie issue de pratique pédagogique
-**Notes :** Le workshop est une machine à produire des situations
+**Titre :** Workshop  
+**Sous-titre :** Pédagogies du faire entre Black Mountain College et ENSA Versailles  
+**Auteur :** Sylvain Couzinet-Jacques  
+**Date :** 2025  
+**Intention :** Théoriser le workshop comme forme pédagogique productrice de savoir  
+**Provenance :** École Nationale Supérieure d'Architecture de Versailles, 2024 + 2025  
+**Généalogie :** Dewey (apprendre en faisant) → BMC (Albers) → Simondon/Stiegler (technique) → Ingold (faire) → Hutchins (cognition distribuée)  
+**Éthique :** Friction · Co-présence · Communs  
+**Licence :** GPL-3.0-or-later  
+**Chaîne de forks :** [Black Mountain College 1933-1957] → [Versailles 2024 + 2025] → [en attente du prochain fork]  
+**Contamination :** Infusé de {philosophie de la technique, anthropologie du faire, études situées}  
+**Confiance :** Théorie issue de pratique pédagogique  
+**Notes :** Le workshop est une machine à produire des situations  
 
 </details>
 
