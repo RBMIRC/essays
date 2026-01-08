@@ -64,12 +64,12 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.Sidenotes(),
-      Plugin.GlossaryAutoLink({
-        glossaryPath: "en/lexicon/terms",
-        linkMode: "first",
-        caseSensitive: false,
-        excludeTags: ["code", "pre", "h1", "h2", "h3", "a"],
-      }),
+      // Plugin.GlossaryAutoLink({
+      //   glossaryPath: "en/lexicon/terms",
+      //   linkMode: "first",
+      //   caseSensitive: false,
+      //   excludeTags: ["code", "pre", "h1", "h2", "h3", "a"],
+      // }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [

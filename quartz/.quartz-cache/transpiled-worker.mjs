@@ -6,161 +6,7 @@ import sourceMapSupport from "source-map-support";
 
 // quartz/plugins/transformers/glossaryAutoLink.ts
 import { visit } from "unist-util-visit";
-import path from "path";
-import fs from "fs";
 import matter from "gray-matter";
-var defaultOptions = {
-  glossaryPath: "en/lexicon/terms",
-  linkMode: "first",
-  caseSensitive: false,
-  excludeTags: ["code", "pre", "h1", "h2", "h3", "a", "script", "style"],
-  tooltipMode: "hover",
-  dataAttribute: true
-};
-var glossaryCache = null;
-function loadGlossaryTerms(contentPath, glossaryPath) {
-  if (glossaryCache) return glossaryCache;
-  const termsDir = path.join(contentPath, glossaryPath);
-  const terms = /* @__PURE__ */ new Map();
-  if (!fs.existsSync(termsDir)) {
-    console.warn(`GlossaryAutoLink: Terms directory not found: ${termsDir}`);
-    return terms;
-  }
-  const files = fs.readdirSync(termsDir).filter((f) => f.endsWith(".md"));
-  for (const file of files) {
-    const filePath = path.join(termsDir, file);
-    const content = fs.readFileSync(filePath, "utf-8");
-    const { data, content: body } = matter(content);
-    const title = data.title || file.replace(".md", "");
-    const slug = `/${glossaryPath}/${file.replace(".md", "")}`;
-    const cleanBody = body.trim();
-    const firstSentenceMatch = cleanBody.match(/^[^.!?]+[.!?]/);
-    const definition = data.description || (firstSentenceMatch ? firstSentenceMatch[0].trim() : cleanBody.slice(0, 150) + "...");
-    terms.set(title.toLowerCase(), {
-      title,
-      slug,
-      definition,
-      author: data.author
-    });
-    if (data.aliases && Array.isArray(data.aliases)) {
-      for (const alias of data.aliases) {
-        terms.set(alias.toLowerCase(), {
-          title,
-          slug,
-          definition,
-          author: data.author
-        });
-      }
-    }
-  }
-  glossaryCache = terms;
-  return terms;
-}
-__name(loadGlossaryTerms, "loadGlossaryTerms");
-function escapeRegex(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-__name(escapeRegex, "escapeRegex");
-var GlossaryAutoLink = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions, ...userOpts };
-  return {
-    name: "GlossaryAutoLink",
-    htmlPlugins(ctx) {
-      const terms = loadGlossaryTerms(ctx.argv.directory, opts.glossaryPath);
-      if (terms.size === 0) {
-        return [];
-      }
-      const sortedTerms = Array.from(terms.entries()).sort((a, b) => b[0].length - a[0].length);
-      const termPatterns = sortedTerms.map(([term]) => escapeRegex(term));
-      const regexFlags = opts.caseSensitive ? "g" : "gi";
-      const termRegex = new RegExp(`\\b(${termPatterns.join("|")})\\b`, regexFlags);
-      return [
-        () => {
-          return (tree, file) => {
-            const currentSlug = file.data.slug || "";
-            if (currentSlug.includes(opts.glossaryPath)) {
-              return;
-            }
-            const linkedTerms = /* @__PURE__ */ new Set();
-            visit(tree, "text", (node, index, parent) => {
-              if (!parent || typeof index !== "number") return;
-              const ancestors = [];
-              let current = parent;
-              while (current) {
-                if (current.type === "element") {
-                  ancestors.push(current);
-                }
-                current = current.parent;
-              }
-              if (parent.type === "element") {
-                const parentEl = parent;
-                if (opts.excludeTags.includes(parentEl.tagName.toLowerCase())) {
-                  return;
-                }
-                const classes = parentEl.properties?.className || [];
-                if (classes.includes("glossary-term")) {
-                  return;
-                }
-              }
-              const text = node.value;
-              if (!termRegex.test(text)) return;
-              termRegex.lastIndex = 0;
-              const newChildren = [];
-              let lastIndex = 0;
-              let match;
-              while ((match = termRegex.exec(text)) !== null) {
-                const matchedTerm = match[1];
-                const termKey = matchedTerm.toLowerCase();
-                const termData = terms.get(termKey);
-                if (!termData) continue;
-                if (opts.linkMode === "first" && linkedTerms.has(termKey)) {
-                  continue;
-                }
-                if (match.index > lastIndex) {
-                  newChildren.push({
-                    type: "text",
-                    value: text.slice(lastIndex, match.index)
-                  });
-                }
-                const termSpan = {
-                  type: "element",
-                  tagName: "span",
-                  properties: {
-                    className: ["glossary-term"],
-                    "data-term": termData.title,
-                    "data-slug": termData.slug
-                  },
-                  children: [{ type: "text", value: matchedTerm }]
-                };
-                if (opts.dataAttribute) {
-                  termSpan.properties["data-definition"] = termData.definition;
-                  if (termData.author) {
-                    termSpan.properties["data-author"] = termData.author;
-                  }
-                }
-                newChildren.push(termSpan);
-                lastIndex = match.index + matchedTerm.length;
-                if (opts.linkMode === "first") {
-                  linkedTerms.add(termKey);
-                }
-              }
-              if (lastIndex < text.length) {
-                newChildren.push({
-                  type: "text",
-                  value: text.slice(lastIndex)
-                });
-              }
-              if (newChildren.length > 0 && lastIndex > 0) {
-                const parentEl = parent;
-                parentEl.children.splice(index, 1, ...newChildren);
-              }
-            });
-          };
-        }
-      ];
-    }
-  };
-}, "GlossaryAutoLink");
 
 // quartz/plugins/transformers/frontmatter.ts
 import matter2 from "gray-matter";
@@ -2978,7 +2824,7 @@ var defaultTranslation = "en-US";
 var i18n = /* @__PURE__ */ __name((locale) => TRANSLATIONS[locale ?? defaultTranslation], "i18n");
 
 // quartz/plugins/transformers/frontmatter.ts
-var defaultOptions2 = {
+var defaultOptions = {
   delimiters: "---",
   language: "yaml"
 };
@@ -3008,7 +2854,7 @@ function getAliasSlugs(aliases) {
 }
 __name(getAliasSlugs, "getAliasSlugs");
 var FrontMatter = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions2, ...userOpts };
+  const opts = { ...defaultOptions, ...userOpts };
   return {
     name: "FrontMatter",
     markdownPlugins(ctx) {
@@ -3078,12 +2924,12 @@ import remarkGfm from "remark-gfm";
 import smartypants from "remark-smartypants";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-var defaultOptions3 = {
+var defaultOptions2 = {
   enableSmartyPants: true,
   linkHeadings: true
 };
 var GitHubFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions3, ...userOpts };
+  const opts = { ...defaultOptions2, ...userOpts };
   return {
     name: "GitHubFlavoredMarkdown",
     markdownPlugins() {
@@ -3150,11 +2996,11 @@ import rehypeCitation from "rehype-citation";
 import { visit as visit2 } from "unist-util-visit";
 
 // quartz/plugins/transformers/lastmod.ts
-import fs2 from "fs";
+import fs from "fs";
 import { Repository } from "@napi-rs/simple-git";
-import path2 from "path";
+import path from "path";
 import { styleText } from "util";
-var defaultOptions4 = {
+var defaultOptions3 = {
   priority: ["frontmatter", "git", "filesystem"]
 };
 var iso8601DateOnlyRegex = /^\d{4}-\d{2}-\d{2}$/;
@@ -3177,7 +3023,7 @@ Warning: found invalid date "${d}" in \`${fp}\`. Supported formats: https://deve
 }
 __name(coerceDate, "coerceDate");
 var CreatedModifiedDate = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions4, ...userOpts };
+  const opts = { ...defaultOptions3, ...userOpts };
   return {
     name: "CreatedModifiedDate",
     markdownPlugins(ctx) {
@@ -3207,7 +3053,7 @@ Warning: couldn't find git repository for ${ctx.argv.directory}`
             const fullFp = file.data.filePath;
             for (const source of opts.priority) {
               if (source === "filesystem") {
-                const st = await fs2.promises.stat(fullFp);
+                const st = await fs.promises.stat(fullFp);
                 created ||= st.birthtimeMs;
                 modified ||= st.mtimeMs;
               } else if (source === "frontmatter" && file.data.frontmatter) {
@@ -3216,7 +3062,7 @@ Warning: couldn't find git repository for ${ctx.argv.directory}`
                 published ||= file.data.frontmatter.published;
               } else if (source === "git" && repo) {
                 try {
-                  const relativePath = path2.relative(repositoryWorkdir, fullFp);
+                  const relativePath = path.relative(repositoryWorkdir, fullFp);
                   modified ||= await repo.getFileLatestModifiedDateAsync(relativePath);
                 } catch {
                   console.log(
@@ -3311,7 +3157,7 @@ var unescapeHTML = /* @__PURE__ */ __name((html) => {
 
 // quartz/plugins/transformers/description.ts
 import { visit as visit3, SKIP } from "unist-util-visit";
-var defaultOptions5 = {
+var defaultOptions4 = {
   descriptionLength: 150,
   maxDescriptionLength: 300,
   replaceExternalLinks: true
@@ -3331,7 +3177,7 @@ function hasExcludedClass(node) {
 }
 __name(hasExcludedClass, "hasExcludedClass");
 var Description = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions5, ...userOpts };
+  const opts = { ...defaultOptions4, ...userOpts };
   return {
     name: "Description",
     htmlPlugins() {
@@ -3387,10 +3233,10 @@ var Description = /* @__PURE__ */ __name((userOpts) => {
 }, "Description");
 
 // quartz/plugins/transformers/links.ts
-import path3 from "path";
+import path2 from "path";
 import { visit as visit4 } from "unist-util-visit";
 import isAbsoluteUrl from "is-absolute-url";
-var defaultOptions6 = {
+var defaultOptions5 = {
   markdownLinkResolution: "absolute",
   prettyLinks: true,
   openLinksInNewTab: false,
@@ -3398,7 +3244,7 @@ var defaultOptions6 = {
   externalLinkIcon: true
 };
 var CrawlLinks = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions6, ...userOpts };
+  const opts = { ...defaultOptions5, ...userOpts };
   return {
     name: "LinkProcessing",
     htmlPlugins(ctx) {
@@ -3467,7 +3313,7 @@ var CrawlLinks = /* @__PURE__ */ __name((userOpts) => {
                   node.properties.href = `${baseUrl}/${full}`;
                 }
                 if (opts.prettyLinks && isInternal && node.children.length === 1 && node.children[0].type === "text" && !node.children[0].value.startsWith("#")) {
-                  node.children[0].value = path3.basename(node.children[0].value);
+                  node.children[0].value = path2.basename(node.children[0].value);
                 }
               }
               if (["img", "video", "audio", "iframe"].includes(node.tagName) && node.properties && typeof node.properties.src === "string") {
@@ -3499,7 +3345,7 @@ var CrawlLinks = /* @__PURE__ */ __name((userOpts) => {
 import { findAndReplace as mdastFindReplace } from "mdast-util-find-and-replace";
 import rehypeRaw from "rehype-raw";
 import { SKIP as SKIP2, visit as visit5 } from "unist-util-visit";
-import path4 from "path";
+import path3 from "path";
 
 // quartz/components/scripts/callout.inline.ts
 var callout_inline_default = "";
@@ -3531,7 +3377,7 @@ function classNames(displayClass, ...classes) {
 __name(classNames, "classNames");
 
 // quartz/plugins/transformers/ofm.ts
-var defaultOptions7 = {
+var defaultOptions6 = {
   comments: true,
   highlight: true,
   wikilinks: true,
@@ -3612,7 +3458,7 @@ var wikilinkImageEmbedRegex = new RegExp(
   /^(?<alt>(?!^\d*x?\d*$).*?)?(\|?\s*?(?<width>\d+)(x(?<height>\d+))?)?$/
 );
 var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions7, ...userOpts };
+  const opts = { ...defaultOptions6, ...userOpts };
   const mdastToHtml = /* @__PURE__ */ __name((ast) => {
     const hast = toHast(ast, { allowDangerousHtml: true });
     return toHtml(hast, { allowDangerousHtml: true });
@@ -3667,7 +3513,7 @@ var ObsidianFlavoredMarkdown = /* @__PURE__ */ __name((userOpts) => {
                 const anchor = rawHeader?.trim() ?? "";
                 const alias = rawAlias?.slice(1).trim();
                 if (value.startsWith("!")) {
-                  const ext = path4.extname(fp).toLowerCase();
+                  const ext = path3.extname(fp).toLowerCase();
                   const url2 = slugifyFilePath(fp);
                   if ([".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg", ".webp"].includes(ext)) {
                     const match = wikilinkImageEmbedRegex.exec(alias ?? "");
@@ -4172,7 +4018,7 @@ var quartzLatexRegex = new RegExp(/\$\$[\s\S]*?\$\$|\$.*?\$/, "g");
 
 // quartz/plugins/transformers/syntax.ts
 import rehypePrettyCode from "rehype-pretty-code";
-var defaultOptions8 = {
+var defaultOptions7 = {
   theme: {
     light: "github-light",
     dark: "github-dark"
@@ -4180,7 +4026,7 @@ var defaultOptions8 = {
   keepBackground: false
 };
 var SyntaxHighlighting = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions8, ...userOpts };
+  const opts = { ...defaultOptions7, ...userOpts };
   return {
     name: "SyntaxHighlighting",
     htmlPlugins() {
@@ -4193,7 +4039,7 @@ var SyntaxHighlighting = /* @__PURE__ */ __name((userOpts) => {
 import { visit as visit6 } from "unist-util-visit";
 import { toString as toString2 } from "mdast-util-to-string";
 import Slugger from "github-slugger";
-var defaultOptions9 = {
+var defaultOptions8 = {
   maxDepth: 3,
   minEntries: 1,
   showByDefault: true,
@@ -4201,7 +4047,7 @@ var defaultOptions9 = {
 };
 var slugAnchor2 = new Slugger();
 var TableOfContents = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions9, ...userOpts };
+  const opts = { ...defaultOptions8, ...userOpts };
   return {
     name: "TableOfContents",
     markdownPlugins() {
@@ -4254,11 +4100,11 @@ var roamItalicRegex = new RegExp(/__(.+)__/, "g");
 
 // quartz/plugins/transformers/sidenotes.ts
 import { visit as visit8 } from "unist-util-visit";
-var defaultOptions10 = {
+var defaultOptions9 = {
   enabled: true
 };
 var Sidenotes = /* @__PURE__ */ __name((userOpts) => {
-  const opts = { ...defaultOptions10, ...userOpts };
+  const opts = { ...defaultOptions9, ...userOpts };
   return {
     name: "Sidenotes",
     htmlPlugins() {
@@ -4388,7 +4234,7 @@ var RemoveDrafts = /* @__PURE__ */ __name(() => ({
 }), "RemoveDrafts");
 
 // quartz/plugins/emitters/contentPage.tsx
-import path6 from "path";
+import path5 from "path";
 
 // quartz/components/Header.tsx
 import { jsx } from "preact/jsx-runtime";
@@ -4420,9 +4266,6 @@ var lightbox_inline_default = "";
 // quartz/components/scripts/glossaryPopover.inline.ts
 var glossaryPopover_inline_default = "";
 
-// quartz/components/scripts/glossaryTooltip.inline.ts
-var glossaryTooltip_inline_default = "";
-
 // quartz/components/styles/clipboard.scss
 var clipboard_default = "";
 
@@ -4431,7 +4274,7 @@ import { jsx as jsx2 } from "preact/jsx-runtime";
 var Body = /* @__PURE__ */ __name(({ children }) => {
   return /* @__PURE__ */ jsx2("div", { id: "quartz-body", children });
 }, "Body");
-Body.afterDOMLoaded = clipboard_inline_default + lightbox_inline_default + glossaryPopover_inline_default + glossaryTooltip_inline_default;
+Body.afterDOMLoaded = clipboard_inline_default + lightbox_inline_default + glossaryPopover_inline_default;
 Body.css = clipboard_default;
 var Body_default = /* @__PURE__ */ __name((() => Body), "default");
 
@@ -4836,11 +4679,11 @@ PageList.css = `
 
 // quartz/components/pages/TagContent.tsx
 import { Fragment as Fragment2, jsx as jsx10, jsxs as jsxs4 } from "preact/jsx-runtime";
-var defaultOptions11 = {
+var defaultOptions10 = {
   numPages: 10
 };
 var TagContent_default = /* @__PURE__ */ __name(((opts) => {
-  const options2 = { ...defaultOptions11, ...opts };
+  const options2 = { ...defaultOptions10, ...opts };
   const TagContent = /* @__PURE__ */ __name((props) => {
     const { tree, fileData, allFiles, cfg } = props;
     const slug = fileData.slug;
@@ -4944,59 +4787,59 @@ var FileTrieNode = class _FileTrieNode {
     this.displayNameOverride = name;
   }
   get slug() {
-    const path12 = joinSegments(...this.slugSegments);
+    const path11 = joinSegments(...this.slugSegments);
     if (this.isFolder) {
-      return joinSegments(path12, "index");
+      return joinSegments(path11, "index");
     }
-    return path12;
+    return path11;
   }
   get slugSegment() {
     return this.slugSegments[this.slugSegments.length - 1];
   }
-  makeChild(path12, file) {
-    const fullPath = [...this.slugSegments, path12[0]];
+  makeChild(path11, file) {
+    const fullPath = [...this.slugSegments, path11[0]];
     const child = new _FileTrieNode(fullPath, file);
     this.children.push(child);
     return child;
   }
-  insert(path12, file) {
-    if (path12.length === 0) {
+  insert(path11, file) {
+    if (path11.length === 0) {
       throw new Error("path is empty");
     }
     this.isFolder = true;
-    const segment = path12[0];
-    if (path12.length === 1) {
+    const segment = path11[0];
+    if (path11.length === 1) {
       if (segment === "index") {
         this.data ??= file;
       } else {
-        this.makeChild(path12, file);
+        this.makeChild(path11, file);
       }
-    } else if (path12.length > 1) {
-      const child = this.children.find((c) => c.slugSegment === segment) ?? this.makeChild(path12, void 0);
+    } else if (path11.length > 1) {
+      const child = this.children.find((c) => c.slugSegment === segment) ?? this.makeChild(path11, void 0);
       const fileParts = file.filePath.split("/");
-      child.fileSegmentHint = fileParts.at(-path12.length);
-      child.insert(path12.slice(1), file);
+      child.fileSegmentHint = fileParts.at(-path11.length);
+      child.insert(path11.slice(1), file);
     }
   }
   // Add new file to trie
   add(file) {
     this.insert(file.slug.split("/"), file);
   }
-  findNode(path12) {
-    if (path12.length === 0 || path12.length === 1 && path12[0] === "index") {
+  findNode(path11) {
+    if (path11.length === 0 || path11.length === 1 && path11[0] === "index") {
       return this;
     }
-    return this.children.find((c) => c.slugSegment === path12[0])?.findNode(path12.slice(1));
+    return this.children.find((c) => c.slugSegment === path11[0])?.findNode(path11.slice(1));
   }
-  ancestryChain(path12) {
-    if (path12.length === 0 || path12.length === 1 && path12[0] === "index") {
+  ancestryChain(path11) {
+    if (path11.length === 0 || path11.length === 1 && path11[0] === "index") {
       return [this];
     }
-    const child = this.children.find((c) => c.slugSegment === path12[0]);
+    const child = this.children.find((c) => c.slugSegment === path11[0]);
     if (!child) {
       return void 0;
     }
-    const childPath = child.ancestryChain(path12.slice(1));
+    const childPath = child.ancestryChain(path11.slice(1));
     if (!childPath) {
       return void 0;
     }
@@ -5044,7 +4887,7 @@ var FileTrieNode = class _FileTrieNode {
    * @returns array containing folder state for trie
    */
   getFolderPaths() {
-    return this.entries().filter(([_, node]) => node.isFolder).map(([path12, _]) => path12);
+    return this.entries().filter(([_, node]) => node.isFolder).map(([path11, _]) => path11);
   }
 };
 
@@ -5067,13 +4910,13 @@ __name(trieFromAllFiles, "trieFromAllFiles");
 
 // quartz/components/pages/FolderContent.tsx
 import { jsx as jsx11, jsxs as jsxs5 } from "preact/jsx-runtime";
-var defaultOptions12 = {
+var defaultOptions11 = {
   showFolderCount: false,
   // Hidden for cleaner design
   showSubfolders: true
 };
 var FolderContent_default = /* @__PURE__ */ __name(((opts) => {
-  const options2 = { ...defaultOptions12, ...opts };
+  const options2 = { ...defaultOptions11, ...opts };
   const FolderContent = /* @__PURE__ */ __name((props) => {
     const { tree, fileData, allFiles, cfg } = props;
     const trie = props.ctx.trie ??= trieFromAllFiles(allFiles);
@@ -5641,13 +5484,13 @@ import satori from "satori";
 var U200D = String.fromCharCode(8205);
 
 // quartz/plugins/emitters/helpers.ts
-import path5 from "path";
-import fs3 from "fs";
+import path4 from "path";
+import fs2 from "fs";
 var write = /* @__PURE__ */ __name(async ({ ctx, slug, ext, content }) => {
   const pathToPage = joinSegments(ctx.argv.output, slug + ext);
-  const dir = path5.dirname(pathToPage);
-  await fs3.promises.mkdir(dir, { recursive: true });
-  await fs3.promises.writeFile(pathToPage, content);
+  const dir = path4.dirname(pathToPage);
+  await fs2.promises.mkdir(dir, { recursive: true });
+  await fs2.promises.writeFile(pathToPage, content);
   return pathToPage;
 }, "write");
 
@@ -5669,8 +5512,8 @@ var Head_default = /* @__PURE__ */ __name((() => {
     const description = fileData.frontmatter?.socialDescription ?? fileData.frontmatter?.description ?? unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description);
     const { css, js, additionalHead } = externalResources;
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`);
-    const path12 = url.pathname;
-    const baseDir = fileData.slug === "404" ? path12 : pathToRoot(fileData.slug);
+    const path11 = url.pathname;
+    const baseDir = fileData.slug === "404" ? path11 : pathToRoot(fileData.slug);
     const iconPath = joinSegments(baseDir, "static/icon.png");
     const socialUrl = fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug);
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
@@ -5755,12 +5598,12 @@ var contentMeta_default = "";
 
 // quartz/components/ContentMeta.tsx
 import { jsx as jsx20, jsxs as jsxs13 } from "preact/jsx-runtime";
-var defaultOptions13 = {
+var defaultOptions12 = {
   showReadingTime: true,
   showComma: true
 };
 var ContentMeta_default = /* @__PURE__ */ __name(((opts) => {
-  const options2 = { ...defaultOptions13, ...opts };
+  const options2 = { ...defaultOptions12, ...opts };
   function ContentMetadata({ cfg, fileData, displayClass }) {
     const text = fileData.text;
     const frontmatter = fileData.frontmatter;
@@ -5855,12 +5698,12 @@ document.addEventListener("nav", (e) => {
 
 // quartz/components/TableOfContents.tsx
 import { jsx as jsx23, jsxs as jsxs15 } from "preact/jsx-runtime";
-var defaultOptions14 = {
+var defaultOptions13 = {
   layout: "modern"
 };
 var numTocs = 0;
 var TableOfContents_default = /* @__PURE__ */ __name(((opts) => {
-  const layout = opts?.layout ?? defaultOptions14.layout;
+  const layout = opts?.layout ?? defaultOptions13.layout;
   const { OverflowList: OverflowList2, overflowListAfterDOMLoaded } = OverflowList_default();
   const TableOfContents2 = /* @__PURE__ */ __name(({
     fileData,
@@ -5977,7 +5820,7 @@ var graph_default = "";
 
 // quartz/components/Graph.tsx
 import { jsx as jsx26, jsxs as jsxs17 } from "preact/jsx-runtime";
-var defaultOptions15 = {
+var defaultOptions14 = {
   localGraph: {
     drag: true,
     zoom: true,
@@ -6011,8 +5854,8 @@ var defaultOptions15 = {
 };
 var Graph_default = /* @__PURE__ */ __name(((opts) => {
   const Graph = /* @__PURE__ */ __name(({ displayClass, cfg }) => {
-    const localGraph = { ...defaultOptions15.localGraph, ...opts?.localGraph };
-    const globalGraph = { ...defaultOptions15.globalGraph, ...opts?.globalGraph };
+    const localGraph = { ...defaultOptions14.localGraph, ...opts?.localGraph };
+    const globalGraph = { ...defaultOptions14.globalGraph, ...opts?.globalGraph };
     return /* @__PURE__ */ jsxs17("div", { class: classNames(displayClass, "graph"), children: [
       /* @__PURE__ */ jsx26("h3", { children: i18n(cfg.locale).components.graph.title }),
       /* @__PURE__ */ jsxs17("div", { class: "graph-outer", children: [
@@ -6050,11 +5893,11 @@ var backlinks_default = "";
 
 // quartz/components/Backlinks.tsx
 import { jsx as jsx27, jsxs as jsxs18 } from "preact/jsx-runtime";
-var defaultOptions16 = {
+var defaultOptions15 = {
   hideWhenEmpty: true
 };
 var Backlinks_default = /* @__PURE__ */ __name(((opts) => {
-  const options2 = { ...defaultOptions16, ...opts };
+  const options2 = { ...defaultOptions15, ...opts };
   const { OverflowList: OverflowList2, overflowListAfterDOMLoaded } = OverflowList_default();
   const Backlinks = /* @__PURE__ */ __name(({
     fileData,
@@ -6085,12 +5928,12 @@ var search_inline_default = "";
 
 // quartz/components/Search.tsx
 import { jsx as jsx28, jsxs as jsxs19 } from "preact/jsx-runtime";
-var defaultOptions17 = {
+var defaultOptions16 = {
   enablePreview: true
 };
 var Search_default = /* @__PURE__ */ __name(((userOpts) => {
   const Search = /* @__PURE__ */ __name(({ displayClass, cfg }) => {
-    const opts = { ...defaultOptions17, ...userOpts };
+    const opts = { ...defaultOptions16, ...userOpts };
     const searchPlaceholder = i18n(cfg.locale).components.search.searchBarPlaceholder;
     return /* @__PURE__ */ jsxs19("div", { class: classNames(displayClass, "search"), children: [
       /* @__PURE__ */ jsxs19("button", { class: "search-button", children: [
@@ -6190,7 +6033,7 @@ var breadcrumbs_default = "";
 
 // quartz/components/Breadcrumbs.tsx
 import { jsx as jsx33, jsxs as jsxs22 } from "preact/jsx-runtime";
-var defaultOptions18 = {
+var defaultOptions17 = {
   spacerSymbol: "\u203A",
   rootName: "Essays",
   rootNameFr: "Essais",
@@ -6218,7 +6061,7 @@ var sectionNames = {
   }
 };
 var Breadcrumbs_default = /* @__PURE__ */ __name(((opts) => {
-  const options2 = { ...defaultOptions18, ...opts };
+  const options2 = { ...defaultOptions17, ...opts };
   const Breadcrumbs = /* @__PURE__ */ __name(({
     fileData,
     allFiles,
@@ -6308,7 +6151,7 @@ var LanguageSwitcher_default = /* @__PURE__ */ __name((() => {
     const isEn = currentLang === "en";
     const translation = fileData.frontmatter?.translation;
     const baseUrl = cfg.baseUrl ? `/${cfg.baseUrl}` : "";
-    const normalizePath = /* @__PURE__ */ __name((path12) => path12.replace(/\/+$/, "") || "/", "normalizePath");
+    const normalizePath = /* @__PURE__ */ __name((path11) => path11.replace(/\/+$/, "") || "/", "normalizePath");
     let enPath = `${baseUrl}/en`;
     let frPath = `${baseUrl}/fr`;
     if (translation) {
@@ -6958,7 +6801,7 @@ var ContentPage = /* @__PURE__ */ __name((userOpts) => {
           styleText4(
             "yellow",
             `
-Warning: you seem to be missing an \`index.md\` home page file at the root of your \`${ctx.argv.directory}\` folder (\`${path6.join(ctx.argv.directory, "index.md")} does not exist\`). This may cause errors when deploying.`
+Warning: you seem to be missing an \`index.md\` home page file at the root of your \`${ctx.argv.directory}\` folder (\`${path5.join(ctx.argv.directory, "index.md")} does not exist\`). This may cause errors when deploying.`
           )
         );
       }
@@ -7110,7 +6953,7 @@ var TagPage = /* @__PURE__ */ __name((userOpts) => {
 }, "TagPage");
 
 // quartz/plugins/emitters/folderPage.tsx
-import path7 from "path";
+import path6 from "path";
 async function* processFolderInfo(ctx, folderInfo, allFiles, opts, resources) {
   for (const [folder, folderContent] of Object.entries(folderInfo)) {
     const slug = joinSegments(folder, "index");
@@ -7159,10 +7002,10 @@ function computeFolderInfo(folders, content, locale) {
 }
 __name(computeFolderInfo, "computeFolderInfo");
 function _getFolders(slug) {
-  var folderName = path7.dirname(slug ?? "");
+  var folderName = path6.dirname(slug ?? "");
   const parentFolderNames = [folderName];
   while (folderName !== ".") {
-    folderName = path7.dirname(folderName ?? "");
+    folderName = path6.dirname(folderName ?? "");
     parentFolderNames.push(folderName);
   }
   return parentFolderNames;
@@ -7230,7 +7073,7 @@ var FolderPage = /* @__PURE__ */ __name((userOpts) => {
 // quartz/plugins/emitters/contentIndex.tsx
 import { toHtml as toHtml2 } from "hast-util-to-html";
 import { jsx as jsx42 } from "preact/jsx-runtime";
-var defaultOptions19 = {
+var defaultOptions18 = {
   enableSiteMap: true,
   enableRSS: true,
   rssLimit: 10,
@@ -7282,7 +7125,7 @@ function generateRSSFeed(cfg, idx, limit) {
 }
 __name(generateRSSFeed, "generateRSSFeed");
 var ContentIndex = /* @__PURE__ */ __name((opts) => {
-  opts = { ...defaultOptions19, ...opts };
+  opts = { ...defaultOptions18, ...opts };
   return {
     name: "ContentIndex",
     async *emit(ctx, content) {
@@ -7357,11 +7200,11 @@ var ContentIndex = /* @__PURE__ */ __name((opts) => {
 }, "ContentIndex");
 
 // quartz/plugins/emitters/aliases.ts
-import path8 from "path";
+import path7 from "path";
 async function* processFile(ctx, file) {
   const ogSlug = simplifySlug(file.data.slug);
   for (const aliasTarget of file.data.aliases ?? []) {
-    const aliasTargetSlug = isRelativeURL(aliasTarget) ? path8.normalize(path8.join(ogSlug, "..", aliasTarget)) : aliasTarget;
+    const aliasTargetSlug = isRelativeURL(aliasTarget) ? path7.normalize(path7.join(ogSlug, "..", aliasTarget)) : aliasTarget;
     const redirUrl = resolveRelative(aliasTargetSlug, ogSlug);
     yield write({
       ctx,
@@ -7401,14 +7244,14 @@ var AliasRedirects = /* @__PURE__ */ __name(() => ({
 }), "AliasRedirects");
 
 // quartz/plugins/emitters/assets.ts
-import path10 from "path";
-import fs4 from "fs";
+import path9 from "path";
+import fs3 from "fs";
 
 // quartz/util/glob.ts
-import path9 from "path";
+import path8 from "path";
 import { globby } from "globby";
 function toPosixPath(fp) {
-  return fp.split(path9.sep).join("/");
+  return fp.split(path8.sep).join("/");
 }
 __name(toPosixPath, "toPosixPath");
 async function glob(pattern, cwd, ignorePatterns) {
@@ -7429,9 +7272,9 @@ var copyFile = /* @__PURE__ */ __name(async (argv, fp) => {
   const src = joinSegments(argv.directory, fp);
   const name = slugifyFilePath(fp);
   const dest = joinSegments(argv.output, name);
-  const dir = path10.dirname(dest);
-  await fs4.promises.mkdir(dir, { recursive: true });
-  await fs4.promises.copyFile(src, dest);
+  const dir = path9.dirname(dest);
+  await fs3.promises.mkdir(dir, { recursive: true });
+  await fs3.promises.copyFile(src, dest);
   return dest;
 }, "copyFile");
 var Assets = /* @__PURE__ */ __name(() => {
@@ -7445,14 +7288,14 @@ var Assets = /* @__PURE__ */ __name(() => {
     },
     async *partialEmit(ctx, _content, _resources, changeEvents) {
       for (const changeEvent of changeEvents) {
-        const ext = path10.extname(changeEvent.path);
+        const ext = path9.extname(changeEvent.path);
         if (ext === ".md") continue;
         if (changeEvent.type === "add" || changeEvent.type === "change") {
           yield copyFile(ctx.argv, changeEvent.path);
         } else if (changeEvent.type === "delete") {
           const name = slugifyFilePath(changeEvent.path);
           const dest = joinSegments(ctx.argv.output, name);
-          await fs4.promises.unlink(dest);
+          await fs3.promises.unlink(dest);
         }
       }
     }
@@ -7460,7 +7303,7 @@ var Assets = /* @__PURE__ */ __name(() => {
 }, "Assets");
 
 // quartz/plugins/emitters/static.ts
-import fs5 from "fs";
+import fs4 from "fs";
 import { dirname } from "path";
 var Static = /* @__PURE__ */ __name(() => ({
   name: "Static",
@@ -7468,12 +7311,12 @@ var Static = /* @__PURE__ */ __name(() => ({
     const staticPath = joinSegments(QUARTZ, "static");
     const fps = await glob("**", staticPath, cfg.configuration.ignorePatterns);
     const outputStaticPath = joinSegments(argv.output, "static");
-    await fs5.promises.mkdir(outputStaticPath, { recursive: true });
+    await fs4.promises.mkdir(outputStaticPath, { recursive: true });
     for (const fp of fps) {
       const src = joinSegments(staticPath, fp);
       const dest = joinSegments(outputStaticPath, fp);
-      await fs5.promises.mkdir(dirname(dest), { recursive: true });
-      await fs5.promises.copyFile(src, dest);
+      await fs4.promises.mkdir(dirname(dest), { recursive: true });
+      await fs4.promises.copyFile(src, dest);
       yield dest;
     }
   },
@@ -7835,7 +7678,7 @@ var NotFoundPage = /* @__PURE__ */ __name(() => {
       const cfg = ctx.cfg.configuration;
       const slug = "404";
       const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`);
-      const path12 = url.pathname;
+      const path11 = url.pathname;
       const notFound = i18n(cfg.locale).pages.error.title;
       const [tree, vfile] = defaultProcessedContent({
         slug,
@@ -7843,7 +7686,7 @@ var NotFoundPage = /* @__PURE__ */ __name(() => {
         description: notFound,
         frontmatter: { title: notFound, tags: [] }
       });
-      const externalResources = pageResources(path12, resources);
+      const externalResources = pageResources(path11, resources);
       const componentData = {
         ctx,
         fileData: vfile.data,
@@ -7928,13 +7771,13 @@ var config = {
       CrawlLinks({ markdownLinkResolution: "shortest" }),
       Description(),
       Latex({ renderEngine: "katex" }),
-      Sidenotes(),
-      GlossaryAutoLink({
-        glossaryPath: "en/lexicon/terms",
-        linkMode: "first",
-        caseSensitive: false,
-        excludeTags: ["code", "pre", "h1", "h2", "h3", "a"]
-      })
+      Sidenotes()
+      // Plugin.GlossaryAutoLink({
+      //   glossaryPath: "en/lexicon/terms",
+      //   linkMode: "first",
+      //   caseSensitive: false,
+      //   excludeTags: ["code", "pre", "h1", "h2", "h3", "a"],
+      // }),
     ],
     filters: [RemoveDrafts()],
     emitters: [
@@ -7983,7 +7826,7 @@ var PerfTimer = class {
 
 // quartz/processors/parse.ts
 import { read } from "to-vfile";
-import path11 from "path";
+import path10 from "path";
 import workerpool from "workerpool";
 
 // quartz/util/log.ts
@@ -8015,7 +7858,7 @@ function createFileParser(ctx, fps) {
           file.value = plugin.textTransform(ctx, file.value.toString());
         }
         file.data.filePath = file.path;
-        file.data.relativePath = path11.posix.relative(argv.directory, file.path);
+        file.data.relativePath = path10.posix.relative(argv.directory, file.path);
         file.data.slug = slugifyFilePath(file.data.relativePath);
         const ast = processor.parse(file);
         const newAst = await processor.run(ast, file);
@@ -8054,7 +7897,7 @@ Failed to process html \`${file.data.filePath}\``, err);
 __name(createMarkdownParser, "createMarkdownParser");
 
 // quartz/util/sourcemap.ts
-import fs6 from "fs";
+import fs5 from "fs";
 import { fileURLToPath } from "url";
 var options = {
   // source map hack to get around query param
@@ -8063,7 +7906,7 @@ var options = {
     if (source.includes(".quartz-cache")) {
       let realSource = fileURLToPath(source.split("?", 2)[0] + ".map");
       return {
-        map: fs6.readFileSync(realSource, "utf8")
+        map: fs5.readFileSync(realSource, "utf8")
       };
     } else {
       return null;
