@@ -1,0 +1,236 @@
+// =============================================
+// IMAGE THUMBNAILS & PREVIEW SYSTEM
+// =============================================
+
+// Thumbnails in article - aligned left
+article img {
+  display: block;
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--lightgray);
+  border-radius: 3px;
+  margin: 1rem 0;
+  
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// =============================================
+// IMAGE POPUP (preview on click)
+// =============================================
+
+.image-popup {
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  overflow: hidden;
+  
+  &.pinned {
+    position: fixed !important;
+    z-index: 1001 !important;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  // Empêche l'image de s'afficher en grand
+  img.popup-image {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+  }
+  
+  // Toolbar
+  .popup-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    background: #f5f5f5;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .popup-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0.3rem;
+    opacity: 0.7;
+    transition: opacity 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke: #333;
+      fill: none;
+    }
+    
+    &:hover {
+      opacity: 1;
+      border-color: #999;
+    }
+    
+    &.active {
+      opacity: 1;
+      border-color: #666;
+      background: #e0e0e0;
+    }
+  }
+  
+  // Image container
+  .popup-image {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+  }
+  
+  // Caption
+  .popup-caption {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+  }
+}
+
+// Dark mode popup
+[saved-theme="dark"] .image-popup {
+  background: #1a1a1a;
+  border-color: #333;
+  
+  .popup-toolbar {
+    background: #222;
+    border-bottom-color: #333;
+  }
+  
+  .popup-btn {
+    border-color: #555;
+    
+    svg {
+      stroke: #ccc;
+    }
+    
+    &:hover {
+      border-color: #888;
+    }
+    
+    &.active {
+      background: #444;
+      border-color: #888;
+    }
+  }
+  
+  .popup-caption {
+    background: #1a1a1a;
+    border-top-color: #333;
+    color: #999;
+  }
+}
+
+// =============================================
+// LIGHTBOX (fullscreen with navigation)
+// =============================================
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  
+  .lightbox-image {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+  }
+  
+  // Navigation arrows
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    &.prev {
+      left: 1rem;
+    }
+    
+    &.next {
+      right: 1rem;
+    }
+  }
+  
+  // Close button
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    
+    &:hover {
+      color: white;
+    }
+  }
+  
+  // Counter
+  .lightbox-counter {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+  }
+}
