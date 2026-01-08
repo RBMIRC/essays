@@ -158,9 +158,14 @@ async function showGlossaryPopup(link: HTMLAnchorElement) {
     const html = p.parseFromString(contents, "text/html")
     normalizeRelativeURLs(html, targetUrl)
 
-    // Get title
-    const titleEl = html.querySelector("h1.article-title, h1, .page-title")
-    const title = titleEl?.textContent || link.textContent || "Definition"
+    // Get title - look for article title, not site title
+    const articleTitle = html.querySelector("article h1.article-title") ||
+                         html.querySelector("article h1") ||
+                         html.querySelector(".article-title") ||
+                         html.querySelector("h1.article-title")
+    // Fallback to meta title or link text
+    const metaTitle = html.querySelector('meta[property="og:title"]')?.getAttribute("content")
+    const title = articleTitle?.textContent?.trim() || metaTitle || link.textContent?.trim() || "Definition"
 
     // Get content
     const article = html.querySelector("article.popover-hint") ||
@@ -244,6 +249,8 @@ document.addEventListener("nav", () => {
   for (const link of links) {
     if (isGlossaryLink(link)) {
       link.classList.add("glossary-link")
+      // Disable native Quartz popover for glossary links
+      link.dataset.noPopover = "true"
       link.addEventListener("mouseenter", glossaryMouseEnterHandler)
       link.addEventListener("mouseleave", glossaryMouseLeaveHandler)
       link.addEventListener("click", glossaryClickHandler)
