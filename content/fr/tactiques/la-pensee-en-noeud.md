@@ -35,29 +35,28 @@ tags:
 
 
 
+<details class="heredoc-block">
+<summary>◈ PENSEE-EN-NOEUD v1.0</summary>
+
+**Titre :** La pensée en nœud
+**Sous-titre :** Cartographies de surface
+**Auteur :** Sylvain Couzinet-Jacques
+**Date :** 2025
+**Intention :** Réflexion sur l'utilisation du logiciel Milanote
+**Provenance :** Workshop à l'École Nationale Supérieure d'Architecture de Versailles (2025)
+**Généalogie :** Peirce (raisonnement diagrammatique) → Latour/Lynch (inscriptions) → Deleuze/Guattari (rhizome) → Simondon (transduction)
+**Éthique :** Criticité · Profondeur · Résistance
+**Licence :** GPL-3.0-or-later
+**Chaîne de forks :** [Pédagogie architecturale] → actuel → [en attente du prochain fork]
+**Contamination :** Infusé de {STS, philosophie des techniques, capitalisme cognitif}
+**Confiance :** Essai réflexif issu d'observation pédagogique
+**Notes :** Apprendre en faisant
+
+</details>
+
 ## Cartographies de surface et vertiges de l'horizontalité
 
 par Sylvain Couzinet-Jacques
-
-```
-<<PENSEE-EN-NOEUD v1.0
-
-Title: La pensée en nœud
-Subtitle: Cartographies de surface
-Author: Sylvain Couzinet-Jacques
-Date: 2025
-Intent: Réflexion sur l'utilisation du logiciel Milanote
-Provenance: Workshop à l'Ecole Nationale Supérieure d'Architecture de Versailles (2025)
-Genealogy: Peirce (diagrammatic reasoning) → Latour/Lynch (inscriptions) → Deleuze/Guattari (rhizome) → Simondon (transduction)
-Ethics: Criticité · Profondeur · Résistance
-License: GPL-3.0-or-later
-Fork-chain: [Pédagogie architecturale] → current → [awaiting next fork]
-Contamination: Infused with {STS, philosophie des techniques, capitalisme cognitif}
-Confidence: Essai réflexif issu d'observation pédagogique
-Notes: Learning by doing
-
-<<PENSEE-EN-NOEUD
-```
 
 ---
 

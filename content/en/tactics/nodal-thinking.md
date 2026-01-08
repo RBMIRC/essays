@@ -38,30 +38,28 @@ tags:
   - _resistance
 ---
 
+<details class="heredoc-block">
+<summary>◈ NODAL-THINKING v1.0</summary>
+
+**Title:** Nodal Thinking
+**Subtitle:** Surface Cartographies
+**Author:** Sylvain Couzinet-Jacques
+**Date:** 2025
+**Intent:** Reflection on using Milanote software
+**Provenance:** Workshop at École Nationale Supérieure d'Architecture de Versailles (2025)
+**Genealogy:** Peirce (diagrammatic reasoning) → Latour/Lynch (inscriptions) → Deleuze/Guattari (rhizome) → Simondon (transduction)
+**Ethics:** Criticality · Depth · Resistance
+**License:** GPL-3.0-or-later
+**Fork-chain:** [Architectural pedagogy] → current → [awaiting next fork]
+**Contamination:** Infused with {STS, philosophy of technics, cognitive capitalism}
+**Confidence:** Reflective essay arising from pedagogical observation
+**Notes:** Learning by doing
+
+</details>
+
 # Nodal Thinking
 
-
 by Sylvain Couzinet-Jacques
-
-```
-<<NODAL-THINKING v1.0
-
-Title: Nodal Thinking
-Subtitle: Surface Cartographies
-Author: Sylvain Couzinet-Jacques
-Date: 2025
-Intent: Reflection on using Milanote software
-Provenance: Workshop at École Nationale Supérieure d'Architecture de Versailles (2025)
-Genealogy: Peirce (diagrammatic reasoning) → Latour/Lynch (inscriptions) → Deleuze/Guattari (rhizome) → Simondon (transduction)
-Ethics: Criticality · Depth · Resistance
-License: GPL-3.0-or-later
-Fork-chain: [Architectural pedagogy] → current → [awaiting next fork]
-Contamination: Infused with {STS, philosophy of technics, cognitive capitalism}
-Confidence: Reflective essay arising from pedagogical observation
-Notes: Learning by doing
-
-<<NODAL-THINKING
-```
 
 ---
 

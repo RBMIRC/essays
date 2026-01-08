@@ -35,31 +35,30 @@ tags:
   - _reflexivity
 ---
 
+<details class="heredoc-block">
+<summary>◈ DE-UNIVERSALIZING-TECHNICS v1.0</summary>
+
+**Title:** De-Universalizing Technics: Toward a Situated Artistic Practice
+**Subtitle:** On Engaging Cosmotechnics Without Extraction
+**Author:** Sylvain Couzinet-Jacques
+**Date:** 2025
+**Intent:** Developing ethical citational practices for engaging non-Western thought without extraction
+**Provenance:** Research-creation
+**Genealogy:** Hui (Cosmotechnics) → Rivera Cusicanqui (Epistemic Extractivism) → Glissant (Opacity) → Getachew & Mantena (Decolonizing Political Theory)
+**Ethics:** Situatedness · Opacity · Amplification
+**License:** GPL-3.0-or-later
+**Fork-chain:** [Cosmotechnics literature] → current → [awaiting next fork]
+**Contamination:** Informed by {Pluriverse, Afrofuturism, Black feminist technoscience, queer theory} without claiming them
+**Confidence:** Methodological framework, not prescriptive ruleset
+**Notes:** The risk of extraction is never fully eliminated; it can only be held in view
+
+</details>
+
 # De-Universalizing Technics: Toward a Situated Artistic Practice
 
 ## On Engaging Cosmotechnics Without Extraction
 
 by Sylvain Couzinet-Jacques
-
-```
-<<DE-UNIVERSALIZING-TECHNICS v1.0
-
-Title: De-Universalizing Technics: Toward a Situated Artistic Practice
-Subtitle: On Engaging Cosmotechnics Without Extraction
-Author: Sylvain Couzinet-Jacques
-Date: 2025
-Intent: Developing ethical citational practices for engaging non-Western thought without extraction
-Provenance: Research-creation
-Genealogy: Hui (Cosmotechnics) → Rivera Cusicanqui (Epistemic Extractivism) → Glissant (Opacity) → Getachew & Mantena (Decolonizing Political Theory)
-Ethics: Situatedness · Opacity · Amplification
-License: GPL-3.0-or-later
-Fork-chain: [Cosmotechnics literature] → current → [awaiting next fork]
-Contamination: Informed by {Pluriverse, Afrofuturism, Black feminist technoscience, queer theory} without claiming them
-Confidence: Methodological framework, not prescriptive ruleset
-Notes: The risk of extraction is never fully eliminated; it can only be held in view
-
-<<DE-UNIVERSALIZING-TECHNICS
-```
 
 ---
 

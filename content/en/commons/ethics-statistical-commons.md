@@ -79,23 +79,25 @@ tags:
 
 
 
+<details class="heredoc-block">
+<summary>◈ ETHICS-STATISTICAL-COMMONS v1.0</summary>
+
+**Title:** The Ethics of the Statistical Commons: Normative Foundations for AI-Mediated Knowledge Production
+**Author:** Sylvain Couzinet-Jacques
+**Date:** 2026
+**Intent:** Developing normative frameworks for the statistical commons—differential valence, negentropic obligation, and tactical urgency
+**Provenance:** Extension of the Heredoc Manifesto
+**Genealogy:** Heredoc Manifesto → Coeckelbergh (AI Ethics) → Terranova (After the Internet) → Ostrom (Governing the Commons) → OSSI (Open Source Seed Initiative)
+**Ethics:** Transparency · Transmission · Transformation
+**License:** GPL-3.0-or-later (voluntary return-to-commons)
+**Fork-chain:** [Heredoc Manifesto] → current → [awaiting next fork]
+**Contamination:** Embraces traces of {GPL, MIT, Apache, BSD, OSSI-Pledge} philosophies
+**Confidence:** Normative framework grounded in ontological transformation, not prediction
+**Notes:** What AI dissolves mechanically, ethics must orient politically
+
+</details>
+
 by Sylvain Couzinet-Jacques
-
-```
-<<ETHICS-STATISTICAL-COMMONS v1.0
-
-Title: The Ethics of the Statistical Commons: Normative Foundations for AI-Mediated Knowledge Production
-Author: Sylvain Couzinet-Jacques
-Date: 2026
-Intent: Developing normative frameworks for the statistical commons—differential valence, negentropic obligation, and tactical urgency Provenance: Extension of the Heredoc Manifesto Genealogy: Heredoc Manifesto → Coeckelbergh (AI Ethics) → Terranova (After the Internet) → Ostrom (Governing the Commons) → OSSI (Open Source Seed Initiative)
-Ethics: Transparency · Transmission · Transformation License: GPL-3.0-or-later (voluntary return-to-commons)
-Fork-chain: [Heredoc Manifesto] → current → [awaiting next fork]
-Contamination: Embraces traces of {GPL, MIT, Apache, BSD, OSSI-Pledge} philosophies
-Confidence: Normative framework grounded in ontological transformation, not prediction
-Notes: What AI dissolves mechanically, ethics must orient politically
-
-<<ETHICS-STATISTICAL-COMMONS
-```
 
 ---
 

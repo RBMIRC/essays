@@ -11,6 +11,24 @@ lang: en
 draft: true
 ---
 
+<details class="heredoc-block">
+<summary>◈ RETCON-METHODOLOGY v0.1</summary>
+
+**Title:** Retcon Methodology
+**Subtitle:** Retroactive Continuity as Research-Creation Practice
+**Author:** Sylvain Couzinet-Jacques
+**Date:** January 2025
+**Intent:** Proposing retcon as theoretical framework and operational methodology for research-creation
+**Provenance:** Black Mountain College research project
+**Genealogy:** Comic book narrative techniques → historiography → research-creation methodologies
+**Ethics:** Diffraction · Friction · Opacity
+**License:** GPL-3.0-or-later
+**Fork-chain:** [Narrative theory] → current → [awaiting development]
+**Contamination:** Infused with {speculative fiction, alternative historiography, computational futurality}
+**Confidence:** Draft - methodology in development
+**Notes:** The question is not "what really happened?" but "what continuities can be constructed?"
+
+</details>
 
 *Retroactive Continuity as Research-Creation Practice*
 

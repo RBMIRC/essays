@@ -34,29 +34,28 @@ tags:
 
 
 
-## Preambule au texte "Image Continuum" 
+<details class="heredoc-block">
+<summary>◈ QUEST-CE-QUUN-CONTINUUM v1.0</summary>
+
+**Titre :** Qu'est-ce qu'un continuum ?
+**Sous-titre :** Préambule au texte "Image Continuum"
+**Auteur :** Sylvain Couzinet-Jacques
+**Date :** 2025
+**Intention :** Définition du continuum adéquate à la médiation computationnelle
+**Provenance :** Introduction à "Image Continuum", écrit à l'occasion de la résidence à l'Institut pour la Photographie, 2024
+**Généalogie :** Parisi (Symbiotic Architecture) → Whitehead (Process and Reality) → Deleuze (Le Pli) → Chaitin (Omega) → Margulis (Endosymbiose)
+**Éthique :** Relationnalité · Incalculabilité · Symbiose
+**Licence :** GPL-3.0-or-later
+**Chaîne de forks :** [Philosophie du processus] → actuel → [en attente du prochain fork]
+**Contamination :** Infusé de {Parisi, Whitehead, Deleuze, Leibniz, Chaitin, Margulis}
+**Confiance :** Synthèse conceptuelle, non commentaire exhaustif
+**Notes :** Le continuum est le surplus incalculable qui rend la relation possible
+
+</details>
+
+## Préambule au texte "Image Continuum"
 
 par Sylvain Couzinet-Jacques
-
-```
-<<WHAT-IS-A-CONTINUUM v1.0
-
-Title: What is a Continuum?
-Subtitle: Foreword to "Image Continuum"
-Author: Sylvain Couzinet-Jacques
-Date: 2025
-Intent: Definition of the continuum adequate to computational mediation
-Provenance: Introduction to "Image Continuum", written at the occasion of the residency at Institut pour la Photographie, 2024
-Genealogy: Parisi (Symbiotic Architecture) → Whitehead (Process and Reality) → Deleuze (The Fold) → Chaitin (Omega) → Margulis (Endosymbiosis)
-Ethics: Relationality · Incomputability · Symbiosis
-License: GPL-3.0-or-later
-Fork-chain: [Process philosophy] → current → [awaiting next fork]
-Contamination: Infused with {Parisi, Whitehead, Deleuze, Leibniz, Chaitin, Margulis}
-Confidence: Conceptual synthesis, not exhaustive commentary
-Notes: The continuum is the incomputable surplus that makes relation possible
-
-<<WHAT-IS-A-CONTINUUM
-```
 
 ---
 

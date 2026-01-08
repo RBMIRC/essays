@@ -46,6 +46,25 @@ tags:
     
 ---
 
+<details class="heredoc-block">
+<summary>◈ ARCHIVE-LIQUIDE v1.0</summary>
+
+**Titre :** L'Archive Liquide
+**Sous-titre :** Workshop Retcon Black Mountain, École Nationale Supérieure de la Photographie, Arles
+**Auteur :** Sylvain Couzinet-Jacques
+**Date :** 2025
+**Intention :** Analyser la transformation de l'image quand elle perd sa fonction documentaire face à l'IA générative
+**Provenance :** Workshop ENSP Arles 2024, avec Mabe Bethonico
+**Généalogie :** Benjamin (inconscient optique) → Barthes (punctum) → Flusser (appareil) → Bauman (modernité liquide) → Stiegler (prolétarisation)
+**Éthique :** Diffraction · Friction · Opacité
+**Licence :** GPL-3.0-or-later
+**Chaîne de forks :** [Philosophie de la photographie] → actuel → [en attente du prochain fork]
+**Contamination :** Infusé de {New Aesthetic, archéologie des médias, études des plateformes, cosmotechnique}
+**Confiance :** Observations d'atelier ancrées dans un cadre théorique
+**Notes :** L'image ne témoigne plus de la distance ; elle rend « proximal » ce qui est statistiquement probable
+
+</details>
+
 ## Introduction : La crise de l'image comme crise politique
 
 ### Le point de départ : une expérience pédagogique

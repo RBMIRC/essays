@@ -11,6 +11,24 @@ lang: fr
 draft: true
 ---
 
+<details class="heredoc-block">
+<summary>◈ FUTURALITE-COMPUTATIONNELLE v0.1</summary>
+
+**Titre :** Futuralité computationnelle
+**Sous-titre :** Sur l'anticipation statistique et les communs numériques
+**Auteur :** Sylvain Couzinet-Jacques
+**Date :** Janvier 2025
+**Intention :** Examiner les implications de l'anticipation statistique pour les communs numériques
+**Provenance :** Projet doctoral de recherche-création
+**Généalogie :** Stiegler (protention tertiaire) → Hui (cosmotechnique) → Rouvroy (gouvernementalité algorithmique)
+**Éthique :** Diffraction · Friction · Opacité
+**Licence :** GPL-3.0-or-later
+**Chaîne de forks :** [Philosophie de la technique] → actuel → [en attente de développement]
+**Contamination :** Infusé de {études des plateformes, systèmes prédictifs, théorie des communs numériques}
+**Confiance :** Brouillon - cadre en développement
+**Notes :** L'archive ne se contente plus de stocker ; elle anticipe
+
+</details>
 
 *Sur l'anticipation statistique et les communs numériques*
 

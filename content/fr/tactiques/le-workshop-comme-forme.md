@@ -37,28 +37,27 @@ tags:
 
 
 
-## Pédagogies du faire entre Black Mountain College et l'Ecole Nartionale Supérieure d'Architecture de Versailles
+<details class="heredoc-block">
+<summary>◈ WORKSHOP-FORME v1.0</summary>
+
+**Titre :** Workshop
+**Sous-titre :** Pédagogies du faire entre Black Mountain College et ENSA Versailles
+**Auteur :** Sylvain Couzinet-Jacques
+**Date :** 2025
+**Intention :** Théoriser le workshop comme forme pédagogique productrice de savoir
+**Provenance :** École Nationale Supérieure d'Architecture de Versailles, 2024 + 2025
+**Généalogie :** Dewey (apprendre en faisant) → BMC (Albers) → Simondon/Stiegler (technique) → Ingold (faire) → Hutchins (cognition distribuée)
+**Éthique :** Friction · Co-présence · Communs
+**Licence :** GPL-3.0-or-later
+**Chaîne de forks :** [Black Mountain College 1933-1957] → [Versailles 2024 + 2025] → [en attente du prochain fork]
+**Contamination :** Infusé de {philosophie de la technique, anthropologie du faire, études situées}
+**Confiance :** Théorie issue de pratique pédagogique
+**Notes :** Le workshop est une machine à produire des situations
+
+</details>
+
+## Pédagogies du faire entre Black Mountain College et l'École Nationale Supérieure d'Architecture de Versailles
 par Sylvain Couzinet-Jacques
-
-```
-<<WORKSHOP-FORME v1.0
-
-Title: Workshop
-Subtitle: Pédagogies du faire entre Black Mountain College et ENSA Versailles
-Author: Sylvain Couzinet-Jacques
-Date: 2025
-Intent: Théoriser le workshop comme forme pédagogique productrice de savoir
-Provenance: Ecole Nationale Supérieure d'Architecture de Versailles, 2024 + 2025
-Genealogy: Dewey (learning by doing) → BMC (Albers) → Simondon/Stiegler (technique) → Ingold (making) → Hutchins (cognition distribuée)
-Ethics: Friction · Co-présence · Communs
-License: GPL-3.0-or-later
-Fork-chain: [Black Mountain College 1933-1957] → [Versailles 2024 + 2025] → [awaiting next fork]
-Contamination: Infused with {philosophie de la technique, anthropologie du faire, études situées}
-Confidence: Théorie issue de pratique pédagogique
-Notes: 
-
-<<WORKSHOP-FORME
-```
 
 ---
 

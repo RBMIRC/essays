@@ -32,29 +32,28 @@ tags:
   - discontinuous-continuity
 ---
 
+<details class="heredoc-block">
+<summary>◈ WHAT-IS-A-CONTINUUM v1.0</summary>
+
+**Title:** What is a Continuum?
+**Subtitle:** Foreword to "Image Continuum"
+**Author:** Sylvain Couzinet-Jacques
+**Date:** 2025
+**Intent:** Definition of the continuum adequate to computational mediation
+**Provenance:** Introduction to "Image Continuum", written at the occasion of the residency at Institut pour la Photographie, 2024
+**Genealogy:** Parisi (Symbiotic Architecture) → Whitehead (Process and Reality) → Deleuze (The Fold) → Chaitin (Omega) → Margulis (Endosymbiosis)
+**Ethics:** Relationality · Incomputability · Symbiosis
+**License:** GPL-3.0-or-later
+**Fork-chain:** [Process philosophy] → current → [awaiting next fork]
+**Contamination:** Infused with {Parisi, Whitehead, Deleuze, Leibniz, Chaitin, Margulis}
+**Confidence:** Conceptual synthesis, not exhaustive commentary
+**Notes:** The continuum is the incomputable surplus that makes relation possible
+
+</details>
+
 ## Foreword to "Image Continuum"
 
 by Sylvain Couzinet-Jacques
-
-```
-<<WHAT-IS-A-CONTINUUM v1.0
-
-Title: What is a Continuum?
-Subtitle: Foreword to "Image Continuum"
-Author: Sylvain Couzinet-Jacques
-Date: 2025
-Intent: Definition of the continuum adequate to computational mediation
-Provenance: Introduction to "Image Continuum", written at the occasion of the residency at Institut pour la Photographie, 2024
-Genealogy: Parisi (Symbiotic Architecture) → Whitehead (Process and Reality) → Deleuze (The Fold) → Chaitin (Omega) → Margulis (Endosymbiosis)
-Ethics: Relationality · Incomputability · Symbiosis
-License: GPL-3.0-or-later
-Fork-chain: [Process philosophy] → current → [awaiting next fork]
-Contamination: Infused with {Parisi, Whitehead, Deleuze, Leibniz, Chaitin, Margulis}
-Confidence: Conceptual synthesis, not exhaustive commentary
-Notes: The continuum is the incomputable surplus that makes relation possible
-
-<<WHAT-IS-A-CONTINUUM
-```
 
 ---
 

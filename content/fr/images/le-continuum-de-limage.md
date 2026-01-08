@@ -41,29 +41,28 @@ tags:
 
 
 
+<details class="heredoc-block">
+<summary>◈ CONTINUUM-IMAGE v1.0</summary>
+
+**Titre :** Le continuum de l'image
+**Sous-titre :** De la transformation ontologique de la photographie à l'ère des systèmes génératifs
+**Auteur :** Sylvain Couzinet-Jacques
+**Date :** 2024
+**Intention :** De la photographie analogique à l'image générée par IA
+**Provenance :** Institut pour la Photographie, Lille
+**Généalogie :** Barthes (La chambre claire) → Stiegler (La Technique et le Temps) → Simondon (Individuation) → Flusser (Images techniques) → Hui (Cosmotechnique)
+**Éthique :** Reconnaissance · Spéculation · Technodiversité
+**Licence :** GPL-3.0-or-later
+**Chaîne de forks :** [Philosophie de la technique] → actuel → [en attente du prochain fork]
+**Contamination :** Infusé de {théorie indicielle, archéologie des médias, philosophie du processus, médias imaginaires}
+**Confiance :** Synthèse théorique orientée vers la pratique
+**Notes :** Le singulier ne disparaît pas ; il se transforme
+
+</details>
+
 ## De la photographie à l'ère des systèmes génératifs
 
 par Sylvain Couzinet-Jacques
-
-```
-<<IMAGE-CONTINUUM v1.0
-
-Title: The Image Continuum
-Subtitle: On the Ontological Transformation of the Photograph in the Age of Generative Systems
-Author: Sylvain Couzinet-Jacques
-Date: 2024
-Intent: From analog photograph to AI generated image 
-Provenance: Institut pour la Photographie, Lille
-Genealogy: Barthes (Camera Lucida) → Stiegler (Technics and Time) → Simondon (Individuation) → Flusser (Technical Images) → Hui (Cosmotechnics)
-Ethics: Acknowledgment · Speculation · Technodiversity
-License: GPL-3.0-or-later
-Fork-chain: [Philosophy of technics] → current → [awaiting next fork]
-Contamination: Infused with {indexical theory, media archaeology, process philosophy, imaginary media}
-Confidence: Theoretical synthesis oriented toward practice
-Notes: The singular does not disappear; it is transformed
-
-<<IMAGE-CONTINUUM
-```
 
 ---
 
