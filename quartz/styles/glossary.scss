@@ -149,11 +149,11 @@ a.glossary-link {
   // Pinned state
   &.pinned {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    border-color: #284b63;
+    border-color: #4a4a4a;
 
     .glossary-popup-toolbar {
-      background: #284b63 !important;
-      border-bottom-color: #284b63;
+      background: #4a4a4a !important;
+      border-bottom-color: #4a4a4a;
       cursor: move;
 
       .glossary-popup-title {
