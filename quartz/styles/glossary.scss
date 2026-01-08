@@ -1,5 +1,147 @@
 // Glossary Popup Styles (similar to image-popup)
 
+// =============================================
+// GLOSSARY AUTO-LINK TOOLTIP (inline terms)
+// =============================================
+
+// Auto-linked glossary term (dotted underline)
+.glossary-term {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--gray);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: help;
+  position: relative;
+
+  &::after {
+    content: "°";
+    font-size: 0.65em;
+    vertical-align: super;
+    color: var(--gray);
+    margin-left: 1px;
+  }
+
+  &:hover {
+    text-decoration-color: var(--darkgray);
+
+    &::after {
+      color: var(--darkgray);
+    }
+  }
+}
+
+// Tooltip container
+.glossary-tooltip {
+  position: fixed;
+  max-width: 320px;
+  padding: 0.75rem 1rem;
+  background: var(--light);
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  pointer-events: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Arrow
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--light);
+    border: 1px solid var(--gray);
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+  }
+
+  &.tooltip-above::before {
+    bottom: -6px;
+    left: 20px;
+    transform: rotate(-135deg);
+  }
+
+  &.tooltip-below::before {
+    top: -6px;
+    left: 20px;
+    transform: rotate(45deg);
+  }
+
+  // Term title
+  .tooltip-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .tooltip-author {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+
+  // Definition text
+  .tooltip-definition {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--darkgray);
+    margin-bottom: 0.5rem;
+  }
+
+  // Link to full page
+  .tooltip-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--secondary);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--dark);
+      text-decoration: underline;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+// Dark mode adjustments for tooltip
+:root[saved-theme="dark"] {
+  .glossary-tooltip {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// Mobile adjustments for tooltip
+@media (max-width: 768px) {
+  .glossary-tooltip {
+    max-width: calc(100vw - 2rem);
+    left: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+// =============================================
+// GLOSSARY LINK POPUP (for [[wikilinks]])
+// =============================================
+
 // Glossary link indicator
 a.glossary-link {
   text-decoration-style: dotted;

@@ -1,4 +1,5 @@
 export { HeredocTransformer } from "./heredoc"
+export { GlossaryAutoLink } from "./glossaryAutoLink"
 export { FrontMatter } from "./frontmatter"
 export { GitHubFlavoredMarkdown } from "./gfm"
 export { Citations } from "./citations"
