@@ -177,6 +177,13 @@ async function showGlossaryPopup(link: HTMLAnchorElement) {
 function glossaryMouseEnterHandler(this: HTMLAnchorElement) {
   if (!isGlossaryLink(this)) return
   if (hideTimeout) { clearTimeout(hideTimeout); hideTimeout = null }
+
+  // If hovering a different link, close the current popup immediately
+  if (hoverLink !== this && hoverPopup && !hoverPopup.classList.contains("pinned")) {
+    hoverPopup.remove()
+    hoverPopup = null
+  }
+
   hoverLink = this
   showGlossaryPopup(this)
 }
