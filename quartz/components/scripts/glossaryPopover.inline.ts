@@ -198,13 +198,7 @@ function glossaryClickHandler(this: HTMLAnchorElement, e: MouseEvent) {
   e.preventDefault()
 }
 
-document.addEventListener("nav", () => {
-  document.querySelectorAll(".glossary-popup").forEach(el => el.remove())
-  hoverPopup = null
-  hoverLink = null
-  pinnedPopups.clear()
-  if (hideTimeout) { clearTimeout(hideTimeout); hideTimeout = null }
-
+function initGlossaryLinks() {
   const allLinks = [...document.querySelectorAll("a[href]")] as HTMLAnchorElement[]
   for (const link of allLinks) {
     if (isGlossaryLink(link) && !link.classList.contains("glossary-link")) {
@@ -213,12 +207,27 @@ document.addEventListener("nav", () => {
       link.addEventListener("mouseenter", glossaryMouseEnterHandler)
       link.addEventListener("mouseleave", glossaryMouseLeaveHandler)
       link.addEventListener("click", glossaryClickHandler)
-
-      window.addCleanup(() => {
-        link.removeEventListener("mouseenter", glossaryMouseEnterHandler)
-        link.removeEventListener("mouseleave", glossaryMouseLeaveHandler)
-        link.removeEventListener("click", glossaryClickHandler)
-      })
     }
   }
+}
+
+function cleanupGlossary() {
+  document.querySelectorAll(".glossary-popup").forEach(el => el.remove())
+  hoverPopup = null
+  hoverLink = null
+  pinnedPopups.clear()
+  if (hideTimeout) { clearTimeout(hideTimeout); hideTimeout = null }
+}
+
+// Run on Quartz navigation
+document.addEventListener("nav", () => {
+  cleanupGlossary()
+  initGlossaryLinks()
 })
+
+// Also run on initial page load
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initGlossaryLinks)
+} else {
+  initGlossaryLinks()
+}
