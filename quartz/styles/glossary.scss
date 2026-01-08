@@ -1,4 +1,4 @@
-// Glossary Popover and Panel Styles
+// Glossary Popup Styles (similar to image-popup)
 
 // Glossary link indicator
 a.glossary-link {
@@ -14,75 +14,11 @@ a.glossary-link {
   }
 }
 
-// Glossary popover
-.glossary-popover {
-  max-width: 400px;
-  max-height: 350px;
-
-  .glossary-popover-inner {
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .glossary-popover-header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0.3rem 0.5rem;
-    background: var(--lightgray);
-    border-bottom: 1px solid var(--gray);
-  }
-
-  .glossary-pin-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.2rem;
-    color: var(--darkgray);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      background: var(--gray);
-      color: var(--dark);
-    }
-
-    svg {
-      width: 14px;
-      height: 14px;
-    }
-  }
-
-  article {
-    padding: 0.75rem;
-    overflow-y: auto;
-    max-height: 280px;
-
-    h1 {
-      font-size: 1.1rem;
-      margin: 0 0 0.5rem 0;
-    }
-
-    p {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin: 0.5rem 0;
-    }
-
-    strong {
-      color: var(--dark);
-    }
-  }
-}
-
-// Pinned glossary panels
-.glossary-panel {
+// Glossary popup (like image-popup)
+.glossary-popup {
   position: fixed;
-  width: 380px;
-  max-height: 500px;
+  width: 400px;
+  max-height: 450px;
   background: var(--light);
   border: 1px solid var(--gray);
   border-radius: 8px;
@@ -90,83 +26,105 @@ a.glossary-link {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 1000;
 
-  &.pinned {
-    z-index: 1000;
-  }
-
-  .glossary-panel-header {
+  // Toolbar with title and buttons
+  .glossary-popup-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 0.8rem;
+    padding: 0.5rem 0.75rem;
     background: var(--lightgray);
     border-bottom: 1px solid var(--gray);
     user-select: none;
+    gap: 0.5rem;
   }
 
-  .glossary-panel-title {
+  .glossary-popup-title {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--dark);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     flex: 1;
-    margin-right: 0.5rem;
   }
 
-  .glossary-panel-close {
+  .glossary-popup-buttons {
+    display: flex;
+    gap: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .glossary-popup-btn {
     background: none;
     border: none;
-    font-size: 1.4rem;
-    line-height: 1;
-    color: var(--darkgray);
     cursor: pointer;
-    padding: 0 0.3rem;
-    border-radius: 3px;
+    padding: 0.35rem;
+    color: var(--darkgray);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
 
     &:hover {
       background: var(--gray);
       color: var(--dark);
     }
+
+    &.active {
+      background: var(--secondary);
+      color: var(--light);
+
+      &:hover {
+        background: var(--tertiary);
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 
-  .glossary-panel-body {
+  // Content area
+  .glossary-popup-content {
     overflow-y: auto;
-    padding: 0.8rem;
+    padding: 0.75rem;
     flex: 1;
+    max-height: 380px;
 
     article {
-      h1 {
-        font-size: 1.15rem;
-        margin: 0 0 0.75rem 0;
+      h1, h2.article-title {
+        font-size: 1.1rem;
+        margin: 0 0 0.6rem 0;
       }
 
       h2 {
         font-size: 1rem;
-        margin: 1rem 0 0.5rem 0;
+        margin: 0.8rem 0 0.4rem 0;
       }
 
       h3 {
         font-size: 0.95rem;
-        margin: 0.8rem 0 0.4rem 0;
+        margin: 0.6rem 0 0.3rem 0;
       }
 
       p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        margin: 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        margin: 0.4rem 0;
       }
 
       ul, ol {
-        font-size: 0.9rem;
-        padding-left: 1.5rem;
-        margin: 0.5rem 0;
+        font-size: 0.88rem;
+        padding-left: 1.4rem;
+        margin: 0.4rem 0;
       }
 
       li {
-        margin: 0.3rem 0;
+        margin: 0.25rem 0;
       }
 
       a {
@@ -177,7 +135,7 @@ a.glossary-link {
         }
       }
 
-      // Hide unnecessary elements in panel
+      // Hide unnecessary elements
       .backlinks,
       .graph,
       .toc,
@@ -187,34 +145,46 @@ a.glossary-link {
       }
     }
   }
-}
 
-// Resize handle for panels (optional enhancement)
-.glossary-panel-resize {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 15px;
-  height: 15px;
-  cursor: se-resize;
+  // Pinned state
+  &.pinned {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--secondary);
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 3px;
-    right: 3px;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--gray);
-    border-bottom: 2px solid var(--gray);
+    .glossary-popup-toolbar {
+      background: var(--secondary);
+      border-bottom-color: var(--secondary);
+      cursor: move;
+
+      .glossary-popup-title {
+        color: var(--light);
+      }
+
+      .glossary-popup-btn {
+        color: rgba(255, 255, 255, 0.8);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+          color: var(--light);
+        }
+
+        &.active {
+          background: rgba(255, 255, 255, 0.3);
+          color: var(--light);
+        }
+      }
+    }
   }
 }
 
 // Dark mode adjustments
 :root[saved-theme="dark"] {
-  .glossary-popover,
-  .glossary-panel {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  .glossary-popup {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+
+    &.pinned {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    }
   }
 
   a.glossary-link::after {
@@ -224,13 +194,10 @@ a.glossary-link {
 
 // Mobile adjustments
 @media (max-width: 768px) {
-  .glossary-popover {
-    max-width: calc(100vw - 2rem);
-  }
-
-  .glossary-panel {
+  .glossary-popup {
     width: calc(100vw - 2rem);
-    max-width: 380px;
+    max-width: 400px;
     left: 1rem !important;
+    right: 1rem !important;
   }
 }
