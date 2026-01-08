@@ -149,28 +149,28 @@ a.glossary-link {
   // Pinned state
   &.pinned {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    border-color: var(--secondary);
+    border-color: #284b63;
 
     .glossary-popup-toolbar {
-      background: var(--secondary);
-      border-bottom-color: var(--secondary);
+      background: #284b63 !important;
+      border-bottom-color: #284b63;
       cursor: move;
 
       .glossary-popup-title {
-        color: var(--light);
+        color: #fff !important;
       }
 
       .glossary-popup-btn {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.8) !important;
 
         &:hover {
           background: rgba(255, 255, 255, 0.2);
-          color: var(--light);
+          color: #fff !important;
         }
 
         &.active {
           background: rgba(255, 255, 255, 0.3);
-          color: var(--light);
+          color: #fff !important;
         }
       }
     }
