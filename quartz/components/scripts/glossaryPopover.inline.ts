@@ -46,27 +46,18 @@ function createPopup(content: HTMLElement, title: string, url: string, rect: DOM
     left: ${Math.min(rect.right + 10, window.innerWidth - 420)}px;
     top: ${Math.min(rect.top, window.innerHeight - 400)}px;
     z-index: ${++popupZIndex};
-    width: 400px;
-    max-height: 450px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
   `
 
   popup.innerHTML = `
-    <div class="glossary-popup-toolbar" style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem;background:#f5f5f5;border-bottom:1px solid #ddd;">
-      <span class="glossary-popup-title" style="font-weight:600;font-size:0.9rem;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${title}</span>
-      <div class="glossary-popup-buttons" style="display:flex;gap:0.25rem;">
-        <button class="glossary-popup-btn pin-btn" title="Pin" style="background:none;border:none;cursor:pointer;padding:4px;">${pinIcon}</button>
-        <button class="glossary-popup-btn link-btn" title="Go to page" style="background:none;border:none;cursor:pointer;padding:4px;">${linkIcon}</button>
-        <button class="glossary-popup-btn close-btn" title="Close" style="background:none;border:none;cursor:pointer;padding:4px;">${closeIcon}</button>
+    <div class="glossary-popup-toolbar">
+      <span class="glossary-popup-title">${title}</span>
+      <div class="glossary-popup-buttons">
+        <button class="glossary-popup-btn pin-btn" title="Pin">${pinIcon}</button>
+        <button class="glossary-popup-btn link-btn" title="Go to page">${linkIcon}</button>
+        <button class="glossary-popup-btn close-btn" title="Close">${closeIcon}</button>
       </div>
     </div>
-    <div class="glossary-popup-content" style="overflow-y:auto;padding:0.75rem;flex:1;max-height:380px;"></div>
+    <div class="glossary-popup-content"></div>
   `
 
   const contentDiv = popup.querySelector(".glossary-popup-content") as HTMLElement
@@ -96,17 +87,13 @@ function createPopup(content: HTMLElement, title: string, url: string, rect: DOM
         if (oldest) { oldest.remove(); pinnedPopups.delete(oldest) }
       }
       popup.classList.add("pinned")
-      popup.style.borderColor = "#284b63"
-      pinBtn.style.background = "#284b63"
-      pinBtn.style.color = "white"
+      pinBtn.classList.add("active")
       pinnedPopups.add(popup)
       makeDraggable(popup)
       if (hoverPopup === popup) { hoverPopup = null; hoverLink = null }
     } else {
       popup.classList.remove("pinned")
-      popup.style.borderColor = "#ccc"
-      pinBtn.style.background = "none"
-      pinBtn.style.color = "inherit"
+      pinBtn.classList.remove("active")
       pinnedPopups.delete(popup)
     }
   })
