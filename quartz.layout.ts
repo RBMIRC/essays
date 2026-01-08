@@ -16,6 +16,12 @@ export const sharedPageComponents: SharedLayout = {
       showCount: false,
     }),
     Component.ImagePreview(),
+    Component.Hypothesis({
+      // groupId: "your-group-id",  // Décommenter pour groupe privé
+      openSidebar: false,
+      theme: 'clean',
+      disableOnPaths: ['/lexicon', '/lexique', '/figures', '/en/lexicon', '/fr/lexique'],
+    }),
   ],
   footer: Component.Footer({
     links: {}, // Vide - plus de liens dans le footer

@@ -28,6 +28,7 @@ import Navigation from "./Navigation"
 import TagCloud from "./TagCloud"
 import ImagePreview from "./ImagePreview"
 import ExternalLinks from "./ExternalLinks"
+import Hypothesis from "./Hypothesis"
 
 export {
   ArticleTitle,
@@ -60,4 +61,5 @@ export {
   TagCloud,
   ImagePreview,
   ExternalLinks,
+  Hypothesis,
 }

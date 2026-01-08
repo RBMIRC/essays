@@ -6639,6 +6639,77 @@ ExternalLinks.css = `
 `;
 var ExternalLinks_default = /* @__PURE__ */ __name((() => ExternalLinks), "default");
 
+// quartz/components/Hypothesis.tsx
+var defaultOptions18 = {
+  groupId: void 0,
+  openSidebar: false,
+  theme: "clean",
+  disableOnPaths: ["/lexicon", "/lexique", "/figures"]
+};
+var Hypothesis_default = /* @__PURE__ */ __name(((userOpts) => {
+  const opts = { ...defaultOptions18, ...userOpts };
+  const Hypothesis = /* @__PURE__ */ __name(({ fileData }) => {
+    if (opts.disableOnPaths?.some((path11) => fileData.slug?.startsWith(path11.replace(/^\//, "")))) {
+      return null;
+    }
+    return null;
+  }, "Hypothesis");
+  Hypothesis.afterDOMLoaded = `
+    (function() {
+      // Configuration Hypothes.is
+      window.hypothesisConfig = function() {
+        return {
+          ${opts.groupId ? `"group": "${opts.groupId}",` : ""}
+          "openSidebar": ${opts.openSidebar},
+          "theme": "${opts.theme}",
+          "showHighlights": true,
+          "appType": "via",
+          "ignoreSelector": "[data-hypothesis-ignore], .no-annotation, pre, code, .glossary-popup, .glossary-tooltip, .graph, .explorer, .toc, .backlinks"
+        };
+      };
+
+      // Charger le script
+      var script = document.createElement('script');
+      script.src = 'https://hypothes.is/embed.js';
+      script.async = true;
+      document.head.appendChild(script);
+    })();
+  `;
+  Hypothesis.css = `
+    /* Ajuster le sidebar pour ne pas chevaucher le contenu Quartz */
+    .annotator-frame {
+      z-index: 1000 !important;
+    }
+
+    /* Style des highlights - grayscale theme */
+    hypothesis-highlight {
+      background-color: rgba(128, 128, 128, 0.25) !important;
+      cursor: pointer;
+    }
+
+    hypothesis-highlight:hover {
+      background-color: rgba(128, 128, 128, 0.4) !important;
+    }
+
+    /* Mode sombre */
+    [saved-theme="dark"] hypothesis-highlight {
+      background-color: rgba(180, 180, 180, 0.2) !important;
+    }
+
+    [saved-theme="dark"] hypothesis-highlight:hover {
+      background-color: rgba(180, 180, 180, 0.35) !important;
+    }
+
+    /* Cacher sur mobile si trop intrusif */
+    @media (max-width: 768px) {
+      .annotator-frame.annotator-collapsed {
+        display: none;
+      }
+    }
+  `;
+  return Hypothesis;
+}), "default");
+
 // quartz.layout.ts
 var sharedPageComponents = {
   head: Head_default(),
@@ -6653,7 +6724,13 @@ var sharedPageComponents = {
       limit: 20,
       showCount: false
     }),
-    ImagePreview_default()
+    ImagePreview_default(),
+    Hypothesis_default({
+      // groupId: "your-group-id",  // Décommenter pour groupe privé
+      openSidebar: false,
+      theme: "clean",
+      disableOnPaths: ["/lexicon", "/lexique", "/figures", "/en/lexicon", "/fr/lexique"]
+    })
   ],
   footer: Footer_default({
     links: {}
@@ -7069,7 +7146,7 @@ var FolderPage = /* @__PURE__ */ __name((userOpts) => {
 // quartz/plugins/emitters/contentIndex.tsx
 import { toHtml as toHtml2 } from "hast-util-to-html";
 import { jsx as jsx42 } from "preact/jsx-runtime";
-var defaultOptions18 = {
+var defaultOptions19 = {
   enableSiteMap: true,
   enableRSS: true,
   rssLimit: 10,
@@ -7121,7 +7198,7 @@ function generateRSSFeed(cfg, idx, limit) {
 }
 __name(generateRSSFeed, "generateRSSFeed");
 var ContentIndex = /* @__PURE__ */ __name((opts) => {
-  opts = { ...defaultOptions18, ...opts };
+  opts = { ...defaultOptions19, ...opts };
   return {
     name: "ContentIndex",
     async *emit(ctx, content) {
