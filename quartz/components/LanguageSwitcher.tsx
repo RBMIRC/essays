@@ -30,20 +30,24 @@ export default (() => {
     // Build base path from config
     const baseUrl = cfg.baseUrl ? `/${cfg.baseUrl}` : ""
 
-    // Build target paths
-    let enPath = `${baseUrl}/en/`
-    let frPath = `${baseUrl}/fr/`
+    // Helper to normalize path (remove trailing slash)
+    const normalizePath = (path: string) => path.replace(/\/+$/, "") || "/"
+
+    // Build target paths (without trailing slashes for GitHub Pages compatibility)
+    let enPath = `${baseUrl}/en`
+    let frPath = `${baseUrl}/fr`
 
     if (translation) {
       // Use explicit translation link for the OTHER language
       // The translation field contains path like "/fr/communs/manifeste-heredoc/"
-      const currentPath = `${baseUrl}/${slug}/`
+      const currentPath = normalizePath(`${baseUrl}/${slug}`)
+      const translationPath = normalizePath(`${baseUrl}${translation}`)
       if (isEn) {
         enPath = currentPath
-        frPath = `${baseUrl}${translation}`
+        frPath = translationPath
       } else {
         frPath = currentPath
-        enPath = `${baseUrl}${translation}`
+        enPath = translationPath
       }
     } else if (parts.length > 1) {
       // Fallback: automatic path mapping
@@ -51,11 +55,11 @@ export default (() => {
 
       // For EN path: map FR sections to EN
       const enParts = pathParts.map((p, i) => i === 0 && frToEn[p] ? frToEn[p] : p)
-      enPath = `${baseUrl}/en/${enParts.join("/")}/`
+      enPath = `${baseUrl}/en/${enParts.join("/")}`
 
       // For FR path: map EN sections to FR
       const frParts = pathParts.map((p, i) => i === 0 && enToFr[p] ? enToFr[p] : p)
-      frPath = `${baseUrl}/fr/${frParts.join("/")}/`
+      frPath = `${baseUrl}/fr/${frParts.join("/")}`
     }
 
     return (
