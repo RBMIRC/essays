@@ -4266,9 +4266,6 @@ var lightbox_inline_default = "";
 // quartz/components/scripts/glossaryPopover.inline.ts
 var glossaryPopover_inline_default = "";
 
-// quartz/components/scripts/glossaryAutoLink.inline.ts
-var glossaryAutoLink_inline_default = "";
-
 // quartz/components/styles/clipboard.scss
 var clipboard_default = "";
 
@@ -4277,7 +4274,7 @@ import { jsx as jsx2 } from "preact/jsx-runtime";
 var Body = /* @__PURE__ */ __name(({ children }) => {
   return /* @__PURE__ */ jsx2("div", { id: "quartz-body", children });
 }, "Body");
-Body.afterDOMLoaded = clipboard_inline_default + lightbox_inline_default + glossaryPopover_inline_default + glossaryAutoLink_inline_default;
+Body.afterDOMLoaded = clipboard_inline_default + lightbox_inline_default + glossaryPopover_inline_default;
 Body.css = clipboard_default;
 var Body_default = /* @__PURE__ */ __name((() => Body), "default");
 
