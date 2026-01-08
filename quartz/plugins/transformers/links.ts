@@ -37,6 +37,9 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
   return {
     name: "LinkProcessing",
     htmlPlugins(ctx) {
+      // Get baseUrl from config for absolute path generation
+      const baseUrl = ctx.cfg.configuration.baseUrl ? `/${ctx.cfg.configuration.baseUrl}` : ""
+
       return [
         () => {
           return (tree: Root, file) => {
@@ -103,7 +106,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
                   isAbsoluteUrl(dest, { httpOnly: false }) || dest.startsWith("#")
                 )
                 if (isInternal) {
-                  dest = node.properties.href = transformLink(
+                  dest = transformLink(
                     file.data.slug!,
                     dest,
                     transformOptions,
@@ -123,6 +126,9 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
                   const simple = simplifySlug(full)
                   outgoing.add(simple)
                   node.properties["data-slug"] = full
+
+                  // Convert to absolute path with baseUrl
+                  node.properties.href = `${baseUrl}/${full}`
                 }
 
                 // rewrite link internals if prettylinks is on
@@ -149,12 +155,15 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
 
                 if (!isAbsoluteUrl(node.properties.src, { httpOnly: false })) {
                   let dest = node.properties.src as RelativeURL
-                  dest = node.properties.src = transformLink(
+                  dest = transformLink(
                     file.data.slug!,
                     dest,
                     transformOptions,
                   )
-                  node.properties.src = dest
+                  // Convert to absolute path with baseUrl
+                  const url = new URL(dest, "https://base.com/" + stripSlashes(curSlug, true))
+                  const canonicalDest = decodeURIComponent(stripSlashes(url.pathname, true))
+                  node.properties.src = `${baseUrl}/${canonicalDest}`
                 }
               }
             })

@@ -52,6 +52,9 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
     list = list.slice(0, limit)
   }
 
+  // Build absolute base path from config
+  const baseUrl = cfg.baseUrl ? `/${cfg.baseUrl}` : ""
+
   return (
     <ul class="section-ul">
       {list.map((page) => {
@@ -70,7 +73,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
               )}
               <div class="desc">
                 <h3>
-                  <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                  <a href={`${baseUrl}/${simplifySlug(page.slug!)}`} class="internal">
                     {title}
                   </a>
                 </h3>
@@ -80,7 +83,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                 <ul class="tags">
                   {visibleTags.map((tag) => (
                     <li>
-                      <a class="internal tag-link" href={`/essays/tags/${tag}`}>
+                      <a class="internal tag-link" href={`${baseUrl}/tags/${tag}`}>
                         {tag}
                       </a>
                     </li>
