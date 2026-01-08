@@ -56,12 +56,13 @@ function formatCrumb(displayName: string, baseSlug: FullSlug, currentSlug: Simpl
 
 export default ((opts?: Partial<BreadcrumbOptions>) => {
   const options: BreadcrumbOptions = { ...defaultOptions, ...opts }
-  
+
   const Breadcrumbs: QuartzComponent = ({
     fileData,
     allFiles,
     displayClass,
     ctx,
+    cfg,
   }: QuartzComponentProps) => {
     const trie = (ctx.trie ??= trieFromAllFiles(allFiles))
     const slugParts = fileData.slug!.split("/")
@@ -71,26 +72,29 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       return null
     }
 
+    // Build absolute base path from config
+    const baseUrl = cfg.baseUrl ? `/${cfg.baseUrl}` : ""
+
     // Detect language from slug
     const currentLang = slugParts[0] === "fr" ? "fr" : "en"
     const rootName = currentLang === "fr" ? (options.rootNameFr ?? options.rootName) : options.rootName
 
     // Build crumbs, skipping the language folder (en/fr)
     const crumbs: CrumbData[] = []
-    
+
     pathNodes.forEach((node, idx) => {
       const nodeName = node.displayName.toLowerCase()
-      
+
       // Skip root (will add custom root) and language folders
       if (idx === 0) {
         return
       }
-      
+
       // Skip "en" and "fr" folders
       if (nodeName === "en" || nodeName === "fr") {
         return
       }
-      
+
       // Get display name - use section translation if available
       let displayName = node.displayName
       if (sectionNames[currentLang]?.[nodeName]) {
@@ -100,17 +104,17 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
         // Capitalize first letter of each word
         displayName = displayName.replace(/\b\w/g, (c) => c.toUpperCase())
       }
-      
+
       const crumb = {
         displayName,
-        path: resolveRelative(fileData.slug!, simplifySlug(node.slug)),
+        path: `${baseUrl}/${simplifySlug(node.slug)}`,
       }
-      
+
       // For last node (current page), set empty path
       if (idx === pathNodes.length - 1) {
         crumb.path = ""
       }
-      
+
       crumbs.push(crumb)
     })
 
@@ -120,10 +124,9 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
     }
 
     // Add root at the beginning
-    const langRoot = currentLang === "fr" ? "fr" : "en"
     crumbs.unshift({
       displayName: rootName,
-      path: resolveRelative(fileData.slug!, langRoot as SimpleSlug),
+      path: `${baseUrl}/${currentLang}`,
     })
 
     // Don't show breadcrumb if only root
