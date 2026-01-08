@@ -1,6 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
-import { pathToRoot } from "../util/path"
 
 // Compact menu items
 const menuItems = [
@@ -14,13 +13,13 @@ const menuItems = [
 ]
 
 export default (() => {
-  const Navigation: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
+  const Navigation: QuartzComponent = ({ fileData, displayClass, cfg }: QuartzComponentProps) => {
     const slugStr = fileData.slug?.toString() ?? ""
     const currentLang: "en" | "fr" = slugStr.startsWith("fr/") ? "fr" : "en"
     const currentPath = slugStr.replace(/^(en|fr)\//, "").replace(/\/$/, "").replace(/\/index$/, "")
-    
-    // Get path to root from current page
-    const rootPath = pathToRoot(fileData.slug!)
+
+    // Build absolute base path from config
+    const baseUrl = cfg.baseUrl ? `/${cfg.baseUrl}` : ""
 
     return (
       <nav class={classNames(displayClass, "main-navigation")}>
@@ -40,12 +39,11 @@ export default (() => {
         <ul class="nav-menu">
           {menuItems.map((item) => {
             const itemPath = typeof item.path === "string" ? item.path : item.path[currentLang]
-            
-            // Build URL: go to root, then to language folder, then to section
-            // e.g., from en/images/article -> ../../en/archives
-            // No trailing slash for GitHub Pages compatibility
-            const fullUrl = `${rootPath}/${currentLang}/${itemPath}`
-            
+
+            // Build absolute URL with baseUrl
+            // e.g., /essays/en/archives
+            const fullUrl = `${baseUrl}/${currentLang}/${itemPath}`
+
             const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/")
             const label = item[currentLang]
 
