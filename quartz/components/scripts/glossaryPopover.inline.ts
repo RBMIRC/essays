@@ -17,7 +17,11 @@ const closeIcon = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" s
 // Check if link is a glossary/lexicon link
 function isGlossaryLink(link: HTMLAnchorElement): boolean {
   const href = link.getAttribute("href") || ""
-  return href.includes("/lexicon/") || href.includes("/figures/") || href.includes("/lexique/")
+  // Match lexicon, figures, lexique paths (including /terms/ subdirectory)
+  return href.includes("/lexicon/") ||
+         href.includes("/figures/") ||
+         href.includes("/lexique/") ||
+         href.includes("/terms/")
 }
 
 // Make element draggable via its toolbar
@@ -275,9 +279,10 @@ document.addEventListener("nav", () => {
     hideTimeout = null
   }
 
-  const links = [...document.querySelectorAll("a.internal")] as HTMLAnchorElement[]
-  for (const link of links) {
-    if (isGlossaryLink(link)) {
+  // Get all links (internal and external) and filter for glossary links
+  const allLinks = [...document.querySelectorAll("a[href]")] as HTMLAnchorElement[]
+  for (const link of allLinks) {
+    if (isGlossaryLink(link) && !link.classList.contains("glossary-link")) {
       link.classList.add("glossary-link")
       // Disable native Quartz popover for glossary links
       link.dataset.noPopover = "true"
