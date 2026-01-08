@@ -1,5 +1,6 @@
 ---
 title: "L'Archive Liquide"
+translation: "/fr/archives/archive-liquide-defaut-prismatique"
 subtitle: "Workshop Retcon Black Mountain, Ecole Nationale Supérieure de la Photographie, Arles"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"

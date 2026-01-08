@@ -1,5 +1,6 @@
 ---
 title: "L'Éthique des Communs Statistiques"
+translation: "/en/commons/ethics-statistical-commons"
 author: "Sylvain Couzinet-Jacques"
 date: 2025-10-01
 lang: fr

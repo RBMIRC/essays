@@ -1,5 +1,6 @@
 ---
 title: "What is a Continuum?"
+translation: "/fr/images/quest-ce-quun-continuum"
 subtitle: "Foreword to 'Image Continuum'"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"

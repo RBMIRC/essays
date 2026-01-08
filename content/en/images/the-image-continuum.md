@@ -1,5 +1,6 @@
 ---
 title: "The Image Continuum"
+translation: "/fr/images/le-continuum-de-limage"
 subtitle: "On the Ontological Transformation of the Photograph in the Age of Generative Systems"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"

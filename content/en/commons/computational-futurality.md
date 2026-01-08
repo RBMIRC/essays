@@ -1,5 +1,6 @@
 ---
 title: Computational Futurality
+translation: "/fr/communs/futuralite-computationnelle"
 date: 2025-01-04
 tags:
   - futurality

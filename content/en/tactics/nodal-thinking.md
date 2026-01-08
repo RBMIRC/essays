@@ -1,5 +1,6 @@
 ---
 title: "Nodal Thinking"
+translation: "/fr/tactiques/la-pensee-en-noeud"
 subtitle: "Surface Cartographies"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"

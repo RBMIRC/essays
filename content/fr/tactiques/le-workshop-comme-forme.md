@@ -1,5 +1,6 @@
 ---
 title: "Workshop"
+translation: "/en/tactics/the-workshop-as-form"
 subtitle: "Pédagogies du faire entre Black Mountain College et l'ENSA Versailles"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"

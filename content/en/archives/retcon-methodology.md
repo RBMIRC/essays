@@ -1,5 +1,6 @@
 ---
 title: Retcon Methodology
+translation: "/fr/archives/methodologie-retcon"
 date: 2025-01-04
 tags:
   - retcon
