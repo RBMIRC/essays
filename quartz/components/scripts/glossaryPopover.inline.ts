@@ -106,13 +106,23 @@ function createPopup(content: HTMLElement, title: string, url: string, link: HTM
     }
   })
 
-  // Pin button - pins the popup so it stays open
+  // Pin button - pins the popup so it stays open (max 8 pinned)
   const pinBtn = popup.querySelector(".pin-btn") as HTMLButtonElement
   pinBtn.addEventListener("click", (e) => {
     e.stopPropagation()
     e.preventDefault()
 
     if (!popup.classList.contains("pinned")) {
+      // Check if we've reached the max (8 pinned popups)
+      if (pinnedPopups.size >= 8) {
+        // Remove the oldest pinned popup
+        const oldest = pinnedPopups.values().next().value
+        if (oldest) {
+          oldest.remove()
+          pinnedPopups.delete(oldest)
+        }
+      }
+
       // Pin the popup
       popup.classList.add("pinned")
       pinBtn.classList.add("active")
