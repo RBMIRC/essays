@@ -28,17 +28,17 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [[/en/lexicon/terms/abduction|Abduction]] — Speculative reasoning from incomplete information
 - [[/en/lexicon/terms/adherent-referent|Adherent Referent]] — Barthes's concept of photography's physical link to its subject
 - [[/en/lexicon/terms/affective-bonds|Affective Bonds]] — Caswell's concept of care relationships in community archives
-- [[/en/lexicon/terms/algorithmic-governmentality|Algorithmic Governmentality]] — Rouvroy's analysis of power through statistical prediction
-- [[/en/lexicon/terms/algorithmic-hallucination|Algorithmic Hallucination]] — *Author's term*: AI filling archival gaps through statistical continuity
-- [[/en/lexicon/terms/amplification-vs-extraction|Amplification (vs. Extraction)]] — *Author's term*: directing attention toward sources rather than absorbing them
+- [[/en/lexicon/terms/algorithmic-governmentality|Algorithmic Governmentality]] — Rouvroy and Berns's concept (2010-2013) analyzing new forms of power operating through statistical prediction and pre-emption
+- [[/en/lexicon/terms/algorithmic-hallucination|Algorithmic Hallucination]] — Transposition of clinical "hallucination" to computational systems; describes AI filling archival gaps through statistical continuity, producing plausible but unfounded outputs. Term circulating in AI discourse; Author's specific application to archival theory
+- [[/en/lexicon/terms/amplification-vs-extraction|Amplification (vs. Extraction)]] — Author's term opposing extractivist logics (cf. Couldry/Mejias's Data Colonialism); directing attention toward sources rather than absorbing them into new outputs. Methodological counterpoint to appropriation
 - [[/en/lexicon/terms/apparatus-dispositif|Apparatus (dispositif)]] — Foucault's concept of material-social arrangements
-- [[/en/lexicon/terms/archival-phantasm|Archival Phantasm]] — *Author's term*: the spectral image produced from statistical distributions
+- [[/en/lexicon/terms/archival-phantasm|Archival Phantasm]] — Author's term combining Derrida's archive (Archive Fever) with psychoanalytic phantasm; the spectral image produced from statistical distributions, neither present nor absent
 
 ## B
 
 - [[/en/lexicon/terms/bad-infinity|Bad Infinity]] — Hegel's concept of degenerate endless repetition
 - [[/en/lexicon/terms/behavioral-surplus|Behavioral Surplus]] — Zuboff's term for data extracted beyond service needs
-- [[/en/lexicon/terms/bifurcation-capability-of|Bifurcation (Capability of)]] — *Author's term*: capacity to change direction radically
+- [[/en/lexicon/terms/bifurcation-capability-of|Bifurcation (Capability of)]] — Author's pedagogical extension of Stiegler's concept (Bifurquer, 2020); where Stiegler theorizes systemic bifurcation against entropy, Author emphasizes individual/collective capacity to change direction radically within workshop conditions
 - [[/en/lexicon/terms/black-box|Black Box]] — Latour's term for hidden internal complexity
 - [[/en/lexicon/terms/black-mountain-college-bmc|Black Mountain College (BMC)]] — Experimental college (1933-1957) as methodological operator
 
@@ -48,10 +48,10 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [[/en/lexicon/terms/capabilities|Capabilities]] — Sen/Nussbaum's concept of effective possibilities for action
 - [[/en/lexicon/terms/capitalist-realism|Capitalist Realism]] — Fisher's term for the impossibility of imagining alternatives
 - [[/en/lexicon/terms/ch-ixi|Ch'ixi]] — Rivera Cusicanqui's Aymara concept of productive contradiction
-- [[/en/lexicon/terms/chronopolitics|Chronopolitics]] — Phillips's term for time as tool of power
-- [[/en/lexicon/terms/circulationism|Circulationism]] — Steyerl's term for value through circulation
+- [[/en/lexicon/terms/chronopolitics|Chronopolitics]] — The politics of time as instrument of power; term dating from 1970 (Social Forces), developed through Maier and Clark's historiography, and reappropriated by Rasheedah Phillips/Black Quantum Futurism (2016) to theorize "temporal ghettos" of racial capitalism and Afrofuturist counter-temporalities
+- [[/en/lexicon/terms/circulationism|Circulationism]] — Steyerl's term (2014) replacing Soviet productivism; value created not through making images but through post-producing, launching, and accelerating them across networks. Marks shift from production to circulation as site of meaning
 - [[/en/lexicon/terms/cosmotechnics|Cosmotechnics]] — Hui's concept of technology as cultural-cosmic articulation
-- [[/en/lexicon/terms/contracted-time|Contracted Time]] — *Author's term*: intensive temporality of the workshop
+- [[/en/lexicon/terms/contracted-time|Contracted Time]] — Author's term opposing "expanded time" of contemplation; intensive temporality of the workshop where compression generates pedagogical friction rather than reflection
 
 ## D
 
@@ -63,11 +63,11 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 ## E
 
-- [[/en/lexicon/terms/ecology-of-friction|Ecology of Friction]] — *Author's term*: resistance as pedagogical resource
+- [[/en/lexicon/terms/ecology-of-friction|Ecology of Friction]] — Author's term inverting "frictionless" design ideology (cf. platform capitalism's seamlessness); resistance as pedagogical resource rather than obstacle to overcome
 - [[/en/lexicon/terms/embodied-knowledge|Embodied Knowledge]] — Knowledge held in the body through practice
 - [[/en/lexicon/terms/epiphylogenesis|Epiphylogenesis]] — Stiegler's concept of evolution through technical memory
 - [[/en/lexicon/terms/epistemic-extractivism|Epistemic Extractivism]] — Rivera Cusicanqui's concept of knowledge appropriation
-- [[/en/lexicon/terms/exposed-teacher|Exposed Teacher]] — *Author's term*: pedagogue who shows process, not finished mastery
+- [[/en/lexicon/terms/exposed-teacher|Exposed Teacher]] — Author's term opposing the "master" who demonstrates finished competence; pedagogue who shows process, uncertainty, and vulnerability rather than mastery. Resonates with Rancière's ignorant schoolmaster but emphasizes visibility of struggle
 
 ## F
 
@@ -78,7 +78,7 @@ Key concepts and terminology used throughout the research project. Terms marked 
 ## G
 
 - [[/en/lexicon/terms/gan-generative-adversarial-network|GAN (Generative Adversarial Network)]] — Neural architecture for image generation
-- [[/en/lexicon/terms/gestural-community|Gestural Community]] — *Author's term*: collective formed through shared physical practice
+- [[/en/lexicon/terms/gestural-community|Gestural Community]] — Author's term extending Agamben's gesture (Means Without Ends) to collective practice; community formed through shared physical actions rather than shared beliefs or identities
 - [[/en/lexicon/terms/grammatization|Grammatization]] — Stiegler's concept of discretizing continuous flows
 
 ## H
@@ -88,9 +88,9 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 ## I
 
-- [[/en/lexicon/terms/image-continuum|Image Continuum]] — *Author's term*: the ontological spectrum from index to generation
+- [[/en/lexicon/terms/image-continuum|Image Continuum]] — Author's term for the ontological spectrum from indexical photography (Barthes's ça-a-été) to statistical generation (Steyerl's Mean Images); maps the transition rather than opposing the two poles
 - [[/en/lexicon/terms/incomputability|Incomputability]] — Chaitin's concept of irreducible complexity
-- [[/en/lexicon/terms/indexical-dispensation|Indexical Dispensation]] — The historical regime of photography-as-evidence
+- [[/en/lexicon/terms/indexical-dispensation|Indexical Dispensation]] — Author's term for the historical regime of photography-as-evidence; the epistemological contract (now dissolving) that images testify to what was physically present before the lens
 - [[/en/lexicon/terms/individuation|Individuation]] — Simondon's concept of becoming through process
 - [[/en/lexicon/terms/inflection|Inflection]] — Deleuze's concept of intensive change within continuity
 
@@ -106,21 +106,21 @@ Key concepts and terminology used throughout the research project. Terms marked 
 ## L
 
 - [[/en/lexicon/terms/latent-space|Latent Space]] — Mathematical space where AI stores compressed representations
-- [[/en/lexicon/terms/liquid-archive|Liquid Archive]] — *Author's term*: archive that generates rather than stores
+- [[/en/lexicon/terms/liquid-archive|Liquid Archive]] — Author's theoretical concept (distinct from artistic projects using this title, e.g., MIT Museum 2022); archive that generates rather than stores, extending Bauman's liquid modernity to archival practice
 - [[/en/lexicon/terms/liquid-modernity|Liquid Modernity]] — Bauman's concept of fluid contemporary social forms
 - [[/en/lexicon/terms/lost-futures|Lost Futures]] — Fisher's concept of unrealized historical possibilities
 - [[/en/lexicon/terms/lumbung|Lumbung]] — Indonesian concept of collective resource sharing
 
 ## M
 
-- [[/en/lexicon/terms/mean-image|Mean Image]] — *Author's term*: statistical average that erases singularity
-- [[/en/lexicon/terms/model-collapse|Model Collapse]] — Degradation when AI trains on its own outputs
+- [[/en/lexicon/terms/mean-image|Mean Image]] — Steyerl's term (2023) playing on "mean" as both mathematical average and cruelty; statistical composites in AI-generated images that erase singularity. Shows how generative models flatten difference into normative representations
+- [[/en/lexicon/terms/model-collapse|Model Collapse]] — Shumailov et al.'s term (Nature, 2024) for degenerative process when generative models train recursively on synthetic data; causes irreversible loss of distributional tails and minority information. Also called "Habsburg AI" or "AI inbreeding"
 - [[/en/lexicon/terms/monotechnics|Monotechnics]] — Single technological paradigm imposed as universal
 
 ## N
 
-- [[/en/lexicon/terms/negentropic-obligation|Negentropic Obligation]] — *Author's term*: duty to maintain difference against entropy
-- [[/en/lexicon/terms/new-aesthetic|New Aesthetic]] — Bridle's term for the eruption of the digital into the physical
+- [[/en/lexicon/terms/negentropic-obligation|Negentropic Obligation]] — Author's ethical term extending Stiegler's negentropy (Neganthropocene); where Stiegler theorizes negentropy as life's resistance to disorder, Author formulates the duty to maintain difference and singularity against homogenizing entropy
+- [[/en/lexicon/terms/new-aesthetic|New Aesthetic]] — Bridle's concept (SXSW 2012) describing the eruption of the digital into the physical world: glitches, pixelation, surveillance imagery becoming visible in everyday life
 
 ## O
 
@@ -131,46 +131,46 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 - [[/en/lexicon/terms/pharmacological|Pharmacological]] — Stiegler's concept of technology as both poison and cure
 - [[/en/lexicon/terms/pluriverse|Pluriverse]] — Multiple coexisting cosmologies vs. single universe
-- [[/en/lexicon/terms/post-indexical-image|Post-Indexical Image]] — *Author's term*: image without indexical structure
-- [[/en/lexicon/terms/prismatic-archive|Prismatic Archive]] — *Author's term*: archive that diffracts rather than dissolves
+- [[/en/lexicon/terms/post-indexical-image|Post-Indexical Image]] — Author's term for images without indexical structure; neither "fake" (implying a true original) nor "synthetic" (implying artificiality), but operating in a different ontological register altogether
+- [[/en/lexicon/terms/prismatic-archive|Prismatic Archive]] — Author's term opposing both "dissolved" archive (lost to entropy) and "frozen" archive (fixed in time); archive that diffracts rather than dissolves, producing spectra rather than unities
 - [[/en/lexicon/terms/proletarianization-of-the-mind|Proletarianization (of the Mind)]] — Stiegler's concept of knowledge loss through automation
 
 ## R
 
 - [[/en/lexicon/terms/reactivation|Reactivation]] — Making latent archival possibilities available for present use
-- [[/en/lexicon/terms/recursive-archive|Recursive Archive]] — *Author's term*: archive that queries itself
+- [[/en/lexicon/terms/recursive-archive|Recursive Archive]] — Author's term for archive that queries itself; where traditional archives await external interrogation, recursive archives generate questions about their own conditions and gaps
 - [[/en/lexicon/terms/retcon|Retcon]] — Retroactive continuity as creative-critical method
 - [[/en/lexicon/terms/rhizome|Rhizome]] — Deleuze/Guattari's concept of non-hierarchical connection
 
 ## S
 
 - [[/en/lexicon/terms/situated-knowledge|Situated Knowledge]] — Haraway's concept of knowledge from embodied position
-- [[/en/lexicon/terms/statistical-commons|Statistical Commons]] — *Author's term*: shared probability distributions produced by AI training
-- [[/en/lexicon/terms/statistical-unconscious|Statistical Unconscious]] — *Author's term*: what AI reveals in aggregate patterns
+- [[/en/lexicon/terms/statistical-commons|Statistical Commons]] — Author's term for shared probability distributions produced by AI training; commons created not through intentional sharing but through mechanical aggregation of human expression into collective statistical patterns
+- [[/en/lexicon/terms/statistical-unconscious|Statistical Unconscious]] — Schröter's term (2023) transposing Benjamin's Optical Unconscious to AI image generation; what machine learning reveals in aggregate patterns that escapes conscious human perception. Where Benjamin's camera revealed hidden gestures, AI reveals hidden distributions
 - [[/en/lexicon/terms/surveillance-capitalism|Surveillance Capitalism]] — Zuboff's concept of economy based on behavioral prediction
-- [[/en/lexicon/terms/symbiotic-algorithm|Symbiotic Algorithm]] — *Author's term*: computation as relation rather than extraction
+- [[/en/lexicon/terms/symbiotic-algorithm|Symbiotic Algorithm]] — Author's term opposing extractive computation; algorithm as relation rather than extraction, mutual transformation of human and machine
 
 ## T
 
 - [[/en/lexicon/terms/tacit-knowledge|Tacit Knowledge]] — Polanyi's concept of knowledge that cannot be fully articulated
-- [[/en/lexicon/terms/tactical-urgency|Tactical Urgency]] — *Author's term*: time pressure as strategic resource
+- [[/en/lexicon/terms/tactical-urgency|Tactical Urgency]] — Author's term combining de Certeau's tactics (The Practice of Everyday Life) with temporal pressure; time constraint as strategic resource rather than limitation, generating invention through compression
 - [[/en/lexicon/terms/technical-culture|Technical Culture]] — Simondon's concept of literacy about technical objects
 - [[/en/lexicon/terms/technodiversity|Technodiversity]] — Hui's concept of multiple technical traditions
 - [[/en/lexicon/terms/tertiary-retention|Tertiary Retention]] — Stiegler's concept of externalized technical memory
-- [[/en/lexicon/terms/tertiary-protention|Tertiary Protention]] — Hui's concept of automated anticipation
+- [[/en/lexicon/terms/tertiary-protention|Tertiary Protention]] — Hui's concept (2016) supplementing Stiegler's tertiary retention; where Stiegler theorized externalized memory (retention), Hui adds externalized anticipation—technologies that structure futurity, from debt to algorithmic prediction
 - [[/en/lexicon/terms/transduction|Transduction]] — Simondon's concept of propagating transformation
 - [[/en/lexicon/terms/transindividuation|Transindividuation]] — Stiegler's concept of individual-collective co-constitution
 
 ## U
 
-- [[/en/lexicon/terms/unboxing|Unboxing]] — *Author's term*: opening the black box to reveal internal complexity
+- [[/en/lexicon/terms/unboxing|Unboxing]] — Author's theoretical term (distinct from consumer "unboxing" videos); opening Latour's black box to reveal internal complexity, but emphasizing the pedagogical act of exposure rather than mere technical analysis
 - [[/en/lexicon/terms/universe-of-technical-images|Universe of Technical Images]] — Flusser's concept of autonomous image realm
 
 ## V
 
-- [[/en/lexicon/terms/vertical-work|Vertical Work]] — *Author's term*: deep engagement vs. horizontal connection
-- [[/en/lexicon/terms/vibe-coding|Vibe Coding]] — Karpathy's term for programming through natural language
-- [[/en/lexicon/terms/visible-labor|Visible Labor]] — *Author's term*: showing process rather than finished results
+- [[/en/lexicon/terms/vertical-work|Vertical Work]] — Author's term opposing "horizontal" connection (networking, linking, sharing); deep engagement with singular problems rather than lateral movement across surfaces. Resonates with Stiegler's critique of horizontal proletarianization
+- [[/en/lexicon/terms/vibe-coding|Vibe Coding]] — Karpathy's term (February 2025) for AI-assisted programming where developers "forget that the code even exists"; extends his 2023 claim that "the hottest new programming language is English." Marks shift from writing to prompting
+- [[/en/lexicon/terms/visible-labor|Visible Labor]] — Author's inversion of "invisible labor" (Daniels 1987, Terranova's Free Labor); showing process rather than finished results, making pedagogical and creative work apparent rather than concealed
 
 ## W
 
@@ -179,7 +179,7 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 ## Y
 
-- [[/en/lexicon/terms/yellowing|Yellowing]] — *Author's term*: visual symptom of model collapse
+- [[/en/lexicon/terms/yellowing|Yellowing]] — Author's metaphor for model collapse, drawing on documented phenomenon of yellow/golden bias in AI-generated images (DALL-E, Midjourney, ChatGPT, 2025); visual symptom of distributional degradation where recursive training produces chromatic drift toward statistical means
 
 ---
 

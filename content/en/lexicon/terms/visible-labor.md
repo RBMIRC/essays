@@ -8,6 +8,6 @@ tags:
   - _the-workshop-as-form
 ---
 
-Author's term: the exposure of ongoing research with its hesitations, revisions, failures. Not the demonstration of accomplished competence but the showing of process. The workshop forces this visibility: one cannot hide that one does not know when others are watching. Other pedagogical forms allow concealment—the lecture that presents finished results, the textbook that erases the struggle. Visible labor authorizes struggle by demonstrating it. (*The Workshop as Form*)
+Author's inversion of "invisible labor" (Daniels 1987, Terranova's Free Labor); showing process rather than finished results, making pedagogical and creative work apparent rather than concealed. The exposure of ongoing research with its hesitations, revisions, failures. Not the demonstration of accomplished competence but the showing of process. The workshop forces this visibility: one cannot hide that one does not know when others are watching. Other pedagogical forms allow concealment—the lecture that presents finished results, the textbook that erases the struggle. Visible labor authorizes struggle by demonstrating it. (*The Workshop as Form*)
 
 See also: [[/en/lexicon/terms/exposed-teacher|Exposed Teacher]], [[/en/lexicon/terms/modeling-involuntary|Modeling (Involuntary)]]
