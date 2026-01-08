@@ -3,10 +3,11 @@ import { normalizeRelativeURLs } from "../../util/path"
 import { fetchCanonical } from "./util"
 
 const p = new DOMParser()
-let activePopup: HTMLElement | null = null
-let activeLink: HTMLAnchorElement | null = null
+let hoverPopup: HTMLElement | null = null  // Current hover popup (not pinned)
+let hoverLink: HTMLAnchorElement | null = null
 let popupZIndex = 1000
 let hideTimeout: ReturnType<typeof setTimeout> | null = null
+const pinnedPopups: Set<HTMLElement> = new Set()  // Track all pinned popups
 
 // Icons
 const pinIcon = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg>`
@@ -28,29 +29,34 @@ function makeDraggable(el: HTMLElement) {
 
   toolbar.style.cursor = "move"
 
-  toolbar.addEventListener("mousedown", (e) => {
+  const onMouseDown = (e: MouseEvent) => {
     if ((e.target as HTMLElement).closest(".glossary-popup-btn")) return
     isDragging = true
     offsetX = e.clientX - el.getBoundingClientRect().left
     offsetY = e.clientY - el.getBoundingClientRect().top
     el.style.zIndex = String(++popupZIndex)
-  })
+  }
 
-  document.addEventListener("mousemove", (e) => {
+  const onMouseMove = (e: MouseEvent) => {
     if (!isDragging) return
     el.style.left = `${e.clientX - offsetX}px`
     el.style.top = `${e.clientY - offsetY}px`
-  })
+  }
 
-  document.addEventListener("mouseup", () => {
+  const onMouseUp = () => {
     isDragging = false
-  })
+  }
+
+  toolbar.addEventListener("mousedown", onMouseDown)
+  document.addEventListener("mousemove", onMouseMove)
+  document.addEventListener("mouseup", onMouseUp)
 }
 
 // Create popup for glossary term
 function createPopup(content: HTMLElement, title: string, url: string, link: HTMLAnchorElement): HTMLElement {
   const popup = document.createElement("div")
   popup.className = "glossary-popup"
+  popup.dataset.url = url
   popup.innerHTML = `
     <div class="glossary-popup-toolbar">
       <span class="glossary-popup-title">${title}</span>
@@ -88,30 +94,41 @@ function createPopup(content: HTMLElement, title: string, url: string, link: HTM
   })
 
   popup.addEventListener("mouseleave", () => {
+    // Only auto-hide if not pinned
     if (!popup.classList.contains("pinned")) {
       hideTimeout = setTimeout(() => {
         popup.remove()
-        if (activePopup === popup) {
-          activePopup = null
-          activeLink = null
+        if (hoverPopup === popup) {
+          hoverPopup = null
+          hoverLink = null
         }
       }, 150)
     }
   })
 
-  // Pin button
+  // Pin button - pins the popup so it stays open
   const pinBtn = popup.querySelector(".pin-btn") as HTMLButtonElement
   pinBtn.addEventListener("click", (e) => {
     e.stopPropagation()
     e.preventDefault()
 
     if (!popup.classList.contains("pinned")) {
+      // Pin the popup
       popup.classList.add("pinned")
       pinBtn.classList.add("active")
+      pinnedPopups.add(popup)
       makeDraggable(popup)
+
+      // Clear hover tracking so new popups can be created
+      if (hoverPopup === popup) {
+        hoverPopup = null
+        hoverLink = null
+      }
     } else {
+      // Unpin the popup
       popup.classList.remove("pinned")
       pinBtn.classList.remove("active")
+      pinnedPopups.delete(popup)
     }
   })
 
@@ -129,9 +146,10 @@ function createPopup(content: HTMLElement, title: string, url: string, link: HTM
     e.stopPropagation()
     e.preventDefault()
     popup.remove()
-    if (activePopup === popup) {
-      activePopup = null
-      activeLink = null
+    pinnedPopups.delete(popup)
+    if (hoverPopup === popup) {
+      hoverPopup = null
+      hoverLink = null
     }
   })
 
@@ -140,8 +158,8 @@ function createPopup(content: HTMLElement, title: string, url: string, link: HTM
 
 // Fetch content and show popup on hover
 async function showGlossaryPopup(link: HTMLAnchorElement) {
-  // Don't create duplicate for same link
-  if (activeLink === link && activePopup) return
+  // Don't create duplicate for same link if already showing
+  if (hoverLink === link && hoverPopup) return
 
   const targetUrl = new URL(link.href)
   targetUrl.hash = ""
@@ -152,7 +170,7 @@ async function showGlossaryPopup(link: HTMLAnchorElement) {
     if (!response) return
 
     // Check if we're still hovering this link
-    if (activeLink !== link) return
+    if (hoverLink !== link) return
 
     const contents = await response.text()
     const html = p.parseFromString(contents, "text/html")
@@ -182,14 +200,15 @@ async function showGlossaryPopup(link: HTMLAnchorElement) {
       el.id = `glossary-popup-${el.id}`
     })
 
-    // Close existing non-pinned popup
-    if (activePopup && !activePopup.classList.contains("pinned")) {
-      activePopup.remove()
+    // Close existing hover popup (not pinned ones)
+    if (hoverPopup) {
+      hoverPopup.remove()
+      hoverPopup = null
     }
 
     // Create and show popup
     const popup = createPopup(contentClone, title, link.href, link)
-    activePopup = popup
+    hoverPopup = popup
 
   } catch (err) {
     console.error("Error fetching glossary content:", err)
@@ -206,7 +225,7 @@ function glossaryMouseEnterHandler(this: HTMLAnchorElement) {
     hideTimeout = null
   }
 
-  activeLink = this
+  hoverLink = this
   showGlossaryPopup(this)
 }
 
@@ -216,10 +235,10 @@ function glossaryMouseLeaveHandler(this: HTMLAnchorElement) {
 
   // Delay hiding to allow moving to popup
   hideTimeout = setTimeout(() => {
-    if (activePopup && !activePopup.classList.contains("pinned")) {
-      activePopup.remove()
-      activePopup = null
-      activeLink = null
+    if (hoverPopup && !hoverPopup.classList.contains("pinned")) {
+      hoverPopup.remove()
+      hoverPopup = null
+      hoverLink = null
     }
   }, 150)
 }
@@ -238,8 +257,9 @@ function glossaryClickHandler(this: HTMLAnchorElement, e: MouseEvent) {
 document.addEventListener("nav", () => {
   // Clear all popups on navigation
   document.querySelectorAll(".glossary-popup").forEach(el => el.remove())
-  activePopup = null
-  activeLink = null
+  hoverPopup = null
+  hoverLink = null
+  pinnedPopups.clear()
   if (hideTimeout) {
     clearTimeout(hideTimeout)
     hideTimeout = null
