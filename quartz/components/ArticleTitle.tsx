@@ -78,64 +78,204 @@ ArticleTitle.css = `
 `
 
 ArticleTitle.afterDOMLoaded = `
-// Load html2pdf library dynamically
-function loadHtml2Pdf() {
-  return new Promise((resolve, reject) => {
-    if (window.html2pdf) {
-      resolve(window.html2pdf);
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
-    script.onload = () => resolve(window.html2pdf);
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
-
 document.addEventListener("nav", () => {
   const pdfBtn = document.querySelector('.pdf-download-btn');
   if (!pdfBtn) return;
 
-  const handleClick = async () => {
+  const handleClick = () => {
     const title = pdfBtn.getAttribute('data-title') || 'document';
     const article = document.querySelector('article.popover-hint');
+    const meta = document.querySelector('.content-meta-wrapper');
 
     if (!article) {
       alert('Could not find article content');
       return;
     }
 
-    // Show loading state
-    pdfBtn.style.opacity = '0.5';
-    pdfBtn.style.pointerEvents = 'none';
-
-    try {
-      const html2pdf = await loadHtml2Pdf();
-
-      // Clone the article to avoid modifying the original
-      const clone = article.cloneNode(true);
-
-      // Remove elements that shouldn't be in PDF
-      clone.querySelectorAll('.pdf-download-btn, script, style').forEach(el => el.remove());
-
-      const opt = {
-        margin: [15, 15, 15, 15],
-        filename: title.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase() + '.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: 'avoid-all' }
-      };
-
-      await html2pdf().set(opt).from(clone).save();
-    } catch (err) {
-      console.error('PDF generation failed:', err);
-      alert('PDF generation failed. Please try again.');
-    } finally {
-      pdfBtn.style.opacity = '1';
-      pdfBtn.style.pointerEvents = 'auto';
+    // Create a clean HTML document for printing
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      alert('Please allow popups to download PDF');
+      return;
     }
+
+    // Get metadata
+    const subtitle = document.querySelector('.content-subtitle')?.textContent || '';
+    const author = document.querySelector('.content-author')?.textContent || '';
+    const date = document.querySelector('.content-meta time')?.textContent || '';
+
+    // Clone and clean the article content
+    const clone = article.cloneNode(true);
+    clone.querySelectorAll('.pdf-download-btn, script, .callout-title svg, details summary').forEach(el => {
+      if (el.tagName === 'SUMMARY') {
+        el.style.listStyle = 'none';
+      } else {
+        el.remove();
+      }
+    });
+
+    // Open all details elements
+    clone.querySelectorAll('details').forEach(d => d.setAttribute('open', 'true'));
+
+    const printContent = \`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <title>\${title}</title>
+        <style>
+          @page {
+            size: A4;
+            margin: 25mm 20mm;
+          }
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+          }
+          .pdf-header {
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid #ccc;
+          }
+          .pdf-title {
+            font-size: 20pt;
+            font-weight: bold;
+            margin: 0 0 0.3em 0;
+            line-height: 1.2;
+          }
+          .pdf-subtitle {
+            font-size: 12pt;
+            font-style: italic;
+            color: #555;
+            margin: 0 0 0.5em 0;
+          }
+          .pdf-meta {
+            font-size: 10pt;
+            color: #666;
+          }
+          h1, h2, h3, h4, h5, h6 {
+            page-break-after: avoid;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+          }
+          h1 { font-size: 18pt; }
+          h2 { font-size: 14pt; }
+          h3 { font-size: 12pt; }
+          p {
+            margin: 0 0 1em 0;
+            text-align: justify;
+            orphans: 3;
+            widows: 3;
+          }
+          blockquote {
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            border-left: 3px solid #ccc;
+            font-style: italic;
+            background: #f9f9f9;
+          }
+          ul, ol {
+            margin: 1em 0;
+            padding-left: 2em;
+          }
+          li {
+            margin-bottom: 0.3em;
+          }
+          a {
+            color: #1a1a1a;
+            text-decoration: underline;
+          }
+          code {
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            background: #f4f4f4;
+            padding: 0.1em 0.3em;
+          }
+          pre {
+            background: #f4f4f4;
+            padding: 1em;
+            overflow-x: auto;
+            font-size: 9pt;
+            page-break-inside: avoid;
+          }
+          hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 2em 0;
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+          .footnotes {
+            font-size: 9pt;
+            margin-top: 2em;
+            padding-top: 1em;
+            border-top: 1px solid #ccc;
+          }
+          details {
+            margin: 1em 0;
+          }
+          summary {
+            font-weight: bold;
+            cursor: default;
+            list-style: none;
+          }
+          .callout {
+            padding: 1em;
+            margin: 1em 0;
+            background: #f9f9f9;
+            border-left: 3px solid #666;
+          }
+          .sidenote, .marginnote {
+            font-size: 9pt;
+            color: #666;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 10pt;
+          }
+          th, td {
+            border: 1px solid #ccc;
+            padding: 0.5em;
+            text-align: left;
+          }
+          th {
+            background: #f4f4f4;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="pdf-header">
+          <h1 class="pdf-title">\${title}</h1>
+          \${subtitle ? '<p class="pdf-subtitle">' + subtitle + '</p>' : ''}
+          <p class="pdf-meta">\${author}\${author && date ? ' — ' : ''}\${date}</p>
+        </div>
+        \${clone.innerHTML}
+      </body>
+      </html>
+    \`;
+
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+
+    // Wait for content to load, then print
+    printWindow.onload = () => {
+      setTimeout(() => {
+        printWindow.print();
+        printWindow.onafterprint = () => printWindow.close();
+      }, 250);
+    };
   };
 
   pdfBtn.addEventListener('click', handleClick);
