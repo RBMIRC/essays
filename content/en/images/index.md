@@ -1,5 +1,6 @@
 ---
 title: Images
+translation: "/fr/images"
 ---
 
 

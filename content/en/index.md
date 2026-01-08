@@ -1,5 +1,6 @@
 ---
 title: Essays
+translation: "/fr"
 ---
 
 

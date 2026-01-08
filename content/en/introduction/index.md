@@ -1,5 +1,6 @@
 ---
 title: "Introduction to Retcon Black Mountain Research"
+translation: "/fr/introduction"
 subtitle: "Differential Automation and the Statistical Commons"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"

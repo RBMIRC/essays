@@ -1,5 +1,6 @@
 ---
 title: Archives
+translation: "/en/archives"
 ---
 
 

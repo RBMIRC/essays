@@ -1,5 +1,6 @@
 ---
 title: Essais
+translation: "/en"
 ---
 
 

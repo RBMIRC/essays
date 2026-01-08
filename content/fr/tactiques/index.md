@@ -1,5 +1,6 @@
 ---
 title: Tactiques
+translation: "/en/tactics"
 ---
 
 

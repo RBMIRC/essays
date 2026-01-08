@@ -1,5 +1,6 @@
 ---
 title: Commons
+translation: "/fr/communs"
 ---
 
 

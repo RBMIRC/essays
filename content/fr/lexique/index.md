@@ -1,5 +1,6 @@
 ---
 title: Lexique
+translation: "/en/lexicon"
 ---
 
 

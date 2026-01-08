@@ -1,5 +1,6 @@
 ---
 title: "Introduction à la recherche Retcon Black Mountain"
+translation: "/en/introduction"
 subtitle: "Automatisation différentielle et communs statistiques"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"
