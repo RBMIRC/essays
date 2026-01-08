@@ -42,8 +42,9 @@ export default (() => {
             const itemPath = typeof item.path === "string" ? item.path : item.path[currentLang]
             
             // Build URL: go to root, then to language folder, then to section
-            // e.g., from en/images/article -> ../../en/archives/
-            const fullUrl = `${rootPath}/${currentLang}/${itemPath}/`
+            // e.g., from en/images/article -> ../../en/archives
+            // No trailing slash for GitHub Pages compatibility
+            const fullUrl = `${rootPath}/${currentLang}/${itemPath}`
             
             const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/")
             const label = item[currentLang]
