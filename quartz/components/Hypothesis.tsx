@@ -37,8 +37,7 @@ export default ((userOpts?: Partial<HypothesisOptions>) => {
           ${opts.groupId ? `"group": "${opts.groupId}",` : ''}
           "openSidebar": ${opts.openSidebar},
           "theme": "${opts.theme}",
-          "showHighlights": true,
-          "appType": "via",
+          "showHighlights": "whenSidebarOpen",
           "ignoreSelector": "[data-hypothesis-ignore], .no-annotation, pre, code, .glossary-popup, .glossary-tooltip, .graph, .explorer, .toc, .backlinks"
         };
       };

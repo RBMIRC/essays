@@ -6662,8 +6662,7 @@ var Hypothesis_default = /* @__PURE__ */ __name(((userOpts) => {
           ${opts.groupId ? `"group": "${opts.groupId}",` : ""}
           "openSidebar": ${opts.openSidebar},
           "theme": "${opts.theme}",
-          "showHighlights": true,
-          "appType": "via",
+          "showHighlights": "whenSidebarOpen",
           "ignoreSelector": "[data-hypothesis-ignore], .no-annotation, pre, code, .glossary-popup, .glossary-tooltip, .graph, .explorer, .toc, .backlinks"
         };
       };
@@ -6726,7 +6725,7 @@ var sharedPageComponents = {
     }),
     ImagePreview_default(),
     Hypothesis_default({
-      // groupId: "your-group-id",  // Décommenter pour groupe privé
+      groupId: "wwKpQDXD",
       openSidebar: false,
       theme: "clean",
       disableOnPaths: ["/lexicon", "/lexique", "/figures", "/en/lexicon", "/fr/lexique"]

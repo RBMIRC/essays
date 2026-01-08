@@ -17,7 +17,7 @@ export const sharedPageComponents: SharedLayout = {
     }),
     Component.ImagePreview(),
     Component.Hypothesis({
-      // groupId: "your-group-id",  // Décommenter pour groupe privé
+      groupId: "wwKpQDXD",
       openSidebar: false,
       theme: 'clean',
       disableOnPaths: ['/lexicon', '/lexique', '/figures', '/en/lexicon', '/fr/lexique'],
