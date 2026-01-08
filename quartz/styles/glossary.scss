@@ -14,20 +14,10 @@
   cursor: help;
   position: relative;
 
-  &::after {
-    content: "°";
-    font-size: 0.65em;
-    vertical-align: super;
-    color: var(--gray);
-    margin-left: 1px;
-  }
+  // Removed the ° indicator - dotted underline is sufficient
 
   &:hover {
     text-decoration-color: var(--darkgray);
-
-    &::after {
-      color: var(--darkgray);
-    }
   }
 }
 
