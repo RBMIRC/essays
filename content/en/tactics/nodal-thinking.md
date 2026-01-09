@@ -9,8 +9,10 @@ license: GPL-3.0-or-later
 provenance: "Workshop at École Nationale Supérieure d'Architecture de Versailles, 2025"
 tags:
   - knotted-thinking
-  - diagram
   - nodal
+  - diagram
+  - software
+  - virtual
   - knot
   - carthography
   - mapping
@@ -55,11 +57,10 @@ tags:
 **Confidence:** Reflective essay arising from pedagogical observation  
 **Notes:** Learning by doing  
 
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
+
 </details>
 
-# Nodal Thinking
-
-by Sylvain Couzinet-Jacques
 
 ---
 
