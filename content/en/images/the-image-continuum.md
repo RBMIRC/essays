@@ -1,7 +1,7 @@
 ---
 title: "The Image Continuum"
 translation: "/fr/images/le-continuum-de-limage"
-subtitle: "On the Ontological Transformation of the Photograph in the Age of Generative Systems"
+subtitle: "On the Photograph in the Age of Generative Systems"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"
 lang: en
@@ -17,50 +17,49 @@ tags:
   - continuum
   - AI
   - latent-space
-  - Barthes
-  - Stiegler
-  - Simondon
-  - Flusser
-  - Benjamin
-  - tertiary-retention
-  - individuation
-  - punctum
-  - studium
-  - indexicality
-  - GAN
-  - training-data
-  - statistical-archive
-  - cosmotechnics
-  - imaginary-media
-  - retroactive-continuity
-  - Florence-Thompson
-  - Migrant-Mother
-  - extraction
-  - mean-image
+  - _Barthes
+  - _Stiegler
+  - _Simondon
+  - _Flusser
+  - _Benjamin
+  - _tertiary-retention
+  - _individuation
+  - _punctum
+  - _studium
+  - _indexicality
+  - _GAN
+  - _training-data
+  - _statistical-archive
+  - _cosmotechnics
+  - _imaginary-media
+  - _retroactive-continuity
+  - _Florence-Thompson
+  - _Migrant-Mother
+  - _extraction
+  - _mean-image
 ---
 
 <details class="heredoc-block">
 <summary>◈ IMAGE-CONTINUUM v1.0</summary>
 
 **Title:** The Image Continuum  
-**Subtitle:** On the Ontological Transformation of the Photograph in the Age of Generative Systems  
+**Subtitle:** Transformation of the Photograph in the Age of Generative Systems  
 **Author:** Sylvain Couzinet-Jacques  
 **Date:** 2024  
 **Intent:** From analog photograph to AI generated image  
-**Provenance:** Institut pour la Photographie, Lille  
+**Provenance:** Residency at Institut pour la Photographie, Lille, 2023/2024  
 **Genealogy:** Barthes (Camera Lucida) → Stiegler (Technics and Time) → Simondon (Individuation) → Flusser (Technical Images) → Hui (Cosmotechnics)  
 **Ethics:** Acknowledgment · Speculation · Technodiversity  
 **License:** GPL-3.0-or-later  
 **Fork-chain:** [Philosophy of technics] → current → [awaiting next fork]  
 **Contamination:** Infused with {indexical theory, media archaeology, process philosophy, imaginary media}  
 **Confidence:** Theoretical synthesis oriented toward practice  
-**Notes:** The singular does not disappear; it is transformed  
+**Notes:** Continuum Hardcore 
+
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
 
 </details>
 
-## On the Photograph in the Age of Generative Systems
-
-by Sylvain Couzinet-Jacques
 
 ---
 
