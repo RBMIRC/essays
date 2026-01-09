@@ -1,7 +1,6 @@
 ---
 title: "L'Archive Récursive"
 translation: "/en/archives/recursive-archive-ontology-technique-temporalities"
-subtitle: ""
 author: "Sylvain Couzinet-Jacques"
 date: "2025"
 lang: fr
