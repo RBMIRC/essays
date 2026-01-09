@@ -20,9 +20,8 @@ This site hosts research essays exploring connections between the experimental p
 
 ### Related Platforms
 
-- **[The Dining Hall](https://retconblackmountain.info/)** — Collaborative annotation and discussion platform
-- **[The Library](https://thelibrary.retconblackmountain.info/)** — Archive repository and documentation
-- **[Theodore](https://theodore.retconblackmountain.info/)** — Experimental publication platform
+- **[The Dining Hall](https://retconblackmountain.info/)** — Collaborative annotation and discussion platform for BMC archives
+- **[The Library](https://thelibrary.retconblackmountain.info/)** — Archive repository of annoted pdfs
 
 </div>
 
