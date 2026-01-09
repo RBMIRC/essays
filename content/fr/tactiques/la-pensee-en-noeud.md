@@ -8,9 +8,16 @@ lang: fr
 license: GPL-3.0-or-later
 provenance: "Workshop à l'Ecole Nationale Superieure d'Architecture de Versailles, 2024 et 2025"
 tags:
-  - pensée-en-nœud
-  - diagramme
-  - pédagogie
+  - knotted-thinking
+  - nodal
+  - diagram
+  - software
+  - virtual
+  - knot
+  - carthography
+  - mapping
+  - workshop
+  - pedagogy
   - architecture
   - _Peirce
   - _Latour
@@ -19,18 +26,18 @@ tags:
   - _Deleuze-Guattari
   - _rhizome
   - _transduction
-  - _boîte-noire
+  - _black-box
   - _inscription
   - _diagrammatic-reasoning
   - _thinking-through-making
-  - _capitalisme-cognitif
-  - _grammatisation
+  - _cognitive-capitalism
+  - _grammatization
   - _Milanote
   - _Black-Mountain-College
-  - _topologie
-  - _intensité
-  - _profondeur
-  - _résistance
+  - _topology
+  - _intensity
+  - _depth
+  - _resistance
 ---
 
 
@@ -50,13 +57,11 @@ tags:
 **Chaîne de forks :** [Pédagogie architecturale] → actuel → [en attente du prochain fork]  
 **Contamination :** Infusé de {STS, philosophie des techniques, capitalisme cognitif}  
 **Confiance :** Essai réflexif issu d'observation pédagogique  
-**Notes :** Apprendre en faisant  
+**Notes :** *Learning by doing*  
+
+*Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.*
 
 </details>
-
-## Cartographies de surface et vertiges de l'horizontalité
-
-par Sylvain Couzinet-Jacques
 
 ---
 
