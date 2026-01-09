@@ -138,7 +138,7 @@ The workshop thus appears as the apparatus of the exposed teacher in the sense t
 
 ## Part One: The Workshop Form
 
-### 1. Contracted Time
+### Contracted Time
 
 The workshop is defined first by an operation on time. Where the semester project spreads design over several months, the workshop compresses it into a few days. This compression is not simple acceleration—it qualitatively modifies the experience.
 
@@ -154,7 +154,7 @@ The contracted time of the workshop multiplies these problematic situations. It 
 
 But—and this is a crucial point—temporal contraction is not pedagogical in itself. It can also produce panic, paralysis, sloppy work. What makes the difference is the dispositif in which it is inscribed: the presence of others with whom to share the urgency, the clarity of constraints, the possibility of failing without definitive sanction. Contracted time is a necessary but not sufficient condition.
 
-### 2. The Gestural Community
+### The Gestural Community
 
 The workshop's second operation is the sharing of gestures. Where the individual project isolates each student in their production, the workshop creates a space where bodies work together, where gestures are visible to each other, where learning passes through observation and imitation as much as through explicit instruction.
 
@@ -178,7 +178,7 @@ Hirschhorn explicitly opposes this presence to the demagogic "participation" whe
 
 In another register and another framework, the ENSA Versailles workshops explore and push this logic through their collegial form: ten teachers rather than one. Students see not only a body at work, but an educational body in collective negotiation.
 
-### 3. Noise and Silence: The Acoustics of the Studio
+### Noise and Silence: The Acoustics of the Studio
 
 The analog studio is noisy—conversations, rustling paper, falling materials, sometimes even sounds of saws and hammers. This noise might seem an obstacle to concentration. It is in reality shared information. It says who is working, at what rhythm, with what tools. It synchronizes bodies without constraining them. One hears someone cutting and it relaunches one's own energy; one perceives a collective slowing and allows oneself a pause. The noise of the studio is a social binder, a basso continuo that weaves together parallel activities without homogenizing them.
 
@@ -190,21 +190,21 @@ This acoustic mutation has pedagogical consequences rarely thematized. Tacit kno
 
 The workshop must "resonorize" design. Even when it integrates digital tools—and it would be absurd to exclude them—it must reintroduce shared noise. This can take several forms: moments when screens are projected and commented collectively, when silent work becomes public and discussable; structured pauses where one speaks about what one is doing, where the process is verbalized; phases when the digital gives way to material—paper, cardboard, foam—and when sound returns with matter. This is not nostalgia for the studio of yore, but awareness that acoustics is a dimension of pedagogy.
 
-### 4. What the Workshop Is Not
+### What the Workshop Is Not
 
 It is useful, to clarify the form, to say what it is not. Negative definition is not an admission of powerlessness; it traces borders that make the concept operative.
 
-**The workshop is not an intensive course.** The course, whether lecture or interactive, transmits explicit knowledge through discourse. The teacher knows something; they formulate it; the student receives this formulation and tries to appropriate it. One can condense a course over a week, make it denser, more immersive—it remains a course. The workshop presupposes that something is done, not only said or shown. The difference is not of degree (more or less intensity) but of nature (discourse vs. action). A course on model-making and a model-making workshop do not produce the same type of knowledge, even if they concern the same object.
+The workshop is not an intensive course. The course, whether lecture or interactive, transmits explicit knowledge through discourse. The teacher knows something; they formulate it; the student receives this formulation and tries to appropriate it. One can condense a course over a week, make it denser, more immersive—it remains a course. The workshop presupposes that something is done, not only said or shown. The difference is not of degree (more or less intensity) but of nature (discourse vs. action). A course on model-making and a model-making workshop do not produce the same type of knowledge, even if they concern the same object.
 
-**The workshop is not an accelerated project.** The pedagogical project, as it has structured architectural education since the Beaux-Arts, aims at a result: a designed building (even if it remains fictional), an evaluable production, a response to a program. The workshop aims at an experience. Of course, the workshop produces objects—models, drawings, installations, diagrams. But these objects are traces of the process, not its purpose. They attest that work took place; they do not summarize it. A workshop can "fail" in the sense that its productions are mediocre, unfinished, disappointing—and yet "succeed" in the sense that the experience was transformative, that participants traversed something that displaced them. The reverse is equally true: brilliant productions can mask a poor process, seductive objects that taught nothing to those who made them.
+The workshop is not an accelerated project. The pedagogical project, as it has structured architectural education since the Beaux-Arts, aims at a result: a designed building (even if it remains fictional), an evaluable production, a response to a program. The workshop aims at an experience. Of course, the workshop produces objects—models, drawings, installations, diagrams. But these objects are traces of the process, not its purpose. They attest that work took place; they do not summarize it. A workshop can "fail" in the sense that its productions are mediocre, unfinished, disappointing—and yet "succeed" in the sense that the experience was transformative, that participants traversed something that displaced them. The reverse is equally true: brilliant productions can mask a poor process, seductive objects that taught nothing to those who made them.
 
-**The workshop is not team building.** The confusion is frequent, particularly in professional contexts where the term "workshop" often designates team cohesion exercises. These exercises aim to produce positive affect and social bonds; they instrumentalize making in service of the relationship. The pedagogical workshop aims to produce knowledge—and if social bonds are created, it is as a bonus, as a secondary effect of shared work. The sociality of the workshop is a condition of transmission, not its end. One does not work together to "get to know each other better" or to "strengthen team spirit"; one works together because certain knowledge can only be transmitted collectively, in the friction of approaches and the sharing of gestures.
+The workshop is not team building. The confusion is frequent, particularly in professional contexts where the term "workshop" often designates team cohesion exercises. These exercises aim to produce positive affect and social bonds; they instrumentalize making in service of the relationship. The pedagogical workshop aims to produce knowledge—and if social bonds are created, it is as a bonus, as a secondary effect of shared work. The sociality of the workshop is a condition of transmission, not its end. One does not work together to "get to know each other better" or to "strengthen team spirit"; one works together because certain knowledge can only be transmitted collectively, in the friction of approaches and the sharing of gestures.
 
-**The workshop is not an event.** The event-based—vernissage, festival, happening—produces punctual intensity without demanding lasting transformation. One attends, one leaves entertained or stimulated, but one is not required to keep anything from it. The workshop engages a responsibility: that of traversing the allotted time to the end, of producing something, of being accountable (to oneself, to others, to the collective). This dimension of commitment distinguishes the workshop from the festive "parenthesis" where one can enter and exit at will.
+The workshop is not an event. The event-based—vernissage, festival, happening—produces punctual intensity without demanding lasting transformation. One attends, one leaves entertained or stimulated, but one is not required to keep anything from it. The workshop engages a responsibility: that of traversing the allotted time to the end, of producing something, of being accountable (to oneself, to others, to the collective). This dimension of commitment distinguishes the workshop from the festive "parenthesis" where one can enter and exit at will.
 
-### 5. The Workshop as Situation
+### The Workshop as Situation
 
-We can now propose a more precise definition: **the workshop is a pedagogical dispositif that institutes a situation of learning through collective making in contracted time.**
+We can now propose a more precise definition: the workshop is a pedagogical dispositif that institutes a situation of learning through collective making in contracted time.
 
 Each term counts. *Dispositif*: not a method (a set of rules to follow) but a material and social arrangement that configures possibilities for action. *Institutes*: the workshop does not "create" the situation ex nihilo; it modifies a preexisting situation by introducing new rules of the game. *Situation*: not a context (a passive décor before which action unfolds) but what configures possibilities for action and thought. *Learning through making*: the knowledge aimed at is not preconstituted and transmitted; it emerges from the activity itself. *Collective*: the pertinent unit is not the individual but the group; the knowledge produced is distributed, negotiated, shared. *Contracted time*: temporal compression is not an external constraint but an internal condition of the form.
 
@@ -214,7 +214,7 @@ The workshop does not create the situation from scratch—it settles into a pree
 
 It is in this sense that the workshop is a political form—not because it would carry a political message, but because it reconfigures, even provisionally, the conditions of the common.
 
-### 6. The Political Economy of the Workshop: Extraction or Emancipation?
+### The Political Economy of the Workshop: Extraction or Emancipation?
 
 It would be naive to present the workshop format as an intrinsically virtuous form. The workshop is also a contemporary technology of governance—and as such, it can serve opposing ends.
 
@@ -234,7 +234,7 @@ These questions do not disqualify the workshop as a form. They recall that a ped
 
 ## Part Two: From Making to Knowing
 
-### 1. The Enigma of Practical Transmission
+### The Enigma of Practical Transmission
 
 How does one learn to do something?
 
@@ -246,7 +246,7 @@ The artisanal tradition resolved this problem through apprenticeship: the novice
 
 Modern architectural education broke with this model without really replacing it. The Beaux-Arts system maintained the figure of the studio "patron," but transmission occurred more through verbal commentary (the "correction") than through shared making. The master did not draw with the student; they judged their drawing. Practical knowledge was supposed to be acquired through individual trial and error under the jury's critical gaze.
 
-### 2. What Making Does
+### What Making Does
 
 The workshop reactivates something of apprenticeship, but in compressed time and without the rigid hierarchy of the master-apprentice system.
 
@@ -270,7 +270,7 @@ The teacher who works at the common table is the guardian of these frictions. Th
 
 Generative AI, by construction, eliminates friction. It responds to demand; it produces without resisting; it optimizes the path to the result. This is its strength in a production context—and its weakness in a learning context. A workshop centered on generative AI risks producing many images and little embodied knowledge (this is moreover an observation made in workshops at other schools where generative AI was proposed as a tool). But a workshop that would integrate AI otherwise—as an interrogable archive, as a critical interlocutor, as a revealer of biases—could on the contrary enrich frictions instead of dissolving them. The question remains open; it calls for other experimentations.
 
-### 2ter. The Body That Remains: Embodied and Situated Knowledge
+### The Body That Remains: Embodied and Situated Knowledge
 
 The anthropologist Tim Ingold, in *Making* (2013), distinguishes two models of making. The hylomorphic model—inherited from Aristotle—presupposes that a form preexists in the creator's mind, then imposes itself on passive matter. This is the model of the engineer, the industrial designer—and of generative AI, which "applies" a prompt to statistical matter.
 
@@ -284,7 +284,7 @@ The epistemologist and feminist theorist of science Donna Haraway adds a critica
 
 This double exposure radically distinguishes human teaching from machinic transmission. AI simulates disembodied objectivity; the exposed teacher says where they speak from.
 
-### 3. Tools and Community
+### Tools and Community
 
 The choice of tools is not neutral in this process. Some tools favor joint attention; others require additional effort to maintain it.
 
@@ -292,7 +292,7 @@ The large work table where several people cut, glue, assemble is a dispositif of
 
 This legibility is pedagogical. It allows learning from one's errors because one can understand them. It also allows learning from others' errors, because they are visible and shareable. The manual workshop—the one we practiced in Eden and Versailles—bets on this legibility: hand drawing, cardboard model-making, weaving, wood construction produce objects where one can point to what works and what does not.
 
-### 4. Toward Another Integration of the Digital
+### Toward Another Integration of the Digital
 
 But this legibility is not the prerogative of physical material. It is a property of certain dispositifs—and it can be constructed otherwise.
 
@@ -314,7 +314,7 @@ The manual workshop we practiced was a first step—a foundation of legible fric
 
 ## Part Three: Black Mountain as Operator
 
-### 1. The Problem of Historical Reference
+### The Problem of Historical Reference
 
 How can two schools separated by seventy years articulate without the first becoming a model to imitate or a nostalgic image to contemplate?
 
@@ -322,7 +322,7 @@ The question is more general: it concerns the status of history in architectural
 
 Black Mountain College particularly lends itself to fetishization. The experiment was brief (1933-1957), radical (a self-governed community, an experimental pedagogy), and peopled with figures who became mythical (Albers, Cage, Fuller, Asawa, Cunningham). It ended in precarity and oblivion before being rediscovered and magnified. All the ingredients are assembled to make it a lost "golden age"—which is the best way to neutralize it.
 
-### 2. Neither Imitation nor Rupture: Reactivation
+### Neither Imitation nor Rupture: Reactivation
 
 Against imitation (doing "like" BMC) and against rupture (ignoring BMC in the name of the present), we propose the concept of *reactivation*. To reactivate is not to reproduce. Weaving at Versailles in 2025 is not weaving at Black Mountain in 1945. The materials differ, the bodies differ, the institutions differ, the stakes differ. What is reactivated is not a technique or a form but a question: *what happens when one makes together, with simple means, in a specific place?*
 
@@ -330,13 +330,13 @@ This question was Black Mountain's; it remains ours. But the answers cannot be t
 
 Applied to pedagogy: the 2025 workshop does not reproduce that of 1945; it reinterprets it. In doing so, it also modifies what Black Mountain College can signify for us. BMC is no longer only a bygone historical fact; it becomes an active resource for thinking the present. Past and present transform each other mutually.
 
-### 2bis. The Chronopolitics of Retcon
+### The Chronopolitics of Retcon
 
 The collective Black Quantum Futurism (Rasheedah Phillips and Camae Ayewa), based in Philadelphia, proposes the concept of *chronopolitics*: the way time itself is distributed, valued, controlled, and used as a tool of power. Their work—which mixes experimental music, speculative writing, community activism, and theory—starts from an observation: time is not neutral data but a terrain of struggle. Who has time to think? Who is condemned to perpetual urgency? Which pasts are preserved, taught, celebrated—and which are erased? Which futures are rendered imaginable—and which are foreclosed in advance?
 
 Predictive algorithms—those of the police (predictive policing), banks (credit scoring), platforms (recommendation, advertising targeting)—freeze the future by projecting biased historical data toward the future. If you grew up in a neighborhood where police frequently intervene, the algorithm predicts you are more likely to commit an offense; this prediction justifies increased surveillance, which produces more arrests, which confirms the initial prediction. The loop closes. The past—a past itself produced by discriminatory policies—determines the future, which can no longer be different.
 
-Retcon appears as an operation of resistance—what Phillips calls *temporal literacy*: learning to decode the mechanisms by which our time is stolen, predetermined, colonized—and to undo them. Temporal literacy is not only an analytical competence (understanding how algorithms work, and more generally all types of coercion); it is a practice of reappropriation (inventing other relationships to time, other ways of linking past, present, and future).
+*Retcon* appears as an operation of resistance—what Phillips calls *temporal literacy*: learning to decode the mechanisms by which our time is stolen, predetermined, colonized—and to undo them. Temporal literacy is not only an analytical competence (understanding how algorithms work, and more generally all types of coercion); it is a practice of reappropriation (inventing other relationships to time, other ways of linking past, present, and future).
 
 The workshop, in this perspective, is not an "acceleration." Intensity is not speed; it is density. The confusion is frequent: one believes a five-day workshop is a five-month project "accelerated," compressed, profitabilized. This is a misunderstanding. Acceleration maintains the temporal structure while compressing it; it produces the same thing faster. The workshop produces something else—something that long time would not produce, something that exists only in density. The workshop is a time machine, not a production accelerator. It makes temporal strata coexist that ordinary linearity keeps separate: BMC's past, the studio's present, the imagined school's future—and also each participant's personal past (what they already know, what they have lived), the present of their body (their fatigue, their attention, their rhythm), the future of their training (what they will become, what they will do with this experience).
 
@@ -344,13 +344,13 @@ Against the linear and predictive time of algorithms, the workshop thus activate
 
 These times do not add up; they rub against each other, contradict each other, produce interference. The teacher in a workshop learns to navigate between these times—to synchronize when necessary (everyone at the same rhythm for a collective phase), to desynchronize when fruitful (let some advance while others revise). They are not only a "brake" facing digital acceleration; they are a temporal switchperson.
 
-Retcon does not "visit" the past like a tourist visits a monument—with the respectful distance of one who looks without touching, who is moved without engaging. That would be nostalgia: a relationship to the past that freezes it in its pastness, that contemplates it as bygone, that draws from it at best a melancholy, at worst a conservatism ("things were better before").
+*Retcon* does not "visit" the past like a tourist visits a monument—with the respectful distance of one who looks without touching, who is moved without engaging. That would be nostalgia: a relationship to the past that freezes it in its pastness, that contemplates it as bygone, that draws from it at best a melancholy, at worst a conservatism ("things were better before").
 
-Retcon rewrites the past from the present to open futures that this past, as it was understood, had closed. It does not ask "what happened?" but "what can still happen starting from what happened?"
+*Retcon* rewrites the past from the present to open futures that this past, as it was understood, had closed. It does not ask "what happened?" but "what can still happen starting from what happened?"
 
 This is precisely what predictive algorithms cannot do: they calculate the probable from what has been; they extrapolate the future from the past without ever modifying the meaning of that past. The retcon methodology attempts to invent the improbable by transforming what the past can still become. It reintroduces contingency where the algorithm sees only necessity. In this sense, the workshop that reactivates BMC is an act of *chronopolitical resistance*: it refuses that the past of education (its instituted forms, its sedimented hierarchies, its integrated failures) mechanically determine its future.
 
-### 3. If One Refuses Imitation
+### If One Refuses Imitation
 
 What passes is something more diffuse: the proof that another pedagogy is possible. BMC attests that one can teach otherwise—without rigid program, without separation of disciplines, without frozen hierarchy between masters and students. This attestation is not a model; it is an authorization. It says: "this existed, therefore it can exist."
 
@@ -358,7 +358,7 @@ Authorization is pedagogically decisive—and underestimated. Faced with institu
 
 Authorization also works for students. Showing them that the teaching they receive is not the only possible form is giving them the means to critique—and perhaps transform—the institutions that train them. Knowledge about BMC is not only cultural content; it is a tool. It says: "you are not condemned to what exists; other possibles have existed; other possibles can come to be."
 
-### 4. Place as Condition
+### Place as Condition
 
 Black Mountain College and Versailles share a trait: they are places. Not abstract spaces, not "sites" in the sense of architectural programming—places with a history, a materiality, accumulated uses.
 
@@ -380,7 +380,7 @@ The two places do not resemble each other—and this is precisely what makes the
 
 The workshop links these two places not by making them equivalent but by making them resonate. What the BMC experience allows seeing at Versailles is the possibility of another relationship to place—a relationship where the building is not a décor but a resource, where constraints become occasions, where one inhabits the place by transforming it.
 
-### 5. Space as Pedagogical Dispositif
+### Space as Pedagogical Dispositif
 
 This text has spoken much about gestures, temporalities, studio sounds. But it has remained relatively abstract about the spatial dimension of the workshop. Yet place is not a neutral container; it arranges forms of learning.
 
@@ -396,7 +396,7 @@ In this sense, the workshop is an architectural experimentation in action—not 
 
 ## Part Four: The Augmented Archive—Digital Tools and Access to Sources
 
-### 1. A Different Question Than Generative AI
+### A Different Question Than Generative AI
 
 The dominant debate about AI in education focuses on generative tools (Midjourney, ChatGPT, DALL-E) and their effects on image or text production. This debate is legitimate but it is not ours—or at least, it is not central.
 
@@ -422,7 +422,7 @@ Other tools like *Night Watch*, an encrypted communication network allowing text
 
 These tools embody a political position on the infrastructure of knowledge: who controls access to archives? How to avoid collective memory depending on proprietary platforms? How to create digital commons that last?
 
-### 2. The Archive as Commons: Toward a Prismatic Archive
+### The Archive as Commons: Toward a Prismatic Archive
 
 The question of the archive is always a question of power. Who preserves? Who gives access? Under what conditions? BMC's archives are dispersed among several institutions (the Western Regional Archives, foundations and universities, private collections). Their access is unequal: some documents are digitized and accessible online, others require physical travel, still others are inaccessible for reasons of rights or conservation. This dispersion favors certain researchers (those who have the means to travel, the institutional affiliations that open doors) and excludes others.
 
@@ -430,7 +430,7 @@ The *Dining Hall* project—still under development—attempts another logic: co
 
 Two archiving regimes can be opposed. The *liquid archive* is that of Big Data: a mass where everything mixes, where provenances fade, where singularities dissolve into statistical averages—a commons without governance. The *prismatic archive*, by contrast, does not dissolve light; it diffracts it. It maintains gaps, preserves grain against smoothing, articulates technical gestures to an explicit political project. Three characteristics distinguish it: explicit governance (discussed and modifiable rules, as Elinor Ostrom showed for durable commons), traceability of provenances (knowing where each document comes from, condition of critique), and maintenance of singularities (preserving what resists the average—minor works, failed attempts, marginal voices). *Dining Hall* attempts to be a prismatic archive: blockchain guarantees traceability, the peer-to-peer protocol distributes governance, the delimited corpus preserves singularities.
 
-### 3. The Recursive Archive: When Outputs Become Inputs
+### The Recursive Archive: When Outputs Become Inputs
 
 The term *retcon* comes from the comics and television series industry. It is a contraction of *retroactive continuity*—the practice of retroactively modifying the history of a character or universe so that new elements integrate into it. A character one believed dead reappears; it is revealed they had in fact survived, and this revelation changes the meaning of everything that has happened since. Retcon does not deny the past; it rewrites it from the present.
 
