@@ -60,7 +60,7 @@ tags:
 
 ---
 
-## Introduction : Qu'est-ce qu'un *workshop* ?
+## Qu'est-ce qu'un *workshop* ?
 
 La question semble triviale. Elle ne l'est pas.
 Le workshop est devenu, dans l'enseignement des arts, du design et de l'architecture, une forme tellement répandue qu'on ne l'interroge plus. On sait ce que c'est : une séquence intensive, limitée dans le temps, souvent hors des cadres institutionnels habituels, orientée vers la production collective d'un objet ou d'une situation. Mais cette description fonctionnelle ne dit rien de ce qui fait la spécificité du workshop comme forme pédagogique — c'est-à-dire comme dispositif qui produit certains effets de savoir impossibles à obtenir autrement.
