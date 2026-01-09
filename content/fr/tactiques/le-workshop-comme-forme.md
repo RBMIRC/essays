@@ -1,5 +1,5 @@
 ---
-title: "Workshop"
+title: "Qu'est ce qu'un Workshop ?"
 translation: "/en/tactics/the-workshop-as-form"
 subtitle: "Pédagogies du faire entre Black Mountain College et l'ENSA Versailles"
 author: "Sylvain Couzinet-Jacques"
@@ -9,21 +9,21 @@ license: GPL-3.0-or-later
 provenance: "Ecole Nationale Supérieure d'Architecture de Versailles"
 tags:
   - workshop
-  - pédagogie
+  - pedagogy
   - architecture
-  - _Black-Mountain-College
+  - Black-Mountain-College
   - _Versailles
-  - _ENSA-V
-  - _intelligence-artificielle
-  - _communauté-gestuelle
-  - _contraction-temporelle
-  - _cognition-distribuée
-  - _savoir-incorporé
+  - ENSA-V
+  - _artificial-intelligence
+  - _gestural-community
+  - _temporal-contraction
+  - _distributed-cognition
+  - _embodied-knowledge
   - _friction
-  - _enseignant-exposé
-  - _mainteneur
+  - _exposed-teacher
+  - _maintainer
   - _retcon
-  - _archive-prismatique
+  - _prismatic-archive
   - _Dewey
   - _Simondon
   - _Stiegler
@@ -32,7 +32,7 @@ tags:
   - _Haraway
   - _lumbung
   - _transduction
-  - _capacités
+  - _capabilities
 ---
 
 
@@ -40,7 +40,7 @@ tags:
 <details class="heredoc-block">
 <summary>◈ WORKSHOP-FORME v1.0</summary>
 
-**Titre :** Workshop  
+**Titre :** Qu'est ce qu'un workshop ?
 **Sous-titre :** Pédagogies du faire entre Black Mountain College et ENSA Versailles  
 **Auteur :** Sylvain Couzinet-Jacques  
 **Date :** 2025  
@@ -54,10 +54,9 @@ tags:
 **Confiance :** Théorie issue de pratique pédagogique  
 **Notes :** Le workshop est une machine à produire des situations  
 
-</details>
+*Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.*
 
-## Pédagogies du faire entre Black Mountain College et l'École Nationale Supérieure d'Architecture de Versailles
-par Sylvain Couzinet-Jacques
+</details>
 
 ---
 
