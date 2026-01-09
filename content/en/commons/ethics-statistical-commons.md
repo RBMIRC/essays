@@ -8,17 +8,14 @@ license: GPL-3.0-or-later
 provenance: "Extension of the Heredoc Manifesto"
 tags:
   - statistical-commons
-  - differential-valence
-  - negentropic-obligation
-  - tactical-urgency
+  - _negentropic
+  - tactical
   - AI-ethics
-  - seeds
-  - OSSI
+  - biology
   - copyleft
   - GPL
-  - food-sovereignty
   - _enclosure
-  - _commons
+  - commons
   - _model-collapse
   - _entropy
   - _attribution
@@ -49,32 +46,6 @@ tags:
   - _heredoc
   - _computational-futurality
   - _recursive-loop
-  - _liberation
-  - _subversion
-  - _extraction
-  - _Monsanto
-  - _patent
-  - _molecular
-  - _genomic
-  - _breeding
-  - _farmer-networks
-  - _seed-library
-  - _low-tech-resilience
-  - _material-autonomy
-  - _negentropy
-  - _thermodynamics
-  - _ecological-ethics
-  - _liberal-ethics
-  - _transparency
-  - _transmission
-  - _transformation
-  - _fork
-  - _libre
-  - _open-washing
-  - _opt-out
-  - _EU-AI-Act
-  - _Copyright-Office
-  - _Bernard-Stiegler
 ---
 
 
@@ -95,13 +66,8 @@ tags:
 **Confidence:** Normative framework grounded in ontological transformation, not prediction  
 **Notes:** What AI dissolves mechanically, ethics must orient politically  
 
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
 </details>
-
-by Sylvain Couzinet-Jacques
-
----
-
-This article was originally written in English with the assistance of the LLM Mistral 7B.
 
 ---
 
