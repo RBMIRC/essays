@@ -1,18 +1,15 @@
 ---
 title: Commons
 translation: "/fr/communs"
----
 
+---
 
 Essays on statistical commons, intellectual property, AI ethics, and collective knowledge production.
 
 ---
 
 ## Texts
-
-- [[heredoc-manifesto|Heredoc Manifesto]] — GPL, open-source code and transformative matrices
-- [[ethics-statistical-commons|The Ethics of the Statistical Commons]] — Normative foundations for AI-mediated knowledge production
-- [[computational-futurality|Computational Futurality]] — On statistical anticipation and digital commons
-
+- [[heredoc-manifesto|Heredoc Manifesto]] — A manifesto encouraging re-appropriation through code (Winter School ENSA Paris-Est, with Alejandro Hernandez, at the invitation of Giaime Meloni, 2025)
+- [[ethics-statistical-commons|The Ethics of Statistical Commons]] — An extension of the Heredoc Manifesto, attempting to define an ethics for statistical commons
+  
 [← Back to Essays](/en/)
-
