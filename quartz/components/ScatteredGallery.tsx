@@ -236,7 +236,7 @@ export default ((userOpts?: Partial<Options>) => {
 `
 
   ScatteredGallery.afterDOMLoaded = `
-(function() {
+document.addEventListener("nav", () => {
   const gallery = document.querySelector('.scattered-gallery');
   if (!gallery) return;
 
@@ -246,22 +246,6 @@ export default ((userOpts?: Partial<Options>) => {
 
   let allImages = [];
   let currentIndex = 0;
-
-  // Load images from JSON
-  fetch(baseDir + '/static/' + folder + '/images.json')
-    .then(response => response.json())
-    .then(galleryImages => {
-      if (!galleryImages || galleryImages.length === 0) {
-        container.innerHTML = '<div class="gallery-loading">No images found.</div>';
-        return;
-      }
-      allImages = galleryImages;
-      createScatteredLayout(galleryImages);
-    })
-    .catch(err => {
-      console.error('Gallery error:', err);
-      container.innerHTML = '<div class="gallery-loading">Could not load gallery.</div>';
-    });
 
   // Random number generator
   let seed = Date.now();
@@ -429,23 +413,37 @@ export default ((userOpts?: Partial<Options>) => {
     document.addEventListener('keydown', handleKeydown);
   }
 
+  // Load images from JSON
+  fetch(baseDir + '/static/' + folder + '/images.json')
+    .then(response => response.json())
+    .then(galleryImages => {
+      if (!galleryImages || galleryImages.length === 0) {
+        container.innerHTML = '<div class="gallery-loading">No images found.</div>';
+        return;
+      }
+      allImages = galleryImages;
+      createScatteredLayout(galleryImages);
+    })
+    .catch(err => {
+      console.error('Gallery error:', err);
+      container.innerHTML = '<div class="gallery-loading">Could not load gallery.</div>';
+    });
+
   // Recalculate on resize (debounced, desktop only)
   let resizeTimeout;
-  window.addEventListener('resize', function() {
+  const handleResize = function() {
     if (window.innerWidth <= 768) return;
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(function() {
       seed = Date.now();
-      fetch(baseDir + '/static/' + folder + '/images.json')
-        .then(r => r.json())
-        .then(imgs => {
-          allImages = imgs;
-          createScatteredLayout(imgs);
-        })
-        .catch(() => {});
+      if (allImages.length > 0) {
+        createScatteredLayout(allImages);
+      }
     }, 300);
-  });
-})();
+  };
+  window.addEventListener('resize', handleResize);
+  window.addCleanup(() => window.removeEventListener('resize', handleResize));
+});
 `
 
   return ScatteredGallery
