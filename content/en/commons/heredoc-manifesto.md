@@ -5,7 +5,7 @@ subtitle: "Toward an Ethics of the Statistical Commons in the Age of AI"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"
 tags:
-  - heredoc
+    - heredoc
   - commons
   - statistical-commons
   - LLM
@@ -15,12 +15,11 @@ tags:
   - coding
   - socialization
   - parasite
-  - artificial-intelligence
-  - GPL
+  - _GPL
   - open-source
-  - commons
-  - AI-ethics
-  - black-mountain-college
+  - _commons
+  - _AI-ethics
+  - _black-mountain-college
   - _transformer
   - _deep-learning
   - _Michel-de-Certeau
@@ -58,70 +57,6 @@ tags:
 ## Abstract
 
 Artificial intelligence mechanically dissolves intellectual property into statistical commons ("*Statistical commons*") — an emerging public space where attribution becomes impossible. The Unix *heredoc*, transformed into a self-executing interface, allows anyone to create code through simple natural intention, carrying an ethics of collective creation. This new democratic horizon reveals AI as a transformative tool that produces, despite itself, public domain with every prompt. The challenge: recognizing this mutation where technological capitalism engenders the infrastructure of its own socialization.
-
----
-
-## Glossary
-
-**Repository**
-The digital space where a software project lives: a library containing all files, the history of modifications, and the project's rules.
-
-**Maintainers**
-The guardians of the original project, who decide which contributions to accept or reject (representing the central authority contested by the manifesto).
-
-**Fork**
-The act of entirely copying a project to create one's own independent version. The fork maintains a genealogical link with the original while allowing autonomous evolution (a plant "cutting").
-
-**Pull Request**
-A modification proposal: "Here are the improvements I made in my *fork*, would you like to integrate them into your version?"
-
-**Rhizome**
-A philosophical concept (Deleuze and Guattari) materialized through technical architecture: a structure without fixed center or hierarchy, where knowledge circulates between equal peers, opposed to the centralized model.
-
-**AI (Artificial Intelligence)**
-Scientific field aimed at creating systems capable of performing complex tasks. In the context of the manifesto, it is a "pharmakon" (remedy and poison) and a political apparatus that structurally transforms intellectual property.
-
-**Machine Learning**
-A subdomain of AI where systems learn from data (patterns) rather than through explicit programming. It is the paradigm that makes the dissolution of attribution possible.
-
-**Deep Learning**
-A subdomain of *Machine Learning* using multi-layered neural networks. This depth makes extracting data provenance mathematically intractable.
-
-**Artificial Neural Network**
-A computational architecture composed of layers of interconnected "neurons." It is in the weights of these connections that collective knowledge compresses.
-
-**Parameter / Weight**
-An adjustable floating-point number constituting the neural network's "memory." They encode complex statistical correlations, the physical materialization of statistical commons.
-
-**Transformer**
-A neural network architecture (2017) that made modern *LLMs* possible through the attention mechanism, accelerating compression and recombination.
-
-**LLM (Large Language Model)**
-A very large language model, trained on billions of words and code. They are the main agents of the transmutation of private code into statistical commons.
-
-**Token / Tokenization**
-The process of fragmenting text or code into elementary units ("tokens") that the algorithm manipulates mathematically. This is the first step in dissolving semantic integrity.
-
-**Dataset / Training Corpus**
-The massive set of data (Terabytes of code) used to train the model. The article emphasizes that the preponderance of *open source* sources (~60%) imbues the model with a "tropism toward sharing."
-
-**Training**
-The process by which the model learns by iteratively adjusting billions of weights to minimize error. The article emphasizes the massive ecological cost of this knowledge transformation.
-
-**Latent Space**
-An abstract mathematical space where data is represented in compressed form. The manifesto describes it as a "probabilistic ocean where all solutions ever written float in a state of pure virtuality."
-
-**Embedding**
-A dense vector representation of an element in latent space. It is at this level that "license ghosts" persist — spectral traces, now mathematically inextricable.
-
-**Inference**
-The phase where the model generates new data (code) in response to a *prompt*. This probabilistic process is how AI "manufactures public domain."
-
-**Prompt Engineering**
-The art of formulating optimal instructions to obtain results from an LLM. The prompt becomes the "new literacy" and the "incantation" addressed to compressed collective intelligence.
-
-**Statistics**
-Sciences of data analysis and interpretation (etym. "sciences of the State"). The article refers to *statistical commons* to emphasize that knowledge emerges through sedimentation and probabilistic recombination.
 
 ---
 
