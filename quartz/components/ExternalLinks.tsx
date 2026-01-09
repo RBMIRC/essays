@@ -4,6 +4,7 @@ const ExternalLinks: QuartzComponent = () => {
   const links = [
     { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
     { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" },
+    { name: "🌱", url: "https://www.couzinetjacques.com" },
   ]
 
   return (

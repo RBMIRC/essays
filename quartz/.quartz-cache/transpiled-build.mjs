@@ -2689,7 +2689,7 @@ a.internal.tag-link {
     popups.forEach(function(_, id) { closePopup(id); });
   });
 })();
-`,ImagePreview}),"default");import{jsx as jsx41,jsxs as jsxs25}from"preact/jsx-runtime";var ExternalLinks=__name(()=>jsxs25("div",{class:"external-links",children:[jsx41("h3",{children:"Related"}),jsx41("ul",{children:[{name:"The Dining Hall",url:"https://retconblackmountain.info/"},{name:"The Library",url:"https://thelibrary.retconblackmountain.info/"}].map(link=>jsx41("li",{children:jsx41("a",{href:link.url,target:"_blank",rel:"noopener noreferrer",children:link.name})}))})]}),"ExternalLinks");ExternalLinks.css=`
+`,ImagePreview}),"default");import{jsx as jsx41,jsxs as jsxs25}from"preact/jsx-runtime";var ExternalLinks=__name(()=>jsxs25("div",{class:"external-links",children:[jsx41("h3",{children:"Related"}),jsx41("ul",{children:[{name:"The Dining Hall",url:"https://retconblackmountain.info/"},{name:"The Library",url:"https://thelibrary.retconblackmountain.info/"},{name:"\u{1F331}",url:"https://www.couzinetjacques.com"}].map(link=>jsx41("li",{children:jsx41("a",{href:link.url,target:"_blank",rel:"noopener noreferrer",children:link.name})}))})]}),"ExternalLinks");ExternalLinks.css=`
 .external-links {
   margin-top: 1.5rem;
 }

@@ -6596,7 +6596,8 @@ import { jsx as jsx41, jsxs as jsxs25 } from "preact/jsx-runtime";
 var ExternalLinks = /* @__PURE__ */ __name(() => {
   const links = [
     { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
-    { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" }
+    { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" },
+    { name: "\u{1F331}", url: "https://www.couzinetjacques.com" }
   ];
   return /* @__PURE__ */ jsxs25("div", { class: "external-links", children: [
     /* @__PURE__ */ jsx41("h3", { children: "Related" }),
