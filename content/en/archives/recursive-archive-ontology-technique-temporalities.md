@@ -78,7 +78,7 @@ This recursivity carries a major risk: model collapse, where AI systems trained 
 
 ## I. Archaeology of the Archive: From Consignment to Computation
 
-### 1.1 The Archive as Condition of Possibility
+### The Archive as Condition of Possibility
 
 The archive has never been a mere receptacle. Michel Foucault, in his *Archaeology of Knowledge*, demonstrated this with decisive clarity: the archive does not designate the totality of texts that a civilization has preserved, nor the institutions that enable their preservation. The archive names the system of rules that determines what can be said, what counts as an acceptable statement, what enters the historical register and what disappears from it. The archive is the condition of possibility of discourse—and its limits. It does not passively preserve the past; it actively produces what counts as historical reality through processes of selection, classification, and interpretation.
 
@@ -86,7 +86,7 @@ Jacques Derrida extended this analysis by examining what he calls *archive fever
 
 Derrida wrote that "the technical structure of the archiving archive also determines the structure of the archivable content right from its very coming into existence and in its relationship to the future." This formulation is prophetic: it anticipates precisely the current condition where technical systems no longer merely store but generate, where the archive no longer merely preserves but predicts, where the document no longer testifies to a past but configures a future.
 
-### 1.2 Tertiary Retention and Its Mutations
+### Tertiary Retention and Its Mutations
 
 Bernard Stiegler developed, building on Husserl, a decisive conceptualization for understanding this transformation. He distinguishes three forms of memory that constitute consciousness. Primary retention designates the immediate perception of the now, the present flow—hearing a note of music at the moment it resonates. Secondary retention is the memory of this perception, filtered through imagination—recalling the melody afterward. Tertiary retention names the externalization of memory in technical objects—a vinyl recording of the melody, a book, an archive, a database.
 
@@ -96,7 +96,7 @@ Yet Yuk Hui observes that the digital era has shifted the center of gravity of t
 
 This shift from retention to protention constitutes what Hui calls a new political regime—a politics of anticipation rather than memory. When tertiary protention becomes automated and dominant, it short-circuits the human capacity to imagine the future. We become passive consumers of a future pre-calculated by the archive. Stiegler speaks of a proletarianization of the mind, where savoir-vivre and savoir-faire are transferred to the machine. This short-circuit is the direct effect of the recursive query applied to human behaviors: the system takes our past data, applies a recursive prediction function, and generates our probable future, locking us in a feedback loop that eliminates contingency.
 
-### 1.2 bis — The Infrastructure of Recursivity
+### The Infrastructure of Recursivity
 
 The recursivity we are analyzing is not an abstract property of information. It is implemented in a specific material infrastructure—what Benjamin Bratton calls The Stack.
 
@@ -110,7 +110,7 @@ Tiziana Terranova named "free labor" the unpaid work that users provide to platf
 
 Recursivity is therefore not merely a logical structure or an ontological mode of being; it is an economic operation. Each feedback loop—each iteration where the system learns from its own outputs—is also a cycle of accumulation where collectively produced value is privately appropriated. The Model Collapse we will analyze further on is not only a technical risk; it is the symptom of a system that, lacking new human inputs to extract, begins to devour itself.
 
-### 1.3 The Archive as Social Construction
+### The Archive as Social Construction
 
 Work on archives of marginalized practices—whether weaving at Black Mountain College, feminist histories, or indigenous knowledge—reveals with particular acuity the constructed character of every archival formation. What is preserved depends on who has the power to define what counts. Weaving survives poorly in archives precisely because it was associated with the feminine and the domestic. When 75% of the students at Black Mountain who took weaving classes were women, and most of them "married and raised children" after their studies, their activities were generally considered hobbies by their families. Whether their creative work was valued by their husbands or children plays a determining role in the preservation of these materials. The interview with Michael Beggs, co-author with Julie Thomson of the book *Weaving at Black Mountain* (2023), conducted during the ARC reminds us of this.
 
@@ -122,7 +122,7 @@ There is a lesson here for thinking the archive in the age of AI. Language model
 
 ## II. The Logic of Recursivity: From SQL to Cybernetics
 
-### 2.1 The Technical Definition
+### The Technical Definition
 
 To grasp the change in the archive's status, we must first understand the technical and philosophical mechanism of recursivity. It is the operational logic of the digital age, governing everything from database structures to the feedback loops of machine learning.
 
@@ -138,7 +138,7 @@ But the termination condition is lacking. Nothing any longer distinguishes the a
 
 Unlike an SQL query that possesses a strict termination condition to avoid infinite loops, the generative AI loop risks becoming an infinite recursion of synthetic content. The anchor—historical human reality—is increasingly diluted by recursive production—synthetic reality—leading to a saturation of informational space by simulacra. The recursive query, without ontological brake, becomes a process of informational entropy.
 
-### 2.2 The Philosophy of Recursivity
+### The Philosophy of Recursivity
 
 Yuk Hui elevates recursivity from a simple computational function to a fundamental category of existence. In *Recursivity and Contingency*, he shows that recursivity is not simply mechanical repetition; it is the mode by which a system—whether organic or machinic—incorporates contingency in order to maintain, individuate, and evolve itself.
 
@@ -148,7 +148,7 @@ Hui argues that the organic and the machinic become indiscernible because both o
 
 In the context of the archive, this means we are passing from a mechanical archive to a cybernetic archive. User interaction modifies the archive—personalization algorithms learn from the query. But if this system is not open to the outside, to the inhuman or the accidental, it becomes a totalizing prison, a perfect control system that eliminates all genuine novelty in favor of statistical prediction.
 
-### 2.3 Protentional Closure
+### Protentional Closure
 
 Antoinette Rouvroy has conceptualized this regime under the name algorithmic governmentality—a mode of power that operates not through discipline or normalization but through statistical modeling of behavioral possibilities. Contemporary computational systems short-circuit subjectivity, addressing individuals only as aggregates of correlatable data points. This regime produces a statistical reality that preempts events before they occur, closing the space of political and creative indetermination.
 
@@ -160,7 +160,7 @@ The social media feed, based on recursive queries, traps users in a loop of perp
 
 ## III. The Artifact as Archive: Toward an Expanded Ontology of the Document
 
-### 3.1 Beyond Text
+### Beyond Text
 
 Research on archives of material practices—weaving, ceramics, craft—compels us to expand the conception of the document. In the Black Mountain College archives, one finds a folder "Anni Albers — Weaving Workshop" containing a subfolder "Student Works, 1944." Inside: a dozen textile samples. No names, no precise dates, no written instructions.
 
@@ -170,7 +170,7 @@ This inversion of documentary status opens ontological questions. A textile wove
 
 Unlike the written document that fixes a moment—the dated letter, the minutes—the artifact carries within it a duration: the time of making, its uses, its degradations. And unlike the letter, often written with awareness of its possible preservation, the weaving exercise was not. It becomes archive retroactively. The object not intended for preservation perhaps carries a truth that the consciously archived document cannot attain: that of the unsupervised gesture, of practice not performed for posterity.
 
-### 3.3 The Generative Archive and Latent Space
+### The Generative Archive and Latent Space
 
 In machine learning, latent space is the multidimensional mathematical space where the model stores its understanding of data. Similar concepts are grouped together—all images of chairs are mathematically close to tables. When we prompt an AI, we traverse this latent space. We do not retrieve a document; we interpolate a path between points in this high-dimensional archive.
 
@@ -182,7 +182,7 @@ This transformation poses the question of what it means to archive in the genera
 
 ## IV. Cosmotechnics and Technodiversity
 
-### 4.1 Western Monotechnics
+### Western Monotechnics
 
 If the recursive query of AI creates a closed loop, how do we escape it? The philosopher Yuk Hui proposes a conceptual tool: cosmotechnics.
 
@@ -192,7 +192,7 @@ Two examples. Greek cosmotechnics, founded on techne and episteme, seeks to disc
 
 The modern problem: a single cosmotechnics—the Western one, which aims at mastery of nature through mathematical calculation—has universalized itself under the name of "Technology" with a capital T. This monotechnics imposes on the entire world a forced synchronization: a single time, that of acceleration; a single logic, that of optimization. Local temporalities, alternative cosmologies, other ways of doing technique are crushed or folklorized.
 
-### 4.2 The Geometry of Time versus Resonance
+### The Geometry of Time versus Resonance
 
 Cosmotechnics is not only a critical tool—it opens a constructive possibility. If different cultures have produced different techniques, then the current monotechnics is not a fatality. Yuk Hui names technodiversity this project: not folklorizing local techniques by museumifying them, but building technical systems that genuinely embody other relations to time, memory, and relation.
 
@@ -210,7 +210,7 @@ These questions are not rhetorical. They outline the specifications for an archi
 
 ## VI. Retcon as Method
 
-### 6.1 Retroactive Continuity
+### Retroactive Continuity
 
 The term *retcon*—contraction of *retroactive continuity*—comes from comic book culture, where later episodes modify the meaning of earlier events without erasing them. Applied to archival practice, *retcon* does not falsify history but activates latent possibilities in documentary traces, producing what we might call counterfactual coherence.
 
@@ -224,13 +224,13 @@ Eshun writes: "Struggles over the image of the future are struggles over the ima
 
 When *retcon* is conducted with AI systems, it becomes doubly recursive: the machine draws from interpretations accumulated in its training data, generating new texts that themselves become available for future archival processing. The experiment influences what it experiments on. This is not a bug but a feature—the recursive loop becomes intervention mechanism, means of shaping the systems that shape us.
 
-### 6.2 The Speculative Archive
+### The Speculative Archive
 
 Mark Fisher, in his reflections on hauntology, theorized lost futures—unrealized possibilities that haunt the present, trajectories that were opened at a given moment but were not pursued. The archives of experimental projects like Black Mountain College preserve precisely such lost futures: pedagogical and artistic innovations that were not absorbed into dominant practice and remain available for contemporary reactivation.
 
 The speculative archive does not merely document what was but opens onto what might have been and what might yet become. It treats documents not as testimonies of a closed past but as virtualities awaiting actualization. This conception meets what François Hartog calls presentism—the contemporary regime of historicity where the present invades both past and future—but reverses it: instead of closing the temporal horizon, the speculative archive reopens it by activating latent potentialities of the past.
 
-### 6.3 Distributed Subjectivity
+### Distributed Subjectivity
 
 The integration of AI into archival and artistic practice poses the question of creative agency. The humanist tradition attributed creativity to an individual subject endowed with intentionality, emotional resonance, and cultural grounding. These three dimensions constitute what we might call transformational creativity—the capacity not only to generate new elements within an existing framework but to dismantle, reconstruct, and redefine the framework itself.
 
@@ -242,7 +242,7 @@ However, collaborative practice with AI is not reducible to the opposition creat
 
 ## VII. Transindividuation Under Algorithmic Conditions
 
-### 7.1 The Aggregation Argument
+### The Aggregation Argument
 
 Two classical arguments hold that computation is antithetical to authentic collective creativity.
 
@@ -258,7 +258,7 @@ Hubert Dreyfus updated this critique in the context of artificial intelligence. 
 
 These two arguments converge toward the same conclusion: computation can *simulate* collective creativity, but never *accomplish* it. It can aggregate contributions, detect regularities, optimize combinations—but the moment of genuine emergence would escape it in principle.
 
-### 7.2 Transindividuation as Overcoming
+### Transindividuation as Overcoming
 
 Contemporary theorists have increasingly contested the view that computation and collective creativity are antithetical. They argue instead that the two are potentially complementary and that any rigid dichotomy between algorithmic processing and emergent collective practice neglects the complexities of how communities actually form and transform through technical mediation.
 
@@ -276,7 +276,7 @@ This distinction changes everything in the question of computation and creativit
 
 A piece of software used by a community of practice is never exactly what the engineers designed: actual uses overflow it, divert it, make it do what it was not supposed to do. It is in this gap between design and appropriation that the possibility of a computationally mediated but not computationally determined collective creativity lodges itself.
 
-### 7.3 Creative Appropriation of Constraints
+### Creative Appropriation of Constraints
 
 Sociological research reinforces these philosophical arguments. Actor-Network Theory, developed by Bruno Latour, Michel Callon, and John Law, points toward the ways technical objects participate as actants in the constitution of collective life. Even if computational mediation appears aggregative, this aggregation quickly mutates into something more dynamic as communities appropriate technical systems for their own ends.
 
@@ -290,7 +290,7 @@ Engaging with the documentary patterns of an archive does not confine a collecti
 
 ## VIII. Toward a Recursive Aesthetics
 
-### 8.1 Principles
+### Principles
 
 The preceding investigations point toward what we might call a recursive aesthetics—an approach to creation adequate to the conditions of computational recursion. This is not a style or movement but a set of concerns, methods, orientations that inform how work can be made and understood.
 
@@ -298,7 +298,7 @@ Recursive aesthetics takes feedback loops as formal principle and as material. W
 
 Recursive aesthetics embraces the dissolution of stable authority. The artist is not sovereign creator but participant in distributed processes involving human and computational agents, historical archives and real-time processing, individual intention and statistical tendency. It engages history not as fixed past but as material for revision, recognizing that all historical knowledge is produced through processes of selection and interpretation.
 
-### 8.2 Documentation and Critique
+### Documentation and Critique
 
 Recursive aesthetics requires new forms of documentation, critique, theorization. Traditional art historical methods presuppose individual authors producing discrete works at specific moments. These presuppositions falter under recursive conditions. New approaches are needed that can track distributed agencies, trace archival flows, evaluate interventions across multiple temporal scales.
 
@@ -310,7 +310,7 @@ The recursive condition means this experimentation already feeds back on the sys
 
 ## IX. Stewardship of the Loop
 
-### 9.1 From User to Guardian
+### From User to Guardian
 
 The question is not to escape the recursive loop—it is structural, inevitable once a system trains on its own outputs. The question is how to inhabit it.
 
@@ -318,7 +318,7 @@ This begins with lucidity. Lucidity about political stakes: who owns the models,
 
 It is this lucidity—and not abstract voluntarism—that leads to a situated practice. Not "Universal Machines" but local machines, grounded in the moral and cosmic orders of the communities they serve. Not "users" of the archive but guardians of the loop—stewards who maintain the link between system and its outside, who correct drift before collapse.
 
-### 9.2 Protocol and Sovereignty
+### Protocol and Sovereignty
 
 The indigenous AI movement provides protocolary and architectural responses to the closure of the recursive loop. The work of Tahu Kukutai, John Taylor, and their collaborators on indigenous data sovereignty (*Indigenous Data Sovereignty*, 2016) establishes principles that contrast radically with dominant extractivism.
 
@@ -330,7 +330,7 @@ Arturo Escobar, from a Latin American perspective, thinks alternatives to Wester
 
 Algorithmic systems—if they are useful!—must not serve a disembodied intelligence but an extension of the social and ecological body of the territory. They must be attached to the localized laws inherent to Country—what Australian Aboriginal traditions call Country. This demand for grounding is not antimodern romanticism; it is a condition of sustainability. An uprooted recursivity—that refers only to itself, without attachment to the material and social world—is destined for collapse. Indigenous protocols offer models for a situated, responsible, relational recursivity.
 
-### 9.3 Certification and Provenance
+### Certification and Provenance
 
 Work on digital archives aligns with the idea that the future archive must move from curation to certification. We must be able to say: this story comes from a human, and this human gave their consent. Faced with the proliferation of synthetic content, provenance becomes the central archival question.
 
