@@ -18,8 +18,8 @@ tags:
   - multivers
   - lost-futurs
   - research-creation
-  - experimental-pedagogies
-  - _retroactive-continuity
+  - pedagogies
+  - retroactive-continuity
   - _LLM
   - _algorithmic-hallucination
   - _transduction
@@ -39,25 +39,24 @@ tags:
     
 ---
 
-```
-<<RETCON-BLACK-MOUNTAIN v1.0
+<details class="heredoc-block">
+<summary>◈ RETCON-BLACK-MOUNTAIN v1.0</summary>
 
-Title: Retcon Black Mountain : Practicing the Archive in the AI Age
-Author: Sylvain Couzinet-Jacques
-Date: 2026
-Intent: Turning archival haunting into praxis—what AI dissolves statistically, collectives must reopen politically
-Provenance: Seminar 'The Image in History's Blanks' (Le Bal / EHESS, 2024, curated by Vanessa Brito
-Genealogy: Pannenberg/Tupper (retroactive continuity) → Clover (retcon as temporal arbitrage) → Stiegler (tertiary retention) → Fisher (hauntology, lost futures) → Derrida (archive fever) → Barad/Haraway (diffraction, situated knowledges) → Simondon (transduction, milieu) → Rouvroy (algorithmic governmentality) → Moten/Harney (study) → Azoulay (unlearning imperialism) → Stoler (along the archival grain)
-Ethics: Against nostalgia · Against cynicism · Collective validation over individual hallucination · Right to refuse · Curating accidents, not controlling outputs
-Fork-chain: [Heredoc Manifesto] → current → [awaiting next fork]
-Contamination: Embraces traces of {GPL, MIT, Apache, BSD, OSSI-Pledge} philosophies
-Confidence: The archive is liquid—we do not resolidify it, we refract it · What AI closes statistically, collectives must reopen politically · We do not learn from BMC—we teach it that it is not finished. Methodology without guarantees—effects are possible, not assured
-Notes: Fidelity to history is fidelity to what could have been · The solidity of the possible is the only solidity left
+**Title:** Retcon Black Mountain Subtitle: Practicing the Archive in the AI Age
+**Author:** Sylvain Couzinet-Jacques
+**Date:** 2025
+**Intent:** Turning archival haunting into praxis—what AI dissolves statistically, collectives must reopen politically
+**Provenance:** Seminar 'The Image in History's Blanks' (Le Bal / EHESS, 2024, curated by Vanessa Brito
+**Genealogy:** Pannenberg/Tupper (retroactive continuity) → Clover (retcon as temporal arbitrage) → Stiegler (tertiary retention) → Fisher (hauntology, lost futures) → Derrida (archive fever) → Barad/Haraway (diffraction, situated knowledges) → Simondon (transduction, milieu) → Rouvroy (algorithmic governmentality) → Moten/Harney (study) → Azoulay (unlearning imperialism) → Stoler (along the archival grain)
+**Ethics:** Against nostalgia · Against cynicism · Collective validation over individual hallucination · Right to refuse · Curating accidents, not controlling outputs
+**Fork-chain:** [RETCON] → current → [awaiting next fork]
+**Contamination:** Embraces traces of {GPL, MIT, Apache, BSD, OSSI-Pledge} philosophies
+**Confidence:** The archive is liquid—we do not resolidify it, we refract it · What AI closes statistically, collectives must reopen politically · We do not learn from BMC—we teach it that it is not finished. Methodology without guarantees—effects are possible, not assured
+**Notes:** Fidelity to history is fidelity to what could have been · The solidity of the possible is the only solidity left
 
-<<RETCON-BLACK-MOUNTAIN v1.0
-```
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
+</details>
 
-## Praxis de l'archive à l'ère de l'intelligence artificielle
 
 ---
 
