@@ -5,7 +5,7 @@ subtitle: "Toward an Ethics of the Statistical Commons in the Age of AI"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"
 tags:
-    - heredoc
+  - heredoc
   - commons
   - statistical-commons
   - LLM
