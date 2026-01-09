@@ -1,7 +1,7 @@
 ---
 title: "Le continuum de l'image"
 translation: "/en/images/the-image-continuum"
-subtitle: "De la transformation ontologique de la photographie à l'ère des systèmes génératifs"
+subtitle: "De la photographie à l'ère des systèmes génératifs"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"
 lang: fr
@@ -45,25 +45,22 @@ tags:
 <summary>◈ CONTINUUM-IMAGE v1.0</summary>
 
 **Titre :** Le continuum de l'image  
-**Sous-titre :** De la transformation ontologique de la photographie à l'ère des systèmes génératifs  
+**Sous-titre :** Transformation de la photographie à l'ère des systèmes génératifs  
 **Auteur :** Sylvain Couzinet-Jacques  
 **Date :** 2024  
 **Intention :** De la photographie analogique à l'image générée par IA  
-**Provenance :** Institut pour la Photographie, Lille  
+**Provenance :** Résidence à Institut pour la Photographie, Lille  
 **Généalogie :** Barthes (La chambre claire) → Stiegler (La Technique et le Temps) → Simondon (Individuation) → Flusser (Images techniques) → Hui (Cosmotechnique)  
 **Éthique :** Reconnaissance · Spéculation · Technodiversité  
 **Licence :** GPL-3.0-or-later  
 **Chaîne de forks :** [Philosophie de la technique] → actuel → [en attente du prochain fork]  
 **Contamination :** Infusé de {théorie indicielle, archéologie des médias, philosophie du processus, médias imaginaires}  
 **Confiance :** Synthèse théorique orientée vers la pratique  
-**Notes :** Le singulier ne disparaît pas ; il se transforme  
+**Notes :** Continuum Hardcore 
+
+*Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.*
 
 </details>
-
-## De la photographie à l'ère des systèmes génératifs
-
-par Sylvain Couzinet-Jacques
-
 ---
 
 ## I. La question
