@@ -133,13 +133,13 @@ Le workshop apparaît ainsi comme l'appareil de l'enseignant.e exposé.e au sens
 
 ## Première partie : La forme *workshop*
 
-### 1. Le temps contracté
+### Le temps contracté
 
-Le *workshop* se définit d'abord par une opération sur le temps. Là où le projet semestriel étale la conception sur plusieurs mois, le *workshop* la comprime en quelques jours. Cette compression n'est pas une simple accélération — elle modifie qualitativement l'expérience.
+Le workshop se définit d'abord par une opération sur le temps. Là où le projet semestriel étale la conception sur plusieurs mois, le workshop la comprime en quelques jours. Cette compression n'est pas une simple accélération — elle modifie qualitativement l'expérience.
 
 Dans le temps long du projet, l'étudiant peut différer, hésiter, reprendre. Le temps agit comme un tampon qui absorbe les erreurs et permet les corrections. Le rendu final efface les traces du processus ; seul compte le résultat. Cette structure temporelle a ses vertus (elle autorise la maturation, la recherche documentaire, l'approfondissement) mais elle a aussi ses effets : elle permet d'éviter la confrontation avec ce qu'on ne sait pas faire, de contourner les difficultés plutôt que de les traverser.
 
-Le *workshop* supprime ce tampon. Il n'y a pas de temps pour contourner ; il faut traverser. L'étudiant qui ne sait pas dessiner ne peut pas attendre d'avoir appris — il doit dessiner maintenant, avec ce qu'il sait. Celui qui ne sait pas construire doit construire quand même. Cette urgence n'est pas un stress managérial visant la productivité ; elle est une pression atmosphérique nécessaire. Comme en physique, la compression chauffe la matière. Ici, elle chauffe la pensée. Elle oblige à l'audace par manque de temps pour la prudence.
+Le workshop supprime ce tampon. Il n'y a pas de temps pour contourner ; il faut traverser. L'étudiant qui ne sait pas dessiner ne peut pas attendre d'avoir appris — il doit dessiner maintenant, avec ce qu'il sait. Celui qui ne sait pas construire doit construire quand même. Cette urgence n'est pas un stress managérial visant la productivité ; elle est une pression atmosphérique nécessaire. Comme en physique, la compression chauffe la matière. Ici, elle chauffe la pensée. Elle oblige à l'audace par manque de temps pour la prudence.
 
 John Dewey, dont l'influence sur Black Mountain College fut décisive, nommait cela « situation problématique » (*problematic situation*) : l'apprentissage naît de la rencontre avec un obstacle qui ne peut être contourné, qui exige une réorganisation des ressources disponibles. Dans Logic: The Theory of Inquiry (1938), Dewey définit la situation problématique comme un état d'incertitude, de confusion ou de conflit qui interrompt le cours habituel de l'action et force à penser. « La pensée n'apparaît pas spontanément », écrit-il ; elle est toujours une réponse à quelque chose qui résiste. Sans obstacle, pas de pensée — seulement de l'habitude.
 
@@ -149,9 +149,9 @@ Le temps contracté du workshop multiplie ces situations problématiques. Il ne 
 
 Mais — et c'est un point crucial — la contraction temporelle n'est pas en soi pédagogique. Elle peut aussi produire de la panique, de la paralysie, du travail bâclé. Ce qui fait la différence, c'est le dispositif dans lequel elle s'inscrit : la présence d'autres avec qui partager l'urgence, la clarté des contraintes, la possibilité d'échouer sans sanction définitive. Le temps contracté est une condition nécessaire mais non suffisante.
 
-### 2. La communauté gestuelle
+### La communauté gestuelle
 
-La seconde opération du *workshop* est la mise en commun des gestes. Là où le projet individuel isole chaque étudiant dans sa production, le *workshop* crée un espace où les corps travaillent ensemble, où les gestes sont visibles les uns aux autres, où l'apprentissage passe par l'observation et l'imitation autant que par l'instruction explicite.
+La seconde opération du workshop est la mise en commun des gestes. Là où le projet individuel isole chaque étudiant dans sa production, le workshop crée un espace où les corps travaillent ensemble, où les gestes sont visibles les uns aux autres, où l'apprentissage passe par l'observation et l'imitation autant que par l'instruction explicite.
 
 Cette dimension est souvent sous-théorisée. On parle de « travail en groupe », de « collaboration », mais ces termes restent abstraits. Ce qui se joue dans le *workshop* est plus précis : c'est la constitution d'une communauté de pratique au sens que Jean Lave et Etienne Wenger ont donné à ce terme — un espace social où le savoir circule par *legitimate peripheral participation*, où le novice apprend en observant l'expert.e, où les compétences se transmettent par proximité des corps plutôt que par explicitation des règles.
 
@@ -159,7 +159,7 @@ Cette dimension est souvent sous-théorisée. On parle de « travail en groupe �
 
 Cette circulation suppose des conditions matérielles précises. Elle suppose un espace partagé où les corps peuvent se voir travailler. Elle suppose des outils qui n'isolent pas — des outils qu'on manipule à plusieurs, ou du moins qu'on manipule sous le regard des autres. Elle suppose un temps suffisamment dense pour que la co-présence soit effective et non occasionnelle.
 
-### 2bis. Le danger de la *masterclass*
+### Le danger de la *masterclass*
 
 Mais un risque menace cette communauté gestuelle : que le workshop devienne une performance de virtuosité de l'enseignant. La *masterclass* — ce format où un *maître* accompli démontre sa technique devant un public admiratif — retombe dans l'asymétrie traditionnelle. L'enseignant.e montre ce qu'il sait faire ; les étudiant.e.s regardent ce qu'ils ne savent pas encore.
 
@@ -173,7 +173,7 @@ Hirschhorn oppose explicitement cette présence à la « participation » démag
 
 Dans un autre registre et dans un autre cadre, les workshops de l'ENSA Versailles explorent et poussent cette logique par sa forme collégiale : dix enseignant.e.s plutôt qu'un.e. Les étudiant.e.s voient non seulement un corps au travail, mais un corps éducatif dans une négociation collective.
 
-### 3. Le bruit et le silence : acoustique de l'atelier ###
+### Le bruit et le silence : acoustique de l'atelier ###
    
 L'atelier analogique est bruyant — conversations, froissements de papier, chutes de matériaux, parfois même bruits de scie et marteau. Ce bruit pourrait sembler un obstacle à la concentration. Il est en réalité une information partagée. Il dit qui travaille, à quel rythme, avec quels outils. Il synchronise les corps sans les contraindre. On entend quelqu'un découper et cela relance sa propre énergie ; on perçoit un ralentissement collectif et on s'autorise une pause. Le bruit de l'atelier est un liant social, une basse continue qui tisse ensemble des activités parallèles sans les homogénéiser.
 
@@ -185,7 +185,7 @@ Cette mutation acoustique a des conséquences pédagogiques rarement thématisé
 
 Le workshop doit « resonoriser » la conception. Même quand il intègre des outils numériques — et il serait absurde de les exclure —, il doit réintroduire du bruit partagé. Cela peut prendre plusieurs formes : des moments où les écrans sont projetés et commentés collectivement, où le travail silencieux devient public et discutable ; des pauses structurées où l'on parle de ce qu'on fait, où le processus se verbalise ; des phases où le numérique cède la place au matériau — papier, carton, mousse — et où le son revient avec la matière. Il ne s'agit pas de nostalgie pour l'atelier d'antan, mais de conscience que l'acoustique est une dimension de la pédagogie.
 
-### 4. Ce que le workshop n'est pas ###
+### Ce que le workshop n'est pas ###
 
 Il est utile, pour préciser la forme, de dire ce qu'elle n'est pas. La définition négative n'est pas un aveu d'impuissance ; elle trace des frontières qui rendent le concept opératoire.
 
@@ -197,7 +197,7 @@ Le workshop n'est pas un *team building*. La confusion est fréquente, notamment
 
 Le workshop n'est pas un événement. L'événementiel — vernissage, festival, *happening* — produit de l'intensité ponctuelle sans exiger de transformation durable. On y assiste, on en sort diverti ou stimulé, mais on n'est pas tenu d'en garder quelque chose. Le workshop engage une responsabilité : celle de traverser le temps imparti jusqu'au bout, de produire quelque chose, de rendre des comptes (à soi-même, aux autres, au collectif). Cette dimension d'engagement distingue le workshop de la « parenthèse » festive où l'on peut entrer et sortir à sa guise.
 
-### 5. Le workshop comme situation ###
+### Le workshop comme situation ###
 
 On peut maintenant proposer une définition plus précise : le workshop est un dispositif pédagogique qui institue une situation d'apprentissage par le faire collectif dans un temps contracté.
 
@@ -209,7 +209,7 @@ Le workshop ne crée pas la situation de toutes pièces — il s'installe dans u
 
 C'est en ce sens que le workshop est une forme politique — non pas parce qu'il porterait un message politique, mais parce qu'il reconfigure, même provisoirement, les conditions du commun.
 
-### 6. L'économie politique du workshop : extraction ou émancipation ?
+### L'économie politique du workshop : extraction ou émancipation ?
 
 Il serait naïf de présenter le format du workshop comme une forme intrinsèquement vertueuse. Le workshop est aussi une technologie de gouvernement contemporaine — et à ce titre, il peut servir des fins opposées.
 
@@ -229,7 +229,7 @@ Ces questions ne disqualifient pas le workshop comme forme. Elles rappellent qu'
 
 ## Deuxième partie : Du faire au savoir
 
-### 1. L'énigme de la transmission pratique
+### L'énigme de la transmission pratique
 
 Comment apprend-on à faire quelque chose ?
 
@@ -241,7 +241,7 @@ La tradition artisanale résolvait ce problème par le compagnonnage : le.la nov
 
 L'enseignement moderne de l'architecture a rompu avec ce modèle sans vraiment le remplacer. Le système des Beaux-Arts maintenait la figure du « patron » d'atelier, mais la transmission s'y faisait davantage par le commentaire verbal (la « correction ») que par le faire partagé. Le maître ne dessinait pas avec l'élève ; il jugeait son dessin. Le savoir pratique était censé s'acquérir par essai-erreur individuel sous le regard critique du jury.
 
-### 2. Ce que fait le faire
+### Ce que fait le faire
 
 Le workshop réactive quelque chose du compagnonnage, mais dans un temps comprimé et sans la hiérarchie rigide du système maître-apprenti. 
 
@@ -251,7 +251,7 @@ Quand Anni Albers tissait avec ses étudiant.e.s à Black Mountain, elle ne leur
 
 Le philosophe Matthew Crawford, dans son analyse du travail manuel, nomme cela *joint attention* (« attention conjointe ») : deux personnes orientées ensemble vers un même objet, chacune percevant l'attention de l'autre. Cette structure est pédagogiquement puissante parce qu'elle montre non seulement quoi regarder mais comment regarder. L'étudiant.e apprend à voir ce qui compte dans une situation en voyant ce que l'enseignant regarde.
 
-### 2bis. Le *prompt* physique : ce que l'IA ne peut pas faire
+### Le *prompt* physique : ce que l'IA ne peut pas faire
 
 Durant les deux workshops en 2024 et 2025, l'intelligence artificielle générative a été un outil remisé. Non pas interdit, mais laissé de côté, au profit d'autres outils : le crayon, le carton, le tissu, la conversation, l'archive physique et numérisée. Ce choix n'était pas un manifeste technophobe ; il répondait à une intuition pédagogique qu'il s'agit maintenant de formuler.
 
@@ -265,7 +265,7 @@ L'enseignant.e qui travaille à la table commune est le gardien de ces frictions
 
 L'IA générative, par construction, élimine la friction. Elle répond à la demande ; elle produit sans résister ; elle optimise le chemin vers le résultat. C'est sa force dans un contexte de production — et sa faiblesse dans un contexte d'apprentissage. Un *workshop* centré sur l'IA générative risque de produire beaucoup d'images et peu de savoir incorporé (C'est d'ailleurs une observation qui a été faite dans des workshops dans d'autres écoles ou l'IA générative était proposé comme outil). Mais un workshop qui intégrerait l'IA autrement — comme archive interrogeable, comme interlocuteur critique, comme révélateur de biais — pourrait au contraire enrichir les frictions au lieu de les dissoudre. La question reste ouverte ; elle appelle d'autres expérimentations.
 
-### 2ter. Le corps qui reste : savoir incorporé et savoir situé
+### Le corps qui reste : savoir incorporé et savoir situé
 
 L'anthropologue Tim Ingold, dans *Making* (2013), distingue deux modèles du faire. Le modèle hylémorphique — hérité d'Aristote — suppose qu'une forme préexiste dans l'esprit du créateur, puis s'impose à une matière passive. C'est le modèle de l'ingénieur, du *designer* industriel — et de l'IA générative, qui « applique » un *prompt* à une matière statistique.
 
@@ -279,7 +279,7 @@ L'épistémologue et théoricienne féministe des sciences Donna Haraway ajoute 
 
 Cette double exposition distingue radicalement l'enseignement humain de la transmission machinique. L'IA simule une objectivité désincarnée ; l'enseignant exposé dit d'où il parle.
 
-### 3. Les outils et la communauté
+### Les outils et la communauté
 
 Le choix des outils n'est pas neutre dans ce processus. Certains outils favorisent l'attention conjointe ; d'autres demandent un effort supplémentaire pour la maintenir.
 
@@ -287,7 +287,7 @@ La grande table de travail où plusieurs personnes découpent, collent, assemble
 
 Cette lisibilité est pédagogique. Elle permet d'apprendre de ses erreurs parce qu'on peut les comprendre. Elle permet aussi d'apprendre des erreurs des autres, parce qu'elles sont visibles et partageables. Le *workshop* manuel — celui que nous avons pratiqué à Eden et à Versailles — mise sur cette lisibilité : le dessin à la main, la maquette en carton, le tissage, la construction en bois produisent des objets dont on peut pointer du doigt ce qui marche et ce qui ne marche pas.
 
-### 4. Vers une autre intégration du numérique
+### Vers une autre intégration du numérique
 
 Mais cette lisibilité n'est pas l'apanage du matériau physique. Elle est une propriété de certains dispositifs — et elle peut être construite autrement.
 
@@ -309,7 +309,7 @@ Le workshop manuel que nous avons pratiqué était une première étape — un s
 
 ## Troisième partie : Black Mountain comme opérateur
 
-### 1. Le problème de la référence historique
+### Le problème de la référence historique
 
 Comment deux écoles séparées de soixante-dix ans peuvent-elles s'articuler sans que la première devienne un modèle à imiter ou une image nostalgique à contempler ?
 
@@ -317,7 +317,7 @@ La question est plus générale : elle concerne le statut de l'histoire dans l'e
 
 Black Mountain College se prête particulièrement à la fétichisation. L'expérience fut brève (1933-1957), radicale (une communauté autogérée, une pédagogie expérimentale), et peuplée de figures devenues mythiques (Albers, Cage, Fuller, Asawa, Cunningham). Elle s'est terminée dans la précarité et l'oubli avant d'être redécouverte et magnifiée. Tous les ingrédients sont réunis pour en faire un « âge d'or » perdu — ce qui est la meilleure façon de le neutraliser.
 
-### 2. Ni imitation ni rupture : la réactivation
+### Ni imitation ni rupture : la réactivation
 
 Contre l'imitation (faire « comme » BMC) et contre la rupture (ignorer BMC au nom du présent), nous proposons le concept de *réactivation*. Réactiver n'est pas reproduire. Le tissage à Versailles en 2025 n'est pas le tissage à Black Mountain en 1945. Les matériaux diffèrent, les corps diffèrent, les institutions diffèrent, les enjeux diffèrent. Ce qui est réactivé, ce n'est pas une technique ou une forme mais une question : *que se passe-t-il quand on fait ensemble, avec des moyens simples, dans un lieu spécifique ?*
 
@@ -325,7 +325,7 @@ Cette question était celle de Black Mountain ; elle reste la nôtre. Mais les r
 
 Appliqué à la pédagogie : le workshop de 2025 ne reproduit pas celui de 1945, il le réinterprète. Ce faisant, il modifie aussi ce que Black Mountain College peut signifier pour nous. BMC n'est plus seulement un fait historique révolu ; il devient une ressource active pour penser le présent. Le passé et le présent se transforment mutuellement.
 
-### 2bis. La chronopolitique du *retcon*
+### La chronopolitique du *retcon*
 
 Le collectif Black Quantum Futurism (Rasheedah Phillips et Camae Ayewa), basé à Philadelphie, propose le concept de *chronopolitique* : la manière dont le temps lui-même est distribué, valorisé, contrôlé et utilisé comme outil de pouvoir. Leur travail — qui mêle musique expérimentale, écriture spéculative, activisme communautaire et théorie — part d'un constat : le temps n'est pas une donnée neutre mais un terrain de lutte. Qui a le temps de penser ? Qui est condamné à l'urgence perpétuelle ? Quels passés sont préservés, enseignés, célébrés — et lesquels sont effacés ? Quels futurs sont rendus imaginables — et lesquels sont forclos d'avance ?Les algorithmes prédictifs — ceux de la police (predictive policing), des banques (credit scoring), des plateformes (recommandation, ciblage publicitaire) — figent le futur en projetant des données historiques biaisées vers l'avenir. Si vous avez grandi dans un quartier où la police intervient souvent, l'algorithme prédit que vous êtes plus susceptible de commettre un délit ; cette prédiction justifie une surveillance accrue, qui produit plus d'arrestations, qui confirme la prédiction initiale. La boucle se referme. Le passé — un passé lui-même produit par des politiques discriminatoires — détermine le futur, qui ne peut plus être différent. 
 
@@ -339,7 +339,7 @@ Ces temps ne s'additionnent pas ; ils se frottent, se contredisent, produisent d
 
 Le *retcon* réécrit le passé depuis le présent pour ouvrir des futurs que ce passé, tel qu'il était compris, avait fermés. Il ne demande pas « qu'est-ce qui s'est passé ? » mais « qu'est-ce qui peut encore se passer à partir de ce qui s'est passé ? »C'est précisément ce que les algorithmes prédictifs ne peuvent pas faire : ils calculent le probable à partir de ce qui a été, ils extrapolent le futur depuis le passé sans jamais modifier le sens de ce passé. La méthodologie *retcon* tente d'inventer l'improbable en transformant ce que le passé peut encore devenir. Il réintroduit de la contingence là où l'algorithme ne voit que de la nécessité. En ce sens, le workshop qui réactive BMC est un acte de *résistance chronopolitique* : il refuse que le passé de l'éducation (ses formes instituées, ses hiérarchies sédimentées, ses échecs intégrés) détermine mécaniquement son futur.
 
-### 3. Si l'on refuse l'imitation
+### Si l'on refuse l'imitation
 
 Ce qui passe, c'est quelque chose de plus diffus : la preuve qu'une autre pédagogie est possible. BMC atteste qu'on peut enseigner autrement — sans programme rigide, sans séparation des disciplines, sans hiérarchie figée entre maîtres et élèves. Cette attestation n'est pas un modèle ; c'est une autorisation. Elle dit : « cela a existé, donc cela peut exister. » 
 
@@ -347,7 +347,7 @@ L'autorisation est pédagogiquement décisive — et sous-estimée. Face à l'in
 
 L'autorisation fonctionne aussi pour les étudiant.e.s. Leur montrer que l'enseignement qu'ils reçoivent n'est pas la seule forme possible, c'est leur donner les moyens de critiquer — et peut-être de transformer — les institutions qui les forment. Le savoir sur BMC n'est pas seulement un contenu culturel ; c'est un outil. Il dit : « vous n'êtes pas condamnés à ce qui existe ; d'autres possibles ont existé ; d'autres possibles peuvent advenir. »
 
-### 4. Le lieu comme condition
+### Le lieu comme condition
 
 Black Mountain College et Versailles partagent un trait : ce sont des lieux. Pas des espaces abstraits, pas des « sites » au sens de la programmation architecturale — des lieux avec une histoire, une matérialité, des usages accumulés.
 
@@ -369,7 +369,7 @@ Les deux lieux ne se ressemblent pas — et c'est précisément ce qui rend leur
 
 Le workshop lie ces deux lieux non pas en les rendant équivalents mais en les faisant résonner. Ce que l'expérience de BMC permet de voir à Versailles, c'est la possibilité d'un autre rapport au lieu — un rapport où le bâtiment n'est pas un décor mais une ressource, où les contraintes deviennent des occasions, où l'on habite le lieu en le transformant.
 
-### 5. L'espace comme dispositif pédagogique
+### L'espace comme dispositif pédagogique
 
 Le texte a beaucoup parlé des gestes, des temporalités, des sons de l'atelier. Mais il est resté relativement abstrait sur la dimension spatiale du workshop. Or le lieu n'est pas un contenant neutre ; il agence les formes d'apprentissage.
 
@@ -385,7 +385,7 @@ En ce sens, le workshop est une expérimentation architecturale en acte — non 
 
 ## Quatrième partie : L'archive augmentée — outils numériques et accès aux sources
 
-### 1. Une autre question que celle de l'IA générative
+### Une autre question que celle de l'IA générative
 
 Le débat dominant sur l'IA dans l'enseignement se focalise sur les outils génératifs (Midjourney, ChatGPT, DALL-E) et leurs effets sur la production d'images ou de textes. Ce débat est légitime mais il n'est pas le nôtre — ou du moins, il n'est pas central.
 
@@ -411,7 +411,7 @@ D'autres outils comme *Night Watch* qui est un réseau de communication crypté 
 
 Ces outils incarnent une position politique sur l'infrastructure du savoir : qui contrôle l'accès aux archives ? Comment éviter que la mémoire collective dépende de plateformes propriétaires ? Comment créer des communs numériques qui durent ?
 
-### 2. L'archive comme commun : vers une archive prismatique
+### L'archive comme commun : vers une archive prismatique
 
 La question de l'archive est toujours une question de pouvoir. Qui conserve ? Qui donne accès ? À quelles conditions ? Les archives de BMC sont dispersées entre plusieurs institutions (le *Western Regional Archives*, des fondations et des univerrsités, des collections privées). Leur accès est inégal : certains documents sont numérisés et accessibles en ligne, d'autres exigent un déplacement physique, d'autres encore sont inaccessibles pour des raisons de droits ou de conservation. Cette dispersion favorise certains chercheurs (ceux qui ont les moyens de voyager, les affiliations institutionnelles qui ouvrent les portes) et en exclut d'autres.
 
@@ -420,7 +420,7 @@ Le projet *Dining Hall* — encore en développement — tente une autre logique
 On peut opposer deux régimes d'archivage. *L'archive liquide* est celle des *Big Data* : une masse où tout se mêle, où les provenances s'effacent, où les singularités se dissolvent dans la moyenne statistique — un commun sans gouvernance. *L'archive prismatique*, à l'inverse, ne dissout pas la lumière ; elle la diffracte. Elle maintient les écarts, préserve le grain contre le lissage, articule les gestes techniques à un projet politique explicite. Trois caractéristiques la distinguent : une gouvernance explicite (des règles discutées et modifiables, comme l'a montré Elinor Ostrom pour les communs durables), une traçabilité des provenances (savoir d'où vient chaque document, condition de la critique), et le maintien des singularités (préserver ce qui résiste à la moyenne — les œuvres mineures, les tentatives ratées, les voix marginales). *Dining Hall* tente d'être une archive prismatique : la *blockchain* garantit la traçabilité, le protocole *peer-to-peer* distribue la gouvernance, le corpus délimité préserve les singularités.
 
 
-### 3. L'archive récursive : quand les *outputs* deviennent des *inputs*
+### L'archive récursive : quand les *outputs* deviennent des *inputs*
 
 Le terme *retcon* vient de l'industrie des *comics* et des séries télévisées. C'est une contraction de *retroactive continuity* — la pratique qui consiste à modifier rétroactivement l'histoire d'un personnage ou d'un univers pour que de nouveaux éléments s'y intègrent. Un personnage qu'on croyait mort réapparaît ; on révèle qu'il avait en fait survécu, et cette révélation change la signification de tout ce qui s'est passé depuis. Le *retcon* ne nie pas le passé ; il le réécrit depuis le présent.
 
