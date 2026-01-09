@@ -565,20 +565,28 @@ summary { font-weight: bold; }
           mimeType: 'application/epub+zip'
         });
 
-        // Download
+        // Download using FileSaver approach
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
+        a.style.display = 'none';
         a.href = url;
         a.download = safeTitle + '.epub';
         document.body.appendChild(a);
+
+        // Trigger download
         a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+
+        // Cleanup after delay
+        setTimeout(() => {
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          epubBtn.classList.remove('loading');
+          epubBtn.querySelector('span').textContent = 'EPUB';
+        }, 1000);
 
       } catch (err) {
         console.error('EPUB generation error:', err);
         alert('Error generating EPUB: ' + err.message);
-      } finally {
         epubBtn.classList.remove('loading');
         epubBtn.querySelector('span').textContent = 'EPUB';
       }
