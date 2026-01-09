@@ -238,7 +238,7 @@ li.section-li > .section .meta {
 }
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3N5bHZhaW4vRG9jdW1lbnRzL1FVQVJUWi1HSVRIVUIgUEFHRS9lc3NheXMtbWFpbi9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIi4uLy4uL3N0eWxlcy92YXJpYWJsZXMuc2NzcyIsImxpc3RQYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUNBQTtFQUNFO0VBQ0E7RUFDQTs7O0FBR0Y7RUFDRTs7QUFFQTtFQUNFO0VBQ0E7O0FBRUE7RUFDRTtJQUNFOzs7QUFJSjtFQUNFOztBQUdGO0VBQ0U7RUFDQTs7O0FBTU47RUFDRTs7QUFFQTtFQUNFIiwic291cmNlc0NvbnRlbnQiOlsiQHVzZSBcInNhc3M6bWFwXCI7XG5cbi8qKlxuICogTGF5b3V0IGJyZWFrcG9pbnRzXG4gKiAkbW9iaWxlOiBzY3JlZW4gd2lkdGggYmVsb3cgdGhpcyB2YWx1ZSB3aWxsIHVzZSBtb2JpbGUgc3R5bGVzXG4gKiAkZGVza3RvcDogc2NyZWVuIHdpZHRoIGFib3ZlIHRoaXMgdmFsdWUgd2lsbCB1c2UgZGVza3RvcCBzdHlsZXNcbiAqIFNjcmVlbiB3aWR0aCBiZXR3ZWVuICRtb2JpbGUgYW5kICRkZXNrdG9wIHdpZHRoIHdpbGwgdXNlIHRoZSB0YWJsZXQgbGF5b3V0LlxuICogYXNzdW1pbmcgbW9iaWxlIDwgZGVza3RvcFxuICovXG4kYnJlYWtwb2ludHM6IChcbiAgbW9iaWxlOiA4MDBweCxcbiAgZGVza3RvcDogMTIwMHB4LFxuKTtcblxuJG1vYmlsZTogXCIobWF4LXdpZHRoOiAje21hcC5nZXQoJGJyZWFrcG9pbnRzLCBtb2JpbGUpfSlcIjtcbiR0YWJsZXQ6IFwiKG1pbi13aWR0aDogI3ttYXAuZ2V0KCRicmVha3BvaW50cywgbW9iaWxlKX0pIGFuZCAobWF4LXdpZHRoOiAje21hcC5nZXQoJGJyZWFrcG9pbnRzLCBkZXNrdG9wKX0pXCI7XG4kZGVza3RvcDogXCIobWluLXdpZHRoOiAje21hcC5nZXQoJGJyZWFrcG9pbnRzLCBkZXNrdG9wKX0pXCI7XG5cbiRwYWdlV2lkdGg6ICN7bWFwLmdldCgkYnJlYWtwb2ludHMsIG1vYmlsZSl9O1xuJHNpZGVQYW5lbFdpZHRoOiAzMjBweDsgLy8zODBweDtcbiR0b3BTcGFjaW5nOiA2cmVtO1xuJGJvbGRXZWlnaHQ6IDcwMDtcbiRzZW1pQm9sZFdlaWdodDogNjAwO1xuJG5vcm1hbFdlaWdodDogNDAwO1xuXG4kbW9iaWxlR3JpZDogKFxuICB0ZW1wbGF0ZVJvd3M6IFwiYXV0byBhdXRvIGF1dG8gYXV0byBhdXRvXCIsXG4gIHRlbXBsYXRlQ29sdW1uczogXCJhdXRvXCIsXG4gIHJvd0dhcDogXCI1cHhcIixcbiAgY29sdW1uR2FwOiBcIjVweFwiLFxuICB0ZW1wbGF0ZUFyZWFzOlxuICAgICdcImdyaWQtc2lkZWJhci1sZWZ0XCJcXFxuICAgICAgXCJncmlkLWhlYWRlclwiXFxcbiAgICAgIFwiZ3JpZC1jZW50ZXJcIlxcXG4gICAgICBcImdyaWQtc2lkZWJhci1yaWdodFwiXFxcbiAgICAgIFwiZ3JpZC1mb290ZXJcIicsXG4pO1xuJHRhYmxldEdyaWQ6IChcbiAgdGVtcGxhdGVSb3dzOiBcImF1dG8gYXV0byBhdXRvIGF1dG9cIixcbiAgdGVtcGxhdGVDb2x1bW5zOiBcIiN7JHNpZGVQYW5lbFdpZHRofSBhdXRvXCIsXG4gIHJvd0dhcDogXCI1cHhcIixcbiAgY29sdW1uR2FwOiBcIjVweFwiLFxuICB0ZW1wbGF0ZUFyZWFzOlxuICAgICdcImdyaWQtc2lkZWJhci1sZWZ0IGdyaWQtaGVhZGVyXCJcXFxuICAgICAgXCJncmlkLXNpZGViYXItbGVmdCBncmlkLWNlbnRlclwiXFxcbiAgICAgIFwiZ3JpZC1zaWRlYmFyLWxlZnQgZ3JpZC1zaWRlYmFyLXJpZ2h0XCJcXFxuICAgICAgXCJncmlkLXNpZGViYXItbGVmdCBncmlkLWZvb3RlclwiJyxcbik7XG4kZGVza3RvcEdyaWQ6IChcbiAgdGVtcGxhdGVSb3dzOiBcImF1dG8gYXV0byBhdXRvXCIsXG4gIHRlbXBsYXRlQ29sdW1uczogXCIjeyRzaWRlUGFuZWxXaWR0aH0gYXV0byAjeyRzaWRlUGFuZWxXaWR0aH1cIixcbiAgcm93R2FwOiBcIjVweFwiLFxuICBjb2x1bW5HYXA6IFwiNXB4XCIsXG4gIHRlbXBsYXRlQXJlYXM6XG4gICAgJ1wiZ3JpZC1zaWRlYmFyLWxlZnQgZ3JpZC1oZWFkZXIgZ3JpZC1zaWRlYmFyLXJpZ2h0XCJcXFxuICAgICAgXCJncmlkLXNpZGViYXItbGVmdCBncmlkLWNlbnRlciBncmlkLXNpZGViYXItcmlnaHRcIlxcXG4gICAgICBcImdyaWQtc2lkZWJhci1sZWZ0IGdyaWQtZm9vdGVyIGdyaWQtc2lkZWJhci1yaWdodFwiJyxcbik7XG4iLCJAdXNlIFwiLi4vLi4vc3R5bGVzL3ZhcmlhYmxlcy5zY3NzXCIgYXMgKjtcblxudWwuc2VjdGlvbi11bCB7XG4gIGxpc3Qtc3R5bGU6IG5vbmU7XG4gIG1hcmdpbi10b3A6IDJlbTtcbiAgcGFkZGluZy1sZWZ0OiAwO1xufVxuXG5saS5zZWN0aW9uLWxpIHtcbiAgbWFyZ2luLWJvdHRvbTogMWVtO1xuXG4gICYgPiAuc2VjdGlvbiB7XG4gICAgZGlzcGxheTogZ3JpZDtcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IGZpdC1jb250ZW50KDhlbSkgM2ZyIDFmcjtcblxuICAgIEBtZWRpYSBhbGwgYW5kICgkbW9iaWxlKSB7XG4gICAgICAmID4gLnRhZ3Mge1xuICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAuZGVzYyA+IGgzID4gYSB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICB9XG5cbiAgICAmIC5tZXRhIHtcbiAgICAgIG1hcmdpbjogMCAxZW0gMCAwO1xuICAgICAgb3BhY2l0eTogMC42O1xuICAgIH1cbiAgfVxufVxuXG4vLyBtb2RpZmljYXRpb25zIGluIHBvcG92ZXIgY29udGV4dFxuLnBvcG92ZXIgLnNlY3Rpb24ge1xuICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IGZpdC1jb250ZW50KDhlbSkgMWZyICFpbXBvcnRhbnQ7XG5cbiAgJiA+IC50YWdzIHtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG59XG4iXX0= */`;import{jsx as jsx8}from"preact/jsx-runtime";function getDate(cfg,data){if(!cfg.defaultDateType)throw new Error("Field 'defaultDateType' was not set in the configuration object of quartz.config.ts. See https://quartz.jzhao.xyz/configuration#general-configuration for more details.");return data.dates?.[cfg.defaultDateType]}__name(getDate,"getDate");function formatDate(d,locale="en-US"){return d.toLocaleDateString(locale,{year:"numeric",month:"short",day:"2-digit"})}__name(formatDate,"formatDate");function Date2({date,locale}){return jsx8("time",{datetime:date.toISOString(),children:formatDate(date,locale)})}__name(Date2,"Date");import{jsx as jsx9,jsxs as jsxs3}from"preact/jsx-runtime";function byDateAndAlphabeticalFolderFirst(cfg){return(f1,f2)=>{let f1IsFolder=isFolderPath(f1.slug??""),f2IsFolder=isFolderPath(f2.slug??"");if(f1IsFolder&&!f2IsFolder)return-1;if(!f1IsFolder&&f2IsFolder)return 1;if(f1.dates&&f2.dates)return getDate(cfg,f2).getTime()-getDate(cfg,f1).getTime();if(f1.dates&&!f2.dates)return-1;if(!f1.dates&&f2.dates)return 1;let f1Title=f1.frontmatter?.title.toLowerCase()??"",f2Title=f2.frontmatter?.title.toLowerCase()??"";return f1Title.localeCompare(f2Title)}}__name(byDateAndAlphabeticalFolderFirst,"byDateAndAlphabeticalFolderFirst");var PageList=__name(({cfg,fileData,allFiles,limit,sort})=>{let sorter=sort??byDateAndAlphabeticalFolderFirst(cfg),list=allFiles.sort(sorter);limit&&(list=list.slice(0,limit));let baseUrl=cfg.baseUrl?`/${cfg.baseUrl}`:"";return jsx9("ul",{class:"section-ul",children:list.map(page=>{let title=page.frontmatter?.title,tags=page.frontmatter?.tags??[],description=page.description,visibleTags=tags.filter(tag=>!tag.startsWith("_"));return jsx9("li",{class:"section-li",children:jsxs3("article",{class:"section",children:[page.dates&&jsx9("p",{class:"meta",children:jsx9(Date2,{date:getDate(cfg,page),locale:cfg.locale})}),jsxs3("div",{class:"desc",children:[jsx9("h3",{children:jsx9("a",{href:`${baseUrl}/${simplifySlug(page.slug)}`,class:"internal",children:title})}),description&&jsx9("p",{class:"essay-description",children:description})]}),visibleTags.length>0&&jsx9("ul",{class:"tags",children:visibleTags.map(tag=>jsx9("li",{children:jsx9("a",{class:"internal tag-link",href:`${baseUrl}/tags/${tag}`,children:tag})}))})]})})})})},"PageList");PageList.css=`
 /* Styles in custom.scss */
-`;import{Fragment as Fragment2,jsx as jsx10,jsxs as jsxs4}from"preact/jsx-runtime";var defaultOptions10={numPages:10},TagContent_default=__name((opts=>{let options2={...defaultOptions10,...opts},TagContent=__name(props=>{let{tree,fileData,allFiles,cfg}=props,slug=fileData.slug;if(!(slug?.startsWith("tags/")||slug==="tags"))throw new Error(`Component "TagContent" tried to render a non-tag page: ${slug}`);let tag=simplifySlug(slug.slice(5)),allPagesWithTag=__name(tag2=>allFiles.filter(file=>(file.frontmatter?.tags??[]).flatMap(getAllSegmentPrefixes).includes(tag2)),"allPagesWithTag"),content=tree.children.length===0?fileData.description:htmlToJsx(fileData.filePath,tree),classes=(fileData.frontmatter?.cssclasses??[]).join(" ");if(tag==="/"){let tags=[...new Set(allFiles.flatMap(data=>data.frontmatter?.tags??[]).flatMap(getAllSegmentPrefixes))].sort((a,b)=>a.localeCompare(b)),tagItemMap=new Map;for(let tag2 of tags)tagItemMap.set(tag2,allPagesWithTag(tag2));return jsxs4("div",{class:"popover-hint",children:[jsx10("article",{class:classes,children:jsx10("p",{children:content})}),jsx10("p",{children:i18n(cfg.locale).pages.tagContent.totalTags({count:tags.length})}),jsx10("div",{children:tags.map(tag2=>{let pages=tagItemMap.get(tag2),listProps={...props,allFiles:pages},contentPage=allFiles.filter(file=>file.slug===`tags/${tag2}`).at(0),root=contentPage?.htmlAst,content2=!root||root?.children.length===0?contentPage?.description:htmlToJsx(contentPage.filePath,root),tagListingPage=`/tags/${tag2}`,href=resolveRelative(fileData.slug,tagListingPage);return jsxs4("div",{children:[jsx10("h2",{children:jsx10("a",{class:"internal tag-link",href,children:tag2})}),content2&&jsx10("p",{children:content2}),jsxs4("div",{class:"page-listing",children:[jsxs4("p",{children:[i18n(cfg.locale).pages.tagContent.itemsUnderTag({count:pages.length}),pages.length>options2.numPages&&jsxs4(Fragment2,{children:[" ",jsx10("span",{children:i18n(cfg.locale).pages.tagContent.showingFirst({count:options2.numPages})})]})]}),jsx10(PageList,{limit:options2.numPages,...listProps,sort:options2?.sort})]})]})})})]})}else{let pages=allPagesWithTag(tag),listProps={...props,allFiles:pages};return jsxs4("div",{class:"popover-hint",children:[jsx10("article",{class:classes,children:content}),jsxs4("div",{class:"page-listing",children:[jsx10("p",{children:i18n(cfg.locale).pages.tagContent.itemsUnderTag({count:pages.length})}),jsx10("div",{children:jsx10(PageList,{...listProps,sort:options2?.sort})})]})]})}},"TagContent");return TagContent.css=concatenateResources(listPage_default,PageList.css),TagContent}),"default");var FileTrieNode=class _FileTrieNode{static{__name(this,"FileTrieNode")}isFolder;children;slugSegments;fileSegmentHint;displayNameOverride;data;constructor(segments,data){this.children=[],this.slugSegments=segments,this.data=data??null,this.isFolder=!1,this.displayNameOverride=void 0}get displayName(){let nonIndexTitle=this.data?.title==="index"?void 0:this.data?.title;return this.displayNameOverride??nonIndexTitle??this.fileSegmentHint??this.slugSegment??""}set displayName(name){this.displayNameOverride=name}get slug(){let path12=joinSegments(...this.slugSegments);return this.isFolder?joinSegments(path12,"index"):path12}get slugSegment(){return this.slugSegments[this.slugSegments.length-1]}makeChild(path12,file){let fullPath=[...this.slugSegments,path12[0]],child=new _FileTrieNode(fullPath,file);return this.children.push(child),child}insert(path12,file){if(path12.length===0)throw new Error("path is empty");this.isFolder=!0;let segment=path12[0];if(path12.length===1)segment==="index"?this.data??=file:this.makeChild(path12,file);else if(path12.length>1){let child=this.children.find(c=>c.slugSegment===segment)??this.makeChild(path12,void 0),fileParts=file.filePath.split("/");child.fileSegmentHint=fileParts.at(-path12.length),child.insert(path12.slice(1),file)}}add(file){this.insert(file.slug.split("/"),file)}findNode(path12){return path12.length===0||path12.length===1&&path12[0]==="index"?this:this.children.find(c=>c.slugSegment===path12[0])?.findNode(path12.slice(1))}ancestryChain(path12){if(path12.length===0||path12.length===1&&path12[0]==="index")return[this];let child=this.children.find(c=>c.slugSegment===path12[0]);if(!child)return;let childPath=child.ancestryChain(path12.slice(1));if(childPath)return[this,...childPath]}filter(filterFn){this.children=this.children.filter(filterFn),this.children.forEach(child=>child.filter(filterFn))}map(mapFn){mapFn(this),this.children.forEach(child=>child.map(mapFn))}sort(sortFn){this.children=this.children.sort(sortFn),this.children.forEach(e=>e.sort(sortFn))}static fromEntries(entries){let trie=new _FileTrieNode([]);return entries.forEach(([,entry])=>trie.add(entry)),trie}entries(){let traverse=__name(node=>[[node.slug,node]].concat(...node.children.map(traverse)),"traverse");return traverse(this)}getFolderPaths(){return this.entries().filter(([_,node])=>node.isFolder).map(([path12,_])=>path12)}};function trieFromAllFiles(allFiles){let trie=new FileTrieNode([]);return allFiles.forEach(file=>{file.frontmatter&&trie.add({...file,slug:file.slug,title:file.frontmatter.title,filePath:file.filePath})}),trie}__name(trieFromAllFiles,"trieFromAllFiles");import{jsx as jsx11,jsxs as jsxs5}from"preact/jsx-runtime";var defaultOptions11={showFolderCount:!1,showSubfolders:!0},FolderContent_default=__name((opts=>{let options2={...defaultOptions11,...opts},FolderContent=__name(props=>{let{tree,fileData,allFiles,cfg}=props,folder=(props.ctx.trie??=trieFromAllFiles(allFiles)).findNode(fileData.slug.split("/"));if(!folder)return null;let allPagesInFolder=folder.children.map(node=>{if(node.data)return node.data;if(node.isFolder&&options2.showSubfolders){let getMostRecentDates=__name(()=>{let maybeDates;for(let child of node.children)child.data?.dates&&(maybeDates?(child.data.dates.created>maybeDates.created&&(maybeDates.created=child.data.dates.created),child.data.dates.modified>maybeDates.modified&&(maybeDates.modified=child.data.dates.modified),child.data.dates.published>maybeDates.published&&(maybeDates.published=child.data.dates.published)):maybeDates={...child.data.dates});return maybeDates??{created:new Date,modified:new Date,published:new Date}},"getMostRecentDates");return{slug:node.slug,dates:getMostRecentDates(),frontmatter:{title:node.displayName,tags:[]}}}}).filter(page=>page!==void 0)??[],classes=(fileData.frontmatter?.cssclasses??[]).join(" "),listProps={...props,sort:options2.sort,allFiles:allPagesInFolder},content=tree.children.length===0?fileData.description:htmlToJsx(fileData.filePath,tree);return jsxs5("div",{class:"popover-hint",children:[jsx11("article",{class:classes,children:content}),jsxs5("div",{class:"page-listing",children:[options2.showFolderCount&&jsx11("p",{children:i18n(cfg.locale).pages.folderContent.itemsUnderFolder({count:allPagesInFolder.length})}),jsx11("div",{children:jsx11(PageList,{...listProps})})]})]})},"FolderContent");return FolderContent.css=concatenateResources(listPage_default,PageList.css),FolderContent}),"default");import{jsx as jsx12,jsxs as jsxs6}from"preact/jsx-runtime";var NotFound=__name(({cfg})=>{let baseDir=new URL(`https://${cfg.baseUrl??"example.com"}`).pathname;return jsxs6("article",{class:"popover-hint",children:[jsx12("h1",{children:"404"}),jsx12("p",{children:i18n(cfg.locale).pages.error.notFound}),jsx12("a",{href:baseDir,children:i18n(cfg.locale).pages.error.home})]})},"NotFound"),__default=__name((()=>NotFound),"default");import{jsx as jsx13,jsxs as jsxs7}from"preact/jsx-runtime";var ArticleTitle=__name(({fileData,displayClass})=>{let title=fileData.frontmatter?.title,slug=fileData.slug,isArticle=slug&&!slug.endsWith("/index")&&!slug.endsWith("index");return title?jsxs7("div",{class:classNames(displayClass,"article-title-wrapper"),children:[jsx13("h1",{class:"article-title",children:title}),isArticle&&jsxs7("button",{class:"pdf-download-btn",title:"Download PDF","aria-label":"Download as PDF","data-title":title,children:[jsxs7("svg",{xmlns:"http://www.w3.org/2000/svg",width:"20",height:"20",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor","stroke-width":"2","stroke-linecap":"round","stroke-linejoin":"round",children:[jsx13("path",{d:"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"}),jsx13("polyline",{points:"14 2 14 8 20 8"}),jsx13("line",{x1:"12",y1:"18",x2:"12",y2:"12"}),jsx13("line",{x1:"9",y1:"15",x2:"15",y2:"15"})]}),jsx13("span",{children:"PDF"})]})]}):null},"ArticleTitle");ArticleTitle.css=`
+`;import{Fragment as Fragment2,jsx as jsx10,jsxs as jsxs4}from"preact/jsx-runtime";var defaultOptions10={numPages:10},TagContent_default=__name((opts=>{let options2={...defaultOptions10,...opts},TagContent=__name(props=>{let{tree,fileData,allFiles,cfg}=props,slug=fileData.slug;if(!(slug?.startsWith("tags/")||slug==="tags"))throw new Error(`Component "TagContent" tried to render a non-tag page: ${slug}`);let tag=simplifySlug(slug.slice(5)),allPagesWithTag=__name(tag2=>allFiles.filter(file=>(file.frontmatter?.tags??[]).flatMap(getAllSegmentPrefixes).includes(tag2)),"allPagesWithTag"),content=tree.children.length===0?fileData.description:htmlToJsx(fileData.filePath,tree),classes=(fileData.frontmatter?.cssclasses??[]).join(" ");if(tag==="/"){let tags=[...new Set(allFiles.flatMap(data=>data.frontmatter?.tags??[]).flatMap(getAllSegmentPrefixes))].sort((a,b)=>a.localeCompare(b)),tagItemMap=new Map;for(let tag2 of tags)tagItemMap.set(tag2,allPagesWithTag(tag2));return jsxs4("div",{class:"popover-hint",children:[jsx10("article",{class:classes,children:jsx10("p",{children:content})}),jsx10("p",{children:i18n(cfg.locale).pages.tagContent.totalTags({count:tags.length})}),jsx10("div",{children:tags.map(tag2=>{let pages=tagItemMap.get(tag2),listProps={...props,allFiles:pages},contentPage=allFiles.filter(file=>file.slug===`tags/${tag2}`).at(0),root=contentPage?.htmlAst,content2=!root||root?.children.length===0?contentPage?.description:htmlToJsx(contentPage.filePath,root),tagListingPage=`/tags/${tag2}`,href=resolveRelative(fileData.slug,tagListingPage);return jsxs4("div",{children:[jsx10("h2",{children:jsx10("a",{class:"internal tag-link",href,children:tag2})}),content2&&jsx10("p",{children:content2}),jsxs4("div",{class:"page-listing",children:[jsxs4("p",{children:[i18n(cfg.locale).pages.tagContent.itemsUnderTag({count:pages.length}),pages.length>options2.numPages&&jsxs4(Fragment2,{children:[" ",jsx10("span",{children:i18n(cfg.locale).pages.tagContent.showingFirst({count:options2.numPages})})]})]}),jsx10(PageList,{limit:options2.numPages,...listProps,sort:options2?.sort})]})]})})})]})}else{let pages=allPagesWithTag(tag),listProps={...props,allFiles:pages};return jsxs4("div",{class:"popover-hint",children:[jsx10("article",{class:classes,children:content}),jsxs4("div",{class:"page-listing",children:[jsx10("p",{children:i18n(cfg.locale).pages.tagContent.itemsUnderTag({count:pages.length})}),jsx10("div",{children:jsx10(PageList,{...listProps,sort:options2?.sort})})]})]})}},"TagContent");return TagContent.css=concatenateResources(listPage_default,PageList.css),TagContent}),"default");var FileTrieNode=class _FileTrieNode{static{__name(this,"FileTrieNode")}isFolder;children;slugSegments;fileSegmentHint;displayNameOverride;data;constructor(segments,data){this.children=[],this.slugSegments=segments,this.data=data??null,this.isFolder=!1,this.displayNameOverride=void 0}get displayName(){let nonIndexTitle=this.data?.title==="index"?void 0:this.data?.title;return this.displayNameOverride??nonIndexTitle??this.fileSegmentHint??this.slugSegment??""}set displayName(name){this.displayNameOverride=name}get slug(){let path12=joinSegments(...this.slugSegments);return this.isFolder?joinSegments(path12,"index"):path12}get slugSegment(){return this.slugSegments[this.slugSegments.length-1]}makeChild(path12,file){let fullPath=[...this.slugSegments,path12[0]],child=new _FileTrieNode(fullPath,file);return this.children.push(child),child}insert(path12,file){if(path12.length===0)throw new Error("path is empty");this.isFolder=!0;let segment=path12[0];if(path12.length===1)segment==="index"?this.data??=file:this.makeChild(path12,file);else if(path12.length>1){let child=this.children.find(c=>c.slugSegment===segment)??this.makeChild(path12,void 0),fileParts=file.filePath.split("/");child.fileSegmentHint=fileParts.at(-path12.length),child.insert(path12.slice(1),file)}}add(file){this.insert(file.slug.split("/"),file)}findNode(path12){return path12.length===0||path12.length===1&&path12[0]==="index"?this:this.children.find(c=>c.slugSegment===path12[0])?.findNode(path12.slice(1))}ancestryChain(path12){if(path12.length===0||path12.length===1&&path12[0]==="index")return[this];let child=this.children.find(c=>c.slugSegment===path12[0]);if(!child)return;let childPath=child.ancestryChain(path12.slice(1));if(childPath)return[this,...childPath]}filter(filterFn){this.children=this.children.filter(filterFn),this.children.forEach(child=>child.filter(filterFn))}map(mapFn){mapFn(this),this.children.forEach(child=>child.map(mapFn))}sort(sortFn){this.children=this.children.sort(sortFn),this.children.forEach(e=>e.sort(sortFn))}static fromEntries(entries){let trie=new _FileTrieNode([]);return entries.forEach(([,entry])=>trie.add(entry)),trie}entries(){let traverse=__name(node=>[[node.slug,node]].concat(...node.children.map(traverse)),"traverse");return traverse(this)}getFolderPaths(){return this.entries().filter(([_,node])=>node.isFolder).map(([path12,_])=>path12)}};function trieFromAllFiles(allFiles){let trie=new FileTrieNode([]);return allFiles.forEach(file=>{file.frontmatter&&trie.add({...file,slug:file.slug,title:file.frontmatter.title,filePath:file.filePath})}),trie}__name(trieFromAllFiles,"trieFromAllFiles");import{jsx as jsx11,jsxs as jsxs5}from"preact/jsx-runtime";var defaultOptions11={showFolderCount:!1,showSubfolders:!0},FolderContent_default=__name((opts=>{let options2={...defaultOptions11,...opts},FolderContent=__name(props=>{let{tree,fileData,allFiles,cfg}=props,folder=(props.ctx.trie??=trieFromAllFiles(allFiles)).findNode(fileData.slug.split("/"));if(!folder)return null;let allPagesInFolder=folder.children.map(node=>{if(node.data)return node.data;if(node.isFolder&&options2.showSubfolders){let getMostRecentDates=__name(()=>{let maybeDates;for(let child of node.children)child.data?.dates&&(maybeDates?(child.data.dates.created>maybeDates.created&&(maybeDates.created=child.data.dates.created),child.data.dates.modified>maybeDates.modified&&(maybeDates.modified=child.data.dates.modified),child.data.dates.published>maybeDates.published&&(maybeDates.published=child.data.dates.published)):maybeDates={...child.data.dates});return maybeDates??{created:new Date,modified:new Date,published:new Date}},"getMostRecentDates");return{slug:node.slug,dates:getMostRecentDates(),frontmatter:{title:node.displayName,tags:[]}}}}).filter(page=>page!==void 0)??[],classes=(fileData.frontmatter?.cssclasses??[]).join(" "),listProps={...props,sort:options2.sort,allFiles:allPagesInFolder},content=tree.children.length===0?fileData.description:htmlToJsx(fileData.filePath,tree);return jsxs5("div",{class:"popover-hint",children:[jsx11("article",{class:classes,children:content}),jsxs5("div",{class:"page-listing",children:[options2.showFolderCount&&jsx11("p",{children:i18n(cfg.locale).pages.folderContent.itemsUnderFolder({count:allPagesInFolder.length})}),jsx11("div",{children:jsx11(PageList,{...listProps})})]})]})},"FolderContent");return FolderContent.css=concatenateResources(listPage_default,PageList.css),FolderContent}),"default");import{jsx as jsx12,jsxs as jsxs6}from"preact/jsx-runtime";var NotFound=__name(({cfg})=>{let baseDir=new URL(`https://${cfg.baseUrl??"example.com"}`).pathname;return jsxs6("article",{class:"popover-hint",children:[jsx12("h1",{children:"404"}),jsx12("p",{children:i18n(cfg.locale).pages.error.notFound}),jsx12("a",{href:baseDir,children:i18n(cfg.locale).pages.error.home})]})},"NotFound"),__default=__name((()=>NotFound),"default");import{jsx as jsx13,jsxs as jsxs7}from"preact/jsx-runtime";var ArticleTitle=__name(({fileData,displayClass})=>{let title=fileData.frontmatter?.title,slug=fileData.slug,isArticle=slug&&!slug.endsWith("/index")&&!slug.endsWith("index");return title?jsxs7("div",{class:classNames(displayClass,"article-title-wrapper"),children:[jsx13("h1",{class:"article-title",children:title}),isArticle&&jsxs7("div",{class:"export-buttons",children:[jsxs7("button",{class:"pdf-download-btn",title:"Download PDF","aria-label":"Download as PDF","data-title":title,children:[jsxs7("svg",{xmlns:"http://www.w3.org/2000/svg",width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor","stroke-width":"2","stroke-linecap":"round","stroke-linejoin":"round",children:[jsx13("path",{d:"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"}),jsx13("polyline",{points:"14 2 14 8 20 8"}),jsx13("line",{x1:"12",y1:"18",x2:"12",y2:"12"}),jsx13("line",{x1:"9",y1:"15",x2:"15",y2:"15"})]}),jsx13("span",{children:"PDF"})]}),jsxs7("button",{class:"epub-download-btn",title:"Download EPUB","aria-label":"Download as EPUB","data-title":title,children:[jsxs7("svg",{xmlns:"http://www.w3.org/2000/svg",width:"18",height:"18",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor","stroke-width":"2","stroke-linecap":"round","stroke-linejoin":"round",children:[jsx13("path",{d:"M4 19.5A2.5 2.5 0 0 1 6.5 17H20"}),jsx13("path",{d:"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"})]}),jsx13("span",{children:"EPUB"})]})]})]}):null},"ArticleTitle");ArticleTitle.css=`
 .article-title-wrapper {
   display: flex;
   align-items: flex-start;
@@ -252,235 +252,304 @@ li.section-li > .section .meta {
   flex: 1;
 }
 
-.pdf-download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  background: var(--light);
-  border: 1px solid var(--lightgray);
-  border-radius: 4px;
-  color: var(--darkgray);
-  font-size: 0.85rem;
-  font-family: var(--bodyFont);
-  cursor: pointer;
-  transition: all 0.2s ease;
+.export-buttons {
+  display: flex;
+  gap: 0.5rem;
   flex-shrink: 0;
   margin-top: 0.5rem;
 }
 
-.pdf-download-btn:hover {
+.pdf-download-btn,
+.epub-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  color: var(--darkgray);
+  font-size: 0.8rem;
+  font-family: var(--bodyFont);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pdf-download-btn:hover,
+.epub-download-btn:hover {
   background: var(--lightgray);
   color: var(--dark);
   border-color: var(--gray);
 }
 
-.pdf-download-btn svg {
+.pdf-download-btn svg,
+.epub-download-btn svg {
   flex-shrink: 0;
+}
+
+.epub-download-btn.loading {
+  opacity: 0.6;
+  pointer-events: none;
 }
 `;ArticleTitle.afterDOMLoaded=`
 document.addEventListener("nav", () => {
   const pdfBtn = document.querySelector('.pdf-download-btn');
-  if (!pdfBtn) return;
+  const epubBtn = document.querySelector('.epub-download-btn');
 
-  const handleClick = () => {
-    const title = pdfBtn.getAttribute('data-title') || 'document';
+  // Helper to get article content and metadata
+  function getArticleData() {
+    const title = pdfBtn?.getAttribute('data-title') || epubBtn?.getAttribute('data-title') || 'document';
     const article = document.querySelector('article.popover-hint');
-    const meta = document.querySelector('.content-meta-wrapper');
-
-    if (!article) {
-      alert('Could not find article content');
-      return;
-    }
-
-    // Create a clean HTML document for printing
-    const printWindow = window.open('', '_blank');
-    if (!printWindow) {
-      alert('Please allow popups to download PDF');
-      return;
-    }
-
-    // Get metadata
     const subtitle = document.querySelector('.content-subtitle')?.textContent || '';
     const author = document.querySelector('.content-author')?.textContent || '';
     const date = document.querySelector('.content-meta time')?.textContent || '';
+    return { title, article, subtitle, author, date };
+  }
 
-    // Clone and clean the article content
+  // Helper to clean article content
+  function cleanArticleContent(article) {
     const clone = article.cloneNode(true);
-    clone.querySelectorAll('.pdf-download-btn, script, .callout-title svg, details summary').forEach(el => {
+    clone.querySelectorAll('.pdf-download-btn, .epub-download-btn, .export-buttons, script, .callout-title svg, details summary').forEach(el => {
       if (el.tagName === 'SUMMARY') {
         el.style.listStyle = 'none';
       } else {
         el.remove();
       }
     });
-
-    // Open all details elements
     clone.querySelectorAll('details').forEach(d => d.setAttribute('open', 'true'));
+    return clone;
+  }
 
-    const printContent = \`
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="utf-8">
-        <title>\${title}</title>
-        <style>
-          @page {
-            size: A4;
-            margin: 25mm 20mm;
-          }
-          * {
-            box-sizing: border-box;
-          }
-          body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 11pt;
-            line-height: 1.6;
-            color: #1a1a1a;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-          }
-          .pdf-header {
-            margin-bottom: 2em;
-            padding-bottom: 1em;
-            border-bottom: 1px solid #ccc;
-          }
-          .pdf-title {
-            font-size: 20pt;
-            font-weight: bold;
-            margin: 0 0 0.3em 0;
-            line-height: 1.2;
-          }
-          .pdf-subtitle {
-            font-size: 12pt;
-            font-style: italic;
-            color: #555;
-            margin: 0 0 0.5em 0;
-          }
-          .pdf-meta {
-            font-size: 10pt;
-            color: #666;
-          }
-          h1, h2, h3, h4, h5, h6 {
-            page-break-after: avoid;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-          }
-          h1 { font-size: 18pt; }
-          h2 { font-size: 14pt; }
-          h3 { font-size: 12pt; }
-          p {
-            margin: 0 0 1em 0;
-            text-align: justify;
-            orphans: 3;
-            widows: 3;
-          }
-          blockquote {
-            margin: 1em 0;
-            padding: 0.5em 1em;
-            border-left: 3px solid #ccc;
-            font-style: italic;
-            background: #f9f9f9;
-          }
-          ul, ol {
-            margin: 1em 0;
-            padding-left: 2em;
-          }
-          li {
-            margin-bottom: 0.3em;
-          }
-          a {
-            color: #1a1a1a;
-            text-decoration: underline;
-          }
-          code {
-            font-family: 'Courier New', monospace;
-            font-size: 9pt;
-            background: #f4f4f4;
-            padding: 0.1em 0.3em;
-          }
-          pre {
-            background: #f4f4f4;
-            padding: 1em;
-            overflow-x: auto;
-            font-size: 9pt;
-            page-break-inside: avoid;
-          }
-          hr {
-            border: none;
-            border-top: 1px solid #ccc;
-            margin: 2em 0;
-          }
-          img {
-            max-width: 100%;
-            height: auto;
-          }
-          .footnotes {
-            font-size: 9pt;
-            margin-top: 2em;
-            padding-top: 1em;
-            border-top: 1px solid #ccc;
-          }
-          details {
-            margin: 1em 0;
-          }
-          summary {
-            font-weight: bold;
-            cursor: default;
-            list-style: none;
-          }
-          .callout {
-            padding: 1em;
-            margin: 1em 0;
-            background: #f9f9f9;
-            border-left: 3px solid #666;
-          }
-          .sidenote, .marginnote {
-            font-size: 9pt;
-            color: #666;
-          }
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-            font-size: 10pt;
-          }
-          th, td {
-            border: 1px solid #ccc;
-            padding: 0.5em;
-            text-align: left;
-          }
-          th {
-            background: #f4f4f4;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="pdf-header">
-          <h1 class="pdf-title">\${title}</h1>
-          \${subtitle ? '<p class="pdf-subtitle">' + subtitle + '</p>' : ''}
-          <p class="pdf-meta">\${author}\${author && date ? ' \u2014 ' : ''}\${date}</p>
-        </div>
-        \${clone.innerHTML}
-      </body>
-      </html>
-    \`;
+  // PDF handler
+  if (pdfBtn) {
+    const handlePdfClick = () => {
+      const { title, article, subtitle, author, date } = getArticleData();
+      if (!article) {
+        alert('Could not find article content');
+        return;
+      }
 
-    printWindow.document.write(printContent);
-    printWindow.document.close();
+      const printWindow = window.open('', '_blank');
+      if (!printWindow) {
+        alert('Please allow popups to download PDF');
+        return;
+      }
 
-    // Wait for content to load, then print
-    printWindow.onload = () => {
-      setTimeout(() => {
-        printWindow.print();
-        printWindow.onafterprint = () => printWindow.close();
-      }, 250);
+      const clone = cleanArticleContent(article);
+
+      const printContent = \`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <title>\${title}</title>
+          <style>
+            @page { size: A4; margin: 25mm 20mm; }
+            * { box-sizing: border-box; }
+            body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 11pt; line-height: 1.6; color: #1a1a1a; max-width: 100%; margin: 0; padding: 0; }
+            .pdf-header { margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
+            .pdf-title { font-size: 20pt; font-weight: bold; margin: 0 0 0.3em 0; line-height: 1.2; }
+            .pdf-subtitle { font-size: 12pt; font-style: italic; color: #555; margin: 0 0 0.5em 0; }
+            .pdf-meta { font-size: 10pt; color: #666; }
+            h1, h2, h3, h4, h5, h6 { page-break-after: avoid; margin-top: 1.5em; margin-bottom: 0.5em; }
+            h1 { font-size: 18pt; } h2 { font-size: 14pt; } h3 { font-size: 12pt; }
+            p { margin: 0 0 1em 0; text-align: justify; orphans: 3; widows: 3; }
+            blockquote { margin: 1em 0; padding: 0.5em 1em; border-left: 3px solid #ccc; font-style: italic; background: #f9f9f9; }
+            ul, ol { margin: 1em 0; padding-left: 2em; }
+            li { margin-bottom: 0.3em; }
+            a { color: #1a1a1a; text-decoration: underline; }
+            code { font-family: 'Courier New', monospace; font-size: 9pt; background: #f4f4f4; padding: 0.1em 0.3em; }
+            pre { background: #f4f4f4; padding: 1em; overflow-x: auto; font-size: 9pt; page-break-inside: avoid; }
+            hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+            img { max-width: 100%; height: auto; }
+            .footnotes { font-size: 9pt; margin-top: 2em; padding-top: 1em; border-top: 1px solid #ccc; }
+            details { margin: 1em 0; }
+            summary { font-weight: bold; cursor: default; list-style: none; }
+            .callout { padding: 1em; margin: 1em 0; background: #f9f9f9; border-left: 3px solid #666; }
+            .sidenote, .marginnote { font-size: 9pt; color: #666; }
+            table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 10pt; }
+            th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
+            th { background: #f4f4f4; }
+          </style>
+        </head>
+        <body>
+          <div class="pdf-header">
+            <h1 class="pdf-title">\${title}</h1>
+            \${subtitle ? '<p class="pdf-subtitle">' + subtitle + '</p>' : ''}
+            <p class="pdf-meta">\${author}\${author && date ? ' \u2014 ' : ''}\${date}</p>
+          </div>
+          \${clone.innerHTML}
+        </body>
+        </html>
+      \`;
+
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.onload = () => {
+        setTimeout(() => {
+          printWindow.print();
+          printWindow.onafterprint = () => printWindow.close();
+        }, 250);
+      };
     };
-  };
 
-  pdfBtn.addEventListener('click', handleClick);
-  window.addCleanup(() => pdfBtn.removeEventListener('click', handleClick));
+    pdfBtn.addEventListener('click', handlePdfClick);
+    window.addCleanup(() => pdfBtn.removeEventListener('click', handlePdfClick));
+  }
+
+  // EPUB handler
+  if (epubBtn) {
+    const handleEpubClick = async () => {
+      const { title, article, subtitle, author, date } = getArticleData();
+      if (!article) {
+        alert('Could not find article content');
+        return;
+      }
+
+      epubBtn.classList.add('loading');
+      epubBtn.querySelector('span').textContent = '...';
+
+      try {
+        // Load JSZip from CDN if not already loaded
+        if (typeof JSZip === 'undefined') {
+          await new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+          });
+        }
+
+        const clone = cleanArticleContent(article);
+        const safeTitle = title.replace(/[^a-zA-Z0-9\\s-]/g, '').trim() || 'document';
+        const uuid = 'urn:uuid:' + crypto.randomUUID();
+
+        // EPUB content
+        const xhtmlContent = \`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>\${title}</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>\${title}</h1>
+    \${subtitle ? '<p class="subtitle">' + subtitle + '</p>' : ''}
+    <p class="meta">\${author}\${author && date ? ' \u2014 ' : ''}\${date}</p>
+  </header>
+  <main>
+    \${clone.innerHTML}
+  </main>
+</body>
+</html>\`;
+
+        const cssContent = \`
+body { font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; margin: 1em; }
+header { margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
+h1 { font-size: 1.8em; margin: 0 0 0.3em 0; }
+.subtitle { font-style: italic; color: #555; margin: 0 0 0.5em 0; }
+.meta { font-size: 0.9em; color: #666; }
+h2 { font-size: 1.4em; margin-top: 1.5em; }
+h3 { font-size: 1.2em; }
+p { margin: 0 0 1em 0; text-align: justify; }
+blockquote { margin: 1em 0; padding: 0.5em 1em; border-left: 3px solid #ccc; font-style: italic; }
+ul, ol { margin: 1em 0; padding-left: 2em; }
+a { color: #333; }
+code { font-family: monospace; background: #f4f4f4; padding: 0.1em 0.3em; }
+pre { background: #f4f4f4; padding: 1em; overflow-x: auto; }
+hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+img { max-width: 100%; height: auto; }
+table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 0.5em; }
+details { margin: 1em 0; }
+summary { font-weight: bold; }
+\`;
+
+        const containerXml = \`<?xml version="1.0" encoding="UTF-8"?>
+<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+  <rootfiles>
+    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/>
+  </rootfiles>
+</container>\`;
+
+        const contentOpf = \`<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="uid">\${uuid}</dc:identifier>
+    <dc:title>\${title}</dc:title>
+    <dc:creator>\${author || 'Unknown'}</dc:creator>
+    <dc:language>en</dc:language>
+    <meta property="dcterms:modified">\${new Date().toISOString().replace(/\\.\\d{3}Z$/, 'Z')}</meta>
+  </metadata>
+  <manifest>
+    <item id="content" href="content.xhtml" media-type="application/xhtml+xml"/>
+    <item id="style" href="style.css" media-type="text/css"/>
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+  </manifest>
+  <spine>
+    <itemref idref="content"/>
+  </spine>
+</package>\`;
+
+        const navXhtml = \`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Navigation</title>
+</head>
+<body>
+  <nav epub:type="toc">
+    <h1>Table of Contents</h1>
+    <ol>
+      <li><a href="content.xhtml">\${title}</a></li>
+    </ol>
+  </nav>
+</body>
+</html>\`;
+
+        // Create EPUB (ZIP) file
+        const zip = new JSZip();
+        zip.file('mimetype', 'application/epub+zip');
+        zip.folder('META-INF').file('container.xml', containerXml);
+        const oebps = zip.folder('OEBPS');
+        oebps.file('content.xhtml', xhtmlContent);
+        oebps.file('style.css', cssContent);
+        oebps.file('content.opf', contentOpf);
+        oebps.file('nav.xhtml', navXhtml);
+
+        const blob = await zip.generateAsync({
+          type: 'blob',
+          mimeType: 'application/epub+zip',
+          compression: 'DEFLATE',
+          compressionOptions: { level: 9 }
+        });
+
+        // Download
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = safeTitle + '.epub';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+      } catch (err) {
+        console.error('EPUB generation error:', err);
+        alert('Error generating EPUB: ' + err.message);
+      } finally {
+        epubBtn.classList.remove('loading');
+        epubBtn.querySelector('span').textContent = 'EPUB';
+      }
+    };
+
+    epubBtn.addEventListener('click', handleEpubClick);
+    window.addCleanup(() => epubBtn.removeEventListener('click', handleEpubClick));
+  }
 });
 `;var ArticleTitle_default=__name((()=>ArticleTitle),"default");var darkmode_inline_default=`var c=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark",d=localStorage.getItem("theme")??c;document.documentElement.setAttribute("saved-theme",d);var a=t=>{let n=new CustomEvent("themechange",{detail:{theme:t}});document.dispatchEvent(n)};document.addEventListener("nav",()=>{let t=()=>{let e=document.documentElement.getAttribute("saved-theme")==="dark"?"light":"dark";document.documentElement.setAttribute("saved-theme",e),localStorage.setItem("theme",e),a(e)},n=e=>{let m=e.matches?"dark":"light";document.documentElement.setAttribute("saved-theme",m),localStorage.setItem("theme",m),a(m)};for(let e of document.getElementsByClassName("darkmode"))e.addEventListener("click",t),window.addCleanup(()=>e.removeEventListener("click",t));let o=window.matchMedia("(prefers-color-scheme: dark)");o.addEventListener("change",n),window.addCleanup(()=>o.removeEventListener("change",n))});
 `;var darkmode_default=`.darkmode {
