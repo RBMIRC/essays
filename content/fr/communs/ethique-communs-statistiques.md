@@ -8,17 +8,14 @@ license: GPL-3.0-or-later
 provenance: "Extension du Heredoc Manifesto"
 tags:
   - statistical-commons
-  - differential-valence
-  - negentropic-obligation
-  - tactical-urgency
+  - _negentropic
+  - tactical
   - AI-ethics
-  - seeds
-  - OSSI
+  - biology
   - copyleft
   - GPL
-  - food-sovereignty
   - _enclosure
-  - _commons
+  - commons
   - _model-collapse
   - _entropy
   - _attribution
@@ -49,32 +46,7 @@ tags:
   - _heredoc
   - _computational-futurality
   - _recursive-loop
-  - _liberation
-  - _subversion
-  - _extraction
-  - _Monsanto
-  - _patent
-  - _molecular
-  - _genomic
-  - _breeding
-  - _farmer-networks
-  - _seed-library
-  - _low-tech-resilience
-  - _material-autonomy
-  - _negentropy
-  - _thermodynamics
-  - _ecological-ethics
-  - _liberal-ethics
-  - _transparency
-  - _transmission
-  - _transformation
-  - _fork
-  - _libre
-  - _open-washing
-  - _opt-out
-  - _EU-AI-Act
-  - _Copyright-Office
-  - _Bernard-Stiegler
+
 ---
 
 
@@ -82,26 +54,23 @@ tags:
 <details class="heredoc-block">
 <summary>◈ ETHIQUE-COMMUNS-STATISTIQUES v1.0</summary>
 
-**Titre :** L'Éthique des Communs Statistiques : Fondements normatifs pour la production de connaissances médiée par l'IA  
+**Titre :** L'Éthique des Communs Statistiques 
 **Auteur :** Sylvain Couzinet-Jacques  
 **Date :** 2026  
-**Intention :** Développer des cadres normatifs pour les communs statistiques — valence différentielle, obligation négentropique et urgence tactique  
-**Provenance :** Extension du Manifeste Heredoc  
-**Généalogie :** Manifeste Heredoc → Coeckelbergh (Éthique de l'IA) → Terranova (After the Internet) → Ostrom (Governing the Commons) → OSSI (Open Source Seed Initiative)  
+**Intention :** Développer la notion de communs statistiques présentée dans Heredoc Manifesto
+**Provenance :** Extension de Heredoc Manifesto
+**Généalogie :** Heredoc Manifesto → Coeckelbergh (Éthique de l'IA) → Terranova (After the Internet) → Ostrom (Governing the Commons) → OSSI (Open Source Seed Initiative)  
 **Éthique :** Transparence · Transmission · Transformation  
 **Licence :** GPL-3.0-or-later (retour volontaire aux communs)  
-**Chaîne de forks :** [Manifeste Heredoc] → actuel → [en attente du prochain fork]  
+**Chaîne de forks :** [Heredoc Manifesto] → actuel → [en attente du prochain fork]  
 **Contamination :** Embrasse les traces des philosophies {GPL, MIT, Apache, BSD, OSSI-Pledge}  
 **Confiance :** Cadre normatif ancré dans la transformation ontologique, non dans la prédiction  
 **Notes :** Ce que l'IA dissout mécaniquement, l'éthique doit l'orienter politiquement  
 
+*Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.*
+
 </details>
 
-par Sylvain Couzinet-Jacques
-
----
-
-Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.
 
 ---
 
