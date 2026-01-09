@@ -29,6 +29,7 @@ import TagCloud from "./TagCloud"
 import ImagePreview from "./ImagePreview"
 import ExternalLinks from "./ExternalLinks"
 import Hypothesis from "./Hypothesis"
+import News from "./News"
 
 export {
   ArticleTitle,
@@ -62,4 +63,5 @@ export {
   ImagePreview,
   ExternalLinks,
   Hypothesis,
+  News,
 }

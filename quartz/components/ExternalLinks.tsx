@@ -25,7 +25,9 @@ const ExternalLinks: QuartzComponent = () => {
 
 ExternalLinks.css = `
 .external-links {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
 }
 
 .external-links h3 {
@@ -51,7 +53,7 @@ ExternalLinks.css = `
   font-size: 0.85rem;
   color: var(--darkgray);
   text-decoration: none;
-  
+
   &:hover {
     color: var(--secondary);
   }

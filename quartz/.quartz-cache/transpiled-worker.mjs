@@ -6606,7 +6606,9 @@ var ExternalLinks = /* @__PURE__ */ __name(() => {
 }, "ExternalLinks");
 ExternalLinks.css = `
 .external-links {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
 }
 
 .external-links h3 {
@@ -6632,7 +6634,7 @@ ExternalLinks.css = `
   font-size: 0.85rem;
   color: var(--darkgray);
   text-decoration: none;
-  
+
   &:hover {
     color: var(--secondary);
   }
@@ -6710,6 +6712,89 @@ var Hypothesis_default = /* @__PURE__ */ __name(((userOpts) => {
   return Hypothesis;
 }), "default");
 
+// quartz/components/News.tsx
+import { jsx as jsx42, jsxs as jsxs26 } from "preact/jsx-runtime";
+var defaultOptions19 = {
+  title: "News",
+  titleFr: "Actualites",
+  limit: 3
+};
+var News_default = /* @__PURE__ */ __name(((userOpts) => {
+  const opts = { ...defaultOptions19, ...userOpts };
+  const News = /* @__PURE__ */ __name(({ fileData }) => {
+    const newsItems = [
+      {
+        date: "2025-01-09",
+        text: "Nouvel essai: Retcon Black Mountain",
+        link: "/en/black-mountain-college/retcon-black-mountain"
+      },
+      {
+        date: "2025-01-05",
+        text: "Mise a jour du Lexicon",
+        link: "/en/lexicon"
+      }
+    ];
+    const lang = fileData.frontmatter?.lang || "en";
+    const title = lang === "fr" ? opts.titleFr : opts.title;
+    const displayItems = newsItems.slice(0, opts.limit);
+    if (displayItems.length === 0) {
+      return null;
+    }
+    return /* @__PURE__ */ jsxs26("div", { class: "sidebar-news", children: [
+      /* @__PURE__ */ jsx42("h3", { children: title }),
+      /* @__PURE__ */ jsx42("ul", { children: displayItems.map((item) => /* @__PURE__ */ jsxs26("li", { children: [
+        /* @__PURE__ */ jsx42("span", { class: "news-date", children: item.date }),
+        item.link ? /* @__PURE__ */ jsx42("a", { href: item.link, class: "news-text", children: item.text }) : /* @__PURE__ */ jsx42("span", { class: "news-text", children: item.text })
+      ] })) })
+    ] });
+  }, "News");
+  News.css = `
+.sidebar-news {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+.sidebar-news h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.sidebar-news ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-news li {
+  margin-bottom: 0.6rem;
+}
+
+.sidebar-news .news-date {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--gray);
+  margin-bottom: 0.1rem;
+}
+
+.sidebar-news .news-text {
+  font-size: 0.8rem;
+  color: var(--darkgray);
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.sidebar-news a.news-text:hover {
+  color: var(--secondary);
+}
+`;
+  return News;
+}), "default");
+
 // quartz.layout.ts
 var sharedPageComponents = {
   head: Head_default(),
@@ -6752,8 +6837,8 @@ var defaultContentPageLayout = {
     MobileOnly_default(Spacer_default()),
     Search_default(),
     Darkmode_default(),
-    ExternalLinks_default()
-    // Nouveau composant
+    ExternalLinks_default(),
+    News_default({ title: "News", titleFr: "Actualites", limit: 3 })
   ],
   right: [
     Graph_default({
@@ -6802,8 +6887,8 @@ var defaultListPageLayout = {
     MobileOnly_default(Spacer_default()),
     Search_default(),
     Darkmode_default(),
-    ExternalLinks_default()
-    // Aussi ici
+    ExternalLinks_default(),
+    News_default({ title: "News", titleFr: "Actualites", limit: 3 })
   ],
   right: []
 };
@@ -7145,8 +7230,8 @@ var FolderPage = /* @__PURE__ */ __name((userOpts) => {
 
 // quartz/plugins/emitters/contentIndex.tsx
 import { toHtml as toHtml2 } from "hast-util-to-html";
-import { jsx as jsx42 } from "preact/jsx-runtime";
-var defaultOptions19 = {
+import { jsx as jsx43 } from "preact/jsx-runtime";
+var defaultOptions20 = {
   enableSiteMap: true,
   enableRSS: true,
   rssLimit: 10,
@@ -7198,7 +7283,7 @@ function generateRSSFeed(cfg, idx, limit) {
 }
 __name(generateRSSFeed, "generateRSSFeed");
 var ContentIndex = /* @__PURE__ */ __name((opts) => {
-  opts = { ...defaultOptions19, ...opts };
+  opts = { ...defaultOptions20, ...opts };
   return {
     name: "ContentIndex",
     async *emit(ctx, content) {
@@ -7256,7 +7341,7 @@ var ContentIndex = /* @__PURE__ */ __name((opts) => {
       if (opts?.enableRSS) {
         return {
           additionalHead: [
-            /* @__PURE__ */ jsx42(
+            /* @__PURE__ */ jsx43(
               "link",
               {
                 rel: "alternate",

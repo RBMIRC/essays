@@ -44,7 +44,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.ExternalLinks(), // Nouveau composant
+    Component.ExternalLinks(),
+    Component.News({ title: "News", titleFr: "Actualites", limit: 3 }),
   ],
   right: [
     Component.Graph({
@@ -95,7 +96,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.ExternalLinks(), // Aussi ici
+    Component.ExternalLinks(),
+    Component.News({ title: "News", titleFr: "Actualites", limit: 3 }),
   ],
   right: [],
 }
