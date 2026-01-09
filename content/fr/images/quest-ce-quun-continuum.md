@@ -9,7 +9,7 @@ license: GPL-3.0-or-later
 provenance: "'Image Continuum', texte à l'occasion de la bourse de recherche-creation a L'Institut pour la Photographie"
 tags:
   - continuum
-  - Luciana-Parisi
+  - Parisi
   - Whitehead
   - process
   - symbiosis
@@ -51,11 +51,10 @@ tags:
 **Confiance :** Synthèse conceptuelle, non commentaire exhaustif  
 **Notes :** Le continuum est le surplus incalculable qui rend la relation possible  
 
+*Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.*
+
 </details>
 
-## Préambule au texte "Image Continuum"
-
-par Sylvain Couzinet-Jacques
 
 ---
 
