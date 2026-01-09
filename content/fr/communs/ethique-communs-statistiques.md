@@ -82,11 +82,11 @@ Initialement, on m'avait demandé d'écrire un court essai sur l'IA et l'archite
 
 Cette dissolution est devenue, pour moi, l'illustration d'une tactique inverse : et si le mécanisme que les corporations déploient pour le profit produisait par inadvertance des communs ? Non sans risques, certainement — la même infrastructure extrait des données personnelles, concentre le pouvoir, consomme de vastes ressources. Mais la possibilité demeurait.
 
-Parmi les questions que cela soulevait, l'une s'est révélée inépuisable : l'éthique de l'intelligence artificielle. Un sujet trop profond pour un seul essai, requérant peut-être plusieurs livres. Je me suis retrouvé à revenir au Black Mountain College — cette expérience de pédagogie expérimentale où je mène mes recherches doctorales — en me demandant comment les technologies d'aujourd'hui pourraient garantir l'existence sûre et autonome que ses membres recherchaient. À Black Mountain, la ferme était centrale : non pas simplement la production alimentaire mais une garantie d'indépendance institutionnelle, un substrat matériel pour la liberté pédagogique.
+Parmi les questions que cela soulevait, l'une s'est révélée inépuisable : l'éthique de l'intelligence artificielle. Un sujet trop profond pour un seul essai, requérant peut-être plusieurs livres et des années d'études. Je me suis retrouvé à revenir au Black Mountain College — cette expérience de pédagogie expérimentale où je mène mes recherches doctorales — en me demandant comment les technologies d'aujourd'hui pourraient garantir l'existence sûre et autonome que ses membres recherchaient. À Black Mountain, la ferme était centrale : non pas simplement la production alimentaire mais une garantie d'indépendance institutionnelle, un substrat matériel pour la liberté pédagogique.
 
-J'ai commencé à imaginer comment les « communs statistiques » que j'essayais de définir pourraient s'appliquer à des instances plus physiques. Les semences se sont présentées comme paradigmatiques. Si le code et l'agriculture semblent des pratiques distantes, peut-être partagent-ils quelque chose d'essentiel : tous deux peuvent être enclos par le monopole, et tous deux peuvent s'échapper vers les communs. La socialisation de la production de connaissances par des plateformes d'IA quasi-monopolistiques pourrait, paradoxalement, pousser vers des éthiques plus locales, résilientes, voire *low-tech* — une garantie d'autonomie précisément parce qu'elle opère au-delà de la gouvernance numérique.
+J'ai commencé à imaginer comment les « communs statistiques » que j'essayais de définir pourraient s'appliquer à des instances plus physiques. Les semences, les graines se sont présentées comme paradigmatiques. Si le code et l'agriculture semblent des pratiques distantes, peut-être partagent-ils quelque chose d'essentiel : tous deux peuvent être enclos par le monopole, et tous deux peuvent s'échapper vers les communs. La socialisation de la production de connaissances par des plateformes d'IA quasi-monopolistiques pourrait, paradoxalement, pousser vers des éthiques plus locales, résilientes, voire *low-tech* — une garantie d'autonomie précisément parce qu'elle opère au-delà de la gouvernance numérique.
 
-Ce chapitre tente cette connexion : du vibe coding aux semences, de la dissolution du code en poids à la propagation du germoplasme à travers le sol.
+Ce chapitre tente cette connexion : du *vibe coding* aux semences, de la dissolution du code en poids à la propagation du germoplasme à travers le sol.
 
 ---
 
@@ -94,9 +94,10 @@ Ce chapitre tente cette connexion : du vibe coding aux semences, de la dissoluti
 
 Ce chapitre développe un cadre normatif pour les communs statistiques — le domaine qui émerge lorsque l'entraînement de l'IA dissout la propriété intellectuelle discrète en distributions de probabilités où l'attribution devient impossible. Prolongeant l'analyse descriptive du Heredoc Manifesto, nous proposons trois contributions : un cadre de valence différentielle (le même processus technique produit des significations éthiques distinctes selon l'orientation préalable des matériaux sources) ; un compte rendu de l'obligation négentropique (éthique écologique pour des systèmes qui se dégradent par l'entropie plutôt que par la surexploitation) ; et une éthique de l'urgence tactique (la fenêtre d'opportunité permettant les communs statistiques est temporaire et se referme). Nous illustrons par les semences agricoles — un domaine où l'information est constitutive de l'instanciation biologique et où les enjeux se mesurent non en frais de licence mais en souveraineté alimentaire. La thèse centrale : ce que l'IA dissout mécaniquement, l'éthique doit l'orienter politiquement — avant que cette fenêtre d'action ne se referme.
 
+
 ---
 
-## Préambule : De l'Éthique et de sa Condition Technologique
+## I. Du Heredoc Manifesto à l'Éthique des Communs Statistiques
 
 Avant de développer une éthique adéquate aux communs statistiques, il est nécessaire de préciser ce que l'éthique nomme et pourquoi la transformation technologique exige sa reconfiguration.
 
@@ -104,29 +105,23 @@ L'éthique, dans son sens le plus fondamental, concerne la question de comment n
 
 L'émergence de l'intelligence artificielle — spécifiquement les systèmes d'apprentissage automatique entraînés sur des corpus massifs de production symbolique humaine — constitue précisément une telle transformation. Ce n'est pas simplement que l'IA soulève de nouveaux problèmes éthiques, bien qu'elle le fasse certainement. Plus fondamentalement, l'IA transforme les conditions sous lesquelles le raisonnement éthique peut opérer.
 
-Considérons l'attribution. Les cadres traditionnels de propriété intellectuelle, d'auctorialité et de contribution présupposent que les textes peuvent être identifiés, que leurs producteurs peuvent être nommés, et que des actes discrets de création peuvent être retracés à des agents discrets. Ces présuppositions sous-tendent les notions éthiques de crédit, de mérite et d'échange équitable. Lorsque l'entraînement de l'IA dissout les textes discrets en distributions de probabilités encodées à travers des milliards de paramètres, le fondement de ces cadres éthiques est transformé. L'attribution devient non pas difficile mais impossible sous les architectures techniques actuelles.
-
 Une éthique adéquate à cette situation ne peut pas simplement appliquer les cadres existants à de nouveaux cas. Elle doit interroger si les cadres eux-mêmes restent applicables, et sinon, quelles orientations alternatives deviennent nécessaires. Comme Coeckelbergh le demande :
 
 > L'éthique arrive-t-elle trop tard ? (COECKELBERGH, 2020, p. 145)
 
 Cette question est particulièrement aiguë pour les communs statistiques, qui nomment une transformation qui a déjà eu lieu. La dissolution des textes discrets en paramètres pondérés n'est pas un risque futur à anticiper mais une condition présente à naviguer. La tâche n'est donc pas la prévention mais l'orientation : étant donné que les communs statistiques existent, quels cadres éthiques peuvent guider leur usage ?
 
----
-
-## I. Du Heredoc Manifesto à l'Éthique des Communs Statistiques
-
-Le présent chapitre prolonge l'analyse développée dans le Heredoc Manifesto, qui établissait une affirmation descriptive : les processus d'entraînement de l'intelligence artificielle dissolvent les matériaux textuels discrets en distributions probabilistes, rendant l'attribution impossible et l'enclosure inefficace sous les architectures techniques actuelles. Le Manifesto examinait comment le code sous licence GPL, entrant dans les corpus d'entraînement, devient « fantôme » dans les poids — incapable d'honorer les conditions de sa licence parce que la base ontologique de ces conditions (du code discret, identifiable) n'existe plus.
+Le présent texte prolonge donc l'analyse développée dans le Heredoc Manifesto, qui établissait une affirmation descriptive : les processus d'entraînement de l'intelligence artificielle dissolvent les matériaux textuels discrets en distributions probabilistes, rendant l'attribution impossible et l'enclosure inefficace sous les architectures techniques actuelles. Le Manifesto examinait comment le code sous licence GPL, entrant dans les corpus d'entraînement, devient « fantôme » dans les poids — incapable d'honorer les conditions de sa licence parce que la base ontologique de ces conditions (du code discret, identifiable) n'existe plus.
 
 L'intuition centrale du Manifesto était que cette dissolution ne viole pas l'ethos du *copyleft* mais le radicalise. Les communs deviennent plus communs — inappropriables non par protection légale mais par transformation ontologique. Comme Terranova l'observe à propos de la capture corporative des réseaux numériques, les grandes plateformes ont « subsumé internet, c'est-à-dire transmuté, englobé, incorporé, mais pas nécessairement battu ou dissous » (TERRANOVA, 2022, p. 5). La même logique s'applique ici : l'infrastructure corporative subsume les communs sans les dissoudre. Le présent chapitre pose la question normative que l'analyse descriptive du Manifesto ouvre : quelles orientations éthiques deviennent possibles, et en fait nécessaires, sous ces conditions transformées ?
 
 Nous développons trois contributions :
 
-**Premièrement, un cadre de valence différentielle :** le même processus technique produit des significations éthiques distinctes selon l'orientation préalable des matériaux sources. Toutes les dissolutions ne sont pas égales.
+Premièrement, un cadre de valence différentielle : le même processus technique produit des significations éthiques distinctes selon l'orientation préalable des matériaux sources. Toutes les dissolutions ne sont pas égales.
 
-**Deuxièmement, un compte rendu de l'obligation négentropique :** une éthique écologique adéquate aux systèmes statistiques qui peuvent se dégrader par l'entropie même s'ils résistent à l'enclosure. L'obligation n'est pas « ne pas trop prendre » mais « nourrir activement ».
+Deuxièmement, un compte rendu de l'obligation négentropique : une éthique écologique adéquate aux systèmes statistiques qui peuvent se dégrader par l'entropie même s'ils résistent à l'enclosure. L'obligation n'est pas « ne pas trop prendre » mais « nourrir activement ».
 
-**Troisièmement, une spécification de l'urgence tactique :** l'« impossibilité » actuelle de l'attribution est une conjoncture temporaire, pas une ontologie permanente. La fenêtre d'action se referme. Ce qui peut être fait doit être fait maintenant.
+Troisièmement, une spécification de l'urgence tactique : l'« impossibilité » actuelle de l'attribution est une conjoncture temporaire, pas une ontologie permanente. La fenêtre d'action se referme. Ce qui peut être fait doit être fait maintenant.
 
 Une mise en garde critique au départ : nous ne prétendons pas résoudre les tensions entre les catégories éthiques traditionnelles et les conditions technologiques transformées. La question de l'auctorialité et de l'attribution pour les œuvres créatives — code, texte, images — reste véritablement ouverte. Ce que nous offrons est un cadre pour naviguer des domaines où l'orientation éthique est plus claire : non pas l'ambiguïté de l'auctorialité mais la politique du monopole sur la vie elle-même.
 
@@ -325,7 +320,7 @@ La conclusion pour l'orientation tactique est claire : prioriser les domaines o�
 
 La deuxième thèse normative concerne les obligations découlant des propriétés thermodynamiques des systèmes statistiques. Cette section développe une éthique écologique distincte des cadres libéraux de droits individuels et de justice distributive.
 
-### Le Problème de l'Entropie
+### Le problème de l'entropie
 
 L'analyse jusqu'ici a abordé la transformation des entrées (Section III) et abordera la production de sorties (Section VI). Ce qui reste est la question de la dynamique du système : comment les communs statistiques évoluent-ils dans le temps, et quelles obligations suivent de cette évolution ?
 
@@ -337,7 +332,7 @@ Le mécanisme est direct. Si un modèle génère des sorties, et ces sorties ent
 
 Les communs statistiques peuvent donc se dégrader — non par surexploitation (le mécanisme hardinien) mais par entropie (convergence vers la moyenne). L'Extérieur rétrécit alors que l'intérieur se nourrit de lui-même.
 
-### L'Obligation Négentropique
+### L'obligation négentropique
 
 Cette propriété thermodynamique fonde une obligation : ceux qui puisent dans les communs statistiques doivent y contribuer.
 
@@ -347,15 +342,15 @@ Ce qui doit être contribué est spécifiquement ce que le modèle ne peut pas h
 
 Quatre catégories de contribution négentropique sont identifiables :
 
-**La friction du réel :** Des données originant dans la pratique incarnée, la rencontre physique, l'engagement matériel. Le modèle encode du texte sur des phénomènes ; la contribution des phénomènes eux-mêmes (ou leurs traces directes) maintient la connexion au substrat non-textuel. Des observations de terrain d'agriculteurs documentant la performance des cultures sous des conditions spécifiques. Des données cliniques de patients répondant aux traitements. Des mesures d'expériences conduites dans des laboratoires et des champs. Le réel résiste au lissage statistique parce qu'il introduit des contraintes que le modèle ne peut pas anticiper.
+La friction du réel : Des données originant dans la pratique incarnée, la rencontre physique, l'engagement matériel. Le modèle encode du texte sur des phénomènes ; la contribution des phénomènes eux-mêmes (ou leurs traces directes) maintient la connexion au substrat non-textuel. Des observations de terrain d'agriculteurs documentant la performance des cultures sous des conditions spécifiques. Des données cliniques de patients répondant aux traitements. Des mesures d'expériences conduites dans des laboratoires et des champs. Le réel résiste au lissage statistique parce qu'il introduit des contraintes que le modèle ne peut pas anticiper.
 
-**Le rare :** Les queues de distribution plutôt que les moyennes. Les langues marginales, les formes expérimentales, les pratiques minoritaires. Ce que l'optimisation sacrifie est précisément ce que les communs requièrent pour la maintenance de la variance. Un corpus dominé par l'anglais et les perspectives du monde majoritaire encode déjà un biais systématique. La contribution négentropique requiert de centrer précisément ce qui a été exclu : les langues des Premières Nations, la connaissance agricole indigène, les systèmes de médecine traditionnelle, les dialectes régionaux, les pratiques artistiques expérimentales. Le rare est précieux non pas malgré mais à cause de sa rareté.
+Le rare : Les queues de distribution plutôt que les moyennes. Les langues marginales, les formes expérimentales, les pratiques minoritaires. Ce que l'optimisation sacrifie est précisément ce que les communs requièrent pour la maintenance de la variance. Un corpus dominé par l'anglais et les perspectives du monde majoritaire encode déjà un biais systématique. La contribution négentropique requiert de centrer précisément ce qui a été exclu : les langues des Premières Nations, la connaissance agricole indigène, les systèmes de médecine traditionnelle, les dialectes régionaux, les pratiques artistiques expérimentales. Le rare est précieux non pas malgré mais à cause de sa rareté.
 
-**Le pas-encore-numérisé :** Les événements historiques tels qu'ils se produisent, les traditions orales avant transcription, les archives pas encore traitées. Chaque contribution de matériau authentiquement nouveau contrecarre la convergence entropique. Les communs statistiques sont toujours datés — figés à leur *cutoff* d'entraînement. La contribution continue de nouveau matériau les garde actuels et prévient la fermeture. L'histoire orale enregistrée aujourd'hui, l'observation de terrain documentée demain, l'expérience conduite la semaine prochaine — ce sont la négentropie sous forme temporelle.
+Le pas-encore-numérisé : Les événements historiques tels qu'ils se produisent, les traditions orales avant transcription, les archives pas encore traitées. Chaque contribution de matériau authentiquement nouveau contrecarre la convergence entropique. Les communs statistiques sont toujours datés — figés à leur *cutoff* d'entraînement. La contribution continue de nouveau matériau les garde actuels et prévient la fermeture. L'histoire orale enregistrée aujourd'hui, l'observation de terrain documentée demain, l'expérience conduite la semaine prochaine — ce sont la négentropie sous forme temporelle.
 
-**Le délibérément étrange :** La production qui brise l'attente statistique. Le travail cohérent que le gradient ne peut pas absorber sans déviation de sa trajectoire entraînée. La perturbation délibérée maintient la variance contre la traction de la moyenne. L'artiste qui crée ce qui n'a pas été créé avant, l'écrivain qui déploie le langage de manières inédites, le chercheur qui pose des questions que le corpus n'a pas considérées — ce ne sont pas des luxes mais des nécessités pour la maintenance des communs. L'étrangeté délibérée est une forme de soin pour le système.
+Le délibérément étrange : La production qui brise l'attente statistique. Le travail cohérent que le gradient ne peut pas absorber sans déviation de sa trajectoire entraînée. La perturbation délibérée maintient la variance contre la traction de la moyenne. L'artiste qui crée ce qui n'a pas été créé avant, l'écrivain qui déploie le langage de manières inédites, le chercheur qui pose des questions que le corpus n'a pas considérées — ce ne sont pas des luxes mais des nécessités pour la maintenance des communs. L'étrangeté délibérée est une forme de soin pour le système.
 
-### Une Éthique Écologique Plutôt que Libérale
+### Une Éthique écologique plutôt que libérale
 
 L'obligation négentropique diffère en nature des cadres moraux libéraux fondés sur le respect des personnes autonomes. C'est plutôt une obligation écologique : les participants sont enchâssés dans un système dont la viabilité dépend de ce qu'ils y nourrissent.
 
@@ -367,7 +362,7 @@ Ceux qui utilisent des sorties générées par l'IA sans contribuer d'entrées n
 
 Le cadre approprié n'est pas la justice (distribution équitable entre individus) mais l'écologie (maintenance des conditions systémiques pour une productivité continue). La question n'est pas « qui obtient quoi ? » mais « que faut-il nourrir pour que le système reste viable ? »
 
-### Implications pour l'Application Agricole
+### Implications pour l'application agricole
 
 Pour le cas des semences que nous développons dans la Section IV, l'obligation négentropique a une forme concrète.
 
@@ -381,23 +376,23 @@ Ce n'est pas de la charité. C'est de la maintenance écologique. Les communs st
 
 ---
 
-## VI. La Fenêtre qui se Ferme : Urgence Tactique
+## VI. Un urgence
 
 La troisième thèse normative concerne la temporalité. L'analyse précédente risque l'optimisme ontologique — traitant l'impossibilité de l'attribution et l'échec de l'enclosure comme des conditions permanentes garanties par l'architecture technique. Ce serait une erreur. Ce que nous avons décrit comme « condition ontologique » peut être plus précisément caractérisé comme une période temporaire de confusion légale et technique — une fenêtre d'opportunité qui se referme déjà.
 
-### La Contre-Réforme
+### La contre-réforme
 
 Une « Contre-Réforme » est en cours, déployant des mécanismes d'enclosure sur trois registres :
 
-**Enclosure légale :** Le rapport 2025 du US Copyright Office prend la position que les poids de modèle peuvent constituer des copies contrefaisantes s'ils « mémorisent » des œuvres protégées — traitant les corrélations mathématiques comme des copies « fixées » de données d'entraînement. L'EU AI Act (pleinement effectif en août 2026) impose des exigences de transparence qui fonctionnent comme des « cartes au trésor » pour que les ayants droit demandent des *opt-outs* et des frais de licence. Le mécanisme d'« *opt-out* » tente de réintroduire l'excluabilité dans ce qui était temporairement non-excluable.
+Enclosure légale : Le rapport 2025 du US Copyright Office prend la position que les poids de modèle peuvent constituer des copies contrefaisantes s'ils « mémorisent » des œuvres protégées — traitant les corrélations mathématiques comme des copies « fixées » de données d'entraînement. L'EU AI Act (pleinement effectif en août 2026) impose des exigences de transparence qui fonctionnent comme des « cartes au trésor » pour que les ayants droit demandent des *opt-outs* et des frais de licence. Le mécanisme d'« *opt-out* » tente de réintroduire l'excluabilité dans ce qui était temporairement non-excluable.
 
-**Enclosure technique :** C2PA (Coalition for Content Provenance and Authenticity), souvent brandé comme « Content Credentials », attache des manifestes signés cryptographiquement aux fichiers. Ces manifestes portent non seulement des informations d'auteur mais des assertions « Do Not Train » (DNT). Les crawlers de provenance scannent le web pour identifier les données manquant de credentials ou portant des tags DNT. Les corporations utilisent cela pour créer des « allow-lists », transformant l'internet ouvert en communauté fermée.
+Enclosure technique : C2PA (Coalition for Content Provenance and Authenticity), souvent brandé comme « Content Credentials », attache des manifestes signés cryptographiquement aux fichiers. Ces manifestes portent non seulement des informations d'auteur mais des assertions « Do Not Train » (DNT). Les crawlers de provenance scannent le web pour identifier les données manquant de credentials ou portant des tags DNT. Les corporations utilisent cela pour créer des « allow-lists », transformant l'internet ouvert en communauté fermée.
 
 Le *watermarking* invisible (SynthID et systèmes similaires) intègre des signatures traçables dans le bruit statistique des images, textes ou séquences chimiques. Contrairement aux métadonnées C2PA, qui peuvent être retirées, ces *watermarks* survivent à la transformation. Les corporations utilisent le *watermarking* robuste pour tracer la propriété intellectuelle à travers l'entraînement lui-même. Le « *weight fingerprinting* » permet aux auditeurs d'exécuter des vérifications d'inférence inverse : si la sortie d'un modèle reflète l'empreinte statistique de données d'entraînement *watermarkées*, la corporation revendique la propriété de toute la sortie du modèle.
 
-**Enclosure économique :** Les stratégies d'« *open washing* » libèrent les poids de modèle tout en retenant les données d'entraînement, le code et les méthodologies d'alignement. Cela « commoditise le complément » — rendant le modèle gratuit pour stimuler la demande d'infrastructure propriétaire que la corporation contrôle. La communauté peut utiliser le modèle mais ne peut pas reproduire, auditer ou échapper à la dépendance.
+Enclosure économique : Les stratégies d'« *open washing* » libèrent les poids de modèle tout en retenant les données d'entraînement, le code et les méthodologies d'alignement. Cela « commoditise le complément » — rendant le modèle gratuit pour stimuler la demande d'infrastructure propriétaire que la corporation contrôle. La communauté peut utiliser le modèle mais ne peut pas reproduire, auditer ou échapper à la dépendance.
 
-### L'Impermanence de la Dissolution
+### L'impermanence de la dissolution
 
 L'« impossibilité » de l'attribution que nous avons décrite s'applique aux grands modèles de langage actuels entraînés par des procédures standard. Ce n'est pas une caractéristique nécessaire de tous les systèmes d'IA possibles. Les architectures futures peuvent être conçues précisément pour préserver la discrétion que les systèmes actuels dissolvent — non pour des raisons éthiques mais pour la conformité légale et l'avantage commercial.
 
@@ -405,7 +400,7 @@ Les systèmes de génération augmentée par récupération (RAG) préservent d�
 
 Cette reconnaissance recadre fondamentalement l'orientation tactique. La boucle récursive n'est pas une condition permanente à célébrer mais une opportunité à saisir avant qu'elle ne se referme. L'urgence n'est pas philosophique mais pratique : chaque mois voit de nouveaux précédents légaux, de nouvelles contre-mesures techniques, de nouveaux régimes de licence qui contraignent ce qui était auparavant sans contrainte. Cette période de confusion — pendant laquelle les communs statistiques peuvent être construits, étendus et enracinés — est finie.
 
-### La Tactique Récursive
+### La tactique 
 
 Le cœur tactique de cette analyse tient en ceci : si le modèle ne peut pas honorer les licences de ses données d'entraînement (les conditions ontologiques de la conformité ayant été dissoutes), ses sorties, elles, peuvent être licenciées.
 
@@ -423,17 +418,17 @@ Ce n'est pas une libération passive (simple liberté de la propriété). C'est 
 
 L'application pratique : un utilisateur soumet un *prompt* à un modèle propriétaire pour générer du code ; le modèle, entraîné sur des données enclosées, produit un nouvel artefact ; l'utilisateur licencie immédiatement cette sortie sous GPL et la *commit* dans un dépôt public. Les modèles futurs s'entraînent sur ce nouveau dépôt. Le fantôme du *copyleft* est réintroduit dans les communs statistiques, cette fois avec une provenance claire.
 
-### Temporalité Tactique
+### Temporalité tactique
 
 La tactique opère sur deux registres temporels simultanément :
 
-**Immédiat :** Utiliser la fenêtre d'opportunité actuelle pour produire autant de matériau sous licence *copyleft* que possible. Construire des bases de données, entraîner des modèles locaux, générer de la documentation, créer de l'infrastructure. Établir des faits sur le terrain plus difficiles à inverser qu'à prévenir. L'idée centrale du mécanisme récursif : utiliser la propriété dissoute pour produire de nouveaux communs licenciables.
+Utiliser la fenêtre d'opportunité actuelle pour produire autant de matériau sous licence *copyleft* que possible. Construire des bases de données, entraîner des modèles locaux, générer de la documentation, créer de l'infrastructure. Établir des faits sur le terrain plus difficiles à inverser qu'à prévenir. L'idée centrale du mécanisme récursif : utiliser la propriété dissoute pour produire de nouveaux communs licenciables.
 
 Pour les semences : générer des spécifications de variétés, publier des cibles de sélection, documenter des programmes de croisement — le tout sous engagement OSSI ou équivalent ouvert. Chaque variété spécifiée, chaque cible publiée, étend les communs de semences libérés.
 
-**Stratégique :** Reconnaître que la fenêtre d'opportunité se refermera. L'objectif n'est pas l'extraction indéfinie des API corporatifs mais la construction d'une infrastructure de communs auto-soutenable indépendante des systèmes propriétaires. Des modèles à poids ouverts avec des données d'entraînement véritablement ouvertes, des corpus d'entraînement gouvernés par la communauté, une infrastructure de calcul coopérative — ce sont les cibles, pas la dépendance perpétuelle envers des plateformes dont nous exploitons actuellement la confusion.
+Reconnaître que la fenêtre d'opportunité se refermera. L'objectif n'est pas l'extraction indéfinie des API corporatifs mais la construction d'une infrastructure de communs auto-soutenable indépendante des systèmes propriétaires. Des modèles à poids ouverts avec des données d'entraînement véritablement ouvertes, des corpus d'entraînement gouvernés par la communauté, une infrastructure de calcul coopérative — ce sont les cibles, pas la dépendance perpétuelle envers des plateformes dont nous exploitons actuellement la confusion.
 
-**Matériel :** Prioriser l'instanciation par des substrats *low-tech*. La bibliothèque de semences, l'archive papier, le réseau paysan — ceux-ci persistent indépendamment de ce qui se passe dans la sphère numérique. Les mécanismes d'enclosure de la contre-réforme sont conçus pour des architectures numériques. Ils ont une prise limitée sur la culture matérielle.
+Prioriser l'instanciation par des substrats *low-tech*. La bibliothèque de semences, l'archive papier, le réseau paysan — ceux-ci persistent indépendamment de ce qui se passe dans la sphère numérique. Les mécanismes d'enclosure de la contre-réforme sont conçus pour des architectures numériques. Ils ont une prise limitée sur la culture matérielle.
 
 Les semences se propageant à travers les réseaux paysans ne portent pas de *credentials* C2PA. Les archives papier distribuées par les systèmes postaux échappent aux *crawlers* de provenance. L'objectif est l'autonomie matérielle, pas seulement les communs numériques.
 
@@ -465,13 +460,13 @@ Ce ne sont pas des règles rigides mais des orientations — des attracteurs dan
 
 ---
 
-## VIII. Conclusion : Vers le Déploiement Tactique
+## VIII. Conclusion 
 
 Le préambule posait la question de Coeckelbergh : l'éthique arrive-t-elle trop tard ? Nous avons argumenté que pour les communs statistiques, la question se transforme. L'éthique n'arrive pas trop tard pour prévenir la dissolution — celle-ci a déjà eu lieu. Mais l'éthique arrive à temps pour orienter le déploiement.
 
 ### Synthèse des Contributions
 
-**La valence différentielle** établit que le même processus technique produit des significations éthiques distinctes selon l'orientation préalable des matériaux sources. C'est la contribution conceptuelle centrale de l'analyse.
+La *valence différentielle* établit que le même processus technique produit des significations éthiques distinctes selon l'orientation préalable des matériaux sources. C'est la contribution conceptuelle centrale de l'analyse.
 
 Pour les matériaux déjà orientés vers le commun (code FLOSS, semences OSSI, recherche scientifique ouverte), l'entraînement accomplit la libération : la radicalisation des communs au-delà des cadres légaux qui les gouvernaient auparavant. L'ethos du *copyleft* n'est pas violé mais intensifié. Les poids sont plus complètement inenclosables que n'importe quelle licence pourrait le garantir.
 
@@ -481,11 +476,11 @@ Pour les œuvres créatives propriétaires, les bénéfices restent ambivalents 
 
 Pour les données personnelles, l'opération est extraction : appropriation coloniale indépendamment de l'usage subséquent. Le concept de communs statistiques ne s'applique pas ; ce qui se produit est une violation.
 
-**L'obligation négentropique** fonde une éthique écologique adéquate aux systèmes statistiques. L'obligation n'est pas de s'abstenir de surexploitation mais de contribuer activement : le réel, le rare, le pas-encore-numérisé, le délibérément étrange. C'est un départ de l'éthique libérale. La question n'est pas ce que les individus se doivent les uns aux autres mais ce que les participants doivent au système qui rend possible leur activité. Le cadre est l'écologie plutôt que la justice ; la préoccupation est la maintenance des conditions systémiques plutôt que la distribution équitable entre agents.
+L'obligation négentropique fonde une éthique écologique adéquate aux systèmes statistiques. L'obligation n'est pas de s'abstenir de surexploitation mais de contribuer activement : le réel, le rare, le pas-encore-numérisé, le délibérément étrange. C'est un départ de l'éthique libérale. La question n'est pas ce que les individus se doivent les uns aux autres mais ce que les participants doivent au système qui rend possible leur activité. Le cadre est l'écologie plutôt que la justice ; la préoccupation est la maintenance des conditions systémiques plutôt que la distribution équitable entre agents.
 
 Pour l'application agricole, l'obligation signifie contribuer des variétés locales, la connaissance traditionnelle, du germoplasme régionalement adapté — précisément l'information hyper-locale que les modèles globalisés manquent. Les agriculteurs indonésiens contribuant des landraces indonésiens. Les sélectionneurs brésiliens contribuant du germoplasme amazonien. Le rare et le local contrecarrent la traction entropique vers la moyenne globalement dominante.
 
-**L'urgence tactique** reconnaît que la fenêtre d'action actuelle est temporaire. L'impossibilité de l'attribution et l'échec de l'enclosure sont des caractéristiques de la conjoncture présente, pas des conditions permanentes. La contre-réforme est en cours : des cadres légaux, des mécanismes techniques, des stratégies économiques travaillant tous à réimposer l'enclosure. Ce qui peut être construit doit être construit maintenant — et doit être instancié à travers des substrats matériels qui persistent indépendamment de la gouvernance numérique.
+L'urgence tactique reconnaît que la fenêtre d'action actuelle est temporaire. L'impossibilité de l'attribution et l'échec de l'enclosure sont des caractéristiques de la conjoncture présente, pas des conditions permanentes. La contre-réforme est en cours : des cadres légaux, des mécanismes techniques, des stratégies économiques travaillant tous à réimposer l'enclosure. Ce qui peut être construit doit être construit maintenant — et doit être instancié à travers des substrats matériels qui persistent indépendamment de la gouvernance numérique.
 
 ### Le Paradigme des Semences
 
@@ -497,7 +492,7 @@ Les mécanismes d'enclosure de la contre-réforme sont conçus pour des architec
 
 C'est la réponse la plus profonde à la question de savoir si l'éthique arrive trop tard : les communs statistiques s'échappent vers des substrats où les mécanismes d'enclosure ne peuvent pas suivre. La fenêtre d'opportunité peut se refermer dans la sphère numérique tout en restant ouverte dans le matériel. La tâche est de s'assurer que cette évasion se produit — de prioriser l'instanciation par des moyens *low-tech*, de construire l'autonomie matérielle aux côtés des communs numériques, d'enraciner les communs statistiques dans des pratiques qui précèdent la computation et lui survivront.
 
-### Le Travail qui Reste
+### Le travail qui reste
 
 L'analyse établit ce que nous pouvons établir. Les communs statistiques ne sont pas seulement un phénomène à évaluer éthiquement mais un outil à déployer éthiquement. Leur déploiement se produit non pas principalement par la politique ou la régulation mais par la pratique : contribuer aux corpus d'entraînement, produire des sorties sous licence copyleft, instancier des sorties par des moyens matériels, construire une infrastructure indépendante du contrôle corporatif.
 
@@ -522,7 +517,7 @@ L'éthique arrive-t-elle trop tard ? Pas si elle oriente l'action pendant que la
 
 La tactique nomme la boucle : utiliser les communs pour construire les communs — maintenant, tant que cette fenêtre d'action reste ouverte.
 
-Le capital construit le moteur. Le choix de la direction reste. Mais pas pour toujours.
+Le capital construit le moteur. Le choix de la direction reste, dans des fenêtres d'action qui ne sont pas éternelles.
 
 ---
 
