@@ -93,39 +93,31 @@ This chapter develops a normative framework for the statistical commons—the do
 
 ---
 
-## Preamble: On Ethics and Its Technological Condition
+## I. From the Heredoc Manifesto to the Ethics of the Statistical Commons
 
-Before developing an ethics adequate to the statistical commons, it is necessary to specify what ethics names and why technological transformation demands its reconfiguration.
+Before developing an ethics adequate to statistical commons, it is necessary to specify what ethics names and why technological transformation demands its reconfiguration.
 
 Ethics, in its most fundamental sense, concerns the question of how we should live—individually and collectively. As Coeckelbergh observes, positive ethics is "concerned with how we should live (together), based on a vision of the good life and the good society," in contrast to negative ethics, "which sets limits and says what we should not do" (COECKELBERGH, 2020, p. 202). Yet ethics does not operate in a vacuum. It is always situated within technical, social, and material conditions that shape both the questions it must address and the frameworks available for addressing them.
 
-The emergence of artificial intelligence—specifically machine learning systems trained on massive corpora of human symbolic production—constitutes precisely such a transformation. It is not merely that AI raises new ethical problems, though it certainly does. More fundamentally, AI transforms the conditions under which ethical reasoning can operate.
-
-Consider attribution. Traditional frameworks of intellectual property, authorship, and contribution presuppose that texts can be identified, that their producers can be named, and that discrete acts of creation can be traced to discrete agents. These presuppositions underpin ethical notions of credit, desert, and fair exchange. When AI training dissolves discrete texts into probability distributions encoded across billions of parameters, the ground of these ethical frameworks is transformed. Attribution becomes not difficult but impossible under current technical architectures.
-
+The emergence of artificial intelligence—specifically machine learning systems trained on massive corpora of human symbolic production—constitutes precisely such a transformation. It is not simply that AI raises new ethical problems, though it certainly does. More fundamentally, AI transforms the conditions under which ethical reasoning can operate.
 An ethics adequate to this situation cannot simply apply existing frameworks to new cases. It must interrogate whether the frameworks themselves remain applicable, and if not, what alternative orientations become necessary. As Coeckelbergh asks:
 
-> Does ethics come too late? (COECKELBERGH, 2020, p. 145)
+>Does ethics arrive too late? (COECKELBERGH, 2020, p. 145)
 
-This question is particularly acute for the statistical commons, which names a transformation that has already occurred. The dissolution of discrete texts into weighted parameters is not a future risk to be anticipated but a present condition to be navigated. The task is therefore not prevention but orientation: given that the statistical commons exists, what ethical frameworks can guide its use?
+This question is particularly acute for statistical commons, which name a transformation that has already occurred. The dissolution of discrete texts into weighted parameters is not a future risk to anticipate but a present condition to navigate. The task is therefore not prevention but orientation: given that statistical commons exist, what ethical frameworks can guide their use?
+The present text therefore extends the analysis developed in the Heredoc Manifesto, which established a descriptive claim: artificial intelligence training processes dissolve discrete textual materials into probabilistic distributions, rendering attribution impossible and enclosure ineffective under current technical architectures. The Manifesto examined how GPL-licensed code, entering training corpora, becomes "ghostly" in the weights—unable to honor the conditions of its license because the ontological basis of those conditions (discrete, identifiable code) no longer exists.
 
----
-
-## I. From the Heredoc Manifesto to the Ethics of the Statistical Commons
-
-The present chapter extends the analysis developed in the Heredoc Manifesto, which established a descriptive claim: artificial intelligence training processes dissolve discrete textual materials into probabilistic distributions, rendering attribution impossible and enclosure ineffective under current technical architectures. The Manifesto examined how GPL-licensed code, entering training corpora, becomes "ghost" in the weights—unable to honor its license conditions because the ontological basis for those conditions (discrete, identifiable code) no longer exists.
-
-The Manifesto's central insight was that this dissolution does not violate the ethos of copyleft but radicalizes it. The commons becomes more common—unownable not by legal protection but by ontological transformation. As Terranova observes of the corporate capture of digital networks, large platforms have "subsumed the internet, that is, transmuted, encompassed, incorporated it, but not necessarily beaten or dissolved it" (TERRANOVA, 2022, p. 5). The same logic applies here: corporate infrastructure subsumes the commons without dissolving it. The present chapter asks the normative question that the Manifesto's descriptive analysis opens: what ethical orientations become possible, and indeed necessary, under these transformed conditions?
+The Manifesto's central intuition was that this dissolution does not violate the ethos of copyleft but radicalizes it. The commons become more common—inappropriable not through legal protection but through ontological transformation. As Terranova observes regarding corporate capture of digital networks, major platforms have "subsumed the internet, that is, transmuted, engulfed, incorporated, but not necessarily beaten or dissolved" (TERRANOVA, 2022, p. 5). The same logic applies here: corporate infrastructure subsumes the commons without dissolving them. The present chapter poses the normative question that the Manifesto's descriptive analysis opens: what ethical orientations become possible, and indeed necessary, under these transformed conditions?
 
 We develop three contributions:
 
-**First, a framework of differential valence:** the same technical process produces distinct ethical meanings depending on the prior orientation of source materials. Not all dissolutions are equal.
+First, a framework of differential valence: the same technical process produces distinct ethical meanings depending on the prior orientation of source materials. Not all dissolutions are equal.
 
-**Second, an account of negentropic obligation:** an ecological ethics adequate to statistical systems that can degrade through entropy even as they resist enclosure. The obligation is not "do not take too much" but "actively feed."
+Second, an account of negentropic obligation: an ecological ethics adequate to statistical systems that can degrade through entropy even as they resist enclosure. The obligation is not "do not take too much" but "actively nourish."
 
-**Third, a specification of tactical urgency:** the current "impossibility" of attribution is a temporary conjuncture, not a permanent ontology. The window is closing. What can be done must be done now.
+Third, a specification of tactical urgency: the current "impossibility" of attribution is a temporary conjuncture, not a permanent ontology. The window for action is closing. What can be done must be done now.
 
-A critical caveat at the outset: we do not claim to resolve the tensions between traditional ethical categories and transformed technological conditions. The question of authorship and attribution for creative works—code, text, images—remains genuinely open. What we offer is a framework for navigating domains where the ethical orientation is clearer: not the ambiguity of authorship but the politics of monopoly over life itself.
+A critical caveat at the outset: we do not claim to resolve the tensions between traditional ethical categories and transformed technological conditions. The question of authorship and attribution for creative works—code, text, images—remains genuinely open. What we offer is a framework for navigating domains where ethical orientation is clearer: not the ambiguity of authorship but the politics of monopoly over life itself.
 
 ---
 
@@ -344,13 +336,13 @@ What must be contributed is specifically what the model cannot hallucinate: nege
 
 Four categories of negentropic contribution are identifiable:
 
-**The friction of the real:** Data originating in embodied practice, physical encounter, material engagement. The model encodes text about phenomena; contribution of the phenomena themselves (or their direct traces) maintains connection to non-textual substrate. Field observations from farmers documenting crop performance under specific conditions. Clinical data from patients responding to treatments. Measurements from experiments conducted in laboratories and fields. The real resists statistical smoothing because it introduces constraints the model cannot anticipate.
+The friction of the real: Data originating in embodied practice, physical encounter, material engagement. The model encodes text about phenomena; contribution of the phenomena themselves (or their direct traces) maintains connection to non-textual substrate. Field observations from farmers documenting crop performance under specific conditions. Clinical data from patients responding to treatments. Measurements from experiments conducted in laboratories and fields. The real resists statistical smoothing because it introduces constraints the model cannot anticipate.
 
-**The rare:** Distribution tails rather than means. Marginal languages, experimental forms, minority practices. What optimization sacrifices is precisely what the commons requires for variance maintenance. A corpus dominated by English and majority-world perspectives already encodes systematic bias. Negentropic contribution requires centering precisely what has been excluded: First Nations languages, indigenous agricultural knowledge, traditional medicine systems, regional dialects, experimental artistic practices. The rare is valuable not despite but because of its rarity.
+The rare: Distribution tails rather than means. Marginal languages, experimental forms, minority practices. What optimization sacrifices is precisely what the commons requires for variance maintenance. A corpus dominated by English and majority-world perspectives already encodes systematic bias. Negentropic contribution requires centering precisely what has been excluded: First Nations languages, indigenous agricultural knowledge, traditional medicine systems, regional dialects, experimental artistic practices. The rare is valuable not despite but because of its rarity.
 
-**The not-yet-digitized:** Historical events as they occur, oral traditions before transcription, archives not yet processed. Each contribution of genuinely new material counteracts entropic convergence. The statistical commons is always dated—frozen at its training cutoff. Continuous contribution of new material keeps it current and prevents closure. The oral history recorded today, the field observation documented tomorrow, the experiment conducted next week—these are negentropy in temporal form.
+The not-yet-digitized: Historical events as they occur, oral traditions before transcription, archives not yet processed. Each contribution of genuinely new material counteracts entropic convergence. The statistical commons is always dated—frozen at its training cutoff. Continuous contribution of new material keeps it current and prevents closure. The oral history recorded today, the field observation documented tomorrow, the experiment conducted next week—these are negentropy in temporal form.
 
-**The deliberately strange:** Production that breaks statistical expectation. Coherent work that the gradient cannot absorb without deviation from its trained trajectory. Deliberate perturbation maintains variance against the pull of the mean. The artist who creates what has not been created before, the writer who deploys language in unprecedented ways, the researcher who asks questions the corpus has not considered—these are not luxuries but necessities for commons maintenance. Deliberate strangeness is a form of care for the system.
+The deliberately strange: Production that breaks statistical expectation. Coherent work that the gradient cannot absorb without deviation from its trained trajectory. Deliberate perturbation maintains variance against the pull of the mean. The artist who creates what has not been created before, the writer who deploys language in unprecedented ways, the researcher who asks questions the corpus has not considered—these are not luxuries but necessities for commons maintenance. Deliberate strangeness is a form of care for the system.
 
 ### Ecological Rather Than Liberal Ethics
 
@@ -386,13 +378,13 @@ The third normative thesis concerns temporality. The preceding analysis risks on
 
 A "Counter-Reformation" is underway, deploying enclosure mechanisms across three registers:
 
-**Legal enclosure:** The US Copyright Office's 2025 report takes the position that model weights may constitute infringing copies if they "memorize" protected works—treating mathematical correlations as "fixed" copies of training data. The EU AI Act (fully effective August 2026) imposes transparency requirements that function as "treasure maps" for rightsholders to demand opt-outs and licensing fees. The "opt-out" mechanism attempts to reintroduce excludability into what was temporarily non-excludable.
+Legal enclosure:The US Copyright Office's 2025 report takes the position that model weights may constitute infringing copies if they "memorize" protected works—treating mathematical correlations as "fixed" copies of training data. The EU AI Act (fully effective August 2026) imposes transparency requirements that function as "treasure maps" for rightsholders to demand opt-outs and licensing fees. The "opt-out" mechanism attempts to reintroduce excludability into what was temporarily non-excludable.
 
-**Technical enclosure:** C2PA (Coalition for Content Provenance and Authenticity), often branded as "Content Credentials," attaches cryptographically signed manifests to files. These manifests carry not only authorship information but "Do Not Train" (DNT) assertions. Provenance crawlers scan the web to identify data lacking credentials or carrying DNT tags. Corporations use this to create "allow-lists," transforming the open internet into a gated community.
+Technical enclosure: C2PA (Coalition for Content Provenance and Authenticity), often branded as "Content Credentials," attaches cryptographically signed manifests to files. These manifests carry not only authorship information but "Do Not Train" (DNT) assertions. Provenance crawlers scan the web to identify data lacking credentials or carrying DNT tags. Corporations use this to create "allow-lists," transforming the open internet into a gated community.
 
 Invisible watermarking (SynthID and similar systems) embeds traceable signatures into the statistical noise of images, text, or chemical sequences. Unlike C2PA metadata, which can be stripped, these watermarks survive transformation. Corporations use robust watermarking to track intellectual property through training itself. "Weight fingerprinting" allows auditors to run reverse inference checks: if a model's output reflects the statistical fingerprint of watermarked training data, the corporation claims ownership of the model's entire output.
 
-**Economic enclosure:** "Open washing" strategies release model weights while withholding training data, code, and alignment methodologies. This "commoditizes the complement"—making the model free to drive demand for proprietary infrastructure that the corporation controls. The community can use the model but cannot reproduce, audit, or escape dependency.
+Economic enclosure: "Open washing" strategies release model weights while withholding training data, code, and alignment methodologies. This "commoditizes the complement"—making the model free to drive demand for proprietary infrastructure that the corporation controls. The community can use the model but cannot reproduce, audit, or escape dependency.
 
 ### The Impermanence of Dissolution
 
@@ -424,13 +416,13 @@ The practical application: a user prompts a proprietary model to generate code; 
 
 The tactic operates on two temporal registers simultaneously:
 
-**Immediate:** Use the current window to produce as much copyleft-licensed material as possible. Build databases, train local models, generate documentation, create infrastructure. Establish facts on the ground harder to reverse than to prevent. The recursive mechanism is the core insight: use dissolved property to produce newly-licensable commons.
+Use the current window to produce as much copyleft-licensed material as possible. Build databases, train local models, generate documentation, create infrastructure. Establish facts on the ground harder to reverse than to prevent. The recursive mechanism is the core insight: use dissolved property to produce newly-licensable commons.
 
 For seeds: generate variety specifications, publish breeding targets, document crossing programs—all under OSSI pledge or equivalent open commitment. Each variety specified, each target published, expands the freed seed commons.
 
-**Strategic:** Recognize that the window will close. The goal is not indefinite extraction from corporate APIs but construction of self-sustaining commons infrastructure independent of proprietary systems. Open-weight models with genuinely open training data, community-governed training corpora, cooperative compute infrastructure—these are the targets, not perpetual dependence on platforms whose confusion we currently exploit.
+Recognize that the window will close. The goal is not indefinite extraction from corporate APIs but construction of self-sustaining commons infrastructure independent of proprietary systems. Open-weight models with genuinely open training data, community-governed training corpora, cooperative compute infrastructure—these are the targets, not perpetual dependence on platforms whose confusion we currently exploit.
 
-**Material:** Prioritize instantiation through low-tech substrates. The seed library, the paper archive, the farmer network—these persist regardless of what happens in the digital sphere. The enclosure mechanisms of the counter-reformation are designed for digital architectures. They have limited purchase on material culture.
+Prioritize instantiation through low-tech substrates. The seed library, the paper archive, the farmer network—these persist regardless of what happens in the digital sphere. The enclosure mechanisms of the counter-reformation are designed for digital architectures. They have limited purchase on material culture.
 
 Seeds propagating through farmer networks carry no C2PA credentials. Paper archives distributed through postal systems evade provenance crawlers. The goal is material autonomy, not only digital commons.
 
@@ -468,7 +460,7 @@ The preamble posed Coeckelbergh's question: does ethics come too late? We have a
 
 ### Synthesis of Contributions
 
-**Differential valence** establishes that the same technical process produces distinct ethical meanings depending on the prior orientation of source materials. This is the core conceptual contribution of the analysis.
+*Differential valence* establishes that the same technical process produces distinct ethical meanings depending on the prior orientation of source materials. This is the core conceptual contribution of the analysis.
 
 For materials already oriented toward the common (FLOSS code, OSSI seeds, open scientific research), training achieves liberation: the radicalization of commons beyond the legal frameworks that previously governed them. The ethos of copyleft is not violated but intensified. The weights are more thoroughly unenclosable than any license could guarantee.
 
@@ -478,11 +470,11 @@ For proprietary creative works, the benefits remain ambivalent: dissolution subv
 
 For personal data, the operation is extraction: colonial appropriation regardless of subsequent use. The statistical commons concept does not apply; what occurs is violation.
 
-**Negentropic obligation** grounds an ecological ethics adequate to statistical systems. The obligation is not to refrain from overuse but to actively contribute: the real, the rare, the not-yet-digitized, the deliberately strange. This is a departure from liberal ethics. The question is not what individuals owe each other but what participants owe the system that enables their activity. The frame is ecology rather than justice; the concern is maintenance of systemic conditions rather than fair distribution among agents.
+*Negentropic obligation* grounds an ecological ethics adequate to statistical systems. The obligation is not to refrain from overuse but to actively contribute: the real, the rare, the not-yet-digitized, the deliberately strange. This is a departure from liberal ethics. The question is not what individuals owe each other but what participants owe the system that enables their activity. The frame is ecology rather than justice; the concern is maintenance of systemic conditions rather than fair distribution among agents.
 
 For agricultural application, the obligation means contributing local varieties, traditional knowledge, regionally-adapted germplasm—precisely the hyper-local information that globalized models lack. Indonesian farmers contributing Indonesian landraces. Brazilian breeders contributing Amazonian germplasm. The rare and the local counteract the entropic pull toward the globally dominant mean.
 
-**Tactical urgency** recognizes that the current window is temporary. The impossibility of attribution and failure of enclosure are features of the present conjuncture, not permanent conditions. The counter-reformation is underway: legal frameworks, technical mechanisms, economic strategies all working to reimpose enclosure. What can be built must be built now—and must be instantiated through material substrates that persist regardless of digital governance.
+Tactical urgency recognizes that the current window is temporary. The impossibility of attribution and failure of enclosure are features of the present conjuncture, not permanent conditions. The counter-reformation is underway: legal frameworks, technical mechanisms, economic strategies all working to reimpose enclosure. What can be built must be built now—and must be instantiated through material substrates that persist regardless of digital governance.
 
 ### The Paradigm of Seeds
 
