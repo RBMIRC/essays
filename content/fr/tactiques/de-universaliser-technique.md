@@ -1,8 +1,7 @@
 ---
 title: "Dé-universaliser la technique"
-subtitle : "Vers une pratique artistique située"
-translation: "/en/tactics/de-universalizing-technics"
 subtitle: "Engager les cosmotechniques sans extraction"
+translation: "/en/tactics/de-universalizing-technics"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"
 lang: fr
