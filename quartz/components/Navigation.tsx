@@ -10,6 +10,7 @@ const menuItems = [
   { id: "tactics", en: "Tactics", fr: "Tactiques", path: { en: "tactics", fr: "tactiques" } },
   { id: "commons", en: "Commons", fr: "Communs", path: { en: "commons", fr: "communs" } },
   { id: "lexicon", en: "Lexicon", fr: "Lexique", path: { en: "lexicon", fr: "lexique" } },
+  { id: "gallery", en: "Gallery", fr: "Galerie", path: "_gallery", absolute: true },
 ]
 
 export default (() => {
@@ -40,11 +41,18 @@ export default (() => {
           {menuItems.map((item) => {
             const itemPath = typeof item.path === "string" ? item.path : item.path[currentLang]
 
-            // Build absolute URL with baseUrl
-            // e.g., /essays/en/archives
-            const fullUrl = `${baseUrl}/${currentLang}/${itemPath}`
+            // Build URL - handle absolute paths (like gallery) differently
+            let fullUrl: string
+            if ((item as any).absolute) {
+              // Absolute path - just use baseUrl + path (without language prefix)
+              fullUrl = `${baseUrl}/gallery`
+            } else {
+              // Normal path with language prefix
+              fullUrl = `${baseUrl}/${currentLang}/${itemPath}`
+            }
 
-            const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/")
+            const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/") ||
+              ((item as any).absolute && slugStr === "gallery")
             const label = item[currentLang]
 
             return (

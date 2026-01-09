@@ -6191,7 +6191,8 @@ var menuItems = [
   { id: "images", en: "Images", fr: "Images", path: "images" },
   { id: "tactics", en: "Tactics", fr: "Tactiques", path: { en: "tactics", fr: "tactiques" } },
   { id: "commons", en: "Commons", fr: "Communs", path: { en: "commons", fr: "communs" } },
-  { id: "lexicon", en: "Lexicon", fr: "Lexique", path: { en: "lexicon", fr: "lexique" } }
+  { id: "lexicon", en: "Lexicon", fr: "Lexique", path: { en: "lexicon", fr: "lexique" } },
+  { id: "gallery", en: "Gallery", fr: "Galerie", path: "_gallery", absolute: true }
 ];
 var Navigation_default = /* @__PURE__ */ __name((() => {
   const Navigation = /* @__PURE__ */ __name(({ fileData, displayClass, cfg }) => {
@@ -6216,8 +6217,13 @@ var Navigation_default = /* @__PURE__ */ __name((() => {
       ),
       /* @__PURE__ */ jsx38("ul", { class: "nav-menu", children: menuItems.map((item) => {
         const itemPath = typeof item.path === "string" ? item.path : item.path[currentLang];
-        const fullUrl = `${baseUrl}/${currentLang}/${itemPath}`;
-        const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/");
+        let fullUrl;
+        if (item.absolute) {
+          fullUrl = `${baseUrl}/gallery`;
+        } else {
+          fullUrl = `${baseUrl}/${currentLang}/${itemPath}`;
+        }
+        const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/") || item.absolute && slugStr === "gallery";
         const label = item[currentLang];
         return /* @__PURE__ */ jsx38("li", { class: isActive ? "nav-item active" : "nav-item", children: /* @__PURE__ */ jsx38("a", { href: fullUrl, children: label }) }, item.id);
       }) })
