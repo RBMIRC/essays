@@ -15,12 +15,11 @@ tags:
   - coding
   - socialization
   - parasite
-  - artificial-intelligence
-  - GPL
+  - _GPL
   - open-source
-  - commons
-  - AI-ethics
-  - black-mountain-college
+  - _commons
+  - _AI-ethics
+  - _black-mountain-college
   - _transformer
   - _deep-learning
   - _Michel-de-Certeau
