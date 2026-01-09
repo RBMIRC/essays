@@ -9,27 +9,27 @@ license: GPL-3.0-or-later
 provenance: "'Image Continuum', text written for the research-creation grant at L'Institut pour la Photographie"
 tags:
   - continuum
-  - Luciana-Parisi
+  - Parisi
   - Whitehead
   - process
   - symbiosis
   - continuity
   - relation
   - incomputability
-  - Deleuze
-  - Leibniz
-  - Chaitin
-  - Margulis
-  - prehension
-  - microperception
-  - inflection
-  - infinitesimal
-  - extensive-continuum
-  - symbiotic
-  - algorithmic-information-theory
-  - endosymbiosis
-  - digital-analog
-  - discontinuous-continuity
+  - _Deleuze
+  - _Leibniz
+  - _Chaitin
+  - _Margulis
+  - _prehension
+  - _microperception
+  - _inflection
+  - _infinitesimal
+  - _extensive-continuum
+  - _symbiotic
+  - _algorithmic-information-theory
+  - _endosymbiosis
+  - _digital-analog
+  - _discontinuous-continuity
 ---
 
 <details class="heredoc-block">
