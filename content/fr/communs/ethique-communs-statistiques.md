@@ -376,7 +376,7 @@ Ce n'est pas de la charité. C'est de la maintenance écologique. Les communs st
 
 ---
 
-## VI. Un urgence
+## VI. Une urgence
 
 La troisième thèse normative concerne la temporalité. L'analyse précédente risque l'optimisme ontologique — traitant l'impossibilité de l'attribution et l'échec de l'enclosure comme des conditions permanentes garanties par l'architecture technique. Ce serait une erreur. Ce que nous avons décrit comme « condition ontologique » peut être plus précisément caractérisé comme une période temporaire de confusion légale et technique — une fenêtre d'opportunité qui se referme déjà.
 
