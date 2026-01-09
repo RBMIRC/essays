@@ -6592,49 +6592,56 @@ var ImagePreview_default = /* @__PURE__ */ __name((() => {
 }), "default");
 
 // quartz/components/ExternalLinks.tsx
-import { jsx as jsx41, jsxs as jsxs25 } from "preact/jsx-runtime";
+import { jsx as jsx41 } from "preact/jsx-runtime";
+var diningHallIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>`;
+var libraryIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>`;
 var ExternalLinks = /* @__PURE__ */ __name(() => {
   const links = [
-    { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
-    { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" }
+    { name: "Dining Hall", url: "https://retconblackmountain.info/", icon: diningHallIcon },
+    { name: "Library", url: "https://thelibrary.retconblackmountain.info/", icon: libraryIcon }
   ];
-  return /* @__PURE__ */ jsxs25("div", { class: "external-links", children: [
-    /* @__PURE__ */ jsx41("h3", { children: "Related" }),
-    /* @__PURE__ */ jsx41("ul", { children: links.map((link) => /* @__PURE__ */ jsx41("li", { children: /* @__PURE__ */ jsx41("a", { href: link.url, target: "_blank", rel: "noopener noreferrer", children: link.name }) })) })
-  ] });
+  return /* @__PURE__ */ jsx41("div", { class: "external-links-compact", children: links.map((link) => /* @__PURE__ */ jsx41(
+    "a",
+    {
+      href: link.url,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      title: link.name,
+      dangerouslySetInnerHTML: { __html: link.icon }
+    }
+  )) });
 }, "ExternalLinks");
 ExternalLinks.css = `
-.external-links {
-  margin-top: 1.5rem;
+.external-links-compact {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
-.external-links h3 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.external-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.external-links li {
-  margin-bottom: 0.3rem;
-}
-
-.external-links a {
-  font-size: 0.85rem;
+.external-links-compact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
   color: var(--darkgray);
-  text-decoration: none;
-  
-  &:hover {
-    color: var(--secondary);
-  }
+  background: transparent;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.external-links-compact a:hover {
+  color: var(--dark);
+  background: var(--lightgray);
+}
+
+.external-links-compact svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Dark mode */
+:root[saved-theme="dark"] .external-links-compact a:hover {
+  background: var(--lightgray);
 }
 `;
 var ExternalLinks_default = /* @__PURE__ */ __name((() => ExternalLinks), "default");
@@ -6709,6 +6716,21 @@ var Hypothesis_default = /* @__PURE__ */ __name(((userOpts) => {
   return Hypothesis;
 }), "default");
 
+// quartz/components/SidebarControls.tsx
+import { jsx as jsx42, jsxs as jsxs25 } from "preact/jsx-runtime";
+var DarkmodeComponent = Darkmode_default();
+var ExternalLinksComponent = ExternalLinks_default();
+var SidebarControls = /* @__PURE__ */ __name((props) => {
+  return /* @__PURE__ */ jsxs25("div", { class: "sidebar-controls", children: [
+    /* @__PURE__ */ jsx42(DarkmodeComponent, { ...props }),
+    /* @__PURE__ */ jsx42(ExternalLinksComponent, { ...props })
+  ] });
+}, "SidebarControls");
+SidebarControls.css = (DarkmodeComponent.css ?? "") + (ExternalLinksComponent.css ?? "");
+SidebarControls.beforeDOMLoaded = DarkmodeComponent.beforeDOMLoaded;
+SidebarControls.afterDOMLoaded = DarkmodeComponent.afterDOMLoaded;
+var SidebarControls_default = /* @__PURE__ */ __name((() => SidebarControls), "default");
+
 // quartz.layout.ts
 var sharedPageComponents = {
   head: Head_default(),
@@ -6750,9 +6772,7 @@ var defaultContentPageLayout = {
     PageTitle_default(),
     MobileOnly_default(Spacer_default()),
     Search_default(),
-    Darkmode_default(),
-    ExternalLinks_default()
-    // Nouveau composant
+    SidebarControls_default()
   ],
   right: [
     Graph_default({
@@ -6800,9 +6820,7 @@ var defaultListPageLayout = {
     PageTitle_default(),
     MobileOnly_default(Spacer_default()),
     Search_default(),
-    Darkmode_default(),
-    ExternalLinks_default()
-    // Aussi ici
+    SidebarControls_default()
   ],
   right: []
 };
@@ -7144,7 +7162,7 @@ var FolderPage = /* @__PURE__ */ __name((userOpts) => {
 
 // quartz/plugins/emitters/contentIndex.tsx
 import { toHtml as toHtml2 } from "hast-util-to-html";
-import { jsx as jsx42 } from "preact/jsx-runtime";
+import { jsx as jsx43 } from "preact/jsx-runtime";
 var defaultOptions19 = {
   enableSiteMap: true,
   enableRSS: true,
@@ -7255,7 +7273,7 @@ var ContentIndex = /* @__PURE__ */ __name((opts) => {
       if (opts?.enableRSS) {
         return {
           additionalHead: [
-            /* @__PURE__ */ jsx42(
+            /* @__PURE__ */ jsx43(
               "link",
               {
                 rel: "alternate",

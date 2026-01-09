@@ -238,21 +238,27 @@ header {
 .left.sidebar {
   .search {
     margin-bottom: 1rem;
-    
+
     input {
       font-size: 0.85rem;
       padding: 0.4rem 0.6rem;
     }
   }
-  
-  .darkmode {
+
+  // Darkmode and External Links side by side
+  .sidebar-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 1rem;
-    
+  }
+
+  .darkmode {
     svg {
       width: 18px;
       height: 18px;
       opacity: 0.6;
-      
+
       &:hover {
         opacity: 1;
       }
