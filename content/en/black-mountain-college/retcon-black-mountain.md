@@ -1,6 +1,6 @@
 ---
 title: "Retcon Black Mountain"
-translation: "/fr/black-mountain-college"
+translation: "/fr/black-mountain-college/retcon-black-mountain"
 subtitle: "Archival Praxis in the Age of Artificial Intelligence"
 author: "Sylvain Couzinet-Jacques"
 date: "2026-06-01"

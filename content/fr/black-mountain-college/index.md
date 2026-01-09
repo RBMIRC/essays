@@ -1,14 +1,14 @@
 ---
 title: Black Mountain College
-translation: "/fr/Black Mountain College"
+translation: "/en/black-mountain-college"
 ---
 
-These essays focus on Black Mountain College, both from a historical and a contemporary perspective.
+Ces essais portent sur le Black Mountain College, d'un point de vue historique et contemporain.
 
 ---
 
-## Texts
+## Textes
 
-- [[retcon-black-mountain-fr]] — Peut-on faire revivre Black Mountain College aujourd’hui, et est-ce que les intelligences artificielles peuvent être utiles ? (Séminaire automnal du Bal / EHESS (Paris), organisé par Vanessa Brito, 2024)
+- [[retcon-black-mountain]] — Peut-on faire revivre Black Mountain College aujourd'hui, et est-ce que les intelligences artificielles peuvent être utiles ? (Séminaire automnal du Bal / EHESS (Paris), organisé par Vanessa Brito, 2024)
 
 [← Retour aux Essais](/fr/)

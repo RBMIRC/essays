@@ -1,6 +1,6 @@
 ---
 title: Black Mountain College
-translation: "/fr/Black Mountain College."
+translation: "/fr/black-mountain-college"
 ---
 
 These essays focus on Black Mountain College, both from a historical and a contemporary perspective.
