@@ -1,5 +1,6 @@
 ---
-title: "De-Universalizing Technics: Toward a Situated Artistic Practice"
+title: "De-Universalizing Technics"
+subtitle: "Toward a Situated Artistic Practice"
 translation: "/fr/tactiques/de-universaliser-technique"
 subtitle: "On Engaging Cosmotechnics Without Extraction"
 author: "Sylvain Couzinet-Jacques"
@@ -14,9 +15,9 @@ tags:
   - extractivism
   - situated-practice
   - opacity
-  - planetarity
+  - _planetarity
   - universalism
-  - technoscience
+  - _technoscience
   - _Yuk-Hui
   - _Silvia-Rivera-Cusicanqui
   - _Edouard-Glissant
@@ -38,8 +39,8 @@ tags:
 <details class="heredoc-block">
 <summary>◈ DE-UNIVERSALIZING-TECHNICS v1.0</summary>
 
-**Title:** De-Universalizing Technics: Toward a Situated Artistic Practice  
-**Subtitle:** On Engaging Cosmotechnics Without Extraction  
+**Title:** De-Universalizing Technics 
+**Subtitle:** Toward a Situated Artistic Practice    
 **Author:** Sylvain Couzinet-Jacques  
 **Date:** 2025  
 **Intent:** Developing ethical citational practices for engaging non-Western thought without extraction  
@@ -52,15 +53,12 @@ tags:
 **Confidence:** Methodological framework, not prescriptive ruleset  
 **Notes:** The risk of extraction is never fully eliminated; it can only be held in view  
 
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
+
 </details>
 
-# De-Universalizing Technics: Toward a Situated Artistic Practice
-
-## On Engaging Cosmotechnics Without Extraction
-
-by Sylvain Couzinet-Jacques
-
 ---
+## Abstract
 
 The encounter between contemporary European artistic practice and non-Western philosophies poses an ethical and epistemological problem that goodwill alone cannot resolve. The gesture of "openness"—that emblem of liberal cosmopolitanism—may constitute the subtlest form of extraction: presupposing that all knowledge systems are equally accessible to all subjects, that the properly cultivated mind can access and synthesize any tradition. This essay argues for an alternative approach: not the incorporation of other cosmologies into European practice, but rather the de-universalization of European technics as a precondition for genuine plurality. It further proposes a set of citational practices for distinguishing legitimate engagement with non-Western thought from extractive appropriation.
 
