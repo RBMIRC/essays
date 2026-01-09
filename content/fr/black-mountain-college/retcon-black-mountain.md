@@ -76,7 +76,7 @@ Cet essai est une réflexion d'un artiste-chercheur sur l'héritage d'utopies su
 
 ## Partie I : Le Retcon comme prise de position
 
-### 1.1 L'archive liquide : le problème
+### L'archive liquide : le problème
 
 L'histoire, en tant que discipline et en tant que conscience collective, a longtemps reposé sur ce qu'on pourrait appeler une métaphysique de la sédimentation. L'archive, dans l'imaginaire positiviste du XIXe siècle, était conçue comme un substrat géologique stable : une couche de vérité fossilisée attendant l'extraction méthodique par l'historien-mineur. La trace était une preuve, l'indice indiciel d'un « ça a été » irréfutable. Cette solidité n'était jamais absolue — les archivistes le savent depuis toujours —, mais elle constituait un horizon régulateur. On pouvait critiquer l'archive, en montrer les biais et les exclusions, sans remettre en cause l'idée même de document.
 
@@ -98,7 +98,7 @@ Bernard Stiegler nommait « rétention tertiaire » cette externalisation de la 
 
 
 
-### 1.2 La crise de la vérité : l'impasse
+### La crise de la vérité : l'impasse
 
 Ce régime post-documentaire n'est pas seulement une transformation technique ; il est inséparable d'une crise politique qu'on a nommée, peut-être trop vite, « post-vérité ».
 
@@ -112,7 +112,7 @@ Le cynisme tire la conclusion inverse : si tout est manipulable, rien n'est vrai
 
 Ni la nostalgie ni le cynisme ne constituent des réponses viables. La première ignore la condition ; le second l'exploite. Il s'agit donc de proposer et d'expérimenter une troisième voie, que je me propose de nommer *retcon* .
 
-### 1.3 *Retroactive Continuity*
+### *Retroactive Continuity*
 
 
 Le terme *retcon* vient des industries culturelles — comics, séries télévisées, franchises transmédiatiques. Contraction de *retroactive continuity*, il désigne un procédé narratif par lequel on réarrange des faits déjà établis pour former une nouvelle continuité cohérente. Joshua Clover le définit ainsi : « un réarrangement de faits déjà donnés en une nouvelle constellation logiquement cohérente qui peut rendre compte de développements ultérieurs, initialement incohérents. » Le *retcon* n'est ni une correction ni une falsification ; c'est une recomposition qui assume son anachronisme.
@@ -135,7 +135,7 @@ Le *retcon* est une prise de position : ni nostalgie ni cynisme, mais travail de
 
 La vraie garantie, la seule peut-être, est la dimension collective. Un *retcon* produit par un individu seul face à sa machine est une hallucination privée ; un *retcon* validé, contesté, transformé par une communauté devient une fiction partagée, soumise au débat — exactement comme dans les communautés de fanfiction, où le canon n'est jamais donné mais toujours renégocié. Les ateliers ne sont pas un supplément d'âme au projet ; ils sont son garde-fou éthique.
 
-### 1.4 L'archive prismatique : la forme
+### L'archive prismatique : la forme
 
 Face à la liquéfaction — cette dissolution de l'archive dans les flux de données, son appropriation par les logiques extractives du capitalisme de plateforme —, deux réponses s'offrent : tenter de resolidifier (ce qui est vain) ou inventer une autre forme. Cette autre forme, je la nomme *archive prismatique*.
 
@@ -147,7 +147,7 @@ Le prisme n'est pas une formule ; c'est ce que Kant appelait un *schème* — un
 
 Le *retcon* est la pratique qui active cette potentialité prismatique — non pas pour produire un récit unifié, mais pour générer du multivers.
 
-### 1.5 L'intelligence artificielle : le milieu
+### L'intelligence artificielle : le milieu
 
 Dans ce paysage, l'intelligence artificielle n'est pas un outil parmi d'autres. Elle constitue un nouveau milieu (Uexküll) — au sens où l'eau est le milieu du poisson, l'air celui de l'oiseau. On n'utilise pas un milieu puis on le pose ; on y baigne, il conditionne la perception et l'action. Pour saisir ce conditionnement, il faut poser une question simple : que fait un LLM quand il « traite » une archive ?
 
@@ -175,7 +175,7 @@ L'algorithme risque ainsi de lisser l'histoire, d'éliminer les singularités ra
 
 ## Partie II : Le Retcon comme méthodologie
 
-### 2.1 L'archive comme dispositif
+### L'archive comme dispositif
 
 Le premier problème que pose toute archive est celui de son statut. Que documente un document ?
 
@@ -191,7 +191,7 @@ Ariella Aïsha Azoulay radicalise cette analyse en montrant que l'archive est, d
 
 Lire une archive comme un dispositif, c'est cesser de lui demander « ce qui s'est passé » pour lui demander « ce qui a été rendu visible, et à quel prix ». C'est prêter attention aux silences autant qu'aux paroles, aux marges autant qu'au centre, aux conditions de production autant qu'au contenu.
 
-### 2.2 La lecture diffractive
+### La lecture diffractive
 
 Le deuxième problème est celui de la méthode de lecture. Comment traverser une archive qu'on sait être un dispositif ?
 
@@ -213,7 +213,7 @@ Enfin, ma lecture elle-même se diffracte contre celles des autres. Je ne suis p
 
 Cette méthode ne produit pas une vérité unique ; elle produit une cartographie des différences — une carte des points où les interférences se manifestent, où les tensions deviennent visibles, où les possibles s'ouvrent. Elle répond ainsi à la question posée par le multivers archivistique : « Comment accepter qu'il puisse exister des ontologies et épistémologies incommensurables entre communautés [...] et trouver des moyens d'accepter et de travailler dans cette réalité ? » La lecture diffractive ne cherche pas à réconcilier les ontologies incommensurables ; elle les met en contact pour observer ce que leur friction produit.
 
-### 2.3 *Marcher dans le rêve des autres*(Huyghe)
+### *Marcher dans le rêve des autres*(Huyghe)
 
 L'artiste Pierre Huyghe parle de « marcher dans le rêve des autres » pour décrire les premiers pas sur la lune d'Armstrong et par prolongement ce qui se produit lorsqu'on entre dans un monde qui préexiste — récit, fiction, mythe. Dans The Third Memory (1999), il fait rejouer par John Wojtowicz le braquage de banque qui avait inspiré Dog Day Afternoon de Sidney Lumet. Wojtowicz marche dans le rêve d'un autre (le film de Lumet) qui était lui-même une version de son propre vécu. Les couches s'empilent : événement, film, reconstitution — et aucune n'est plus « vraie » que les autres. « Je ne m'intéresse pas à la représentation mais à la présence », précise Huyghe. « Pas à l'image d'une chose mais à la situation dans laquelle cette chose existe. »
 
@@ -225,7 +225,7 @@ Le rêve lucide est cet état où le rêveur sait qu'il rêve et peut, dans une 
 
 Cette conception a des implications pour la question du commun. Le rêve, contrairement à la propriété, ne s'épuise pas dans l'usage. Quand je marche dans un rêve, je ne le consomme pas — je l'augmente. Mes propres images s'ajoutent aux images héritées ; mes traversées laissent des traces pour d'autres marcheurs. Le rêve est un commun génératif : non pas une ressource à partager mais un espace qui s'enrichit des contributions de chacun. Les archives, traitées comme rêve partagé, deviennent un tel commun. Chaque nouveau projet qui les active — chaque article, chaque exposition, chaque atelier — ajoute au rêve sans le diminuer.
 
-### 2.4 La boucle de rétroaction
+### La boucle de rétroaction
 
 Le troisième problème concerne la temporalité. L'archive semble fixe — elle est là, dans ses cartons, depuis des décennies. Mais le travail sur l'archive ne l'est pas : il modifie ce qu'on cherche, ce qu'on voit, ce qu'on produit. Comment penser cette dynamique ?
 
@@ -241,7 +241,7 @@ Enfin, les résultats d'un atelier font émerger des questions que personne n'av
 
 Ce cycle n'a pas de terme prévu. Il ne converge pas vers une vérité stable ; il spirale, produisant à chaque tour de nouvelles diffractions. Conséquence : je ne maîtrise pas le projet. Je l'initie, je le cadre, je fournis des outils et des protocoles — mais ce qui se passe dans les boucles m'échappe en partie. C'est précisément cette perte de maîtrise qui le rend fécond.
 
-### 2.5 Le protocole : description des opérations
+### Le protocole : description des opérations
 
 Le travail commence aux États-Unis, dans les dépôts d'archives — principalement le Western Regional Archives à Asheville mais aussi à Josef et Anni Albers Foundation, à l'Université de Stanford ou de Yale ou encore à New York Library. J'y collecte, numérise et transcris les documents : procès-verbaux, correspondances, photographies, enregistrements sonores, programmes de cours, témoignages oraux. De cette masse, je constitue un corpus numérique — qui n'est pas l'archive mais une coupe, une sélection, une transformation. Ce que j'inclus et ce que j'exclus, les formats que je retiens, les métadonnées que j'ajoute : tout cela configure ce que les machines pourront « voir ». La constitution du corpus est déjà interprétative.
 
@@ -265,7 +265,7 @@ Ces pensées ne sont pas des ressources à piller pour enrichir une méthodologi
 
 ## Partie III : Le Retcon comme sujet — Black Mountain College
 
-### 3.1 Pourquoi Black Mountain College
+### Pourquoi Black Mountain College
 
 Si le *retcon* est une praxis de l'art avec des archives à l'ère de l'intelligence artificielle, pourquoi l'exercer sur les archives du Black Mountain College ? La réponse n'est pas seulement biographique — même si je travaille sur ce terrain depuis des années, même si la hantise dont je parlais au début est bien réelle.
 
@@ -288,7 +288,7 @@ Stuart Hall distingue, dans l'analyse culturelle, le dominant, l'émergent et le
 
 Le capitalisme cognitif a depuis capturé son vocabulaire — « créativité », « interdisciplinarité », « apprentissage par l'expérience » — pour le mettre au service de la valorisation économique. Les « tiers-lieux » et les « fab labs » recyclent l'esthétique de l'expérimentation sans en reprendre la dimension politique. Le *retcon* vise à défaire cette capture — à distinguer le geste utopique de sa récupération, non pour reconstituer BMC tel qu'il était, mais pour réactiver ce qu'il rendait pensable.
 
-### 3.2 Ce que contiennent les archives
+### Ce que contiennent les archives
 
 Les archives du Black Mountain College ne sont pas un bloc homogène. Elles sont faites de strates hétérogènes, accumulées sur vingt-quatre ans d'existence de l'institution (1933-1957), puis sur près de soixante-dix ans de dispersion, de redécouverte, de valorisation. Heather South, archiviste aux Western Regional Archives d'Asheville, le rappelle dans un entretien mené en décembre 2024 dans le cadre d'un séminaire à l'Ecole des Beaux-Arts de Marseille : « Nous avons environ 600 boîtes de matériaux Black Mountain College dans nos collections. Et ce nombre ne cesse de croître. »
 
@@ -300,13 +300,13 @@ Certains objets défient les catégories. South évoque les programmes du récit
 
 Ce qui manque est aussi important que ce qui existe. South le reconnaît : « Il y a eu des suicides, des problèmes de santé mentale, du harcèlement sexuel, des liaisons entre professeurs… Mais j'aime dire que c'est l'histoire, avec ses verrues et tout le reste. » Les voix des étudiants qui n'ont pas « réussi », les traces des travailleurs noirs employés à la ferme, les conflits qui n'ont pas été consignés — l'archive est pleine de trous. Ces trous ne sont pas des accidents ; ils sont la signature du dispositif qui a produit l'archive.
 
-### 3.3 Lire le long du grain
+### Lire le long du grain
 
 Ann Laura Stoler, dans son travail sur les archives coloniales néerlandaises (*Along the Archival Grain*, 2009), propose une méthode qui refuse d'extraire des « faits purs » des documents. Lire *avec* l'archive — le long de son grain — c'est être attentif à sa texture, à ses obsessions, à ce qu'elle répète et à ce qu'elle évite. L'archive coloniale, montre Stoler, ne documente pas seulement les colonisés ; elle documente les peurs des colonisateurs. Les catégories administratives trahissent des angoisses ; les rumeurs consignées sont des symptômes. Lire le long du grain, c'est prendre l'archive au sérieux dans ce qu'elle révèle malgré elle.
 
 Appliquée à Black Mountain College, cette méthode transforme ce que South décrit comme « l'histoire avec ses verrues » en objet d'analyse. Les procès-verbaux du Board of Fellows ne documentent pas une démocratie horizontale ; ils documentent un *combat* pour l'horizontalité — souvent perdu. Les silences sur le genre et l'intime ne sont pas des absences neutres ; ils sont la signature d'un dispositif qui rendait certaines choses indicibles. Ce que l'archive de BMC révèle malgré elle, c'est la distance entre l'utopie proclamée et l'expérience vécue — non pour disqualifier l'utopie, mais pour en mesurer le coût.
 
-### 3.4 L'archive du *retcon*
+### L'archive du *retcon*
 
 Depuis 2019, le projet Retcon Black Mountain s'est déployé comme une recherche-création : ateliers dans des écoles d'art européennes (École Nationale Supérieure d'Architecture de Versailles et de Paris-Est, HEAD Genève, École Nationale Supérieure de la Photographie d'Arles, Académie royale des Beaux-Arts École supérieure des Arts Ville de Bruxelles et ailleurs), résidences en Caroline du Nord, et création de l'Eden Summer Institute — un programme expérimental de plusieurs semaines, à Eden (NC), qui tente de réactiver quelque chose de la pédagogie de BMC dans un contexte contemporain. Ce que le projet produit — bande dessinée, documentation, film en préparation — ne constitue pas seulement une archive *sur* Black Mountain. Il constitue une archive *avec* Black Mountain — une strate temporelle qui vient s'ajouter aux strates de 1933-1957 non pas comme un commentaire ultérieur, mais comme une couche concomitante.
 
