@@ -14,7 +14,7 @@ tags:
   - AI
   - photography
   - pedagogy
-  - latent-space
+  - _latent-space
   - _model-collapse
   - _Benjamin
   - _Barthes
@@ -33,7 +33,6 @@ tags:
   - _Yuk-Hui
   - _Haraway
   - _Barad
-  - _friction
   - _liquidity
   - _prism
   - _cosmotechnics
