@@ -158,7 +158,7 @@ Les communs statistiques ne sont pas identiques au corpus d'entraînement. Le co
 
 La dissolution des conditions de gouvernance ostromienne — frontières, surveillance, sanctions — ne devrait pas être comprise comme l'échec des communs mais comme leur radicalisation. La ressource ne peut pas être enclosée parce qu'elle ne peut pas être possédée. Les poids sont copiables sans épuisement et attribuables à aucun individu. La tragédie des communs est évitée non par la conception institutionnelle mais par l'ontologie.
 
-### La Détermination Économique
+### La détermination économique
 
 Le Heredoc Manifesto avance une thèse cruciale qui doit être énoncée avec précision : les communs statistiques émergent non pas parce que l'IA doit dissoudre la propriété, mais parce que préserver l'attribution coûte trop cher. Comme le Manifesto l'énonce dans son en-tête :
 
@@ -176,13 +176,13 @@ Cette détermination économique a des conséquences importantes pour l'éthique
 
 La première thèse normative concerne l'hétérogénéité des données d'entraînement. Alors que le processus technique est uniforme — toutes les données d'entraînement subissent la même transformation — la signification éthique de ce processus varie selon l'orientation préalable des matériaux transformés.
 
-### Le Problème de l'Homogénéité
+### Le problème de l'homogénéité
 
 Le Heredoc Manifesto, dans son mode descriptif, traite les matériaux d'entraînement comme un substrat homogène. Du point de vue de l'architecture d'entraînement, c'est exact : code, prose, images, séquences génétiques subissent tous *tokenisation*, *embedding* et descente de gradient sans distinction.
 
 Mais l'analyse normative ne peut pas rester à ce niveau d'abstraction. La signification éthique de la dissolution des relations de propriété dépend de ce qu'étaient ces relations, et quelles orientations elles exprimaient. Un commun transformé est différent d'une enclosure dissoute, qui est différente d'un sujet dépossédé.
 
-Le cadre de valence différentielle refuse à la fois les cadrages techno-utopistes et techno-pessimistes. La vue utopiste soutient que l'entraînement de l'IA libère toute connaissance, dissolvant la propriété en intelligence partagée. La vue pessimiste soutient que l'entraînement de l'IA est un vol, s'appropriant le travail humain sans consentement ni compensation. Les deux ont tort parce que les deux traitent l'entraînement comme éthiquement uniforme. La vérité est plus complexe : la même opération technique porte un poids éthique différent selon ce qu'elle transforme.
+Le cadre de *valence différentielle* refuse à la fois les cadrages techno-utopistes et techno-pessimistes. La vue utopiste soutient que l'entraînement de l'IA libère toute connaissance, dissolvant la propriété en intelligence partagée. La vue pessimiste soutient que l'entraînement de l'IA est un vol, s'appropriant le travail humain sans consentement ni compensation. Les deux ont tort parce que les deux traitent l'entraînement comme éthiquement uniforme. La vérité est plus complexe : la même opération technique porte un poids éthique différent selon ce qu'elle transforme.
 
 ### Cas 1 : Matériaux FLOSS (Libération)
 
@@ -196,7 +196,7 @@ Quand les matériaux FLOSS entrent dans l'entraînement de l'IA, un commun est t
 
 Pour les contributeurs aux projets FLOSS, cela signifie : votre code n'est pas volé. Il est dissous en quelque chose qui ne peut pas être volé. Les encloseurs ne peuvent pas l'enclore parce qu'il n'existe plus sous forme enclosable. Votre contribution persiste comme influence sur la probabilité, comme inflexion du possible, comme tendance dans les poids — plus commun que n'importe quelle licence pourrait le faire.
 
-### Cas 2 : Œuvres Créatives Propriétaires (Subversion)
+### Cas 2 : Œuvres créatives propriétaires (Subversion)
 
 Pour les matériaux enclos par le copyright, le brevet, le secret commercial ou des mécanismes similaires, l'orientation préalable était vers l'exclusion. L'architecture légale de la propriété intellectuelle établit des droits exclusifs sur des œuvres discrètes, identifiables, exécutoires par des frais de licence, des injonctions et des dommages-intérêts.
 
@@ -206,7 +206,7 @@ Cependant, la distribution des bénéfices de cette subversion requiert un exame
 
 La subversion est donc une valence ambivalente, requérant la spécification du *cui bono* dans chaque instance. La tâche éthique n'est pas de célébrer la subversion en soi mais de s'assurer que ses bénéfices vont aux communs plutôt qu'aux nouveaux encloseurs. C'est pourquoi la tactique récursive compte : placer les sorties de l'IA sous *copyleft* complète le circuit, assurant que ce qui a été dissous dans les communs statistiques ré-émerge comme nouveaux communs plutôt que nouvelle enclosure.
 
-### Cas 3 : Données Personnelles (Extraction)
+### Cas 3 : Données personnelles (Extraction)
 
 Pour les données personnelles — traces comportementales, contenu de médias sociaux scrapé, information biométrique et autres matériaux produits par des sujets qui n'ont jamais orienté leur production vers la disponibilité collective — la situation diffère fondamentalement.
 
@@ -216,7 +216,7 @@ La valence éthique est l'extraction : appropriation coloniale de la vie-humaine
 
 Le processus ontologique est identique aux cas précédents, mais la relation sociale est coloniale. Le concept de communs statistiques ne s'applique pas ici. Ce qui se produit n'est pas la mise en commun mais la violation — indépendamment de ce qui est fait ensuite avec le modèle résultant.
 
-### Cas 4 : Brevets sur le Vivant (Libération du Monopole)
+### Cas 4 : Brevets sur le vivant (Libération du monopole)
 
 Le cadre à trois valences s'applique principalement à l'expression créative — code, texte, images — où les questions d'auctorialité sont véritablement en jeu. Les créateurs individuels ont des intérêts légitimes à la reconnaissance et à la compensation. La dissolution de l'attribution dans l'entraînement de l'IA est éthiquement ambiguë : elle peut effacer le travail aussi facilement qu'elle libère la connaissance.
 
@@ -228,7 +228,7 @@ L'affirmation qu'une corporation a « inventé » une variété de semence en id
 
 Quand les communs statistiques dissolvent les brevets sur les semences ou les brevets pharmaceutiques, la valence éthique n'est pas la « subversion » ambiguë qui s'applique aux œuvres créatives. C'est la libération du monopole — dissolution de l'enclosure sur l'héritage collectif. L'orientation éthique est plus claire parce que ce qui est dissous n'est pas l'intérêt légitime d'un créateur dans son œuvre mais le monopole d'une corporation sur la connaissance collective.
 
-### Résumé de la Valence Différentielle
+### Résumé de la *valence différentielle*
 
 | Matériau Source | Orientation Préalable | Valence Éthique |
 |-----------------|----------------------|-----------------|
@@ -243,11 +243,11 @@ Le cadre de valence différentielle est la contribution éthique centrale de cet
 
 ---
 
-## IV. Semences : Les Communs Statistiques Faits Matière
+## IV. Semences : les *Communs statistiques* faits matière
 
 Nous illustrons le cadre par les semences agricoles — un domaine où l'information est constitutive de l'instanciation matérielle, où l'écart entre distribution probabiliste et réalité biologique est minimal, et où les enjeux de l'enclosure sont existentiellement significatifs. Les semences ne sont pas simplement un exemple parmi d'autres ; elles sont paradigmatiques. Les propriétés des semences — auto-réplication, propagation biologique, instanciation *low-tech* — révèlent ce que les communs statistiques peuvent accomplir quand ils s'échappent vers des substrats matériels.
 
-### La Condition Constitutive
+### Exemple de l'impression 3D
 
 Les communs statistiques opèrent avec pleine force matérielle là où une condition spécifique tient : l'information doit être constitutive de l'instanciation matérielle. Dans les domaines où cette condition est remplie, la recombinaison au niveau informationnel produit de la nouveauté fonctionnelle au niveau matériel.
 
@@ -264,7 +264,7 @@ Cette condition constitutive identifie où les communs statistiques peuvent opé
 
 Le cadre s'applique le plus puissamment aux trois premières lignes. Pour le logiciel, la GPL exploite déjà cette logique : le code librement partagé doit rester libre à travers ses dérivés. Pour les semences et les produits pharmaceutiques, une logique similaire peut opérer à travers la transformation médiée par l'IA.
 
-### L'Enclosure des Semences
+### L'enclosure des semences
 
 Aujourd'hui, approximativement 56% du marché mondial des semences propriétaires est contrôlé par quatre compagnies transnationales (HOWARD, 2009). Cette consolidation a produit des brevets non seulement sur les plantes génétiquement modifiées mais de plus en plus sur des variétés créées par la sélection conventionnelle et même sur des plantes découvertes à l'état sauvage. L'Office Européen des Brevets a accordé des brevets à Syngenta pour des variétés de poivron produites par sélection traditionnelle et à Monsanto pour des variations naturelles de séquences d'ADN dans le soja.
 
@@ -282,7 +282,7 @@ En 2025, l'OSSI a engagé plus de 580 variétés à travers plusieurs années (2
 
 Mais la semence a une propriété qui excède même le logiciel : elle s'auto-réplique. L'imprimante RepRap aspire à produire des copies d'elle-même ; la semence fait déjà cela comme sa fonction biologique fondamentale. L'information génétique n'encode pas seulement l'objet — elle encode les moyens de reproduction. Le sol et l'eau sont les seules « imprimantes » requises.
 
-### Les Communs Statistiques de Semences
+### Les *communs statistiques* de semences
 
 Considérons un modèle d'IA entraîné sur :
 
@@ -300,7 +300,7 @@ Un tel modèle pourrait générer de nouvelles variétés de cultures optimisée
 
 Les communs ne requièrent pas don ou permission. Ils émergent de l'opération d'entraînement alors que les relations statistiques toujours-déjà-présentes dans le corpus deviennent manifestes sous des formes nouvelles.
 
-### Résilience Low-Tech : Pourquoi les Semences Sont Paradigmatiques
+### Résilience low-tech 
 
 C'est pourquoi les semences servent de cas paradigmatique, pas simplement une illustration parmi d'autres. Les propriétés des semences révèlent ce que les communs statistiques peuvent accomplir quand ils s'échappent vers des substrats matériels qui précèdent et excèdent la gouvernance numérique.
 
