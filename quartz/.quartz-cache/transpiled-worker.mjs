@@ -6721,7 +6721,7 @@ var defaultOptions19 = {
 };
 var News_default = /* @__PURE__ */ __name(((userOpts) => {
   const opts = { ...defaultOptions19, ...userOpts };
-  const News = /* @__PURE__ */ __name(({ fileData }) => {
+  const News = /* @__PURE__ */ __name(({ fileData, cfg }) => {
     const newsItems = [
       {
         date: "2025-01-09",
@@ -6737,14 +6737,20 @@ var News_default = /* @__PURE__ */ __name(((userOpts) => {
     const lang = fileData.frontmatter?.lang || "en";
     const title = lang === "fr" ? opts.titleFr : opts.title;
     const displayItems = newsItems.slice(0, opts.limit);
+    const baseDir = pathToRoot(fileData.slug);
     if (displayItems.length === 0) {
       return null;
     }
+    const resolveLink = /* @__PURE__ */ __name((link) => {
+      if (link.startsWith("http")) return link;
+      const cleanLink = link.startsWith("/") ? link.slice(1) : link;
+      return `${baseDir}/${cleanLink}`;
+    }, "resolveLink");
     return /* @__PURE__ */ jsxs26("div", { class: "sidebar-news", children: [
       /* @__PURE__ */ jsx42("h3", { children: title }),
       /* @__PURE__ */ jsx42("ul", { children: displayItems.map((item) => /* @__PURE__ */ jsxs26("li", { children: [
         /* @__PURE__ */ jsx42("span", { class: "news-date", children: item.date }),
-        item.link ? /* @__PURE__ */ jsx42("a", { href: item.link, class: "news-text", children: item.text }) : /* @__PURE__ */ jsx42("span", { class: "news-text", children: item.text })
+        item.link ? /* @__PURE__ */ jsx42("a", { href: resolveLink(item.link), class: "news-text", children: item.text }) : /* @__PURE__ */ jsx42("span", { class: "news-text", children: item.text })
       ] })) })
     ] });
   }, "News");

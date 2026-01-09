@@ -1,4 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { pathToRoot } from "../util/path"
 
 interface NewsItem {
   date: string
@@ -21,7 +22,7 @@ const defaultOptions: Options = {
 export default ((userOpts?: Partial<Options>) => {
   const opts = { ...defaultOptions, ...userOpts }
 
-  const News: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+  const News: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => {
     // News items - edit this array to update news
     const newsItems: NewsItem[] = [
       {
@@ -39,9 +40,18 @@ export default ((userOpts?: Partial<Options>) => {
     const lang = fileData.frontmatter?.lang || "en"
     const title = lang === "fr" ? opts.titleFr : opts.title
     const displayItems = newsItems.slice(0, opts.limit)
+    const baseDir = pathToRoot(fileData.slug!)
 
     if (displayItems.length === 0) {
       return null
+    }
+
+    // Helper to resolve links with base path
+    const resolveLink = (link: string) => {
+      if (link.startsWith("http")) return link
+      // Remove leading slash and combine with baseDir
+      const cleanLink = link.startsWith("/") ? link.slice(1) : link
+      return `${baseDir}/${cleanLink}`
     }
 
     return (
@@ -52,7 +62,7 @@ export default ((userOpts?: Partial<Options>) => {
             <li>
               <span class="news-date">{item.date}</span>
               {item.link ? (
-                <a href={item.link} class="news-text">
+                <a href={resolveLink(item.link)} class="news-text">
                   {item.text}
                 </a>
               ) : (
