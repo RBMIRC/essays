@@ -1,5 +1,5 @@
 ---
-title: "Workshop"
+title: "What is a workshop ?"
 translation: "/fr/tactiques/le-workshop-comme-forme"
 subtitle: "Pedagogies of Making between Black Mountain College and ENSA Versailles"
 author: "Sylvain Couzinet-Jacques"
@@ -11,9 +11,9 @@ tags:
   - workshop
   - pedagogy
   - architecture
-  - _Black-Mountain-College
+  - Black-Mountain-College
   - _Versailles
-  - _ENSA-V
+  - ENSA-V
   - _artificial-intelligence
   - _gestural-community
   - _temporal-contraction
@@ -40,7 +40,7 @@ tags:
 <details class="heredoc-block">
 <summary>◈ WORKSHOP-FORM v1.0</summary>
 
-**Title:** Workshop  
+**Title:** What is a workshop ?
 **Subtitle:** Pedagogies of Making between Black Mountain College and ENSA Versailles  
 **Author:** Sylvain Couzinet-Jacques  
 **Date:** 2025  
@@ -54,10 +54,9 @@ tags:
 **Confidence:** Theory derived from pedagogical practice  
 **Notes:** The workshop is a machine for producing situations  
 
-</details>
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
 
-## Pedagogies of Making between Black Mountain College and the École Nationale Supérieure d'Architecture de Versailles
-by Sylvain Couzinet-Jacques
+</details>
 
 ---
 
