@@ -60,7 +60,7 @@ tags:
 
 ---
 
-## Introduction: What Is a Workshop?
+## What Is a Workshop?
 
 The question seems trivial. It is not.
 
