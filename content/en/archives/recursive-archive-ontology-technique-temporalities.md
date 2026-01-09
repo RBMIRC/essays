@@ -8,7 +8,6 @@ lang: en
 license: GPL-3.0-or-later
 provenance: "Research seminar at L'École des Beaux-Arts de Marseille, with Vanessa Brito and Cy Lecerf Maulpoix"
 tags:
-  tags:
   - recursive-archive
   - recursivity
   - generative-AI
