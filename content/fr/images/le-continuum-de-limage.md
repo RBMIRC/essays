@@ -367,15 +367,15 @@ Ce n'est pas un composite : elle n'a pas été assemblée à partir de sources i
 
 Elle appartient à une nouvelle catégorie ontologique — une catégorie pour laquelle nous n'avons pas encore de nom adéquat. Plusieurs possibilités se présentent.
 
-**Image statistique :** une image générée par échantillonnage depuis une distribution de probabilité apprise. C'est techniquement exact mais phénoménologiquement vide ; cela ne capture pas ce que nous voyons quand nous regardons le visage généré.
+*Image statistique* : une image générée par échantillonnage depuis une distribution de probabilité apprise. C'est techniquement exact mais phénoménologiquement vide ; cela ne capture pas ce que nous voyons quand nous regardons le visage généré.
 
-**Image latente :** une image qui a été décodée depuis un point dans l'espace latent. Mais « latent » suggère quelque chose de caché attendant d'être révélé, alors que l'image générée n'a jamais été cachée — elle a été produite dans l'acte de génération.
+*Image latente* : une image qui a été décodée depuis un point dans l'espace latent. Mais « latent » suggère quelque chose de caché attendant d'être révélé, alors que l'image générée n'a jamais été cachée — elle a été produite dans l'acte de génération.
 
-**Trace synthétique :** une image qui a l'apparence d'une trace sans la structure d'une trace. Cela capture le paradoxe mais sonne comme une contradiction dans les termes.
+*Trace synthétique* : une image qui a l'apparence d'une trace sans la structure d'une trace. Cela capture le paradoxe mais sonne comme une contradiction dans les termes.
 
-**Phantasme archivistique :** une image que l'archive rêve quand elle se traite elle-même à travers des dynamiques antagonistes. Cela capture la qualité spectrale mais risque d'obscurcir la précision technique du processus.
+*Phantasme archivistique* : une image que l'archive rêve quand elle se traite elle-même à travers des dynamiques antagonistes. Cela capture la qualité spectrale mais risque d'obscurcir la précision technique du processus.
 
-Peut-être le terme le plus adéquat est **image post-indexicale** : une image qui vient après la dispensation indexicale, qui présuppose l'histoire de la photographie et hérite de ses conventions visuelles, mais qui a été libérée de la contrainte indexicale. L'image post-indexicale ressemble à une trace mais n'est pas une trace ; elle présente la forme de la mémoire sans la substance ; elle simule l'existence singulière sans référer à aucun singulier.
+Peut-être le terme le plus adéquat est *image post-indexicale* : une image qui vient après la dispensation indexicale, qui présuppose l'histoire de la photographie et hérite de ses conventions visuelles, mais qui a été libérée de la contrainte indexicale. L'image post-indexicale ressemble à une trace mais n'est pas une trace ; elle présente la forme de la mémoire sans la substance ; elle simule l'existence singulière sans référer à aucun singulier.
 
 Le « post » ici n'est pas simplement chronologique (après la photographie) mais ontologique (au-delà de la logique de l'indice). L'image post-indexicale n'abolit pas l'indexicalité mais la sublate — la reprend et la transforme en quelque chose de nouveau. La mythologie indexicale persiste : nous voyons encore le visage généré comme s'il était une trace, nous y répondons encore avec la certitude viscérale du *ça-a-été*. Mais cette mythologie opère maintenant dans un vide ; elle ne réfère à rien ; elle témoigne d'une existence qui n'a jamais été.
 
@@ -533,9 +533,5 @@ ZIELINSKI, Siegfried. *Deep Time of the Media: Toward an Archaeology of Hearing 
 
 ZYLINSKA, Joanna. *The Perception Machine: Our Photographic Future between the Eye and AI*. Cambridge, MA: MIT Press, 2023.
 
----
-
-Essai préparé en décembre 2024
-Centre Norbert Elias (EHESS/Aix-Marseille)
 
 ---
