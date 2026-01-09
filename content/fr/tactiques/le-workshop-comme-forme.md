@@ -1,5 +1,5 @@
 ---
-title: "Qu'est ce qu'un Workshop ?"
+title: "Qu'est ce qu'un workshop ?"
 translation: "/en/tactics/the-workshop-as-form"
 subtitle: "Pédagogies du faire entre Black Mountain College et l'ENSA Versailles"
 author: "Sylvain Couzinet-Jacques"
