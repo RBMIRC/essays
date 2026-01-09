@@ -20,7 +20,7 @@ export const sharedPageComponents: SharedLayout = {
       groupId: "wwKpQDXD",
       openSidebar: false,
       theme: 'clean',
-      disableOnPaths: ['/lexicon', '/lexique', '/figures', '/en/lexicon', '/fr/lexique'],
+      disableOnPaths: [],
     }),
   ],
   footer: Component.Footer({

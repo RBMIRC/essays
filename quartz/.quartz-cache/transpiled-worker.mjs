@@ -6728,7 +6728,7 @@ var sharedPageComponents = {
       groupId: "wwKpQDXD",
       openSidebar: false,
       theme: "clean",
-      disableOnPaths: ["/lexicon", "/lexique", "/figures", "/en/lexicon", "/fr/lexique"]
+      disableOnPaths: []
     })
   ],
   footer: Footer_default({
