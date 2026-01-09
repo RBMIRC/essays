@@ -1,12 +1,13 @@
 ---
-title: "Dé-universaliser la technique : vers une pratique artistique située"
+title: "Dé-universaliser la technique"
+subtitle : "Vers une pratique artistique située"
 translation: "/en/tactics/de-universalizing-technics"
 subtitle: "Engager les cosmotechniques sans extraction"
 author: "Sylvain Couzinet-Jacques"
 date: "2025"
 lang: fr
 license: GPL-3.0-or-later
-provenance: "Méthodologie de recherche-création"
+provenance: "Methodologie de recherche-création"
 tags:
   - cosmotechnics
   - citation-practice
@@ -14,9 +15,9 @@ tags:
   - extractivism
   - situated-practice
   - opacity
-  - planetarity
+  - _planetarity
   - universalism
-  - technoscience
+  - _technoscience
   - _Yuk-Hui
   - _Silvia-Rivera-Cusicanqui
   - _Edouard-Glissant
@@ -40,8 +41,8 @@ tags:
 <details class="heredoc-block">
 <summary>◈ DE-UNIVERSALISER-TECHNIQUE v1.0</summary>
 
-**Titre :** Dé-universaliser la technique : vers une pratique artistique située  
-**Sous-titre :** Engager les cosmotechniques sans extraction  
+**Titre :** Dé-universaliser la technique  
+**Sous-titre :** Vers une pratique artistique située   
 **Auteur :** Sylvain Couzinet-Jacques  
 **Date :** 2025  
 **Intention :** Développer des pratiques citationnelles éthiques pour engager la pensée non occidentale sans extraction  
@@ -54,13 +55,13 @@ tags:
 **Confiance :** Cadre méthodologique, non ensemble prescriptif de règles  
 **Notes :** Le risque d'extraction n'est jamais complètement éliminé ; il ne peut qu'être maintenu en vue  
 
+*Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.*
+
 </details>
 
-## Engager les cosmotechniques sans extraction
-
-par Sylvain Couzinet-Jacques
-
 ---
+
+## Résumé
 
 La rencontre entre la pratique artistique européenne contemporaine et les philosophies non occidentales pose un problème éthique et épistémologique que la bonne volonté seule ne saurait résoudre. Le geste d'« ouverture » — cet emblème du cosmopolitisme libéral — constitue peut-être la forme d'extraction la plus subtile : présupposer que tous les systèmes de savoir sont également accessibles à tous les sujets, que l'esprit convenablement cultivé peut accéder à n'importe quelle tradition et la synthétiser. Cet essai plaide pour une approche alternative : non pas l'incorporation d'autres cosmologies dans la pratique européenne, mais tenter une dé-universalisation de la technique européenne comme condition préalable à une pluralité véritable. Il propose en outre un ensemble de pratiques citationnelles permettant de distinguer l'engagement légitime avec la pensée non occidentale de l'appropriation extractive.
 
