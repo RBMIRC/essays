@@ -30,6 +30,7 @@ import ImagePreview from "./ImagePreview"
 import ExternalLinks from "./ExternalLinks"
 import Hypothesis from "./Hypothesis"
 import News from "./News"
+import ScatteredGallery from "./ScatteredGallery"
 
 export {
   ArticleTitle,
@@ -64,4 +65,5 @@ export {
   ExternalLinks,
   Hypothesis,
   News,
+  ScatteredGallery,
 }

@@ -9,6 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.LanguageSwitcher(),
   ],
   afterBody: [
+    Component.ScatteredGallery(),
     Component.TagCloud({
       title: "Keywords",
       titleFr: "Mots-clés",
