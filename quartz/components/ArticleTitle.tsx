@@ -120,7 +120,7 @@ document.addEventListener("nav", () => {
   }
 
   // Helper to clean article content
-  function cleanArticleContent(article) {
+  function cleanArticleContent(article, forEpub = false) {
     const clone = article.cloneNode(true);
     clone.querySelectorAll('.pdf-download-btn, .epub-download-btn, .export-buttons, script, .callout-title svg, details summary').forEach(el => {
       if (el.tagName === 'SUMMARY') {
@@ -130,6 +130,22 @@ document.addEventListener("nav", () => {
       }
     });
     clone.querySelectorAll('details').forEach(d => d.setAttribute('open', 'true'));
+
+    if (forEpub) {
+      // Clean HTML for XHTML compatibility
+      clone.querySelectorAll('*').forEach(el => {
+        // Remove data attributes and event handlers
+        Array.from(el.attributes).forEach(attr => {
+          if (attr.name.startsWith('data-') || attr.name.startsWith('on')) {
+            el.removeAttribute(attr.name);
+          }
+        });
+      });
+      // Remove SVGs (often cause issues)
+      clone.querySelectorAll('svg').forEach(el => el.remove());
+      // Remove iframes
+      clone.querySelectorAll('iframe').forEach(el => el.remove());
+    }
     return clone;
   }
 
@@ -234,14 +250,36 @@ document.addEventListener("nav", () => {
           });
         }
 
-        const clone = cleanArticleContent(article);
+        const clone = cleanArticleContent(article, true);
         const safeTitle = title.replace(/[^a-zA-Z0-9\\s-]/g, '').trim() || 'document';
         const uuid = 'urn:uuid:' + crypto.randomUUID();
+        const lang = window.location.pathname.includes('/fr/') ? 'fr' : 'en';
+
+        // Convert HTML to clean XHTML
+        function htmlToXhtml(html) {
+          return html
+            .replace(/<br>/g, '<br/>')
+            .replace(/<hr>/g, '<hr/>')
+            .replace(/<img([^>]*)(?<!\\/)>/g, '<img$1/>')
+            .replace(/&nbsp;/g, '&#160;')
+            .replace(/&mdash;/g, '&#8212;')
+            .replace(/&ndash;/g, '&#8211;')
+            .replace(/&lsquo;/g, '&#8216;')
+            .replace(/&rsquo;/g, '&#8217;')
+            .replace(/&ldquo;/g, '&#8220;')
+            .replace(/&rdquo;/g, '&#8221;')
+            .replace(/&hellip;/g, '&#8230;')
+            .replace(/&([a-zA-Z]+);/g, function(match, entity) {
+              const entities = { amp: '&', lt: '<', gt: '>', quot: '"', apos: \"'\" };
+              return entities[entity] || match;
+            });
+        }
+        const cleanContent = htmlToXhtml(clone.innerHTML);
 
         // EPUB content
         const xhtmlContent = \`<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="\${lang}">
 <head>
   <meta charset="UTF-8"/>
   <title>\${title}</title>
@@ -254,7 +292,7 @@ document.addEventListener("nav", () => {
     <p class="meta">\${author}\${author && date ? ' — ' : ''}\${date}</p>
   </header>
   <main>
-    \${clone.innerHTML}
+    \${cleanContent}
   </main>
 </body>
 </html>\`;
@@ -294,7 +332,7 @@ summary { font-weight: bold; }
     <dc:identifier id="uid">\${uuid}</dc:identifier>
     <dc:title>\${title}</dc:title>
     <dc:creator>\${author || 'Unknown'}</dc:creator>
-    <dc:language>en</dc:language>
+    <dc:language>\${lang}</dc:language>
     <meta property="dcterms:modified">\${new Date().toISOString().replace(/\\.\\d{3}Z$/, 'Z')}</meta>
   </metadata>
   <manifest>
@@ -325,8 +363,9 @@ summary { font-weight: bold; }
 </html>\`;
 
         // Create EPUB (ZIP) file
+        // mimetype must be first and uncompressed
         const zip = new JSZip();
-        zip.file('mimetype', 'application/epub+zip');
+        zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
         zip.folder('META-INF').file('container.xml', containerXml);
         const oebps = zip.folder('OEBPS');
         oebps.file('content.xhtml', xhtmlContent);
@@ -336,9 +375,7 @@ summary { font-weight: bold; }
 
         const blob = await zip.generateAsync({
           type: 'blob',
-          mimeType: 'application/epub+zip',
-          compression: 'DEFLATE',
-          compressionOptions: { level: 9 }
+          mimeType: 'application/epub+zip'
         });
 
         // Download
