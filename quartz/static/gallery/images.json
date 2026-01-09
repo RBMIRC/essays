@@ -1,4 +1,734 @@
 [
-  { "src": "example1.jpg", "alt": "Example image 1" },
-  { "src": "example2.jpg", "alt": "Example image 2" }
+  {
+    "src": "page_0004_image_0001.jpg",
+    "alt": "Black Mountain College logo with text encircling a central ring, featuring the location Black Mountain, NC"
+  },
+  {
+    "src": "page_0033_image_0001.jpg",
+    "alt": "Map of Lake Eden campus showing existing and proposed buildings (Studies Building at bottom left and Jalowetz House at top right, outlined in red)"
+  },
+  {
+    "src": "page_0047_image_0001.jpg",
+    "alt": "University of Chicago, Campus Map (Dewey School outlined in red)"
+  },
+  {
+    "src": "page_0061_image_0001.jpg",
+    "alt": "Unknown"
+  },
+  {
+    "src": "page_0062_image_0001.jpg",
+    "alt": "Color King Natural Color Card, Aerial View of the Blue Ridge Assembly, ca. 1900-80 [postcard]"
+  },
+  {
+    "src": "page_0066_image_0001.jpg",
+    "alt": "Aerial view of Lake Eden campus, BMC"
+  },
+  {
+    "src": "page_0068_image_0001.jpg",
+    "alt": "Unknown"
+  },
+  {
+    "src": "page_0070_image_0001.jpg",
+    "alt": "Walter Gropius and Marcel Breuer, Project for the Black Mountain College at Lake Eden (perspective)"
+  },
+  {
+    "src": "page_0073_image_0001.jpg",
+    "alt": "Unknown"
+  },
+  {
+    "src": "page_0077_image_0001.jpg",
+    "alt": "Ground plan for the Studies Building (main floor)"
+  },
+  {
+    "src": "page_0078_image_0001.jpg",
+    "alt": "A. Lawrence Kocher presenting a model of the Studies Building to students, 1940"
+  },
+  {
+    "src": "page_0083_image_0001.jpg",
+    "alt": "Unknown"
+  },
+  {
+    "src": "page_0084_image_0001.jpg",
+    "alt": "Foundation wall of the ground floor of the Studies Building"
+  },
+  {
+    "src": "page_0084_image_0002.jpg",
+    "alt": "Foundation wall of the ground floor of the Studies Building"
+  },
+  {
+    "src": "page_0089_image_0001.jpg",
+    "alt": "American Friends Service Committee, Advertisement for the work camps, 1940, image taken from the American Friends Service Committee website (2013)."
+  },
+  {
+    "src": "page_0089_image_0002.jpg",
+    "alt": "Advertisement for the work camp (from left to right: Tommy Brooks and Don Page)"
+  },
+  {
+    "src": "page_0092_image_0001.jpg",
+    "alt": "Carolyn Constance Spencer building the frame of the Studies Building, circa 1940-41"
+  },
+  {
+    "src": "page_0092_image_0002.jpg",
+    "alt": "Advertisement 'We Can Do It!' (Rosie the Riveter)"
+  },
+  {
+    "src": "page_0093_image_0001.jpg",
+    "alt": "Carolyn Constance Spencer on the tractor in front of the Studies Building, BMC"
+  },
+  {
+    "src": "page_0093_image_0002.jpg",
+    "alt": "Carolyn Constance Spencer on the tractor in front of the Studies Building, BMC"
+  },
+  {
+    "src": "page_0096_image_0001.jpg",
+    "alt": "North view of the Studies Building"
+  },
+  {
+    "src": "page_0098_image_0001.jpg",
+    "alt": "Construction of the Studies Building, circa 1941"
+  },
+  {
+    "src": "page_0100_image_0001.jpg",
+    "alt": "Construction of the Studies Building, circa 1941, BMC"
+  },
+  {
+    "src": "page_0102_image_0001.jpg",
+    "alt": "Martha McMillan Roberts, Kenneth Kurtz working on the Studies Building, ca. 1941"
+  },
+  {
+    "src": "page_0103_image_0001.jpg",
+    "alt": "A. Lawrence Kocher, Plan for the Studies Building (southern perspective), ca. 1940"
+  },
+  {
+    "src": "page_0105_image_0001.jpg",
+    "alt": "A. Lawrence Kocher, Plan for the Studies Building (elevations), 1941"
+  },
+  {
+    "src": "page_0106_image_0001.jpg",
+    "alt": "Painting classes on the front terrace of the Studies Building"
+  },
+  {
+    "src": "page_0106_image_0002.jpg",
+    "alt": "Painting class on the front terrace of the Studies Building"
+  },
+  {
+    "src": "page_0106_image_0003.jpg",
+    "alt": "Weaving course on the front terrace of the Studies Building"
+  },
+  {
+    "src": "page_0108_image_0001.jpg",
+    "alt": "North view of the Studies Building"
+  },
+  {
+    "src": "page_0108_image_0002.jpg",
+    "alt": "Interior view of the west staircase of the Studies Building, summer 1950"
+  },
+  {
+    "src": "page_0109_image_0001.jpg",
+    "alt": "Sketch of an apartment in the Studies Building, circa 1942"
+  },
+  {
+    "src": "page_0112_image_0001.jpg",
+    "alt": "The Studies Building: A Recollection and a Romantic Memory"
+  },
+  {
+    "src": "page_0116_image_0001.jpg",
+    "alt": "Josef Albers teaching paper folding, circa 1946"
+  },
+  {
+    "src": "page_0116_image_0002.jpg",
+    "alt": "Josef Albers teaching paper folding"
+  },
+  {
+    "src": "page_0118_image_0001.jpg",
+    "alt": "Josef Albers Giving a Mirror Writing Exercise in the Studios of the Studies Building"
+  },
+  {
+    "src": "page_0118_image_0002.jpg",
+    "alt": "\"Habit in Writing\", 1939, Notes taken in a drawing course given by Josef Albers"
+  },
+  {
+    "src": "page_0120_image_0001.jpg",
+    "alt": "Diagram of the Lake Eden campus"
+  },
+  {
+    "src": "page_0122_image_0001.jpg",
+    "alt": "Sketch for the Studies Building, ca. 1940-41"
+  },
+  {
+    "src": "page_0123_image_0001.jpg",
+    "alt": "Under the Studies Building... my studio"
+  },
+  {
+    "src": "page_0123_image_0002.jpg",
+    "alt": "Drawing class in the outdoor space of the workshops at the Studies Building, summer 1944"
+  },
+  {
+    "src": "page_0124_image_0001.jpg",
+    "alt": "Johathan Williams, Robert Creeley (left) and Dan Rice (right) in the outdoor space of the workshops at the Studies Building, 1955."
+  },
+  {
+    "src": "page_0124_image_0002.jpg",
+    "alt": "Jonathan Williams, Robert Creeley (left) and Dan Rice (right) in the exterior space of the workshops at the Studies Building, 1955"
+  },
+  {
+    "src": "page_0127_image_0001.jpg",
+    "alt": "A. Lawrence Kocher, Plan of the Studies Building, ground floor ('foundation') and second floor ('intermediate floor') (workshops outlined in red), 1941"
+  },
+  {
+    "src": "page_0128_image_0001.jpg",
+    "alt": "Conversation Room on the ground floor of the Studies Building"
+  },
+  {
+    "src": "page_0128_image_0002.jpg",
+    "alt": "Conversation Room on the ground floor of the Studies Building"
+  },
+  {
+    "src": "page_0129_image_0001.jpg",
+    "alt": "Josef Breitenbach, Ati Gropius (left) and Mimi French (right) in the workshops of the Studies Building"
+  },
+  {
+    "src": "page_0129_image_0002.jpg",
+    "alt": "Josef Breitenbach, Ati Gropius (left) and Mimi French (right) in the workshops of the Studies Building"
+  },
+  {
+    "src": "page_0130_image_0001.jpg",
+    "alt": "Josef Albers explaining the Leaf Studies in the workshops of the Studies Building"
+  },
+  {
+    "src": "page_0130_image_0002.jpg",
+    "alt": "Jack Tworkov giving a class in the workshops of the Studies Building, 1952"
+  },
+  {
+    "src": "page_0132_image_0001.jpg",
+    "alt": "Students in a 'Color' course given by Josef Albers, summer 1944"
+  },
+  {
+    "src": "page_0133_image_0001.jpg",
+    "alt": "Ati Gropius, Drawing of the installation of the exhibition of Jane Slater Marquis in the workshops of the Studies Building, ca. 1945"
+  },
+  {
+    "src": "page_0133_image_0002.jpg",
+    "alt": "Exhibition of Jane Slater Marquis in the workshops of the Studies Building, 1945"
+  },
+  {
+    "src": "page_0133_image_0003.jpg",
+    "alt": "Ati Gropius, Drawing of the installation of the exhibition of Jane Slater Marquis in the studios of the Studies Building, ca. 1945"
+  },
+  {
+    "src": "page_0134_image_0001.jpg",
+    "alt": "Temporary hair salon in the workshops of the Studies Building"
+  },
+  {
+    "src": "page_0140_image_0001.jpg",
+    "alt": "Edward Dean Wyke, Drawing of his desk"
+  },
+  {
+    "src": "page_0142_image_0001.jpg",
+    "alt": "Drawing of his office"
+  },
+  {
+    "src": "page_0144_image_0001.jpg",
+    "alt": "Ray Johnson in the corridor of the Studies Building"
+  },
+  {
+    "src": "page_0144_image_0002.jpg",
+    "alt": "Ray Johnson at his desk in the Studies Building, ca. 1948"
+  },
+  {
+    "src": "page_0145_image_0001.jpg",
+    "alt": "Plan of Robert Wunsch's Study"
+  },
+  {
+    "src": "page_0148_image_0001.jpg",
+    "alt": "Student and students in an office, date unknown"
+  },
+  {
+    "src": "page_0149_image_0001.jpg",
+    "alt": "Renate Benfrey in her personal office, circa 1942, BMC"
+  },
+  {
+    "src": "page_0151_image_0001.jpg",
+    "alt": "Image displaying a sketch of a room interior with architectural annotations and notes."
+  },
+  {
+    "src": "page_0153_image_0001.jpg",
+    "alt": "Office of Arthur Minters"
+  },
+  {
+    "src": "page_0153_image_0002.jpg",
+    "alt": "Office of Arthur Minters, date unknown"
+  },
+  {
+    "src": "page_0155_image_0001.jpg",
+    "alt": "Informal gathering in the office of Jane Slater Marquis, summer 1944 (left to right: Jane Slater Marquis, Sam Brown, Miriam French, and Lorna Blaine)"
+  },
+  {
+    "src": "page_0155_image_0002.jpg",
+    "alt": "Student seated in an office"
+  },
+  {
+    "src": "page_0155_image_0003.jpg",
+    "alt": "Student sitting in an office"
+  },
+  {
+    "src": "page_0159_image_0001.jpg",
+    "alt": "Letter to Charles Forberg"
+  },
+  {
+    "src": "page_0161_image_0001.jpg",
+    "alt": "Model desk for the Black Mountain College"
+  },
+  {
+    "src": "page_0161_image_0002.jpg",
+    "alt": "Sketch of his office"
+  },
+  {
+    "src": "page_0163_image_0001.jpg",
+    "alt": "Photograph of a chair made by Josef Albers"
+  },
+  {
+    "src": "page_0163_image_0002.jpg",
+    "alt": "Photograph of a chair made by Josef Albers"
+  },
+  {
+    "src": "page_0165_image_0001.jpg",
+    "alt": "Letter sent to her sister"
+  },
+  {
+    "src": "page_0170_image_0001.jpg",
+    "alt": "Students in the workshops of Carnegie Tech during an architecture course by A. Lawrence Kocher, circa 1938-40, Triptych of photographs taken from the article by Goodman (2017, p. 29)."
+  },
+  {
+    "src": "page_0170_image_0002.jpg",
+    "alt": "Model of 'low-cost experimental house' designed by students from Carnegie Tech, ca. 1938-40"
+  },
+  {
+    "src": "page_0174_image_0001.jpg",
+    "alt": "Architecture course given by A. Lawrence Kocher on the rear terrace of the Studies Building, 1941-42"
+  },
+  {
+    "src": "page_0175_image_0002.jpg",
+    "alt": "Drawing 'Cut-Away Representation of the Home of the Future'"
+  },
+  {
+    "src": "page_0176_image_0001.jpg",
+    "alt": "Drawing of the kitchen of the Aluminaire House"
+  },
+  {
+    "src": "page_0176_image_0002.jpg",
+    "alt": "Drawing of the library of the Aluminaire House"
+  },
+  {
+    "src": "page_0176_image_0003.jpg",
+    "alt": "Interior of an office in the Studies Building"
+  },
+  {
+    "src": "page_0176_image_0004.jpg",
+    "alt": "Teacher in a classroom of the Studies Building"
+  },
+  {
+    "src": "page_0178_image_0001.jpg",
+    "alt": "Interior of an office in the Studies Building"
+  },
+  {
+    "src": "page_0178_image_0002.jpg",
+    "alt": "Drawing for Kurt Versen Company for the lamps of the Studies Building"
+  },
+  {
+    "src": "page_0178_image_0003.jpg",
+    "alt": "Drawing and installation plan for the lamps of the Studies Building (model # 63262-A)"
+  },
+  {
+    "src": "page_0183_image_0001.jpg",
+    "alt": "Plan created by Robert Bliss, 1942, BMC, Photographs, Miscellaneous Unidentified People (Box 13), WRA."
+  },
+  {
+    "src": "page_0183_image_0002.jpg",
+    "alt": "Plan created by Robert Bliss, 1942, BMC, Photographs, Miscellaneous Unidentified People (Box 13), WRA"
+  },
+  {
+    "src": "page_0184_image_0001.jpg",
+    "alt": "Photograph of a model by an anonymous student, 1942, BMC"
+  },
+  {
+    "src": "page_0184_image_0002.jpg",
+    "alt": "Photograph of a model by an anonymous student, 1942, Black Mountain College, Miscellaneous Unidentified People"
+  },
+  {
+    "src": "page_0184_image_0003.jpg",
+    "alt": "Photograph of a model by an anonymous student, 1942, BMC, Photographs, Miscellaneous Unidentified People (Box 13), Western Regional Archives"
+  },
+  {
+    "src": "page_0184_image_0004.jpg",
+    "alt": "Photograph of a model by an anonymous student, 1942, BMC"
+  },
+  {
+    "src": "page_0186_image_0001.jpg",
+    "alt": "Exhibition of architecture course projects in the Studies Building"
+  },
+  {
+    "src": "page_0187_image_0001.jpg",
+    "alt": "Exhibition of the architecture course in the Studies Building, attributed to Claude Stoller"
+  },
+  {
+    "src": "page_0187_image_0002.jpg",
+    "alt": "Exhibition of the architecture course in the Studies Building, attributed to Claude Stoller"
+  },
+  {
+    "src": "page_0191_image_0001.jpg",
+    "alt": "Drawing 'Architect Defined', 1944, John D. Rockefeller Jr. Library, Manuscripts (Box 8, Folder 31), Colonial Williamsburg Foundation, Williamsburg."
+  },
+  {
+    "src": "page_0192_image_0001.jpg",
+    "alt": "South view of the Jalowetz House, attributed to Claude Stoller, circa 1941-42"
+  },
+  {
+    "src": "page_0196_image_0001.jpg",
+    "alt": "Elevation and floor plan of the Jalowetz House"
+  },
+  {
+    "src": "page_0196_image_0002.jpg",
+    "alt": "Elevation and Floor Plan of the Jalowetz House, ca. 1941"
+  },
+  {
+    "src": "page_0197_image_0001.jpg",
+    "alt": "Northeast perspective and floor plan of the Jalowetz House"
+  },
+  {
+    "src": "page_0199_image_0001.jpg",
+    "alt": "Photograph of a model by an anonymous student"
+  },
+  {
+    "src": "page_0199_image_0002.jpg",
+    "alt": "Note on the back of a photograph of a model by an anonymous student"
+  },
+  {
+    "src": "page_0201_image_0001.jpg",
+    "alt": "Photograph of a model by an anonymous student, reflection of the photograph along a horizontal axis by me, 1942"
+  },
+  {
+    "src": "page_0201_image_0002.jpg",
+    "alt": "Photograph of a model by an anonymous student"
+  },
+  {
+    "src": "page_0204_image_0001.jpg",
+    "alt": "New York World\u2019s Fair, Brochure of the House of Plywood by A. Lawrence Kocher, pages 1 and 3, 1939"
+  },
+  {
+    "src": "page_0204_image_0002.jpg",
+    "alt": "New York World\u2019s Fair, Brochure of the House of Plywood by A. Lawrence Kocher (pages 1 and 3), 1939"
+  },
+  {
+    "src": "page_0205_image_0001.jpg",
+    "alt": "Photographs and plans from the article in The Architectural Forum (1944, pp. 108-109)."
+  },
+  {
+    "src": "page_0205_image_0002.jpg",
+    "alt": "Photographs and plans from the article in Architectural Forum"
+  },
+  {
+    "src": "page_0206_image_0001.jpg",
+    "alt": "New York World's Fair, Advertising Brochure of the House of Plywood"
+  },
+  {
+    "src": "page_0207_image_0004.jpg",
+    "alt": "Elevation front of the Jalowetz House, ca. 1941, taken from the page 'Lodging: Sequoia Cottage' on the Lake Eden Retreat website (2016)."
+  },
+  {
+    "src": "page_0207_image_0006.jpg",
+    "alt": "Elevation of the Jalowetz House, ca. 1941, BMCRP, WRA"
+  },
+  {
+    "src": "page_0207_image_0011.jpg",
+    "alt": "Plan of the Jalowetz House, circa 1941, from the page 'Lodging: Sequoia Cottage' on the Lake Eden Retreat website. Image modifications by me."
+  },
+  {
+    "src": "page_0211_image_0001.jpg",
+    "alt": "A. Lawrence Kocher, Sketch 'Prefabrication', undated, and A. Lawrence Kocher (attributed to), Photograph of Claude Stoller holding a plywood panel in front of the Jalowetz House, 1940"
+  },
+  {
+    "src": "page_0212_image_0001.jpg",
+    "alt": "Josef Albers (attributed), Installation of the roof covering on Jalowetz House (Claude Stoller kneeling), ca. 1940"
+  },
+  {
+    "src": "page_0212_image_0002.jpg",
+    "alt": "Roof covering installation of the Jalowetz House (Claude Stoller kneeling)"
+  },
+  {
+    "src": "page_0216_image_0001.jpg",
+    "alt": "Unknown"
+  },
+  {
+    "src": "page_0218_image_0001.jpg",
+    "alt": "Plan of the ground floor of Robert E. Lee Hall (directions to the houses of Jalowetz, Corkran, Wallen, Dreier, and Peggy Brown framed in red)"
+  },
+  {
+    "src": "page_0220_image_0001.jpg",
+    "alt": "Plan of the Lake Eden Campus (location of the Jalowetz House, #24, outlined in red), undated"
+  },
+  {
+    "src": "page_0220_image_0002.jpg",
+    "alt": "Southwest view of the Jalowetz House"
+  },
+  {
+    "src": "page_0221_image_0001.jpg",
+    "alt": "A. Lawrence Kocher, View of the east wall of the Jalowetz House, 1941"
+  },
+  {
+    "src": "page_0222_image_0001.jpg",
+    "alt": "Rear (north) view of the Jalowetz House"
+  },
+  {
+    "src": "page_0223_image_0001.jpg",
+    "alt": "Entrance of the Jalowetz House"
+  },
+  {
+    "src": "page_0223_image_0002.jpg",
+    "alt": "Entrance of the Jalowetz House"
+  },
+  {
+    "src": "page_0224_image_0001.jpg",
+    "alt": "Interior view of the north window of the Jalowetz House, date unknown"
+  },
+  {
+    "src": "page_0224_image_0002.jpg",
+    "alt": "Interior view of the living room of the Jalowetz House, no date"
+  },
+  {
+    "src": "page_0224_image_0003.jpg",
+    "alt": "Interior view of the living room of the Jalowetz House, no date"
+  },
+  {
+    "src": "page_0225_image_0001.jpg",
+    "alt": "Interior view of the main room of the Jalowetz House (southeast direction), 1970"
+  },
+  {
+    "src": "page_0225_image_0002.jpg",
+    "alt": "Interior view of the main room of the Jalowetz House (southeast direction)"
+  },
+  {
+    "src": "page_0225_image_0003.jpg",
+    "alt": "Interior view of the main room of the Jalowetz House (southwest direction), 1970"
+  },
+  {
+    "src": "page_0226_image_0001.jpg",
+    "alt": "Portrait of Heinrich and Johanna Jalowetz"
+  },
+  {
+    "src": "page_0226_image_0002.jpg",
+    "alt": "Johanna Jalowetz cultivating the land to the east of the Jalowetz House in the 'work program', undated"
+  },
+  {
+    "src": "page_0227_image_0001.jpg",
+    "alt": "Johanna Jalowetz at the window of a room in the Jalowetz House, circa 1946"
+  },
+  {
+    "src": "page_0227_image_0002.jpg",
+    "alt": "Johanna Jalowetz at the window of a room in the Jalowetz House, circa 1946"
+  },
+  {
+    "src": "page_0231_image_0001.jpg",
+    "alt": "Photograph of the main room in the Jalowetz House (southwest direction)"
+  },
+  {
+    "src": "page_0231_image_0002.jpg",
+    "alt": "Photograph of the main room in the Jalowetz House (southwest direction), undated, Jalowetz-Aronson Private Collection, Maplewood"
+  },
+  {
+    "src": "page_0232_image_0001.jpg",
+    "alt": "Photograph of the main room of the Jalowetz House"
+  },
+  {
+    "src": "page_0234_image_0001.jpg",
+    "alt": "Photograph of a plywood chair made by A. Lawrence Kocher"
+  },
+  {
+    "src": "page_0234_image_0002.jpg",
+    "alt": "Photograph of a plywood chair made by A. Lawrence Kocher"
+  },
+  {
+    "src": "page_0235_image_0001.jpg",
+    "alt": "Chair design plan with cross section and framing diagram"
+  },
+  {
+    "src": "page_0239_image_0001.jpg",
+    "alt": "Unidentified woman in front of the back terrace of the Jalowetz House"
+  },
+  {
+    "src": "page_0239_image_0002.jpg",
+    "alt": "Couple in front of the back terrace of Jalowetz House, date unknown"
+  },
+  {
+    "src": "page_0239_image_0003.jpg",
+    "alt": "Erich Kahler and Gertrud Guermonprez in the main room of the Jalowetz House, circa 1947."
+  },
+  {
+    "src": "page_0239_image_0004.jpg",
+    "alt": "Unidentified woman in front of the back terrace of the Jalowetz House"
+  },
+  {
+    "src": "page_0241_image_0001.jpg",
+    "alt": "Front view of the Jalowetz House"
+  },
+  {
+    "src": "page_0241_image_0002.jpg",
+    "alt": "View of the area in front of the Jalowetz House (from left to right: Charlotte Schlesinger, a student, and possibly Johanna Jalowetz)"
+  },
+  {
+    "src": "page_0243_image_0001.jpg",
+    "alt": "Portrait of Charles Olson in front of the Jalowetz House, date unknown"
+  },
+  {
+    "src": "page_0243_image_0002.jpg",
+    "alt": "Portrait of Charles Olson in the main room of the Jalowetz House, no date"
+  },
+  {
+    "src": "page_0243_image_0003.jpg",
+    "alt": "Portrait of Charles Olson and Constance Wilcock in front of the Jalowetz House, no date."
+  },
+  {
+    "src": "page_0243_image_0004.jpg",
+    "alt": "Portrait of Charles Olson and Constance Wilcock in front of the Jalowetz House, no date"
+  },
+  {
+    "src": "page_0246_image_0001.jpg",
+    "alt": "Community meeting to announce the closure of BMC 270, October 1956. Same people present as in Figure 3.54, except Dita Frauenglass."
+  },
+  {
+    "src": "page_0246_image_0002.jpg",
+    "alt": "Community meeting to announce the closure of Black Mountain College 269, October 1956, image from the article by Silver."
+  },
+  {
+    "src": "page_0248_image_0001.jpg",
+    "alt": "Map of the Lake Eden campus showing existing and proposed buildings, circa 1942"
+  },
+  {
+    "src": "page_0251_image_0001.jpg",
+    "alt": "Textile exhibition by Gertrud Guermonprez in the dining hall of the Lake Eden campus"
+  },
+  {
+    "src": "page_0251_image_0002.jpg",
+    "alt": "Gertrud Guermonprez, Dance class in the dining room of the Lake Eden campus, no date"
+  },
+  {
+    "src": "page_0252_image_0001.jpg",
+    "alt": "Saturday night dance in the dining hall of Lake Eden campus (Erwin Straus at the front left, Josef Albers at the center behind the student couple)"
+  },
+  {
+    "src": "page_0260_image_0001.jpg",
+    "alt": "Letter from John Dewey to Theodore Dreier, July 18, 1940"
+  },
+  {
+    "src": "page_0261_image_0001.jpg",
+    "alt": "BMC, Advertisement for the work camp published in the Black Mountain College Newsletter (no. 14), August 1941"
+  },
+  {
+    "src": "page_0262_image_0001.jpg",
+    "alt": "Student working the land, circa 1941"
+  },
+  {
+    "src": "page_0262_image_0002.jpg",
+    "alt": "Student Eva Zhitlowsky and another student working the land in front of the Studies Building, ca. 1940-41"
+  },
+  {
+    "src": "page_0262_image_0003.jpg",
+    "alt": "Eva Zhitlowsky and other students working the land, circa 1940-41"
+  },
+  {
+    "src": "page_0263_image_0001.jpg",
+    "alt": "Advertisement for Johns-Manville asbestos construction materials from the magazine Architecture - Building \u2013 Construction"
+  },
+  {
+    "src": "page_0263_image_0002.jpg",
+    "alt": "Corrugated Transite for Modern Streamlined Buildings? Black Mountain College, North Carolina"
+  },
+  {
+    "src": "page_0264_image_0001.jpg",
+    "alt": "Axonometry of the Studies Building, plan taken from the thesis of Manuel Beltr\u00e1n Alc\u00e1ntara"
+  },
+  {
+    "src": "page_0264_image_0002.jpg",
+    "alt": "South, East, and North Elevation of the Studies Building, plan taken from the thesis of Manuel Beltr\u00e1n Alc\u00e1ntara"
+  },
+  {
+    "src": "page_0265_image_0001.jpg",
+    "alt": "Floor Plan, Second Floor, from the thesis of Manuel Beltr\u00e1n Alc\u00e1ntara"
+  },
+  {
+    "src": "page_0265_image_0002.jpg",
+    "alt": "Floor plan, second floor, taken from the thesis of Manuel Beltr\u00e1n Alc\u00e1ntara"
+  },
+  {
+    "src": "page_0265_image_0003.jpg",
+    "alt": "Plan of the sun, third floor ('main floor'), extracted from the thesis of Manuel Beltr\u00e1n Alc\u00e1ntara"
+  },
+  {
+    "src": "page_0266_image_0001.jpg",
+    "alt": "Rooming Committee, Office Distribution Plan of the Studies Building (mention of an office assigned to Dolores Fullman with the designation \"negro\" framed in red)"
+  },
+  {
+    "src": "page_0266_image_0002.jpg",
+    "alt": "Rooming Committee, Office Distribution Plan of the Studies Building (mention of an office assigned to Dolores Fullman with the designation 'negro' framed in red)"
+  },
+  {
+    "src": "page_0267_image_0001.jpg",
+    "alt": "Drawing class given by Xanti Schawinsky at Blue Ridge Campus, 1937"
+  },
+  {
+    "src": "page_0268_image_0001.jpg",
+    "alt": "Sketch of her office in a letter to her family"
+  },
+  {
+    "src": "page_0269_image_0001.jpg",
+    "alt": "Studio in the Prellerhaus of the Bauhaus Dessau (covering by Gunta St\u00f6lz)"
+  },
+  {
+    "src": "page_0269_image_0002.jpg",
+    "alt": "Siegfried Giesenschlag in his studio in Dessau (Midgard lamp by Curt Fischer)"
+  },
+  {
+    "src": "page_0270_image_0001.jpg",
+    "alt": "Student desk in the Studies Building"
+  },
+  {
+    "src": "page_0271_image_0001.jpg",
+    "alt": "Course given by Mary Gregory in the woodworking workshop at Lake Eden Campus (Mary Gregory at bottom right)"
+  },
+  {
+    "src": "page_0272_image_0001.jpg",
+    "alt": "Police Officer Lawt Allen Helping Children Cross the Street in Black Mountain Village"
+  },
+  {
+    "src": "page_0273_image_0001.jpg",
+    "alt": "Albers' Salon at Lake Eden Campus"
+  },
+  {
+    "src": "page_0273_image_0002.jpg",
+    "alt": "Architecture course given by A. Lawrence Kocher on the ground floor of the Studies Building, circa 1942"
+  },
+  {
+    "src": "page_0283_image_0001.jpg",
+    "alt": "Harbor Plywood Company, advertisement for a new plywood in The California Lumber Merchant magazine"
+  },
+  {
+    "src": "page_0284_image_0001.jpg",
+    "alt": "Heinrich and Johanna Jalowetz on the stairs of the Jalowetz House, ca. 1945"
+  },
+  {
+    "src": "page_0285_image_0001.jpg",
+    "alt": "Music Room of the Jalowetz in Cologne, Germany, undated"
+  },
+  {
+    "src": "page_0287_image_0001.jpg",
+    "alt": "Meeting for the work program in a room of the Studies Building (Robert Babcock on the right in a plaid shirt), circa 1941"
+  },
+  {
+    "src": "page_0288_image_0001.jpg",
+    "alt": "Charles Olson in front of the Jalowetz House, undated"
+  },
+  {
+    "src": "page_0288_image_0002.jpg",
+    "alt": "Charles Olson in front of the Jalowetz House, undated"
+  }
 ]
