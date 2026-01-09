@@ -78,7 +78,7 @@ Cette récursivité comporte un risque majeur : l'effondrement du modèle (model
 
 ## I. Archéologie de l'archive : de la consignation à la computation
 
-### 1.1 L'archive comme condition de possibilité
+### L'archive comme condition de possibilité
 
 L'archive n'a jamais été un simple réceptacle. Michel Foucault, dans son *Archéologie du savoir*, l'avait montré avec une clarté décisive : l'archive ne désigne pas l'ensemble des textes qu'une civilisation a conservés, ni les institutions qui permettent leur conservation. L'archive nomme le système des règles qui détermine ce qui peut être dit, ce qui compte comme énoncé recevable, ce qui entre dans le registre historique et ce qui en disparaît. L'archive est la condition de possibilité du discours — et ses limites. Elle ne préserve pas passivement le passé ; elle produit activement ce qui compte comme réalité historique à travers des processus de sélection, de classification et d'interprétation.
 
@@ -86,7 +86,7 @@ Jacques Derrida a prolongé cette analyse en examinant ce qu'il nomme le *mal d'
 
 Derrida écrivait que « la structure technique de l'archive archivante détermine aussi la structure du contenu archivable jusque dans sa venue à l'existence et dans sa relation à l'avenir ». Cette formulation est prophétique : elle anticipe précisément la condition actuelle où les systèmes techniques ne se contentent plus de stocker mais génèrent, où l'archive ne conserve plus seulement mais prédit, où le document ne témoigne plus d'un passé mais configure un futur.
 
-### 1.2 La rétention tertiaire et ses mutations
+### La rétention tertiaire et ses mutations
 
 Bernard Stiegler a développé, à partir de Husserl, une conceptualisation décisive pour comprendre cette transformation. Il distingue trois formes de mémoire qui constituent la conscience. La rétention primaire désigne la perception immédiate du maintenant, le flux présent — entendre une note de musique au moment où elle résonne. La rétention secondaire est le souvenir de cette perception, filtré par l'imagination — se remémorer la mélodie après coup. La rétention tertiaire nomme l'extériorisation de la mémoire dans des objets techniques — un enregistrement vinyle de la mélodie, un livre, une archive, une base de données.
 
@@ -96,7 +96,7 @@ Or Yuk Hui observe que l'ère numérique a déplacé le centre de gravité de la
 
 Ce glissement de la rétention à la protention constitue ce que Hui appelle un nouveau régime politique — une politique de l'anticipation plutôt que de la mémoire. Lorsque la protention tertiaire devient automatisée et dominante, elle court-circuite la capacité humaine à imaginer le futur. Nous devenons des consommateurs passifs d'un futur pré-calculé par l'archive. Stiegler parle d'une prolétarisation de l'esprit, où le savoir-vivre et le savoir-faire sont transférés à la machine. Ce court-circuit est l'effet direct de la requête récursive appliquée aux comportements humains : le système prend nos données passées, applique une fonction récursive de prédiction, et génère notre futur probable, nous enfermant dans une boucle de rétroaction qui élimine la contingence.
 
-### 1.2 bis — L'infrastructure de la récursivité
+### L'infrastructure de la récursivité
 
 La récursivité que nous analysons n'est pas une propriété abstraite de l'information. Elle est implémentée dans une infrastructure matérielle spécifique — ce que Benjamin Bratton nomme The Stack.
 
@@ -110,7 +110,7 @@ Tiziana Terranova a nommé « free labor » le travail gratuit que les utilisate
 
 La récursivité n'est donc pas seulement une structure logique ou un mode d'être ontologique ; elle est une opération économique. Chaque boucle de rétroaction — chaque itération où le système apprend de ses propres *outputs* — est aussi un cycle d'accumulation où la valeur produite collectivement est appropriée privativement. Le Model Collapse que nous analyserons plus loin n'est pas seulement un risque technique ; c'est le symptôme d'un système qui, faute de nouveaux inputs humains à extraire, commence à se dévorer lui-même.
 
-### 1.3 L'archive comme construction sociale
+### L'archive comme construction sociale
 
 Les travaux sur les archives de pratiques marginalisées — qu'il s'agisse du tissage à Black Mountain College, des histoires féministes, des savoirs autochtones — révèlent avec une acuité particulière le caractère construit de toute formation archivistique. Ce qui est préservé dépend de qui a le pouvoir de définir ce qui compte. Le tissage survit mal dans les archives précisément parce qu'il était associé au féminin et au domestique. Quand 75% des étudiant.e.s de Black Mounain qui suivaient des cours de tissage étaient des femmes, et que la plupart d'entre elles « se marièrent et élevèrent des enfants » après leurs études, leurs activités furent généralement considérées comme des passe-temps par leurs familles. Le fait que leur travail créatif ait été ou non valorisé par leurs époux ou leurs enfants joue un rôle déterminant dans la préservation de ces matériaux. L'entretien avec Michael Beggs, auteur avec Julie Thomson du livre Weaving at Black Mountain (2023), mené durant l'ARC nous le rappelle.
 
@@ -122,7 +122,7 @@ Il y a là une leçon pour penser l'archive à l'ère de l'IA. Les modèles de l
 
 ## II. La logique de la récursivité : du SQL à la cybernétique
 
-### 2.1 La définition technique
+### La définition technique
 
 Pour saisir le changement de statut de l'archive, il convient d'abord de comprendre le mécanisme technique et philosophique de la récursivité. Il s'agit de la logique opérationnelle de l'ère numérique, gouvernant tout, des structures de bases de données aux boucles de rétroaction de l'apprentissage automatique.
 
@@ -138,7 +138,7 @@ Mais la condition de terminaison fait défaut. Rien ne distingue plus le documen
 
 Contrairement à une requête SQL qui possède une condition de terminaison stricte pour éviter les boucles infinies, la boucle de l'IA générative risque de devenir une récursion infinie de contenu synthétique. L'ancre — la réalité humaine historique — est de plus en plus diluée par la production récursive — la réalité synthétique —, menant à une saturation de l'espace informationnel par des simulacres. La requête récursive, sans frein ontologique, devient un processus d'entropie informationnelle.
 
-### 2.2 La philosophie de la récursivité
+### La philosophie de la récursivité
 
 Yuk Hui élève la récursivité d'une simple fonction computationnelle à une catégorie fondamentale de l'existence. Dans *Recursivity and Contingency*, il montre que la récursivité n'est pas simplement une répétition mécanique ; c'est le mode par lequel un système — qu'il soit organique ou machinique — incorpore la contingence pour se maintenir, s'individuer et évoluer.
 
@@ -148,7 +148,7 @@ Hui soutient que l'organique et le machinique deviennent indiscernables parce qu
 
 Dans le contexte de l'archive, cela signifie que nous passons d'une archive mécanique à une archive cybernétique. L'interaction de l'utilisateur modifie l'archive — les algorithmes de personnalisation apprennent de la requête. Mais si ce système n'est pas ouvert au dehors, à l'inhumain ou à l'accidentel, il devient une prison totalisante, un système de contrôle parfait qui élimine toute nouveauté réelle au profit de la prédiction statistique.
 
-### 2.3 La fermeture protentionnelle
+### La fermeture protentionnelle
 
 Antoinette Rouvroy a conceptualisé ce régime sous le nom de gouvernementalité algorithmique — un mode de pouvoir qui opère non par discipline ou normalisation mais par modélisation statistique des possibilités comportementales. Les systèmes computationnels contemporains court-circuitent la subjectivité, n'adressant les individus que comme agrégats de points de données corrélables. Ce régime produit une réalité statistique qui préempte les événements avant qu'ils n'adviennent, fermant l'espace de l'indétermination politique et créative.
 
@@ -160,7 +160,7 @@ Le flux des médias sociaux, basé sur des requêtes récursives, piège les uti
 
 ## III. L'artefact comme archive : vers une ontologie élargie du document
 
-### 3.1 Au-delà du texte
+### Au-delà du texte
 
 La recherche sur les archives de pratiques matérielles — tissage, céramique, artisanat — contraint à élargir la conception du document. Dans les archives du Black Mountain College, on trouve un dossier « Anni Albers — Weaving Workshop » contenant un sous-dossier « Student Works, 1944 ». À l'intérieur : une douzaine d'échantillons textiles. Pas de noms, pas de dates précises, pas de consignes écrites.
 
@@ -169,7 +169,7 @@ Cette inversion du statut documentaire ouvre des questions ontologiques. Un text
 
 Contrairement au document écrit qui fixe un moment — la lettre datée, le procès-verbal —, l'artefact porte en lui une durée : le temps du faire, ses usages, ses dégradations. Et contrairement à la lettre, souvent écrite avec conscience de sa possible conservation, l'exercice de tissage ne l'était pas. Il devient archive rétroactivement. L'objet non destiné à la conservation porte peut-être une vérité que le document consciemment archivé ne peut atteindre : celle du geste non surveillé, de la pratique non performée pour la postérité.
 
-### 3.3 L'archive générative et l'espace latent
+### L'archive générative et l'espace latent
 
 Dans l'apprentissage automatique, l'espace latent est l'espace mathématique multidimensionnel où le modèle stocke sa compréhension des données. Les concepts similaires sont regroupés — toutes les images de chaises sont proches mathématiquement des tables. Quand nous promptons une IA, nous traversons cet espace latent. Nous ne récupérons pas un document ; nous interpolons un chemin entre des points dans cette archive de haute dimension.
 
@@ -181,7 +181,7 @@ Cette transformation pose la question de ce que signifie archiver à l'ère gén
 
 ## IV. Cosmotechnique et technodiversité
 
-### 4.1 La monotechnique occidentale
+### La monotechnique occidentale
 
 Si la requête récursive de l'IA crée une boucle fermée, comment en sortir ? Le philosophe Yuk Hui propose un outil conceptuel : la cosmotechnique.
 
@@ -191,7 +191,7 @@ Deux exemples. La cosmotechnique grecque, fondée sur la techne et l'episteme, c
 
 Le problème moderne : une seule cosmotechnique — l'occidentale, celle qui vise la maîtrise de la nature par le calcul mathématique — s'est universalisée sous le nom de « Technologie » avec un grand T. Cette monotechnique impose au monde entier une synchronisation forcée : un seul temps, celui de l'accélération ; une seule logique, celle de l'optimisation. Les temporalités locales, les cosmologies alternatives, les autres façons de faire technique sont écrasées ou folklorisées.
 
-### 4.2 La géométrie du temps versus la résonance
+### La géométrie du temps versus la résonance
 
 La cosmotechnique n'est pas seulement un outil critique — elle ouvre une possibilité constructive. Si différentes cultures ont produit différentes techniques, alors la monotechnique actuelle n'est pas une fatalité. Yuk Hui nomme technodiversité ce projet : non pas folkloriser les techniques locales en les muséifiant, mais construire des systèmes techniques qui incarnent réellement d'autres rapports au temps, à la mémoire, à la relation.
 
@@ -209,7 +209,7 @@ Ces questions ne sont pas rhétoriques. Elles dessinent le cahier des charges d'
 
 ## VI. Le retcon comme méthode
 
-### 6.1 La continuité rétroactive
+### La continuité rétroactive
 
 Le terme *retcon* — contraction de *retroactive continuity* — provient de la culture des comic books, où les épisodes ultérieurs modifient le sens des événements antérieurs sans les effacer. Appliqué à la pratique archivistique, le *retcon* ne falsifie pas l'histoire mais active des possibilités latentes dans les traces documentaires, produisant ce qu'on peut appeler une cohérence contrefactuelle.
 
@@ -223,13 +223,13 @@ Le *retcon* assume pleinement cette dimension chronopolitique. Il reconnaît que
 
 Quand le *retcon* est conduit avec des systèmes d'IA, il devient doublement récursif : la machine puise dans les interprétations accumulées dans ses données d'entraînement, générant de nouveaux textes qui deviennent eux-mêmes disponibles pour le traitement archivistique futur. L'expérience influence ce sur quoi elle expérimente. Ce n'est pas un bug mais une fonctionnalité — la boucle récursive devient mécanisme d'intervention, moyen de façonner les systèmes qui nous façonnent.
 
-### 6.2 L'archive spéculative
+### L'archive spéculative
 
 Mark Fisher, dans ses réflexions sur l'hauntologie, a théorisé les futurs perdus — les possibilités non réalisées qui hantent le présent, les trajectoires qui furent ouvertes à un moment donné mais ne furent pas poursuivies. Les archives de projets expérimentaux comme Black Mountain College préservent précisément de tels futurs perdus : des innovations pédagogiques et artistiques qui ne furent pas absorbées dans la pratique dominante et demeurent disponibles pour une réactivation contemporaine.
 
 L'archive spéculative ne se contente pas de documenter ce qui fut mais ouvre sur ce qui aurait pu être et ce qui pourrait encore devenir. Elle traite les documents non comme des témoignages d'un passé clos mais comme des virtualités en attente d'actualisation. Cette conception rejoint ce que François Hartog nomme le présentisme — le régime d'historicité contemporain où le présent envahit à la fois le passé et le futur — mais la retourne : au lieu de fermer l'horizon temporel, l'archive spéculative le rouvre en activant les potentialités latentes du passé.
 
-### 6.3 La subjectivité distribuée
+### La subjectivité distribuée
 
 L'intégration de l'IA dans la pratique archivistique et artistique pose la question de l'agentivité créative. La tradition humaniste attribuait la créativité à un sujet individuel doté d'intentionnalité, de résonance émotionnelle et d'ancrage culturel. Ces trois dimensions constituent ce qu'on peut appeler la créativité transformationnelle — la capacité non seulement de générer des éléments nouveaux dans un cadre existant mais de démanteler, reconstruire et redéfinir le cadre lui-même.
 
@@ -241,7 +241,7 @@ Cependant, la pratique collaborative avec l'IA ne se réduit pas à l'opposition
 
 ## VII. La transindividuation à l'épreuve de l'algorithme
 
-### 7.1 L'argument de l'agrégation
+### L'argument de l'agrégation
 
 Deux arguments classiques soutiennent que la computation est antithétique à la créativité collective authentique.
 
@@ -257,7 +257,7 @@ Hubert Dreyfus a réactualisé cette critique dans le contexte de l'intelligence
 
 Ces deux arguments convergent vers une même conclusion : la computation peut *simuler* la créativité collective, mais jamais l'*accomplir*. Elle peut agréger des contributions, détecter des régularités, optimiser des combinaisons — mais le moment de l'émergence véritable lui échapperait par principe.
 
-### 7.2 La transindividuation comme dépassement
+### La transindividuation comme dépassement
 
 Les théoriciens contemporains ont de plus en plus contesté cette vue selon laquelle computation et créativité collective seraient antithétiques. Ils argumentent au contraire que les deux sont potentiellement complémentaires et que toute dichotomie rigide entre traitement algorithmique et pratique collective émergente néglige les complexités de la manière dont les communautés se forment et se transforment effectivement à travers la médiation technique.
 
@@ -276,7 +276,7 @@ Cette distinction change tout à la question de la computation et de la créativ
 
 Un logiciel utilisé par une communauté de pratique n'est jamais exactement celui que les ingénieurs ont conçu : les usages réels le débordent, le détournent, lui font faire ce qu'il n'était pas censé faire. C'est dans cet écart entre conception et appropriation que se loge la possibilité d'une créativité collective computationnellement médiée mais non computationnellement déterminée.
 
-### 7.3 L'appropriation créative des contraintes
+### L'appropriation créative des contraintes
 
 La recherche sociologique renforce ces arguments philosophiques. La Théorie de l'Acteur-Réseau, développée par Bruno Latour, Michel Callon et John Law, pointe vers les manières dont les objets techniques participent comme actants dans la constitution de la vie collective. Même si la médiation computationnelle apparaît agrégative, cette agrégation mute rapidement en quelque chose de plus dynamique à mesure que les communautés s'approprient les systèmes techniques pour leurs propres fins.
 
@@ -290,7 +290,7 @@ S'engager avec les patterns documentaires d'une archive ne confine pas un collec
 
 ## VIII. Vers une esthétique récursive
 
-### 8.1 Principes
+### Principes
 
 Les investigations précédentes pointent vers ce qu'on pourrait appeler une esthétique récursive — une approche de la création adéquate aux conditions de récursion computationnelle. Ce n'est pas un style ou un mouvement mais un ensemble de préoccupations, de méthodes, d'orientations qui informent comment le travail peut être fait et compris.
 
@@ -299,7 +299,7 @@ L'esthétique récursive prend les boucles de rétroaction comme principe formel
 L'esthétique récursive embrasse la dissolution de l'autorité stable. L'artiste n'est pas créateur souverain mais participant à des processus distribués impliquant agents humains et computationnels, archives historiques et traitement en temps réel, intention individuelle et tendance statistique. Elle engage l'histoire non comme passé fixé mais comme matériau pour révision, reconnaissant que toute connaissance historique est produite à travers des processus de sélection et d'interprétation. 
 
 
-### 8.2 Documentation et critique
+### Documentation et critique
 
 L'esthétique récursive requiert de nouvelles formes de documentation, de critique, de théorisation. Les méthodes traditionnelles de l'histoire de l'art présupposent des auteurs individuels produisant des œuvres discrètes à des moments spécifiques. Ces présupposés vacillent sous les conditions récursives. De nouvelles approches sont nécessaires qui peuvent suivre les agentivités distribuées, tracer les flux archivistiques, évaluer les interventions à travers des échelles temporelles multiples.
 
@@ -311,7 +311,7 @@ La condition récursive signifie que cette expérimentation rétroagit déjà su
 
 ## IX. Intendance de la boucle
 
-### 9.1 De l'utilisateur au gardien
+### De l'utilisateur au gardien
 
 La question n'est pas d'échapper à la boucle récursive — elle est structurelle, inévitable dès qu'un système s'entraîne sur ses propres outputs. La question est de savoir comment l'habiter.
 
@@ -319,7 +319,7 @@ Cela commence par une lucidité. Lucidité sur les enjeux politiques : qui poss�
 
 C'est cette lucidité — et non un volontarisme abstrait — qui amène à une pratique située. Non pas des « Machines Universelles » mais des machines locales, ancrées dans les ordres moraux et cosmiques des communautés qu'elles servent. Non pas des « utilisateurs » de l'archive mais des gardiens de la boucle — stewards qui maintiennent le lien entre le système et son dehors, qui corrigent la dérive avant l'effondrement. 
 
-### 9.2 Protocole et souveraineté
+### Protocole et souveraineté
 
 Le mouvement pour l'IA indigène fournit des réponses protocolaires et architecturales à la fermeture de la boucle récursive. Les travaux de Tahu Kukutai, John Taylor et leurs collaborateurs sur la souveraineté des données autochtones (Indigenous Data Sovereignty, 2016) établissent des principes qui contrastent radicalement avec l'extractivisme dominant.
 
@@ -331,7 +331,7 @@ Arturo Escobar, depuis une perspective latino-américaine, pense des alternative
 
 Les systèmes algorithmiques - si ils sont utiles ! - ne doivent pas desservir une intelligence désincarnée mais une extension du corps social et écologique du territoire. Elle doit être attachée aux lois localisées inhérentes au Pays — ce que les traditions aborigènes australiennes nomment Country. Cette exigence d'ancrage n'est pas un romantisme antimoderne ; c'est une condition de soutenabilité. Une récursivité déracinée — qui ne se réfère qu'à elle-même, sans attache au monde matériel et social — est vouée à l'effondrement. Les protocoles indigènes offrent des modèles pour une récursivité située, responsable, relationnelle.
 
-### 9.3 Certification et provenance
+### Certification et provenance
 
 Le travail sur les archives numériques s'aligne avec l'idée que l'archive future doit passer de la curation à la certification. Nous devons être capables de dire : cette histoire vient d'un humain, et cet humain a donné son consentement. Face à la prolifération de contenu synthétique, la provenance devient la question archivistique centrale.
 
