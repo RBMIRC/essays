@@ -43,7 +43,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.SidebarControls(),
+    Component.Darkmode(),
+    Component.ExternalLinks(), // Nouveau composant
   ],
   right: [
     Component.Graph({
@@ -93,7 +94,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.SidebarControls(),
+    Component.Darkmode(),
+    Component.ExternalLinks(), // Aussi ici
   ],
   right: [],
 }

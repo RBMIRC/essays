@@ -29,7 +29,6 @@ import TagCloud from "./TagCloud"
 import ImagePreview from "./ImagePreview"
 import ExternalLinks from "./ExternalLinks"
 import Hypothesis from "./Hypothesis"
-import SidebarControls from "./SidebarControls"
 
 export {
   ArticleTitle,
@@ -63,5 +62,4 @@ export {
   ImagePreview,
   ExternalLinks,
   Hypothesis,
-  SidebarControls,
 }
