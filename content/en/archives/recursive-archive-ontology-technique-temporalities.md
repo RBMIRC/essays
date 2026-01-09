@@ -8,6 +8,7 @@ lang: en
 license: GPL-3.0-or-later
 provenance: "Research seminar at L'École des Beaux-Arts de Marseille, with Vanessa Brito and Cy Lecerf Maulpoix"
 tags:
+  tags:
   - recursive-archive
   - recursivity
   - generative-AI
@@ -20,25 +21,25 @@ tags:
   - transindividuation
   - chronopolitics
   - retcon
-  - Foucault
-  - Derrida
-  - Stiegler
-  - Yuk-Hui
-  - Simondon
-  - Husserl
-  - Wiener
-  - Bratton
-  - Rouvroy
-  - Zuboff
-  - Fisher
-  - Eshun
-  - Cusicanqui
-  - Escobar
-  - Latour
-  - Haraway
-  - Heidegger
-  - Deleuze
-  - Black-Mountain-College
+  - _Foucault
+  - _Derrida
+  - _Stiegler
+  - _Yuk-Hui
+  - _Simondon
+  - _Husserl
+  - _Wiener
+  - _Bratton
+  - _Rouvroy
+  - _Zuboff
+  - _Fisher
+  - _Eshun
+  - _Cusicanqui
+  - _Escobar
+  - _Latour
+  - _Haraway
+  - _Heidegger
+  - _Deleuze
+  - _Black-Mountain-College
 ---
 
 <details class="heredoc-block">
