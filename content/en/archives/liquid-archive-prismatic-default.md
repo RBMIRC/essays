@@ -1,5 +1,5 @@
 ---
-title: "L'Archive Liquide"
+title: "The Liquid Archive"
 translation: "/fr/archives/archive-liquide-defaut-prismatique"
 subtitle: "Workshop Retcon Black Mountain, Ecole Nationale Supérieure de la Photographie, Arles"
 author: "Sylvain Couzinet-Jacques"
@@ -9,13 +9,13 @@ license: GPL-3.0-or-later
 provenance: "Workshop ENSP Arles 2024, with Mabe Bethonico"
 tags:
   - liquid-archive
-  - prismatic-default
-  - statistical-commons
-  - generative-AI
+  - prismatic
+  - commons
+  - AI
   - photography
   - pedagogy
-  - latent-space
-  - model-collapse
+  - _latent-space
+  - _model-collapse
   - _Benjamin
   - _Barthes
   - _Sontag
@@ -33,13 +33,8 @@ tags:
   - _Yuk-Hui
   - _Haraway
   - _Barad
-  - _diffraction
-  - _friction
-  - _entropy
   - _liquidity
   - _prism
-  - _statistical-unconscious
-  - _proletarianization
   - _cosmotechnics
   - _technodiversity
   - _Black-Mountain-College
@@ -48,7 +43,7 @@ tags:
 <details class="heredoc-block">
 <summary>◈ LIQUID-ARCHIVE v1.0</summary>
 
-**Title:** L'Archive Liquide  
+**Title:** The Liquid Archive 
 **Subtitle:** Workshop Retcon Black Mountain, École Nationale Supérieure de la Photographie, Arles  
 **Author:** Sylvain Couzinet-Jacques  
 **Date:** 2025  
@@ -61,23 +56,19 @@ tags:
 **Contamination:** Infused with {New Aesthetic, media archaeology, platform studies, cosmotechnics}  
 **Confidence:** Workshop observations grounded in theoretical framework  
 **Notes:** The image no longer testifies to distance; it renders "proximal" what is statistically probable  
+
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
 </details>
 
 ---
 
-## Workshop at ENSP Arles, November 2024
-
-by Sylvain Couzinet-Jacques
-
----
-
-## Introduction: The Crisis of the Image as Political Crisis
+## Introduction: The Crisis of the Image 
 
 ### The Starting Point: A Pedagogical Experiment
 
 This text proceeds from a pedagogical experiment—a workshop conducted with photography students confronting generative artificial intelligence tools for the first time within their curriculum. The initial intention was modest: to observe how young practitioners—whose training spans documentary heritage, fine art practices, performance, and post-internet approaches—would react when facing machines capable of producing images without referents. Documents from Black Mountain College served as the thread for collective conversations, but very few visual documents were used as support for the workshop.
 
-What unfolded in this workshop far exceeded the scope of a technical introduction. It functioned as a developer, in the photographic sense of the term: it revealed, within the enclosed space of a classroom, the same symptoms observable at the scale of contemporary visual culture. A loss of political and intentional bearings. A liquefaction of documentary stakes and their social value. A retreat into familiar forms—aesthetic, communicational, engaged—not as affirmation but as refuge.
+What unfolded in this workshop far exceeded the scope of a technical introduction. It functioned as a developer, in the photographic sense of the term: it revealed, within the enclosed space of a classroom, the same symptoms observable at the scale of contemporary visual culture. A loss of political and intentional bearings. A liquefaction of documentary stakes and their social value. A retreat into familiar forms—aesthetic, communicational, engaged—not as affirmation but as refuge. This, at least, is what I thought I observed—from a position that is not neutral: that of the one who designed and led the experiment.
 
 ### The Question Organizing This Text
 
@@ -228,13 +219,13 @@ The aesthetic of current AI is no longer defined by the visible pixel or the JPE
 
 ### 4. The Aesthetics Wiki and Categorial Proliferation
 
-A parallel phenomenon deserves interrogation: the emergence of the *Aesthetics Wiki*, a community encyclopedia listing more than a thousand identified and named "aesthetics"—Cottagecore, Dark Academia, Weirdcore, Liminal Space, Frutiger Aero (AESTHETICS WIKI, 2024). This wiki can be read as a late subdivision of the New Aesthetic, or as its compensatory reaction.
+A parallel phenomenon deserves interrogation: the emergence of the *Aesthetics Wiki*, a community encyclopedia listing more than a thousand identified and named "aesthetics"—*Cottagecore, Dark Academia, Weirdcore, Liminal Space, Frutiger Aero* (AESTHETICS WIKI, 2024). This wiki can be read as a late subdivision of the New Aesthetic, or as its compensatory reaction.
 
 On one side, the wiki extends Bridle's gesture: to collect, name, make visible. But where the New Aesthetic sought to identify traces of the machine in the physical world, the Aesthetics Wiki maps vernacular styles born of platforms—aesthetics that often exist only as flows of tagged images, without identifiable authors, without canonical works.
 
 On the other side, the wiki represents an attempt at taxonomic resistance against the post-categorial fluidity of latent space. It is discrete where the latent is continuous, hyper-categorial where the latent is mathematical, narrative where the latent is vectorial. The wiki has moreover banned AI-generated content in its community rules, affirming that AI does not possess the "cultural understanding" necessary (AESTHETICS WIKI, "AI Policy," 2024)—a political gesture of demarcation between intentional human creation and probabilistic synthesis.
 
-But there is more. These categorizations—Cottagecore, Vaporwave, Liminal Space—are attempts to name ideological strands of pre-AI effects. They retrospectively fix visual tendencies that emerged before generative AI dissolved them in latent space. They are *taxonomic fossils*: traces of what the collective imaginary produced when it was not yet captured by models. In this sense, the Aesthetics Wiki is less a creation tool than a funerary monument—an archive of what could still be named.
+But there is more. These categorizations—*Cottagecore, Vaporwave, Liminal Space*—are attempts to name ideological strands of pre-AI effects. They retrospectively fix visual tendencies that emerged before generative AI dissolved them in latent space. They are *taxonomic fossils*: traces of what the collective imaginary produced when it was not yet captured by models. In this sense, the Aesthetics Wiki is less a creation tool than a funerary monument—an archive of what could still be named.
 
 This tension between categorial proliferation and latent dissolution traverses all contemporary visual culture. It poses a question this text does not pretend to resolve: who thinks aesthetics in 2025? What are the places, collectives, methods that still allow the production of concepts for what is happening to us visually? Classical critical theory (Adorno, Benjamin) was conceived for other image regimes. Cultural studies and visual studies struggle to keep up with the velocity of mutations. Platforms themselves generate their own vernacular metalanguage (*vibe, aesthetic, core*), but without a critical apparatus. The question remains open—and its urgency grows with each new model version.
 
@@ -242,7 +233,7 @@ This tension between categorial proliferation and latent dissolution traverses a
 
 James Bridle himself anticipated this evolution in *New Dark Age*. "The sheer volume of information available today reveals less than we hoped. It rather heralds a new Dark Age: a world of ever-increasing incomprehension" (BRIDLE, 2018, p. 3). The growing gap between the complexity of the systems we build and our cognitive capacity to understand them defines our contemporary condition. The opacity of deep neural networks introduces a "new aesthetics of politics." The question is no longer to see the pixels—anyway smoothed by *neural upscaling*—but to understand the invisible vectors, the latent biases, the probability architectures that govern the generation of our common reality.
 
-> **First return of the motif: liquidity.** The archive is no longer a collection of visible objects on a Tumblr. It has become an invisible, multidimensional latent space—a flow without anchor points.
+The archive is no longer a collection of visible objects on a Tumblr. It has become an invisible, multidimensional latent space—a flow without anchor points.
 
 ---
 
@@ -317,7 +308,7 @@ Cognitive colonialism no longer bears only on bodies or raw materials, but on th
 
 ### 4. From Gravitation to Holography: Platform Physics
 
-The concept of platform physics, developed by the collective New Models (Caroline Busta and Lil Internet), allows us to understand that the digital environment is not an empty space, but a force field. Lil Internet defines these "platform physics" as "the affordances, limitations, and laws governing the traction, velocity, visibility, and even permanence of an idea or piece of content" (NEW MODELS, 2025). Each platform possesses a set of hardcoded laws—sorting algorithms, interface limitations, reward systems—that determine user behavior and content morphology, as gravity determines the movement of bodies. Caroline Busta specifies that "platform physics and gamification force us to align with the interests of the platform, and any activity going against those interests will be punished" (NEW MODELS, 2025). This intuition joins the concept of mediarchy developed by Yves Citton: media regimes do not only transmit content, they structure attentional conditions and power relations (CITTON, 2017). Generative AI would then be a new form of mediarchy where power is exercised through the preemption of the imaginable.
+The concept of *platform physics*, developed by the collective New Models (Caroline Busta and Lil Internet), allows us to understand that the digital environment is not an empty space, but a force field. Lil Internet defines these "platform physics" as "the affordances, limitations, and laws governing the traction, velocity, visibility, and even permanence of an idea or piece of content" (NEW MODELS, 2025). Each platform possesses a set of hardcoded laws—sorting algorithms, interface limitations, reward systems—that determine user behavior and content morphology, as gravity determines the movement of bodies. Caroline Busta specifies that "platform physics and gamification force us to align with the interests of the platform, and any activity going against those interests will be punished" (NEW MODELS, 2025). This intuition joins the concept of mediarchy developed by Yves Citton: media regimes do not only transmit content, they structure attentional conditions and power relations (CITTON, 2017). Generative AI would then be a new form of mediarchy where power is exercised through the preemption of the imaginable.
 
 The Newtonian era (Web 2.0) was founded on clear force vectors: the *like*, the share, the hyperlink. A physics of action and reaction, mechanical and predictable. Virality obeyed identifiable laws; polarization was a calculable effect.
 
@@ -340,11 +331,11 @@ Power no longer consists in saying what is true, but in rendering certain though
 
 LAION-5B contains more than 5.85 billion image-text pairs (SCHUHMANN et al., 2022)—several centuries of human photographic production, reduced to a few terabytes of neural weights. *The liquid archive* is not metaphorical: it is the effective dissolution of billions of singular images in a common statistical bath.
 
-Yet this bath degrades. Model Collapse describes what happens when models are trained on synthetic data generated by previous models. Shumailov et al. speak of "model autophagy disorder"—a disorder of autophagy by analogy with prion diseases (SHUMAILOV et al., 2023). Models need high-variance data to learn the real distribution of the world; yet they tend by nature to smooth this distribution, to privilege the most probable results. After only five to seven generations of recursive training, the model produces "degenerate" results—a total loss of semantic nuance. Seven iterations suffice to transform a model capable of producing the diversity of the world into a machine for generating the same.
+Yet this bath degrades. *Model Collapse* describes what happens when models are trained on synthetic data generated by previous models. Shumailov et al. speak of "model autophagy disorder"—a disorder of autophagy by analogy with prion diseases (SHUMAILOV et al., 2023). Models need high-variance data to learn the real distribution of the world; yet they tend by nature to smooth this distribution, to privilege the most probable results. After only five to seven generations of recursive training, the model produces "degenerate" results—a total loss of semantic nuance. Seven iterations suffice to transform a model capable of producing the diversity of the world into a machine for generating the same.
 
 The process operates in two stages. First, the model loses the "tails" of the distribution—rare, marginal data. Minority aesthetics cease to be generable. Then variance converges toward zero: the model produces only a single, repetitive form. The liquid freezes.
 
-This process has a visible aesthetic manifestation: Yellowing. Generated images tend toward a dominant yellow/amber tint, excessive saturation, hyper-contrasted lighting (HEIKKILA, 2023). The model, by mixing all colors to reach a consensual average, produces this muddy tint—like mixing all the paints on a palette yields brown. This yellowed and generic content has received a name: Slop—the visual spam of the AI era, the statistical hell of the "Mean."
+This process has a visible aesthetic manifestation: *Yellowing*. Generated images tend toward a dominant yellow/amber tint, excessive saturation, hyper-contrasted lighting (HEIKKILA, 2023). The model, by mixing all colors to reach a consensual average, produces this muddy tint—like mixing all the paints on a palette yields brown. This yellowed and generic content has received a name: Slop—the visual spam of the AI era, the statistical hell of the "Mean."
 
 Facing this physics of smoothing, friction becomes the only political lever. To reintroduce what the system eliminates: opacity (to claim, with Glissant, the right not to be understood by the machine), singularity (to seek the outliers that the model considers "noise"), gap (voluntary error, assumed ambiguity). Friction is no longer merely a method of resistance—it is the condition of possibility for a politics of the image in the era of statistical commons. Against yellowing, against the voiding of the middle, the prismatic dimension would allow decomposing the spectrum rather than melting it into amber mud.
 
