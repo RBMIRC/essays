@@ -268,7 +268,7 @@ These thoughts are not resources to plunder to enrich a Western methodology. The
 
 ### 3.1 Why Black Mountain College
 
-If retcon is a praxis of art with archives in the age of artificial intelligence, why exercise it on the archives of Black Mountain College? The answer is not only biographical—even if I have been working on this terrain for years, even if the haunting I spoke of at the beginning is quite real.
+If *retcon* is a praxis of art with archives in the age of artificial intelligence, why exercise it on the archives of Black Mountain College? The answer is not only biographical—even if I have been working on this terrain for years, even if the haunting I spoke of at the beginning is quite real.
 
 The answer lies in what Black Mountain College offers as terrain of experimentation for this condition. For BMC is not only a historical institution; it is an interrupted utopia—and interrupted utopias haunt differently than accomplished projects. What has ended can be evaluated, judged, classified; what was interrupted remains open, charged with all that could have come to pass and did not. Black Mountain College closed in 1957, for lack of money, undermined by internal conflicts, exhausted. But its closure did not close the possibilities it had opened—it suspended them.
 
@@ -276,7 +276,7 @@ What haunts, in the BMC archives, is not only what took place—the courses, the
 
 Ernst Bloch spoke of "utopian contents not yet conscious of themselves"—those aspirations buried in the cultural productions of the past, waiting to be reactivated. The BMC archives are saturated with these contents. Not because BMC was a paradise—it was not—but because it was a place where people took seriously the possibility of doing otherwise. This taking-seriously leaves traces, even when it fails. Especially when it fails.
 
-Retcon finds here its privileged object. It is not a matter of restoring BMC, mythifying it, or reproducing it—the context has changed too much, and any reproduction would be pastiche. It is a matter of reactivating the dreams deposited there, of making them work in a present that needs them. We live in an epoch where education is submitted to metrics, where art is captured by the market, where community is fragmented by platforms. The questions BMC posed—how to learn together? how to create without separating theory and practice? how to live in common without reproducing dominations?—have not been resolved; they have been abandoned. Retcon takes them up again, not to answer them but to keep them open.
+The methodology *Retcon* finds here its privileged object. It is not a matter of restoring BMC, mythifying it, or reproducing it—the context has changed too much, and any reproduction would be pastiche. It is a matter of reactivating the dreams deposited there, of making them work in a present that needs them. We live in an epoch where education is submitted to metrics, where art is captured by the market, where community is fragmented by platforms. The questions BMC posed—how to learn together? how to create without separating theory and practice? how to live in common without reproducing dominations?—have not been resolved; they have been abandoned. Retcon takes them up again, not to answer them but to keep them open.
 
 Black Mountain College is therefore less an object of study than a spectral partner. Its archives are not a corpus to process but a solidified dream in which to walk—to find there, perhaps, paths its inhabitants had not had time to trace.
 
