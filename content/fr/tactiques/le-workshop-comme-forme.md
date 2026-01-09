@@ -60,7 +60,7 @@ tags:
 
 ---
 
-## Qu'est-ce qu'un *workshop* ?
+## Qu'est-ce qu'un workshop ?
 
 La question semble triviale. Elle ne l'est pas.
 Le workshop est devenu, dans l'enseignement des arts, du design et de l'architecture, une forme tellement répandue qu'on ne l'interroge plus. On sait ce que c'est : une séquence intensive, limitée dans le temps, souvent hors des cadres institutionnels habituels, orientée vers la production collective d'un objet ou d'une situation. Mais cette description fonctionnelle ne dit rien de ce qui fait la spécificité du workshop comme forme pédagogique — c'est-à-dire comme dispositif qui produit certains effets de savoir impossibles à obtenir autrement.
@@ -93,21 +93,21 @@ Ce déplacement modifie les deux paramètres fondamentaux de l'enseignement : le
 
 ## Le *workshop* comme lieu de porosité
 
-Le *workshop* n'est pas une réponse réactionnaire — un repli vers un artisanat « pur » qui aurait existé avant le numérique. Cette pureté n'a jamais existé ; l'architecture a toujours été une affaire d'outils, de médiations, de dispositifs techniques. Le *workshop* est autre chose : un lieu et un temps de porosité — un espace où des logiques hétérogènes peuvent coexister, se frotter, se contaminer.
+Le workshop n'est pas une réponse réactionnaire — un repli vers un artisanat « pur » qui aurait existé avant le numérique. Cette pureté n'a jamais existé ; l'architecture a toujours été une affaire d'outils, de médiations, de dispositifs techniques. Le *workshop* est autre chose : un lieu et un temps de porosité — un espace où des logiques hétérogènes peuvent coexister, se frotter, se contaminer.
 
-D'un côté, le *workshop* recentre sur ce qui tend à s'effacer : le geste manuel, le dessin à la main, la maquette qu'on construit et qu'on casse, l'introspection des affects, les échanges en co-présence, la recherche historique dans les documents et les témoignages. Ce n'est pas de la nostalgie — c'est de la physique. Ces pratiques produisent des savoirs incorporés, des résistances, des frictions. Elles chauffent la pensée parce qu'elles obligent à traverser des difficultés qu'on ne peut pas contourner.
+D'un côté, le workshop recentre sur ce qui tend à s'effacer : le geste manuel, le dessin à la main, la maquette qu'on construit et qu'on casse, l'introspection des affects, les échanges en co-présence, la recherche historique dans les documents et les témoignages. Ce n'est pas de la nostalgie — c'est de la physique. Ces pratiques produisent des savoirs incorporés, des résistances, des frictions. Elles chauffent la pensée parce qu'elles obligent à traverser des difficultés qu'on ne peut pas contourner.
 
-De l'autre côté, le *workshop* accueille des technologies venues de l'extérieur — mais il les plie à d'autres usages. Les archives numérisées de Black Mountain College — dispersées entre plusieurs institutions, accessibles en ligne — constituent le corpus de travail. Milanote permet de diagrammer les idées, les références, les connexions — de rendre visible la structure d'une pensée collective en train de se faire. Les infrastructures en développement — *Dining Hall* pour distribuer les documents sur un réseau décentralisé, *Theodore* pour dialoguer avec le corpus — dessinent un horizon où l'accès aux archives ne dépendra plus de plateformes propriétaires.
+De l'autre côté, le workshop accueille des technologies venues de l'extérieur — mais il les plie à d'autres usages. Les archives numérisées de Black Mountain College — dispersées entre plusieurs institutions, accessibles en ligne — constituent le corpus de travail. Milanote permet de diagrammer les idées, les références, les connexions — de rendre visible la structure d'une pensée collective en train de se faire. Les infrastructures en développement — *Dining Hall* pour distribuer les documents sur un réseau décentralisé, *Theodore* pour dialoguer avec le corpus — dessinent un horizon où l'accès aux archives ne dépendra plus de plateformes propriétaires.
 
 Ces outils ne sont pas là pour accélérer. Ils sont là pour ouvrir — ouvrir l'accès à des archives dispersées, ouvrir la possibilité de connexions imprévues, ouvrir la documentation du travail commun pour qu'il puisse être repris, critiqué, transformé. Le numérique, ici, est au service d'une construction expérimentale, exploratoire, collective et manuelle. Il ne remplace pas la main ; il enrichit ce à quoi la main peut accéder.
 
 La différence tient à la position de l'outil dans le processus. Un outil qui produit à la place court-circuite l'apprentissage. Un outil qui rend accessible ce qui était inaccessible augmente l'espace du pensable. Un outil qui rend visible ce qui restait implicite relance la discussion. La valeur pédagogique n'est pas dans l'outil lui-même — elle est dans ce qu'il permet ou empêche de traverser.
 
-Le *workshop* institue cette porosité par sa forme même : temps contracté mais dense, espace partagé mais équipé, gestes manuels mais documentés. Il ne rejette pas le numérique ; il le subordonne à une construction collective dont le centre reste le corps, la main, la parole, la co-présence — et la chaleur qui naît quand on travaille ensemble sous pression.
+Le workshop institue cette porosité par sa forme même : temps contracté mais dense, espace partagé mais équipé, gestes manuels mais documentés. Il ne rejette pas le numérique ; il le subordonne à une construction collective dont le centre reste le corps, la main, la parole, la co-présence — et la chaleur qui naît quand on travaille ensemble sous pression.
 
 ---
 
-## Le *workshop* comme appareil de l'enseignant exposé
+## Le workshop comme appareil de l'enseignant exposé
 
 Ce texte s'articule avec une réflexion plus large sur la figure de ce que j'appelle l'enseignant.e exposé.e — l'artiste-chercheur.se qui enseigne en montrant son travail en cours, ses tâtonnements, ses reprises, ses impasses. Cette figure s'oppose point par point à celle du *maître* qui transmet un savoir achevé depuis une position de surplomb. L'enseignant.e exposé.e ne dit pas « voici ce que je sais » ; il.elle dit « voici comment je cherche ». Il.elle ne modélise pas la compétence ; il.elle exhibe le processus — avec ses ratés, ses bifurcations, ses moments d'incertitude.
 
