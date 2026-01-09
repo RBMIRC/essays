@@ -9,13 +9,13 @@ license: GPL-3.0-or-later
 provenance: "Workshop ENSP Arles 2024, avec Mabe Bethonico"
 tags:
   - liquid-archive
-  - prismatic-default
-  - statistical-commons
-  - generative-AI
+  - prismatic
+  - commons
+  - AI
   - photography
   - pedagogy
   - latent-space
-  - model-collapse
+  - _model-collapse
   - _Benjamin
   - _Barthes
   - _Sontag
@@ -33,13 +33,9 @@ tags:
   - _Yuk-Hui
   - _Haraway
   - _Barad
-  - _diffraction
   - _friction
-  - _entropy
   - _liquidity
   - _prism
-  - _statistical-unconscious
-  - _proletarianization
   - _cosmotechnics
   - _technodiversity
   - _Black-Mountain-College
@@ -54,7 +50,7 @@ tags:
 **Auteur :** Sylvain Couzinet-Jacques  
 **Date :** 2025  
 **Intention :** Analyser la transformation de l'image quand elle perd sa fonction documentaire face à l'IA générative  
-**Provenance :** Workshop ENSP Arles 2024, avec Mabe Bethonico  
+**Provenance :** Workshop ENSP Arles 2024, avec Mabe Bethônico  
 **Généalogie :** Benjamin (inconscient optique) → Barthes (punctum) → Flusser (appareil) → Bauman (modernité liquide) → Stiegler (prolétarisation)  
 **Éthique :** Diffraction · Friction · Opacité  
 **Licence :** GPL-3.0-or-later  
@@ -63,15 +59,17 @@ tags:
 **Confiance :** Observations d'atelier ancrées dans un cadre théorique  
 **Notes :** L'image ne témoigne plus de la distance ; elle rend « proximal » ce qui est statistiquement probable  
 
+*Cet article a été originellement rédigé en anglais avec l'assistance du LLM Mistral 7B.*
+
 </details>
 
-## Introduction : La crise de l'image comme crise politique
+## Introduction : La crise de l'image 
 
 ### Le point de départ : une expérience pédagogique
 
 Ce texte procède d'une expérience pédagogique — un atelier mené avec des étudiant.e.s en photographie confrontés pour la première fois dans le cadre de leur cursus aux outils d'intelligence artificielle générative. L'intention initiale était modeste : observer comment de jeunes praticien.ne.s — dont la formation traverse aussi bien les héritages documentaires que les pratiques plasticienne, performative ou post-internet — réagiraient face à des machines capables de produire des images sans référent. Des documents de Black Mountain College ont servi de trame à des conversations collectives, mais très peu de documents visuels ont servi de support pour le workshop.
 
-Ce qui s'est joué dans cet atelier dépasse largement le cadre d'une initiation technique. Il a fonctionné comme un révélateur, au sens photographique du terme : il a fait apparaître, dans l'espace clos d'une salle de classe, les mêmes symptômes que l'on observe à l'échelle de la culture visuelle contemporaine. Une perte de repères politiques et intentionnels. Une liquéfaction des enjeux du document et de sa valeur sociale. Un repli sur les formes connues — esthétiques, communicationnelles, engagées — non pas comme affirmation mais comme refuge.
+Ce qui s'est joué dans cet atelier dépasse largement le cadre d'une initiation technique. Il a fonctionné comme un révélateur, au sens photographique du terme : il a fait apparaître, dans l'espace clos d'une salle de classe, les mêmes symptômes que l'on observe à l'échelle de la culture visuelle contemporaine. Une perte de repères politiques et intentionnels. Une liquéfaction des enjeux du document et de sa valeur sociale. Un repli sur les formes connues — esthétiques, communicationnelles, engagées — non pas comme affirmation mais comme refuge. Je note cela sans prétendre à l'objectivité : l'observation est contingente, et je suis moi-même impliqué dans le dispositif qui l'a produite.
 
 ### La question qui organise ce texte
 
@@ -204,7 +202,7 @@ Au début des années 2010, James Bridle a cristallisé sous le terme de *New Ae
 
 La New Aesthetic cherchait à rendre visible l'infrastructure invisible. Elle donnait forme sensible aux flux de données, aux protocoles de surveillance, aux algorithmes de compression. Les carrés verts grossiers de Google Earth, censés représenter des champs agricoles mais trahissant la basse résolution du capteur, devenaient des objets esthétiques révélant la médiation technique de notre rapport au territoire.
 
-Cette observation rejoignait les travaux de Harun Farocki sur les images opérationnelles (FAROCKI, 2004) et ceux de Trevor Paglen sur la "vision machine" : des images faites par des machines pour des machines, qui n'ont plus besoin de l'œil humain pour fonctionner (PAGLEN, 2016). Images de drones, de systèmes de reconnaissance faciale, de satellites — un régime visuel où l'humain devient spectateur accidentel d'un dialogue entre appareils.
+Cette observation rejoignait les travaux de Harun Farocki sur les *images opérationnelles* (FAROCKI, 2004) et ceux de Trevor Paglen sur la "vision machine" : des images faites par des machines pour des machines, qui n'ont plus besoin de l'œil humain pour fonctionner (PAGLEN, 2016). Images de drones, de systèmes de reconnaissance faciale, de satellites — un régime visuel où l'humain devient spectateur accidentel d'un dialogue entre appareils.
 
 Dans une perspective complémentaire, Gwenola Wagon et Stéphane Degoutin ont documenté dans *World Brain* (2015) et *Globodrome* (2013) la matérialité des infrastructures numériques : data centers, câbles sous-marins, zones logistiques. Leur archéologie visuelle du *cloud* fait le lien entre la New Aesthetic et la *Geology of Media* de Parikka — le numérique n'est pas immatériel, il a des adresses physiques et des coûts écologiques.
 
@@ -222,19 +220,19 @@ L'esthétique de l'IA actuelle ne se définit plus par le pixel visible ou l'art
 
 ### 4. L'Aesthetics Wiki et la prolifération catégorielle
 
-Un phénomène parallèle mérite d'être interrogé : l'émergence de l'*Aesthetics Wiki*, encyclopédie communautaire recensant plus de mille « esthétiques » identifiées et nommées — Cottagecore, Dark Academia, Weirdcore, Liminal Space, Frutiger Aero (AESTHETICS WIKI, 2024). Ce wiki peut être lu comme une subdivision tardive de la New Aesthetic, ou comme sa réaction compensatoire.
+Un phénomène parallèle mérite d'être interrogé : l'émergence de l'*Aesthetics Wiki*, encyclopédie communautaire recensant plus de mille « esthétiques » identifiées et nommées — *Cottagecore, Dark Academia, Weirdcore, Liminal Space, Frutiger Aero* (AESTHETICS WIKI, 2024). Ce wiki peut être lu comme une subdivision tardive de la *New Aesthetic*, ou comme sa réaction compensatoire.
 
-D'un côté, le wiki prolonge le geste de Bridle : collecter, nommer, rendre visible. Mais là où la New Aesthetic cherchait à identifier les traces de la machine dans le monde physique, l'Aesthetics Wiki cartographie les styles vernaculaires nés des plateformes — des esthétiques qui n'existent souvent que comme flux d'images tagguées, sans auteurs identifiables, sans œuvres canoniques.
+D'un côté, le wiki prolonge le geste de Bridle : collecter, nommer, rendre visible. Mais là où la *New Aesthetic* cherchait à identifier les traces de la machine dans le monde physique, l'Aesthetics Wiki cartographie les styles vernaculaires nés des plateformes — des esthétiques qui n'existent souvent que comme flux d'images tagguées, sans auteurs identifiables, sans œuvres canoniques.
 
 De l'autre côté, le wiki représente une tentative de résistance taxinomique face à la fluidité post-catégorielle de l'espace latent. Il est discret là où le latent est continu, hyper-catégoriel là où le latent est mathématique, narratif là où le latent est vectoriel. Le wiki a d'ailleurs banni le contenu généré par IA dans ses règles communautaires, affirmant que l'IA ne possède pas la « compréhension culturelle » nécessaire (AESTHETICS WIKI, « AI Policy », 2024) — un geste politique de démarcation entre la création humaine intentionnelle et la synthèse probabiliste.
 
-Mais il y a plus. Ces catégorisations — Cottagecore, Vaporwave, Liminal Space — sont des tentatives de nommer des brins idéologiques d'effets pré-IA. Elles fixent rétrospectivement des tendances visuelles qui ont émergé avant que l'IA générative ne les dissolve dans l'espace latent. Ce sont des *fossiles taxinomiques* : des traces de ce que l'imaginaire collectif produisait quand il n'était pas encore capturé par les modèles. En ce sens, l'Aesthetics Wiki est moins un outil de création qu'un monument funéraire — une archive de ce qui pouvait encore être nommé.
+Mais il y a plus. Ces catégorisations — *Cottagecore, Vaporwave, Liminal Space* — sont des tentatives de nommer des brins idéologiques d'effets pré-IA. Elles fixent rétrospectivement des tendances visuelles qui ont émergé avant que l'IA générative ne les dissolve dans l'espace latent. Ce sont des *fossiles taxinomiques* : des traces de ce que l'imaginaire collectif produisait quand il n'était pas encore capturé par les modèles. En ce sens, l'Aesthetics Wiki est moins un outil de création qu'un monument funéraire — une archive de ce qui pouvait encore être nommé.
 
 Cette tension entre prolifération catégorielle et dissolution latente traverse l'ensemble de la culture visuelle contemporaine. Elle pose une question que ce texte ne prétend pas résoudre : qui pense l'esthétique en 2025 ? Quels sont les lieux, les collectifs, les méthodes qui permettent encore de produire des concepts pour ce qui nous arrive visuellement ? La théorie critique classique (Adorno, Benjamin) a été conçue pour d'autres régimes d'images. Les *cultural studies* et les *visual studies* peinent à suivre la vélocité des mutations. Les plateformes elles-mêmes génèrent leur propre métalangage vernaculaire (*vibe, aesthetic, core*), mais sans appareil critique. La question reste ouverte — et son urgence croît avec chaque nouvelle version des modèles.
 
 ### 5. Le nouvel âge sombre
 
-James Bridle lui-même a anticipé cette évolution dans New Dark Age. « Le volume même d'information disponible aujourd'hui révèle moins que nous ne l'espérons. Il annonce plutôt un nouvel Âge Sombre : un monde d'incompréhension toujours croissante » (BRIDLE, 2018, p. 3, ma traduction). Le fossé grandissant entre la complexité des systèmes que nous construisons et notre capacité cognitive à les comprendre définit notre condition contemporaine. L'opacité des réseaux de neurones profonds introduit une « nouvelle esthétique de la politique ». La question n'est plus de voir les pixels — de toute façon lissés par *l'upscaling neuronal* — mais de comprendre les vecteurs invisibles, les biais latents, les architectures de probabilité qui régissent la génération de notre réalité commune.
+James Bridle lui-même a anticipé cette évolution dans *New Dark Age*. « Le volume même d'information disponible aujourd'hui révèle moins que nous ne l'espérons. Il annonce plutôt un nouvel Âge Sombre : un monde d'incompréhension toujours croissante » (BRIDLE, 2018, p. 3, ma traduction). Le fossé grandissant entre la complexité des systèmes que nous construisons et notre capacité cognitive à les comprendre définit notre condition contemporaine. L'opacité des réseaux de neurones profonds introduit une « nouvelle esthétique de la politique ». La question n'est plus de voir les pixels — de toute façon lissés par *l'upscaling neuronal* — mais de comprendre les vecteurs invisibles, les biais latents, les architectures de probabilité qui régissent la génération de notre réalité commune.
 
 > **Premier retour du motif : la liquidité.** L'archive n'est plus une collection d'objets visibles sur un Tumblr. Elle est devenue un espace latent invisible et multidimensionnel — un flux sans points d'ancrage.
 
@@ -274,7 +272,7 @@ Sans gouvernance, sans ajustement prismatique, l'espace latent tend vers l'unifo
 
 ### 1. Le Nooscope : l'instrument de la réduction ontologique
 
-Matteo Pasquinelli et Vladan Joler proposent le concept de Nooscope pour briser le mythe de l'IA comme entité autonome. Ils décrivent l'IA non comme une intelligence autonome, mais comme un « instrument d'amplification de la connaissance » qui transforme des masses de données en modèles statistiques de perception (PASQUINELLI et JOLER, 2021, p. 1264, ma traduction). Le Nooscope vise à « séculariser l'IA de son statut idéologique de "machine intelligente" vers celui d'instrument de connaissance » (PASQUINELLI et JOLER, 2021, p. 1265, ma traduction). Le Nooscope n'est pas un télescope qui étendrait la vision ; c'est un instrument de diffraction qui révèle que l'IA ne « pense » pas — elle automatise la perception.
+Matteo Pasquinelli et Vladan Joler proposent le concept de *Nooscope* pour briser le mythe de l'IA comme entité autonome. Ils décrivent l'IA non comme une intelligence autonome, mais comme un « instrument d'amplification de la connaissance » qui transforme des masses de données en modèles statistiques de perception (PASQUINELLI et JOLER, 2021, p. 1264, ma traduction). Le Nooscope vise à « séculariser l'IA de son statut idéologique de "machine intelligente" vers celui d'instrument de connaissance » (PASQUINELLI et JOLER, 2021, p. 1265, ma traduction). Le Nooscope n'est pas un télescope qui étendrait la vision ; c'est un instrument de diffraction qui révèle que l'IA ne « pense » pas — elle automatise la perception.
 
 Le mécanisme est celui d'une compression de la connaissance. L'algorithme ne « voit » pas une image ; il détecte des distributions statistiques de pixels — bords, textures, contrastes. Il codifie une tâche cognitive humaine (reconnaître une forme, interpréter un contexte) pour la transformer en opération statistique. Ce faisant, il opère ce qu'on pourrait appeler un épistémicide discret : en transformant la perception qualitative — le sens, l'histoire, l'ironie, l'ambiguïté sociale — en distributions quantitatives, le prisme algorithmique élimine tout ce qui résiste à la quantification.
 
@@ -290,9 +288,9 @@ L'atlas se poursuit par l'énergie. Les data centers qui hébergent les modèles
 
 L'atlas se termine par le travail. Crawford rejoint ici Gray et Suri, mais élargit le cadre. Le « travail fantôme » n'est pas seulement celui des annotateurs et des modérateurs ; c'est l'ensemble du travail humain qui entre dans les datasets sans consentement ni compensation. Chaque photographe dont les images ont été scrapées pour LAION-5B, chaque artiste dont le style a été vectorisé sans permission, chaque utilisateur dont les requêtes servent à l'entraînement par renforcement — tous participent à ce que Crawford nomme l'extractivisme épistémique : l'appropriation systématique du savoir-faire et du savoir-voir au profit d'infrastructures privées.
 
-Hito Steyerl, artiste et théoricienne, prolonge cette analyse depuis la pratique. Dans Duty Free Art, elle observe que la valeur de l'image numérique ne réside plus dans son contenu mais dans sa circulation — ce qu'elle nomme le « circulationnisme » (STEYERL, 2017, p. 47). L'image n'a pas besoin d'être vraie, belle ou significative ; elle doit circuler, générer de l'engagement, alimenter les algorithmes de recommandation. Dans son dernier ouvrage, Medium Hot: Images in the Age of Heat, Steyerl radicalise ce diagnostic en introduisant le concept d'« image dérivée » (derivative image) : comme les produits financiers dérivés, les images générées par IA sont des moyennes statistiques extraites de vastes datasets, des « rêves sociaux sans sommeil » qui reflètent ce à quoi la société prête attention — et rien d'autre (STEYERL, 2025). Le Slop — ce spam visuel jauni et générique — est le produit logique de cette économie : une image optimisée pour la circulation, vidée de toute friction sémantique, parfaitement adaptée au flux.
+Hito Steyerl, artiste et théoricienne, prolonge cette analyse depuis la pratique. Dans *Duty Free Art*, elle observe que la valeur de l'image numérique ne réside plus dans son contenu mais dans sa circulation — ce qu'elle nomme le « circulationnisme » (STEYERL, 2017, p. 47). L'image n'a pas besoin d'être vraie, belle ou significative ; elle doit circuler, générer de l'engagement, alimenter les algorithmes de recommandation. Dans son dernier ouvrage, *Medium Hot: Images in the Age of Heat*, Steyerl radicalise ce diagnostic en introduisant le concept d'« image dérivée » (derivative image) : comme les produits financiers dérivés, les images générées par IA sont des moyennes statistiques extraites de vastes datasets, des « rêves sociaux sans sommeil » qui reflètent ce à quoi la société prête attention — et rien d'autre (STEYERL, 2025). Le Slop — ce spam visuel jauni et générique — est le produit logique de cette économie : une image optimisée pour la circulation, vidée de toute friction sémantique, parfaitement adaptée au flux.
 
-Cette économie de l'image a une géographie. Safiya Umoja Noble, dans Algorithms of Oppression, montre que les biais des systèmes de recherche d'images ne sont pas des accidents techniques mais des structures de pouvoir (NOBLE, 2018). Les requêtes sur « beautiful woman » renvoient massivement des images de femmes blanches ; les requêtes sur « professional » excluent systématiquement certains corps. Ces biais sont encodés dans les datasets — qui surreprésentent les contenus occidentaux, anglophones, masculins — et amplifiés par les modèles qui apprennent à reproduire les distributions majoritaires. Le « jaunissement » que nous avons décrit n'est qu'un symptôme parmi d'autres d'un système qui converge vers des moyennes culturellement situées mais présentées comme universelles.
+Cette économie de l'image a une géographie. Safiya Umoja Noble, dans *Algorithms of Oppression*, montre que les biais des systèmes de recherche d'images ne sont pas des accidents techniques mais des structures de pouvoir (NOBLE, 2018). Les requêtes sur « beautiful woman » renvoient massivement des images de femmes blanches ; les requêtes sur « professional » excluent systématiquement certains corps. Ces biais sont encodés dans les datasets — qui surreprésentent les contenus occidentaux, anglophones, masculins — et amplifiés par les modèles qui apprennent à reproduire les distributions majoritaires. Le « jaunissement » que nous avons décrit n'est qu'un symptôme parmi d'autres d'un système qui converge vers des moyennes culturellement situées mais présentées comme universelles.
 Le commun statistique existe — c'est un fait technique et juridique. Comme l'a montré le phénomène des licences GPL dans les LLM, le traitement statistique transforme effectivement la propriété privée en ressource collective : le code copyleft, une fois ingéré et redistribué par le modèle, « contamine » statistiquement l'ensemble des outputs. C'est l'effet viral des licences libres étendu à l'ère du machine learning. En ce sens, le commun statistique est potentiellement émancipateur — il défait les enclosures de la propriété intellectuelle par le fait même du calcul.
 
 Mais ce que Crawford, Steyerl et Noble cartographient, ce sont les conditions de production de ce commun — et celles-ci relèvent bien d'une accumulation primitive. Kate Crawford définit l'IA comme une « technologie d'extraction : des minerais tirés de la terre, du travail prélevé sur des travailleurs sous-payés, des données captées sur chaque action et expression » (CRAWFORD, 2021, p. 15, ma traduction). Son projet Calculating Empires, réalisé avec Vladan Joler et récompensé par le Lion d'Argent à la Biennale d'architecture de Venise 2025, cartographie cette généalogie extractive sur cinq siècles — montrant que l'IA n'est pas une rupture mais l'intensification d'un régime colonial de longue durée. Les ressources terrestres, le travail humain, les œuvres protégées, les données comportementales — tout est aspiré dans une logique extractive qui précède et rend possible la mise en commun statistique. Ce qui est présenté comme « intelligence » est le produit d'une chaîne d'appropriations dont les coûts sont externalisés vers les périphéries : les pays du Sud qui fournissent les minerais et le micro-travail, les communautés qui subissent les pollutions, les créateurs dont les œuvres sont pillées, les utilisateurs dont l'attention est captée.
@@ -310,7 +308,7 @@ Le colonialisme cognitif ne porte plus seulement sur les corps ou les matières 
 
 ### 4. De la gravitation à l'holographie : la Platform Physics
 
-Le concept de platform physics, développé par le collectif New Models (Caroline Busta et Lil Internet), permet de comprendre que l'environnement numérique n'est pas un espace vide, mais un champ de forces. Lil Internet définit ces « physiques de plateforme » comme « les affordances, limitations et lois qui gouvernent la traction, la vitesse, la visibilité et même la permanence d'une idée ou d'un contenu » (NEW MODELS, 2025, ma traduction). Chaque plateforme possède un ensemble de lois codées en dur — algorithmes de tri, limitations d'interface, systèmes de récompense — qui déterminent le comportement des utilisateurs et la morphologie du contenu, comme la gravité détermine le mouvement des corps. Caroline Busta précise que « la physique des plateformes et la gamification nous obligent à nous aligner sur les intérêts de la plateforme, et toute activité allant à l'encontre de ces intérêts sera punie » (NEW MODELS, 2025, ma traduction). Cette intuition rejoint le concept de médiarchie développé par Yves Citton : les régimes médiatiques ne transmettent pas seulement des contenus, ils structurent les conditions attentionnelles et les rapports de pouvoir (CITTON, 2017). L'IA générative serait alors une nouvelle forme de médiarchie où le pouvoir s'exerce par la préemption de l'imaginable.
+Le concept de *platform physics*, développé par le collectif New Models (Caroline Busta et Lil Internet), permet de comprendre que l'environnement numérique n'est pas un espace vide, mais un champ de forces. Lil Internet définit ces « physiques de plateforme » comme « les affordances, limitations et lois qui gouvernent la traction, la vitesse, la visibilité et même la permanence d'une idée ou d'un contenu » (NEW MODELS, 2025, ma traduction). Chaque plateforme possède un ensemble de lois codées en dur — algorithmes de tri, limitations d'interface, systèmes de récompense — qui déterminent le comportement des utilisateurs et la morphologie du contenu, comme la gravité détermine le mouvement des corps. Caroline Busta précise que « la physique des plateformes et la gamification nous obligent à nous aligner sur les intérêts de la plateforme, et toute activité allant à l'encontre de ces intérêts sera punie » (NEW MODELS, 2025, ma traduction). Cette intuition rejoint le concept de médiarchie développé par Yves Citton : les régimes médiatiques ne transmettent pas seulement des contenus, ils structurent les conditions attentionnelles et les rapports de pouvoir (CITTON, 2017). L'IA générative serait alors une nouvelle forme de médiarchie où le pouvoir s'exerce par la préemption de l'imaginable.
 
 L'ère newtonienne (Web 2.0) était fondée sur des vecteurs de force clairs : le *like*, le partage, le lien hypertexte. Une physique de l'action et de la réaction, mécanique et prévisible. La viralité obéissait à des lois identifiables ; la polarisation était un effet calculable.
 
@@ -336,7 +334,7 @@ LAION-5B contient plus de 5,85 milliards de paires image-texte (SCHUHMANN et al.
 Or ce bain se dégrade. Le Model Collapse décrit ce qui se passe lorsque les modèles sont entraînés sur des données synthétiques générées par des modèles précédents. Shumailov et al. parlent de « model autophagy disorder » — un désordre d'autophagie par analogie avec les maladies à prions (SHUMAILOV et al., 2023). Les modèles ont besoin de données à haute variance pour apprendre la distribution réelle du monde ; or ils tendent par nature à lisser cette distribution, à privilégier les résultats les plus probables. Après seulement cinq à sept générations d'entraînement récursif, le modèle produit des résultats « dégénérés » — une perte totale de nuance sémantique. Sept itérations suffisent pour transformer un modèle capable de produire la diversité du monde en une machine à générer du même.
 Le processus opère en deux temps. D'abord, le modèle perd les « queues » de la distribution — les données rares, marginales. Les esthétiques minoritaires cessent d'être générables. Puis la variance converge vers zéro : le modèle ne produit plus qu'une seule forme, répétitive. Le liquide se fige.
 
-Ce processus a une manifestation esthétique visible : le Yellowing. Les images générées tendent vers une teinte dominante jaune/ambre, une saturation excessive, un éclairage hyper-contrasté (HEIKKILA, 2023). Le modèle, en mélangeant toutes les couleurs pour atteindre une moyenne consensuelle, produit cette teinte boueuse — comme mélanger toutes les peintures d'une palette donne du marron. Ce contenu jauni et générique a reçu un nom : le Slop — le spam visuel de l'ère de l'IA, l'enfer statistique du « Moyen ».
+Ce processus a une manifestation esthétique visible : le *Yellowing*. Les images générées tendent vers une teinte dominante jaune/ambre, une saturation excessive, un éclairage hyper-contrasté (HEIKKILA, 2023). Le modèle, en mélangeant toutes les couleurs pour atteindre une moyenne consensuelle, produit cette teinte boueuse — comme mélanger toutes les peintures d'une palette donne du marron. Ce contenu jauni et générique a reçu un nom : le Slop — le spam visuel de l'ère de l'IA, l'enfer statistique du « Moyen ».
 
 Face à cette physique du lissage, la friction devient l'unique levier politique. Réintroduire ce que le système élimine : de l'opacité (revendiquer, avec Glissant, le droit de ne pas être compris par la machine), de la singularité (chercher les outliers que le modèle considère comme « bruit »), de l'écart (l'erreur volontaire, l'ambiguïté assumée). La friction n'est plus seulement une méthode de résistance — elle est la condition de possibilité d'une politique de l'image à l'ère des communs statistiques. Contre le jaunissement, contre le vidage du milieu, la dimension prismatique permettrait de décomposer le spectre plutôt que de le fondre en boue ambrée.
 
@@ -346,7 +344,7 @@ Face à cette physique du lissage, la friction devient l'unique levier politique
 
 ### 1. Le dispositif 
 
-L'atelier s'est déroulé dans une école de photographie, avec des étudiant.e.s formées à l'indexicalité de l'image. Mais le dispositif ne se limitait pas à une initiation technique aux outils génératifs. Il s'ancrait dans une démarche de continuité rétroactive — le *retcon*, terme emprunté à la culture populaire (comic books, séries télévisées) où il désigne la réécriture a posteriori d'une continuité narrative.
+L'atelier s'est déroulé dans une école de photographie, avec des étudiant.e.s formées à l'indexicalité de l'image. Mais le dispositif ne se limitait pas à une initiation technique aux outils génératifs. Il s'ancrait dans une démarche de continuité rétroactive — le *retcon*, terme emprunté à la culture populaire (*comic books*, séries télévisées) où il désigne la réécriture a posteriori d'une continuité narrative.
 
 Le choix de Midjourney n'était pas innocent. Il répondait à trois critères : une référence technologique (au moment de l'atelier, Midjourney représentait l'état de l'art accessible en génération d'images), une contrainte pragmatique (le serveur distant via Discord évitait les aléas des installations locales et garantissait une expérience homogène), et une valeur symptomatique (Midjourney incarne un certain *zeitgeist* — son esthétique saturée, sa facilité d'usage, sa viralité en font l'image même de ce que l'IA générative produit comme imaginaire dominant). L'outil n'était pas adopté avec enthousiasme mais observé de manière critique — comme on dissèque un spécimen pour comprendre l'écosystème qui l'a produit.
 
@@ -364,7 +362,7 @@ Le cadre du roman graphique n'a pas été investi par les étudiant.e.s, et l'in
 
 ### 3. L'effondrement du foyer utopique
 
-Le point de basculement le plus révélateur de l'atelier réside dans la réception du récit du BMC par les étudiant.e.s. Le concept de  "foyer utopique" — ce lieu de vie et de création totale, où l'enseignement et l'existence se confondaient — n'a pas opéré comme moteur d'imaginaire. Il a été reçu avec une forme de perplexité polie, voire de suspicion.
+Le point de basculement le plus révélateur de l'atelier réside dans la réception du récit du BMC par les étudiant.e.s. Le concept de  "foyer utopique" — ce lieu de vie et de création totale, où l'enseignement et l'existence se confondaient — n'a pas opéré comme moteur d'imaginaire. Il a été reçu avec une forme de perplexité polie, voire de suspicion à certains endroits.
 
 Pour une génération confrontée au « vidage du milieu » (*Voiding of the Mid*), l'utopie du BMC semble inaudible. La liquidité de l'IA, en rendant tout « possible » et « immédiat », dissout la notion même d'utopie — qui requiert une projection dans un futur construit par l'effort, la décision collective, le temps long. L'utopie suppose un écart entre le réel et le souhaitable ; l'espace latent, lui, ne connaît que des variations autour d'une moyenne. Quand tout est également probable, rien n'est véritablement désirable.
 
@@ -400,7 +398,7 @@ Dans le cas du BMC, cette désincarnation était d'autant plus problématique qu
 
 ### 6. L'échec du glitch : l'accident neutralisé
 
-Face à cette liquidité, certaines étudiant.e.s ont tenté une stratégie de résistance : « hacker » l'IA pour retrouver de l'accident, du bruit, de l'imprévu. Le glitch — cette erreur visuelle qui trahit la machine — a longtemps fonctionné comme preuve d'humanité par défaut : là où la machine échoue, l'humain peut s'engouffrer.
+Face à cette liquidité, certaines étudiant.e.s ont tenté une stratégie de résistance : « hacker » l'IA pour retrouver de l'accident, du bruit, de l'imprévu. Le *glitch* — cette erreur visuelle qui trahit la machine — a longtemps fonctionné comme preuve d'humanité par défaut : là où la machine échoue, l'humain peut s'engouffrer.
 
 Mais cette stratégie s'est révélée impraticable. Les modèles génératifs actuels sont précisément optimisés pour éliminer le glitch. Le lissage, l'hyper-résolution, la cohérence sémantique : tout le travail d'ingénierie vise à effacer les traces de la machine. Le glitch, quand il survient (mains à six doigts, textes illisibles), n'est pas une ouverture créative — c'est un bug que la prochaine version du modèle corrigera.
 
@@ -447,7 +445,7 @@ Reconnaître ces trois dimensions, c'est refuser deux naïvetés symétriques : 
 
 ### 3. Le droit à l'opacité ###
 
-Édouard Glissant offre un concept décisif pour penser la résistance. Dans Poétique de la relation, il écrit : « Consentir à l'opacité de l'Autre, c'est déjà l'aimer. » La transparence est une exigence occidentale de réduction de l'Autre à une clarté compréhensible, maîtrisable, assimilable. Contre cette volonté de tout rendre lisible, Glissant revendiquait le droit d'être opaque — de ne pas être entièrement compris, traduit, vectorisé (GLISSANT, 1990).
+Édouard Glissant offre un concept décisif pour penser la résistance. Dans *Poétique de la relation*, il écrit : « Consentir à l'opacité de l'Autre, c'est déjà l'aimer. » La transparence est une exigence occidentale de réduction de l'Autre à une clarté compréhensible, maîtrisable, assimilable. Contre cette volonté de tout rendre lisible, Glissant revendiquait le droit d'être opaque — de ne pas être entièrement compris, traduit, vectorisé (GLISSANT, 1990).
 
 Appliqué à l'IA générative, ce concept devient stratégie de résistance. Contre la volonté du modèle de tout vectoriser, on peut revendiquer le droit d'être illisible pour l'algorithme. Cette résistance dispose aujourd'hui d'outils concrets. Des chercheurs ont développé Glaze et Nightshade — des systèmes qui appliquent une couche de bruit invisible à l'image, imperceptible pour l'œil humain mais qui perturbe l'apprentissage de l'IA. L'artiste peut ainsi « empoisonner » ses propres données, empêchant le modèle de copier son style.
 
@@ -459,14 +457,14 @@ Cela passe aussi par des gestes moins techniques : *prompts* qui visent les bord
 
 Imaginer une pédagogie de l'image en 2025 exige de ne plus enseigner l'IA comme un simple « outil de création de plus », mais comme un nouveau régime de vérité et de gouvernementalité. L'enjeu se déplace : il ne s'agit plus seulement d'apprendre à faire des images, mais de comprendre comment elles nous font.
 
-John Dewey, dans Democracy and Education (1916), développe une conception de l'éducation comme reconstruction continue de l'expérience. Apprendre, ce n'est pas recevoir passivement un savoir constitué ; c'est s'engager dans une enquête qui transforme simultanément le sujet et son environnement. La confrontation avec l'IA générative doit être l'occasion d'une telle enquête — sur l'outil, le dataset, les biais, les effets sociaux, et la transformation du sujet qui s'y engage.
+John Dewey dans *Democracy and Education*, développe en 1916 une conception de l'éducation comme reconstruction continue de l'expérience. Apprendre, ce n'est pas recevoir passivement un savoir constitué ; c'est s'engager dans une enquête qui transforme simultanément le sujet et son environnement. La confrontation avec l'IA générative doit être l'occasion d'une telle enquête — sur l'outil, le dataset, les biais, les effets sociaux, et la transformation du sujet qui s'y engage.
 
-Paulo Freire, dans Pédagogie des opprimés (1968), nomme conscientisation le passage d'une conscience naïve — qui subit le monde comme donné naturel — à une conscience critique qui perçoit les structures d'oppression. Appliquée à l'IA, la conscientisation exige de passer d'un usage naïf — où l'on « prompte » sans interroger la boîte noire — à une conscience des conditions de production de l'image. Qui a collecté les données ? Quels travailleurs invisibles ont annoté les images ? Quels biais sont encodés dans l'espace latent ?
-Jacques Rancière, dans Le Maître ignorant (1987), radicalise la question. L'émancipation intellectuelle suppose un postulat d'égalité des intelligences : l'élève n'est pas un incapable à qui le maître transmettrait un savoir, mais un égal qui peut apprendre par lui-même. Le prompt, tel qu'il est généralement enseigné, n'est pas émancipateur : il maintient l'opacité de la boîte noire. L'émancipation supposerait de saisir la logique du modèle, ses limites, ses biais — de comprendre que l'on ne crée pas une image ex nihilo, mais que l'on actualise une coordonnée statistique dans un espace de probabilités.
+Paulo Freire en 1968, dans *Pédagogie des opprimés*, nomme conscientisation le passage d'une conscience naïve — qui subit le monde comme donné naturel — à une conscience critique qui perçoit les structures d'oppression. Appliquée à l'IA, la conscientisation exige de passer d'un usage naïf — où l'on « prompte » sans interroger la boîte noire — à une conscience des conditions de production de l'image. Qui a collecté les données ? Quels travailleurs invisibles ont annoté les images ? Quels biais sont encodés dans l'espace latent ?
+Jacques Rancière, dans Le *Maître ignorant* (1987), radicalise la question. L'émancipation intellectuelle suppose un postulat d'égalité des intelligences : l'élève n'est pas un incapable à qui le maître transmettrait un savoir, mais un égal qui peut apprendre par lui-même. Le prompt, tel qu'il est généralement enseigné, n'est pas émancipateur : il maintient l'opacité de la boîte noire. L'émancipation supposerait de saisir la logique du modèle, ses limites, ses biais — de comprendre que l'on ne crée pas une image ex nihilo, mais que l'on actualise une coordonnée statistique dans un espace de probabilités.
 
 ### 2. Culture technique et pharmacologie ###
 
-Gilbert Simondon, dans Du mode d'existence des objets techniques (1958), diagnostique une « aliénation technique » de la culture contemporaine. La machine est perçue soit comme esclave utile, soit comme menace — jamais comme réalité ayant son propre mode d'existence. Cette méconnaissance produit une minorité technique : nous utilisons des machines sans comprendre leur genèse ni leur fonctionnement.
+Gilbert Simondon, dans *Du mode d'existence des objets techniques* (1958), diagnostique une « aliénation technique » de la culture contemporaine. La machine est perçue soit comme esclave utile, soit comme menace — jamais comme réalité ayant son propre mode d'existence. Cette méconnaissance produit une minorité technique : nous utilisons des machines sans comprendre leur genèse ni leur fonctionnement.
 
 Pour l'IA générative, l'aliénation se manifeste dans le discours magique : « intelligence » artificielle, « créativité » de la machine, « hallucinations » du modèle. Ces métaphores anthropomorphiques occultent la réalité technique : des opérations statistiques sur des distributions de probabilités. La culture technique consisterait à dissiper cette magie — non pour désenchanter le monde, mais pour rendre possible une relation adulte avec l'outil.
 
@@ -478,7 +476,7 @@ Yuk Hui, dans ses travaux sur la technodiversité, critique l'uniformisation tec
 
 La technodiversité consisterait à développer des modèles situés — entraînés sur des archives locales, reflétant des esthétiques spécifiques, gouvernés par des communautés particulières. Un collectif de photographes qui entraîne un modèle sur ses propres archives, avec ses propres annotations, produit une cosmotechnique locale — une manière de faire des images qui résiste à l'uniformisation de l'espace latent globalisé.
 
-Ivan Illich, dans La Convivialité (1973), distingue les outils conviviaux — qui augmentent l'autonomie de l'utilisateur — des outils manipulatoires — qui créent de la dépendance et confisquent les savoirs. L'IA générative, dans son état actuel, est largement manipulatoire. Une pédagogie illichienne viserait à identifier les conditions d'une IA conviviale : transparente, appropriable, gouvernable par ses utilisateurs.
+Ivan Illich, dans *La Convivialité* (1973), distingue les outils conviviaux — qui augmentent l'autonomie de l'utilisateur — des outils manipulatoires — qui créent de la dépendance et confisquent les savoirs. L'IA générative, dans son état actuel, est largement manipulatoire. Une pédagogie illichienne viserait à identifier les conditions d'une IA conviviale : transparente, appropriable, gouvernable par ses utilisateurs.
 
 ### 4. Méthodes et postures ###
 
