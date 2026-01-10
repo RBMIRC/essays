@@ -8,13 +8,16 @@ lang: en
 license: GPL-3.0-or-later
 provenance: "Research-creation methodology / Retcon Black Mountain"
 tags:
-  - differential-automation
-  - statistical-commons
-  - negentropic-obligation
-  - assuming-technics
-  - collective-practice
-  - cosmotechnics
-  - research-creation
+  - retcon
+  - common
+  - black-mountain
+  - AI
+  - collective
+  - art
+  - research
+  - creation
+  - theory
+  - technology
 ---
 
 
@@ -25,7 +28,7 @@ by Sylvain Couzinet-Jacques
 
 ## Abstract
 
-The retcon—a term borrowed from serialized fiction to name a practice of working with technics toward the reactivation of historical materials—is framed not as urgent response but as a general operation for assuming technology as material for narrative creation. Urgency, where it exists, is contingent on material circumstances rather than intrinsic to the method. Black Mountain College, the renowned American experimental school, serves as a support for contemporary narratives and a reflection on possible tactics for re-enchanting the world we inhabit. Artificial intelligence, in its broadest sense, is placed at the center of this experiment—both to rethink the institution's archives and to distribute an aesthetic collective practice. Through analysis of negentropic obligation, cosmotechnical situatedness, and the differential ontologies of generated images and code, this introduction attempts to articulate a framework adequate to the complexity of the present conjuncture. I emphasize: this framework emerges from an experimental research-creation practice—provisional, situated, acknowledging its own shadows.
+The *retcon*—a term borrowed from serialized fiction to name a practice of working with technics toward the reactivation of historical materials—is framed not as urgent response but as a general operation for assuming technology as material for narrative creation. Urgency, where it exists, is contingent on material circumstances rather than intrinsic to the method. Black Mountain College, the renowned American experimental school, serves as a support for contemporary narratives and a reflection on possible tactics for re-enchanting the world we inhabit. Artificial intelligence, in its broadest sense, is placed at the center of this experiment—both to rethink the institution's archives and to distribute an aesthetic collective practice. Through analysis of negentropic obligation, cosmotechnical situatedness, and the differential ontologies of generated images and code, this introduction attempts to articulate a framework adequate to the complexity of the present conjuncture. I emphasize: this framework emerges from an experimental research-creation practice—provisional, situated, acknowledging its own shadows.
 
 ---
 
