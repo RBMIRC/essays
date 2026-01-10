@@ -8,13 +8,16 @@ lang: fr
 license: GPL-3.0-or-later
 provenance: "Méthodologie recherche-création / Retcon Black Mountain"
 tags:
-  - automatisation-différentielle
-  - communs-statistiques
-  - obligation-négentropique
-  - assumer-les-techniques
-  - pratique-collective
-  - cosmotechnique
-  - recherche-création
+  - retcon
+  - common
+  - black-mountain
+  - AI
+  - collective
+  - art
+  - research
+  - creation
+  - theory
+  - technology
 ---
 
 
@@ -25,7 +28,7 @@ par Sylvain Couzinet-Jacques
 
 ## Résumé
 
-Le retcon — terme emprunté à la fiction sérialisée pour nommer une pratique de travail avec les techniques en vue de la réactivation de matériaux historiques — n'est pas conçu comme une réponse urgente mais comme une opération générale consistant à assumer la technologie comme matériau de création narrative. L'urgence, là où elle existe, est contingente aux circonstances matérielles plutôt qu'intrinsèque à la méthode. Black Mountain College, célèbre école expérimentale américaine, sert de support à des récits contemporains et à une réflexion sur des tactiques possibles pour ré-enchanter le monde que nous habitons. L'intelligence artificielle, dans son acception large, est placée au centre de cette expérience — à la fois pour repenser les archives de l'institution et pour distribuer une pratique collective esthétique. À travers l'analyse de l'obligation négentropique, de la situation cosmotechnique et des ontologies différentielles des images et du code générés, cette introduction tente d'articuler un cadre adéquat à la complexité de la conjoncture présente. Je le rappelle : ce cadre émerge d'une pratique expérimentale de recherche-création — provisoire, située, assumant ses propres zones d'ombre.
+Le *retcon* — terme emprunté à la fiction sérialisée pour nommer une pratique de travail avec les techniques en vue de la réactivation de matériaux historiques — n'est pas conçu comme une réponse urgente mais comme une opération générale consistant à assumer la technologie comme matériau de création narrative. L'urgence, là où elle existe, est contingente aux circonstances matérielles plutôt qu'intrinsèque à la méthode. Black Mountain College, célèbre école expérimentale américaine, sert de support à des récits contemporains et à une réflexion sur des tactiques possibles pour ré-enchanter le monde que nous habitons. L'intelligence artificielle, dans son acception large, est placée au centre de cette expérience — à la fois pour repenser les archives de l'institution et pour distribuer une pratique collective esthétique. À travers l'analyse de l'obligation négentropique, de la situation cosmotechnique et des ontologies différentielles des images et du code générés, cette introduction tente d'articuler un cadre adéquat à la complexité de la conjoncture présente. Je le rappelle : ce cadre émerge d'une pratique expérimentale de recherche-création — provisoire, située, assumant ses propres zones d'ombre.
 
 ---
 
