@@ -546,10 +546,23 @@ footer {
     overflow-x: hidden;
   }
 
+  // Add top padding to the page
+  .page > #quartz-body {
+    padding-top: 0.5rem !important;
+  }
+
+  // Page header spacing
+  .page-header {
+    margin-top: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
   header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 
   .main-navigation {
@@ -651,20 +664,35 @@ footer {
 
   // Sidebar adjustments
   .left.sidebar {
-    padding: 1rem 0 !important;
+    padding: 1.5rem 0 1rem 0 !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
 
     .page-title {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      width: 100%;
+      margin-bottom: 0.5rem;
     }
 
-    .search input {
-      font-size: 16px; // Prevents iOS zoom
-      min-height: 44px;
+    .search {
+      flex: 1;
+      min-width: 150px;
+
+      input {
+        font-size: 16px; // Prevents iOS zoom
+        min-height: 44px;
+        width: 100%;
+      }
     }
 
-    .darkmode svg {
-      width: 24px;
-      height: 24px;
+    .darkmode {
+      flex-shrink: 0;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
