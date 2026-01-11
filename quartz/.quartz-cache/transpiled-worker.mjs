@@ -6347,46 +6347,77 @@ var Navigation_default = /* @__PURE__ */ __name((() => {
           ] })
         }
       ),
-      /* @__PURE__ */ jsx38("ul", { class: "nav-menu", children: menuItems.map((item) => {
-        const itemPath = typeof item.path === "string" ? item.path : item.path[currentLang];
-        let fullUrl;
-        if (item.absolute) {
-          fullUrl = `${baseUrl}/gallery`;
-        } else {
-          fullUrl = `${baseUrl}/${currentLang}/${itemPath}`;
-        }
-        const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/") || item.absolute && slugStr === "gallery";
-        const label = item[currentLang];
-        return /* @__PURE__ */ jsx38("li", { class: isActive ? "nav-item active" : "nav-item", children: /* @__PURE__ */ jsx38("a", { href: fullUrl, children: label }) }, item.id);
-      }) })
+      /* @__PURE__ */ jsxs24("ul", { class: "nav-menu", children: [
+        /* @__PURE__ */ jsx38("button", { class: "nav-close", "aria-label": "Close menu", type: "button", children: /* @__PURE__ */ jsxs24("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", children: [
+          /* @__PURE__ */ jsx38("line", { x1: "18", y1: "6", x2: "6", y2: "18" }),
+          /* @__PURE__ */ jsx38("line", { x1: "6", y1: "6", x2: "18", y2: "18" })
+        ] }) }),
+        menuItems.map((item) => {
+          const itemPath = typeof item.path === "string" ? item.path : item.path[currentLang];
+          let fullUrl;
+          if (item.absolute) {
+            fullUrl = `${baseUrl}/gallery`;
+          } else {
+            fullUrl = `${baseUrl}/${currentLang}/${itemPath}`;
+          }
+          const isActive = currentPath === itemPath || currentPath.startsWith(itemPath + "/") || item.absolute && slugStr === "gallery";
+          const label = item[currentLang];
+          return /* @__PURE__ */ jsx38("li", { class: isActive ? "nav-item active" : "nav-item", children: /* @__PURE__ */ jsx38("a", { href: fullUrl, children: label }) }, item.id);
+        })
+      ] })
     ] });
   }, "Navigation");
   Navigation.css = ``;
   Navigation.afterDOMLoaded = `
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("nav", () => {
   const hamburger = document.querySelector(".nav-hamburger")
   const menu = document.querySelector(".nav-menu")
-  
-  if (hamburger && menu) {
-    hamburger.addEventListener("click", () => {
-      const isOpen = menu.classList.toggle("open")
-      hamburger.setAttribute("aria-expanded", String(isOpen))
-    })
-    
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("open")
-        hamburger.setAttribute("aria-expanded", "false")
-      })
-    })
-    
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && menu.classList.contains("open")) {
-        menu.classList.remove("open")
-        hamburger.setAttribute("aria-expanded", "false")
-      }
-    })
+  const closeBtn = document.querySelector(".nav-close")
+
+  if (!hamburger || !menu) return
+
+  function closeMenu() {
+    menu.classList.remove("open")
+    hamburger.setAttribute("aria-expanded", "false")
+    document.body.style.overflow = ""
   }
+
+  function openMenu() {
+    menu.classList.add("open")
+    hamburger.setAttribute("aria-expanded", "true")
+    document.body.style.overflow = "hidden"
+  }
+
+  const handleHamburgerClick = () => {
+    if (menu.classList.contains("open")) {
+      closeMenu()
+    } else {
+      openMenu()
+    }
+  }
+
+  const handleCloseClick = () => closeMenu()
+
+  const handleLinkClick = () => closeMenu()
+
+  const handleKeydown = (e) => {
+    if (e.key === "Escape" && menu.classList.contains("open")) {
+      closeMenu()
+    }
+  }
+
+  hamburger.addEventListener("click", handleHamburgerClick)
+  if (closeBtn) closeBtn.addEventListener("click", handleCloseClick)
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", handleLinkClick)
+  })
+  document.addEventListener("keydown", handleKeydown)
+
+  window.addCleanup(() => {
+    hamburger.removeEventListener("click", handleHamburgerClick)
+    if (closeBtn) closeBtn.removeEventListener("click", handleCloseClick)
+    document.removeEventListener("keydown", handleKeydown)
+  })
 })
 `;
   return Navigation;
