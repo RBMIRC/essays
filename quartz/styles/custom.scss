@@ -678,44 +678,34 @@ footer {
     }
   }
 
-  // Sidebar adjustments - Mobile toolbar layout
+  // Mobile layout - simplified
   .left.sidebar {
+    position: relative !important;
     padding: 1rem 0 !important;
-    gap: 0.75rem !important;
-    flex-wrap: wrap !important;
+    gap: 1rem !important;
     flex-direction: column !important;
-    align-items: stretch !important;
+    align-items: flex-start !important;
 
-    // Title on its own row
+    // Title full width
     .page-title {
       font-size: 1.1rem;
       width: 100%;
-      order: 1;
     }
 
-    // Spacer hidden
+    // Hide spacer
     .spacer {
       display: none !important;
     }
 
-    // Mobile toolbar: search, darkmode aligned right
+    // Search - hide text, show only icon
     .search {
-      order: 2;
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
-
-      // Only show the search button (loupe icon)
       .search-button {
         padding: 0.5rem;
         min-width: 44px;
         min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         p {
-          display: none; // Hide "Search" text
+          display: none;
         }
 
         svg {
@@ -725,44 +715,27 @@ footer {
       }
     }
 
-    .darkmode {
-      order: 3;
-      position: absolute;
-      right: 3.5rem;
-      top: 1rem;
-
-      svg {
-        width: 22px;
-        height: 22px;
-      }
-    }
-
-    // External links and News below
-    .external-links {
-      order: 4;
-      margin-top: 2.5rem;
-    }
-
-    .news {
-      order: 5;
+    .darkmode svg {
+      width: 22px;
+      height: 22px;
     }
   }
 
-  // Header with hamburger and language switcher
+  // Header - horizontal toolbar under title
   header {
-    position: absolute !important;
-    right: 6rem;
-    top: 1rem;
-    margin: 0 !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 0 1rem 0 !important;
     padding: 0 !important;
     border: none !important;
-    gap: 0.5rem !important;
-    flex-direction: row-reverse !important;
+    gap: 0.75rem !important;
+    flex-direction: row !important;
     align-items: center !important;
+    justify-content: flex-end !important;
 
     .main-navigation {
       width: auto;
-      order: 1;
+      flex-shrink: 0;
 
       .nav-hamburger {
         display: flex !important;
@@ -771,6 +744,10 @@ footer {
         padding: 0.5rem;
         align-items: center;
         justify-content: center;
+        background: none;
+        border: 1px solid var(--lightgray);
+        border-radius: 4px;
+        cursor: pointer;
 
         svg {
           width: 22px;
@@ -786,7 +763,7 @@ footer {
         right: 0;
         bottom: 0;
         background: var(--light);
-        z-index: 1000;
+        z-index: 9999;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -815,12 +792,10 @@ footer {
     }
 
     .language-switcher {
-      order: 2;
       font-size: 0.85rem;
 
       .lang-link {
         padding: 0.5rem;
-        min-width: 32px;
         min-height: 44px;
         display: inline-flex;
         align-items: center;
@@ -829,7 +804,7 @@ footer {
     }
   }
 
-  // Close button for fullscreen menu (mobile only)
+  // Close button for fullscreen menu
   .nav-menu.open .nav-close {
     display: flex !important;
     position: absolute;
@@ -844,7 +819,7 @@ footer {
     min-height: 44px;
     align-items: center;
     justify-content: center;
-    z-index: 1001;
+    z-index: 10000;
   }
 
   .right.sidebar {
