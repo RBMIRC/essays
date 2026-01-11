@@ -532,10 +532,26 @@ footer {
 }
 
 // =============================================
+// DESKTOP - Hide mobile-only elements
+// =============================================
+
+.nav-close {
+  display: none !important;
+}
+
+.nav-hamburger {
+  display: none;
+}
+
+// =============================================
 // MOBILE
 // =============================================
 
 @media all and (max-width: 800px) {
+  // Show hamburger on mobile
+  .nav-hamburger {
+    display: flex !important;
+  }
   // Base mobile adjustments
   html {
     font-size: 16px;
@@ -813,13 +829,9 @@ footer {
     }
   }
 
-  // Close button for fullscreen menu
-  .nav-close {
-    display: none;
-  }
-
+  // Close button for fullscreen menu (mobile only)
   .nav-menu.open .nav-close {
-    display: flex;
+    display: flex !important;
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
@@ -832,6 +844,7 @@ footer {
     min-height: 44px;
     align-items: center;
     justify-content: center;
+    z-index: 1001;
   }
 
   .right.sidebar {
