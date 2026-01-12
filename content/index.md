@@ -18,11 +18,16 @@ Quelles tactiques pour approcher l'impossibilité du Black Mountain College ? Qu
 
 This site hosts research essays exploring connections between the experimental pedagogy of Black Mountain College (1933-1957) and contemporary AI-assisted creation practices.
 
+### Visualizations
+
+- **[The Double Helix](/essays/static/bmc-helix/bmc-helix.html)** — 3D temporal visualization of BMC events and climate data
+- **[The Network](/essays/static/bmc-network/bmc-verified-network.html)** — Interactive network graph of BMC people connections
+
 ### Related Platforms
 
 - **[The Dining Hall](https://retconblackmountain.info/)** — Collaborative annotation and discussion platform for BMC archives
-- **[The Library](https://thelibrary.retconblackmountain.info/)** — Archive repository of annoted pdfs
-- **[Chronology](https://rbmirc.github.io/bmc-chronology/)** — Interactive day-by-day timeline of BMC (1933-1957)
+- **[The Library](https://thelibrary.retconblackmountain.info/)** — Archive repository of annotated pdfs
+- **[The Chronology](https://rbmirc.github.io/bmc-chronology/)** — Interactive day-by-day timeline of BMC (1933-1957)
 
 </div>
 
