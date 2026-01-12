@@ -2,17 +2,17 @@ import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
 const ExternalLinks: QuartzComponent = () => {
   const links = [
-    { name: "The Double Helix", url: "/essays/static/bmc-helix/bmc-helix.html", desc: "3D temporal visualization of BMC events and climate data" },
-    { name: "The Network", url: "/essays/static/bmc-network/bmc-verified-network.html", desc: "Interactive network graph of BMC people connections" },
-    { name: "The Chronology", url: "https://rbmirc.github.io/bmc-chronology/", desc: "Interactive day-by-day timeline of BMC (1933-1957)" },
-    { name: "The Dining Hall", url: "https://retconblackmountain.info/", desc: "Collaborative annotation and discussion platform for BMC archives" },
-    { name: "The Library", url: "https://thelibrary.retconblackmountain.info/", desc: "Archive repository of annotated pdfs" },
+    { name: "The Double Helix", url: "/essays/static/bmc-helix/bmc-helix.html" },
+    { name: "The Network", url: "/essays/static/bmc-network/bmc-verified-network.html" },
+    { name: "The Chronology", url: "https://rbmirc.github.io/bmc-chronology/" },
+    { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
+    { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" },
   ]
 
   return (
     <div class="external-links">
       <h3>Related</h3>
-      <ul class="links-list">
+      <ul>
         {links.map((link) => (
           <li>
             <a
@@ -22,7 +22,6 @@ const ExternalLinks: QuartzComponent = () => {
             >
               {link.name}
             </a>
-            <span class="link-desc">{link.desc}</span>
           </li>
         ))}
       </ul>
@@ -56,8 +55,8 @@ ExternalLinks.css = `
   margin: 0;
 }
 
-.external-links .links-list li {
-  margin-bottom: 0.6rem;
+.external-links li {
+  margin-bottom: 0.3rem;
 }
 
 .external-links a {
@@ -68,14 +67,6 @@ ExternalLinks.css = `
   &:hover {
     color: var(--secondary);
   }
-}
-
-.external-links .link-desc {
-  display: block;
-  font-size: 0.7rem;
-  color: var(--gray);
-  line-height: 1.4;
-  margin-top: 0.1rem;
 }
 
 .external-links .personal-link {
