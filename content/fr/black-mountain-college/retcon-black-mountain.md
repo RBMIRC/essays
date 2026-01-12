@@ -347,7 +347,7 @@ Le *retcon* est une manière de répondre à cette demande — non pas en recons
 
 Ce que nous enseignons à Black Mountain College, c'est qu'il n'est pas fini.
 
-La fidélité à l'histoire ne consiste pas à répéter ce qui a été, mais à rester fidèle à la promesse de ce qui aurait pu être. C'est une fidélité au virtuel, une éthique de la potentialité. À l'heure de la liquéfaction généralisée, c'est peut-être la seule forme de solidité qu'il nous reste : la solidité du possible. C'est du moins la tentative de l'oeuvre à laquelle nous travaillon Retcon Black Mountain.
+La fidélité à l'histoire ne consiste pas à répéter ce qui a été, mais à rester fidèle à la promesse de ce qui aurait pu être. C'est une fidélité au virtuel, une éthique de la potentialité. À l'heure de la liquéfaction généralisée, c'est peut-être la seule forme de solidité qu'il nous reste : la solidité du possible. C'est du moins la tentative de l'oeuvre à laquelle nous travaillons Retcon Black Mountain.
 
 ---
 
