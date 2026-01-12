@@ -15,12 +15,15 @@ const ExternalLinks: QuartzComponent = () => {
       <ul>
         {links.map((link) => {
           const isExternal = link.url.startsWith('http')
+          const isStatic = link.url.includes('/static/')
           return (
             <li>
               <a
                 href={link.url}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
+                data-no-popover={isStatic ? true : undefined}
+                data-spa={isStatic ? "false" : undefined}
               >
                 {link.name}
               </a>
