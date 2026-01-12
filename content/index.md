@@ -20,8 +20,8 @@ This site hosts research essays exploring connections between the experimental p
 
 ### Visualizations
 
-- **[The Double Helix](/essays/static/bmc-helix/bmc-helix.html)** — 3D temporal visualization of BMC events and climate data
-- **[The Network](/essays/static/bmc-network/bmc-verified-network.html)** — Interactive network graph of BMC people connections
+- **[The Double Helix](https://rbmirc.github.io/essays/static/bmc-helix/bmc-helix.html)** — 3D temporal visualization of BMC events and climate data
+- **[The Network](https://rbmirc.github.io/essays/static/bmc-network/bmc-verified-network.html)** — Interactive network graph of BMC people connections
 
 ### Related Platforms
 
