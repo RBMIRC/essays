@@ -2828,7 +2828,7 @@ a.internal.tag-link {
     popups.forEach(function(_, id) { closePopup(id); });
   });
 })();
-`,ImagePreview}),"default");import{jsx as jsx41,jsxs as jsxs25}from"preact/jsx-runtime";var ExternalLinks=__name(()=>jsxs25("div",{class:"external-links",children:[jsx41("h3",{children:"Related"}),jsx41("ul",{children:[{name:"The Double Helix",url:"/essays/static/bmc-helix/bmc-helix.html"},{name:"The Network",url:"/essays/static/bmc-network/bmc-verified-network.html"},{name:"The Chronology",url:"https://rbmirc.github.io/bmc-chronology/"},{name:"The Dining Hall",url:"https://retconblackmountain.info/"},{name:"The Library",url:"https://thelibrary.retconblackmountain.info/"},{name:"\u{1F331}",url:"https://www.couzinetjacques.com"}].map(link=>{let isExternal=link.url.startsWith("http"),isStatic=link.url.includes("/static/"),openNewTab=isExternal||isStatic;return jsx41("li",{children:jsx41("a",{href:link.url,target:openNewTab?"_blank":void 0,rel:openNewTab?"noopener noreferrer":void 0,children:link.name})})})})]}),"ExternalLinks");ExternalLinks.css=`
+`,ImagePreview}),"default");import{jsx as jsx41,jsxs as jsxs25}from"preact/jsx-runtime";var ExternalLinks=__name(()=>{let visualizations=[{name:"The Double Helix",url:"/essays/static/bmc-helix/bmc-helix.html"},{name:"The Network",url:"/essays/static/bmc-network/bmc-verified-network.html"}],platforms=[{name:"The Dining Hall",url:"https://retconblackmountain.info/",desc:"Collaborative annotation and discussion platform for BMC archives"},{name:"The Library",url:"https://thelibrary.retconblackmountain.info/",desc:"Archive repository of annotated pdfs"},{name:"The Chronology",url:"https://rbmirc.github.io/bmc-chronology/",desc:"Interactive day-by-day timeline of BMC (1933-1957)"}];return jsxs25("div",{class:"external-links",children:[jsx41("h3",{children:"Related"}),jsx41("ul",{children:visualizations.map(link=>{let isStatic=link.url.includes("/static/");return jsx41("li",{children:jsx41("a",{href:link.url,target:"_blank",rel:"noopener noreferrer",children:link.name})})})}),jsx41("h3",{class:"platforms-title",children:"Related Platforms"}),jsx41("ul",{class:"platforms-list",children:platforms.map(link=>jsxs25("li",{children:[jsx41("a",{href:link.url,target:"_blank",rel:"noopener noreferrer",children:link.name}),jsx41("span",{class:"platform-desc",children:link.desc})]}))}),jsx41("div",{class:"personal-link",children:jsx41("a",{href:"https://www.couzinetjacques.com",target:"_blank",rel:"noopener noreferrer",children:"\u{1F331}"})})]})},"ExternalLinks");ExternalLinks.css=`
 .external-links {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -2844,6 +2844,10 @@ a.internal.tag-link {
   font-weight: 500;
 }
 
+.external-links .platforms-title {
+  margin-top: 1rem;
+}
+
 .external-links ul {
   list-style: none;
   padding: 0;
@@ -2854,6 +2858,10 @@ a.internal.tag-link {
   margin-bottom: 0.3rem;
 }
 
+.external-links .platforms-list li {
+  margin-bottom: 0.6rem;
+}
+
 .external-links a {
   font-size: 0.85rem;
   color: var(--darkgray);
@@ -2862,6 +2870,20 @@ a.internal.tag-link {
   &:hover {
     color: var(--secondary);
   }
+}
+
+.external-links .platform-desc {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--gray);
+  line-height: 1.4;
+  margin-top: 0.1rem;
+}
+
+.external-links .personal-link {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--lightgray);
 }
 `;var ExternalLinks_default=__name((()=>ExternalLinks),"default");var defaultOptions18={groupId:void 0,openSidebar:!1,theme:"clean",disableOnPaths:["/lexicon","/lexique","/figures"]},Hypothesis_default=__name((userOpts=>{let opts={...defaultOptions18,...userOpts},Hypothesis=__name(({fileData})=>(opts.disableOnPaths?.some(path12=>fileData.slug?.startsWith(path12.replace(/^\//,""))),null),"Hypothesis");return Hypothesis.afterDOMLoaded=`
     (function() {
