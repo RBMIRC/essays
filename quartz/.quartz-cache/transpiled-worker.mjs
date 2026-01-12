@@ -6764,13 +6764,25 @@ var ImagePreview_default = /* @__PURE__ */ __name((() => {
 import { jsx as jsx41, jsxs as jsxs25 } from "preact/jsx-runtime";
 var ExternalLinks = /* @__PURE__ */ __name(() => {
   const links = [
+    { name: "Graph - The Double Helix", url: "/static/bmc-helix/bmc-helix.html" },
     { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
     { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" },
     { name: "\u{1F331}", url: "https://www.couzinetjacques.com" }
   ];
   return /* @__PURE__ */ jsxs25("div", { class: "external-links", children: [
     /* @__PURE__ */ jsx41("h3", { children: "Related" }),
-    /* @__PURE__ */ jsx41("ul", { children: links.map((link) => /* @__PURE__ */ jsx41("li", { children: /* @__PURE__ */ jsx41("a", { href: link.url, target: "_blank", rel: "noopener noreferrer", children: link.name }) })) })
+    /* @__PURE__ */ jsx41("ul", { children: links.map((link) => {
+      const isExternal = link.url.startsWith("http");
+      return /* @__PURE__ */ jsx41("li", { children: /* @__PURE__ */ jsx41(
+        "a",
+        {
+          href: link.url,
+          target: isExternal ? "_blank" : void 0,
+          rel: isExternal ? "noopener noreferrer" : void 0,
+          children: link.name
+        }
+      ) });
+    }) })
   ] });
 }, "ExternalLinks");
 ExternalLinks.css = `

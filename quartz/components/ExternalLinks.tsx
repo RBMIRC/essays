@@ -2,6 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
 const ExternalLinks: QuartzComponent = () => {
   const links = [
+    { name: "Graph - The Double Helix", url: "/static/bmc-helix/bmc-helix.html" },
     { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
     { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" },
     { name: "🌱", url: "https://www.couzinetjacques.com" },
@@ -11,13 +12,20 @@ const ExternalLinks: QuartzComponent = () => {
     <div class="external-links">
       <h3>Related</h3>
       <ul>
-        {links.map((link) => (
-          <li>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              {link.name}
-            </a>
-          </li>
-        ))}
+        {links.map((link) => {
+          const isExternal = link.url.startsWith('http')
+          return (
+            <li>
+              <a
+                href={link.url}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+              >
+                {link.name}
+              </a>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

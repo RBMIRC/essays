@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Mountain College · Double Helix</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: #0d0d14;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(180deg, rgba(13,13,20,1) 0%, rgba(13,13,20,0.8) 70%, transparent 100%);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .title-block h1 { font-size: 1.6rem; letter-spacing: 0.3em; font-weight: 400; }
+    .title-block h2 { font-size: 0.9rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.5); margin-top: 0.2rem; }
+
+    #legend { display: flex; gap: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+    .legend-section h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; color: rgba(255,255,255,0.4); }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem; }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .legend-line { width: 20px; height: 3px; border-radius: 2px; }
+
+    #canvas-container { padding-top: 120px; padding-bottom: 50px; }
+    #helix { display: block; margin: 0 auto; }
+
+    #tooltip {
+      position: fixed; background: rgba(13,13,20,0.95); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px; padding: 1rem 1.2rem; font-size: 0.85rem; pointer-events: none;
+      opacity: 0; z-index: 200; max-width: 320px; backdrop-filter: blur(10px);
+    }
+    #tooltip h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    #tooltip .date { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-bottom: 0.8rem; }
+    #tooltip .data-row { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    #tooltip .people { margin-top: 0.5rem; font-size: 0.75rem; color: rgba(255,255,255,0.6); font-style: italic; }
+
+    #loading {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      font-size: 1.2rem; color: rgba(255,255,255,0.5);
+    }
+
+    /* ========== HEATMAP SECTION ========== */
+    #heatmap-section {
+      background: #0d0d14;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #heatmap-section h3 {
+      text-align: center;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    #heatmap-section .subtitle {
+      text-align: center;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1.5rem;
+    }
+
+    #heatmap-controls {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .control-group label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    select, button {
+      font-family: inherit;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    select:hover, button:hover {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .event-filters {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 0.3rem 0.6rem;
+      border: 1px solid;
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-family: inherit;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .filter-btn.active { opacity: 1; }
+    .filter-btn.inactive { opacity: 0.3; }
+    .filter-btn .symbol { font-size: 0.9rem; }
+
+    #heatmap-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      overflow-x: auto;
+    }
+
+    #heatmap { display: block; }
+
+    #heatmap-tooltip {
+      position: fixed;
+      background: rgba(13,13,20,0.98);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      padding: 0.8rem;
+      font-size: 0.8rem;
+      pointer-events: none;
+      display: none;
+      max-width: 320px;
+      z-index: 200;
+      color: #fff;
+    }
+
+    #heatmap-tooltip .date { font-weight: 600; margin-bottom: 0.3rem; }
+    #heatmap-tooltip .weather { color: rgba(255,255,255,0.6); font-size: 0.75rem; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    #heatmap-tooltip .events-list { max-height: 200px; overflow-y: auto; }
+    #heatmap-tooltip .event-item { padding: 0.3rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    #heatmap-tooltip .event-item:last-child { border-bottom: none; }
+    #heatmap-tooltip .event-type { display: inline-block; width: 14px; text-align: center; }
+    #heatmap-tooltip .event-title { font-style: italic; color: rgba(255,255,255,0.8); }
+
+    #heatmap-legends {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hm-legend {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hm-legend-title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .hm-legend-gradient {
+      width: 150px;
+      height: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hm-legend-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 150px;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .event-legend {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .event-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .year-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: rgba(255,255,255,0.6); }
+    .month-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.5); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title-block">
+      <h1>BLACK MOUNTAIN COLLEGE</h1>
+      <h2>Weather × Events · The Double Helix · 1933–1957</h2>
+    </div>
+    <div id="legend">
+      <div class="legend-section">
+        <h4>Strands</h4>
+        <div class="legend-item"><div class="legend-line" style="background: linear-gradient(90deg, #4ecdc4, #ffe66d, #ff6b6b);"></div> Temperature</div>
+        <div class="legend-item"><div class="legend-line" style="background: #a86bff;"></div> Activity</div>
+      </div>
+      <div class="legend-section">
+        <h4>Temp Blobs</h4>
+        <div class="legend-item"><div class="legend-dot" style="background: #4e9ecf;"></div> Min (left)</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #ff7b54;"></div> Max (right)</div>
+      </div>
+      <div class="legend-section">
+        <h4>Events</h4>
+        <div class="legend-item"><div class="legend-dot" style="background: #ff6b6b;"></div> Performance</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #4ecdc4;"></div> Class</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #ffe66d;"></div> Exhibition</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #264653;"></div> Lecture</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #ff8c42;"></div> Photo</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #a86bff;"></div> Celebration</div>
+      </div>
+    </div>
+  </header>
+
+  <div id="canvas-container"><canvas id="helix"></canvas></div>
+  <div id="tooltip"></div>
+  <div id="loading">Loading data...</div>
+
+  <!-- ========== HEATMAP SECTION ========== -->
+  <section id="heatmap-section">
+    <h3>TEMPORAL HEATMAP</h3>
+    <div class="subtitle">Weather & Events Grid · 1933–1957</div>
+
+    <div id="heatmap-controls">
+      <div class="control-group">
+        <label>View:</label>
+        <select id="view-mode">
+          <option value="month">By Month</option>
+          <option value="week">By Week</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Weather:</label>
+        <button id="toggle-weather" class="active">Show</button>
+      </div>
+
+      <div class="event-filters">
+        <button class="filter-btn active" data-type="performance" style="border-color: #e63946; color: #e63946;">
+          <span class="symbol">●</span> Perf
+        </button>
+        <button class="filter-btn active" data-type="class" style="border-color: #2a9d8f; color: #2a9d8f;">
+          <span class="symbol">■</span> Class
+        </button>
+        <button class="filter-btn active" data-type="exhibition" style="border-color: #e9c46a; color: #e9c46a;">
+          <span class="symbol">▲</span> Exhib
+        </button>
+        <button class="filter-btn active" data-type="lecture" style="border-color: #264653; color: #264653;">
+          <span class="symbol">◆</span> Lect
+        </button>
+        <button class="filter-btn active" data-type="photo" style="border-color: #f4a261; color: #f4a261;">
+          <span class="symbol">○</span> Photo
+        </button>
+        <button class="filter-btn active" data-type="celebration" style="border-color: #a855f7; color: #a855f7;">
+          <span class="symbol">★</span> Celeb
+        </button>
+      </div>
+    </div>
+
+    <div id="heatmap-container">
+      <svg id="heatmap"></svg>
+      <div id="heatmap-tooltip"></div>
+    </div>
+
+    <div id="heatmap-legends">
+      <div class="hm-legend">
+        <div class="hm-legend-title">Temperature</div>
+        <div class="hm-legend-gradient" id="temp-gradient"></div>
+        <div class="hm-legend-labels">
+          <span>-5°C</span>
+          <span>15°C</span>
+          <span>30°C</span>
+        </div>
+      </div>
+
+      <div class="hm-legend">
+        <div class="hm-legend-title">Event Types</div>
+        <div class="event-legend">
+          <div class="event-legend-item"><span style="color:#e63946">●</span> Performance</div>
+          <div class="event-legend-item"><span style="color:#2a9d8f">■</span> Class</div>
+          <div class="event-legend-item"><span style="color:#e9c46a">▲</span> Exhibition</div>
+          <div class="event-legend-item"><span style="color:#264653">◆</span> Lecture</div>
+          <div class="event-legend-item"><span style="color:#f4a261">○</span> Photo</div>
+          <div class="event-legend-item"><span style="color:#a855f7">★</span> Celebration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>RETCON BLACK MOUNTAIN · 2025</footer>
+
+  <script>
+    // ============ SHARED DATA ============
+    let eventsData = [];
+    let weatherData = {};
+
+    // ============ HELIX VARIABLES ============
+    const canvas = document.getElementById('helix');
+    const ctx = canvas.getContext('2d');
+    const tooltip = document.getElementById('tooltip');
+    const loadingEl = document.getElementById('loading');
+
+    const width = canvas.width = Math.min(1400, window.innerWidth);
+    const totalMonths = 25 * 12;
+    const verticalStep = 14;
+    const height = canvas.height = totalMonths * verticalStep + 300;
+    const centerX = width / 2;
+
+    const eventColors = {
+      'performance': '#ff6b6b',
+      'class': '#4ecdc4',
+      'exhibition': '#ffe66d',
+      'lecture': '#264653',
+      'photo': '#ff8c42',
+      'celebration': '#a86bff',
+      'administrative': '#6b7280',
+      'other': '#9ca3af'
+    };
+
+    let mouseCanvasY = height / 2;
+    let animationTime = 0;
+    let helixData = [];
+    let helixEvents = [];
+
+    // ============ HEATMAP VARIABLES ============
+    const hmYears = d3.range(1933, 1958);
+    const hmMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    const eventSymbols = {
+      'performance': { symbol: '●', color: '#e63946' },
+      'class': { symbol: '■', color: '#2a9d8f' },
+      'exhibition': { symbol: '▲', color: '#e9c46a' },
+      'lecture': { symbol: '◆', color: '#264653' },
+      'photo': { symbol: '○', color: '#f4a261' },
+      'celebration': { symbol: '★', color: '#a855f7' },
+      'administrative': { symbol: '□', color: '#6b7280' },
+      'other': { symbol: '·', color: '#9ca3af' }
+    };
+
+    const tempColorScale = d3.scaleLinear()
+      .domain([-5, 15, 30])
+      .range(['#1e3a8a', '#fef08a', '#dc2626'])
+      .clamp(true);
+
+    let hmViewMode = 'month';
+    let hmShowWeather = true;
+    let hmActiveEventTypes = new Set(['performance', 'class', 'exhibition', 'lecture', 'photo', 'celebration']);
+
+    // ============ LOAD DATA ============
+    async function loadData() {
+      try {
+        loadingEl.textContent = 'Loading events...';
+        const eventsResponse = await fetch('bmc_events_consolidated.json');
+        const eventsJson = await eventsResponse.json();
+        eventsData = eventsJson.events;
+
+        loadingEl.textContent = 'Loading climate data...';
+        const climateResponse = await fetch('bmc_climate_complete.json?v=' + Date.now());
+        const climateJson = await climateResponse.json();
+
+        Object.entries(climateJson.daily).forEach(([date, d]) => {
+          weatherData[date] = {
+            temp_max: d.temp_max,
+            temp_min: d.temp_min,
+            temp_avg: (d.temp_max + d.temp_min) / 2,
+            precipitation: d.precipitation,
+            source: d.source
+          };
+        });
+
+        console.log(`Loaded ${Object.keys(weatherData).length} days of climate data (1933-1957)`);
+
+        // Process helix data
+        processHelixData();
+
+        loadingEl.style.display = 'none';
+        animate();
+
+        // Init heatmap
+        initHeatmap();
+        drawHeatmap();
+
+      } catch (error) {
+        console.error('Error loading data:', error);
+        loadingEl.textContent = 'Error: ' + error.message;
+      }
+    }
+
+    // ============ HELIX FUNCTIONS ============
+    function estimateMonth(event) {
+      const title = (event.title || '').toLowerCase();
+      const source = (event.source || '').toLowerCase();
+
+      const monthNames = ['january', 'february', 'march', 'april', 'may', 'june',
+                         'july', 'august', 'september', 'october', 'november', 'december'];
+      for (let i = 0; i < monthNames.length; i++) {
+        if (title.includes(monthNames[i])) return i + 1;
+      }
+
+      if (title.includes('summer') || source.includes('summer')) return 7;
+      if (title.includes('fall') || title.includes('autumn')) return 10;
+      if (title.includes('spring')) return 4;
+      if (title.includes('winter')) return 1;
+      if (event.type === 'administrative' || title.includes('bulletin')) return 9;
+
+      let hash = 0;
+      const str = event.title || String(event.year);
+      for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash = hash & hash;
+      }
+      return (Math.abs(hash) % 12) + 1;
+    }
+
+    function processHelixData() {
+      for (let year = 1933; year <= 1957; year++) {
+        for (let month = 0; month < 12; month++) {
+          const monthIndex = (year - 1933) * 12 + month;
+          const y = 150 + monthIndex * verticalStep;
+
+          let tempSum = 0, tempMinSum = 0, tempMaxSum = 0, tempCount = 0;
+          for (let day = 1; day <= 31; day++) {
+            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const w = weatherData[dateStr];
+            if (w && w.temp_max !== null) {
+              tempMinSum += w.temp_min;
+              tempMaxSum += w.temp_max;
+              tempSum += (w.temp_min + w.temp_max) / 2;
+              tempCount++;
+            }
+          }
+
+          let temp, tempMin, tempMax;
+          if (tempCount > 0) {
+            temp = tempSum / tempCount;
+            tempMin = tempMinSum / tempCount;
+            tempMax = tempMaxSum / tempCount;
+          } else {
+            temp = 15; tempMin = 10; tempMax = 20;
+          }
+
+          const monthEvents = eventsData.filter(e =>
+            e.year === year && (e.month === month + 1 || (!e.month && Math.random() < 1/12))
+          );
+          const activity = monthEvents.length * 10;
+
+          const tempNorm = Math.max(0, Math.min(1, (temp + 5) / 35));
+          const activityNorm = Math.min(1, activity / 50);
+
+          helixData.push({
+            year, month, monthIndex, y,
+            temp, tempMin, tempMax, tempNorm,
+            activity, activityNorm,
+            tempX: 0, activityX: 0, tempZ: 0, activityZ: 0
+          });
+        }
+      }
+
+      eventsData.forEach(e => {
+        const year = e.year;
+        const month = e.month ? e.month - 1 : estimateMonth(e) - 1;
+        const monthIndex = (year - 1933) * 12 + month;
+        const d = helixData[monthIndex];
+        if (!d) return;
+
+        const spreadWidth = width * 0.5;
+        const startX = centerX - spreadWidth / 2;
+        const eventX = startX + Math.random() * spreadWidth;
+
+        helixEvents.push({
+          year, month, monthIndex,
+          baseX: eventX,
+          y: d.y + (Math.random() - 0.5) * verticalStep * 0.8,
+          type: e.type || 'other',
+          title: e.title || 'Event',
+          people: e.people || [],
+          temp: d.temp, tempMin: d.tempMin, tempMax: d.tempMax,
+          activity: d.activity, source: e.source
+        });
+      });
+
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    function updateHelixPositions(time) {
+      const phase = time * 0.0005;
+      helixData.forEach((d, i) => {
+        const angle1 = (i * 0.15) + phase;
+        const angle2 = angle1 + Math.PI;
+        d.tempX = centerX + Math.cos(angle1) * (50 + d.tempNorm * 100);
+        d.tempZ = Math.sin(angle1);
+        d.activityX = centerX + Math.cos(angle2) * (50 + d.activityNorm * 100);
+        d.activityZ = Math.sin(angle2);
+      });
+    }
+
+    function getTempColor(t) {
+      return t < 5 ? '#4ecdc4' : t < 15 ? '#91d8d0' : t < 22 ? '#ffe66d' : t < 28 ? '#ffaa5c' : '#ff6b6b';
+    }
+
+    function getTempColorRGB(t) {
+      const stops = [
+        { t: -5, r: 30, g: 60, b: 255 },
+        { t: 5, r: 80, g: 180, b: 255 },
+        { t: 12, r: 150, g: 230, b: 150 },
+        { t: 18, r: 255, g: 255, b: 100 },
+        { t: 24, r: 255, g: 180, b: 50 },
+        { t: 30, r: 255, g: 80, b: 50 }
+      ];
+      t = Math.max(-5, Math.min(30, t));
+      for (let i = 0; i < stops.length - 1; i++) {
+        if (t <= stops[i + 1].t) {
+          const ratio = (t - stops[i].t) / (stops[i + 1].t - stops[i].t);
+          return {
+            r: Math.round(stops[i].r + (stops[i + 1].r - stops[i].r) * ratio),
+            g: Math.round(stops[i].g + (stops[i + 1].g - stops[i].g) * ratio),
+            b: Math.round(stops[i].b + (stops[i + 1].b - stops[i].b) * ratio)
+          };
+        }
+      }
+      return { r: 255, g: 80, b: 80 };
+    }
+
+    function rgb(c, a = 1) { return `rgba(${c.r},${c.g},${c.b},${a})`; }
+    function lerpColor(c1, c2, t) {
+      const parse = c => [parseInt(c.slice(1,3),16), parseInt(c.slice(3,5),16), parseInt(c.slice(5,7),16)];
+      const [r1,g1,b1] = parse(c1), [r2,g2,b2] = parse(c2);
+      return `rgb(${Math.round(r1+(r2-r1)*t)},${Math.round(g1+(g2-g1)*t)},${Math.round(b1+(b2-b1)*t)})`;
+    }
+
+    function drawHelix() {
+      ctx.clearRect(0, 0, width, height);
+      updateHelixPositions(animationTime);
+
+      ctx.fillStyle = '#0d0d14';
+      ctx.fillRect(0, 0, width, height);
+
+      // Temperature blobs
+      helixData.forEach((d, i) => {
+        if (i % 3 !== 0) return;
+        const influence = Math.max(0, 1 - Math.abs(d.y - mouseCanvasY) / 500);
+        if (influence < 0.02) return;
+
+        const breathe = Math.sin(animationTime * 0.003 + i * 0.1) * 10;
+
+        const coldX = width * 0.30 + breathe;
+        const coldR = 50 + influence * 180 + Math.abs(d.tempMin) * 2;
+        const coldC = getTempColorRGB(d.tempMin);
+        for (let c = 0; c < 3; c++) {
+          const ox = Math.sin(c * 1.5 + animationTime * 0.002) * 18;
+          const oy = Math.cos(c * 1.8 + animationTime * 0.0025) * 12;
+          const r = coldR * (0.6 + c * 0.18);
+          const grad = ctx.createRadialGradient(coldX + ox, d.y + oy, 0, coldX + ox, d.y + oy, r);
+          grad.addColorStop(0, rgb(coldC, influence * 0.75));
+          grad.addColorStop(0.4, rgb(coldC, influence * 0.4));
+          grad.addColorStop(1, 'transparent');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(coldX + ox, d.y + oy, r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        const hotX = width * 0.70 - breathe;
+        const hotR = 50 + influence * 180 + d.tempMax * 2;
+        const hotC = getTempColorRGB(d.tempMax);
+        for (let c = 0; c < 3; c++) {
+          const ox = Math.sin(c * 1.7 + animationTime * 0.002) * 18;
+          const oy = Math.cos(c * 2.1 + animationTime * 0.0025) * 12;
+          const r = hotR * (0.6 + c * 0.18);
+          const grad = ctx.createRadialGradient(hotX + ox, d.y + oy, 0, hotX + ox, d.y + oy, r);
+          grad.addColorStop(0, rgb(hotC, influence * 0.75));
+          grad.addColorStop(0.4, rgb(hotC, influence * 0.4));
+          grad.addColorStop(1, 'transparent');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(hotX + ox, d.y + oy, r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        if (influence > 0.5) {
+          const fs = 11 + influence * 8;
+          ctx.font = `${fs}px EB Garamond`;
+          ctx.textAlign = 'center';
+          ctx.fillStyle = rgb(coldC, influence);
+          ctx.fillText(`${Math.round(d.tempMin)}°`, coldX, d.y + 4);
+          ctx.fillStyle = rgb(hotC, influence);
+          ctx.fillText(`${Math.round(d.tempMax)}°`, hotX, d.y + 4);
+        }
+      });
+
+      // Year markers
+      ctx.fillStyle = 'rgba(255,255,255,0.15)';
+      ctx.font = '12px EB Garamond';
+      ctx.textAlign = 'right';
+      for (let year = 1933; year <= 1957; year++) {
+        const y = 150 + (year - 1933) * 12 * verticalStep;
+        ctx.fillText(year, 50, y + 4);
+        ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+        ctx.beginPath();
+        ctx.moveTo(60, y);
+        ctx.lineTo(width - 60, y);
+        ctx.stroke();
+      }
+
+      // Events
+      helixEvents.forEach(e => {
+        e.renderX = e.baseX;
+        e.renderY = e.y;
+        const size = 3.5 + (e.people.length > 0 ? Math.sqrt(e.people.length) * 0.8 : 1);
+        const color = eventColors[e.type] || eventColors['other'];
+
+        const glow = ctx.createRadialGradient(e.renderX, e.renderY, 0, e.renderX, e.renderY, size * 4);
+        glow.addColorStop(0, color + '50');
+        glow.addColorStop(0.5, color + '18');
+        glow.addColorStop(1, 'transparent');
+        ctx.fillStyle = glow;
+        ctx.beginPath();
+        ctx.arc(e.renderX, e.renderY, size * 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.85;
+        ctx.beginPath();
+        ctx.arc(e.renderX, e.renderY, size, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(255,255,255,0.6)';
+        ctx.beginPath();
+        ctx.arc(e.renderX, e.renderY, size * 0.25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+
+      // Double Helix strands
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      for (let i = 1; i < helixData.length; i++) {
+        const d1 = helixData[i - 1], d2 = helixData[i];
+        ctx.strokeStyle = getTempColor(d1.temp);
+        ctx.globalAlpha = 0.25 + (d1.tempZ + 1) * 0.3;
+        ctx.beginPath();
+        ctx.moveTo(d1.tempX, d1.y);
+        ctx.lineTo(d2.tempX, d2.y);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+
+      for (let i = 1; i < helixData.length; i++) {
+        const d1 = helixData[i - 1], d2 = helixData[i];
+        ctx.strokeStyle = lerpColor('#3d3d5c', '#a86bff', d1.activityNorm);
+        ctx.globalAlpha = 0.25 + (d1.activityZ + 1) * 0.3;
+        ctx.lineWidth = 2 + d1.activityNorm * 3;
+        ctx.beginPath();
+        ctx.moveTo(d1.activityX, d1.y);
+        ctx.lineTo(d2.activityX, d2.y);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+
+      // Intersection glows
+      helixData.forEach(d => {
+        const dist = Math.abs(d.tempX - d.activityX);
+        if (dist < 30) {
+          const intensity = 1 - dist / 30;
+          const crossX = (d.tempX + d.activityX) / 2;
+          const grad = ctx.createRadialGradient(crossX, d.y, 0, crossX, d.y, 15);
+          grad.addColorStop(0, `rgba(255,255,255,${intensity * 0.7})`);
+          grad.addColorStop(0.5, `rgba(255,220,150,${intensity * 0.3})`);
+          grad.addColorStop(1, 'transparent');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(crossX, d.y, 15, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+
+      // Annotations
+      ctx.font = 'italic 11px EB Garamond';
+      ctx.fillStyle = 'rgba(255,255,255,0.35)';
+      ctx.textAlign = 'left';
+      const annotations = [
+        { year: 1933, month: 9, text: '← College Opens (Sept 25)' },
+        { year: 1941, month: 9, text: '← Move to Lake Eden' },
+        { year: 1948, month: 8, text: '← Summer Music Institute' },
+        { year: 1949, month: 6, text: '← Albers depart for Yale' },
+        { year: 1952, month: 8, text: '← Theatre Piece No. 1' },
+        { year: 1956, month: 10, text: '← Final Gathering' },
+        { year: 1957, month: 10, text: '← College Closes' },
+      ];
+      annotations.forEach(a => {
+        const monthIndex = (a.year - 1933) * 12 + (a.month - 1);
+        const y = 150 + monthIndex * verticalStep;
+        ctx.fillText(a.text, width - 200, y + 4);
+      });
+    }
+
+    function animate() {
+      animationTime++;
+      drawHelix();
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      mouseCanvasY = e.clientY - rect.top;
+    });
+
+    canvas.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+
+      let hovered = null;
+      for (const ev of helixEvents) {
+        if (ev.renderX && (mx - ev.renderX) ** 2 + (my - ev.renderY) ** 2 < 300) {
+          hovered = ev;
+          break;
+        }
+      }
+
+      if (hovered) {
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        const color = eventColors[hovered.type] || eventColors['other'];
+
+        let html = `<h3 style="color:${color}">${hovered.title}</h3>`;
+        html += `<div class="date">${months[hovered.month]} ${hovered.year}</div>`;
+        html += `<div class="data-row"><span>Type</span><span>${hovered.type}</span></div>`;
+        html += `<div class="data-row"><span style="color:${rgb(getTempColorRGB(hovered.tempMin))}">Min</span><span>${Math.round(hovered.tempMin)}°C</span></div>`;
+        html += `<div class="data-row"><span style="color:${rgb(getTempColorRGB(hovered.tempMax))}">Max</span><span>${Math.round(hovered.tempMax)}°C</span></div>`;
+
+        if (hovered.people && hovered.people.length > 0) {
+          html += `<div class="people">${hovered.people.slice(0, 5).join(', ')}${hovered.people.length > 5 ? '...' : ''}</div>`;
+        }
+
+        tooltip.innerHTML = html;
+        tooltip.style.opacity = 1;
+        tooltip.style.left = (e.clientX + 15) + 'px';
+        tooltip.style.top = (e.clientY + 15) + 'px';
+      } else {
+        tooltip.style.opacity = 0;
+      }
+    });
+
+    // ============ HEATMAP FUNCTIONS ============
+    function initHeatmap() {
+      document.getElementById('view-mode').addEventListener('change', (e) => {
+        hmViewMode = e.target.value;
+        drawHeatmap();
+      });
+
+      document.getElementById('toggle-weather').addEventListener('click', (e) => {
+        hmShowWeather = !hmShowWeather;
+        e.target.classList.toggle('active', hmShowWeather);
+        e.target.textContent = hmShowWeather ? 'Show' : 'Hide';
+        drawHeatmap();
+      });
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const type = btn.dataset.type;
+          if (hmActiveEventTypes.has(type)) {
+            hmActiveEventTypes.delete(type);
+            btn.classList.remove('active');
+            btn.classList.add('inactive');
+          } else {
+            hmActiveEventTypes.add(type);
+            btn.classList.add('active');
+            btn.classList.remove('inactive');
+          }
+          drawHeatmap();
+        });
+      });
+
+      document.getElementById('temp-gradient').style.background = 'linear-gradient(to right, #1e3a8a, #fef08a, #dc2626)';
+    }
+
+    function drawHeatmap() {
+      const svg = d3.select('#heatmap');
+      svg.selectAll('*').remove();
+
+      const margin = { top: 40, right: 30, bottom: 30, left: 50 };
+      const cellHeight = 22;
+      const numCols = hmViewMode === 'month' ? 12 : 52;
+      const cellWidth = hmViewMode === 'month' ? 60 : 16;
+
+      const hmWidth = margin.left + numCols * cellWidth + margin.right;
+      const hmHeight = margin.top + hmYears.length * cellHeight + margin.bottom;
+
+      svg.attr('width', hmWidth).attr('height', hmHeight);
+
+      const g = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+      // Group events by cell
+      const eventsByCell = {};
+      eventsData.forEach(event => {
+        if (!hmActiveEventTypes.has(event.type) && event.type !== 'other' && event.type !== 'administrative') return;
+
+        const year = event.year;
+        let period;
+
+        if (hmViewMode === 'month') {
+          period = event.month ? event.month - 1 : estimateMonth(event) - 1;
+        } else {
+          if (event.month && event.day) {
+            const date = new Date(year, event.month - 1, event.day);
+            period = d3.timeWeek.count(d3.timeYear(date), date);
+          } else if (event.month) {
+            period = Math.floor((event.month - 1) * 4.33);
+          } else {
+            const estMonth = estimateMonth(event);
+            period = Math.floor((estMonth - 1) * 4.33);
+          }
+        }
+
+        const key = `${year}-${period}`;
+        if (!eventsByCell[key]) eventsByCell[key] = [];
+        eventsByCell[key].push(event);
+      });
+
+      // Weather by cell
+      const weatherByCell = {};
+      if (hmShowWeather) {
+        Object.entries(weatherData).forEach(([date, w]) => {
+          const [y, m, d] = date.split('-').map(Number);
+          let period;
+
+          if (hmViewMode === 'month') {
+            period = m - 1;
+          } else {
+            const dateObj = new Date(y, m - 1, d);
+            period = d3.timeWeek.count(d3.timeYear(dateObj), dateObj);
+          }
+
+          const key = `${y}-${period}`;
+          if (!weatherByCell[key]) {
+            weatherByCell[key] = { temps: [], precip: [] };
+          }
+          if (w.temp_avg !== null) weatherByCell[key].temps.push(w.temp_avg);
+          if (w.precipitation !== null) weatherByCell[key].precip.push(w.precipitation);
+        });
+      }
+
+      // Draw cells
+      hmYears.forEach((year, yi) => {
+        for (let p = 0; p < numCols; p++) {
+          const key = `${year}-${p}`;
+          const events = eventsByCell[key] || [];
+          const weather = weatherByCell[key];
+
+          const x = p * cellWidth;
+          const y = yi * cellHeight;
+
+          let bgColor = '#1a1a24';
+          if (hmShowWeather && weather && weather.temps.length > 0) {
+            const avgTemp = d3.mean(weather.temps);
+            bgColor = tempColorScale(avgTemp);
+          }
+
+          g.append('rect')
+            .attr('x', x)
+            .attr('y', y)
+            .attr('width', cellWidth - 1)
+            .attr('height', cellHeight - 1)
+            .attr('fill', bgColor)
+            .attr('stroke', 'rgba(255,255,255,0.1)')
+            .attr('stroke-width', 0.5)
+            .attr('class', 'cell')
+            .on('mouseover', function(e) { showHeatmapTooltip(e, year, p, events, weather); })
+            .on('mouseout', hideHeatmapTooltip);
+
+          if (events.length > 0) {
+            const byType = {};
+            events.forEach(ev => {
+              const type = eventSymbols[ev.type] ? ev.type : 'other';
+              if (!byType[type]) byType[type] = 0;
+              byType[type]++;
+            });
+
+            const types = Object.keys(byType);
+            const symbolSize = hmViewMode === 'month' ? 10 : 6;
+            const spacing = hmViewMode === 'month' ? 12 : 6;
+
+            types.forEach((type, ti) => {
+              const info = eventSymbols[type];
+              const count = byType[type];
+
+              const sx = x + cellWidth / 2 - (types.length * spacing) / 2 + ti * spacing;
+              const sy = y + cellHeight / 2;
+
+              g.append('text')
+                .attr('x', sx)
+                .attr('y', sy)
+                .attr('text-anchor', 'middle')
+                .attr('dominant-baseline', 'middle')
+                .attr('font-size', symbolSize)
+                .attr('fill', info.color)
+                .attr('pointer-events', 'none')
+                .text(info.symbol);
+
+              if (hmViewMode === 'month' && count > 1) {
+                g.append('text')
+                  .attr('x', sx + 6)
+                  .attr('y', sy - 4)
+                  .attr('font-size', 7)
+                  .attr('fill', 'rgba(255,255,255,0.6)')
+                  .attr('pointer-events', 'none')
+                  .text(count);
+              }
+            });
+          }
+        }
+      });
+
+      // Y-axis
+      g.selectAll('.year-label')
+        .data(hmYears)
+        .join('text')
+        .attr('class', 'year-label')
+        .attr('x', -8)
+        .attr('y', (d, i) => i * cellHeight + cellHeight / 2)
+        .attr('text-anchor', 'end')
+        .attr('dominant-baseline', 'middle')
+        .text(d => d);
+
+      // X-axis
+      if (hmViewMode === 'month') {
+        g.selectAll('.month-label')
+          .data(hmMonths)
+          .join('text')
+          .attr('class', 'month-label')
+          .attr('x', (d, i) => i * cellWidth + cellWidth / 2)
+          .attr('y', -8)
+          .attr('text-anchor', 'middle')
+          .text(d => d);
+      } else {
+        g.selectAll('.week-label')
+          .data(d3.range(0, 52, 4))
+          .join('text')
+          .attr('class', 'month-label')
+          .attr('x', d => d * cellWidth + cellWidth / 2)
+          .attr('y', -8)
+          .attr('text-anchor', 'middle')
+          .text(d => `W${d + 1}`);
+      }
+    }
+
+    function showHeatmapTooltip(e, year, period, events, weather) {
+      const tooltip = document.getElementById('heatmap-tooltip');
+
+      let periodLabel = hmViewMode === 'month' ? `${hmMonths[period]} ${year}` : `Week ${period + 1}, ${year}`;
+
+      let html = `<div class="date">${periodLabel}</div>`;
+
+      if (weather && weather.temps.length > 0) {
+        const avgTemp = d3.mean(weather.temps).toFixed(1);
+        const totalPrecip = d3.sum(weather.precip).toFixed(1);
+        html += `<div class="weather">Avg: ${avgTemp}°C · Precip: ${totalPrecip}mm</div>`;
+      }
+
+      if (events.length > 0) {
+        html += `<div class="events-list">`;
+        events.slice(0, 10).forEach(ev => {
+          const info = eventSymbols[ev.type] || eventSymbols['other'];
+          html += `<div class="event-item"><span class="event-type" style="color:${info.color}">${info.symbol}</span><span class="event-title">${ev.title}</span></div>`;
+        });
+        if (events.length > 10) {
+          html += `<div class="event-item" style="color:rgba(255,255,255,0.5)">... and ${events.length - 10} more</div>`;
+        }
+        html += `</div>`;
+      } else {
+        html += `<div style="color:rgba(255,255,255,0.5); font-style:italic">No events recorded</div>`;
+      }
+
+      tooltip.innerHTML = html;
+      tooltip.style.display = 'block';
+
+      // Use clientX/clientY for positioning (D3 v7)
+      const mouseX = e.clientX || e.pageX;
+      const mouseY = e.clientY || e.pageY;
+      tooltip.style.left = (mouseX + 15) + 'px';
+      tooltip.style.top = (mouseY - 10) + 'px';
+
+      const rect = tooltip.getBoundingClientRect();
+      if (rect.right > window.innerWidth) tooltip.style.left = (mouseX - rect.width - 15) + 'px';
+      if (rect.bottom > window.innerHeight) tooltip.style.top = (mouseY - rect.height - 10) + 'px';
+    }
+
+    function hideHeatmapTooltip() {
+      document.getElementById('heatmap-tooltip').style.display = 'none';
+    }
+
+    // ============ START ============
+    loadData();
+  </script>
+</body>
+</html>
