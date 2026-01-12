@@ -14,20 +14,20 @@ Quelles tactiques pour approcher l'impossibilité du Black Mountain College ? Qu
 <div class="project-ecosystem">
 
 ### Research Platform
-**[Essays →](/en/)** | **[Essais →](/fr/)**
+<a href="/en/" target="_blank"><strong>Essays →</strong></a> | <a href="/fr/" target="_blank"><strong>Essais →</strong></a>
 
 This site hosts research essays exploring connections between the experimental pedagogy of Black Mountain College (1933-1957) and contemporary AI-assisted creation practices.
 
 ### Visualizations
 
-- **[The Double Helix](https://rbmirc.github.io/essays/static/bmc-helix/bmc-helix.html)** — 3D temporal visualization of BMC events and climate data
-- **[The Network](https://rbmirc.github.io/essays/static/bmc-network/bmc-verified-network.html)** — Interactive network graph of BMC people connections
+- <a href="https://rbmirc.github.io/essays/static/bmc-helix/bmc-helix.html" target="_blank"><strong>The Double Helix</strong></a> — 3D temporal visualization of BMC events and climate data
+- <a href="https://rbmirc.github.io/essays/static/bmc-network/bmc-verified-network.html" target="_blank"><strong>The Network</strong></a> — Interactive network graph of BMC people connections
 
 ### Related Platforms
 
-- **[The Dining Hall](https://retconblackmountain.info/)** — Collaborative annotation and discussion platform for BMC archives
-- **[The Library](https://thelibrary.retconblackmountain.info/)** — Archive repository of annotated pdfs
-- **[The Chronology](https://rbmirc.github.io/bmc-chronology/)** — Interactive day-by-day timeline of BMC (1933-1957)
+- <a href="https://retconblackmountain.info/" target="_blank"><strong>The Dining Hall</strong></a> — Collaborative annotation and discussion platform for BMC archives
+- <a href="https://thelibrary.retconblackmountain.info/" target="_blank"><strong>The Library</strong></a> — Archive repository of annotated pdfs
+- <a href="https://rbmirc.github.io/bmc-chronology/" target="_blank"><strong>The Chronology</strong></a> — Interactive day-by-day timeline of BMC (1933-1957)
 
 </div>
 
