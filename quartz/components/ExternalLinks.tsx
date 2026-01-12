@@ -1,40 +1,19 @@
 import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
 const ExternalLinks: QuartzComponent = () => {
-  const visualizations = [
-    { name: "The Double Helix", url: "/essays/static/bmc-helix/bmc-helix.html" },
-    { name: "The Network", url: "/essays/static/bmc-network/bmc-verified-network.html" },
-  ]
-
-  const platforms = [
+  const links = [
+    { name: "The Double Helix", url: "/essays/static/bmc-helix/bmc-helix.html", desc: "3D temporal visualization of BMC events and climate data" },
+    { name: "The Network", url: "/essays/static/bmc-network/bmc-verified-network.html", desc: "Interactive network graph of BMC people connections" },
+    { name: "The Chronology", url: "https://rbmirc.github.io/bmc-chronology/", desc: "Interactive day-by-day timeline of BMC (1933-1957)" },
     { name: "The Dining Hall", url: "https://retconblackmountain.info/", desc: "Collaborative annotation and discussion platform for BMC archives" },
     { name: "The Library", url: "https://thelibrary.retconblackmountain.info/", desc: "Archive repository of annotated pdfs" },
-    { name: "The Chronology", url: "https://rbmirc.github.io/bmc-chronology/", desc: "Interactive day-by-day timeline of BMC (1933-1957)" },
   ]
 
   return (
     <div class="external-links">
       <h3>Related</h3>
-      <ul>
-        {visualizations.map((link) => {
-          const isStatic = link.url.includes('/static/')
-          return (
-            <li>
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.name}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
-
-      <h3 class="platforms-title">Related Platforms</h3>
-      <ul class="platforms-list">
-        {platforms.map((link) => (
+      <ul class="links-list">
+        {links.map((link) => (
           <li>
             <a
               href={link.url}
@@ -43,7 +22,7 @@ const ExternalLinks: QuartzComponent = () => {
             >
               {link.name}
             </a>
-            <span class="platform-desc">{link.desc}</span>
+            <span class="link-desc">{link.desc}</span>
           </li>
         ))}
       </ul>
@@ -71,21 +50,13 @@ ExternalLinks.css = `
   font-weight: 500;
 }
 
-.external-links .platforms-title {
-  margin-top: 1rem;
-}
-
 .external-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.external-links li {
-  margin-bottom: 0.3rem;
-}
-
-.external-links .platforms-list li {
+.external-links .links-list li {
   margin-bottom: 0.6rem;
 }
 
@@ -99,7 +70,7 @@ ExternalLinks.css = `
   }
 }
 
-.external-links .platform-desc {
+.external-links .link-desc {
   display: block;
   font-size: 0.7rem;
   color: var(--gray);
