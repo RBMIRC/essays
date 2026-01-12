@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
 const ExternalLinks: QuartzComponent = () => {
   const links = [
-    { name: "Graph - The Double Helix", url: "/static/bmc-helix/bmc-helix.html" },
+    { name: "Graph - The Double Helix", url: "/essays/static/bmc-helix/bmc-helix.html" },
     { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
     { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" },
     { name: "🌱", url: "https://www.couzinetjacques.com" },
