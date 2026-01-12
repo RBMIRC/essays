@@ -6775,14 +6775,13 @@ var ExternalLinks = /* @__PURE__ */ __name(() => {
     /* @__PURE__ */ jsx41("ul", { children: links.map((link) => {
       const isExternal = link.url.startsWith("http");
       const isStatic = link.url.includes("/static/");
+      const openNewTab = isExternal || isStatic;
       return /* @__PURE__ */ jsx41("li", { children: /* @__PURE__ */ jsx41(
         "a",
         {
           href: link.url,
-          target: isExternal ? "_blank" : void 0,
-          rel: isExternal ? "noopener noreferrer" : void 0,
-          "data-no-popover": isStatic ? true : void 0,
-          "data-spa": isStatic ? "false" : void 0,
+          target: openNewTab ? "_blank" : void 0,
+          rel: openNewTab ? "noopener noreferrer" : void 0,
           children: link.name
         }
       ) });

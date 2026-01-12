@@ -16,14 +16,13 @@ const ExternalLinks: QuartzComponent = () => {
         {links.map((link) => {
           const isExternal = link.url.startsWith('http')
           const isStatic = link.url.includes('/static/')
+          const openNewTab = isExternal || isStatic
           return (
             <li>
               <a
                 href={link.url}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
-                data-no-popover={isStatic ? true : undefined}
-                data-spa={isStatic ? "false" : undefined}
+                target={openNewTab ? "_blank" : undefined}
+                rel={openNewTab ? "noopener noreferrer" : undefined}
               >
                 {link.name}
               </a>
