@@ -6763,42 +6763,25 @@ var ImagePreview_default = /* @__PURE__ */ __name((() => {
 // quartz/components/ExternalLinks.tsx
 import { jsx as jsx41, jsxs as jsxs25 } from "preact/jsx-runtime";
 var ExternalLinks = /* @__PURE__ */ __name(() => {
-  const visualizations = [
+  const links = [
     { name: "The Double Helix", url: "/essays/static/bmc-helix/bmc-helix.html" },
-    { name: "The Network", url: "/essays/static/bmc-network/bmc-verified-network.html" }
-  ];
-  const platforms = [
-    { name: "The Dining Hall", url: "https://retconblackmountain.info/", desc: "Collaborative annotation and discussion platform for BMC archives" },
-    { name: "The Library", url: "https://thelibrary.retconblackmountain.info/", desc: "Archive repository of annotated pdfs" },
-    { name: "The Chronology", url: "https://rbmirc.github.io/bmc-chronology/", desc: "Interactive day-by-day timeline of BMC (1933-1957)" }
+    { name: "The Network", url: "/essays/static/bmc-network/bmc-verified-network.html" },
+    { name: "The Chronology", url: "https://rbmirc.github.io/bmc-chronology/" },
+    { name: "Ecologies", url: "https://rbmirc.github.io/Black-Mountain-Ecologies/" },
+    { name: "The Dining Hall", url: "https://retconblackmountain.info/" },
+    { name: "The Library", url: "https://thelibrary.retconblackmountain.info/" }
   ];
   return /* @__PURE__ */ jsxs25("div", { class: "external-links", children: [
     /* @__PURE__ */ jsx41("h3", { children: "Related" }),
-    /* @__PURE__ */ jsx41("ul", { children: visualizations.map((link) => {
-      const isStatic = link.url.includes("/static/");
-      return /* @__PURE__ */ jsx41("li", { children: /* @__PURE__ */ jsx41(
-        "a",
-        {
-          href: link.url,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          children: link.name
-        }
-      ) });
-    }) }),
-    /* @__PURE__ */ jsx41("h3", { class: "platforms-title", children: "Related Platforms" }),
-    /* @__PURE__ */ jsx41("ul", { class: "platforms-list", children: platforms.map((link) => /* @__PURE__ */ jsxs25("li", { children: [
-      /* @__PURE__ */ jsx41(
-        "a",
-        {
-          href: link.url,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          children: link.name
-        }
-      ),
-      /* @__PURE__ */ jsx41("span", { class: "platform-desc", children: link.desc })
-    ] })) }),
+    /* @__PURE__ */ jsx41("ul", { children: links.map((link) => /* @__PURE__ */ jsx41("li", { children: /* @__PURE__ */ jsx41(
+      "a",
+      {
+        href: link.url,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        children: link.name
+      }
+    ) })) }),
     /* @__PURE__ */ jsx41("div", { class: "personal-link", children: /* @__PURE__ */ jsx41("a", { href: "https://www.couzinetjacques.com", target: "_blank", rel: "noopener noreferrer", children: "\u{1F331}" }) })
   ] });
 }, "ExternalLinks");
@@ -6818,10 +6801,6 @@ ExternalLinks.css = `
   font-weight: 500;
 }
 
-.external-links .platforms-title {
-  margin-top: 1rem;
-}
-
 .external-links ul {
   list-style: none;
   padding: 0;
@@ -6832,10 +6811,6 @@ ExternalLinks.css = `
   margin-bottom: 0.3rem;
 }
 
-.external-links .platforms-list li {
-  margin-bottom: 0.6rem;
-}
-
 .external-links a {
   font-size: 0.85rem;
   color: var(--darkgray);
@@ -6844,14 +6819,6 @@ ExternalLinks.css = `
   &:hover {
     color: var(--secondary);
   }
-}
-
-.external-links .platform-desc {
-  display: block;
-  font-size: 0.7rem;
-  color: var(--gray);
-  line-height: 1.4;
-  margin-top: 0.1rem;
 }
 
 .external-links .personal-link {
