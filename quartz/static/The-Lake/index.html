@@ -251,7 +251,7 @@
 
 <div class="editor-wrap">
     <div class="ascii-bg" id="asciiBg"></div>
-    <div class="content-area" id="contentArea" onclick="focusInput()"></div>
+    <div class="content-area" id="contentArea"></div>
 </div>
 
 <input class="hidden-input" id="hiddenInput" autofocus>
@@ -398,19 +398,64 @@ function enterLake() {
     startPad();
 }
 
+// Cursor position: index in chunks array where new text will be inserted
+// -1 means "at the very end" (after last chunk)
+let cursorPos = -1;
+
 function focusInput() {
     hiddenInput.focus();
 }
 
-
 function renderContent() {
     let html = '';
-    chunks.forEach(c => {
+    const insertPos = cursorPos === -1 ? chunks.length : cursorPos;
+
+    for (let i = 0; i < chunks.length; i++) {
+        if (i === insertPos) {
+            html += '<span class="write-cursor"></span>';
+        }
+        const c = chunks[i];
         const escaped = escapeHtml(c.text);
-        html += `<span class="chunk"><span class="text">${escaped}</span><span class="author-tag">${c.author}</span></span>`;
-    });
-    html += '<span class="write-cursor"></span>';
+        html += `<span class="chunk" data-index="${i}"><span class="text">${escaped}</span><span class="author-tag">${c.author}</span></span>`;
+    }
+    // Cursor at end
+    if (insertPos >= chunks.length) {
+        html += '<span class="write-cursor"></span>';
+    }
     contentArea.innerHTML = html;
+}
+
+// Place cursor by clicking in the text
+contentArea.addEventListener('click', (e) => {
+    const chunkEl = e.target.closest('.chunk');
+    if (chunkEl) {
+        const idx = parseInt(chunkEl.dataset.index);
+        // Place cursor after this chunk
+        cursorPos = idx + 1;
+    } else {
+        // Clicked on empty space — cursor at end
+        cursorPos = -1;
+    }
+    renderContent();
+    focusInput();
+});
+
+function getInsertOrder() {
+    const insertPos = cursorPos === -1 ? chunks.length : cursorPos;
+    if (chunks.length === 0) return 0;
+
+    if (insertPos >= chunks.length) {
+        // After last chunk
+        return chunks[chunks.length - 1].order + 1;
+    } else if (insertPos === 0) {
+        // Before first chunk
+        return chunks[0].order - 1;
+    } else {
+        // Between two chunks
+        const prev = chunks[insertPos - 1].order;
+        const next = chunks[insertPos].order;
+        return prev + (next - prev) / 2;
+    }
 }
 
 function startPad() {
@@ -437,13 +482,17 @@ function startPad() {
         hiddenInput.value = '';
         if (!typed) return;
 
-        const last = chunks[chunks.length - 1];
-        if (last && last.author === myName) {
-            last.text += typed;
-            chunksRef.child(last.key).update({ text: last.text });
+        const insertPos = cursorPos === -1 ? chunks.length : cursorPos;
+        // Check if the chunk just before cursor is ours — append to it
+        const prevChunk = insertPos > 0 ? chunks[insertPos - 1] : null;
+        if (prevChunk && prevChunk.author === myName) {
+            prevChunk.text += typed;
+            chunksRef.child(prevChunk.key).update({ text: prevChunk.text });
         } else {
-            const order = chunks.length ? (chunks[chunks.length - 1].order + 1) : 0;
+            const order = getInsertOrder();
             chunksRef.push({ author: myName, text: typed, order });
+            // Move cursor forward after inserting
+            if (cursorPos !== -1) cursorPos++;
         }
     });
 
@@ -457,13 +506,15 @@ function startPad() {
 
         if (e.key === 'Enter') {
             e.preventDefault();
-            const last = chunks[chunks.length - 1];
-            if (last && last.author === myName) {
-                last.text += '\n';
-                chunksRef.child(last.key).update({ text: last.text });
+            const insertPos = cursorPos === -1 ? chunks.length : cursorPos;
+            const prevChunk = insertPos > 0 ? chunks[insertPos - 1] : null;
+            if (prevChunk && prevChunk.author === myName) {
+                prevChunk.text += '\n';
+                chunksRef.child(prevChunk.key).update({ text: prevChunk.text });
             } else {
-                const order = chunks.length ? (chunks[chunks.length - 1].order + 1) : 0;
+                const order = getInsertOrder();
                 chunksRef.push({ author: myName, text: '\n', order });
+                if (cursorPos !== -1) cursorPos++;
             }
         }
     });
