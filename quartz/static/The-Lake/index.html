@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LAKE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <style>
@@ -13,79 +13,71 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Cormorant Garamond', 'Georgia', serif;
-            background: #0a0a0a;
-            color: #e8e8e0;
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+            background: #000;
+            color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
         }
-        
-        /* Background ASCII images */
-        .bg-ascii {
+
+        /* ASCII background images - Dweller style */
+        .ascii-bg {
             position: fixed;
-            font-family: 'SF Mono', 'Monaco', monospace;
-            font-size: 5px;
-            line-height: 1;
-            white-space: pre;
-            color: #e8e8e0;
-            opacity: 0;
-            transition: opacity 1.5s ease;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 0;
-        }
-
-        .bg-ascii.visible {
-            opacity: 0.04;
-        }
-
-        /* Header ASCII art */
-        .header-ascii {
-            font-size: 7px;
-            line-height: 1.1;
-            white-space: pre;
-            color: #333;
-            padding: 20px;
             overflow: hidden;
+        }
+
+        .ascii-img {
+            position: absolute;
+            font-family: 'SF Mono', 'Monaco', monospace;
+            font-size: 4px;
+            line-height: 1;
+            white-space: pre;
+            color: #fff;
+            opacity: 0.06;
         }
 
         /* Title */
         .title-section {
-            padding: 0 30px 40px;
+            position: relative;
+            z-index: 10;
+            padding: 30px 30px 40px;
         }
-        
+
         .title {
-            font-family: 'Cormorant Garamond', 'Georgia', serif;
-            font-size: 56px;
-            font-weight: 300;
-            letter-spacing: 0.08em;
-            line-height: 1;
-            text-transform: uppercase;
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 0.9;
         }
-        
+
         .meta {
-            font-size: 14px;
-            color: #666;
-            margin-top: 12px;
-            font-style: italic;
-            letter-spacing: 0.02em;
+            font-size: 12px;
+            color: #888;
+            margin-top: 15px;
         }
-        
+
         .online {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             margin-top: 15px;
-            font-size: 11px;
-            color: #666;
-            font-family: 'SF Mono', monospace;
+            font-size: 12px;
+            color: #4a9f7e;
         }
 
         .dot {
-            width: 6px;
-            height: 6px;
-            background: #666;
+            width: 8px;
+            height: 8px;
+            background: #4a9f7e;
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
@@ -103,11 +95,7 @@
         .users-list span {
             display: inline-block;
             margin-right: 12px;
-            color: #555;
-            font-family: 'SF Mono', monospace;
-        }
-        .users-list span::before {
-            content: '';
+            color: #4a9f7e;
         }
 
         /* Name prompt overlay */
@@ -130,41 +118,36 @@
         }
         .name-overlay label {
             font-size: 14px;
-            color: #666;
-            font-style: italic;
+            color: #888;
         }
         .name-overlay input {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 300;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
             background: transparent;
             border: none;
             border-bottom: 1px solid #333;
-            color: #e8e8e0;
+            color: #fff;
             text-align: center;
             padding: 10px;
             outline: none;
             width: 300px;
-            letter-spacing: 0.05em;
         }
         .name-overlay input::placeholder {
             color: #333;
         }
         .name-overlay button {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 14px;
+            font-family: 'SF Mono', monospace;
+            font-size: 12px;
             background: transparent;
             border: 1px solid #333;
-            color: #888;
-            padding: 8px 24px;
+            color: #4a9f7e;
+            padding: 8px 20px;
             cursor: pointer;
-            transition: border-color 0.2s, color 0.2s;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            transition: border-color 0.2s;
         }
         .name-overlay button:hover {
-            border-color: #888;
-            color: #e8e8e0;
+            border-color: #4a9f7e;
         }
 
         /* Editor area */
@@ -175,12 +158,11 @@
         }
 
         .content-area {
-            font-family: 'Cormorant Garamond', 'Georgia', serif;
-            font-size: 20px;
-            line-height: 2;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
             min-height: 60vh;
             cursor: text;
-            color: #e8e8e0;
         }
 
         .content-area .chunk {
@@ -188,13 +170,12 @@
         }
 
         .content-area .chunk .author-tag {
-            color: #444;
-            font-size: 8px;
-            font-family: 'SF Mono', 'Monaco', monospace;
+            color: #555;
+            font-size: 9px;
+            font-family: 'SF Mono', monospace;
             vertical-align: super;
             margin-left: 1px;
-            margin-right: 4px;
-            font-style: normal;
+            margin-right: 3px;
         }
 
         .content-area .chunk .text {
@@ -208,9 +189,9 @@
         /* Blinking cursor */
         .write-cursor {
             display: inline-block;
-            width: 1px;
-            height: 1.2em;
-            background: #e8e8e0;
+            width: 2px;
+            height: 1.1em;
+            background: #4a9f7e;
             vertical-align: text-bottom;
             animation: blink 1s step-end infinite;
         }
@@ -234,7 +215,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px;
             color: #333;
             background: transparent;
             border: none;
@@ -242,13 +223,12 @@
             z-index: 100;
             padding: 5px;
             transition: color 0.2s;
-            font-family: 'SF Mono', monospace;
         }
         .toggle-names:hover {
-            color: #666;
+            color: #888;
         }
         .toggle-names.active {
-            color: #555;
+            color: #4a9f7e;
         }
 
         /* Footer */
@@ -260,58 +240,15 @@
             color: #333;
             z-index: 100;
         }
-        
-        .footer span {
-            color: #555;
-        }
 
-        /* Emojis */
-        .emoji-layer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 50;
-        }
-        
-        .emoji {
-            position: absolute;
-            font-size: 18px;
-            opacity: 0;
-            transition: opacity 0.6s;
-        }
-        
-        .emoji.visible {
-            opacity: 1;
+        .footer span {
+            color: #4a9f7e;
         }
     </style>
 </head>
 <body>
 
-<div class="emoji-layer" id="emojiLayer"></div>
-
-<!-- Background ASCII images that fade in/out -->
-<div class="bg-ascii" id="bg1" style="top: 20%; left: 5%;"></div>
-<div class="bg-ascii" id="bg2" style="top: 40%; right: 5%;"></div>
-<div class="bg-ascii" id="bg3" style="top: 60%; left: 10%;"></div>
-<div class="bg-ascii" id="bg4" style="top: 80%; right: 10%;"></div>
-
-<!-- Header with ASCII mountain/landscape -->
-<div class="header-ascii">
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲▲▲,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░▲▲▲▲,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,●●●●●●●●●●●●●●●●●●●●●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░▲▲▲▲,,,,,,,,,,,,▲▲▲▲,,,,,,,,,,,,,,,,●●,,,,,,,,,,,,,,,,,,,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,▲▲▲▲░░▲▲▲▲,,,,,,,,,,,,●●,,████████████████,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲▲▲▲▲░░░░░░░░▲▲▲▲,,,,,,,,,,●●,,██  WRITE   ██,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,,,●●,,██  HERE   ██,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,▐████████▌,,●●●●●●●●,,▐██████▌,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,●●,,████████████████,,●●,,●●●●●●●●,,▐████████████▌,,●●●●●●●●●●●●●●●●●●●●,,
-,,▐██▌,,●●,,▐████████████████▌,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,●●,,,,,,,,,,,,,,,,,,,,●●,,●●●●●●●●,,▐██████▌,,●●,,▐████▌,,●●●●●●●●●●●●●●,,
-▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲●●●●●●●●●●●●●●●●●●●●●●●●▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-</div>
+<div class="ascii-bg" id="asciiBg"></div>
 
 <div class="name-overlay" id="nameOverlay">
     <label>enter your name</label>
@@ -340,13 +277,99 @@
 
 <script>
 // ===========================================
-// FIREBASE CONFIG - REPLACE WITH YOUR OWN
+// ASCII BACKGROUND - Dweller style
+// Convert images from Images/ folder to ASCII
+// Randomly positioned, different each connection
 // ===========================================
-// 1. Go to https://console.firebase.google.com
-// 2. Create a new project
-// 3. Add a Web App
-// 4. Copy your config below
-// 5. Go to Realtime Database → Create Database → Start in TEST MODE
+
+const ASCII_CHARS = ['█', '▓', '▒', '░', '●', '○', '▄', '▂', '·', '„', ',', ' '];
+const IMAGE_FILES = []; // Will be populated from images.json
+
+async function loadAsciiBackgrounds() {
+    try {
+        const res = await fetch('images.json');
+        const imageList = await res.json();
+        if (!imageList.length) return;
+
+        // Pick 3-5 random images
+        const count = Math.min(imageList.length, 3 + Math.floor(Math.random() * 3));
+        const shuffled = imageList.sort(() => Math.random() - 0.5).slice(0, count);
+
+        const container = document.getElementById('asciiBg');
+
+        for (const imgFile of shuffled) {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.src = 'Images/' + imgFile;
+            img.onload = () => {
+                const ascii = imageToAscii(img, 160);
+                const el = document.createElement('div');
+                el.className = 'ascii-img';
+
+                // Random position - Dweller style scattered
+                el.style.top = (5 + Math.random() * 70) + '%';
+                el.style.left = (-10 + Math.random() * 80) + '%';
+
+                // Random subtle rotation
+                const rotation = -5 + Math.random() * 10;
+                el.style.transform = `rotate(${rotation}deg)`;
+
+                el.textContent = ascii;
+                container.appendChild(el);
+            };
+        }
+    } catch (e) {
+        // No images.json, skip backgrounds
+    }
+}
+
+function imageToAscii(img, cols) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const aspectRatio = img.height / img.width;
+    const rows = Math.floor(cols * aspectRatio * 0.5);
+
+    canvas.width = cols;
+    canvas.height = rows;
+    ctx.drawImage(img, 0, 0, cols, rows);
+
+    const imageData = ctx.getImageData(0, 0, cols, rows);
+    const pixels = imageData.data;
+
+    let ascii = '';
+    for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+            const idx = (y * cols + x) * 4;
+            const r = pixels[idx];
+            const g = pixels[idx + 1];
+            const b = pixels[idx + 2];
+
+            let gray = 0.299 * r + 0.587 * g + 0.114 * b;
+            // Boost contrast like Dweller
+            gray = ((gray / 255 - 0.5) * 2.2 + 0.5) * 255;
+            gray = Math.max(0, Math.min(255, gray));
+
+            // Posterize to fewer levels
+            const levels = 8;
+            const step = 255 / levels;
+            gray = Math.floor(gray / step) * step;
+
+            const charIndex = Math.min(
+                ASCII_CHARS.length - 1,
+                Math.floor((gray / 255) * ASCII_CHARS.length)
+            );
+            ascii += ASCII_CHARS[charIndex];
+        }
+        ascii += '\n';
+    }
+    return ascii;
+}
+
+loadAsciiBackgrounds();
+
+// ===========================================
+// FIREBASE
 // ===========================================
 
 const firebaseConfig = {
@@ -359,17 +382,14 @@ const firebaseConfig = {
     appId: "1:170372794731:web:2674110cc4cbbe7500a42e"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 const chunksRef = db.ref('firepad/chunks');
 const usersRef = db.ref('firepad/users');
 
-// Generate unique user ID
 const myId = 'user_' + Math.random().toString(36).substr(2, 9);
 let myName = '';
 
-// Elements
 const contentArea = document.getElementById('contentArea');
 const hiddenInput = document.getElementById('hiddenInput');
 const charCount = document.getElementById('charCount');
@@ -377,10 +397,9 @@ const usersEl = document.getElementById('users');
 const usersList = document.getElementById('usersList');
 const nameInput = document.getElementById('nameInput');
 
-let chunks = []; // [{author, text, key}]
+let chunks = [];
 let isRemote = false;
 
-// Enter on name input
 nameInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') enterLake();
 });
@@ -415,7 +434,6 @@ function renderContent() {
 }
 
 function startPad() {
-    // Listen for chunks from Firebase
     chunksRef.orderByChild('order').on('value', (snapshot) => {
         isRemote = true;
         const data = snapshot.val();
@@ -433,15 +451,12 @@ function startPad() {
         isRemote = false;
     });
 
-    // Typing into hidden input
     hiddenInput.addEventListener('input', (e) => {
         if (isRemote) return;
         const typed = hiddenInput.value;
         hiddenInput.value = '';
-
         if (!typed) return;
 
-        // Append to last chunk if same author, otherwise create new chunk
         const last = chunks[chunks.length - 1];
         if (last && last.author === myName) {
             last.text += typed;
@@ -452,7 +467,6 @@ function startPad() {
         }
     });
 
-    // Handle keys
     hiddenInput.addEventListener('keydown', (e) => {
         if (isRemote) return;
 
@@ -474,7 +488,6 @@ function startPad() {
         }
     });
 
-    // Track online users with names
     const myPresence = usersRef.child(myId);
     myPresence.set(myName);
     myPresence.onDisconnect().remove();
@@ -499,118 +512,6 @@ function escapeHtml(text) {
     div.textContent = text;
     return div.innerHTML.replace(/\n/g, '<br>');
 }
-
-// ASCII background images (portraits, buildings, landscapes)
-const asciiImages = [
-`
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
-▓▓░░,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,░░▓▓
-▓▓░░,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓,,░░▓▓
-▓▓░░,,▓▓░░░░░░░░░░░░░░░░▓▓,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▓▓░░░░░░░░░░░░░░▓▓,,░░▓▓
-▓▓░░,,▓▓░░████████████░░▓▓,,,,,,,,▲▲▲▲▲▲▲▲▲▲▲▲,,,,,,,,,,,,▓▓░░██████████░░▓▓,,░░▓▓
-▓▓░░,,▓▓░░██  LAKE  ██░░▓▓,,,,▲▲▲▲░░░░░░░░░░▲▲▲▲,,,,,,,,,,▓▓░░██ EDEN ██░░▓▓,,░░▓▓
-▓▓░░,,▓▓░░████████████░░▓▓▲▲▲▲░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,▓▓░░██████████░░▓▓,,░░▓▓
-▓▓░░,,▓▓░░░░░░░░░░░░░░░░▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░,,,,▓▓░░░░░░░░░░░░░░▓▓,,░░▓▓
-▓▓░░,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓,,░░▓▓
-▓▓░░,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,░░▓▓
-▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-`,
-`
-●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
-●●                                                                                        ●●
-●●      ████████████████████████████████████████████████████████████████████████████      ●●
-●●      ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██      ●●
-●●      ██░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓░░██      ●●
-●●      ██░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓  ▓▓░░██      ●●
-●●      ██░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓░░██      ●●
-●●      ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██      ●●
-●●      ████████████████████████████████████████████████████████████████████████████      ●●
-●●                                                                                        ●●
-●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
-`,
-`
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,▐████████████████████████████████████████████████████████████████████████████████▌,,,,
-,,▐██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██▌,,,,
-,,▐██░░                                                                        ░░██▌,,,,
-,,▐██░░    ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,    ░░██▌,,,,
-,,▐██░░    ,,  Josef Albers                                               ,,    ░░██▌,,,,
-,,▐██░░    ,,  Black Mountain College                                     ,,    ░░██▌,,,,
-,,▐██░░    ,,  1933                                                       ,,    ░░██▌,,,,
-,,▐██░░    ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,    ░░██▌,,,,
-,,▐██░░                                                                        ░░██▌,,,,
-,,▐██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██▌,,,,
-,,▐████████████████████████████████████████████████████████████████████████████████▌,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-`,
-`
-██████████████████████████████████████████████████████████████████████████████████████████
-██                                                                                      ██
-██    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ██
-██    ░░                                                                          ░░    ██
-██    ░░      ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓            ░░    ██
-██    ░░      ▓▓        ▓▓          ▓▓        ▓▓          ▓▓        ▓▓            ░░    ██
-██    ░░      ▓▓  1948  ▓▓          ▓▓  1952  ▓▓          ▓▓  1956  ▓▓            ░░    ██
-██    ░░      ▓▓        ▓▓          ▓▓        ▓▓          ▓▓        ▓▓            ░░    ██
-██    ░░      ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓            ░░    ██
-██    ░░                                                                          ░░    ██
-██    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ██
-██                                                                                      ██
-██████████████████████████████████████████████████████████████████████████████████████████
-`
-];
-
-// Set background ASCII images
-document.getElementById('bg1').textContent = asciiImages[0];
-document.getElementById('bg2').textContent = asciiImages[1];
-document.getElementById('bg3').textContent = asciiImages[2];
-document.getElementById('bg4').textContent = asciiImages[3];
-
-// Scroll handler for background ASCII
-const bgElements = [
-    { el: document.getElementById('bg1'), trigger: 0.1 },
-    { el: document.getElementById('bg2'), trigger: 0.35 },
-    { el: document.getElementById('bg3'), trigger: 0.6 },
-    { el: document.getElementById('bg4'), trigger: 0.85 }
-];
-
-function updateBackgrounds() {
-    const scrollY = window.scrollY;
-    const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
-    const progress = scrollY / maxScroll;
-    
-    bgElements.forEach(bg => {
-        const distance = Math.abs(progress - bg.trigger);
-        bg.el.classList.toggle('visible', distance < 0.2);
-    });
-}
-
-window.addEventListener('scroll', updateBackgrounds);
-updateBackgrounds();
-
-// Emojis
-const emojis = ['🏔️', '📚', '🔥'];
-const layer = document.getElementById('emojiLayer');
-
-emojis.forEach((e, i) => {
-    const span = document.createElement('span');
-    span.className = 'emoji';
-    span.textContent = e;
-    span.style.left = (20 + Math.random() * 60) + '%';
-    span.style.top = (20 + Math.random() * 60) + '%';
-    span.dataset.trigger = (i + 1) / (emojis.length + 1);
-    layer.appendChild(span);
-});
-
-window.addEventListener('scroll', () => {
-    const progress = window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight);
-    document.querySelectorAll('.emoji').forEach(el => {
-        const t = parseFloat(el.dataset.trigger);
-        el.classList.toggle('visible', Math.abs(progress - t) < 0.25);
-    });
-});
 </script>
 
 </body>
