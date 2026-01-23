@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LAKE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <style>
@@ -15,9 +15,9 @@
         }
         
         body {
-            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-            background: #000;
-            color: #fff;
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            background: #0a0a0a;
+            color: #e8e8e0;
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -26,26 +26,26 @@
         .bg-ascii {
             position: fixed;
             font-family: 'SF Mono', 'Monaco', monospace;
-            font-size: 6px;
+            font-size: 5px;
             line-height: 1;
             white-space: pre;
-            color: #fff;
+            color: #e8e8e0;
             opacity: 0;
-            transition: opacity 1s ease;
+            transition: opacity 1.5s ease;
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .bg-ascii.visible {
-            opacity: 0.08;
+            opacity: 0.04;
         }
 
         /* Header ASCII art */
         .header-ascii {
-            font-size: 8px;
+            font-size: 7px;
             line-height: 1.1;
             white-space: pre;
-            color: #fff;
+            color: #333;
             padding: 20px;
             overflow: hidden;
         }
@@ -56,17 +56,20 @@
         }
         
         .title {
-            font-family: 'Inter', 'Helvetica Neue', sans-serif;
-            font-size: 72px;
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            line-height: 0.9;
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 56px;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            line-height: 1;
+            text-transform: uppercase;
         }
         
         .meta {
-            font-size: 12px;
-            color: #888;
-            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+            margin-top: 12px;
+            font-style: italic;
+            letter-spacing: 0.02em;
         }
         
         .online {
@@ -74,14 +77,15 @@
             align-items: center;
             gap: 8px;
             margin-top: 15px;
-            font-size: 12px;
-            color: #4a9f7e;
+            font-size: 11px;
+            color: #666;
+            font-family: 'SF Mono', monospace;
         }
 
         .dot {
-            width: 8px;
-            height: 8px;
-            background: #4a9f7e;
+            width: 6px;
+            height: 6px;
+            background: #666;
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
@@ -99,12 +103,11 @@
         .users-list span {
             display: inline-block;
             margin-right: 12px;
-            color: #4a9f7e;
+            color: #555;
+            font-family: 'SF Mono', monospace;
         }
         .users-list span::before {
-            content: '~';
-            margin-right: 2px;
-            color: #333;
+            content: '';
         }
 
         /* Name prompt overlay */
@@ -127,36 +130,41 @@
         }
         .name-overlay label {
             font-size: 14px;
-            color: #888;
+            color: #666;
+            font-style: italic;
         }
         .name-overlay input {
-            font-family: 'Inter', sans-serif;
-            font-size: 24px;
-            font-weight: 900;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
             background: transparent;
             border: none;
             border-bottom: 1px solid #333;
-            color: #fff;
+            color: #e8e8e0;
             text-align: center;
             padding: 10px;
             outline: none;
             width: 300px;
+            letter-spacing: 0.05em;
         }
         .name-overlay input::placeholder {
             color: #333;
         }
         .name-overlay button {
-            font-family: 'SF Mono', monospace;
-            font-size: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
             background: transparent;
             border: 1px solid #333;
-            color: #4a9f7e;
-            padding: 8px 20px;
+            color: #888;
+            padding: 8px 24px;
             cursor: pointer;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, color 0.2s;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
         .name-overlay button:hover {
-            border-color: #4a9f7e;
+            border-color: #888;
+            color: #e8e8e0;
         }
 
         /* Editor area */
@@ -167,11 +175,12 @@
         }
 
         .content-area {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            line-height: 1.8;
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 20px;
+            line-height: 2;
             min-height: 60vh;
             cursor: text;
+            color: #e8e8e0;
         }
 
         .content-area .chunk {
@@ -179,12 +188,13 @@
         }
 
         .content-area .chunk .author-tag {
-            color: #555;
-            font-size: 9px;
-            font-family: 'SF Mono', monospace;
+            color: #444;
+            font-size: 8px;
+            font-family: 'SF Mono', 'Monaco', monospace;
             vertical-align: super;
             margin-left: 1px;
-            margin-right: 3px;
+            margin-right: 4px;
+            font-style: normal;
         }
 
         .content-area .chunk .text {
@@ -198,9 +208,9 @@
         /* Blinking cursor */
         .write-cursor {
             display: inline-block;
-            width: 2px;
-            height: 1.1em;
-            background: #4a9f7e;
+            width: 1px;
+            height: 1.2em;
+            background: #e8e8e0;
             vertical-align: text-bottom;
             animation: blink 1s step-end infinite;
         }
@@ -224,7 +234,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            font-size: 16px;
+            font-size: 14px;
             color: #333;
             background: transparent;
             border: none;
@@ -232,12 +242,13 @@
             z-index: 100;
             padding: 5px;
             transition: color 0.2s;
+            font-family: 'SF Mono', monospace;
         }
         .toggle-names:hover {
-            color: #888;
+            color: #666;
         }
         .toggle-names.active {
-            color: #4a9f7e;
+            color: #555;
         }
 
         /* Footer */
@@ -251,7 +262,7 @@
         }
         
         .footer span {
-            color: #4a9f7e;
+            color: #555;
         }
 
         /* Emojis */
