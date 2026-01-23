@@ -409,8 +409,8 @@ function enterLake() {
     startPad();
 }
 
-// Cursor position: { chunkIndex, charOffset } or null (end)
-// chunkIndex: which chunk the cursor is in/after
+// Cursor position: { chunkKey, charOffset } or null (end)
+// chunkKey: Firebase key of the chunk
 // charOffset: character position within that chunk's text
 let cursorAt = null; // null = end of document
 let activeChunkKey = null; // track chunk being typed into
@@ -420,7 +420,6 @@ function focusInput() {
 }
 
 function renderChunkHtml(text, author) {
-    // Split text into content and trailing newlines
     // Signature goes after the last non-newline character
     const match = text.match(/^([\s\S]*?\S)([\s\n]*)$/);
     if (match) {
@@ -428,32 +427,34 @@ function renderChunkHtml(text, author) {
         const trailing = escapeHtml(match[2]);
         return `<span class="text">${content}</span><span class="author-tag">${author}</span>${trailing ? `<span class="text">${trailing}</span>` : ''}`;
     }
-    // Text is only whitespace/newlines
     const escaped = escapeHtml(text);
     return `<span class="text">${escaped}</span><span class="author-tag">${author}</span>`;
 }
 
 function renderContent() {
     let html = '';
+    // Resolve cursorAt chunkKey to current index
+    let cursorIdx = -1;
+    if (cursorAt) {
+        cursorIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
+        if (cursorIdx === -1) cursorAt = null; // chunk was deleted
+    }
 
     for (let i = 0; i < chunks.length; i++) {
         const c = chunks[i];
-        const text = c.text;
 
-        // Check if cursor is inside this chunk
-        if (cursorAt && cursorAt.chunkIndex === i) {
-            const before = text.slice(0, cursorAt.charOffset);
-            const after = text.slice(cursorAt.charOffset);
+        if (cursorAt && i === cursorIdx) {
+            const offset = Math.min(cursorAt.charOffset, c.text.length);
+            const before = c.text.slice(0, offset);
+            const after = c.text.slice(offset);
             html += `<span class="chunk" data-index="${i}">`;
             html += `<span class="text">${escapeHtml(before)}</span>`;
             html += '<span class="write-cursor"></span>';
-            // Put signature after last non-newline char in "after" part
             if (after) {
-                const full = before + after;
-                const matchFull = full.match(/^([\s\S]*?\S)([\s\n]*)$/);
-                if (matchFull && cursorAt.charOffset <= matchFull[1].length) {
-                    // Cursor is before the last char — signature goes in the "after" part
-                    html += renderChunkHtml(after, c.author);
+                // Find where signature should go (after last non-whitespace)
+                const lastNonWs = after.search(/\s*$/);
+                if (lastNonWs > 0) {
+                    html += `<span class="text">${escapeHtml(after.slice(0, lastNonWs))}</span><span class="author-tag">${c.author}</span><span class="text">${escapeHtml(after.slice(lastNonWs))}</span>`;
                 } else {
                     html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
                 }
@@ -462,17 +463,15 @@ function renderContent() {
             }
             html += `</span>`;
         } else {
-            html += `<span class="chunk" data-index="${i}">${renderChunkHtml(text, c.author)}</span>`;
+            html += `<span class="chunk" data-index="${i}">${renderChunkHtml(c.text, c.author)}</span>`;
         }
     }
 
-    // Cursor at end of document (or after active chunk)
+    // Cursor at end or after active chunk
     if (!cursorAt) {
-        // If we have an active chunk, cursor should be shown at its end
         if (activeChunkKey) {
             const activeIdx = chunks.findIndex(c => c.key === activeChunkKey);
             if (activeIdx >= 0 && activeIdx < chunks.length - 1) {
-                // Re-render: insert cursor after the active chunk
                 html = '';
                 for (let i = 0; i < chunks.length; i++) {
                     const c = chunks[i];
@@ -513,7 +512,7 @@ contentArea.addEventListener('click', (e) => {
 
             if (chunk.author === myName) {
                 // Own chunk: place cursor anywhere, set as active for editing
-                cursorAt = { chunkIndex: idx, charOffset: rawOffset };
+                cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
             } else {
                 // Other's chunk: only valid positions
@@ -541,7 +540,7 @@ contentArea.addEventListener('click', (e) => {
                     }
                 }
 
-                cursorAt = { chunkIndex: idx, charOffset: best };
+                cursorAt = { chunkKey: chunk.key, charOffset: best };
             }
         } else {
             cursorAt = null;
@@ -631,14 +630,16 @@ function startPad() {
             return;
         }
 
-        const { chunkIndex, charOffset } = cursorAt;
-        const chunk = chunks[chunkIndex];
+        const chunkIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
+        if (chunkIdx === -1) { cursorAt = null; return; }
+        const chunk = chunks[chunkIdx];
+        const charOffset = Math.min(cursorAt.charOffset, chunk.text.length);
 
         if (chunk.author === myName) {
             // Own chunk: insert freely at any position
             chunk.text = chunk.text.slice(0, charOffset) + typed + chunk.text.slice(charOffset);
             chunksRef.child(chunk.key).update({ text: chunk.text });
-            cursorAt.charOffset += typed.length;
+            cursorAt.charOffset = charOffset + typed.length;
             activeChunkKey = chunk.key;
         } else {
             // Other's chunk: cursor is at a valid position (start, end, or empty line)
@@ -647,13 +648,13 @@ function startPad() {
 
             if (charOffset === 0) {
                 // Before their chunk
-                const order = getInsertOrder(chunkIndex);
+                const order = getInsertOrder(chunkIdx);
                 const ref = chunksRef.push({ author: myName, text: typed, order });
                 activeChunkKey = ref.key;
                 cursorAt = null;
             } else if (charOffset >= chunk.text.length) {
                 // After their chunk
-                const order = getInsertOrder(chunkIndex + 1);
+                const order = getInsertOrder(chunkIdx + 1);
                 const ref = chunksRef.push({ author: myName, text: typed, order });
                 activeChunkKey = ref.key;
                 cursorAt = null;
@@ -686,9 +687,9 @@ function startPad() {
 
         if (e.key === 'Backspace') {
             e.preventDefault();
-            if (cursorAt && cursorAt.chunkIndex !== undefined) {
+            if (cursorAt && cursorAt.chunkKey) {
                 // Cursor is inside a chunk
-                const chunk = chunks[cursorAt.chunkIndex];
+                const chunk = chunks.find(c => c.key === cursorAt.chunkKey);
                 if (chunk && chunk.author === myName && cursorAt.charOffset > 0) {
                     chunk.text = chunk.text.slice(0, cursorAt.charOffset - 1) + chunk.text.slice(cursorAt.charOffset);
                     if (chunk.text.length === 0) {
