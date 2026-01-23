@@ -518,14 +518,10 @@ contentArea.addEventListener('click', (e) => {
                 // Other's chunk: only valid positions
                 const validPositions = [0, text.length];
 
-                // Find empty lines: positions after \n where next char is also \n or end
+                // Valid: after any \n (beginning of any line)
                 for (let p = 0; p < text.length; p++) {
                     if (text[p] === '\n') {
-                        // After this \n is a valid spot if it's an empty line
-                        // (next char is \n or end of text)
-                        if (p + 1 >= text.length || text[p + 1] === '\n') {
-                            validPositions.push(p + 1);
-                        }
+                        validPositions.push(p + 1);
                     }
                 }
 
@@ -555,19 +551,20 @@ contentArea.addEventListener('click', (e) => {
 });
 
 function getCharOffset(chunkEl, node, offset, chunkIdx) {
-    // Get the .text span inside this chunk
-    const textEl = chunkEl.querySelector('.text');
-    if (!textEl) return chunks[chunkIdx].text.length;
+    // Walk through ALL .text spans in this chunk to find position
+    const textEls = chunkEl.querySelectorAll('.text');
+    if (!textEls.length) return chunks[chunkIdx].text.length;
 
-    // Walk through text nodes to find position
-    const walker = document.createTreeWalker(textEl, NodeFilter.SHOW_TEXT);
     let pos = 0;
-    let current;
-    while (current = walker.nextNode()) {
-        if (current === node) {
-            return pos + offset;
+    for (const textEl of textEls) {
+        const walker = document.createTreeWalker(textEl, NodeFilter.SHOW_TEXT);
+        let current;
+        while (current = walker.nextNode()) {
+            if (current === node) {
+                return pos + offset;
+            }
+            pos += current.textContent.length;
         }
-        pos += current.textContent.length;
     }
     return chunks[chunkIdx].text.length;
 }
