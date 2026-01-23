@@ -179,12 +179,12 @@
         }
 
         .content-area .chunk .author-tag {
-            color: #4a9f7e;
-            font-size: 10px;
+            color: #555;
+            font-size: 9px;
             font-family: 'SF Mono', monospace;
             vertical-align: super;
-            margin-right: 2px;
-            opacity: 0.7;
+            margin-left: 1px;
+            margin-right: 3px;
         }
 
         .content-area .chunk .text {
@@ -395,7 +395,7 @@ function renderContent() {
     let html = '';
     chunks.forEach(c => {
         const escaped = escapeHtml(c.text);
-        html += `<span class="chunk"><span class="author-tag">${c.author}</span><span class="text">${escaped}</span></span>`;
+        html += `<span class="chunk"><span class="text">${escaped}</span><span class="author-tag">${c.author}</span></span>`;
     });
     html += '<span class="write-cursor"></span>';
     contentArea.innerHTML = html;
