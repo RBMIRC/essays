@@ -566,38 +566,63 @@ function startPad() {
             const chunk = chunks[chunkIndex];
 
             if (chunk.author === myName) {
-                // Our own chunk — just insert text at offset
+                // Our own chunk — insert text at offset
                 chunk.text = chunk.text.slice(0, charOffset) + typed + chunk.text.slice(charOffset);
                 chunksRef.child(chunk.key).update({ text: chunk.text });
                 cursorAt.charOffset += typed.length;
-            } else if (charOffset === 0) {
-                // At the start of someone else's chunk — insert before
-                const order = getInsertOrder(chunkIndex);
-                chunksRef.push({ author: myName, text: typed, order });
-                // Cursor moves: now it's in the new chunk (will be re-resolved on next render)
-                cursorAt = null; // temporarily, will be at end of new chunk
             } else if (charOffset >= chunk.text.length) {
-                // At the end of someone else's chunk — insert after
-                const order = getInsertOrder(chunkIndex + 1);
-                chunksRef.push({ author: myName, text: typed, order });
-                cursorAt = null;
+                // At end of someone else's chunk
+                if (typed === '\n') {
+                    // Newline: append to their chunk so signature stays attached
+                    chunk.text += typed;
+                    chunksRef.child(chunk.key).update({ text: chunk.text });
+                    cursorAt.charOffset = chunk.text.length;
+                } else {
+                    // Regular text: insert as new chunk after
+                    const order = getInsertOrder(chunkIndex + 1);
+                    chunksRef.push({ author: myName, text: typed, order });
+                    cursorAt = null;
+                }
+            } else if (charOffset === 0) {
+                // At start of someone else's chunk
+                if (typed === '\n') {
+                    // Newline before chunk: add to previous chunk if exists
+                    const prev = chunkIndex > 0 ? chunks[chunkIndex - 1] : null;
+                    if (prev) {
+                        prev.text += typed;
+                        chunksRef.child(prev.key).update({ text: prev.text });
+                    } else {
+                        const order = getInsertOrder(0);
+                        chunksRef.push({ author: myName, text: typed, order });
+                    }
+                    cursorAt = { chunkIndex, charOffset: 0 };
+                } else {
+                    const order = getInsertOrder(chunkIndex);
+                    chunksRef.push({ author: myName, text: typed, order });
+                    cursorAt = null;
+                }
             } else {
-                // Middle of someone else's chunk — split it
+                // Middle of someone else's chunk (at a word boundary)
                 const textBefore = chunk.text.slice(0, charOffset);
                 const textAfter = chunk.text.slice(charOffset);
 
-                // Update original chunk to only have the "before" text
-                chunksRef.child(chunk.key).update({ text: textBefore });
+                if (typed === '\n') {
+                    // Newline: just insert it into their chunk (no split needed)
+                    chunk.text = textBefore + typed + textAfter;
+                    chunksRef.child(chunk.key).update({ text: chunk.text });
+                    cursorAt.charOffset = charOffset + 1;
+                } else {
+                    // Split and insert our text
+                    chunksRef.child(chunk.key).update({ text: textBefore });
 
-                // Insert our text in between
-                const orderMid = chunk.order + 0.3333;
-                const newRef = chunksRef.push({ author: myName, text: typed, order: orderMid });
+                    const orderMid = chunk.order + 0.3333;
+                    chunksRef.push({ author: myName, text: typed, order: orderMid });
 
-                // Insert the "after" part as a new chunk from original author
-                const orderAfter = chunk.order + 0.6666;
-                chunksRef.push({ author: chunk.author, text: textAfter, order: orderAfter });
+                    const orderAfter = chunk.order + 0.6666;
+                    chunksRef.push({ author: chunk.author, text: textAfter, order: orderAfter });
 
-                cursorAt = null;
+                    cursorAt = null;
+                }
             }
         }
     }
