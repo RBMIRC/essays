@@ -39,7 +39,7 @@
             line-height: 1.1;
             white-space: pre;
             color: #fff;
-            opacity: 0.85;
+            opacity: 0.5;
         }
 
 
@@ -323,8 +323,8 @@ function imageToAscii(img, cols) {
             const b = pixels[idx + 2];
 
             let gray = 0.299 * r + 0.587 * g + 0.114 * b;
-            // Hard contrast - very binary
-            gray = ((gray / 255 - 0.5) * 4.0 + 0.5) * 255;
+            // Hard contrast
+            gray = ((gray / 255 - 0.5) * 3.0 + 0.5) * 255;
             gray = Math.max(0, Math.min(255, gray));
 
             // Posterize to very few levels - brut
