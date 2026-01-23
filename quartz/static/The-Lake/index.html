@@ -466,9 +466,27 @@ function renderContent() {
         }
     }
 
-    // Cursor at end of document
+    // Cursor at end of document (or after active chunk)
     if (!cursorAt) {
-        html += '<span class="write-cursor"></span>';
+        // If we have an active chunk, cursor should be shown at its end
+        if (activeChunkKey) {
+            const activeIdx = chunks.findIndex(c => c.key === activeChunkKey);
+            if (activeIdx >= 0 && activeIdx < chunks.length - 1) {
+                // Re-render: insert cursor after the active chunk
+                html = '';
+                for (let i = 0; i < chunks.length; i++) {
+                    const c = chunks[i];
+                    html += `<span class="chunk" data-index="${i}">${renderChunkHtml(c.text, c.author)}</span>`;
+                    if (i === activeIdx) {
+                        html += '<span class="write-cursor"></span>';
+                    }
+                }
+            } else {
+                html += '<span class="write-cursor"></span>';
+            }
+        } else {
+            html += '<span class="write-cursor"></span>';
+        }
     }
 
     contentArea.innerHTML = html;
@@ -665,7 +683,36 @@ function startPad() {
     hiddenInput.addEventListener('keydown', (e) => {
         if (isRemote) return;
 
-        if (e.key === 'Backspace' || e.key === 'Delete') {
+        if (e.key === 'Backspace') {
+            e.preventDefault();
+            // Allow backspace only in own active chunk
+            if (activeChunkKey) {
+                const existing = chunks.find(c => c.key === activeChunkKey);
+                if (existing && existing.author === myName && existing.text.length > 0) {
+                    if (cursorAt && cursorAt.chunkIndex !== undefined) {
+                        // Cursor inside own chunk: delete char before cursor
+                        const idx = cursorAt.chunkIndex;
+                        if (chunks[idx].key === activeChunkKey && cursorAt.charOffset > 0) {
+                            existing.text = existing.text.slice(0, cursorAt.charOffset - 1) + existing.text.slice(cursorAt.charOffset);
+                            chunksRef.child(activeChunkKey).update({ text: existing.text });
+                            cursorAt.charOffset--;
+                        }
+                    } else {
+                        // Cursor null (appending at end of active chunk)
+                        existing.text = existing.text.slice(0, -1);
+                        if (existing.text.length === 0) {
+                            chunksRef.child(activeChunkKey).remove();
+                            activeChunkKey = null;
+                        } else {
+                            chunksRef.child(activeChunkKey).update({ text: existing.text });
+                        }
+                    }
+                }
+            }
+            return;
+        }
+
+        if (e.key === 'Delete') {
             e.preventDefault();
             return;
         }
