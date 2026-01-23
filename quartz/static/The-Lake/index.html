@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LAKE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,900;1,400;1,900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400;800&family=Fraunces:ital,wght@0,400;0,900;1,400;1,900&family=Inknut+Antiqua:wght@400;700&family=BioRhyme:wght@400;800&family=Spectral:ital,wght@0,400;0,700;1,400;1,700&family=Alegreya:ital,wght@0,400;0,900;1,400;1,900&family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Archivo+Narrow:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <style>
@@ -416,42 +416,8 @@ function focusInput() {
     hiddenInput.focus();
 }
 
-// Generate consistent style per author based on name hash
-const AUTHOR_FONTS = [
-    "'Inter', sans-serif",
-    "'Playfair Display', serif",
-    "'Space Mono', monospace",
-    "'Cormorant', serif",
-    "'Syne', sans-serif",
-    "'Fraunces', serif",
-    "'Inknut Antiqua', serif",
-    "'BioRhyme', serif",
-    "'Spectral', serif",
-    "'Alegreya', serif",
-    "'DM Sans', sans-serif",
-    "'Libre Baskerville', serif",
-    "'Lora', serif",
-    "'Archivo Narrow', sans-serif",
-    "'Rubik', sans-serif"
-];
-const AUTHOR_SIZES = [22, 26, 30, 34, 38, 42, 48];
-
-function hashString(str) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-        hash = ((hash << 5) - hash) + str.charCodeAt(i);
-        hash |= 0;
-    }
-    return Math.abs(hash);
-}
-
 function getAuthorStyle(author) {
-    const h = hashString(author);
-    const font = AUTHOR_FONTS[h % AUTHOR_FONTS.length];
-    const size = AUTHOR_SIZES[(h >> 3) % AUTHOR_SIZES.length];
-    const italic = (h >> 6) % 3 === 0 ? 'italic' : 'normal';
-    const weight = ((h >> 8) % 2 === 0) ? '700' : '400';
-    return `font-family:${font};font-size:${size}px;font-style:${italic};font-weight:${weight};`;
+    return "font-family:'Archivo Narrow', sans-serif;font-size:48px;font-weight:700;";
 }
 
 function renderChunkHtml(text, author) {
