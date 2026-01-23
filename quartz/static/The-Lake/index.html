@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIREPAD</title>
+    <title>THE LAKE</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
@@ -77,7 +77,7 @@
             font-size: 12px;
             color: #4a9f7e;
         }
-        
+
         .dot {
             width: 8px;
             height: 8px;
@@ -85,10 +85,78 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.4; }
+        }
+
+        .users-list {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #555;
+        }
+        .users-list span {
+            display: inline-block;
+            margin-right: 12px;
+            color: #4a9f7e;
+        }
+        .users-list span::before {
+            content: '~';
+            margin-right: 2px;
+            color: #333;
+        }
+
+        /* Name prompt overlay */
+        .name-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .name-overlay.hidden {
+            display: none;
+        }
+        .name-overlay label {
+            font-size: 14px;
+            color: #888;
+        }
+        .name-overlay input {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            width: 300px;
+        }
+        .name-overlay input::placeholder {
+            color: #333;
+        }
+        .name-overlay button {
+            font-family: 'SF Mono', monospace;
+            font-size: 12px;
+            background: transparent;
+            border: 1px solid #333;
+            color: #4a9f7e;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .name-overlay button:hover {
+            border-color: #4a9f7e;
         }
 
         /* Editor */
@@ -177,10 +245,17 @@
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 </div>
 
+<div class="name-overlay" id="nameOverlay">
+    <label>enter your name</label>
+    <input type="text" id="nameInput" placeholder="..." autofocus>
+    <button onclick="enterLake()">enter</button>
+</div>
+
 <div class="title-section">
-    <div class="title">Firepad</div>
-    <div class="meta">Posted by collective<br>1737670800</div>
-    <div class="online"><span class="dot"></span><span id="users">3</span> online</div>
+    <div class="title">The Lake</div>
+    <div class="meta">Black Mountain College</div>
+    <div class="online"><span class="dot"></span><span id="users">0</span> online</div>
+    <div class="users-list" id="usersList"></div>
 </div>
 
 <div class="editor-wrap">
@@ -220,50 +295,73 @@ const usersRef = db.ref('firepad/users');
 
 // Generate unique user ID
 const myId = 'user_' + Math.random().toString(36).substr(2, 9);
+let myName = '';
 
 // Editor
 const editor = document.getElementById('editor');
 const chars = document.getElementById('chars');
 const usersEl = document.getElementById('users');
+const usersList = document.getElementById('usersList');
+const nameInput = document.getElementById('nameInput');
 
-let isRemoteChange = false;
-
-// Listen for content changes from Firebase
-padRef.on('value', (snapshot) => {
-    const data = snapshot.val();
-    if (data !== null && data !== editor.value) {
-        isRemoteChange = true;
-        const cursorPos = editor.selectionStart;
-        editor.value = data;
-        editor.selectionStart = editor.selectionEnd = cursorPos;
-        chars.textContent = data.length;
-        isRemoteChange = false;
-    }
+// Enter on name input
+nameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') enterLake();
 });
 
-// Send changes to Firebase
-let saveTimeout;
-editor.addEventListener('input', () => {
-    chars.textContent = editor.value.length;
-    
-    if (!isRemoteChange) {
-        clearTimeout(saveTimeout);
-        saveTimeout = setTimeout(() => {
-            padRef.set(editor.value);
-        }, 100);
-    }
-});
+function enterLake() {
+    myName = nameInput.value.trim() || 'anonymous';
+    document.getElementById('nameOverlay').classList.add('hidden');
+    startPad();
+}
 
-// Track online users
-const myPresence = usersRef.child(myId);
-myPresence.set(true);
-myPresence.onDisconnect().remove();
+function startPad() {
+    let isRemoteChange = false;
 
-usersRef.on('value', (snapshot) => {
-    const users = snapshot.val();
-    const count = users ? Object.keys(users).length : 1;
-    usersEl.textContent = count;
-});
+    // Listen for content changes from Firebase
+    padRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        if (data !== null && data !== editor.value) {
+            isRemoteChange = true;
+            const cursorPos = editor.selectionStart;
+            editor.value = data;
+            editor.selectionStart = editor.selectionEnd = cursorPos;
+            chars.textContent = data.length;
+            isRemoteChange = false;
+        }
+    });
+
+    // Send changes to Firebase
+    let saveTimeout;
+    editor.addEventListener('input', () => {
+        chars.textContent = editor.value.length;
+        if (!isRemoteChange) {
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => {
+                padRef.set(editor.value);
+            }, 100);
+        }
+    });
+
+    // Track online users with names
+    const myPresence = usersRef.child(myId);
+    myPresence.set(myName);
+    myPresence.onDisconnect().remove();
+
+    usersRef.on('value', (snapshot) => {
+        const users = snapshot.val();
+        if (users) {
+            const names = Object.values(users);
+            usersEl.textContent = names.length;
+            usersList.innerHTML = names.map(n => `<span>${n}</span>`).join('');
+        } else {
+            usersEl.textContent = '0';
+            usersList.innerHTML = '';
+        }
+    });
+
+    editor.focus();
+}
 
 // ASCII background images (portraits, buildings, landscapes)
 const asciiImages = [
