@@ -418,6 +418,20 @@ function focusInput() {
     hiddenInput.focus();
 }
 
+function renderChunkHtml(text, author) {
+    // Split text into content and trailing newlines
+    // Signature goes after the last non-newline character
+    const match = text.match(/^([\s\S]*?\S)([\s\n]*)$/);
+    if (match) {
+        const content = escapeHtml(match[1]);
+        const trailing = escapeHtml(match[2]);
+        return `<span class="text">${content}</span><span class="author-tag">${author}</span>${trailing ? `<span class="text">${trailing}</span>` : ''}`;
+    }
+    // Text is only whitespace/newlines
+    const escaped = escapeHtml(text);
+    return `<span class="text">${escaped}</span><span class="author-tag">${author}</span>`;
+}
+
 function renderContent() {
     let html = '';
 
@@ -427,16 +441,27 @@ function renderContent() {
 
         // Check if cursor is inside this chunk
         if (cursorAt && cursorAt.chunkIndex === i) {
-            const before = escapeHtml(text.slice(0, cursorAt.charOffset));
-            const after = escapeHtml(text.slice(cursorAt.charOffset));
+            const before = text.slice(0, cursorAt.charOffset);
+            const after = text.slice(cursorAt.charOffset);
             html += `<span class="chunk" data-index="${i}">`;
-            html += `<span class="text"><span class="text-part" data-index="${i}" data-offset="before">${before}</span>`;
+            html += `<span class="text">${escapeHtml(before)}</span>`;
             html += '<span class="write-cursor"></span>';
-            html += `<span class="text-part" data-index="${i}" data-offset="after">${after}</span></span>`;
-            html += `<span class="author-tag">${c.author}</span></span>`;
+            // Put signature after last non-newline char in "after" part
+            if (after) {
+                const full = before + after;
+                const matchFull = full.match(/^([\s\S]*?\S)([\s\n]*)$/);
+                if (matchFull && cursorAt.charOffset <= matchFull[1].length) {
+                    // Cursor is before the last char — signature goes in the "after" part
+                    html += renderChunkHtml(after, c.author);
+                } else {
+                    html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
+                }
+            } else {
+                html += `<span class="author-tag">${c.author}</span>`;
+            }
+            html += `</span>`;
         } else {
-            const escaped = escapeHtml(c.text);
-            html += `<span class="chunk" data-index="${i}"><span class="text">${escaped}</span><span class="author-tag">${c.author}</span></span>`;
+            html += `<span class="chunk" data-index="${i}">${renderChunkHtml(text, c.author)}</span>`;
         }
     }
 
