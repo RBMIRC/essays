@@ -314,6 +314,17 @@ function imageToAscii(img, cols) {
     const imageData = ctx.getImageData(0, 0, cols, rows);
     const pixels = imageData.data;
 
+    // Calculate average brightness to decide if we invert
+    let totalBright = 0;
+    const totalPixels = cols * rows;
+    for (let i = 0; i < totalPixels; i++) {
+        const idx = i * 4;
+        totalBright += 0.299 * pixels[idx] + 0.587 * pixels[idx + 1] + 0.114 * pixels[idx + 2];
+    }
+    const avgBright = totalBright / totalPixels;
+    // If image is mostly bright (>50%), invert so we get fewer visible chars on black
+    const invert = avgBright > 127;
+
     let ascii = '';
     for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
@@ -323,11 +334,13 @@ function imageToAscii(img, cols) {
             const b = pixels[idx + 2];
 
             let gray = 0.299 * r + 0.587 * g + 0.114 * b;
+            if (invert) gray = 255 - gray;
+
             // Hard contrast
             gray = ((gray / 255 - 0.5) * 3.0 + 0.5) * 255;
             gray = Math.max(0, Math.min(255, gray));
 
-            // Posterize to very few levels - brut
+            // Posterize to few levels
             const levels = 4;
             const step = 255 / levels;
             gray = Math.floor(gray / step) * step;
