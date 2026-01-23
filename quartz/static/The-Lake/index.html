@@ -413,6 +413,7 @@ function enterLake() {
 // chunkIndex: which chunk the cursor is in/after
 // charOffset: character position within that chunk's text
 let cursorAt = null; // null = end of document
+let activeChunkKey = null; // track chunk being typed into
 
 function focusInput() {
     hiddenInput.focus();
@@ -530,6 +531,7 @@ contentArea.addEventListener('click', (e) => {
         cursorAt = null;
     }
 
+    activeChunkKey = null;
     renderContent();
     focusInput();
 });
@@ -583,16 +585,29 @@ function startPad() {
         isRemote = false;
     });
 
+    activeChunkKey = null;
+
     function insertText(typed) {
         if (!cursorAt) {
-            // Cursor at end of document
+            // Cursor at end of document or continuing after an insertion
+            // If we have an active chunk we just created, append to it
+            if (activeChunkKey) {
+                const existing = chunks.find(c => c.key === activeChunkKey);
+                if (existing && existing.author === myName) {
+                    existing.text += typed;
+                    chunksRef.child(activeChunkKey).update({ text: existing.text });
+                    return;
+                }
+            }
             const last = chunks[chunks.length - 1];
             if (last && last.author === myName) {
                 last.text += typed;
                 chunksRef.child(last.key).update({ text: last.text });
+                activeChunkKey = last.key;
             } else {
                 const order = chunks.length ? chunks[chunks.length - 1].order + 1 : 0;
-                chunksRef.push({ author: myName, text: typed, order });
+                const ref = chunksRef.push({ author: myName, text: typed, order });
+                activeChunkKey = ref.key;
             }
             return;
         }
@@ -605,28 +620,31 @@ function startPad() {
             chunk.text = chunk.text.slice(0, charOffset) + typed + chunk.text.slice(charOffset);
             chunksRef.child(chunk.key).update({ text: chunk.text });
             cursorAt.charOffset += typed.length;
+            activeChunkKey = chunk.key;
         } else {
             // Other's chunk: cursor is at a valid position (start, end, or empty line)
-            // Split the chunk at cursor position, insert our new chunk in between
             const textBefore = chunk.text.slice(0, charOffset);
             const textAfter = chunk.text.slice(charOffset);
 
             if (charOffset === 0) {
                 // Before their chunk
                 const order = getInsertOrder(chunkIndex);
-                chunksRef.push({ author: myName, text: typed, order });
+                const ref = chunksRef.push({ author: myName, text: typed, order });
+                activeChunkKey = ref.key;
                 cursorAt = null;
             } else if (charOffset >= chunk.text.length) {
                 // After their chunk
                 const order = getInsertOrder(chunkIndex + 1);
-                chunksRef.push({ author: myName, text: typed, order });
+                const ref = chunksRef.push({ author: myName, text: typed, order });
+                activeChunkKey = ref.key;
                 cursorAt = null;
             } else {
                 // On an empty line inside their chunk — split into 3 parts
                 chunksRef.child(chunk.key).update({ text: textBefore });
 
                 const orderMid = chunk.order + 0.3333;
-                chunksRef.push({ author: myName, text: typed, order: orderMid });
+                const ref = chunksRef.push({ author: myName, text: typed, order: orderMid });
+                activeChunkKey = ref.key;
 
                 const orderAfter = chunk.order + 0.6666;
                 chunksRef.push({ author: chunk.author, text: textAfter, order: orderAfter });
