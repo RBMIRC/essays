@@ -158,11 +158,9 @@
         .content-area {
             position: relative;
             z-index: 1;
-            font-family: 'Inter', sans-serif;
-            font-size: 32px;
-            line-height: 1.8;
             min-height: 60vh;
             cursor: text;
+            line-height: 1.6;
         }
 
         .content-area .chunk {
@@ -419,6 +417,33 @@ function focusInput() {
     hiddenInput.focus();
 }
 
+// Generate consistent style per author based on name hash
+const AUTHOR_FONTS = [
+    "'Inter', sans-serif",
+    "'Georgia', serif",
+    "'SF Mono', 'Monaco', monospace",
+    "'Courier New', monospace",
+    "'Times New Roman', serif",
+    "'Helvetica Neue', sans-serif"
+];
+const AUTHOR_SIZES = [24, 28, 32, 36, 40, 44];
+
+function hashString(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+    }
+    return Math.abs(hash);
+}
+
+function getAuthorStyle(author) {
+    const h = hashString(author);
+    const font = AUTHOR_FONTS[h % AUTHOR_FONTS.length];
+    const size = AUTHOR_SIZES[(h >> 3) % AUTHOR_SIZES.length];
+    return `font-family:${font};font-size:${size}px;`;
+}
+
 function renderChunkHtml(text, author) {
     // Signature goes after the last non-newline character
     const match = text.match(/^([\s\S]*?\S)([\s\n]*)$/);
@@ -443,11 +468,12 @@ function renderContent() {
     for (let i = 0; i < chunks.length; i++) {
         const c = chunks[i];
 
+        const style = getAuthorStyle(c.author);
         if (cursorAt && i === cursorIdx) {
             const offset = Math.min(cursorAt.charOffset, c.text.length);
             const before = c.text.slice(0, offset);
             const after = c.text.slice(offset);
-            html += `<span class="chunk" data-index="${i}">`;
+            html += `<span class="chunk" data-index="${i}" style="${style}">`;
             html += `<span class="text">${escapeHtml(before)}</span>`;
             html += '<span class="write-cursor"></span>';
             if (after) {
@@ -463,7 +489,7 @@ function renderContent() {
             }
             html += `</span>`;
         } else {
-            html += `<span class="chunk" data-index="${i}">${renderChunkHtml(c.text, c.author)}</span>`;
+            html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
         }
     }
 
@@ -475,7 +501,8 @@ function renderContent() {
                 html = '';
                 for (let i = 0; i < chunks.length; i++) {
                     const c = chunks[i];
-                    html += `<span class="chunk" data-index="${i}">${renderChunkHtml(c.text, c.author)}</span>`;
+                    const s = getAuthorStyle(c.author);
+                    html += `<span class="chunk" data-index="${i}" style="${s}">${renderChunkHtml(c.text, c.author)}</span>`;
                     if (i === activeIdx) {
                         html += '<span class="write-cursor"></span>';
                     }
