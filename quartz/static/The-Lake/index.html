@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIREPAD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Background ASCII images */
+        .bg-ascii {
+            position: fixed;
+            font-family: 'SF Mono', 'Monaco', monospace;
+            font-size: 6px;
+            line-height: 1;
+            white-space: pre;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .bg-ascii.visible {
+            opacity: 0.08;
+        }
+
+        /* Header ASCII art */
+        .header-ascii {
+            font-size: 8px;
+            line-height: 1.1;
+            white-space: pre;
+            color: #fff;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Title */
+        .title-section {
+            padding: 0 30px 40px;
+        }
+        
+        .title {
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 0.9;
+        }
+        
+        .meta {
+            font-size: 12px;
+            color: #888;
+            margin-top: 15px;
+        }
+        
+        .online {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #4a9f7e;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #4a9f7e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Editor */
+        .editor-wrap {
+            position: relative;
+            z-index: 10;
+            padding: 0 30px 100px;
+        }
+        
+        .editor {
+            width: 100%;
+            min-height: 70vh;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            background: transparent;
+            color: #fff;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+        
+        .editor::placeholder {
+            color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 30px;
+            font-size: 11px;
+            color: #333;
+            z-index: 100;
+        }
+        
+        .footer span {
+            color: #4a9f7e;
+        }
+
+        /* Emojis */
+        .emoji-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+        }
+        
+        .emoji {
+            position: absolute;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+        
+        .emoji.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="emoji-layer" id="emojiLayer"></div>
+
+<!-- Background ASCII images that fade in/out -->
+<div class="bg-ascii" id="bg1" style="top: 20%; left: 5%;"></div>
+<div class="bg-ascii" id="bg2" style="top: 40%; right: 5%;"></div>
+<div class="bg-ascii" id="bg3" style="top: 60%; left: 10%;"></div>
+<div class="bg-ascii" id="bg4" style="top: 80%; right: 10%;"></div>
+
+<!-- Header with ASCII mountain/landscape -->
+<div class="header-ascii">
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲▲▲,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░▲▲▲▲,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,●●●●●●●●●●●●●●●●●●●●●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░▲▲▲▲,,,,,,,,,,,,▲▲▲▲,,,,,,,,,,,,,,,,●●,,,,,,,,,,,,,,,,,,,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,▲▲▲▲░░▲▲▲▲,,,,,,,,,,,,●●,,████████████████,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲▲▲▲▲░░░░░░░░▲▲▲▲,,,,,,,,,,●●,,██  WRITE   ██,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,,,●●,,██  HERE   ██,,●●,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,▐████████▌,,●●●●●●●●,,▐██████▌,,,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,●●,,████████████████,,●●,,●●●●●●●●,,▐████████████▌,,●●●●●●●●●●●●●●●●●●●●,,
+,,▐██▌,,●●,,▐████████████████▌,,,,,,▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,●●,,,,,,,,,,,,,,,,,,,,●●,,●●●●●●●●,,▐██████▌,,●●,,▐████▌,,●●●●●●●●●●●●●●,,
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▲▲▲▲●●●●●●●●●●●●●●●●●●●●●●●●▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+</div>
+
+<div class="title-section">
+    <div class="title">Firepad</div>
+    <div class="meta">Posted by collective<br>1737670800</div>
+    <div class="online"><span class="dot"></span><span id="users">3</span> online</div>
+</div>
+
+<div class="editor-wrap">
+    <textarea class="editor" id="editor" placeholder="start writing..."></textarea>
+</div>
+
+<div class="footer">
+    <span id="chars">0</span> chars · saved
+</div>
+
+<script>
+// ===========================================
+// FIREBASE CONFIG - REPLACE WITH YOUR OWN
+// ===========================================
+// 1. Go to https://console.firebase.google.com
+// 2. Create a new project
+// 3. Add a Web App
+// 4. Copy your config below
+// 5. Go to Realtime Database → Create Database → Start in TEST MODE
+// ===========================================
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBkUvAiNwfM1ZVVDOpNWKrhDyeehs_I9jg",
+    authDomain: "the-lake-b8eb9.firebaseapp.com",
+    databaseURL: "https://the-lake-b8eb9-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "the-lake-b8eb9",
+    storageBucket: "the-lake-b8eb9.firebasestorage.app",
+    messagingSenderId: "170372794731",
+    appId: "1:170372794731:web:2674110cc4cbbe7500a42e"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const padRef = db.ref('firepad/content');
+const usersRef = db.ref('firepad/users');
+
+// Generate unique user ID
+const myId = 'user_' + Math.random().toString(36).substr(2, 9);
+
+// Editor
+const editor = document.getElementById('editor');
+const chars = document.getElementById('chars');
+const usersEl = document.getElementById('users');
+
+let isRemoteChange = false;
+
+// Listen for content changes from Firebase
+padRef.on('value', (snapshot) => {
+    const data = snapshot.val();
+    if (data !== null && data !== editor.value) {
+        isRemoteChange = true;
+        const cursorPos = editor.selectionStart;
+        editor.value = data;
+        editor.selectionStart = editor.selectionEnd = cursorPos;
+        chars.textContent = data.length;
+        isRemoteChange = false;
+    }
+});
+
+// Send changes to Firebase
+let saveTimeout;
+editor.addEventListener('input', () => {
+    chars.textContent = editor.value.length;
+    
+    if (!isRemoteChange) {
+        clearTimeout(saveTimeout);
+        saveTimeout = setTimeout(() => {
+            padRef.set(editor.value);
+        }, 100);
+    }
+});
+
+// Track online users
+const myPresence = usersRef.child(myId);
+myPresence.set(true);
+myPresence.onDisconnect().remove();
+
+usersRef.on('value', (snapshot) => {
+    const users = snapshot.val();
+    const count = users ? Object.keys(users).length : 1;
+    usersEl.textContent = count;
+});
+
+// ASCII background images (portraits, buildings, landscapes)
+const asciiImages = [
+`
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
+▓▓░░,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,░░▓▓
+▓▓░░,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓,,░░▓▓
+▓▓░░,,▓▓░░░░░░░░░░░░░░░░▓▓,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,▓▓░░░░░░░░░░░░░░▓▓,,░░▓▓
+▓▓░░,,▓▓░░████████████░░▓▓,,,,,,,,▲▲▲▲▲▲▲▲▲▲▲▲,,,,,,,,,,,,▓▓░░██████████░░▓▓,,░░▓▓
+▓▓░░,,▓▓░░██  LAKE  ██░░▓▓,,,,▲▲▲▲░░░░░░░░░░▲▲▲▲,,,,,,,,,,▓▓░░██ EDEN ██░░▓▓,,░░▓▓
+▓▓░░,,▓▓░░████████████░░▓▓▲▲▲▲░░░░░░░░░░░░░░░░░░▲▲▲▲,,,,,,▓▓░░██████████░░▓▓,,░░▓▓
+▓▓░░,,▓▓░░░░░░░░░░░░░░░░▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░,,,,▓▓░░░░░░░░░░░░░░▓▓,,░░▓▓
+▓▓░░,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░,,▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓,,░░▓▓
+▓▓░░,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,░░▓▓
+▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+`,
+`
+●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+●●                                                                                        ●●
+●●      ████████████████████████████████████████████████████████████████████████████      ●●
+●●      ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██      ●●
+●●      ██░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓░░██      ●●
+●●      ██░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓    ▓▓░░░░▓▓  ▓▓░░██      ●●
+●●      ██░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓▓▓░░░░▓▓▓▓▓▓░░██      ●●
+●●      ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██      ●●
+●●      ████████████████████████████████████████████████████████████████████████████      ●●
+●●                                                                                        ●●
+●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+`,
+`
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,▐████████████████████████████████████████████████████████████████████████████████▌,,,,
+,,▐██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██▌,,,,
+,,▐██░░                                                                        ░░██▌,,,,
+,,▐██░░    ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,    ░░██▌,,,,
+,,▐██░░    ,,  Josef Albers                                               ,,    ░░██▌,,,,
+,,▐██░░    ,,  Black Mountain College                                     ,,    ░░██▌,,,,
+,,▐██░░    ,,  1933                                                       ,,    ░░██▌,,,,
+,,▐██░░    ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,    ░░██▌,,,,
+,,▐██░░                                                                        ░░██▌,,,,
+,,▐██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██▌,,,,
+,,▐████████████████████████████████████████████████████████████████████████████████▌,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+`,
+`
+██████████████████████████████████████████████████████████████████████████████████████████
+██                                                                                      ██
+██    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ██
+██    ░░                                                                          ░░    ██
+██    ░░      ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓            ░░    ██
+██    ░░      ▓▓        ▓▓          ▓▓        ▓▓          ▓▓        ▓▓            ░░    ██
+██    ░░      ▓▓  1948  ▓▓          ▓▓  1952  ▓▓          ▓▓  1956  ▓▓            ░░    ██
+██    ░░      ▓▓        ▓▓          ▓▓        ▓▓          ▓▓        ▓▓            ░░    ██
+██    ░░      ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓▓▓▓            ░░    ██
+██    ░░                                                                          ░░    ██
+██    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    ██
+██                                                                                      ██
+██████████████████████████████████████████████████████████████████████████████████████████
+`
+];
+
+// Set background ASCII images
+document.getElementById('bg1').textContent = asciiImages[0];
+document.getElementById('bg2').textContent = asciiImages[1];
+document.getElementById('bg3').textContent = asciiImages[2];
+document.getElementById('bg4').textContent = asciiImages[3];
+
+// Scroll handler for background ASCII
+const bgElements = [
+    { el: document.getElementById('bg1'), trigger: 0.1 },
+    { el: document.getElementById('bg2'), trigger: 0.35 },
+    { el: document.getElementById('bg3'), trigger: 0.6 },
+    { el: document.getElementById('bg4'), trigger: 0.85 }
+];
+
+function updateBackgrounds() {
+    const scrollY = window.scrollY;
+    const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+    const progress = scrollY / maxScroll;
+    
+    bgElements.forEach(bg => {
+        const distance = Math.abs(progress - bg.trigger);
+        bg.el.classList.toggle('visible', distance < 0.2);
+    });
+}
+
+window.addEventListener('scroll', updateBackgrounds);
+updateBackgrounds();
+
+// Emojis
+const emojis = ['🏔️', '📚', '🔥'];
+const layer = document.getElementById('emojiLayer');
+
+emojis.forEach((e, i) => {
+    const span = document.createElement('span');
+    span.className = 'emoji';
+    span.textContent = e;
+    span.style.left = (20 + Math.random() * 60) + '%';
+    span.style.top = (20 + Math.random() * 60) + '%';
+    span.dataset.trigger = (i + 1) / (emojis.length + 1);
+    layer.appendChild(span);
+});
+
+window.addEventListener('scroll', () => {
+    const progress = window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight);
+    document.querySelectorAll('.emoji').forEach(el => {
+        const t = parseFloat(el.dataset.trigger);
+        el.classList.toggle('visible', Math.abs(progress - t) < 0.25);
+    });
+});
+</script>
+
+</body>
+</html>
