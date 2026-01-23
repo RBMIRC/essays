@@ -39,19 +39,19 @@
             line-height: 1;
             white-space: pre;
             color: #fff;
-            opacity: 0.06;
+            opacity: 0.10;
         }
 
 
         /* Header ASCII */
         .header-ascii {
             font-family: 'SF Mono', 'Monaco', monospace;
-            font-size: 4px;
-            line-height: 1;
+            font-size: 0.55vw;
+            line-height: 1.1;
             white-space: pre;
             color: #fff;
-            opacity: 0.12;
-            padding: 10px 0;
+            opacity: 1;
+            padding: 15px 0;
             overflow: hidden;
             position: relative;
             z-index: 1;
@@ -352,6 +352,10 @@ async function loadAsciiBackgrounds() {
 
         const container = document.getElementById('asciiBg');
 
+        // Distribute images evenly, no overlap, no rotation
+        const spacing = 600; // px between each image vertically
+        const startY = 300; // start below header
+
         for (let i = 0; i < shuffled.length; i++) {
             const imgFile = shuffled[i];
             const img = new Image();
@@ -362,20 +366,15 @@ async function loadAsciiBackgrounds() {
                 const el = document.createElement('div');
                 el.className = 'ascii-img';
 
-                // Distribute vertically across page, scattered horizontally
-                const verticalSpread = 100 / shuffled.length;
-                el.style.top = (index * verticalSpread + Math.random() * verticalSpread * 0.5) + '%';
-                el.style.left = (-5 + Math.random() * 70) + '%';
-
-                // Random subtle rotation
-                const rotation = -4 + Math.random() * 8;
-                el.style.transform = `rotate(${rotation}deg)`;
+                // Fixed vertical spacing, alternating left/right
+                el.style.top = (startY + index * spacing) + 'px';
+                el.style.left = (index % 2 === 0) ? '5%' : '40%';
 
                 el.textContent = ascii;
                 container.appendChild(el);
 
-                // Update container height to cover full page
-                container.style.height = Math.max(document.body.scrollHeight, window.innerHeight * 3) + 'px';
+                // Extend container
+                container.style.height = (startY + shuffled.length * spacing + 400) + 'px';
             })(i);
         }
     } catch (e) {
