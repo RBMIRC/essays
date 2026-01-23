@@ -448,27 +448,50 @@ function renderContent() {
     contentArea.innerHTML = html;
 }
 
-// Place cursor by clicking — find the closest text position
+// Place cursor by clicking — snap to valid insertion points only
+// Valid positions: end of chunk, start of chunk, after a space, after a newline
 contentArea.addEventListener('click', (e) => {
-    // Use browser selection to find where the click landed
     const sel = window.getSelection();
     if (sel.rangeCount > 0) {
         const range = sel.getRangeAt(0);
         const node = range.startContainer;
         const offset = range.startOffset;
 
-        // Find which chunk this belongs to
         const chunkEl = node.nodeType === 3
             ? node.parentElement.closest('.chunk')
             : node.closest('.chunk');
 
         if (chunkEl) {
             const idx = parseInt(chunkEl.dataset.index);
-            // Calculate character offset within this chunk
-            const charOffset = getCharOffset(chunkEl, node, offset, idx);
-            cursorAt = { chunkIndex: idx, charOffset };
+            const rawOffset = getCharOffset(chunkEl, node, offset, idx);
+            const text = chunks[idx].text;
+
+            // Snap to nearest valid position:
+            // - start (0)
+            // - end (text.length)
+            // - after a space or newline
+            const validPositions = [0, text.length];
+            for (let p = 0; p < text.length; p++) {
+                if (text[p] === ' ' || text[p] === '\n') {
+                    validPositions.push(p + 1); // after the space/newline
+                    validPositions.push(p);     // before the space/newline
+                }
+            }
+
+            // Find closest valid position
+            let best = 0;
+            let bestDist = Infinity;
+            for (const pos of validPositions) {
+                const dist = Math.abs(pos - rawOffset);
+                if (dist < bestDist) {
+                    bestDist = dist;
+                    best = pos;
+                }
+            }
+
+            cursorAt = { chunkIndex: idx, charOffset: best };
         } else {
-            cursorAt = null; // end
+            cursorAt = null;
         }
     } else {
         cursorAt = null;
