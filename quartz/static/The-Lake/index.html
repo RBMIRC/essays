@@ -159,44 +159,64 @@
             border-color: #4a9f7e;
         }
 
-        /* Messages area */
+        /* Editor area */
         .editor-wrap {
             position: relative;
             z-index: 10;
             padding: 0 30px 100px;
         }
 
-        .messages {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            min-height: 50vh;
-        }
-
-        .message {
-            display: flex;
-            align-items: baseline;
-            gap: 0;
+        .content-area {
             font-family: 'Inter', sans-serif;
             font-size: 16px;
             line-height: 1.8;
+            min-height: 60vh;
+            cursor: text;
         }
 
-        .message .author {
+        .content-area .chunk {
+            display: inline;
+        }
+
+        .content-area .chunk .author-tag {
             color: #4a9f7e;
-            font-size: 12px;
+            font-size: 10px;
             font-family: 'SF Mono', monospace;
-            margin-right: 10px;
-            white-space: nowrap;
-            flex-shrink: 0;
+            vertical-align: super;
+            margin-right: 2px;
+            opacity: 0.7;
         }
 
-        .message .text {
+        .content-area .chunk .text {
             color: #fff;
         }
 
-        .names-hidden .message .author {
+        .names-hidden .chunk .author-tag {
             display: none;
+        }
+
+        /* Blinking cursor */
+        .write-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background: #4a9f7e;
+            vertical-align: text-bottom;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Hidden input for typing */
+        .hidden-input {
+            position: fixed;
+            top: -100px;
+            left: -100px;
+            opacity: 0;
+            pointer-events: none;
         }
 
         /* Toggle names button */
@@ -218,45 +238,6 @@
         }
         .toggle-names.active {
             color: #4a9f7e;
-        }
-
-        /* Input area */
-        .input-area {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 15px 30px;
-            background: linear-gradient(transparent, #000 30%);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .input-area .my-name {
-            color: #4a9f7e;
-            font-size: 12px;
-            font-family: 'SF Mono', monospace;
-            white-space: nowrap;
-        }
-
-        .input-area input {
-            flex: 1;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            background: transparent;
-            color: #fff;
-            border: none;
-            border-bottom: 1px solid #1a1a1a;
-            padding: 8px 0;
-            outline: none;
-        }
-        .input-area input::placeholder {
-            color: #333;
-        }
-        .input-area input:focus {
-            border-bottom-color: #333;
         }
 
         /* Footer */
@@ -337,16 +318,13 @@
 <button class="toggle-names active" id="toggleNames" onclick="toggleNames()" title="hide/show names">x</button>
 
 <div class="editor-wrap">
-    <div class="messages" id="messages"></div>
+    <div class="content-area" id="contentArea" onclick="focusInput()"></div>
 </div>
 
-<div class="input-area" id="inputArea" style="display:none;">
-    <span class="my-name" id="myNameLabel"></span>
-    <input type="text" id="msgInput" placeholder="write...">
-</div>
+<input class="hidden-input" id="hiddenInput" autofocus>
 
 <div class="footer">
-    <span id="msgCount">0</span> messages
+    <span id="charCount">0</span> chars
 </div>
 
 <script>
@@ -373,7 +351,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
-const messagesRef = db.ref('firepad/messages');
+const chunksRef = db.ref('firepad/chunks');
 const usersRef = db.ref('firepad/users');
 
 // Generate unique user ID
@@ -381,12 +359,15 @@ const myId = 'user_' + Math.random().toString(36).substr(2, 9);
 let myName = '';
 
 // Elements
-const messagesEl = document.getElementById('messages');
-const msgInput = document.getElementById('msgInput');
-const msgCount = document.getElementById('msgCount');
+const contentArea = document.getElementById('contentArea');
+const hiddenInput = document.getElementById('hiddenInput');
+const charCount = document.getElementById('charCount');
 const usersEl = document.getElementById('users');
 const usersList = document.getElementById('usersList');
 const nameInput = document.getElementById('nameInput');
+
+let chunks = []; // [{author, text, key}]
+let isRemote = false;
 
 // Enter on name input
 nameInput.addEventListener('keydown', (e) => {
@@ -396,9 +377,11 @@ nameInput.addEventListener('keydown', (e) => {
 function enterLake() {
     myName = nameInput.value.trim() || 'anonymous';
     document.getElementById('nameOverlay').classList.add('hidden');
-    document.getElementById('inputArea').style.display = 'flex';
-    document.getElementById('myNameLabel').textContent = myName;
     startPad();
+}
+
+function focusInput() {
+    hiddenInput.focus();
 }
 
 function toggleNames() {
@@ -408,32 +391,83 @@ function toggleNames() {
     btn.classList.toggle('active');
 }
 
+function renderContent() {
+    let html = '';
+    chunks.forEach(c => {
+        const escaped = escapeHtml(c.text);
+        html += `<span class="chunk"><span class="author-tag">${c.author}</span><span class="text">${escaped}</span></span>`;
+    });
+    html += '<span class="write-cursor"></span>';
+    contentArea.innerHTML = html;
+    const total = chunks.reduce((sum, c) => sum + c.text.length, 0);
+    charCount.textContent = total;
+}
+
 function startPad() {
-    // Listen for messages
-    messagesRef.orderByChild('timestamp').on('value', (snapshot) => {
+    // Listen for chunks from Firebase
+    chunksRef.orderByChild('order').on('value', (snapshot) => {
+        isRemote = true;
         const data = snapshot.val();
-        if (!data) {
-            messagesEl.innerHTML = '';
-            msgCount.textContent = '0';
-            return;
+        if (data) {
+            chunks = Object.entries(data).map(([key, val]) => ({
+                key,
+                author: val.author,
+                text: val.text,
+                order: val.order
+            })).sort((a, b) => a.order - b.order);
+        } else {
+            chunks = [];
         }
-        const msgs = Object.values(data).sort((a, b) => a.timestamp - b.timestamp);
-        msgCount.textContent = msgs.length;
-        messagesEl.innerHTML = msgs.map(m =>
-            `<div class="message"><span class="author">${m.author}</span><span class="text">${escapeHtml(m.text)}</span></div>`
-        ).join('');
-        messagesEl.scrollTop = messagesEl.scrollHeight;
+        renderContent();
+        isRemote = false;
     });
 
-    // Send message on Enter
-    msgInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && msgInput.value.trim()) {
-            messagesRef.push({
-                author: myName,
-                text: msgInput.value.trim(),
-                timestamp: Date.now()
-            });
-            msgInput.value = '';
+    // Typing into hidden input
+    hiddenInput.addEventListener('input', (e) => {
+        if (isRemote) return;
+        const typed = hiddenInput.value;
+        hiddenInput.value = '';
+
+        if (!typed) return;
+
+        // Append to last chunk if same author, otherwise create new chunk
+        const last = chunks[chunks.length - 1];
+        if (last && last.author === myName) {
+            last.text += typed;
+            chunksRef.child(last.key).update({ text: last.text });
+        } else {
+            const order = chunks.length ? (chunks[chunks.length - 1].order + 1) : 0;
+            chunksRef.push({ author: myName, text: typed, order });
+        }
+    });
+
+    // Handle backspace and enter
+    hiddenInput.addEventListener('keydown', (e) => {
+        if (isRemote) return;
+
+        if (e.key === 'Backspace') {
+            e.preventDefault();
+            const last = chunks[chunks.length - 1];
+            if (!last) return;
+            if (last.author !== myName) return; // can only delete your own text
+            if (last.text.length > 1) {
+                last.text = last.text.slice(0, -1);
+                chunksRef.child(last.key).update({ text: last.text });
+            } else {
+                chunksRef.child(last.key).remove();
+            }
+        }
+
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const last = chunks[chunks.length - 1];
+            if (last && last.author === myName) {
+                last.text += '\n';
+                chunksRef.child(last.key).update({ text: last.text });
+            } else {
+                const order = chunks.length ? (chunks[chunks.length - 1].order + 1) : 0;
+                chunksRef.push({ author: myName, text: '\n', order });
+            }
         }
     });
 
@@ -454,13 +488,13 @@ function startPad() {
         }
     });
 
-    msgInput.focus();
+    focusInput();
 }
 
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
-    return div.innerHTML;
+    return div.innerHTML.replace(/\n/g, '<br>');
 }
 
 // ASCII background images (portraits, buildings, landscapes)
