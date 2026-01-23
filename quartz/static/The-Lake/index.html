@@ -241,7 +241,7 @@
 // Randomly positioned, different each connection
 // ===========================================
 
-const ASCII_CHARS = ['█', '█', '▄', '●', '●', '○', '„', '„', ' ', ' ', ' ', ' '];
+const ASCII_CHARS = ['█', '▓', '▄', '●', '○', '▂', '„', ',', ' ', ' ', ' ', ' '];
 const IMAGE_FILES = []; // Will be populated from images.json
 
 async function loadAsciiBackgrounds() {
@@ -336,12 +336,12 @@ function imageToAscii(img, cols) {
             let gray = 0.299 * r + 0.587 * g + 0.114 * b;
             if (invert) gray = 255 - gray;
 
-            // Hard contrast
-            gray = ((gray / 255 - 0.5) * 3.0 + 0.5) * 255;
+            // Contrast
+            gray = ((gray / 255 - 0.5) * 2.5 + 0.5) * 255;
             gray = Math.max(0, Math.min(255, gray));
 
-            // Posterize to few levels
-            const levels = 4;
+            // Posterize
+            const levels = 6;
             const step = 255 / levels;
             gray = Math.floor(gray / step) * step;
 
