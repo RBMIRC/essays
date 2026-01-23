@@ -35,11 +35,11 @@
         .ascii-img {
             position: absolute;
             font-family: 'SF Mono', 'Monaco', monospace;
-            font-size: 4px;
-            line-height: 1;
+            font-size: 9px;
+            line-height: 1.1;
             white-space: pre;
             color: #fff;
-            opacity: 0.14;
+            opacity: 0.85;
         }
 
 
@@ -241,7 +241,7 @@
 // Randomly positioned, different each connection
 // ===========================================
 
-const ASCII_CHARS = ['█', '▓', '▒', '░', '●', '○', '▄', '▂', '·', '„', ',', ' '];
+const ASCII_CHARS = ['█', '█', '▄', '●', '●', '○', '„', '„', ' ', ' ', ' ', ' '];
 const IMAGE_FILES = []; // Will be populated from images.json
 
 async function loadAsciiBackgrounds() {
@@ -269,7 +269,7 @@ async function loadAsciiBackgrounds() {
             img.src = 'Images/' + imgFile;
             img.onload = ((index) => () => {
                 // More size variation: 140 to 320 cols
-                const sizes = [140, 160, 180, 220, 260, 300, 320];
+                const sizes = [80, 100, 120, 140];
                 const cols = sizes[Math.floor(Math.random() * sizes.length)];
                 const ascii = imageToAscii(img, cols);
                 loaded[index] = { ascii, cols };
@@ -323,12 +323,12 @@ function imageToAscii(img, cols) {
             const b = pixels[idx + 2];
 
             let gray = 0.299 * r + 0.587 * g + 0.114 * b;
-            // Boost contrast like Dweller
-            gray = ((gray / 255 - 0.5) * 2.2 + 0.5) * 255;
+            // Hard contrast - very binary
+            gray = ((gray / 255 - 0.5) * 4.0 + 0.5) * 255;
             gray = Math.max(0, Math.min(255, gray));
 
-            // Posterize to fewer levels
-            const levels = 8;
+            // Posterize to very few levels - brut
+            const levels = 4;
             const step = 255 / levels;
             gray = Math.floor(gray / step) * step;
 
