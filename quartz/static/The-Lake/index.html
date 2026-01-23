@@ -279,9 +279,11 @@ async function loadAsciiBackgrounds() {
 
         const container = document.getElementById('asciiBg');
 
-        // Distribute images evenly, no overlap, no rotation
-        const spacing = 600; // px between each image vertically
         const startY = 50; // start near top of editor area
+
+        // Load all images, then place them sequentially to avoid overlap
+        const loaded = [];
+        let loadCount = 0;
 
         for (let i = 0; i < shuffled.length; i++) {
             const imgFile = shuffled[i];
@@ -289,22 +291,31 @@ async function loadAsciiBackgrounds() {
             img.crossOrigin = 'anonymous';
             img.src = 'Images/' + imgFile;
             img.onload = ((index) => () => {
-                // Size variation: 160, 200, or 240 cols
-                const sizes = [160, 160, 200, 200, 240];
+                // More size variation: 140 to 320 cols
+                const sizes = [140, 160, 180, 220, 260, 300, 320];
                 const cols = sizes[Math.floor(Math.random() * sizes.length)];
                 const ascii = imageToAscii(img, cols);
-                const el = document.createElement('div');
-                el.className = 'ascii-img';
+                loaded[index] = { ascii, cols };
+                loadCount++;
 
-                // Fixed vertical spacing, alternating left/right
-                el.style.top = (startY + index * spacing) + 'px';
-                el.style.left = (index % 2 === 0) ? '5%' : '40%';
+                // Once all loaded, place them without overlap
+                if (loadCount === shuffled.length) {
+                    let currentY = startY;
+                    for (let j = 0; j < loaded.length; j++) {
+                        if (!loaded[j]) continue;
+                        const el = document.createElement('div');
+                        el.className = 'ascii-img';
+                        el.textContent = loaded[j].ascii;
+                        el.style.top = currentY + 'px';
+                        el.style.left = (j % 2 === 0) ? '5%' : '35%';
+                        container.appendChild(el);
 
-                el.textContent = ascii;
-                container.appendChild(el);
-
-                // Extend container
-                container.style.height = (startY + shuffled.length * spacing + 400) + 'px';
+                        // Measure actual height and add gap
+                        const h = el.offsetHeight || 200;
+                        currentY += h + 150; // 150px gap between images
+                    }
+                    container.style.height = currentY + 'px';
+                }
             })(i);
         }
     } catch (e) {
