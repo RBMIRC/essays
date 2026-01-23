@@ -70,11 +70,6 @@
             line-height: 0.9;
         }
 
-        .meta {
-            font-size: 12px;
-            color: #888;
-            margin-top: 15px;
-        }
 
         .subtitle-bar {
             position: relative;
@@ -111,12 +106,12 @@
         }
 
         .users-list {
-            margin-top: 10px;
+            margin-left: 12px;
             font-size: 11px;
             color: #555;
         }
         .users-list span {
-            display: inline-block;
+            display: inline;
             margin-right: 12px;
             color: #4a9f7e;
         }
@@ -181,6 +176,8 @@
         }
 
         .content-area {
+            position: relative;
+            z-index: 1;
             font-family: 'Inter', sans-serif;
             font-size: 16px;
             line-height: 1.8;
@@ -248,8 +245,6 @@
 </head>
 <body>
 
-<div class="ascii-bg" id="asciiBg"></div>
-
 <div class="name-overlay" id="nameOverlay">
     <label>enter your name</label>
     <input type="text" id="nameInput" placeholder="..." autofocus>
@@ -260,16 +255,15 @@
     <img src="header/header_ascii.png" alt="The Lake">
 </div>
 
-<div class="title-section">
-    <div class="title">The Lake</div>
-    <div class="meta">Black Mountain College</div>
-    <div class="online"><span class="dot"></span><span id="users">0</span> online</div>
-    <div class="users-list" id="usersList"></div>
-</div>
-
 <div class="subtitle-bar">Retcon Black Mountain</div>
 
+<div class="title-section">
+    <div class="title">The Lake</div>
+    <div class="online"><span class="dot"></span><span id="users">0</span> online<span class="users-list" id="usersList"></span></div>
+</div>
+
 <div class="editor-wrap">
+    <div class="ascii-bg" id="asciiBg"></div>
     <div class="content-area" id="contentArea" onclick="focusInput()"></div>
 </div>
 
@@ -303,7 +297,7 @@ async function loadAsciiBackgrounds() {
 
         // Distribute images evenly, no overlap, no rotation
         const spacing = 600; // px between each image vertically
-        const startY = 300; // start below header
+        const startY = 50; // start near top of editor area
 
         for (let i = 0; i < shuffled.length; i++) {
             const imgFile = shuffled[i];
