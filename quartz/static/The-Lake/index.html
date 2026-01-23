@@ -159,28 +159,104 @@
             border-color: #4a9f7e;
         }
 
-        /* Editor */
+        /* Messages area */
         .editor-wrap {
             position: relative;
             z-index: 10;
             padding: 0 30px 100px;
         }
-        
-        .editor {
-            width: 100%;
-            min-height: 70vh;
+
+        .messages {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-height: 50vh;
+        }
+
+        .message {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
             font-family: 'Inter', sans-serif;
             font-size: 16px;
             line-height: 1.8;
+        }
+
+        .message .author {
+            color: #4a9f7e;
+            font-size: 12px;
+            font-family: 'SF Mono', monospace;
+            margin-right: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .message .text {
+            color: #fff;
+        }
+
+        .names-hidden .message .author {
+            display: none;
+        }
+
+        /* Toggle names button */
+        .toggle-names {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: #333;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 100;
+            padding: 5px;
+            transition: color 0.2s;
+        }
+        .toggle-names:hover {
+            color: #888;
+        }
+        .toggle-names.active {
+            color: #4a9f7e;
+        }
+
+        /* Input area */
+        .input-area {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 30px;
+            background: linear-gradient(transparent, #000 30%);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-area .my-name {
+            color: #4a9f7e;
+            font-size: 12px;
+            font-family: 'SF Mono', monospace;
+            white-space: nowrap;
+        }
+
+        .input-area input {
+            flex: 1;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
             background: transparent;
             color: #fff;
             border: none;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 8px 0;
             outline: none;
-            resize: none;
         }
-        
-        .editor::placeholder {
+        .input-area input::placeholder {
             color: #333;
+        }
+        .input-area input:focus {
+            border-bottom-color: #333;
         }
 
         /* Footer */
@@ -258,12 +334,19 @@
     <div class="users-list" id="usersList"></div>
 </div>
 
+<button class="toggle-names active" id="toggleNames" onclick="toggleNames()" title="hide/show names">x</button>
+
 <div class="editor-wrap">
-    <textarea class="editor" id="editor" placeholder="start writing..."></textarea>
+    <div class="messages" id="messages"></div>
+</div>
+
+<div class="input-area" id="inputArea" style="display:none;">
+    <span class="my-name" id="myNameLabel"></span>
+    <input type="text" id="msgInput" placeholder="write...">
 </div>
 
 <div class="footer">
-    <span id="chars">0</span> chars · saved
+    <span id="msgCount">0</span> messages
 </div>
 
 <script>
@@ -290,16 +373,17 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
-const padRef = db.ref('firepad/content');
+const messagesRef = db.ref('firepad/messages');
 const usersRef = db.ref('firepad/users');
 
 // Generate unique user ID
 const myId = 'user_' + Math.random().toString(36).substr(2, 9);
 let myName = '';
 
-// Editor
-const editor = document.getElementById('editor');
-const chars = document.getElementById('chars');
+// Elements
+const messagesEl = document.getElementById('messages');
+const msgInput = document.getElementById('msgInput');
+const msgCount = document.getElementById('msgCount');
 const usersEl = document.getElementById('users');
 const usersList = document.getElementById('usersList');
 const nameInput = document.getElementById('nameInput');
@@ -312,34 +396,44 @@ nameInput.addEventListener('keydown', (e) => {
 function enterLake() {
     myName = nameInput.value.trim() || 'anonymous';
     document.getElementById('nameOverlay').classList.add('hidden');
+    document.getElementById('inputArea').style.display = 'flex';
+    document.getElementById('myNameLabel').textContent = myName;
     startPad();
 }
 
-function startPad() {
-    let isRemoteChange = false;
+function toggleNames() {
+    const wrap = document.querySelector('.editor-wrap');
+    const btn = document.getElementById('toggleNames');
+    wrap.classList.toggle('names-hidden');
+    btn.classList.toggle('active');
+}
 
-    // Listen for content changes from Firebase
-    padRef.on('value', (snapshot) => {
+function startPad() {
+    // Listen for messages
+    messagesRef.orderByChild('timestamp').on('value', (snapshot) => {
         const data = snapshot.val();
-        if (data !== null && data !== editor.value) {
-            isRemoteChange = true;
-            const cursorPos = editor.selectionStart;
-            editor.value = data;
-            editor.selectionStart = editor.selectionEnd = cursorPos;
-            chars.textContent = data.length;
-            isRemoteChange = false;
+        if (!data) {
+            messagesEl.innerHTML = '';
+            msgCount.textContent = '0';
+            return;
         }
+        const msgs = Object.values(data).sort((a, b) => a.timestamp - b.timestamp);
+        msgCount.textContent = msgs.length;
+        messagesEl.innerHTML = msgs.map(m =>
+            `<div class="message"><span class="author">${m.author}</span><span class="text">${escapeHtml(m.text)}</span></div>`
+        ).join('');
+        messagesEl.scrollTop = messagesEl.scrollHeight;
     });
 
-    // Send changes to Firebase
-    let saveTimeout;
-    editor.addEventListener('input', () => {
-        chars.textContent = editor.value.length;
-        if (!isRemoteChange) {
-            clearTimeout(saveTimeout);
-            saveTimeout = setTimeout(() => {
-                padRef.set(editor.value);
-            }, 100);
+    // Send message on Enter
+    msgInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && msgInput.value.trim()) {
+            messagesRef.push({
+                author: myName,
+                text: msgInput.value.trim(),
+                timestamp: Date.now()
+            });
+            msgInput.value = '';
         }
     });
 
@@ -360,7 +454,13 @@ function startPad() {
         }
     });
 
-    editor.focus();
+    msgInput.focus();
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 // ASCII background images (portraits, buildings, landscapes)
