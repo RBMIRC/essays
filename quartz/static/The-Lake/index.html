@@ -116,56 +116,27 @@
             color: #4a9f7e;
         }
 
-        /* Name prompt overlay */
-        .name-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
+        /* Name input inline */
+        .name-bar {
+            position: relative;
+            z-index: 10;
+            padding: 8px 30px;
         }
-        .name-overlay.hidden {
-            display: none;
-        }
-        .name-overlay label {
-            font-size: 14px;
-            color: #888;
-        }
-        .name-overlay input {
-            font-family: 'Inter', sans-serif;
-            font-size: 24px;
-            font-weight: 900;
+
+        .name-bar input {
+            font-family: 'SF Mono', monospace;
+            font-size: 12px;
             background: transparent;
             border: none;
             border-bottom: 1px solid #333;
             color: #fff;
-            text-align: center;
-            padding: 10px;
+            padding: 4px 0;
             outline: none;
-            width: 300px;
+            width: 150px;
         }
-        .name-overlay input::placeholder {
-            color: #333;
-        }
-        .name-overlay button {
-            font-family: 'SF Mono', monospace;
-            font-size: 12px;
-            background: transparent;
-            border: 1px solid #333;
-            color: #4a9f7e;
-            padding: 8px 20px;
-            cursor: pointer;
-            transition: border-color 0.2s;
-        }
-        .name-overlay button:hover {
-            border-color: #4a9f7e;
+
+        .name-bar input::placeholder {
+            color: #555;
         }
 
         /* Editor area */
@@ -232,17 +203,15 @@
 </head>
 <body>
 
-<div class="name-overlay" id="nameOverlay">
-    <label>enter your name</label>
-    <input type="text" id="nameInput" placeholder="..." autofocus>
-    <button onclick="enterLake()">enter</button>
-</div>
-
 <div class="header-ascii">
     <img src="header/header_ascii.png" alt="The Lake">
 </div>
 
 <div class="subtitle-bar">Retcon Black Mountain</div>
+
+<div class="name-bar">
+    <input type="text" id="nameInput" placeholder="Name (optional)">
+</div>
 
 <div class="title-section">
     <div class="title">The Lake</div>
@@ -399,15 +368,24 @@ const nameInput = document.getElementById('nameInput');
 let chunks = [];
 let isRemote = false;
 
-nameInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') enterLake();
+// Update name dynamically when user types
+nameInput.addEventListener('input', () => {
+    const newName = nameInput.value.trim() || 'anonymous';
+    if (newName !== myName) {
+        myName = newName;
+        // Update presence
+        const myPresence = usersRef.child(myId);
+        myPresence.set(myName);
+    }
 });
 
-function enterLake() {
-    myName = nameInput.value.trim() || 'anonymous';
-    document.getElementById('nameOverlay').classList.add('hidden');
-    startPad();
-}
+// Prevent Enter in name field from creating newlines
+nameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        hiddenInput.focus();
+    }
+});
 
 // Cursor position: { chunkKey, charOffset } or null (end)
 // chunkKey: Firebase key of the chunk
@@ -750,6 +728,9 @@ function escapeHtml(text) {
     div.textContent = text;
     return div.innerHTML.replace(/\n/g, '<br>');
 }
+
+// Start immediately
+startPad();
 </script>
 
 </body>
