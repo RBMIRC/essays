@@ -83,13 +83,22 @@
             color: #fff;
         }
 
+        .info-line {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-top: 15px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .online {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 15px;
             font-size: 12px;
             color: #4a9f7e;
+            flex-shrink: 0;
         }
 
         .dot {
@@ -116,15 +125,13 @@
             color: #4a9f7e;
         }
 
-        /* Name input inline — right aligned under subtitle bar */
-        .name-bar {
-            position: relative;
-            z-index: 10;
-            padding: 4px 30px;
-            text-align: right;
+        /* Name input inline — right aligned on info line */
+        .name-inline {
+            flex-shrink: 0;
+            margin-left: auto;
         }
 
-        .name-bar input {
+        .name-inline input {
             font-family: 'SF Mono', monospace;
             font-size: 12px;
             background: transparent;
@@ -137,7 +144,7 @@
             text-align: right;
         }
 
-        .name-bar input::placeholder {
+        .name-inline input::placeholder {
             color: #888;
         }
 
@@ -211,13 +218,12 @@
 
 <div class="subtitle-bar">Retcon Black Mountain</div>
 
-<div class="name-bar">
-    <input type="text" id="nameInput" placeholder="Name (optional)">
-</div>
-
 <div class="title-section">
     <div class="title">The Lake</div>
-    <div class="online"><span class="dot"></span><span id="users">0</span> online<span class="users-list" id="usersList"></span></div>
+    <div class="info-line">
+        <div class="online"><span class="dot"></span><span id="users">0</span> online<span class="users-list" id="usersList"></span></div>
+        <div class="name-inline"><input type="text" id="nameInput" placeholder="Name (optional)"></div>
+    </div>
 </div>
 
 <div class="editor-wrap">
