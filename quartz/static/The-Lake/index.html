@@ -441,21 +441,13 @@ function startPad() {
         }
     });
 
-    // Handle backspace and enter
+    // Handle keys
     hiddenInput.addEventListener('keydown', (e) => {
         if (isRemote) return;
 
-        if (e.key === 'Backspace') {
+        if (e.key === 'Backspace' || e.key === 'Delete') {
             e.preventDefault();
-            const last = chunks[chunks.length - 1];
-            if (!last) return;
-            if (last.author !== myName) return; // can only delete your own text
-            if (last.text.length > 1) {
-                last.text = last.text.slice(0, -1);
-                chunksRef.child(last.key).update({ text: last.text });
-            } else {
-                chunksRef.child(last.key).remove();
-            }
+            return;
         }
 
         if (e.key === 'Enter') {
