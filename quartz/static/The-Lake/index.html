@@ -18,11 +18,10 @@
             font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
             background: #000;
             color: #fff;
-            min-height: 100vh;
+            min-height: 0;
             overflow-x: clip;
         }
 
-        /* ASCII background images */
         .ascii-bg {
             position: absolute;
             top: 0;
@@ -42,7 +41,6 @@
             opacity: 0.2;
         }
 
-        /* Header */
         .header-ascii {
             position: relative;
             z-index: 1;
@@ -53,7 +51,12 @@
             width: 100%;
             height: auto;
             display: block;
-            opacity: 0.6;
+            opacity: 0.2;
+            transition: opacity 4s;
+        }
+
+        .header-ascii img:hover {
+            opacity: 1;
         }
 
         .subtitle-bar {
@@ -148,21 +151,15 @@
             color: #888;
         }
 
-        /* Canvas area where messages live */
         .canvas {
             position: relative;
             z-index: 10;
-            min-height: 80vh;
-            margin: 0 30px 100px;
+            min-height: 100px;
+            margin: 0 30px 30px;
             cursor: text;
+            overflow: hidden;
         }
 
-        /* Ruled lines (hidden but keep structure) */
-        .ruled-lines {
-            display: none;
-        }
-
-        /* Go to bottom button */
         .goto-bottom {
             position: fixed;
             bottom: 30px;
@@ -187,7 +184,6 @@
             opacity: 1;
         }
 
-        /* Each message positioned absolutely, snapped to line */
         .message {
             position: absolute;
             font-family: 'Archivo Narrow', sans-serif;
@@ -208,7 +204,6 @@
             margin-left: 2px;
         }
 
-        /* Selection highlight */
         .selection-highlight {
             position: absolute;
             background: rgba(74, 159, 126, 0.3);
@@ -217,7 +212,6 @@
             z-index: 99;
         }
 
-        /* Style menu */
         .style-menu {
             position: absolute;
             display: none;
@@ -246,7 +240,6 @@
             color: #000;
         }
 
-        /* Blinking cursor */
         .cursor-marker {
             position: absolute;
             display: inline-block;
@@ -263,7 +256,6 @@
             50% { opacity: 0; }
         }
 
-        /* Hidden input for typing */
         .hidden-input {
             position: fixed;
             top: -100px;
@@ -271,9 +263,28 @@
             opacity: 0;
             pointer-events: none;
         }
+        .emoji-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .emoji-layer span {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.8s;
+        }
     </style>
 </head>
 <body>
+
+<div class="emoji-layer" id="emojiLayer"></div>
 
 <div class="header-ascii">
     <img src="Header/header_ascii.png" alt="The Lake">
@@ -292,8 +303,8 @@
 <div class="canvas" id="canvas">
     <div class="ascii-bg" id="asciiBg"></div>
     <div class="cursor-marker" id="cursorMarker" style="display:none;"></div>
-    <div class="selection-highlight" id="selectionHighlight" style="display:none;"></div>
     <div class="style-menu" id="styleMenu">
+        <button data-style="n">normal</button>
         <button data-style="f">blur</button>
         <button data-style="g">gothic</button>
         <button data-style="s">strike</button>
@@ -312,7 +323,6 @@
 const ASCII_CHARS = ['\u2588', '\u2593', '\u2584', '\u25CF', '\u25CB', '\u2582', '\u201E', ',', ' ', ' ', ' ', ' '];
 
 let asciiImages = []; // store loaded ascii art for repeating
-let asciiBgHeight = 0; // current background coverage
 
 async function loadAsciiBackgrounds() {
     try {
@@ -344,13 +354,23 @@ async function loadAsciiBackgrounds() {
     } catch (e) {}
 }
 
+function seededRandom(seed) {
+    let s = seed;
+    return function() {
+        s = (s * 1664525 + 1013904223) & 0xFFFFFFFF;
+        return (s >>> 0) / 0xFFFFFFFF;
+    };
+}
+
 function fillAsciiBackground() {
     if (asciiImages.length === 0) return;
     const container = document.getElementById('asciiBg');
-    const targetHeight = Math.max(canvasEl.offsetHeight || 3000, currentLineCount * LINE_HEIGHT);
+    const targetHeight = currentLineCount * LINE_HEIGHT;
 
-    let currentY = asciiBgHeight || 50;
-    let idx = container.children.length;
+    container.innerHTML = '';
+    const rng = seededRandom(12345);
+    let currentY = 50;
+    let idx = 0;
 
     while (currentY < targetHeight) {
         const ascii = asciiImages[idx % asciiImages.length];
@@ -361,11 +381,10 @@ function fillAsciiBackground() {
         el.style.left = (idx % 2 === 0) ? '5%' : '35%';
         container.appendChild(el);
         const h = el.offsetHeight || 200;
-        currentY += h + 150 + Math.floor(Math.random() * 200);
+        currentY += h + 150 + Math.floor(rng() * 200);
         idx++;
     }
-    asciiBgHeight = currentY;
-    container.style.height = currentY + 'px';
+    container.style.height = targetHeight + 'px';
 }
 
 function imageToAscii(img, cols) {
@@ -431,12 +450,12 @@ const usersList = document.getElementById('usersList');
 const nameInput = document.getElementById('nameInput');
 
 const LINE_HEIGHT = 48;
-const NUM_LINES = 60;
+const NUM_LINES = 2;
 
-let messages = {}; // key -> {text, x, y, author, authorId}
-let activeMessageKey = null; // message currently being typed into
-let cursorPos = -1; // position within active message text (-1 = end)
-let cursorX = -1, cursorY = -1; // snapped cursor position
+let messages = {};
+let activeMessageKey = null;
+let cursorPos = -1;
+let cursorX = -1, cursorY = -1;
 
 // ===========================================
 // RULED LINES
@@ -448,12 +467,16 @@ function generateRuledLines() {
     canvasEl.style.minHeight = ((NUM_LINES + 1) * LINE_HEIGHT) + 'px';
 }
 
-function expandCanvasTo(y) {
-    const neededLines = Math.ceil((y + LINE_HEIGHT * 3) / LINE_HEIGHT);
-    if (neededLines <= currentLineCount) return;
-    currentLineCount = neededLines;
-    canvasEl.style.minHeight = ((neededLines + 1) * LINE_HEIGHT) + 'px';
-    // Extend ASCII backgrounds to cover new area
+function expandCanvasTo(y) {}
+
+function fitCanvasToContent() {
+    let maxY = 0;
+    Object.values(messages).forEach(msg => {
+        if (msg.y + LINE_HEIGHT > maxY) maxY = msg.y + LINE_HEIGHT;
+    });
+    if (cursorY >= 0 && cursorY + LINE_HEIGHT > maxY) maxY = cursorY + LINE_HEIGHT;
+    currentLineCount = Math.max(Math.ceil(maxY / LINE_HEIGHT) + 1, 2);
+    canvasEl.style.minHeight = (currentLineCount * LINE_HEIGHT) + 'px';
     fillAsciiBackground();
 }
 
@@ -464,7 +487,6 @@ function snapToLine(y) {
 
 generateRuledLines();
 
-// Keep canvas always taller than scroll position so user can always click below
 window.addEventListener('scroll', () => {
     const scrollBottom = window.scrollY + window.innerHeight;
     const canvasTop = canvasEl.offsetTop;
@@ -476,54 +498,171 @@ window.addEventListener('scroll', () => {
 // COLLISION CHECK
 // ===========================================
 
-// Estimate text width in pixels (Archivo Narrow 40px bold, ~22px per char average)
-const CHAR_WIDTH = 22;
+const CHAR_WIDTH = 22; // fallback estimate
 
 function getMessageWidth(msg) {
     const el = canvasEl.querySelector(`.message[data-key="${msg._key}"]`);
     if (el && el.offsetWidth > 0) return el.offsetWidth;
-    // Fallback: estimate from visual text length (without tags)
-    const visLen = getVisualLength(msg.text);
-    return visLen * CHAR_WIDTH + 20; // +20 for author tag
+    let w = measureText(getVisualText(msg.text));
+    if (msg.author) w += 20;
+    return w;
 }
 
-function getMessagesOnLine(y) {
-    const result = [];
-    for (const [key, msg] of Object.entries(messages)) {
-        if (msg.y === y) {
-            result.push({ key, msg, left: msg.x, right: msg.x + getMessageWidth({ ...msg, _key: key }) });
+const _measureEl = document.createElement('div');
+_measureEl.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;font-family:Archivo Narrow,sans-serif;font-size:40px;font-weight:700;white-space:pre;line-height:48px;top:0;left:0;width:auto;display:inline-block;';
+document.body.appendChild(_measureEl);
+
+function measureText(str) {
+    _measureEl.textContent = str;
+    return _measureEl.offsetWidth || (str.length * CHAR_WIDTH);
+}
+
+function getCharIndexAtX(text, offsetX, msgKey) {
+    // Try using the rendered DOM element for accurate measurement
+    const el = msgKey ? canvasEl.querySelector(`.message[data-key="${msgKey}"]`) : null;
+    if (el) {
+        // Use a Range to measure character positions in the actual rendered content
+        const textNodes = [];
+        function collectTextNodes(node) {
+            if (node.nodeType === 3) textNodes.push(node);
+            else if (node.classList && node.classList.contains('author-tag')) return;
+            else for (const child of node.childNodes) collectTextNodes(child);
         }
+        collectTextNodes(el);
+
+        let charCount = 0;
+        let bestIdx = 0;
+        let bestDist = Math.abs(offsetX);
+        const range = document.createRange();
+
+        for (const tn of textNodes) {
+            for (let c = 0; c < tn.length; c++) {
+                range.setStart(tn, c);
+                range.setEnd(tn, c + 1);
+                const rect = range.getBoundingClientRect();
+                const elRect = el.getBoundingClientRect();
+                const charMid = rect.left - elRect.left + rect.width / 2;
+                charCount++;
+                const dist = Math.abs(offsetX - charMid);
+                if (dist < bestDist) {
+                    bestDist = dist;
+                    bestIdx = charCount;
+                }
+            }
+        }
+        // Check if click is after all chars
+        if (textNodes.length > 0) {
+            const lastTn = textNodes[textNodes.length - 1];
+            if (lastTn.length > 0) {
+                range.setStart(lastTn, lastTn.length - 1);
+                range.setEnd(lastTn, lastTn.length);
+                const rect = range.getBoundingClientRect();
+                const elRect = el.getBoundingClientRect();
+                const endX = rect.right - elRect.left;
+                if (offsetX > endX) return charCount;
+            }
+        }
+        return bestIdx;
+    }
+
+    // Fallback: use hidden measure element
+    const visText = getVisualText(text);
+    if (visText.length === 0) return 0;
+    let bestIdx = 0;
+    let bestDist = Math.abs(offsetX);
+    for (let i = 1; i <= visText.length; i++) {
+        _measureEl.textContent = visText.slice(0, i);
+        const w = _measureEl.offsetWidth;
+        const dist = Math.abs(offsetX - w);
+        if (dist < bestDist) {
+            bestDist = dist;
+            bestIdx = i;
+        }
+    }
+    return bestIdx;
+}
+
+function getVisualText(text) {
+    let result = '';
+    let i = 0;
+    while (i < text.length) {
+        if (text[i] === '>' && i + 1 < text.length && /[iIfFsSgG]/.test(text[i + 1])) {
+            i += 2;
+            if (i < text.length && text[i] === ' ') i++;
+            continue;
+        }
+        if (i + 1 < text.length && text[i] === ' ' && text[i + 1] === '<') {
+            i += 2;
+            continue;
+        }
+        if (text[i] === '<') { i++; continue; }
+        result += text[i];
+        i++;
     }
     return result;
 }
 
-function wouldOverlapOther(x, width, y, excludeKey) {
-    // Check if a message at (x, y) with given width would overlap another user's message
-    const right = x + width;
-    for (const [key, msg] of Object.entries(messages)) {
-        if (key === excludeKey) continue;
-        if (msg.y !== y) continue;
-        if (msg.authorId === myId) continue; // own messages don't block
-        const msgWidth = getMessageWidth({ ...msg, _key: key });
-        const msgRight = msg.x + msgWidth;
-        // Check overlap
-        if (x < msgRight && right > msg.x) {
-            return true;
+function getCharPixelX(text, charIdx, msgKey) {
+    const el = msgKey ? canvasEl.querySelector(`.message[data-key="${msgKey}"]`) : null;
+    if (el && charIdx > 0) {
+        const textNodes = [];
+        function collectTextNodes(node) {
+            if (node.nodeType === 3) textNodes.push(node);
+            else if (node.classList && node.classList.contains('author-tag')) return;
+            else for (const child of node.childNodes) collectTextNodes(child);
         }
+        collectTextNodes(el);
+
+        let count = 0;
+        const range = document.createRange();
+        for (const tn of textNodes) {
+            for (let c = 0; c < tn.length; c++) {
+                count++;
+                if (count === charIdx) {
+                    range.setStart(tn, c);
+                    range.setEnd(tn, c + 1);
+                    const rect = range.getBoundingClientRect();
+                    const elRect = el.getBoundingClientRect();
+                    return rect.right - elRect.left;
+                }
+            }
+        }
+        // charIdx beyond text: return full width
+        return el.offsetWidth;
     }
-    return false;
+    if (charIdx === 0) return 0;
+    const visText = getVisualText(text);
+    _measureEl.textContent = visText.slice(0, charIdx);
+    return _measureEl.offsetWidth;
 }
 
 function getMessageAtClick(x, y) {
-    // Find message that contains click point
+    let best = null;
+    let bestDist = Infinity;
     for (const [key, msg] of Object.entries(messages)) {
         if (msg.y !== y) continue;
-        const width = getMessageWidth({ ...msg, _key: key });
+        const el = canvasEl.querySelector(`.message[data-key="${key}"]`);
+        let width;
+        if (el) {
+            // Use text content width only (exclude author tag overflow)
+            const authorTag = el.querySelector('.author-tag');
+            if (authorTag) {
+                width = el.offsetWidth - authorTag.offsetWidth;
+            } else {
+                width = el.offsetWidth;
+            }
+        } else {
+            width = getMessageWidth({ ...msg, _key: key });
+        }
         if (x >= msg.x && x <= msg.x + width) {
-            return { key, msg };
+            const dist = Math.abs(x - (msg.x + width / 2));
+            if (dist < bestDist) {
+                bestDist = dist;
+                best = { key, msg };
+            }
         }
     }
-    return null;
+    return best;
 }
 
 function pushMessagesRight(sourceKey) {
@@ -532,16 +671,12 @@ function pushMessagesRight(sourceKey) {
     const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 90) || 800;
     const srcRight = src.x + getMessageWidth({ ...src, _key: sourceKey });
 
-    // Get messages that overlap or are to the right of source on the same line
     const sameLine = Object.entries(messages)
         .filter(([k, m]) => {
             if (m.y !== src.y || k === sourceKey) return false;
-            // Include if message starts at or after source x
             if (m.x >= src.x) return true;
-            // Also include if message overlaps source (starts before but extends into it)
             const mRight = m.x + getMessageWidth({ ...m, _key: k });
-            if (mRight > src.x) return true;
-            return false;
+            return mRight > src.x;
         })
         .sort((a, b) => a[1].x - b[1].x);
 
@@ -553,12 +688,10 @@ function pushMessagesRight(sourceKey) {
             let newX = pushEdge + GAP;
             const msgWidth = getMessageWidth({ ...msg, _key: key });
 
-            // If pushed beyond page width, wrap to next line
             if (newX > pageWidth || newX + msgWidth > pageWidth) {
                 msg.x = 0;
                 msg.y = msg.y + LINE_HEIGHT;
                 messagesRef.child(key).update({ x: 0, y: msg.y });
-                // Now check if this message overlaps anything on its new line
                 pushMessagesRight(key);
                 pushEdge = newX;
             } else {
@@ -573,48 +706,36 @@ function pushMessagesRight(sourceKey) {
 }
 
 function pushMessagesDown(cx, cy) {
-    // Push all messages to the right of cursor on this line down one line
     const sameLine = Object.entries(messages)
         .filter(([k, m]) => m.y === cy && m.x >= cx)
         .sort((a, b) => a[1].x - b[1].x);
-
     if (sameLine.length === 0) return;
-
-    // First move all of them down
     for (const [key, msg] of sameLine) {
         msg.y = msg.y + LINE_HEIGHT;
         messagesRef.child(key).update({ y: msg.y });
     }
-    // Then resolve collisions on the new line (push existing messages right)
     for (const [key, msg] of sameLine) {
         pushMessagesRight(key);
     }
 }
 
 function pullNextMessageLeft(cx, cy) {
-    // Find the first message to the right of cursor on this line
     const sameLine = Object.entries(messages)
         .filter(([k, m]) => m.y === cy && m.x > cx)
         .sort((a, b) => a[1].x - b[1].x);
-
     if (sameLine.length === 0) return;
 
     const [key, msg] = sameLine[0];
-    const step = CHAR_WIDTH; // pull by one character width
-
-    // Find the boundary: either cursor position or end of previous message
     let minX = cx;
     const leftMessages = Object.entries(messages)
         .filter(([k, m]) => m.y === cy && m.x < msg.x && k !== key)
-        .sort((a, b) => b[1].x - a[1].x); // sorted right to left
-
+        .sort((a, b) => b[1].x - a[1].x);
     if (leftMessages.length > 0) {
         const [lk, lm] = leftMessages[0];
-        const leftRight = lm.x + getMessageWidth({ ...lm, _key: lk });
-        minX = Math.max(minX, leftRight + 5);
+        minX = Math.max(minX, lm.x + getMessageWidth({ ...lm, _key: lk }) + 5);
     }
 
-    const newX = Math.max(minX, msg.x - step);
+    const newX = Math.max(minX, msg.x - CHAR_WIDTH);
     if (newX !== msg.x) {
         msg.x = newX;
         messagesRef.child(key).update({ x: newX });
@@ -644,10 +765,9 @@ nameInput.addEventListener('keydown', (e) => {
 // CLICK / DRAG TO PLACE CURSOR OR SELECT
 // ===========================================
 
-let dragState = null; // {startKey, startCharIdx, startX, startY, moved}
-const selectionHighlight = document.getElementById('selectionHighlight');
+let dragState = null;
 const styleMenu = document.getElementById('styleMenu');
-let currentSelection = null; // [{key, startIdx, endIdx}, ...] array of selections per message
+let currentSelection = null;
 
 canvasEl.addEventListener('mousedown', (e) => {
     if (e.button !== 0) return;
@@ -658,19 +778,17 @@ canvasEl.addEventListener('mousedown', (e) => {
 
     const hit = getMessageAtClick(mx, my);
     if (hit && hit.msg.authorId !== myId) {
-        // Start drag selection on another user's message (use visual length)
         const visLen = getVisualLength(hit.msg.text);
-        const charIdx = Math.max(0, Math.min(visLen, Math.round((mx - hit.msg.x) / CHAR_WIDTH)));
+        const charIdx = Math.max(0, Math.min(visLen, getCharIndexAtX(hit.msg.text, mx - hit.msg.x, hit.key)));
         dragState = { startKey: hit.key, startCharIdx: charIdx, startX: mx, startY: my, moved: false, endKey: hit.key, endCharIdx: charIdx };
-        selectionHighlight.style.display = 'none';
-        // Remove old highlight divs
         canvasEl.querySelectorAll('.selection-highlight-multi').forEach(el => el.remove());
         e.preventDefault();
+        hiddenInput.focus();
         return;
     }
-    // Normal click (own message or empty space)
     dragState = null;
     e.preventDefault();
+    hiddenInput.focus();
     handleClick(mx, my);
 });
 
@@ -681,18 +799,13 @@ canvasEl.addEventListener('mousemove', (e) => {
     const mx = e.clientX - rect.left;
     const my = snapToLine(e.clientY - rect.top);
 
-    // Find which message the mouse is over now
     const hit = getMessageAtClick(mx, my);
     if (hit && hit.msg.authorId !== myId) {
         const visLen = getVisualLength(hit.msg.text);
-        const charIdx = Math.max(0, Math.min(visLen, Math.round((mx - hit.msg.x) / CHAR_WIDTH)));
+        const charIdx = Math.max(0, Math.min(visLen, getCharIndexAtX(hit.msg.text, mx - hit.msg.x, hit.key)));
         dragState.endKey = hit.key;
         dragState.endCharIdx = charIdx;
-    } else {
-        // If over empty space, keep last known end
     }
-
-    // Calculate and show selection highlights
     showDragHighlight();
 });
 
@@ -700,14 +813,12 @@ canvasEl.addEventListener('mouseup', (e) => {
     if (!dragState) return;
 
     if (dragState.moved) {
-        // Build selection from drag range
         const selections = getSelectionsFromDrag();
         if (selections.length > 0) {
             currentSelection = selections;
-            // Position menu near the first selection
             const firstMsg = messages[selections[0].key];
             if (firstMsg) {
-                const menuX = firstMsg.x + selections[0].startIdx * CHAR_WIDTH;
+                const menuX = firstMsg.x + getCharPixelX(firstMsg.text, selections[0].startIdx, selections[0].key);
                 const menuY = firstMsg.y - 40;
                 styleMenu.style.left = menuX + 'px';
                 styleMenu.style.top = Math.max(0, menuY) + 'px';
@@ -718,8 +829,6 @@ canvasEl.addEventListener('mouseup', (e) => {
         }
     }
 
-    // No valid selection or no drag: treat as normal click
-    selectionHighlight.style.display = 'none';
     canvasEl.querySelectorAll('.selection-highlight-multi').forEach(el => el.remove());
     const clickX = dragState.startX;
     const clickY = dragState.startY;
@@ -727,13 +836,12 @@ canvasEl.addEventListener('mouseup', (e) => {
     handleClick(clickX, clickY);
 });
 
-
 function handleClick(clickX, clickY) {
     const hit = getMessageAtClick(clickX, clickY);
     if (hit) {
         if (hit.msg.authorId === myId) {
             activeMessageKey = hit.key;
-            const charIndex = Math.round((clickX - hit.msg.x) / CHAR_WIDTH);
+            const charIndex = getCharIndexAtX(hit.msg.text, clickX - hit.msg.x, hit.key);
             cursorPos = Math.max(0, Math.min(hit.msg.text.length, charIndex));
             cursorX = -1;
             cursorY = -1;
@@ -766,7 +874,6 @@ function getSelectionsFromDrag() {
     const endMsg = messages[dragState.endKey];
     if (!startMsg || !endMsg) return [];
 
-    // If same message
     if (dragState.startKey === dragState.endKey) {
         const s = Math.min(dragState.startCharIdx, dragState.endCharIdx);
         const e = Math.max(dragState.startCharIdx, dragState.endCharIdx);
@@ -774,12 +881,10 @@ function getSelectionsFromDrag() {
         return [{ key: dragState.startKey, startIdx: s, endIdx: e }];
     }
 
-    // Multiple messages: find all messages between startY and endY
     const yStart = Math.min(startMsg.y, endMsg.y);
     const yEnd = Math.max(startMsg.y, endMsg.y);
     const goingDown = startMsg.y <= endMsg.y;
 
-    // Get all other-user messages in y range, sorted by y then x
     const inRange = Object.entries(messages)
         .filter(([k, m]) => m.y >= yStart && m.y <= yEnd && m.authorId !== myId)
         .sort((a, b) => a[1].y - b[1].y || a[1].x - b[1].x);
@@ -805,80 +910,49 @@ function getSelectionsFromDrag() {
 }
 
 function showDragHighlight() {
-    // Remove old highlights
     canvasEl.querySelectorAll('.selection-highlight-multi').forEach(el => el.remove());
-    selectionHighlight.style.display = 'none';
 
     const selections = getSelectionsFromDrag();
     for (const sel of selections) {
         const msg = messages[sel.key];
         if (!msg) continue;
+        const startPx = getCharPixelX(msg.text, sel.startIdx, sel.key);
+        const endPx = getCharPixelX(msg.text, sel.endIdx, sel.key);
         const hl = document.createElement('div');
         hl.className = 'selection-highlight selection-highlight-multi';
-        hl.style.left = (msg.x + sel.startIdx * CHAR_WIDTH) + 'px';
+        hl.style.left = (msg.x + startPx) + 'px';
         hl.style.top = msg.y + 'px';
-        hl.style.width = ((sel.endIdx - sel.startIdx) * CHAR_WIDTH) + 'px';
+        hl.style.width = (endPx - startPx) + 'px';
         hl.style.display = 'block';
         canvasEl.appendChild(hl);
     }
 }
 
-// Convert a visual character index (what user sees) to raw text index (with tags)
+function getVisualLength(text) {
+    return getVisualText(text).length;
+}
+
 function visualToRawIndex(text, visualIdx) {
     let visual = 0;
     let raw = 0;
     while (raw < text.length && visual < visualIdx) {
-        // Check if we're at a tag opening: >x followed by optional space
         if (text[raw] === '>' && raw + 1 < text.length && /[iIfFsSgG]/.test(text[raw + 1])) {
-            raw += 2; // skip >x
-            if (raw < text.length && text[raw] === ' ') raw++; // skip optional space
+            raw += 2;
+            if (raw < text.length && text[raw] === ' ') raw++;
             continue;
         }
-        // Check for " <" (space + closing tag)
         if (raw + 1 < text.length && text[raw] === ' ' && text[raw + 1] === '<') {
             raw += 2;
             continue;
         }
-        // Check for "<" alone (closing tag without space)
-        if (text[raw] === '<') {
-            raw++;
-            continue;
-        }
-        // Normal visible character
+        if (text[raw] === '<') { raw++; continue; }
         visual++;
         raw++;
     }
-    // If we've reached target visual index, skip any trailing tag markers
     return raw;
 }
 
-// Get the visual length of a text (without tag markers)
-function getVisualLength(text) {
-    let len = 0;
-    let i = 0;
-    while (i < text.length) {
-        if (text[i] === '>' && i + 1 < text.length && /[iIfFsSgG]/.test(text[i + 1])) {
-            i += 2;
-            if (i < text.length && text[i] === ' ') i++;
-            continue;
-        }
-        if (i + 1 < text.length && text[i] === ' ' && text[i + 1] === '<') {
-            i += 2;
-            continue;
-        }
-        if (text[i] === '<') {
-            i++;
-            continue;
-        }
-        len++;
-        i++;
-    }
-    return len;
-}
-
-// Style menu button handlers
 styleMenu.addEventListener('mousedown', (e) => {
-    // Prevent the document mousedown from hiding the menu
     e.stopPropagation();
 });
 
@@ -887,7 +961,6 @@ styleMenu.addEventListener('click', (e) => {
     if (!btn || !currentSelection || !currentSelection.length) return;
     const tag = btn.dataset.style;
 
-    // Apply tag to each selection (in reverse order to preserve indices)
     const sorted = [...currentSelection].sort((a, b) => {
         const ma = messages[a.key], mb = messages[b.key];
         if (!ma || !mb) return 0;
@@ -897,32 +970,22 @@ styleMenu.addEventListener('click', (e) => {
     for (const sel of sorted) {
         const msg = messages[sel.key];
         if (!msg) continue;
-        // Convert visual indices to raw text indices
         let rawStart = visualToRawIndex(msg.text, sel.startIdx);
         let rawEnd = visualToRawIndex(msg.text, sel.endIdx);
 
-        // Expand selection to include surrounding tags if present
-        // Check if rawStart is preceded by a tag opener ">x " or ">x"
-        const beforeStart = msg.text.slice(0, rawStart);
-        const tagOpenMatch = beforeStart.match(/>[iIfFsSgG]\s?$/);
-        if (tagOpenMatch) {
-            rawStart -= tagOpenMatch[0].length;
-        }
-        // Check if rawEnd is followed by " <" or "<"
-        const afterEnd = msg.text.slice(rawEnd);
-        const tagCloseMatch = afterEnd.match(/^\s?</);
-        if (tagCloseMatch) {
-            rawEnd += tagCloseMatch[0].length;
-        }
+        // Expand to include surrounding tags
+        const tagOpenMatch = msg.text.slice(0, rawStart).match(/>[iIfFsSgG]\s?$/);
+        if (tagOpenMatch) rawStart -= tagOpenMatch[0].length;
+        const tagCloseMatch = msg.text.slice(rawEnd).match(/^\s?</);
+        if (tagCloseMatch) rawEnd += tagCloseMatch[0].length;
 
         const before = msg.text.slice(0, rawStart);
         const selected = msg.text.slice(rawStart, rawEnd);
         const after = msg.text.slice(rawEnd);
         if (selected.length === 0) continue;
-        // Strip existing tags from selected portion
         const stripped = selected.replace(/>[iIfFsSgG]\s?/g, '').replace(/ </g, '').replace(/</g, '');
         if (stripped.length === 0) continue;
-        const newText = before + '>' + tag + ' ' + stripped + ' <' + after;
+        const newText = tag === 'n' ? before + stripped + after : before + '>' + tag + ' ' + stripped + ' <' + after;
         msg.text = newText;
         messagesRef.child(sel.key).update({ text: newText });
     }
@@ -933,12 +996,10 @@ styleMenu.addEventListener('click', (e) => {
 
 function hideStyleMenu() {
     styleMenu.style.display = 'none';
-    selectionHighlight.style.display = 'none';
     canvasEl.querySelectorAll('.selection-highlight-multi').forEach(el => el.remove());
     currentSelection = null;
 }
 
-// Hide menu when clicking outside
 document.addEventListener('mousedown', (e) => {
     if (styleMenu.contains(e.target)) return;
     if (currentSelection) {
@@ -966,7 +1027,6 @@ hiddenInput.addEventListener('keydown', (e) => {
         e.preventDefault();
 
         if (activeMessageKey) {
-            // Inside own message: split at cursorPos
             const msg = messages[activeMessageKey];
             if (msg && msg.authorId === myId) {
                 if (cursorPos < 0) cursorPos = msg.text.length;
@@ -974,20 +1034,16 @@ hiddenInput.addEventListener('keydown', (e) => {
                 const textAfter = msg.text.slice(cursorPos);
                 const nextY = msg.y + LINE_HEIGHT;
 
-                // Update current message with text before cursor
                 if (textBefore.length === 0) {
-                    // Nothing before: delete this message
                     messagesRef.child(activeMessageKey).remove();
                 } else {
                     msg.text = textBefore;
                     messagesRef.child(activeMessageKey).update({ text: textBefore });
                 }
 
-                // Push messages on next line to make room
                 pushMessagesDown(0, nextY);
 
                 if (textAfter.length > 0) {
-                    // Create new message on next line with text after cursor
                     const ref = messagesRef.push({
                         text: textAfter,
                         x: msg.x,
@@ -1007,7 +1063,6 @@ hiddenInput.addEventListener('keydown', (e) => {
                     };
                     pushMessagesRight(ref.key);
                 } else {
-                    // Nothing after: just move cursor to next line
                     activeMessageKey = null;
                     cursorPos = -1;
                     cursorX = msg.x;
@@ -1019,7 +1074,6 @@ hiddenInput.addEventListener('keydown', (e) => {
             }
         }
 
-        // Cursor in empty space
         const currentX = cursorX;
         const currentY = cursorY;
 
@@ -1027,7 +1081,6 @@ hiddenInput.addEventListener('keydown', (e) => {
             pushMessagesDown(cursorX, cursorY);
         }
 
-        // Move cursor to next line
         const nextY = currentY + LINE_HEIGHT;
         activeMessageKey = null;
         cursorPos = -1;
@@ -1041,12 +1094,10 @@ hiddenInput.addEventListener('keydown', (e) => {
     if (e.key === 'Backspace') {
         e.preventDefault();
         if (activeMessageKey) {
-            // Editing own message: delete char before cursorPos
             const msg = messages[activeMessageKey];
             if (msg && msg.authorId === myId) {
                 if (cursorPos < 0) cursorPos = msg.text.length;
                 if (cursorPos === 0) {
-                    // At start, nothing to delete backwards
                     renderMessages();
                     return;
                 }
@@ -1065,7 +1116,6 @@ hiddenInput.addEventListener('keydown', (e) => {
                 }
             }
         } else if (cursorX >= 0) {
-            // Cursor in empty space: pull the next message on this line closer
             pullNextMessageLeft(cursorX, cursorY);
         }
         renderMessages();
@@ -1075,14 +1125,12 @@ hiddenInput.addEventListener('keydown', (e) => {
     if (e.key === 'Delete') {
         e.preventDefault();
         if (cursorX >= 0 && !activeMessageKey) {
-            // Delete in empty space: pull next message left
             pullNextMessageLeft(cursorX, cursorY);
             renderMessages();
         }
         return;
     }
 
-    // Arrow keys
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
         e.preventDefault();
 
@@ -1097,7 +1145,6 @@ hiddenInput.addEventListener('keydown', (e) => {
                         renderMessages();
                         return;
                     }
-                    // At start of message: leave message, place cursor before it
                     cursorX = Math.max(0, msg.x - 5);
                     cursorY = msg.y;
                     activeMessageKey = null;
@@ -1112,7 +1159,6 @@ hiddenInput.addEventListener('keydown', (e) => {
                         renderMessages();
                         return;
                     }
-                    // At end of message: leave message, place cursor after it
                     cursorX = msg.x + getMessageWidth({ ...msg, _key: activeMessageKey });
                     cursorY = msg.y;
                     activeMessageKey = null;
@@ -1122,7 +1168,6 @@ hiddenInput.addEventListener('keydown', (e) => {
                     return;
                 }
                 if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-                    // Leave message, move to line above/below
                     cursorX = msg.x + cursorPos * CHAR_WIDTH;
                     cursorY = msg.y + (e.key === 'ArrowUp' ? -LINE_HEIGHT : LINE_HEIGHT);
                     cursorY = Math.max(0, cursorY);
@@ -1157,7 +1202,6 @@ hiddenInput.addEventListener('input', () => {
     if (!typed) return;
 
     if (activeMessageKey) {
-        // Insert at cursorPos — push others if needed
         const msg = messages[activeMessageKey];
         if (msg && msg.authorId === myId) {
             if (cursorPos < 0) cursorPos = msg.text.length;
@@ -1166,16 +1210,28 @@ hiddenInput.addEventListener('input', () => {
             msg.text = newText;
             messagesRef.child(activeMessageKey).update({ text: newText });
 
-            // Check if message exceeds page width → wrap to next line(s)
             const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 90) || 800;
             let currentKey = activeMessageKey;
             let currentMsg = msg;
             while (true) {
-                const cW = currentMsg.text.length * CHAR_WIDTH + 20;
+                const cW = measureText(currentMsg.text) + 20;
                 if (currentMsg.x + cW <= pageWidth) break;
-                // Find split point
-                const maxChars = Math.max(1, Math.floor((pageWidth - currentMsg.x - 20) / CHAR_WIDTH));
-                const splitPos = Math.min(maxChars, currentMsg.text.length);
+                const availW = pageWidth - currentMsg.x - 20;
+                let lo = 1, hi = currentMsg.text.length, splitPos = 1;
+                while (lo <= hi) {
+                    const mid = Math.floor((lo + hi) / 2);
+                    if (measureText(currentMsg.text.slice(0, mid)) <= availW) {
+                        splitPos = mid;
+                        lo = mid + 1;
+                    } else {
+                        hi = mid - 1;
+                    }
+                }
+                splitPos = Math.min(splitPos, currentMsg.text.length);
+                const lastSpace = currentMsg.text.lastIndexOf(' ', splitPos - 1);
+                if (lastSpace > 0) {
+                    splitPos = lastSpace + 1;
+                }
                 const textBefore = currentMsg.text.slice(0, splitPos);
                 const textAfter = currentMsg.text.slice(splitPos);
                 const nextY = currentMsg.y + LINE_HEIGHT;
@@ -1207,7 +1263,6 @@ hiddenInput.addEventListener('input', () => {
 
     if (cursorX < 0) return;
 
-    // Create new message
     const ref = messagesRef.push({
         text: typed,
         x: cursorX,
@@ -1227,7 +1282,52 @@ hiddenInput.addEventListener('input', () => {
         authorId: myId
     };
     hideCursor();
-    // Push any overlapping messages to the right
+
+    const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 90) || 800;
+    let currentKey = activeMessageKey;
+    let currentMsg = messages[currentKey];
+    while (true) {
+        const cW = measureText(currentMsg.text) + 20;
+        if (currentMsg.x + cW <= pageWidth) break;
+        const availW = pageWidth - currentMsg.x - 20;
+        let lo = 1, hi = currentMsg.text.length, splitPos = 1;
+        while (lo <= hi) {
+            const mid = Math.floor((lo + hi) / 2);
+            if (measureText(currentMsg.text.slice(0, mid)) <= availW) {
+                splitPos = mid;
+                lo = mid + 1;
+            } else {
+                hi = mid - 1;
+            }
+        }
+        splitPos = Math.min(splitPos, currentMsg.text.length);
+        const lastSpace = currentMsg.text.lastIndexOf(' ', splitPos - 1);
+        if (lastSpace > 0) {
+            splitPos = lastSpace + 1;
+        }
+        const textBefore = currentMsg.text.slice(0, splitPos);
+        const textAfter = currentMsg.text.slice(splitPos);
+        const nextY = currentMsg.y + LINE_HEIGHT;
+
+        currentMsg.text = textBefore;
+        messagesRef.child(currentKey).update({ text: textBefore });
+
+        pushMessagesDown(0, nextY);
+
+        const ref2 = messagesRef.push({
+            text: textAfter || '', x: 0, y: nextY,
+            author: myName, authorId: myId,
+            timestamp: firebase.database.ServerValue.TIMESTAMP
+        });
+        messages[ref2.key] = {
+            text: textAfter || '', x: 0, y: nextY,
+            author: myName, authorId: myId
+        };
+        currentKey = ref2.key;
+        currentMsg = messages[ref2.key];
+    }
+    activeMessageKey = currentKey;
+    cursorPos = currentMsg.text.length;
     pushMessagesRight(activeMessageKey);
     renderMessages();
 });
@@ -1237,7 +1337,6 @@ hiddenInput.addEventListener('input', () => {
 // ===========================================
 
 function renderMessages() {
-    // Remove all message elements
     canvasEl.querySelectorAll('.message').forEach(el => el.remove());
 
     for (const [key, msg] of Object.entries(messages)) {
@@ -1251,14 +1350,12 @@ function renderMessages() {
         let html = '';
         const cursorStyle = 'display:inline-block;width:2px;height:48px;background:#4a9f7e;vertical-align:text-bottom;animation:blink 1s step-end infinite;';
 
-        // Show cursor at cursorPos inside active message (show raw text with tags)
         if (key === activeMessageKey) {
             const pos = cursorPos < 0 ? msg.text.length : Math.min(cursorPos, msg.text.length);
             html = escapeHtml(msg.text.slice(0, pos))
                 + '<span style="' + cursorStyle + '"></span>'
                 + escapeHtml(msg.text.slice(pos));
         } else {
-            // Parse >i ... < and >f ... < tags
             html = formatTags(msg.text);
         }
 
@@ -1269,6 +1366,7 @@ function renderMessages() {
         el.innerHTML = html;
         canvasEl.appendChild(el);
     }
+    fitCanvasToContent();
 }
 
 function escapeHtml(text) {
@@ -1278,7 +1376,6 @@ function escapeHtml(text) {
 }
 
 function formatTags(text) {
-    // Parse >i ... < (italic) and >f ... < (blur) tags
     let result = '';
     let i = 0;
     while (i < text.length) {
@@ -1332,30 +1429,14 @@ function formatTags(text) {
 // ===========================================
 
 messagesRef.on('child_added', (snapshot) => {
-    const key = snapshot.key;
     const val = snapshot.val();
-    messages[key] = {
-        text: val.text || '',
-        x: val.x || 0,
-        y: val.y || 0,
-        author: val.author || '',
-        authorId: val.authorId || '',
-        timestamp: val.timestamp || 0
-    };
+    messages[snapshot.key] = { text: val.text || '', x: val.x || 0, y: val.y || 0, author: val.author || '', authorId: val.authorId || '' };
     renderMessages();
 });
 
 messagesRef.on('child_changed', (snapshot) => {
-    const key = snapshot.key;
     const val = snapshot.val();
-    messages[key] = {
-        text: val.text || '',
-        x: val.x || 0,
-        y: val.y || 0,
-        author: val.author || '',
-        authorId: val.authorId || '',
-        timestamp: val.timestamp || 0
-    };
+    messages[snapshot.key] = { text: val.text || '', x: val.x || 0, y: val.y || 0, author: val.author || '', authorId: val.authorId || '' };
     renderMessages();
 });
 
@@ -1409,8 +1490,6 @@ function updateGotoButton() {
     const canvasTop = canvasEl.offsetTop;
     const lastAbsolute = canvasTop + lastY;
     const viewBottom = window.scrollY + window.innerHeight;
-
-    // Show button if last message is below the viewport
     if (lastAbsolute > viewBottom + 100) {
         gotoBottom.style.display = 'flex';
     } else {
@@ -1425,12 +1504,39 @@ gotoBottom.addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', updateGotoButton);
-// Update when messages change
 const origRender = renderMessages;
 renderMessages = function() {
     origRender();
     updateGotoButton();
 };
+
+// Emoji layer
+(function() {
+    const emojis = ['🌊','🌑','🪷','🫧','🌿','💧','🪸','🐚','🌙'];
+    const layer = document.getElementById('emojiLayer');
+    const items = [];
+    for (let i = 0; i < 15; i++) {
+        const span = document.createElement('span');
+        span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        span.style.left = (Math.random() * 90 + 5) + '%';
+        span.style.top = (Math.random() * 90 + 5) + '%';
+        layer.appendChild(span);
+        items.push({ el: span, phase: Math.random() * Math.PI * 2 });
+    }
+    const startThreshold = 600;
+    window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY;
+        if (scrollPos < startThreshold) {
+            items.forEach(item => { item.el.style.opacity = '0'; });
+            return;
+        }
+        const adjusted = scrollPos - startThreshold;
+        items.forEach(item => {
+            const val = Math.sin(adjusted * 0.008 + item.phase);
+            item.el.style.opacity = val > 0.3 ? ((val - 0.3) / 0.7 * 0.8).toFixed(2) : '0';
+        });
+    });
+})();
 </script>
 
 </body>
