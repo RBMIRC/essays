@@ -54,12 +54,13 @@
             width: 100%;
             height: auto;
             display: block;
+            opacity: 0.6;
         }
         /* Title */
         .title-section {
             position: relative;
             z-index: 10;
-            padding: 30px 30px 40px;
+            padding: 20px 30px 40px;
         }
 
         .title {
@@ -74,10 +75,11 @@
         .subtitle-bar {
             position: relative;
             z-index: 10;
-            padding: 8px 30px;
-            border-top: 1px dashed #333;
-            border-bottom: 1px dashed #333;
-            text-align: right;
+            padding: 10px 30px;
+            border-top: 1px dashed #555;
+            border-bottom: 1px dashed #555;
+            display: flex;
+            justify-content: space-between;
             font-family: 'SF Mono', 'Monaco', monospace;
             font-size: 12px;
             color: #fff;
@@ -96,7 +98,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 12px;
+            font-size: 16px;
             color: #4a9f7e;
             flex-shrink: 0;
         }
@@ -116,7 +118,7 @@
 
         .users-list {
             margin-left: 12px;
-            font-size: 11px;
+            font-size: 14px;
             color: #555;
         }
         .users-list span {
@@ -133,14 +135,14 @@
 
         .name-inline input {
             font-family: 'SF Mono', monospace;
-            font-size: 12px;
+            font-size: 16px;
             background: transparent;
             border: none;
             border-bottom: 1px solid #fff;
             color: #fff;
             padding: 4px 0;
             outline: none;
-            width: 150px;
+            width: 180px;
             text-align: right;
         }
 
@@ -214,7 +216,7 @@
     <img src="Header/header_ascii.png" alt="The Lake">
 </div>
 
-<div class="subtitle-bar">Retcon Black Mountain</div>
+<div class="subtitle-bar"><span>A project by Sylvain Couzinet-Jacques</span><span>Retcon Black Mountain</span></div>
 
 <div class="title-section">
     <div class="title">The Lake</div>
