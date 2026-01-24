@@ -183,9 +183,10 @@
             font-size: 40px;
             font-weight: 700;
             line-height: 48px;
+            height: 48px;
             white-space: pre;
-            word-break: break-word;
-            max-width: calc(100vw - 80px);
+            overflow: hidden;
+            pointer-events: none;
         }
 
         .message .author-tag {
@@ -196,11 +197,7 @@
             margin-left: 2px;
         }
 
-        .message.editing {
-            outline: none;
-        }
-
-        /* Blinking cursor placeholder */
+        /* Blinking cursor */
         .cursor-marker {
             position: absolute;
             display: inline-block;
@@ -217,7 +214,7 @@
             50% { opacity: 0; }
         }
 
-        /* Hidden input for mobile */
+        /* Hidden input for typing */
         .hidden-input {
             position: fixed;
             top: -100px;
@@ -364,33 +361,59 @@ const usersEl = document.getElementById('users');
 const usersList = document.getElementById('usersList');
 const nameInput = document.getElementById('nameInput');
 
-const LINE_HEIGHT = 48; // px per line
-const NUM_LINES = 60; // number of ruled lines
+const LINE_HEIGHT = 48;
+const NUM_LINES = 60;
 
-let messages = {}; // key -> {text, x, y, author, authorId, timestamp}
-let activeMessageKey = null; // message currently being edited
-let cursorX = -1, cursorY = -1; // where user clicked (relative to canvas)
+let messages = {}; // key -> {text, x, y, author, authorId}
+let activeMessageKey = null; // message currently being typed into
+let cursorX = -1, cursorY = -1; // snapped cursor position
 
-// Generate ruled lines
+// ===========================================
+// RULED LINES
+// ===========================================
+
 function generateRuledLines() {
     const container = document.getElementById('ruledLines');
     for (let i = 0; i < NUM_LINES; i++) {
         const line = document.createElement('div');
         line.className = 'ruled-line';
-        line.style.top = (i * LINE_HEIGHT + LINE_HEIGHT) + 'px';
+        line.style.top = ((i + 1) * LINE_HEIGHT) + 'px';
         container.appendChild(line);
     }
-    // Set canvas min-height to fit all lines
-    canvasEl.style.minHeight = (NUM_LINES * LINE_HEIGHT + LINE_HEIGHT) + 'px';
+    canvasEl.style.minHeight = ((NUM_LINES + 1) * LINE_HEIGHT) + 'px';
 }
 
 function snapToLine(y) {
-    // Snap y to the nearest line top
     const lineIndex = Math.round(y / LINE_HEIGHT);
-    return lineIndex * LINE_HEIGHT;
+    return Math.max(0, lineIndex * LINE_HEIGHT);
 }
 
 generateRuledLines();
+
+// ===========================================
+// COLLISION CHECK
+// ===========================================
+
+function isLineOccupiedByOther(y, excludeKey) {
+    // Check if any message from another user occupies this line
+    for (const [key, msg] of Object.entries(messages)) {
+        if (key === excludeKey) continue;
+        if (msg.authorId !== myId && msg.y === y) {
+            return msg; // return the blocking message
+        }
+    }
+    return null;
+}
+
+function getMyMessageOnLine(y) {
+    // Check if I already have a message on this line
+    for (const [key, msg] of Object.entries(messages)) {
+        if (msg.authorId === myId && msg.y === y) {
+            return key;
+        }
+    }
+    return null;
+}
 
 // ===========================================
 // NAME INPUT
@@ -416,29 +439,37 @@ nameInput.addEventListener('keydown', (e) => {
 // ===========================================
 
 canvasEl.addEventListener('click', (e) => {
-    // Ignore clicks on existing messages that aren't ours
-    const msgEl = e.target.closest('.message');
-    if (msgEl) {
-        const key = msgEl.dataset.key;
-        const msg = messages[key];
-        if (msg && msg.authorId === myId) {
-            // Click on own message: edit it
-            startEditing(key);
-            return;
-        }
-        // Click on someone else's message: ignore, place cursor nearby
+    const rect = canvasEl.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = snapToLine(e.clientY - rect.top);
+
+    // Check if this line is occupied by another user
+    const blocker = isLineOccupiedByOther(clickY, null);
+    if (blocker) {
+        // Can't write on this line — ignore click
+        return;
     }
 
-    // Get click position relative to canvas, snap to line
-    const rect = canvasEl.getBoundingClientRect();
-    cursorX = e.clientX - rect.left;
-    cursorY = snapToLine(e.clientY - rect.top);
+    // Check if I already have a message on this line
+    const existingKey = getMyMessageOnLine(clickY);
+    if (existingKey) {
+        // Resume editing my existing message on this line
+        activeMessageKey = existingKey;
+        cursorX = -1;
+        cursorY = -1;
+        hideCursor();
+        hiddenInput.focus();
+        renderMessages();
+        return;
+    }
 
-    // Stop editing current message if any
-    stopEditing();
+    // Stop current editing
+    activeMessageKey = null;
+    cursorX = clickX;
+    cursorY = clickY;
 
-    // Show cursor at snapped position
     showCursor(cursorX, cursorY);
+    renderMessages();
     hiddenInput.focus();
 });
 
@@ -453,95 +484,82 @@ function hideCursor() {
 }
 
 // ===========================================
-// EDITING
+// TYPING
 // ===========================================
 
-function startEditing(key) {
-    stopEditing();
-    activeMessageKey = key;
-    const el = canvasEl.querySelector(`.message[data-key="${key}"]`);
-    if (el) {
-        el.classList.add('editing');
-        el.contentEditable = 'true';
-        el.focus();
-        // Place caret at end
-        const range = document.createRange();
-        const sel = window.getSelection();
-        // Find last text node
-        const textNodes = [];
-        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-        let n;
-        while (n = walker.nextNode()) textNodes.push(n);
-        if (textNodes.length > 0) {
-            const last = textNodes[textNodes.length - 1];
-            range.setStart(last, last.textContent.length);
-            range.collapse(true);
-            sel.removeAllRanges();
-            sel.addRange(range);
+hiddenInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        // Move cursor to next free line
+        let nextY = (activeMessageKey ? messages[activeMessageKey].y : cursorY) + LINE_HEIGHT;
+        // Skip lines occupied by others
+        while (isLineOccupiedByOther(nextY, null) && nextY < NUM_LINES * LINE_HEIGHT) {
+            nextY += LINE_HEIGHT;
         }
-    }
-    hideCursor();
-}
+        activeMessageKey = null;
 
-function stopEditing() {
-    if (!activeMessageKey) return;
-    const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
-    if (el) {
-        el.classList.remove('editing');
-        el.contentEditable = 'false';
-        // Save text back to Firebase
-        const text = getMessageText(el);
-        if (text.trim() === '') {
-            // Empty message: delete it
-            messagesRef.child(activeMessageKey).remove();
+        // Check if I have a message on that line already
+        const existingKey = getMyMessageOnLine(nextY);
+        if (existingKey) {
+            activeMessageKey = existingKey;
+            cursorX = -1;
+            cursorY = -1;
+            hideCursor();
         } else {
-            messagesRef.child(activeMessageKey).update({ text });
+            cursorX = 0;
+            cursorY = nextY;
+            showCursor(cursorX, cursorY);
         }
+        renderMessages();
+        return;
     }
-    activeMessageKey = null;
-}
 
-function getMessageText(el) {
-    // Get text content excluding author tag
-    let text = '';
-    el.childNodes.forEach(node => {
-        if (node.nodeType === 3) {
-            text += node.textContent;
-        } else if (node.classList && !node.classList.contains('author-tag')) {
-            text += node.textContent;
-        }
-    });
-    return text;
-}
-
-// ===========================================
-// TYPING (when cursor is placed but no message yet)
-// ===========================================
-
-hiddenInput.addEventListener('input', () => {
-    const typed = hiddenInput.value;
-    hiddenInput.value = '';
-    if (!typed || cursorX < 0) return;
-
-    if (activeMessageKey) {
-        // Already editing — append to existing message
-        const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
-        if (el) {
-            // Insert text at caret position
-            const sel = window.getSelection();
-            if (sel.rangeCount > 0) {
-                const range = sel.getRangeAt(0);
-                range.deleteContents();
-                range.insertNode(document.createTextNode(typed));
-                range.collapse(false);
+    if (e.key === 'Backspace') {
+        e.preventDefault();
+        if (activeMessageKey) {
+            const msg = messages[activeMessageKey];
+            if (msg && msg.authorId === myId) {
+                if (msg.text.length <= 1) {
+                    // Delete the message entirely
+                    messagesRef.child(activeMessageKey).remove();
+                    cursorX = msg.x;
+                    cursorY = msg.y;
+                    activeMessageKey = null;
+                    showCursor(cursorX, cursorY);
+                } else {
+                    const newText = msg.text.slice(0, -1);
+                    messagesRef.child(activeMessageKey).update({ text: newText });
+                }
             }
-            const text = getMessageText(el);
-            messagesRef.child(activeMessageKey).update({ text });
         }
         return;
     }
 
-    // Create a new message at cursor position
+    // Ignore special keys
+    if (e.key.length > 1) return;
+});
+
+hiddenInput.addEventListener('input', () => {
+    const typed = hiddenInput.value;
+    hiddenInput.value = '';
+    if (!typed) return;
+
+    if (activeMessageKey) {
+        // Append to existing message
+        const msg = messages[activeMessageKey];
+        if (msg && msg.authorId === myId) {
+            const newText = msg.text + typed;
+            messagesRef.child(activeMessageKey).update({ text: newText });
+        }
+        return;
+    }
+
+    if (cursorX < 0) return;
+
+    // Check line is still free
+    if (isLineOccupiedByOther(cursorY, null)) return;
+
+    // Create new message
     const ref = messagesRef.push({
         text: typed,
         x: cursorX,
@@ -551,137 +569,54 @@ hiddenInput.addEventListener('input', () => {
         timestamp: firebase.database.ServerValue.TIMESTAMP
     });
 
-    hideCursor();
     activeMessageKey = ref.key;
-
-    // Create DOM element immediately (don't wait for Firebase)
-    const el = document.createElement('div');
-    el.className = 'message editing';
-    el.dataset.key = ref.key;
-    el.style.left = cursorX + 'px';
-    el.style.top = cursorY + 'px';
-    el.contentEditable = 'true';
-    el.textContent = typed;
-    if (myName) {
-        const tag = document.createElement('span');
-        tag.className = 'author-tag';
-        tag.textContent = myName;
-        el.appendChild(tag);
-    }
-    canvasEl.appendChild(el);
-
-    // Focus and place caret at end of text
-    el.focus();
-    const range = document.createRange();
-    const sel = window.getSelection();
-    const textNode = el.firstChild;
-    if (textNode) {
-        range.setStart(textNode, textNode.textContent.length);
-        range.collapse(true);
-        sel.removeAllRanges();
-        sel.addRange(range);
-    }
-});
-
-hiddenInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && cursorX >= 0 && !activeMessageKey) {
-        e.preventDefault();
-        // Create message with just a newline? No, ignore Enter without text
-    }
+    // Also store locally immediately so render works
+    messages[ref.key] = {
+        text: typed,
+        x: cursorX,
+        y: cursorY,
+        author: myName,
+        authorId: myId
+    };
+    hideCursor();
+    renderMessages();
 });
 
 // ===========================================
-// MESSAGE ELEMENT EVENTS (for own messages being edited)
-// ===========================================
-
-canvasEl.addEventListener('keydown', (e) => {
-    if (!activeMessageKey) return;
-    const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
-    if (!el) return;
-
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        // Stop current message, place cursor on next line at x=0
-        const msg = messages[activeMessageKey];
-        if (msg) {
-            cursorX = msg.x;
-            cursorY = msg.y + LINE_HEIGHT;
-        }
-        stopEditing();
-        showCursor(cursorX, cursorY);
-        hiddenInput.focus();
-        return;
-    }
-
-    if (e.key === 'Backspace') {
-        const text = getMessageText(el);
-        if (text === '') {
-            e.preventDefault();
-            messagesRef.child(activeMessageKey).remove();
-            activeMessageKey = null;
-        }
-    }
-
-    if (e.key === 'Escape') {
-        e.preventDefault();
-        stopEditing();
-    }
-});
-
-canvasEl.addEventListener('input', (e) => {
-    if (!activeMessageKey) return;
-    const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
-    if (!el) return;
-
-    // Sync text to Firebase
-    const text = getMessageText(el);
-    if (text.trim() === '') {
-        messagesRef.child(activeMessageKey).remove();
-        activeMessageKey = null;
-    } else {
-        messagesRef.child(activeMessageKey).update({ text });
-    }
-});
-
-// ===========================================
-// RENDER MESSAGES FROM FIREBASE
+// RENDER
 // ===========================================
 
 function renderMessages() {
-    // Remove old message elements (except the one being edited)
-    const existing = canvasEl.querySelectorAll('.message');
-    existing.forEach(el => {
-        if (el.dataset.key !== activeMessageKey) {
-            el.remove();
-        }
-    });
+    // Remove all message elements
+    canvasEl.querySelectorAll('.message').forEach(el => el.remove());
 
-    // Render all messages
     for (const [key, msg] of Object.entries(messages)) {
-        if (key === activeMessageKey) {
-            // Don't re-render the one being edited
-            const el = canvasEl.querySelector(`.message[data-key="${key}"]`);
-            if (el) continue;
-        }
-
         const el = document.createElement('div');
         el.className = 'message';
         el.dataset.key = key;
         el.style.left = msg.x + 'px';
         el.style.top = msg.y + 'px';
 
-        const textNode = document.createTextNode(msg.text);
-        el.appendChild(textNode);
+        let html = escapeHtml(msg.text);
 
-        if (msg.author) {
-            const tag = document.createElement('span');
-            tag.className = 'author-tag';
-            tag.textContent = msg.author;
-            el.appendChild(tag);
+        // Show cursor inside active message (at end)
+        if (key === activeMessageKey) {
+            html += '<span style="display:inline-block;width:2px;height:48px;background:#4a9f7e;vertical-align:text-bottom;animation:blink 1s step-end infinite;"></span>';
         }
 
+        if (msg.author) {
+            html += '<span class="author-tag">' + escapeHtml(msg.author) + '</span>';
+        }
+
+        el.innerHTML = html;
         canvasEl.appendChild(el);
     }
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 // ===========================================
@@ -726,7 +661,6 @@ usersRef.on('value', (snapshot) => {
     }
 });
 
-// Focus hidden input on load
 hiddenInput.focus();
 </script>
 
