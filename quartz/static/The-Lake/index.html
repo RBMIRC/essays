@@ -778,33 +778,29 @@ function startPad() {
         if (e.key === 'Enter') {
             e.preventDefault();
             // Close current chunk and start a new one on the next line
+            let order;
             if (activeChunkKey) {
-                // Find current chunk position
                 const activeIdx = chunks.findIndex(c => c.key === activeChunkKey);
                 if (activeIdx >= 0) {
-                    const order = getInsertOrder(activeIdx + 1);
-                    const ref = chunksRef.push({ author: myName, authorId: myId, text: '', order });
-                    activeChunkKey = ref.key;
-                    cursorAt = { chunkKey: ref.key, charOffset: 0 };
-                    renderContent();
+                    order = getInsertOrder(activeIdx + 1);
+                } else {
+                    // Chunk not in local list yet, use last known order + 1
+                    order = chunks.length > 0 ? chunks[chunks.length - 1].order + 1 : 1;
                 }
             } else if (cursorAt) {
                 const chunkIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
                 if (chunkIdx >= 0) {
-                    const order = getInsertOrder(chunkIdx + 1);
-                    const ref = chunksRef.push({ author: myName, authorId: myId, text: '', order });
-                    activeChunkKey = ref.key;
-                    cursorAt = { chunkKey: ref.key, charOffset: 0 };
-                    renderContent();
+                    order = getInsertOrder(chunkIdx + 1);
+                } else {
+                    order = chunks.length > 0 ? chunks[chunks.length - 1].order + 1 : 1;
                 }
             } else {
-                // No active chunk, create new at end
-                const order = chunks.length > 0 ? chunks[chunks.length - 1].order + 1 : 1;
-                const ref = chunksRef.push({ author: myName, authorId: myId, text: '', order });
-                activeChunkKey = ref.key;
-                cursorAt = { chunkKey: ref.key, charOffset: 0 };
-                renderContent();
+                order = chunks.length > 0 ? chunks[chunks.length - 1].order + 1 : 1;
             }
+            const ref = chunksRef.push({ author: myName, authorId: myId, text: '', order });
+            activeChunkKey = ref.key;
+            cursorAt = { chunkKey: ref.key, charOffset: 0 };
+            renderContent();
             return;
         }
 
