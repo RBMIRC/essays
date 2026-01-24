@@ -384,6 +384,12 @@ const usersRef = db.ref('firepad/users');
 const myId = 'user_' + Math.random().toString(36).substr(2, 9);
 let myName = '';
 
+function isMyChunk(chunk) {
+    // A chunk is mine only if I have a non-empty name AND it matches
+    // Also store myId in chunks for reliable ownership
+    return chunk.authorId === myId;
+}
+
 const contentArea = document.getElementById('contentArea');
 const hiddenInput = document.getElementById('hiddenInput');
 const usersEl = document.getElementById('users');
@@ -519,7 +525,7 @@ contentArea.addEventListener('click', (e) => {
             const chunk = chunks[idx];
             const text = chunk.text;
 
-            if (chunk.author === myName) {
+            if (isMyChunk(chunk)) {
                 // Own chunk: place cursor anywhere, set as active for editing
                 cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
@@ -609,7 +615,8 @@ function startPad() {
         if (data) {
             chunks = Object.entries(data).map(([key, val]) => ({
                 key,
-                author: val.author,
+                author: val.author || '',
+                authorId: val.authorId || '',
                 text: val.text,
                 order: val.order
             })).sort((a, b) => a.order - b.order);
@@ -628,20 +635,20 @@ function startPad() {
             // If we have an active chunk we just created, append to it
             if (activeChunkKey) {
                 const existing = chunks.find(c => c.key === activeChunkKey);
-                if (existing && existing.author === myName) {
+                if (existing && isMyChunk(existing)) {
                     existing.text += typed;
                     chunksRef.child(activeChunkKey).update({ text: existing.text });
                     return;
                 }
             }
             const last = chunks[chunks.length - 1];
-            if (last && last.author === myName) {
+            if (last && isMyChunk(last)) {
                 last.text += typed;
                 chunksRef.child(last.key).update({ text: last.text });
                 activeChunkKey = last.key;
             } else {
                 const order = chunks.length ? chunks[chunks.length - 1].order + 1 : 0;
-                const ref = chunksRef.push({ author: myName, text: typed, order });
+                const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order });
                 activeChunkKey = ref.key;
             }
             return;
@@ -652,7 +659,7 @@ function startPad() {
         const chunk = chunks[chunkIdx];
         const charOffset = Math.min(cursorAt.charOffset, chunk.text.length);
 
-        if (chunk.author === myName) {
+        if (isMyChunk(chunk)) {
             // Own chunk: insert freely at any position
             chunk.text = chunk.text.slice(0, charOffset) + typed + chunk.text.slice(charOffset);
             chunksRef.child(chunk.key).update({ text: chunk.text });
@@ -663,24 +670,25 @@ function startPad() {
             if (charOffset >= chunk.text.length) {
                 // After their chunk entirely
                 const order = getInsertOrder(chunkIdx + 1);
-                const ref = chunksRef.push({ author: myName, text: typed, order });
+                const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order });
                 activeChunkKey = ref.key;
-                cursorAt = null;
+                // Keep cursor at end of new chunk
+                cursorAt = { chunkKey: ref.key, charOffset: typed.length };
             } else {
-                // On an empty line in trailing whitespace — split chunk
+                // On an empty line — split chunk
                 const textBefore = chunk.text.slice(0, charOffset);
                 const textAfter = chunk.text.slice(charOffset);
 
                 chunksRef.child(chunk.key).update({ text: textBefore });
 
                 const orderMid = chunk.order + 0.3333;
-                const ref = chunksRef.push({ author: myName, text: typed, order: orderMid });
+                const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order: orderMid });
                 activeChunkKey = ref.key;
 
                 const orderAfter = chunk.order + 0.6666;
-                chunksRef.push({ author: chunk.author, text: textAfter, order: orderAfter });
+                chunksRef.push({ author: chunk.author, authorId: chunk.authorId, text: textAfter, order: orderAfter });
 
-                cursorAt = null;
+                cursorAt = { chunkKey: ref.key, charOffset: typed.length };
             }
         }
     }
@@ -701,7 +709,7 @@ function startPad() {
             if (cursorAt && cursorAt.chunkKey) {
                 // Cursor is inside a chunk
                 const chunk = chunks.find(c => c.key === cursorAt.chunkKey);
-                if (chunk && chunk.author === myName && cursorAt.charOffset > 0) {
+                if (chunk && isMyChunk(chunk) && cursorAt.charOffset > 0) {
                     chunk.text = chunk.text.slice(0, cursorAt.charOffset - 1) + chunk.text.slice(cursorAt.charOffset);
                     if (chunk.text.length === 0) {
                         chunksRef.child(chunk.key).remove();
@@ -716,7 +724,7 @@ function startPad() {
             } else if (activeChunkKey) {
                 // Cursor at end, appending to active chunk
                 const existing = chunks.find(c => c.key === activeChunkKey);
-                if (existing && existing.author === myName && existing.text.length > 0) {
+                if (existing && isMyChunk(existing) && existing.text.length > 0) {
                     existing.text = existing.text.slice(0, -1);
                     if (existing.text.length === 0) {
                         chunksRef.child(activeChunkKey).remove();
@@ -811,7 +819,7 @@ function startPad() {
                 for (const c of chunks) {
                     if (remaining <= c.text.length) {
                         // Check if this position is valid for this chunk
-                        if (c.author === myName) {
+                        if (isMyChunk(c)) {
                             cursorAt = { chunkKey: c.key, charOffset: remaining };
                             activeChunkKey = c.key;
                         } else {
