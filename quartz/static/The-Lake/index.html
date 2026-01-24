@@ -208,6 +208,44 @@
             margin-left: 2px;
         }
 
+        /* Selection highlight */
+        .selection-highlight {
+            position: absolute;
+            background: rgba(74, 159, 126, 0.3);
+            height: 48px;
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        /* Style menu */
+        .style-menu {
+            position: absolute;
+            display: none;
+            background: #222;
+            border: 1px solid #555;
+            border-radius: 6px;
+            padding: 4px;
+            z-index: 200;
+            gap: 4px;
+            flex-direction: row;
+        }
+
+        .style-menu button {
+            font-family: 'SF Mono', monospace;
+            font-size: 11px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        .style-menu button:hover {
+            background: #4a9f7e;
+            color: #000;
+        }
+
         /* Blinking cursor */
         .cursor-marker {
             position: absolute;
@@ -254,9 +292,16 @@
 <div class="canvas" id="canvas">
     <div class="ascii-bg" id="asciiBg"></div>
     <div class="cursor-marker" id="cursorMarker" style="display:none;"></div>
+    <div class="selection-highlight" id="selectionHighlight" style="display:none;"></div>
 </div>
 
 <div class="goto-bottom" id="gotoBottom" style="display:none;">&#8595;</div>
+
+<div class="style-menu" id="styleMenu">
+    <button data-style="f">blur</button>
+    <button data-style="g">gothic</button>
+    <button data-style="s">strike</button>
+</div>
 
 <input class="hidden-input" id="hiddenInput">
 
@@ -596,21 +641,98 @@ nameInput.addEventListener('keydown', (e) => {
 });
 
 // ===========================================
-// CLICK TO PLACE CURSOR
+// CLICK / DRAG TO PLACE CURSOR OR SELECT
 // ===========================================
 
-canvasEl.addEventListener('click', (e) => {
-    const rect = canvasEl.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const clickY = snapToLine(e.clientY - rect.top);
+let dragState = null; // {key, msg, startCharIdx, startX, startY}
+const selectionHighlight = document.getElementById('selectionHighlight');
+const styleMenu = document.getElementById('styleMenu');
+let currentSelection = null; // {key, startIdx, endIdx}
 
-    // Check if clicking on an existing message
+canvasEl.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    hideStyleMenu();
+    const rect = canvasEl.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = snapToLine(e.clientY - rect.top);
+
+    const hit = getMessageAtClick(mx, my);
+    if (hit && hit.msg.authorId !== myId) {
+        // Start drag selection on another user's message
+        const charIdx = Math.max(0, Math.min(hit.msg.text.length, Math.round((mx - hit.msg.x) / CHAR_WIDTH)));
+        dragState = { key: hit.key, msg: hit.msg, startCharIdx: charIdx, startX: mx, startY: my, moved: false };
+        selectionHighlight.style.display = 'none';
+        e.preventDefault();
+        return;
+    }
+    // Normal click (own message or empty space)
+    dragState = null;
+    handleClick(mx, my);
+});
+
+canvasEl.addEventListener('mousemove', (e) => {
+    if (!dragState) return;
+    dragState.moved = true;
+    const rect = canvasEl.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const msg = messages[dragState.key];
+    if (!msg) return;
+
+    const endCharIdx = Math.max(0, Math.min(msg.text.length, Math.round((mx - msg.x) / CHAR_WIDTH)));
+    const startIdx = Math.min(dragState.startCharIdx, endCharIdx);
+    const endIdx = Math.max(dragState.startCharIdx, endCharIdx);
+
+    if (startIdx !== endIdx) {
+        const hlLeft = msg.x + startIdx * CHAR_WIDTH;
+        const hlWidth = (endIdx - startIdx) * CHAR_WIDTH;
+        selectionHighlight.style.left = hlLeft + 'px';
+        selectionHighlight.style.top = msg.y + 'px';
+        selectionHighlight.style.width = hlWidth + 'px';
+        selectionHighlight.style.display = 'block';
+    } else {
+        selectionHighlight.style.display = 'none';
+    }
+});
+
+canvasEl.addEventListener('mouseup', (e) => {
+    if (!dragState) return;
+    const rect = canvasEl.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = snapToLine(e.clientY - rect.top);
+    const msg = messages[dragState.key];
+
+    if (msg && dragState.moved) {
+        const endCharIdx = Math.max(0, Math.min(msg.text.length, Math.round((mx - msg.x) / CHAR_WIDTH)));
+        const startIdx = Math.min(dragState.startCharIdx, endCharIdx);
+        const endIdx = Math.max(dragState.startCharIdx, endCharIdx);
+
+        if (startIdx !== endIdx) {
+            // Valid selection: show style menu
+            currentSelection = { key: dragState.key, startIdx, endIdx };
+            const menuX = msg.x + startIdx * CHAR_WIDTH;
+            const menuY = msg.y - 40;
+            styleMenu.style.left = menuX + 'px';
+            styleMenu.style.top = menuY + 'px';
+            styleMenu.style.display = 'flex';
+            dragState = null;
+            return;
+        }
+    }
+
+    // No valid selection or no drag: treat as normal click on other's message
+    selectionHighlight.style.display = 'none';
+    const clickX = dragState.startX;
+    const clickY = dragState.startY;
+    dragState = null;
+    handleClick(clickX, clickY);
+});
+
+
+function handleClick(clickX, clickY) {
     const hit = getMessageAtClick(clickX, clickY);
     if (hit) {
         if (hit.msg.authorId === myId) {
-            // Click on own message: resume editing at click position
             activeMessageKey = hit.key;
-            // Estimate cursor position from click x relative to message start
             const charIndex = Math.round((clickX - hit.msg.x) / CHAR_WIDTH);
             cursorPos = Math.max(0, Math.min(hit.msg.text.length, charIndex));
             cursorX = -1;
@@ -620,8 +742,6 @@ canvasEl.addEventListener('click', (e) => {
             renderMessages();
             return;
         } else {
-            // Click on someone else's message: place cursor at click position
-            // Typing here will push their message to the right
             activeMessageKey = null;
             cursorX = clickX;
             cursorY = clickY;
@@ -632,14 +752,44 @@ canvasEl.addEventListener('click', (e) => {
         }
     }
 
-    // Free space — place cursor here
     activeMessageKey = null;
     cursorX = clickX;
     cursorY = clickY;
-
     showCursor(cursorX, cursorY);
     renderMessages();
     hiddenInput.focus();
+}
+
+// Style menu button handlers
+styleMenu.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-style]');
+    if (!btn || !currentSelection) return;
+    const tag = btn.dataset.style;
+    const msg = messages[currentSelection.key];
+    if (!msg) { hideStyleMenu(); return; }
+
+    const before = msg.text.slice(0, currentSelection.startIdx);
+    const selected = msg.text.slice(currentSelection.startIdx, currentSelection.endIdx);
+    const after = msg.text.slice(currentSelection.endIdx);
+    const newText = before + '>' + tag + ' ' + selected + ' <' + after;
+
+    msg.text = newText;
+    messagesRef.child(currentSelection.key).update({ text: newText });
+    hideStyleMenu();
+    renderMessages();
+});
+
+function hideStyleMenu() {
+    styleMenu.style.display = 'none';
+    selectionHighlight.style.display = 'none';
+    currentSelection = null;
+}
+
+// Hide menu when clicking outside
+document.addEventListener('mousedown', (e) => {
+    if (!styleMenu.contains(e.target) && currentSelection) {
+        hideStyleMenu();
+    }
 });
 
 function showCursor(x, y) {
