@@ -654,11 +654,11 @@ function startPad() {
     });
 
     activeChunkKey = null;
+    let pendingChunkText = ''; // text for chunk not yet in local list
 
     function insertText(typed) {
         if (!cursorAt) {
             // Cursor at end of document or continuing after an insertion
-            // If we have an active chunk we just created, append to it
             if (activeChunkKey) {
                 const existing = chunks.find(c => c.key === activeChunkKey);
                 if (existing && isMyChunk(existing)) {
@@ -666,6 +666,10 @@ function startPad() {
                     chunksRef.child(activeChunkKey).update({ text: existing.text });
                     return;
                 }
+                // Chunk not in local list yet — track text locally
+                pendingChunkText += typed;
+                chunksRef.child(activeChunkKey).update({ text: pendingChunkText });
+                return;
             }
             const last = chunks[chunks.length - 1];
             if (last && isMyChunk(last)) {
@@ -676,6 +680,7 @@ function startPad() {
                 const order = chunks.length ? chunks[chunks.length - 1].order + 1 : 0;
                 const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order });
                 activeChunkKey = ref.key;
+                pendingChunkText = typed;
             }
             return;
         }
@@ -683,15 +688,16 @@ function startPad() {
         const chunkIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
         if (chunkIdx === -1) {
             // Chunk not in local list yet (just created via Enter)
-            // Append directly to Firebase
             if (cursorAt.chunkKey === activeChunkKey) {
-                chunksRef.child(activeChunkKey).update({ text: typed });
-                cursorAt.charOffset = typed.length;
+                pendingChunkText += typed;
+                chunksRef.child(activeChunkKey).update({ text: pendingChunkText });
+                cursorAt.charOffset = pendingChunkText.length;
                 return;
             }
             cursorAt = null;
             return;
         }
+        pendingChunkText = ''; // chunk is now in local list
         const chunk = chunks[chunkIdx];
         const charOffset = Math.min(cursorAt.charOffset, chunk.text.length);
 
@@ -809,6 +815,7 @@ function startPad() {
             }
             const ref = chunksRef.push({ author: myName, authorId: myId, text: '', order });
             activeChunkKey = ref.key;
+            pendingChunkText = '';
             cursorAt = { chunkKey: ref.key, charOffset: 0 };
             renderContent();
             focusInput();
