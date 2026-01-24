@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LAKE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,700;1,700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,700;1,700&family=Inter:wght@400;900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <style>
@@ -978,7 +978,7 @@ function formatTags(text) {
     let result = '';
     let i = 0;
     while (i < text.length) {
-        if (text[i] === '>' && (text[i+1] === 'i' || text[i+1] === 'I' || text[i+1] === 'f' || text[i+1] === 'F' || text[i+1] === 's' || text[i+1] === 'S')) {
+        if (text[i] === '>' && (text[i+1] === 'i' || text[i+1] === 'I' || text[i+1] === 'f' || text[i+1] === 'F' || text[i+1] === 's' || text[i+1] === 'S' || text[i+1] === 'g' || text[i+1] === 'G')) {
             const tag = text[i+1].toLowerCase();
             const start = i + 2;
             const end = text.indexOf('<', start);
@@ -990,8 +990,10 @@ function formatTags(text) {
                     result += '<i>' + content + '</i>';
                 } else if (tag === 'f') {
                     result += '<span style="filter:blur(4px)">' + content + '</span>';
-                } else {
+                } else if (tag === 's') {
                     result += '<s>' + content + '</s>';
+                } else {
+                    result += '<span style="font-family:UnifrakturMaguntia,serif">' + content + '</span>';
                 }
                 i = end + 1;
             } else {
@@ -1001,15 +1003,17 @@ function formatTags(text) {
                     result += '<i>' + content + '</i>';
                 } else if (tag === 'f') {
                     result += '<span style="filter:blur(4px)">' + content + '</span>';
-                } else {
+                } else if (tag === 's') {
                     result += '<s>' + content + '</s>';
+                } else {
+                    result += '<span style="font-family:UnifrakturMaguntia,serif">' + content + '</span>';
                 }
                 i = text.length;
             }
         } else {
             let next = i;
             while (next < text.length) {
-                if (text[next] === '>' && (text[next+1] === 'i' || text[next+1] === 'I' || text[next+1] === 'f' || text[next+1] === 'F' || text[next+1] === 's' || text[next+1] === 'S')) break;
+                if (text[next] === '>' && (text[next+1] === 'i' || text[next+1] === 'I' || text[next+1] === 'f' || text[next+1] === 'F' || text[next+1] === 's' || text[next+1] === 'S' || text[next+1] === 'g' || text[next+1] === 'G')) break;
                 next++;
             }
             result += escapeHtml(text.slice(i, next));
