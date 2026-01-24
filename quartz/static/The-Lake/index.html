@@ -19,7 +19,7 @@
             background: #000;
             color: #fff;
             min-height: 100vh;
-            overflow-x: hidden;
+            overflow-x: clip;
         }
 
         /* ASCII background images */
@@ -484,7 +484,7 @@ function getMessageAtClick(x, y) {
 function pushMessagesRight(sourceKey) {
     const src = messages[sourceKey];
     if (!src) return;
-    const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 60) || 800;
+    const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 90) || 800;
     const srcRight = src.x + getMessageWidth({ ...src, _key: sourceKey });
 
     // Get messages that overlap or are to the right of source on the same line
@@ -863,7 +863,7 @@ hiddenInput.addEventListener('input', () => {
             messagesRef.child(activeMessageKey).update({ text: newText });
 
             // Check if message exceeds page width → wrap to next line(s)
-            const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 60) || 800;
+            const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 90) || 800;
             let currentKey = activeMessageKey;
             let currentMsg = msg;
             while (true) {
