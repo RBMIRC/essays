@@ -533,18 +533,21 @@ contentArea.addEventListener('click', (e) => {
                 // Other's chunk: can write after signature (end) or on any empty line
                 // An "empty line" = position after a \n where the next char is also \n or end
                 const validPositions = [text.length];
+                // Only allow positions on truly empty lines:
+                // a line is empty if bounded by \n on both sides (or start/end of text)
                 for (let p = 0; p < text.length; p++) {
                     if (text[p] === '\n') {
                         const nextPos = p + 1;
-                        // Valid if next char is \n (empty line) or end of text or beginning
-                        if (nextPos >= text.length || text[nextPos] === '\n' || p === 0) {
+                        // Check: is the line starting at nextPos empty?
+                        // i.e. nextPos is end of text, or text[nextPos] is \n
+                        const nextIsEmpty = (nextPos >= text.length || text[nextPos] === '\n');
+                        // Check: is the line ending at p also a boundary?
+                        // i.e. p === 0, or text[p-1] is \n (the \n before was also a line break)
+                        const prevIsBoundary = (p === 0 || text[p - 1] === '\n');
+                        if (nextIsEmpty && prevIsBoundary) {
                             validPositions.push(nextPos);
                         }
                     }
-                }
-                // Also allow position 0 if text starts with \n
-                if (text[0] === '\n') {
-                    validPositions.push(0);
                 }
 
                 // Snap to closest valid position
@@ -666,15 +669,32 @@ function startPad() {
             cursorAt.charOffset = charOffset + typed.length;
             activeChunkKey = chunk.key;
         } else {
-            // Other's chunk: cursor is after signature or on trailing empty lines
+            // Other's chunk: cursor is after signature or on truly empty lines
             if (charOffset >= chunk.text.length) {
                 // After their chunk entirely
                 const order = getInsertOrder(chunkIdx + 1);
                 const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order });
                 activeChunkKey = ref.key;
-                // Keep cursor at end of new chunk
                 cursorAt = { chunkKey: ref.key, charOffset: typed.length };
             } else {
+                // Verify this is actually a truly empty line position
+                // The char before charOffset must be \n (or charOffset===0 with text starting with \n)
+                // AND the char at charOffset must be \n or end
+                const charBefore = charOffset > 0 ? chunk.text[charOffset - 1] : null;
+                const charBefore2 = charOffset > 1 ? chunk.text[charOffset - 2] : null;
+                const charAt = charOffset < chunk.text.length ? chunk.text[charOffset] : null;
+                // Position is on an empty line if:
+                // - preceded by \n AND (that \n is at start OR preceded by another \n)
+                // - followed by \n or end
+                const isEmptyLine = (
+                    (charBefore === '\n' && (charOffset === 1 || charBefore2 === '\n')) &&
+                    (charAt === '\n' || charAt === null)
+                );
+                if (!isEmptyLine) {
+                    // Not a valid empty line — reject
+                    cursorAt = { chunkKey: chunk.key, charOffset: chunk.text.length };
+                    return;
+                }
                 // On an empty line — split chunk
                 const textBefore = chunk.text.slice(0, charOffset);
                 const textAfter = chunk.text.slice(charOffset);
@@ -828,12 +848,13 @@ function startPad() {
                             for (let p = 0; p < c.text.length; p++) {
                                 if (c.text[p] === '\n') {
                                     const nextPos = p + 1;
-                                    if (nextPos >= c.text.length || c.text[nextPos] === '\n' || p === 0) {
+                                    const nextIsEmpty = (nextPos >= c.text.length || c.text[nextPos] === '\n');
+                                    const prevIsBoundary = (p === 0 || c.text[p - 1] === '\n');
+                                    if (nextIsEmpty && prevIsBoundary) {
                                         validPositions.push(nextPos);
                                     }
                                 }
                             }
-                            if (c.text[0] === '\n') validPositions.push(0);
 
                             let best = c.text.length;
                             let bestDist = Infinity;
