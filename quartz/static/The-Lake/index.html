@@ -991,7 +991,7 @@ function formatTags(text) {
                 } else if (tag === 'f') {
                     result += '<span style="filter:blur(4px)">' + content + '</span>';
                 } else {
-                    result += '<span style="text-decoration:line-through">' + content + '</span>';
+                    result += '<s>' + content + '</s>';
                 }
                 i = end + 1;
             } else {
@@ -1002,7 +1002,7 @@ function formatTags(text) {
                 } else if (tag === 'f') {
                     result += '<span style="filter:blur(4px)">' + content + '</span>';
                 } else {
-                    result += '<span style="text-decoration:line-through">' + content + '</span>';
+                    result += '<s>' + content + '</s>';
                 }
                 i = text.length;
             }
