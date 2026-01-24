@@ -487,9 +487,17 @@ function pushMessagesRight(sourceKey) {
     const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 60) || 800;
     const srcRight = src.x + getMessageWidth({ ...src, _key: sourceKey });
 
-    // Get messages to the right of source on the same line, sorted by x
+    // Get messages that overlap or are to the right of source on the same line
     const sameLine = Object.entries(messages)
-        .filter(([k, m]) => m.y === src.y && k !== sourceKey && m.x >= src.x)
+        .filter(([k, m]) => {
+            if (m.y !== src.y || k === sourceKey) return false;
+            // Include if message starts at or after source x
+            if (m.x >= src.x) return true;
+            // Also include if message overlaps source (starts before but extends into it)
+            const mRight = m.x + getMessageWidth({ ...m, _key: k });
+            if (mRight > src.x) return true;
+            return false;
+        })
         .sort((a, b) => a[1].x - b[1].x);
 
     let pushEdge = srcRight;
@@ -919,6 +927,8 @@ hiddenInput.addEventListener('input', () => {
         authorId: myId
     };
     hideCursor();
+    // Push any overlapping messages to the right
+    pushMessagesRight(activeMessageKey);
     renderMessages();
 });
 
