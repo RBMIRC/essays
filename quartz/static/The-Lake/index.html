@@ -453,6 +453,12 @@ function renderContent() {
         if (cursorIdx === -1) cursorAt = null; // chunk was deleted
     }
 
+    // When cursorAt is null but activeChunkKey is set, show cursor after that chunk
+    let activeCursorIdx = -1;
+    if (!cursorAt && activeChunkKey) {
+        activeCursorIdx = chunks.findIndex(c => c.key === activeChunkKey);
+    }
+
     for (let i = 0; i < chunks.length; i++) {
         const c = chunks[i];
         const style = getAuthorStyle(c.author);
@@ -480,11 +486,15 @@ function renderContent() {
             }
         } else {
             html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
+            // Show cursor after active chunk when cursorAt is null
+            if (!cursorAt && i === activeCursorIdx) {
+                html += '<span class="write-cursor"></span>';
+            }
         }
     }
 
-    // Cursor at very end (no cursorAt)
-    if (!cursorAt) {
+    // Cursor at very end (no cursorAt, no active chunk found)
+    if (!cursorAt && activeCursorIdx === -1) {
         html += '<span class="write-cursor"></span>';
     }
 
@@ -650,11 +660,13 @@ function startPad() {
                 if (existing && isMyChunk(existing)) {
                     existing.text += typed;
                     chunksRef.child(activeChunkKey).update({ text: existing.text });
+                    renderContent();
                     return;
                 }
                 // Chunk not in local list yet — track text locally
                 pendingChunkText += typed;
                 chunksRef.child(activeChunkKey).update({ text: pendingChunkText });
+                renderContent();
                 return;
             }
             const last = chunks[chunks.length - 1];
@@ -668,6 +680,7 @@ function startPad() {
                 activeChunkKey = ref.key;
                 pendingChunkText = typed;
             }
+            renderContent();
             return;
         }
 
@@ -700,7 +713,8 @@ function startPad() {
                 const order = getInsertOrder(chunkIdx + 1);
                 const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order });
                 activeChunkKey = ref.key;
-                cursorAt = { chunkKey: ref.key, charOffset: typed.length };
+                pendingChunkText = typed;
+                cursorAt = null; // will append via activeChunkKey path
             } else {
                 // Verify this is an empty line: char before is \n, char at position is \n or end
                 const charBefore = charOffset > 0 ? chunk.text[charOffset - 1] : null;
@@ -708,6 +722,7 @@ function startPad() {
                 const isEmptyLine = (charBefore === '\n' && (charAt === '\n' || charAt === null));
                 if (!isEmptyLine) {
                     cursorAt = { chunkKey: chunk.key, charOffset: chunk.text.length };
+                    renderContent();
                     return;
                 }
                 // On an empty line — split chunk
@@ -719,13 +734,15 @@ function startPad() {
                 const orderMid = chunk.order + 0.3333;
                 const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order: orderMid });
                 activeChunkKey = ref.key;
+                pendingChunkText = typed;
 
                 const orderAfter = chunk.order + 0.6666;
                 chunksRef.push({ author: chunk.author, authorId: chunk.authorId, text: textAfter, order: orderAfter });
 
-                cursorAt = { chunkKey: ref.key, charOffset: typed.length };
+                cursorAt = null; // will append via activeChunkKey path
             }
         }
+        renderContent();
     }
 
     hiddenInput.addEventListener('input', (e) => {
