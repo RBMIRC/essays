@@ -948,23 +948,18 @@ function renderMessages() {
         el.style.left = msg.x + 'px';
         el.style.top = msg.y + 'px';
 
-        // Check for italic prefix ">I" or ">i" (with optional spaces before/after)
-        const italicMatch = msg.text.match(/^\s*>[Ii]\s?/);
-        const isItalic = !!italicMatch;
-        const displayText = isItalic ? msg.text.slice(italicMatch[0].length) : msg.text;
-        if (isItalic) el.style.fontStyle = 'italic';
-
         let html = '';
         const cursorStyle = 'display:inline-block;width:2px;height:48px;background:#4a9f7e;vertical-align:text-bottom;animation:blink 1s step-end infinite;';
 
-        // Show cursor at cursorPos inside active message
+        // Show cursor at cursorPos inside active message (show raw text with tags)
         if (key === activeMessageKey) {
             const pos = cursorPos < 0 ? msg.text.length : Math.min(cursorPos, msg.text.length);
             html = escapeHtml(msg.text.slice(0, pos))
                 + '<span style="' + cursorStyle + '"></span>'
                 + escapeHtml(msg.text.slice(pos));
         } else {
-            html = escapeHtml(displayText);
+            // Parse >i ... < italic tags
+            html = formatItalic(msg.text);
         }
 
         if (msg.author) {
@@ -980,6 +975,42 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function formatItalic(text) {
+    // Parse >i ... < or >I ... < tags, render content in italic
+    let result = '';
+    let i = 0;
+    while (i < text.length) {
+        if ((text[i] === '>' && (text[i+1] === 'i' || text[i+1] === 'I'))) {
+            // Found opening tag, look for closing <
+            const start = i + 2;
+            const end = text.indexOf('<', start);
+            if (end !== -1) {
+                // Skip optional space after >i
+                const contentStart = (text[start] === ' ') ? start + 1 : start;
+                // Skip optional space before <
+                const contentEnd = (text[end-1] === ' ') ? end - 1 : end;
+                result += '<i>' + escapeHtml(text.slice(contentStart, contentEnd)) + '</i>';
+                i = end + 1;
+            } else {
+                // No closing tag: treat rest as italic
+                const contentStart = (text[start] === ' ') ? start + 1 : start;
+                result += '<i>' + escapeHtml(text.slice(contentStart)) + '</i>';
+                i = text.length;
+            }
+        } else {
+            // Find next tag or end
+            let next = i;
+            while (next < text.length) {
+                if (text[next] === '>' && (text[next+1] === 'i' || text[next+1] === 'I')) break;
+                next++;
+            }
+            result += escapeHtml(text.slice(i, next));
+            i = next;
+        }
+    }
+    return result;
 }
 
 // ===========================================
