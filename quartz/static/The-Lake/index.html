@@ -443,6 +443,34 @@ function getMessageAtClick(x, y) {
     return null;
 }
 
+function pushMessagesRight(sourceKey) {
+    // After sourceKey grows, push any message to its right further right if overlapping
+    const src = messages[sourceKey];
+    if (!src) return;
+    const srcRight = src.x + getMessageWidth({ ...src, _key: sourceKey });
+
+    // Get all messages on the same line, sorted by x
+    const sameLine = Object.entries(messages)
+        .filter(([k, m]) => m.y === src.y && k !== sourceKey)
+        .sort((a, b) => a[1].x - b[1].x);
+
+    let pushEdge = srcRight;
+    for (const [key, msg] of sameLine) {
+        if (msg.x < pushEdge) {
+            // This message overlaps — push it right
+            const gap = 5; // small gap between messages
+            const newX = pushEdge + gap;
+            msg.x = newX;
+            messagesRef.child(key).update({ x: newX });
+            // Update push edge for the next message
+            pushEdge = newX + getMessageWidth({ ...msg, _key: key });
+        } else {
+            // No overlap, stop pushing
+            break;
+        }
+    }
+}
+
 // ===========================================
 // NAME INPUT
 // ===========================================
@@ -488,9 +516,6 @@ canvasEl.addEventListener('click', (e) => {
             return;
         }
     }
-
-    // Check the cursor position wouldn't overlap with another's message
-    if (wouldOverlapOther(clickX, CHAR_WIDTH, clickY, null)) return;
 
     // Free space — place cursor here
     activeMessageKey = null;
@@ -578,27 +603,19 @@ hiddenInput.addEventListener('input', () => {
     if (!typed) return;
 
     if (activeMessageKey) {
-        // Append to existing message — check it won't overlap
+        // Append to existing message — push others if needed
         const msg = messages[activeMessageKey];
         if (msg && msg.authorId === myId) {
             const newText = msg.text + typed;
-            const newWidth = newText.length * CHAR_WIDTH + 20;
-            if (wouldOverlapOther(msg.x, newWidth, msg.y, activeMessageKey)) {
-                // Would overlap — stop, don't add the character
-                return;
-            }
             msg.text = newText;
             messagesRef.child(activeMessageKey).update({ text: newText });
+            pushMessagesRight(activeMessageKey);
             renderMessages();
         }
         return;
     }
 
     if (cursorX < 0) return;
-
-    // Check cursor position won't overlap
-    const newWidth = typed.length * CHAR_WIDTH + 20;
-    if (wouldOverlapOther(cursorX, newWidth, cursorY, null)) return;
 
     // Create new message
     const ref = messagesRef.push({
