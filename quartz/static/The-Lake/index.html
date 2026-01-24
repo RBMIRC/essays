@@ -670,6 +670,7 @@ canvasEl.addEventListener('mousedown', (e) => {
     }
     // Normal click (own message or empty space)
     dragState = null;
+    e.preventDefault();
     handleClick(mx, my);
 });
 
