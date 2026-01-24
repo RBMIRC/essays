@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LAKE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,700;1,700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <style>
@@ -931,6 +931,11 @@ function renderMessages() {
         el.style.left = msg.x + 'px';
         el.style.top = msg.y + 'px';
 
+        // Check for italic prefix ">I"
+        const isItalic = msg.text.startsWith('>I');
+        const displayText = isItalic ? msg.text.slice(2) : msg.text;
+        if (isItalic) el.style.fontStyle = 'italic';
+
         let html = '';
         const cursorStyle = 'display:inline-block;width:2px;height:48px;background:#4a9f7e;vertical-align:text-bottom;animation:blink 1s step-end infinite;';
 
@@ -941,7 +946,7 @@ function renderMessages() {
                 + '<span style="' + cursorStyle + '"></span>'
                 + escapeHtml(msg.text.slice(pos));
         } else {
-            html = escapeHtml(msg.text);
+            html = escapeHtml(displayText);
         }
 
         if (msg.author) {
