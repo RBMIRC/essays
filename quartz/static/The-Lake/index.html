@@ -164,10 +164,13 @@
             min-height: 60vh;
             cursor: text;
             line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
         .content-area .chunk {
             display: inline;
+            white-space: pre-wrap;
         }
 
         .content-area .chunk .author-tag {
@@ -561,34 +564,21 @@ contentArea.addEventListener('click', (e) => {
 
 function getCharOffset(chunkEl, node, offset, chunkIdx) {
     // Walk through ALL .text spans in this chunk to find position
-    // Count both text nodes and <br> elements (which represent \n)
     const textEls = chunkEl.querySelectorAll('.text');
     if (!textEls.length) return chunks[chunkIdx].text.length;
 
     let pos = 0;
     for (const textEl of textEls) {
-        const children = textEl.childNodes;
-        for (let i = 0; i < children.length; i++) {
-            const child = children[i];
-            if (child.nodeType === 3) {
-                // Text node
-                if (child === node) {
-                    return pos + offset;
-                }
-                pos += child.textContent.length;
-            } else if (child.nodeName === 'BR') {
-                // BR = \n
-                if (node === textEl && offset === i) {
-                    return pos;
-                }
-                if (node === textEl && offset === i + 1) {
-                    return pos + 1;
-                }
-                pos += 1;
+        const walker = document.createTreeWalker(textEl, NodeFilter.SHOW_TEXT);
+        let current;
+        while (current = walker.nextNode()) {
+            if (current === node) {
+                return pos + offset;
             }
+            pos += current.textContent.length;
         }
-        // If node is the textEl itself and offset points past all children
-        if (node === textEl && offset >= children.length) {
+        // If node is the span itself (click on empty area)
+        if (node === textEl) {
             return pos;
         }
     }
@@ -877,7 +867,7 @@ function startPad() {
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
-    return div.innerHTML.replace(/\n/g, '<br>');
+    return div.innerHTML;
 }
 
 // Start immediately
