@@ -162,6 +162,31 @@
             display: none;
         }
 
+        /* Go to bottom button */
+        .goto-bottom {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: #4a9f7e;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .goto-bottom:hover {
+            opacity: 1;
+        }
+
         /* Each message positioned absolutely, snapped to line */
         .message {
             position: absolute;
@@ -230,6 +255,8 @@
     <div class="ascii-bg" id="asciiBg"></div>
     <div class="cursor-marker" id="cursorMarker" style="display:none;"></div>
 </div>
+
+<div class="goto-bottom" id="gotoBottom" style="display:none;">&#8595;</div>
 
 <input class="hidden-input" id="hiddenInput">
 
@@ -990,6 +1017,52 @@ usersRef.on('value', (snapshot) => {
 });
 
 hiddenInput.focus();
+
+// ===========================================
+// GO TO BOTTOM BUTTON
+// ===========================================
+
+const gotoBottom = document.getElementById('gotoBottom');
+
+function getLastMessageY() {
+    let maxY = 0;
+    for (const msg of Object.values(messages)) {
+        if (msg.y > maxY) maxY = msg.y;
+    }
+    return maxY;
+}
+
+function updateGotoButton() {
+    const lastY = getLastMessageY();
+    if (lastY === 0) {
+        gotoBottom.style.display = 'none';
+        return;
+    }
+    const canvasTop = canvasEl.offsetTop;
+    const lastAbsolute = canvasTop + lastY;
+    const viewBottom = window.scrollY + window.innerHeight;
+
+    // Show button if last message is below the viewport
+    if (lastAbsolute > viewBottom + 100) {
+        gotoBottom.style.display = 'flex';
+    } else {
+        gotoBottom.style.display = 'none';
+    }
+}
+
+gotoBottom.addEventListener('click', () => {
+    const lastY = getLastMessageY();
+    const canvasTop = canvasEl.offsetTop;
+    window.scrollTo({ top: canvasTop + lastY - window.innerHeight + 200, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', updateGotoButton);
+// Update when messages change
+const origRender = renderMessages;
+renderMessages = function() {
+    origRender();
+    updateGotoButton();
+};
 </script>
 
 </body>
