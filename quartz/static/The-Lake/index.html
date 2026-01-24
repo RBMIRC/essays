@@ -836,6 +836,75 @@ canvasEl.addEventListener('mouseup', (e) => {
     handleClick(clickX, clickY);
 });
 
+let touchDragTimeout = null;
+canvasEl.addEventListener('touchstart', (e) => {
+    hideStyleMenu();
+    const touch = e.touches[0];
+    const rect = canvasEl.getBoundingClientRect();
+    const mx = touch.clientX - rect.left;
+    const my = snapToLine(touch.clientY - rect.top);
+
+    const hit = getMessageAtClick(mx, my);
+    if (hit && hit.msg.authorId !== myId) {
+        touchDragTimeout = setTimeout(() => {
+            const visLen = getVisualLength(hit.msg.text);
+            const charIdx = Math.max(0, Math.min(visLen, getCharIndexAtX(hit.msg.text, mx - hit.msg.x, hit.key)));
+            dragState = { startKey: hit.key, startCharIdx: charIdx, startX: mx, startY: my, moved: false, endKey: hit.key, endCharIdx: charIdx };
+            canvasEl.querySelectorAll('.selection-highlight-multi').forEach(el => el.remove());
+        }, 300);
+    } else {
+        dragState = null;
+    }
+}, { passive: true });
+
+canvasEl.addEventListener('touchmove', (e) => {
+    if (touchDragTimeout) { clearTimeout(touchDragTimeout); touchDragTimeout = null; }
+    if (!dragState) return;
+    e.preventDefault();
+    dragState.moved = true;
+    const touch = e.touches[0];
+    const rect = canvasEl.getBoundingClientRect();
+    const mx = touch.clientX - rect.left;
+    const my = snapToLine(touch.clientY - rect.top);
+
+    const hit = getMessageAtClick(mx, my);
+    if (hit && hit.msg.authorId !== myId) {
+        const visLen = getVisualLength(hit.msg.text);
+        const charIdx = Math.max(0, Math.min(visLen, getCharIndexAtX(hit.msg.text, mx - hit.msg.x, hit.key)));
+        dragState.endKey = hit.key;
+        dragState.endCharIdx = charIdx;
+    }
+    showDragHighlight();
+}, { passive: false });
+
+canvasEl.addEventListener('touchend', (e) => {
+    if (touchDragTimeout) { clearTimeout(touchDragTimeout); touchDragTimeout = null; }
+    if (!dragState) return;
+
+    if (dragState.moved) {
+        const selections = getSelectionsFromDrag();
+        if (selections.length > 0) {
+            currentSelection = selections;
+            const firstMsg = messages[selections[0].key];
+            if (firstMsg) {
+                const menuX = firstMsg.x + getCharPixelX(firstMsg.text, selections[0].startIdx, selections[0].key);
+                const menuY = firstMsg.y - 40;
+                styleMenu.style.left = menuX + 'px';
+                styleMenu.style.top = Math.max(0, menuY) + 'px';
+                styleMenu.style.display = 'flex';
+            }
+            dragState = null;
+            return;
+        }
+    }
+
+    canvasEl.querySelectorAll('.selection-highlight-multi').forEach(el => el.remove());
+    const clickX = dragState.startX;
+    const clickY = dragState.startY;
+    dragState = null;
+    handleClick(clickX, clickY);
+});
+
 function handleClick(clickX, clickY) {
     const hit = getMessageAtClick(clickX, clickY);
     if (hit) {
@@ -1515,7 +1584,7 @@ renderMessages = function() {
     const emojis = ['🌊','🌑','🪷','🫧','🌿','💧','🪸','🐚','🌙'];
     const layer = document.getElementById('emojiLayer');
     const items = [];
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 7; i++) {
         const span = document.createElement('span');
         span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
         span.style.left = (Math.random() * 90 + 5) + '%';
