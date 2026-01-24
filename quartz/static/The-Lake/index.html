@@ -948,8 +948,8 @@ function renderMessages() {
         el.style.left = msg.x + 'px';
         el.style.top = msg.y + 'px';
 
-        // Check for italic prefix ">I" or ">i" (with optional space after)
-        const italicMatch = msg.text.match(/^>[Ii]\s?/);
+        // Check for italic prefix ">I" or ">i" (with optional spaces before/after)
+        const italicMatch = msg.text.match(/^\s*>[Ii]\s?/);
         const isItalic = !!italicMatch;
         const displayText = isItalic ? msg.text.slice(italicMatch[0].length) : msg.text;
         if (isItalic) el.style.fontStyle = 'italic';
