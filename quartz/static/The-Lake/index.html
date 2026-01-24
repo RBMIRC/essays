@@ -171,6 +171,7 @@
         .content-area .chunk {
             display: block;
             white-space: pre-wrap;
+            min-height: 1.2em;
         }
 
         .content-area .chunk .author-tag {
@@ -457,9 +458,6 @@ function renderContent() {
         const c = chunks[i];
         const style = getAuthorStyle(c.author);
 
-        // Skip empty chunks unless cursor is on them
-        if (c.text === '' && !(cursorAt && i === cursorIdx)) continue;
-
         if (cursorAt && i === cursorIdx) {
             const offset = Math.min(cursorAt.charOffset, c.text.length);
             if (offset >= c.text.length) {
@@ -494,20 +492,9 @@ function renderContent() {
     contentArea.innerHTML = html;
 }
 
-// Clean up empty chunks when user moves away
-function cleanupEmptyChunks() {
-    if (activeChunkKey) {
-        const active = chunks.find(c => c.key === activeChunkKey);
-        if (active && active.text === '') {
-            chunksRef.child(activeChunkKey).remove();
-        }
-    }
-}
-
 // Place cursor by clicking
-// Own chunks: anywhere. Other's chunks: only at start, end, or on empty lines (\n\n)
+// Own chunks: anywhere. Other's chunks: only at end, on empty lines, or empty chunks
 contentArea.addEventListener('click', (e) => {
-    cleanupEmptyChunks();
     const sel = window.getSelection();
     if (sel.rangeCount > 0) {
         const range = sel.getRangeAt(0);
@@ -528,6 +515,14 @@ contentArea.addEventListener('click', (e) => {
                 // Own chunk: place cursor anywhere, set as active for editing
                 cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
+            } else if (text === '') {
+                // Empty chunk from another user: we can write here
+                // Take over this chunk
+                cursorAt = { chunkKey: chunk.key, charOffset: 0 };
+                activeChunkKey = chunk.key;
+                chunksRef.child(chunk.key).update({ author: myName, authorId: myId });
+                chunk.author = myName;
+                chunk.authorId = myId;
             } else {
                 // Other's chunk: can write after signature (end) or on empty lines
                 const validPositions = [text.length];
