@@ -524,17 +524,21 @@ contentArea.addEventListener('click', (e) => {
                 cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
             } else {
-                // Other's chunk: can write after signature or on empty lines after it
-                // Find where the signature is (after last non-whitespace char)
-                const sigMatch = text.match(/^([\s\S]*\S)/);
-                const sigEnd = sigMatch ? sigMatch[0].length : 0;
-
-                // Valid positions: end of chunk + after any \n that comes after the signature
+                // Other's chunk: can write after signature (end) or on any empty line
+                // An "empty line" = position after a \n where the next char is also \n or end
                 const validPositions = [text.length];
-                for (let p = sigEnd; p < text.length; p++) {
+                for (let p = 0; p < text.length; p++) {
                     if (text[p] === '\n') {
-                        validPositions.push(p + 1);
+                        const nextPos = p + 1;
+                        // Valid if next char is \n (empty line) or end of text or beginning
+                        if (nextPos >= text.length || text[nextPos] === '\n' || p === 0) {
+                            validPositions.push(nextPos);
+                        }
                     }
+                }
+                // Also allow position 0 if text starts with \n
+                if (text[0] === '\n') {
+                    validPositions.push(0);
                 }
 
                 // Snap to closest valid position
@@ -811,25 +815,25 @@ function startPad() {
                             cursorAt = { chunkKey: c.key, charOffset: remaining };
                             activeChunkKey = c.key;
                         } else {
-                            // For others' chunks: snap to end or trailing newlines
-                            const sigMatch = c.text.match(/^([\s\S]*\S)/);
-                            const sigEnd = sigMatch ? sigMatch[0].length : 0;
-                            if (remaining >= sigEnd) {
-                                // Find nearest valid position (after \n in trailing area)
-                                const validPositions = [c.text.length];
-                                for (let p = sigEnd; p < c.text.length; p++) {
-                                    if (c.text[p] === '\n') validPositions.push(p + 1);
+                            // For others' chunks: snap to end or empty lines
+                            const validPositions = [c.text.length];
+                            for (let p = 0; p < c.text.length; p++) {
+                                if (c.text[p] === '\n') {
+                                    const nextPos = p + 1;
+                                    if (nextPos >= c.text.length || c.text[nextPos] === '\n' || p === 0) {
+                                        validPositions.push(nextPos);
+                                    }
                                 }
-                                let best = c.text.length;
-                                let bestDist = Infinity;
-                                for (const pos of validPositions) {
-                                    const dist = Math.abs(pos - remaining);
-                                    if (dist < bestDist) { bestDist = dist; best = pos; }
-                                }
-                                cursorAt = { chunkKey: c.key, charOffset: best };
-                            } else {
-                                cursorAt = { chunkKey: c.key, charOffset: c.text.length };
                             }
+                            if (c.text[0] === '\n') validPositions.push(0);
+
+                            let best = c.text.length;
+                            let bestDist = Infinity;
+                            for (const pos of validPositions) {
+                                const dist = Math.abs(pos - remaining);
+                                if (dist < bestDist) { bestDist = dist; best = pos; }
+                            }
+                            cursorAt = { chunkKey: c.key, charOffset: best };
                             activeChunkKey = null;
                         }
                         found = true;
