@@ -523,8 +523,8 @@ contentArea.addEventListener('click', (e) => {
             } else {
                 // Other's chunk: can write after signature or on empty lines after it
                 // Find where the signature is (after last non-whitespace char)
-                const sigMatch = text.match(/^([\s\S]*?\S)/);
-                const sigEnd = sigMatch ? sigMatch[1].length : 0;
+                const sigMatch = text.match(/^([\s\S]*\S)/);
+                const sigEnd = sigMatch ? sigMatch[0].length : 0;
 
                 // Valid positions: end of chunk + after any \n that comes after the signature
                 const validPositions = [text.length];
@@ -561,18 +561,35 @@ contentArea.addEventListener('click', (e) => {
 
 function getCharOffset(chunkEl, node, offset, chunkIdx) {
     // Walk through ALL .text spans in this chunk to find position
+    // Count both text nodes and <br> elements (which represent \n)
     const textEls = chunkEl.querySelectorAll('.text');
     if (!textEls.length) return chunks[chunkIdx].text.length;
 
     let pos = 0;
     for (const textEl of textEls) {
-        const walker = document.createTreeWalker(textEl, NodeFilter.SHOW_TEXT);
-        let current;
-        while (current = walker.nextNode()) {
-            if (current === node) {
-                return pos + offset;
+        const children = textEl.childNodes;
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            if (child.nodeType === 3) {
+                // Text node
+                if (child === node) {
+                    return pos + offset;
+                }
+                pos += child.textContent.length;
+            } else if (child.nodeName === 'BR') {
+                // BR = \n
+                if (node === textEl && offset === i) {
+                    return pos;
+                }
+                if (node === textEl && offset === i + 1) {
+                    return pos + 1;
+                }
+                pos += 1;
             }
-            pos += current.textContent.length;
+        }
+        // If node is the textEl itself and offset points past all children
+        if (node === textEl && offset >= children.length) {
+            return pos;
         }
     }
     return chunks[chunkIdx].text.length;
@@ -805,8 +822,8 @@ function startPad() {
                             activeChunkKey = c.key;
                         } else {
                             // For others' chunks: snap to end or trailing newlines
-                            const sigMatch = c.text.match(/^([\s\S]*?\S)/);
-                            const sigEnd = sigMatch ? sigMatch[1].length : 0;
+                            const sigMatch = c.text.match(/^([\s\S]*\S)/);
+                            const sigEnd = sigMatch ? sigMatch[0].length : 0;
                             if (remaining >= sigEnd) {
                                 // Find nearest valid position (after \n in trailing area)
                                 const validPositions = [c.text.length];
