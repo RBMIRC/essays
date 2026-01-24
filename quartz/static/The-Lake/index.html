@@ -169,9 +169,8 @@
         }
 
         .content-area .chunk {
-            display: block;
+            display: inline;
             white-space: pre-wrap;
-            min-height: 1.2em;
         }
 
         .content-area .chunk .author-tag {
@@ -459,28 +458,38 @@ function renderContent() {
         const style = getAuthorStyle(c.author);
 
         if (cursorAt && i === cursorIdx) {
-            const offset = Math.min(cursorAt.charOffset, c.text.length);
-            if (offset >= c.text.length) {
-                // Cursor at end: render chunk normally, cursor after it
-                html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
-                html += '<span class="write-cursor"></span>';
+            if (c.text === '') {
+                // Empty chunk with cursor: just show cursor
+                html += `<span class="chunk" data-index="${i}" style="${style}"><span class="write-cursor"></span></span>\n`;
             } else {
-                // Cursor on an empty line inside the chunk
-                const before = c.text.slice(0, offset);
-                const after = c.text.slice(offset);
-                html += `<span class="chunk" data-index="${i}" style="${style}">`;
-                html += `<span class="text">${escapeHtml(before)}</span>`;
-                html += '<span class="write-cursor"></span>';
-                const lastNonWs = after.search(/\s*$/);
-                if (lastNonWs > 0) {
-                    html += `<span class="text">${escapeHtml(after.slice(0, lastNonWs))}</span><span class="author-tag">${c.author}</span><span class="text">${escapeHtml(after.slice(lastNonWs))}</span>`;
+                const offset = Math.min(cursorAt.charOffset, c.text.length);
+                if (offset >= c.text.length) {
+                    // Cursor at end: render chunk normally, cursor after it
+                    html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
+                    html += '<span class="write-cursor"></span>\n';
                 } else {
-                    html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
+                    // Cursor inside the chunk
+                    const before = c.text.slice(0, offset);
+                    const after = c.text.slice(offset);
+                    html += `<span class="chunk" data-index="${i}" style="${style}">`;
+                    html += `<span class="text">${escapeHtml(before)}</span>`;
+                    html += '<span class="write-cursor"></span>';
+                    const lastNonWs = after.search(/\s*$/);
+                    if (lastNonWs > 0) {
+                        html += `<span class="text">${escapeHtml(after.slice(0, lastNonWs))}</span><span class="author-tag">${c.author}</span><span class="text">${escapeHtml(after.slice(lastNonWs))}</span>`;
+                    } else {
+                        html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
+                    }
+                    html += `</span>\n`;
                 }
-                html += `</span>`;
             }
         } else {
-            html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
+            if (c.text === '') {
+                // Empty chunk = visible blank line
+                html += `<span class="chunk" data-index="${i}" style="${style}"> </span>\n`;
+            } else {
+                html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>\n`;
+            }
         }
     }
 
