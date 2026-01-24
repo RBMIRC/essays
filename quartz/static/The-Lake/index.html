@@ -458,42 +458,32 @@ function renderContent() {
         const style = getAuthorStyle(c.author);
 
         if (cursorAt && i === cursorIdx) {
-            if (c.text === '') {
-                // Empty chunk with cursor: just show cursor
-                html += `<span class="chunk" data-index="${i}" style="${style}"><span class="write-cursor"></span></span>\n`;
+            const offset = Math.min(cursorAt.charOffset, c.text.length);
+            if (offset >= c.text.length) {
+                // Cursor at end: render chunk normally, cursor after it
+                html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
+                html += '<span class="write-cursor"></span>';
             } else {
-                const offset = Math.min(cursorAt.charOffset, c.text.length);
-                if (offset >= c.text.length) {
-                    // Cursor at end: render chunk normally, cursor after it
-                    html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
-                    html += '<span class="write-cursor"></span>\n';
+                // Cursor inside the chunk (own chunk or on empty line)
+                const before = c.text.slice(0, offset);
+                const after = c.text.slice(offset);
+                html += `<span class="chunk" data-index="${i}" style="${style}">`;
+                html += `<span class="text">${escapeHtml(before)}</span>`;
+                html += '<span class="write-cursor"></span>';
+                const lastNonWs = after.search(/\s*$/);
+                if (lastNonWs > 0) {
+                    html += `<span class="text">${escapeHtml(after.slice(0, lastNonWs))}</span><span class="author-tag">${c.author}</span><span class="text">${escapeHtml(after.slice(lastNonWs))}</span>`;
                 } else {
-                    // Cursor inside the chunk
-                    const before = c.text.slice(0, offset);
-                    const after = c.text.slice(offset);
-                    html += `<span class="chunk" data-index="${i}" style="${style}">`;
-                    html += `<span class="text">${escapeHtml(before)}</span>`;
-                    html += '<span class="write-cursor"></span>';
-                    const lastNonWs = after.search(/\s*$/);
-                    if (lastNonWs > 0) {
-                        html += `<span class="text">${escapeHtml(after.slice(0, lastNonWs))}</span><span class="author-tag">${c.author}</span><span class="text">${escapeHtml(after.slice(lastNonWs))}</span>`;
-                    } else {
-                        html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
-                    }
-                    html += `</span>\n`;
+                    html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
                 }
+                html += `</span>`;
             }
         } else {
-            if (c.text === '') {
-                // Empty chunk = visible blank line
-                html += `<span class="chunk" data-index="${i}" style="${style}"> </span>\n`;
-            } else {
-                html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>\n`;
-            }
+            html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
         }
     }
 
-    // Cursor at very end (no cursorAt, just activeChunkKey)
+    // Cursor at very end (no cursorAt)
     if (!cursorAt) {
         html += '<span class="write-cursor"></span>';
     }
@@ -524,14 +514,6 @@ contentArea.addEventListener('click', (e) => {
                 // Own chunk: place cursor anywhere, set as active for editing
                 cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
-            } else if (text === '') {
-                // Empty chunk from another user: we can write here
-                // Take over this chunk
-                cursorAt = { chunkKey: chunk.key, charOffset: 0 };
-                activeChunkKey = chunk.key;
-                chunksRef.child(chunk.key).update({ author: myName, authorId: myId });
-                chunk.author = myName;
-                chunk.authorId = myId;
             } else {
                 // Other's chunk: can write after signature (end) or on empty lines
                 const validPositions = [text.length];
@@ -797,32 +779,7 @@ function startPad() {
 
         if (e.key === 'Enter') {
             e.preventDefault();
-            // Close current chunk and start a new one on the next line
-            let order;
-            if (activeChunkKey) {
-                const activeIdx = chunks.findIndex(c => c.key === activeChunkKey);
-                if (activeIdx >= 0) {
-                    order = getInsertOrder(activeIdx + 1);
-                } else {
-                    // Chunk not in local list yet, use last known order + 1
-                    order = chunks.length > 0 ? chunks[chunks.length - 1].order + 1 : 1;
-                }
-            } else if (cursorAt) {
-                const chunkIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
-                if (chunkIdx >= 0) {
-                    order = getInsertOrder(chunkIdx + 1);
-                } else {
-                    order = chunks.length > 0 ? chunks[chunks.length - 1].order + 1 : 1;
-                }
-            } else {
-                order = chunks.length > 0 ? chunks[chunks.length - 1].order + 1 : 1;
-            }
-            const ref = chunksRef.push({ author: myName, authorId: myId, text: '', order });
-            activeChunkKey = ref.key;
-            pendingChunkText = '';
-            cursorAt = { chunkKey: ref.key, charOffset: 0 };
-            renderContent();
-            focusInput();
+            insertText('\n');
             return;
         }
 
