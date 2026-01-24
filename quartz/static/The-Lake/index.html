@@ -394,29 +394,53 @@ generateRuledLines();
 // COLLISION CHECK
 // ===========================================
 
-function getMessageAtPosition(x, y) {
-    // Find any message that overlaps with position (x, y)
-    // A message occupies from msg.x to msg.x + textWidth
+// Estimate text width in pixels (Archivo Narrow 40px bold, ~22px per char average)
+const CHAR_WIDTH = 22;
+
+function getMessageWidth(msg) {
+    const el = canvasEl.querySelector(`.message[data-key="${msg._key}"]`);
+    if (el && el.offsetWidth > 0) return el.offsetWidth;
+    // Fallback: estimate from text length
+    return msg.text.length * CHAR_WIDTH + 20; // +20 for author tag
+}
+
+function getMessagesOnLine(y) {
+    const result = [];
+    for (const [key, msg] of Object.entries(messages)) {
+        if (msg.y === y) {
+            result.push({ key, msg, left: msg.x, right: msg.x + getMessageWidth({ ...msg, _key: key }) });
+        }
+    }
+    return result;
+}
+
+function wouldOverlapOther(x, width, y, excludeKey) {
+    // Check if a message at (x, y) with given width would overlap another user's message
+    const right = x + width;
+    for (const [key, msg] of Object.entries(messages)) {
+        if (key === excludeKey) continue;
+        if (msg.y !== y) continue;
+        if (msg.authorId === myId) continue; // own messages don't block
+        const msgWidth = getMessageWidth({ ...msg, _key: key });
+        const msgRight = msg.x + msgWidth;
+        // Check overlap
+        if (x < msgRight && right > msg.x) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function getMessageAtClick(x, y) {
+    // Find message that contains click point
     for (const [key, msg] of Object.entries(messages)) {
         if (msg.y !== y) continue;
-        const el = canvasEl.querySelector(`.message[data-key="${key}"]`);
-        if (el) {
-            const msgRight = msg.x + el.offsetWidth;
-            if (x >= msg.x && x <= msgRight) {
-                return { key, msg };
-            }
+        const width = getMessageWidth({ ...msg, _key: key });
+        if (x >= msg.x && x <= msg.x + width) {
+            return { key, msg };
         }
     }
     return null;
-}
-
-function isPositionBlocked(x, y) {
-    // Check if clicking at (x, y) would overlap with another user's message
-    const hit = getMessageAtPosition(x, y);
-    if (hit && hit.msg.authorId !== myId) {
-        return true;
-    }
-    return false;
 }
 
 // ===========================================
@@ -448,7 +472,7 @@ canvasEl.addEventListener('click', (e) => {
     const clickY = snapToLine(e.clientY - rect.top);
 
     // Check if clicking on an existing message
-    const hit = getMessageAtPosition(clickX, clickY);
+    const hit = getMessageAtClick(clickX, clickY);
     if (hit) {
         if (hit.msg.authorId === myId) {
             // Click on own message: resume editing
@@ -464,6 +488,9 @@ canvasEl.addEventListener('click', (e) => {
             return;
         }
     }
+
+    // Check the cursor position wouldn't overlap with another's message
+    if (wouldOverlapOther(clickX, CHAR_WIDTH, clickY, null)) return;
 
     // Free space — place cursor here
     activeMessageKey = null;
@@ -551,19 +578,27 @@ hiddenInput.addEventListener('input', () => {
     if (!typed) return;
 
     if (activeMessageKey) {
-        // Append to existing message
+        // Append to existing message — check it won't overlap
         const msg = messages[activeMessageKey];
         if (msg && msg.authorId === myId) {
             const newText = msg.text + typed;
+            const newWidth = newText.length * CHAR_WIDTH + 20;
+            if (wouldOverlapOther(msg.x, newWidth, msg.y, activeMessageKey)) {
+                // Would overlap — stop, don't add the character
+                return;
+            }
+            msg.text = newText;
             messagesRef.child(activeMessageKey).update({ text: newText });
+            renderMessages();
         }
         return;
     }
 
     if (cursorX < 0) return;
 
-    // Check cursor isn't on top of another user's message
-    if (isPositionBlocked(cursorX, cursorY)) return;
+    // Check cursor position won't overlap
+    const newWidth = typed.length * CHAR_WIDTH + 20;
+    if (wouldOverlapOther(cursorX, newWidth, cursorY, null)) return;
 
     // Create new message
     const ref = messagesRef.push({
@@ -576,7 +611,6 @@ hiddenInput.addEventListener('input', () => {
     });
 
     activeMessageKey = ref.key;
-    // Also store locally immediately so render works
     messages[ref.key] = {
         text: typed,
         x: cursorX,
