@@ -623,21 +623,36 @@ function escapeHtml(text) {
 // FIREBASE LISTENER
 // ===========================================
 
-messagesRef.on('value', (snapshot) => {
-    const data = snapshot.val();
-    messages = {};
-    if (data) {
-        for (const [key, val] of Object.entries(data)) {
-            messages[key] = {
-                text: val.text || '',
-                x: val.x || 0,
-                y: val.y || 0,
-                author: val.author || '',
-                authorId: val.authorId || '',
-                timestamp: val.timestamp || 0
-            };
-        }
-    }
+messagesRef.on('child_added', (snapshot) => {
+    const key = snapshot.key;
+    const val = snapshot.val();
+    messages[key] = {
+        text: val.text || '',
+        x: val.x || 0,
+        y: val.y || 0,
+        author: val.author || '',
+        authorId: val.authorId || '',
+        timestamp: val.timestamp || 0
+    };
+    renderMessages();
+});
+
+messagesRef.on('child_changed', (snapshot) => {
+    const key = snapshot.key;
+    const val = snapshot.val();
+    messages[key] = {
+        text: val.text || '',
+        x: val.x || 0,
+        y: val.y || 0,
+        author: val.author || '',
+        authorId: val.authorId || '',
+        timestamp: val.timestamp || 0
+    };
+    renderMessages();
+});
+
+messagesRef.on('child_removed', (snapshot) => {
+    delete messages[snapshot.key];
     renderMessages();
 });
 
