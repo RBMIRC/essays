@@ -530,11 +530,8 @@ contentArea.addEventListener('click', (e) => {
                 cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
             } else {
-                // Other's chunk: can write after signature (end) or on any empty line
-                // An "empty line" = position after a \n where the next char is also \n or end
+                // Other's chunk: can write after signature (end) or on empty lines
                 const validPositions = [text.length];
-                // Allow positions on empty lines:
-                // after a \n, if the next char is also \n or end of text = empty line
                 for (let p = 0; p < text.length; p++) {
                     if (text[p] === '\n') {
                         const nextPos = p + 1;
@@ -555,7 +552,14 @@ contentArea.addEventListener('click', (e) => {
                     }
                 }
 
-                cursorAt = { chunkKey: chunk.key, charOffset: best };
+                // If clicked near start (offset 0) and snapped to end,
+                // place cursor at end of previous chunk instead (more intuitive)
+                if (rawOffset === 0 && best === text.length && idx > 0) {
+                    const prevChunk = chunks[idx - 1];
+                    cursorAt = { chunkKey: prevChunk.key, charOffset: prevChunk.text.length };
+                } else {
+                    cursorAt = { chunkKey: chunk.key, charOffset: best };
+                }
             }
         } else {
             cursorAt = null;
