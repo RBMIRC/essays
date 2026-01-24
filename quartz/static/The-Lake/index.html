@@ -948,9 +948,10 @@ function renderMessages() {
         el.style.left = msg.x + 'px';
         el.style.top = msg.y + 'px';
 
-        // Check for italic prefix ">I"
-        const isItalic = msg.text.startsWith('>I');
-        const displayText = isItalic ? msg.text.slice(2) : msg.text;
+        // Check for italic prefix ">I" or ">i" (with optional space after)
+        const italicMatch = msg.text.match(/^>[Ii]\s?/);
+        const isItalic = !!italicMatch;
+        const displayText = isItalic ? msg.text.slice(italicMatch[0].length) : msg.text;
         if (isItalic) el.style.fontStyle = 'italic';
 
         let html = '';
