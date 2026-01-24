@@ -157,14 +157,33 @@
             cursor: text;
         }
 
-        /* Each message positioned absolutely */
+        /* Ruled lines */
+        .ruled-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ruled-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #1a1a1a;
+        }
+
+        /* Each message positioned absolutely, snapped to line */
         .message {
             position: absolute;
             font-family: 'Archivo Narrow', sans-serif;
             font-size: 40px;
             font-weight: 700;
-            line-height: 1.2;
-            white-space: pre-wrap;
+            line-height: 48px;
+            white-space: pre;
             word-break: break-word;
             max-width: calc(100vw - 80px);
         }
@@ -186,7 +205,7 @@
             position: absolute;
             display: inline-block;
             width: 2px;
-            height: 44px;
+            height: 48px;
             background: #4a9f7e;
             animation: blink 1s step-end infinite;
             pointer-events: none;
@@ -226,6 +245,7 @@
 
 <div class="canvas" id="canvas">
     <div class="ascii-bg" id="asciiBg"></div>
+    <div class="ruled-lines" id="ruledLines"></div>
     <div class="cursor-marker" id="cursorMarker" style="display:none;"></div>
 </div>
 
@@ -344,9 +364,33 @@ const usersEl = document.getElementById('users');
 const usersList = document.getElementById('usersList');
 const nameInput = document.getElementById('nameInput');
 
+const LINE_HEIGHT = 48; // px per line
+const NUM_LINES = 60; // number of ruled lines
+
 let messages = {}; // key -> {text, x, y, author, authorId, timestamp}
 let activeMessageKey = null; // message currently being edited
 let cursorX = -1, cursorY = -1; // where user clicked (relative to canvas)
+
+// Generate ruled lines
+function generateRuledLines() {
+    const container = document.getElementById('ruledLines');
+    for (let i = 0; i < NUM_LINES; i++) {
+        const line = document.createElement('div');
+        line.className = 'ruled-line';
+        line.style.top = (i * LINE_HEIGHT + LINE_HEIGHT) + 'px';
+        container.appendChild(line);
+    }
+    // Set canvas min-height to fit all lines
+    canvasEl.style.minHeight = (NUM_LINES * LINE_HEIGHT + LINE_HEIGHT) + 'px';
+}
+
+function snapToLine(y) {
+    // Snap y to the nearest line top
+    const lineIndex = Math.round(y / LINE_HEIGHT);
+    return lineIndex * LINE_HEIGHT;
+}
+
+generateRuledLines();
 
 // ===========================================
 // NAME INPUT
@@ -385,15 +429,15 @@ canvasEl.addEventListener('click', (e) => {
         // Click on someone else's message: ignore, place cursor nearby
     }
 
-    // Get click position relative to canvas
+    // Get click position relative to canvas, snap to line
     const rect = canvasEl.getBoundingClientRect();
     cursorX = e.clientX - rect.left;
-    cursorY = e.clientY - rect.top;
+    cursorY = snapToLine(e.clientY - rect.top);
 
     // Stop editing current message if any
     stopEditing();
 
-    // Show cursor at click position
+    // Show cursor at snapped position
     showCursor(cursorX, cursorY);
     hiddenInput.focus();
 });
@@ -518,6 +562,20 @@ canvasEl.addEventListener('keydown', (e) => {
     if (!activeMessageKey) return;
     const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
     if (!el) return;
+
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        // Stop current message, place cursor on next line at x=0
+        const msg = messages[activeMessageKey];
+        if (msg) {
+            cursorX = msg.x;
+            cursorY = msg.y + LINE_HEIGHT;
+        }
+        stopEditing();
+        showCursor(cursorX, cursorY);
+        hiddenInput.focus();
+        return;
+    }
 
     if (e.key === 'Backspace') {
         const text = getMessageText(el);
