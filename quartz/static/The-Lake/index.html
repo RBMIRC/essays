@@ -681,7 +681,17 @@ function startPad() {
         }
 
         const chunkIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
-        if (chunkIdx === -1) { cursorAt = null; return; }
+        if (chunkIdx === -1) {
+            // Chunk not in local list yet (just created via Enter)
+            // Append directly to Firebase
+            if (cursorAt.chunkKey === activeChunkKey) {
+                chunksRef.child(activeChunkKey).update({ text: typed });
+                cursorAt.charOffset = typed.length;
+                return;
+            }
+            cursorAt = null;
+            return;
+        }
         const chunk = chunks[chunkIdx];
         const charOffset = Math.min(cursorAt.charOffset, chunk.text.length);
 
@@ -801,6 +811,7 @@ function startPad() {
             activeChunkKey = ref.key;
             cursorAt = { chunkKey: ref.key, charOffset: 0 };
             renderContent();
+            focusInput();
             return;
         }
 
