@@ -524,7 +524,20 @@ hiddenInput.addEventListener('input', () => {
     if (!typed || cursorX < 0) return;
 
     if (activeMessageKey) {
-        // Already editing a message via contentEditable - shouldn't reach here
+        // Already editing — append to existing message
+        const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
+        if (el) {
+            // Insert text at caret position
+            const sel = window.getSelection();
+            if (sel.rangeCount > 0) {
+                const range = sel.getRangeAt(0);
+                range.deleteContents();
+                range.insertNode(document.createTextNode(typed));
+                range.collapse(false);
+            }
+            const text = getMessageText(el);
+            messagesRef.child(activeMessageKey).update({ text });
+        }
         return;
     }
 
@@ -541,10 +554,33 @@ hiddenInput.addEventListener('input', () => {
     hideCursor();
     activeMessageKey = ref.key;
 
-    // Wait for Firebase to sync, then start editing
-    setTimeout(() => {
-        startEditing(ref.key);
-    }, 100);
+    // Create DOM element immediately (don't wait for Firebase)
+    const el = document.createElement('div');
+    el.className = 'message editing';
+    el.dataset.key = ref.key;
+    el.style.left = cursorX + 'px';
+    el.style.top = cursorY + 'px';
+    el.contentEditable = 'true';
+    el.textContent = typed;
+    if (myName) {
+        const tag = document.createElement('span');
+        tag.className = 'author-tag';
+        tag.textContent = myName;
+        el.appendChild(tag);
+    }
+    canvasEl.appendChild(el);
+
+    // Focus and place caret at end of text
+    el.focus();
+    const range = document.createRange();
+    const sel = window.getSelection();
+    const textNode = el.firstChild;
+    if (textNode) {
+        range.setStart(textNode, textNode.textContent.length);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    }
 });
 
 hiddenInput.addEventListener('keydown', (e) => {
