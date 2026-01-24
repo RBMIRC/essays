@@ -726,6 +726,115 @@ function startPad() {
         if (e.key === 'Enter') {
             e.preventDefault();
             insertText('\n');
+            return;
+        }
+
+        // Arrow keys navigation
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            e.preventDefault();
+
+            // Build full document text with chunk boundaries
+            const docParts = [];
+            for (const c of chunks) {
+                docParts.push({ key: c.key, text: c.text, author: c.author });
+            }
+
+            // Find current absolute position in document
+            let absPos = 0;
+            const fullText = chunks.map(c => c.text).join('');
+
+            if (cursorAt) {
+                const idx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
+                if (idx >= 0) {
+                    for (let i = 0; i < idx; i++) absPos += chunks[i].text.length;
+                    absPos += Math.min(cursorAt.charOffset, chunks[idx].text.length);
+                }
+            } else {
+                absPos = fullText.length;
+            }
+
+            let newPos = absPos;
+
+            if (e.key === 'ArrowLeft') {
+                newPos = Math.max(0, absPos - 1);
+            } else if (e.key === 'ArrowRight') {
+                newPos = Math.min(fullText.length, absPos + 1);
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                // Find current line and column
+                const before = fullText.slice(0, absPos);
+                const lastNewline = before.lastIndexOf('\n');
+                const col = lastNewline === -1 ? absPos : absPos - lastNewline - 1;
+
+                if (e.key === 'ArrowUp') {
+                    if (lastNewline === -1) {
+                        newPos = 0; // already on first line
+                    } else {
+                        const prevText = fullText.slice(0, lastNewline);
+                        const prevNewline = prevText.lastIndexOf('\n');
+                        const prevLineStart = prevNewline + 1;
+                        const prevLineLen = lastNewline - prevLineStart;
+                        newPos = prevLineStart + Math.min(col, prevLineLen);
+                    }
+                } else {
+                    const afterCursor = fullText.slice(absPos);
+                    const nextNewline = afterCursor.indexOf('\n');
+                    if (nextNewline === -1) {
+                        newPos = fullText.length; // already on last line
+                    } else {
+                        const nextLineStart = absPos + nextNewline + 1;
+                        const restAfterNext = fullText.slice(nextLineStart);
+                        const endOfNextLine = restAfterNext.indexOf('\n');
+                        const nextLineLen = endOfNextLine === -1 ? restAfterNext.length : endOfNextLine;
+                        newPos = nextLineStart + Math.min(col, nextLineLen);
+                    }
+                }
+            }
+
+            // Convert absolute position back to chunkKey + charOffset
+            if (newPos >= fullText.length) {
+                cursorAt = null;
+                activeChunkKey = null;
+            } else {
+                let remaining = newPos;
+                let found = false;
+                for (const c of chunks) {
+                    if (remaining <= c.text.length) {
+                        // Check if this position is valid for this chunk
+                        if (c.author === myName) {
+                            cursorAt = { chunkKey: c.key, charOffset: remaining };
+                            activeChunkKey = c.key;
+                        } else {
+                            // For others' chunks: snap to end or trailing newlines
+                            const sigMatch = c.text.match(/^([\s\S]*?\S)/);
+                            const sigEnd = sigMatch ? sigMatch[1].length : 0;
+                            if (remaining >= sigEnd) {
+                                // Find nearest valid position (after \n in trailing area)
+                                const validPositions = [c.text.length];
+                                for (let p = sigEnd; p < c.text.length; p++) {
+                                    if (c.text[p] === '\n') validPositions.push(p + 1);
+                                }
+                                let best = c.text.length;
+                                let bestDist = Infinity;
+                                for (const pos of validPositions) {
+                                    const dist = Math.abs(pos - remaining);
+                                    if (dist < bestDist) { bestDist = dist; best = pos; }
+                                }
+                                cursorAt = { chunkKey: c.key, charOffset: best };
+                            } else {
+                                cursorAt = { chunkKey: c.key, charOffset: c.text.length };
+                            }
+                            activeChunkKey = null;
+                        }
+                        found = true;
+                        break;
+                    }
+                    remaining -= c.text.length;
+                }
+                if (!found) { cursorAt = null; activeChunkKey = null; }
+            }
+
+            renderContent();
+            return;
         }
     });
 
