@@ -612,7 +612,14 @@ canvasEl.addEventListener('click', (e) => {
             renderMessages();
             return;
         } else {
-            // Click on someone else's message: ignore
+            // Click on someone else's message: place cursor at click position
+            // Typing here will push their message to the right
+            activeMessageKey = null;
+            cursorX = clickX;
+            cursorY = clickY;
+            showCursor(cursorX, cursorY);
+            renderMessages();
+            hiddenInput.focus();
             return;
         }
     }
