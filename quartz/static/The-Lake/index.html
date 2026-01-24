@@ -521,28 +521,8 @@ contentArea.addEventListener('click', (e) => {
                 cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
             } else {
-                // Other's chunk: only valid positions
-                const validPositions = [0, text.length];
-
-                // Valid: after any \n (beginning of any line)
-                for (let p = 0; p < text.length; p++) {
-                    if (text[p] === '\n') {
-                        validPositions.push(p + 1);
-                    }
-                }
-
-                // Snap to closest valid position
-                let best = text.length;
-                let bestDist = Infinity;
-                for (const pos of validPositions) {
-                    const dist = Math.abs(pos - rawOffset);
-                    if (dist < bestDist) {
-                        bestDist = dist;
-                        best = pos;
-                    }
-                }
-
-                cursorAt = { chunkKey: chunk.key, charOffset: best };
+                // Other's chunk: can only write after their signature (end of chunk)
+                cursorAt = { chunkKey: chunk.key, charOffset: text.length };
             }
         } else {
             cursorAt = null;
@@ -645,35 +625,11 @@ function startPad() {
             cursorAt.charOffset = charOffset + typed.length;
             activeChunkKey = chunk.key;
         } else {
-            // Other's chunk: cursor is at a valid position (start, end, or empty line)
-            const textBefore = chunk.text.slice(0, charOffset);
-            const textAfter = chunk.text.slice(charOffset);
-
-            if (charOffset === 0) {
-                // Before their chunk
-                const order = getInsertOrder(chunkIdx);
-                const ref = chunksRef.push({ author: myName, text: typed, order });
-                activeChunkKey = ref.key;
-                cursorAt = null;
-            } else if (charOffset >= chunk.text.length) {
-                // After their chunk
-                const order = getInsertOrder(chunkIdx + 1);
-                const ref = chunksRef.push({ author: myName, text: typed, order });
-                activeChunkKey = ref.key;
-                cursorAt = null;
-            } else {
-                // On an empty line inside their chunk — split into 3 parts
-                chunksRef.child(chunk.key).update({ text: textBefore });
-
-                const orderMid = chunk.order + 0.3333;
-                const ref = chunksRef.push({ author: myName, text: typed, order: orderMid });
-                activeChunkKey = ref.key;
-
-                const orderAfter = chunk.order + 0.6666;
-                chunksRef.push({ author: chunk.author, text: textAfter, order: orderAfter });
-
-                cursorAt = null;
-            }
+            // Other's chunk: cursor is always at end (after their signature)
+            const order = getInsertOrder(chunkIdx + 1);
+            const ref = chunksRef.push({ author: myName, text: typed, order });
+            activeChunkKey = ref.key;
+            cursorAt = null;
         }
     }
 
