@@ -394,25 +394,29 @@ generateRuledLines();
 // COLLISION CHECK
 // ===========================================
 
-function isLineOccupiedByOther(y, excludeKey) {
-    // Check if any message from another user occupies this line
+function getMessageAtPosition(x, y) {
+    // Find any message that overlaps with position (x, y)
+    // A message occupies from msg.x to msg.x + textWidth
     for (const [key, msg] of Object.entries(messages)) {
-        if (key === excludeKey) continue;
-        if (msg.authorId !== myId && msg.y === y) {
-            return msg; // return the blocking message
+        if (msg.y !== y) continue;
+        const el = canvasEl.querySelector(`.message[data-key="${key}"]`);
+        if (el) {
+            const msgRight = msg.x + el.offsetWidth;
+            if (x >= msg.x && x <= msgRight) {
+                return { key, msg };
+            }
         }
     }
     return null;
 }
 
-function getMyMessageOnLine(y) {
-    // Check if I already have a message on this line
-    for (const [key, msg] of Object.entries(messages)) {
-        if (msg.authorId === myId && msg.y === y) {
-            return key;
-        }
+function isPositionBlocked(x, y) {
+    // Check if clicking at (x, y) would overlap with another user's message
+    const hit = getMessageAtPosition(x, y);
+    if (hit && hit.msg.authorId !== myId) {
+        return true;
     }
-    return null;
+    return false;
 }
 
 // ===========================================
@@ -443,27 +447,25 @@ canvasEl.addEventListener('click', (e) => {
     const clickX = e.clientX - rect.left;
     const clickY = snapToLine(e.clientY - rect.top);
 
-    // Check if this line is occupied by another user
-    const blocker = isLineOccupiedByOther(clickY, null);
-    if (blocker) {
-        // Can't write on this line — ignore click
-        return;
+    // Check if clicking on an existing message
+    const hit = getMessageAtPosition(clickX, clickY);
+    if (hit) {
+        if (hit.msg.authorId === myId) {
+            // Click on own message: resume editing
+            activeMessageKey = hit.key;
+            cursorX = -1;
+            cursorY = -1;
+            hideCursor();
+            hiddenInput.focus();
+            renderMessages();
+            return;
+        } else {
+            // Click on someone else's message: ignore
+            return;
+        }
     }
 
-    // Check if I already have a message on this line
-    const existingKey = getMyMessageOnLine(clickY);
-    if (existingKey) {
-        // Resume editing my existing message on this line
-        activeMessageKey = existingKey;
-        cursorX = -1;
-        cursorY = -1;
-        hideCursor();
-        hiddenInput.focus();
-        renderMessages();
-        return;
-    }
-
-    // Stop current editing
+    // Free space — place cursor here
     activeMessageKey = null;
     cursorX = clickX;
     cursorY = clickY;
@@ -490,26 +492,14 @@ function hideCursor() {
 hiddenInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
-        // Move cursor to next free line
-        let nextY = (activeMessageKey ? messages[activeMessageKey].y : cursorY) + LINE_HEIGHT;
-        // Skip lines occupied by others
-        while (isLineOccupiedByOther(nextY, null) && nextY < NUM_LINES * LINE_HEIGHT) {
-            nextY += LINE_HEIGHT;
-        }
+        // Move cursor to next line, keep same x
+        const currentX = activeMessageKey ? messages[activeMessageKey].x : cursorX;
+        const currentY = activeMessageKey ? messages[activeMessageKey].y : cursorY;
+        const nextY = currentY + LINE_HEIGHT;
         activeMessageKey = null;
-
-        // Check if I have a message on that line already
-        const existingKey = getMyMessageOnLine(nextY);
-        if (existingKey) {
-            activeMessageKey = existingKey;
-            cursorX = -1;
-            cursorY = -1;
-            hideCursor();
-        } else {
-            cursorX = 0;
-            cursorY = nextY;
-            showCursor(cursorX, cursorY);
-        }
+        cursorX = currentX;
+        cursorY = nextY;
+        showCursor(cursorX, cursorY);
         renderMessages();
         return;
     }
@@ -520,7 +510,6 @@ hiddenInput.addEventListener('keydown', (e) => {
             const msg = messages[activeMessageKey];
             if (msg && msg.authorId === myId) {
                 if (msg.text.length <= 1) {
-                    // Delete the message entirely
                     messagesRef.child(activeMessageKey).remove();
                     cursorX = msg.x;
                     cursorY = msg.y;
@@ -532,11 +521,28 @@ hiddenInput.addEventListener('keydown', (e) => {
                 }
             }
         }
+        renderMessages();
         return;
     }
 
-    // Ignore special keys
-    if (e.key.length > 1) return;
+    // Arrow keys
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        let cx = activeMessageKey ? messages[activeMessageKey].x : cursorX;
+        let cy = activeMessageKey ? messages[activeMessageKey].y : cursorY;
+
+        if (e.key === 'ArrowUp') cy = Math.max(0, cy - LINE_HEIGHT);
+        if (e.key === 'ArrowDown') cy = cy + LINE_HEIGHT;
+        if (e.key === 'ArrowLeft') cx = Math.max(0, cx - 20);
+        if (e.key === 'ArrowRight') cx = cx + 20;
+
+        activeMessageKey = null;
+        cursorX = cx;
+        cursorY = cy;
+        showCursor(cursorX, cursorY);
+        renderMessages();
+        return;
+    }
 });
 
 hiddenInput.addEventListener('input', () => {
@@ -556,8 +562,8 @@ hiddenInput.addEventListener('input', () => {
 
     if (cursorX < 0) return;
 
-    // Check line is still free
-    if (isLineOccupiedByOther(cursorY, null)) return;
+    // Check cursor isn't on top of another user's message
+    if (isPositionBlocked(cursorX, cursorY)) return;
 
     // Create new message
     const ref = messagesRef.push({
