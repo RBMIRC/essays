@@ -22,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* ASCII background images - Dweller style */
+        /* ASCII background images */
         .ascii-bg {
             position: absolute;
             top: 0;
@@ -42,8 +42,7 @@
             opacity: 0.2;
         }
 
-
-        /* Header ASCII image */
+        /* Header */
         .header-ascii {
             position: relative;
             z-index: 1;
@@ -56,21 +55,6 @@
             display: block;
             opacity: 0.6;
         }
-        /* Title */
-        .title-section {
-            position: relative;
-            z-index: 10;
-            padding: 20px 30px 40px;
-        }
-
-        .title {
-            font-family: 'Inter', 'Helvetica Neue', sans-serif;
-            font-size: 120px;
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            line-height: 0.9;
-        }
-
 
         .subtitle-bar {
             position: relative;
@@ -84,6 +68,20 @@
             font-family: 'SF Mono', 'Monaco', monospace;
             font-size: 12px;
             color: #fff;
+        }
+
+        .title-section {
+            position: relative;
+            z-index: 10;
+            padding: 20px 30px 40px;
+        }
+
+        .title {
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            font-size: 120px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 0.9;
         }
 
         .info-line {
@@ -128,7 +126,6 @@
             color: #4a9f7e;
         }
 
-        /* Name input inline — right aligned on info line */
         .name-inline {
             flex-shrink: 0;
             margin-left: auto;
@@ -151,50 +148,49 @@
             color: #888;
         }
 
-        /* Editor area */
-        .editor-wrap {
+        /* Canvas area where messages live */
+        .canvas {
             position: relative;
             z-index: 10;
-            padding: 0 30px 100px;
-        }
-
-        .content-area {
-            position: relative;
-            z-index: 1;
-            min-height: 60vh;
+            min-height: 80vh;
+            margin: 0 30px 100px;
             cursor: text;
-            line-height: 1.6;
-            white-space: pre-wrap;
-            word-wrap: break-word;
         }
 
-        .content-area .chunk {
-            display: inline;
+        /* Each message positioned absolutely */
+        .message {
+            position: absolute;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.2;
             white-space: pre-wrap;
+            word-break: break-word;
+            max-width: calc(100vw - 80px);
         }
 
-        .content-area .chunk .author-tag {
+        .message .author-tag {
             color: #555;
             font-size: 9px;
             font-family: 'SF Mono', monospace;
             vertical-align: super;
-            margin-left: 1px;
-            margin-right: 3px;
+            margin-left: 2px;
         }
 
-        .content-area .chunk .text {
-            color: #fff;
+        .message.editing {
+            outline: none;
         }
 
-
-        /* Blinking cursor */
-        .write-cursor {
+        /* Blinking cursor placeholder */
+        .cursor-marker {
+            position: absolute;
             display: inline-block;
             width: 2px;
-            height: 1.1em;
+            height: 44px;
             background: #4a9f7e;
-            vertical-align: text-bottom;
             animation: blink 1s step-end infinite;
+            pointer-events: none;
+            z-index: 100;
         }
 
         @keyframes blink {
@@ -202,7 +198,7 @@
             50% { opacity: 0; }
         }
 
-        /* Hidden input for typing */
+        /* Hidden input for mobile */
         .hidden-input {
             position: fixed;
             top: -100px;
@@ -210,8 +206,6 @@
             opacity: 0;
             pointer-events: none;
         }
-
-
     </style>
 </head>
 <body>
@@ -230,23 +224,19 @@
     </div>
 </div>
 
-<div class="editor-wrap">
+<div class="canvas" id="canvas">
     <div class="ascii-bg" id="asciiBg"></div>
-    <div class="content-area" id="contentArea"></div>
+    <div class="cursor-marker" id="cursorMarker" style="display:none;"></div>
 </div>
 
-<input class="hidden-input" id="hiddenInput" autofocus>
-
+<input class="hidden-input" id="hiddenInput">
 
 <script>
 // ===========================================
-// ASCII BACKGROUND - Dweller style
-// Convert images from Images/ folder to ASCII
-// Randomly positioned, different each connection
+// ASCII BACKGROUND
 // ===========================================
 
-const ASCII_CHARS = ['█', '▓', '▄', '●', '○', '▂', '„', ',', ' ', ' ', ' ', ' '];
-const IMAGE_FILES = []; // Will be populated from images.json
+const ASCII_CHARS = ['\u2588', '\u2593', '\u2584', '\u25CF', '\u25CB', '\u2582', '\u201E', ',', ' ', ' ', ' ', ' '];
 
 async function loadAsciiBackgrounds() {
     try {
@@ -254,32 +244,24 @@ async function loadAsciiBackgrounds() {
         const imageList = await res.json();
         if (!imageList.length) return;
 
-        // Pick 3-5 random images
         const count = Math.min(imageList.length, 3 + Math.floor(Math.random() * 3));
         const shuffled = imageList.sort(() => Math.random() - 0.5).slice(0, count);
-
         const container = document.getElementById('asciiBg');
-
-        const startY = 50; // start near top of editor area
-
-        // Load all images, then place them sequentially to avoid overlap
+        const startY = 50;
         const loaded = [];
         let loadCount = 0;
 
         for (let i = 0; i < shuffled.length; i++) {
-            const imgFile = shuffled[i];
             const img = new Image();
             img.crossOrigin = 'anonymous';
-            img.src = 'Images/' + imgFile;
+            img.src = 'Images/' + shuffled[i];
             img.onload = ((index) => () => {
-                // More size variation: 140 to 320 cols
                 const sizes = [80, 100, 120, 140];
                 const cols = sizes[Math.floor(Math.random() * sizes.length)];
                 const ascii = imageToAscii(img, cols);
-                loaded[index] = { ascii, cols };
+                loaded[index] = { ascii };
                 loadCount++;
 
-                // Once all loaded, place them without overlap
                 if (loadCount === shuffled.length) {
                     let currentY = startY;
                     for (let j = 0; j < loaded.length; j++) {
@@ -290,70 +272,41 @@ async function loadAsciiBackgrounds() {
                         el.style.top = currentY + 'px';
                         el.style.left = (j % 2 === 0) ? '5%' : '35%';
                         container.appendChild(el);
-
-                        // Measure actual height and add gap
                         const h = el.offsetHeight || 200;
-                        currentY += h + 150; // 150px gap between images
+                        currentY += h + 150;
                     }
                     container.style.height = currentY + 'px';
                 }
             })(i);
         }
-    } catch (e) {
-        // No images.json, skip backgrounds
-    }
+    } catch (e) {}
 }
 
 function imageToAscii(img, cols) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-
-    const aspectRatio = img.height / img.width;
-    const rows = Math.floor(cols * aspectRatio * 0.5);
-
+    const rows = Math.floor(cols * (img.height / img.width) * 0.5);
     canvas.width = cols;
     canvas.height = rows;
     ctx.drawImage(img, 0, 0, cols, rows);
+    const pixels = ctx.getImageData(0, 0, cols, rows).data;
 
-    const imageData = ctx.getImageData(0, 0, cols, rows);
-    const pixels = imageData.data;
-
-    // Calculate average brightness to decide if we invert
     let totalBright = 0;
-    const totalPixels = cols * rows;
-    for (let i = 0; i < totalPixels; i++) {
-        const idx = i * 4;
-        totalBright += 0.299 * pixels[idx] + 0.587 * pixels[idx + 1] + 0.114 * pixels[idx + 2];
+    for (let i = 0; i < cols * rows; i++) {
+        totalBright += 0.299 * pixels[i*4] + 0.587 * pixels[i*4+1] + 0.114 * pixels[i*4+2];
     }
-    const avgBright = totalBright / totalPixels;
-    // If image is mostly bright (>50%), invert so we get fewer visible chars on black
-    const invert = avgBright > 127;
+    const invert = (totalBright / (cols * rows)) > 127;
 
     let ascii = '';
     for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
             const idx = (y * cols + x) * 4;
-            const r = pixels[idx];
-            const g = pixels[idx + 1];
-            const b = pixels[idx + 2];
-
-            let gray = 0.299 * r + 0.587 * g + 0.114 * b;
+            let gray = 0.299 * pixels[idx] + 0.587 * pixels[idx+1] + 0.114 * pixels[idx+2];
             if (invert) gray = 255 - gray;
-
-            // Contrast
-            gray = ((gray / 255 - 0.5) * 2.5 + 0.5) * 255;
-            gray = Math.max(0, Math.min(255, gray));
-
-            // Posterize
-            const levels = 6;
-            const step = 255 / levels;
+            gray = Math.max(0, Math.min(255, ((gray / 255 - 0.5) * 2.5 + 0.5) * 255));
+            const step = 255 / 6;
             gray = Math.floor(gray / step) * step;
-
-            const charIndex = Math.min(
-                ASCII_CHARS.length - 1,
-                Math.floor((gray / 255) * ASCII_CHARS.length)
-            );
-            ascii += ASCII_CHARS[charIndex];
+            ascii += ASCII_CHARS[Math.min(ASCII_CHARS.length - 1, Math.floor((gray / 255) * ASCII_CHARS.length))];
         }
         ascii += '\n';
     }
@@ -378,39 +331,35 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
-const chunksRef = db.ref('firepad/chunks');
+const messagesRef = db.ref('firepad/messages');
 const usersRef = db.ref('firepad/users');
 
 const myId = 'user_' + Math.random().toString(36).substr(2, 9);
 let myName = '';
 
-function isMyChunk(chunk) {
-    // A chunk is mine only if I have a non-empty name AND it matches
-    // Also store myId in chunks for reliable ownership
-    return chunk.authorId === myId;
-}
-
-const contentArea = document.getElementById('contentArea');
+const canvasEl = document.getElementById('canvas');
+const cursorMarker = document.getElementById('cursorMarker');
 const hiddenInput = document.getElementById('hiddenInput');
 const usersEl = document.getElementById('users');
 const usersList = document.getElementById('usersList');
 const nameInput = document.getElementById('nameInput');
 
-let chunks = [];
-let isRemote = false;
+let messages = {}; // key -> {text, x, y, author, authorId, timestamp}
+let activeMessageKey = null; // message currently being edited
+let cursorX = -1, cursorY = -1; // where user clicked (relative to canvas)
 
-// Update name dynamically when user types
+// ===========================================
+// NAME INPUT
+// ===========================================
+
 nameInput.addEventListener('input', () => {
-    const newName = nameInput.value.trim() || 'anonymous';
+    const newName = nameInput.value.trim();
     if (newName !== myName) {
         myName = newName;
-        // Update presence
-        const myPresence = usersRef.child(myId);
-        myPresence.set(myName);
+        usersRef.child(myId).set(myName || 'anonymous');
     }
 });
 
-// Prevent Enter in name field from creating newlines
 nameInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
@@ -418,523 +367,273 @@ nameInput.addEventListener('keydown', (e) => {
     }
 });
 
-// Cursor position: { chunkKey, charOffset } or null (end)
-// chunkKey: Firebase key of the chunk
-// charOffset: character position within that chunk's text
-let cursorAt = null; // null = end of document
-let activeChunkKey = null; // track chunk being typed into
+// ===========================================
+// CLICK TO PLACE CURSOR
+// ===========================================
 
-function focusInput() {
+canvasEl.addEventListener('click', (e) => {
+    // Ignore clicks on existing messages that aren't ours
+    const msgEl = e.target.closest('.message');
+    if (msgEl) {
+        const key = msgEl.dataset.key;
+        const msg = messages[key];
+        if (msg && msg.authorId === myId) {
+            // Click on own message: edit it
+            startEditing(key);
+            return;
+        }
+        // Click on someone else's message: ignore, place cursor nearby
+    }
+
+    // Get click position relative to canvas
+    const rect = canvasEl.getBoundingClientRect();
+    cursorX = e.clientX - rect.left;
+    cursorY = e.clientY - rect.top;
+
+    // Stop editing current message if any
+    stopEditing();
+
+    // Show cursor at click position
+    showCursor(cursorX, cursorY);
     hiddenInput.focus();
-}
-
-function getAuthorStyle(author) {
-    return "font-family:'Archivo Narrow', sans-serif;font-size:40px;font-weight:700;";
-}
-
-function renderChunkHtml(text, author) {
-    // Signature goes after the last non-newline character
-    const match = text.match(/^([\s\S]*?\S)([\s\n]*)$/);
-    if (match) {
-        const content = escapeHtml(match[1]);
-        const trailing = escapeHtml(match[2]);
-        return `<span class="text">${content}</span><span class="author-tag">${author}</span>${trailing ? `<span class="text">${trailing}</span>` : ''}`;
-    }
-    const escaped = escapeHtml(text);
-    return `<span class="text">${escaped}</span><span class="author-tag">${author}</span>`;
-}
-
-function renderContent() {
-    let html = '';
-    // Resolve cursorAt chunkKey to current index
-    let cursorIdx = -1;
-    if (cursorAt) {
-        cursorIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
-        if (cursorIdx === -1) cursorAt = null; // chunk was deleted
-    }
-
-    // When cursorAt is null but activeChunkKey is set, show cursor after that chunk
-    let activeCursorIdx = -1;
-    if (!cursorAt && activeChunkKey) {
-        activeCursorIdx = chunks.findIndex(c => c.key === activeChunkKey);
-    }
-
-    for (let i = 0; i < chunks.length; i++) {
-        const c = chunks[i];
-        const style = getAuthorStyle(c.author);
-
-        if (cursorAt && i === cursorIdx) {
-            const offset = Math.min(cursorAt.charOffset, c.text.length);
-            if (offset >= c.text.length) {
-                // Cursor at end: render chunk normally, cursor after it
-                html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
-                html += '<span class="write-cursor"></span>';
-            } else {
-                // Cursor inside the chunk (own chunk or on empty line)
-                const before = c.text.slice(0, offset);
-                const after = c.text.slice(offset);
-                html += `<span class="chunk" data-index="${i}" style="${style}">`;
-                html += `<span class="text">${escapeHtml(before)}</span>`;
-                html += '<span class="write-cursor"></span>';
-                const lastNonWs = after.search(/\s*$/);
-                if (lastNonWs > 0) {
-                    html += `<span class="text">${escapeHtml(after.slice(0, lastNonWs))}</span><span class="author-tag">${c.author}</span><span class="text">${escapeHtml(after.slice(lastNonWs))}</span>`;
-                } else {
-                    html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
-                }
-                html += `</span>`;
-            }
-        } else {
-            html += `<span class="chunk" data-index="${i}" style="${style}">${renderChunkHtml(c.text, c.author)}</span>`;
-            // Show cursor after active chunk when cursorAt is null
-            if (!cursorAt && i === activeCursorIdx) {
-                html += '<span class="write-cursor"></span>';
-            }
-        }
-    }
-
-    // Cursor at very end (no cursorAt, no active chunk found)
-    if (!cursorAt && activeCursorIdx === -1) {
-        html += '<span class="write-cursor"></span>';
-    }
-
-    contentArea.innerHTML = html;
-}
-
-// Place cursor by clicking
-// Own chunks: anywhere. Other's chunks: only at end, on empty lines, or empty chunks
-contentArea.addEventListener('click', (e) => {
-    const sel = window.getSelection();
-    if (sel.rangeCount > 0) {
-        const range = sel.getRangeAt(0);
-        const node = range.startContainer;
-        const offset = range.startOffset;
-
-        const chunkEl = node.nodeType === 3
-            ? node.parentElement.closest('.chunk')
-            : node.closest('.chunk');
-
-        if (chunkEl) {
-            const idx = parseInt(chunkEl.dataset.index);
-            const rawOffset = getCharOffset(chunkEl, node, offset, idx);
-            const chunk = chunks[idx];
-            const text = chunk.text;
-
-            if (isMyChunk(chunk)) {
-                // Own chunk: place cursor anywhere, set as active for editing
-                cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
-                activeChunkKey = chunk.key;
-            } else {
-                // Other's chunk: can write after signature (end) or on empty lines
-                const validPositions = [text.length];
-                for (let p = 0; p < text.length; p++) {
-                    if (text[p] === '\n') {
-                        const nextPos = p + 1;
-                        if (nextPos >= text.length || text[nextPos] === '\n') {
-                            validPositions.push(nextPos);
-                        }
-                    }
-                }
-
-                // Snap to closest valid position
-                let best = text.length;
-                let bestDist = Infinity;
-                for (const pos of validPositions) {
-                    const dist = Math.abs(pos - rawOffset);
-                    if (dist < bestDist) {
-                        bestDist = dist;
-                        best = pos;
-                    }
-                }
-
-                // If clicked near start (offset 0) and snapped to end,
-                // place cursor at end of previous chunk instead (more intuitive)
-                if (rawOffset === 0 && best === text.length && idx > 0) {
-                    const prevChunk = chunks[idx - 1];
-                    cursorAt = { chunkKey: prevChunk.key, charOffset: prevChunk.text.length };
-                } else {
-                    cursorAt = { chunkKey: chunk.key, charOffset: best };
-                }
-            }
-        } else {
-            // Clicked outside any chunk — find nearest chunk based on click position
-            const allChunks = contentArea.querySelectorAll('.chunk');
-            if (allChunks.length > 0) {
-                const clickY = e.clientY;
-                const clickX = e.clientX;
-                let nearestIdx = -1;
-                let nearestDist = Infinity;
-                allChunks.forEach((el) => {
-                    const rect = el.getBoundingClientRect();
-                    // Distance: prefer chunk whose bottom edge is just above or at click Y
-                    const dy = clickY > rect.bottom ? clickY - rect.bottom : (clickY < rect.top ? rect.top - clickY : 0);
-                    const dx = clickX > rect.right ? clickX - rect.right : (clickX < rect.left ? rect.left - clickX : 0);
-                    const dist = dy * 1000 + dx; // prioritize vertical proximity
-                    if (dist < nearestDist) {
-                        nearestDist = dist;
-                        nearestIdx = parseInt(el.dataset.index);
-                    }
-                });
-                if (nearestIdx >= 0 && nearestIdx < chunks.length) {
-                    const nearChunk = chunks[nearestIdx];
-                    cursorAt = { chunkKey: nearChunk.key, charOffset: nearChunk.text.length };
-                } else {
-                    cursorAt = null;
-                }
-            } else {
-                cursorAt = null;
-            }
-        }
-    } else {
-        cursorAt = null;
-    }
-
-    activeChunkKey = null;
-    renderContent();
-    focusInput();
 });
 
-function getCharOffset(chunkEl, node, offset, chunkIdx) {
-    // Walk through ALL .text spans in this chunk to find position
-    const textEls = chunkEl.querySelectorAll('.text');
-    if (!textEls.length) return chunks[chunkIdx].text.length;
-
-    let pos = 0;
-    for (const textEl of textEls) {
-        const walker = document.createTreeWalker(textEl, NodeFilter.SHOW_TEXT);
-        let current;
-        while (current = walker.nextNode()) {
-            if (current === node) {
-                return pos + offset;
-            }
-            pos += current.textContent.length;
-        }
-        // If node is the span itself (click on empty area)
-        if (node === textEl) {
-            return pos;
-        }
-    }
-    return chunks[chunkIdx].text.length;
+function showCursor(x, y) {
+    cursorMarker.style.left = x + 'px';
+    cursorMarker.style.top = y + 'px';
+    cursorMarker.style.display = 'block';
 }
 
-function getInsertOrder(insertPos) {
-    if (chunks.length === 0) return 0;
-    if (insertPos >= chunks.length) {
-        return chunks[chunks.length - 1].order + 1;
-    } else if (insertPos === 0) {
-        return chunks[0].order - 1;
+function hideCursor() {
+    cursorMarker.style.display = 'none';
+}
+
+// ===========================================
+// EDITING
+// ===========================================
+
+function startEditing(key) {
+    stopEditing();
+    activeMessageKey = key;
+    const el = canvasEl.querySelector(`.message[data-key="${key}"]`);
+    if (el) {
+        el.classList.add('editing');
+        el.contentEditable = 'true';
+        el.focus();
+        // Place caret at end
+        const range = document.createRange();
+        const sel = window.getSelection();
+        // Find last text node
+        const textNodes = [];
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        let n;
+        while (n = walker.nextNode()) textNodes.push(n);
+        if (textNodes.length > 0) {
+            const last = textNodes[textNodes.length - 1];
+            range.setStart(last, last.textContent.length);
+            range.collapse(true);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    }
+    hideCursor();
+}
+
+function stopEditing() {
+    if (!activeMessageKey) return;
+    const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
+    if (el) {
+        el.classList.remove('editing');
+        el.contentEditable = 'false';
+        // Save text back to Firebase
+        const text = getMessageText(el);
+        if (text.trim() === '') {
+            // Empty message: delete it
+            messagesRef.child(activeMessageKey).remove();
+        } else {
+            messagesRef.child(activeMessageKey).update({ text });
+        }
+    }
+    activeMessageKey = null;
+}
+
+function getMessageText(el) {
+    // Get text content excluding author tag
+    let text = '';
+    el.childNodes.forEach(node => {
+        if (node.nodeType === 3) {
+            text += node.textContent;
+        } else if (node.classList && !node.classList.contains('author-tag')) {
+            text += node.textContent;
+        }
+    });
+    return text;
+}
+
+// ===========================================
+// TYPING (when cursor is placed but no message yet)
+// ===========================================
+
+hiddenInput.addEventListener('input', () => {
+    const typed = hiddenInput.value;
+    hiddenInput.value = '';
+    if (!typed || cursorX < 0) return;
+
+    if (activeMessageKey) {
+        // Already editing a message via contentEditable - shouldn't reach here
+        return;
+    }
+
+    // Create a new message at cursor position
+    const ref = messagesRef.push({
+        text: typed,
+        x: cursorX,
+        y: cursorY,
+        author: myName,
+        authorId: myId,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+    });
+
+    hideCursor();
+    activeMessageKey = ref.key;
+
+    // Wait for Firebase to sync, then start editing
+    setTimeout(() => {
+        startEditing(ref.key);
+    }, 100);
+});
+
+hiddenInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && cursorX >= 0 && !activeMessageKey) {
+        e.preventDefault();
+        // Create message with just a newline? No, ignore Enter without text
+    }
+});
+
+// ===========================================
+// MESSAGE ELEMENT EVENTS (for own messages being edited)
+// ===========================================
+
+canvasEl.addEventListener('keydown', (e) => {
+    if (!activeMessageKey) return;
+    const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
+    if (!el) return;
+
+    if (e.key === 'Backspace') {
+        const text = getMessageText(el);
+        if (text === '') {
+            e.preventDefault();
+            messagesRef.child(activeMessageKey).remove();
+            activeMessageKey = null;
+        }
+    }
+
+    if (e.key === 'Escape') {
+        e.preventDefault();
+        stopEditing();
+    }
+});
+
+canvasEl.addEventListener('input', (e) => {
+    if (!activeMessageKey) return;
+    const el = canvasEl.querySelector(`.message[data-key="${activeMessageKey}"]`);
+    if (!el) return;
+
+    // Sync text to Firebase
+    const text = getMessageText(el);
+    if (text.trim() === '') {
+        messagesRef.child(activeMessageKey).remove();
+        activeMessageKey = null;
     } else {
-        const prev = chunks[insertPos - 1].order;
-        const next = chunks[insertPos].order;
-        return prev + (next - prev) / 2;
+        messagesRef.child(activeMessageKey).update({ text });
+    }
+});
+
+// ===========================================
+// RENDER MESSAGES FROM FIREBASE
+// ===========================================
+
+function renderMessages() {
+    // Remove old message elements (except the one being edited)
+    const existing = canvasEl.querySelectorAll('.message');
+    existing.forEach(el => {
+        if (el.dataset.key !== activeMessageKey) {
+            el.remove();
+        }
+    });
+
+    // Render all messages
+    for (const [key, msg] of Object.entries(messages)) {
+        if (key === activeMessageKey) {
+            // Don't re-render the one being edited
+            const el = canvasEl.querySelector(`.message[data-key="${key}"]`);
+            if (el) continue;
+        }
+
+        const el = document.createElement('div');
+        el.className = 'message';
+        el.dataset.key = key;
+        el.style.left = msg.x + 'px';
+        el.style.top = msg.y + 'px';
+
+        const textNode = document.createTextNode(msg.text);
+        el.appendChild(textNode);
+
+        if (msg.author) {
+            const tag = document.createElement('span');
+            tag.className = 'author-tag';
+            tag.textContent = msg.author;
+            el.appendChild(tag);
+        }
+
+        canvasEl.appendChild(el);
     }
 }
 
-function startPad() {
-    chunksRef.orderByChild('order').on('value', (snapshot) => {
-        isRemote = true;
-        const data = snapshot.val();
-        if (data) {
-            chunks = Object.entries(data).map(([key, val]) => ({
-                key,
+// ===========================================
+// FIREBASE LISTENER
+// ===========================================
+
+messagesRef.on('value', (snapshot) => {
+    const data = snapshot.val();
+    messages = {};
+    if (data) {
+        for (const [key, val] of Object.entries(data)) {
+            messages[key] = {
+                text: val.text || '',
+                x: val.x || 0,
+                y: val.y || 0,
                 author: val.author || '',
                 authorId: val.authorId || '',
-                text: val.text,
-                order: val.order
-            })).sort((a, b) => a.order - b.order);
-        } else {
-            chunks = [];
+                timestamp: val.timestamp || 0
+            };
         }
-        renderContent();
-        isRemote = false;
-    });
-
-    activeChunkKey = null;
-    let pendingChunkText = ''; // text for chunk not yet in local list
-
-    function insertText(typed) {
-        if (!cursorAt) {
-            // Cursor at end of document or continuing after an insertion
-            if (activeChunkKey) {
-                const existing = chunks.find(c => c.key === activeChunkKey);
-                if (existing && isMyChunk(existing)) {
-                    existing.text += typed;
-                    chunksRef.child(activeChunkKey).update({ text: existing.text });
-                    renderContent();
-                    return;
-                }
-                // Chunk not in local list yet — track text locally
-                pendingChunkText += typed;
-                chunksRef.child(activeChunkKey).update({ text: pendingChunkText });
-                renderContent();
-                return;
-            }
-            const last = chunks[chunks.length - 1];
-            if (last && isMyChunk(last)) {
-                last.text += typed;
-                chunksRef.child(last.key).update({ text: last.text });
-                activeChunkKey = last.key;
-            } else {
-                const order = chunks.length ? chunks[chunks.length - 1].order + 1 : 0;
-                const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order });
-                activeChunkKey = ref.key;
-                pendingChunkText = typed;
-            }
-            renderContent();
-            return;
-        }
-
-        const chunkIdx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
-        if (chunkIdx === -1) {
-            // Chunk not in local list yet (just created via Enter)
-            if (cursorAt.chunkKey === activeChunkKey) {
-                pendingChunkText += typed;
-                chunksRef.child(activeChunkKey).update({ text: pendingChunkText });
-                cursorAt.charOffset = pendingChunkText.length;
-                return;
-            }
-            cursorAt = null;
-            return;
-        }
-        pendingChunkText = ''; // chunk is now in local list
-        const chunk = chunks[chunkIdx];
-        const charOffset = Math.min(cursorAt.charOffset, chunk.text.length);
-
-        if (isMyChunk(chunk)) {
-            // Own chunk: insert freely at any position
-            chunk.text = chunk.text.slice(0, charOffset) + typed + chunk.text.slice(charOffset);
-            chunksRef.child(chunk.key).update({ text: chunk.text });
-            cursorAt.charOffset = charOffset + typed.length;
-            activeChunkKey = chunk.key;
-        } else {
-            // Other's chunk: cursor is after signature or on truly empty lines
-            if (charOffset >= chunk.text.length) {
-                // After their chunk entirely
-                const order = getInsertOrder(chunkIdx + 1);
-                const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order });
-                activeChunkKey = ref.key;
-                pendingChunkText = typed;
-                cursorAt = null; // will append via activeChunkKey path
-            } else {
-                // Verify this is an empty line: char before is \n, char at position is \n or end
-                const charBefore = charOffset > 0 ? chunk.text[charOffset - 1] : null;
-                const charAt = charOffset < chunk.text.length ? chunk.text[charOffset] : null;
-                const isEmptyLine = (charBefore === '\n' && (charAt === '\n' || charAt === null));
-                if (!isEmptyLine) {
-                    cursorAt = { chunkKey: chunk.key, charOffset: chunk.text.length };
-                    renderContent();
-                    return;
-                }
-                // On an empty line — split chunk
-                const textBefore = chunk.text.slice(0, charOffset);
-                const textAfter = chunk.text.slice(charOffset);
-
-                chunksRef.child(chunk.key).update({ text: textBefore });
-
-                const orderMid = chunk.order + 0.3333;
-                const ref = chunksRef.push({ author: myName, authorId: myId, text: typed, order: orderMid });
-                activeChunkKey = ref.key;
-                pendingChunkText = typed;
-
-                const orderAfter = chunk.order + 0.6666;
-                chunksRef.push({ author: chunk.author, authorId: chunk.authorId, text: textAfter, order: orderAfter });
-
-                cursorAt = null; // will append via activeChunkKey path
-            }
-        }
-        renderContent();
     }
+    renderMessages();
+});
 
-    hiddenInput.addEventListener('input', (e) => {
-        if (isRemote) return;
-        const typed = hiddenInput.value;
-        hiddenInput.value = '';
-        if (!typed) return;
-        insertText(typed);
-    });
+// ===========================================
+// PRESENCE
+// ===========================================
 
-    hiddenInput.addEventListener('keydown', (e) => {
-        if (isRemote) return;
+const myPresence = usersRef.child(myId);
+myPresence.set(myName || 'anonymous');
+myPresence.onDisconnect().remove();
 
-        if (e.key === 'Backspace') {
-            e.preventDefault();
-            if (cursorAt && cursorAt.chunkKey) {
-                // Cursor is inside a chunk
-                const chunk = chunks.find(c => c.key === cursorAt.chunkKey);
-                if (chunk && isMyChunk(chunk) && cursorAt.charOffset > 0) {
-                    chunk.text = chunk.text.slice(0, cursorAt.charOffset - 1) + chunk.text.slice(cursorAt.charOffset);
-                    if (chunk.text.length === 0) {
-                        chunksRef.child(chunk.key).remove();
-                        cursorAt = null;
-                        activeChunkKey = null;
-                    } else {
-                        chunksRef.child(chunk.key).update({ text: chunk.text });
-                        cursorAt.charOffset--;
-                        activeChunkKey = chunk.key;
-                    }
-                }
-            } else if (activeChunkKey) {
-                // Cursor at end, appending to active chunk
-                const existing = chunks.find(c => c.key === activeChunkKey);
-                if (existing && isMyChunk(existing) && existing.text.length > 0) {
-                    existing.text = existing.text.slice(0, -1);
-                    if (existing.text.length === 0) {
-                        chunksRef.child(activeChunkKey).remove();
-                        activeChunkKey = null;
-                    } else {
-                        chunksRef.child(activeChunkKey).update({ text: existing.text });
-                    }
-                }
-            }
-            return;
-        }
+usersRef.on('value', (snapshot) => {
+    const users = snapshot.val();
+    if (users) {
+        const names = Object.values(users);
+        usersEl.textContent = names.length;
+        usersList.innerHTML = names.map(n => `<span>${n}</span>`).join('');
+    } else {
+        usersEl.textContent = '0';
+        usersList.innerHTML = '';
+    }
+});
 
-        if (e.key === 'Delete') {
-            e.preventDefault();
-            return;
-        }
-
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            insertText('\n');
-            return;
-        }
-
-        // Arrow keys navigation
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-            e.preventDefault();
-
-            // Build full document text with chunk boundaries
-            const docParts = [];
-            for (const c of chunks) {
-                docParts.push({ key: c.key, text: c.text, author: c.author });
-            }
-
-            // Find current absolute position in document
-            let absPos = 0;
-            const fullText = chunks.map(c => c.text).join('');
-
-            if (cursorAt) {
-                const idx = chunks.findIndex(c => c.key === cursorAt.chunkKey);
-                if (idx >= 0) {
-                    for (let i = 0; i < idx; i++) absPos += chunks[i].text.length;
-                    absPos += Math.min(cursorAt.charOffset, chunks[idx].text.length);
-                }
-            } else {
-                absPos = fullText.length;
-            }
-
-            let newPos = absPos;
-
-            if (e.key === 'ArrowLeft') {
-                newPos = Math.max(0, absPos - 1);
-            } else if (e.key === 'ArrowRight') {
-                newPos = Math.min(fullText.length, absPos + 1);
-            } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-                // Find current line and column
-                const before = fullText.slice(0, absPos);
-                const lastNewline = before.lastIndexOf('\n');
-                const col = lastNewline === -1 ? absPos : absPos - lastNewline - 1;
-
-                if (e.key === 'ArrowUp') {
-                    if (lastNewline === -1) {
-                        newPos = 0; // already on first line
-                    } else {
-                        const prevText = fullText.slice(0, lastNewline);
-                        const prevNewline = prevText.lastIndexOf('\n');
-                        const prevLineStart = prevNewline + 1;
-                        const prevLineLen = lastNewline - prevLineStart;
-                        newPos = prevLineStart + Math.min(col, prevLineLen);
-                    }
-                } else {
-                    const afterCursor = fullText.slice(absPos);
-                    const nextNewline = afterCursor.indexOf('\n');
-                    if (nextNewline === -1) {
-                        newPos = fullText.length; // already on last line
-                    } else {
-                        const nextLineStart = absPos + nextNewline + 1;
-                        const restAfterNext = fullText.slice(nextLineStart);
-                        const endOfNextLine = restAfterNext.indexOf('\n');
-                        const nextLineLen = endOfNextLine === -1 ? restAfterNext.length : endOfNextLine;
-                        newPos = nextLineStart + Math.min(col, nextLineLen);
-                    }
-                }
-            }
-
-            // Convert absolute position back to chunkKey + charOffset
-            if (newPos >= fullText.length) {
-                cursorAt = null;
-                activeChunkKey = null;
-            } else {
-                let remaining = newPos;
-                let found = false;
-                for (const c of chunks) {
-                    if (remaining <= c.text.length) {
-                        // Check if this position is valid for this chunk
-                        if (isMyChunk(c)) {
-                            cursorAt = { chunkKey: c.key, charOffset: remaining };
-                            activeChunkKey = c.key;
-                        } else {
-                            // For others' chunks: snap to end or empty lines
-                            const validPositions = [c.text.length];
-                            for (let p = 0; p < c.text.length; p++) {
-                                if (c.text[p] === '\n') {
-                                    const nextPos = p + 1;
-                                    if (nextPos >= c.text.length || c.text[nextPos] === '\n') {
-                                        validPositions.push(nextPos);
-                                    }
-                                }
-                            }
-
-                            let best = c.text.length;
-                            let bestDist = Infinity;
-                            for (const pos of validPositions) {
-                                const dist = Math.abs(pos - remaining);
-                                if (dist < bestDist) { bestDist = dist; best = pos; }
-                            }
-                            cursorAt = { chunkKey: c.key, charOffset: best };
-                            activeChunkKey = null;
-                        }
-                        found = true;
-                        break;
-                    }
-                    remaining -= c.text.length;
-                }
-                if (!found) { cursorAt = null; activeChunkKey = null; }
-            }
-
-            renderContent();
-            return;
-        }
-    });
-
-    const myPresence = usersRef.child(myId);
-    myPresence.set(myName);
-    myPresence.onDisconnect().remove();
-
-    usersRef.on('value', (snapshot) => {
-        const users = snapshot.val();
-        if (users) {
-            const names = Object.values(users);
-            usersEl.textContent = names.length;
-            usersList.innerHTML = names.map(n => `<span>${n}</span>`).join('');
-        } else {
-            usersEl.textContent = '0';
-            usersList.innerHTML = '';
-        }
-    });
-
-    focusInput();
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
-
-// Start immediately
-startPad();
+// Focus hidden input on load
+hiddenInput.focus();
 </script>
 
 </body>
