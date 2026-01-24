@@ -904,7 +904,9 @@ styleMenu.addEventListener('click', (e) => {
         const selected = msg.text.slice(rawStart, rawEnd);
         const after = msg.text.slice(rawEnd);
         if (selected.length === 0) continue;
-        const newText = before + '>' + tag + ' ' + selected + ' <' + after;
+        // Strip existing tags from selected portion to avoid nesting
+        const stripped = selected.replace(/>[iIfFsSgG]\s?/g, '').replace(/ </g, '').replace(/</g, '');
+        const newText = before + '>' + tag + ' ' + stripped + ' <' + after;
         msg.text = newText;
         messagesRef.child(sel.key).update({ text: newText });
     }
