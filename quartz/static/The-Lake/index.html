@@ -473,14 +473,14 @@ function renderContent() {
                     html += `<span class="text">${escapeHtml(after)}</span><span class="author-tag">${c.author}</span>`;
                 }
             } else {
-                // Cursor at end: signature stays with text, cursor goes after
+                // Cursor at end: signature stays with text, cursor on next line
                 const lastNonWs = before.search(/\s*$/);
                 if (lastNonWs > 0) {
                     html += `<span class="text">${escapeHtml(before.slice(0, lastNonWs))}</span><span class="author-tag">${c.author}</span><span class="text">${escapeHtml(before.slice(lastNonWs))}</span>`;
                 } else {
                     html += `<span class="text">${escapeHtml(before)}</span><span class="author-tag">${c.author}</span>`;
                 }
-                html += '<span class="write-cursor"></span>';
+                html += '\n<span class="write-cursor"></span>';
             }
             html += `</span>`;
         } else {
