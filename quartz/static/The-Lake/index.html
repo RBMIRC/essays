@@ -444,9 +444,9 @@ function getMessageAtClick(x, y) {
 }
 
 function pushMessagesRight(sourceKey) {
-    // After sourceKey grows, push any message to its right further right if overlapping
     const src = messages[sourceKey];
     if (!src) return;
+    const pageWidth = canvasEl.offsetWidth || 800;
     const srcRight = src.x + getMessageWidth({ ...src, _key: sourceKey });
 
     // Get all messages on the same line, sorted by x
@@ -455,17 +455,28 @@ function pushMessagesRight(sourceKey) {
         .sort((a, b) => a[1].x - b[1].x);
 
     let pushEdge = srcRight;
+    const GAP = 5;
+
     for (const [key, msg] of sameLine) {
         if (msg.x < pushEdge) {
-            // This message overlaps — push it right
-            const gap = 5; // small gap between messages
-            const newX = pushEdge + gap;
-            msg.x = newX;
-            messagesRef.child(key).update({ x: newX });
-            // Update push edge for the next message
-            pushEdge = newX + getMessageWidth({ ...msg, _key: key });
+            let newX = pushEdge + GAP;
+            const msgWidth = getMessageWidth({ ...msg, _key: key });
+
+            // If pushed beyond page width, wrap to next line
+            if (newX + msgWidth > pageWidth) {
+                msg.x = 0;
+                msg.y = msg.y + LINE_HEIGHT;
+                messagesRef.child(key).update({ x: 0, y: msg.y });
+                // Now check if this message overlaps anything on its new line
+                pushMessagesRight(key);
+                // Continue with remaining messages on original line
+                pushEdge = newX; // keep pushing others that were after this one
+            } else {
+                msg.x = newX;
+                messagesRef.child(key).update({ x: newX });
+                pushEdge = newX + msgWidth;
+            }
         } else {
-            // No overlap, stop pushing
             break;
         }
     }
