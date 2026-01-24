@@ -958,8 +958,8 @@ function renderMessages() {
                 + '<span style="' + cursorStyle + '"></span>'
                 + escapeHtml(msg.text.slice(pos));
         } else {
-            // Parse >i ... < italic tags
-            html = formatItalic(msg.text);
+            // Parse >i ... < and >f ... < tags
+            html = formatTags(msg.text);
         }
 
         if (msg.author) {
@@ -977,33 +977,37 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-function formatItalic(text) {
-    // Parse >i ... < or >I ... < tags, render content in italic
+function formatTags(text) {
+    // Parse >i ... < (italic) and >f ... < (blur) tags
     let result = '';
     let i = 0;
     while (i < text.length) {
-        if ((text[i] === '>' && (text[i+1] === 'i' || text[i+1] === 'I'))) {
-            // Found opening tag, look for closing <
+        if (text[i] === '>' && (text[i+1] === 'i' || text[i+1] === 'I' || text[i+1] === 'f' || text[i+1] === 'F')) {
+            const tag = text[i+1].toLowerCase();
             const start = i + 2;
             const end = text.indexOf('<', start);
             if (end !== -1) {
-                // Skip optional space after >i
                 const contentStart = (text[start] === ' ') ? start + 1 : start;
-                // Skip optional space before <
                 const contentEnd = (text[end-1] === ' ') ? end - 1 : end;
-                result += '<i>' + escapeHtml(text.slice(contentStart, contentEnd)) + '</i>';
+                if (tag === 'i') {
+                    result += '<i>' + escapeHtml(text.slice(contentStart, contentEnd)) + '</i>';
+                } else {
+                    result += '<span style="filter:blur(4px)">' + escapeHtml(text.slice(contentStart, contentEnd)) + '</span>';
+                }
                 i = end + 1;
             } else {
-                // No closing tag: treat rest as italic
                 const contentStart = (text[start] === ' ') ? start + 1 : start;
-                result += '<i>' + escapeHtml(text.slice(contentStart)) + '</i>';
+                if (tag === 'i') {
+                    result += '<i>' + escapeHtml(text.slice(contentStart)) + '</i>';
+                } else {
+                    result += '<span style="filter:blur(4px)">' + escapeHtml(text.slice(contentStart)) + '</span>';
+                }
                 i = text.length;
             }
         } else {
-            // Find next tag or end
             let next = i;
             while (next < text.length) {
-                if (text[next] === '>' && (text[next+1] === 'i' || text[next+1] === 'I')) break;
+                if (text[next] === '>' && (text[next+1] === 'i' || text[next+1] === 'I' || text[next+1] === 'f' || text[next+1] === 'F')) break;
                 next++;
             }
             result += escapeHtml(text.slice(i, next));
