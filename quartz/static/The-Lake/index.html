@@ -978,32 +978,38 @@ function formatTags(text) {
     let result = '';
     let i = 0;
     while (i < text.length) {
-        if (text[i] === '>' && (text[i+1] === 'i' || text[i+1] === 'I' || text[i+1] === 'f' || text[i+1] === 'F')) {
+        if (text[i] === '>' && (text[i+1] === 'i' || text[i+1] === 'I' || text[i+1] === 'f' || text[i+1] === 'F' || text[i+1] === 's' || text[i+1] === 'S')) {
             const tag = text[i+1].toLowerCase();
             const start = i + 2;
             const end = text.indexOf('<', start);
             if (end !== -1) {
                 const contentStart = (text[start] === ' ') ? start + 1 : start;
                 const contentEnd = (text[end-1] === ' ') ? end - 1 : end;
+                const content = escapeHtml(text.slice(contentStart, contentEnd));
                 if (tag === 'i') {
-                    result += '<i>' + escapeHtml(text.slice(contentStart, contentEnd)) + '</i>';
+                    result += '<i>' + content + '</i>';
+                } else if (tag === 'f') {
+                    result += '<span style="filter:blur(4px)">' + content + '</span>';
                 } else {
-                    result += '<span style="filter:blur(4px)">' + escapeHtml(text.slice(contentStart, contentEnd)) + '</span>';
+                    result += '<span style="text-decoration:line-through">' + content + '</span>';
                 }
                 i = end + 1;
             } else {
                 const contentStart = (text[start] === ' ') ? start + 1 : start;
+                const content = escapeHtml(text.slice(contentStart));
                 if (tag === 'i') {
-                    result += '<i>' + escapeHtml(text.slice(contentStart)) + '</i>';
+                    result += '<i>' + content + '</i>';
+                } else if (tag === 'f') {
+                    result += '<span style="filter:blur(4px)">' + content + '</span>';
                 } else {
-                    result += '<span style="filter:blur(4px)">' + escapeHtml(text.slice(contentStart)) + '</span>';
+                    result += '<span style="text-decoration:line-through">' + content + '</span>';
                 }
                 i = text.length;
             }
         } else {
             let next = i;
             while (next < text.length) {
-                if (text[next] === '>' && (text[next+1] === 'i' || text[next+1] === 'I' || text[next+1] === 'f' || text[next+1] === 'F')) break;
+                if (text[next] === '>' && (text[next+1] === 'i' || text[next+1] === 'I' || text[next+1] === 'f' || text[next+1] === 'F' || text[next+1] === 's' || text[next+1] === 'S')) break;
                 next++;
             }
             result += escapeHtml(text.slice(i, next));
