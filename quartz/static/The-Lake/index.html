@@ -862,44 +862,40 @@ hiddenInput.addEventListener('input', () => {
             msg.text = newText;
             messagesRef.child(activeMessageKey).update({ text: newText });
 
-            // Check if message exceeds page width → wrap to next line
+            // Check if message exceeds page width → wrap to next line(s)
             const pageWidth = Math.min(canvasEl.offsetWidth, window.innerWidth - 60) || 800;
-            const msgW = getMessageWidth({ ...msg, _key: activeMessageKey });
-            if (msg.x + msgW > pageWidth) {
-                // Split at cursorPos: keep text before on this line, text after goes to next line
-                const textBefore = msg.text.slice(0, cursorPos);
-                const textAfter = msg.text.slice(cursorPos);
-                const nextY = msg.y + LINE_HEIGHT;
+            let currentKey = activeMessageKey;
+            let currentMsg = msg;
+            while (true) {
+                const cW = currentMsg.text.length * CHAR_WIDTH + 20;
+                if (currentMsg.x + cW <= pageWidth) break;
+                // Find split point
+                const maxChars = Math.max(1, Math.floor((pageWidth - currentMsg.x - 20) / CHAR_WIDTH));
+                const splitPos = Math.min(maxChars, currentMsg.text.length);
+                const textBefore = currentMsg.text.slice(0, splitPos);
+                const textAfter = currentMsg.text.slice(splitPos);
+                const nextY = currentMsg.y + LINE_HEIGHT;
 
-                // Update current message
-                msg.text = textBefore;
-                messagesRef.child(activeMessageKey).update({ text: textBefore });
+                currentMsg.text = textBefore;
+                messagesRef.child(currentKey).update({ text: textBefore });
 
-                // Push down anything on the next line
                 pushMessagesDown(0, nextY);
 
-                // Create continuation on next line
                 const ref2 = messagesRef.push({
-                    text: textAfter || '',
-                    x: 0,
-                    y: nextY,
-                    author: myName,
-                    authorId: myId,
+                    text: textAfter || '', x: 0, y: nextY,
+                    author: myName, authorId: myId,
                     timestamp: firebase.database.ServerValue.TIMESTAMP
                 });
                 messages[ref2.key] = {
-                    text: textAfter || '',
-                    x: 0,
-                    y: nextY,
-                    author: myName,
-                    authorId: myId
+                    text: textAfter || '', x: 0, y: nextY,
+                    author: myName, authorId: myId
                 };
-                activeMessageKey = ref2.key;
-                cursorPos = textAfter.length;
-                pushMessagesRight(ref2.key);
-            } else {
-                pushMessagesRight(activeMessageKey);
+                currentKey = ref2.key;
+                currentMsg = messages[ref2.key];
             }
+            activeMessageKey = currentKey;
+            cursorPos = currentMsg.text.length;
+            pushMessagesRight(activeMessageKey);
             renderMessages();
         }
         return;
