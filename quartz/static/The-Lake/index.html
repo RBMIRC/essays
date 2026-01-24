@@ -482,6 +482,36 @@ function pushMessagesRight(sourceKey) {
     }
 }
 
+function pullNextMessageLeft(cx, cy) {
+    // Find the first message to the right of cursor on this line
+    const sameLine = Object.entries(messages)
+        .filter(([k, m]) => m.y === cy && m.x > cx)
+        .sort((a, b) => a[1].x - b[1].x);
+
+    if (sameLine.length === 0) return;
+
+    const [key, msg] = sameLine[0];
+    const step = CHAR_WIDTH; // pull by one character width
+
+    // Find the boundary: either cursor position or end of previous message
+    let minX = cx;
+    const leftMessages = Object.entries(messages)
+        .filter(([k, m]) => m.y === cy && m.x < msg.x && k !== key)
+        .sort((a, b) => b[1].x - a[1].x); // sorted right to left
+
+    if (leftMessages.length > 0) {
+        const [lk, lm] = leftMessages[0];
+        const leftRight = lm.x + getMessageWidth({ ...lm, _key: lk });
+        minX = Math.max(minX, leftRight + 5);
+    }
+
+    const newX = Math.max(minX, msg.x - step);
+    if (newX !== msg.x) {
+        msg.x = newX;
+        messagesRef.child(key).update({ x: newX });
+    }
+}
+
 // ===========================================
 // NAME INPUT
 // ===========================================
@@ -570,6 +600,7 @@ hiddenInput.addEventListener('keydown', (e) => {
     if (e.key === 'Backspace') {
         e.preventDefault();
         if (activeMessageKey) {
+            // Editing own message: delete last char
             const msg = messages[activeMessageKey];
             if (msg && msg.authorId === myId) {
                 if (msg.text.length <= 1) {
@@ -583,8 +614,21 @@ hiddenInput.addEventListener('keydown', (e) => {
                     messagesRef.child(activeMessageKey).update({ text: newText });
                 }
             }
+        } else if (cursorX >= 0) {
+            // Cursor in empty space: pull the next message on this line closer
+            pullNextMessageLeft(cursorX, cursorY);
         }
         renderMessages();
+        return;
+    }
+
+    if (e.key === 'Delete') {
+        e.preventDefault();
+        if (cursorX >= 0 && !activeMessageKey) {
+            // Delete in empty space: pull next message left
+            pullNextMessageLeft(cursorX, cursorY);
+            renderMessages();
+        }
         return;
     }
 
