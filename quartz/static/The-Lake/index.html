@@ -521,8 +521,31 @@ contentArea.addEventListener('click', (e) => {
                 cursorAt = { chunkKey: chunk.key, charOffset: rawOffset };
                 activeChunkKey = chunk.key;
             } else {
-                // Other's chunk: can only write after their signature (end of chunk)
-                cursorAt = { chunkKey: chunk.key, charOffset: text.length };
+                // Other's chunk: can write after signature or on empty lines after it
+                // Find where the signature is (after last non-whitespace char)
+                const sigMatch = text.match(/^([\s\S]*?\S)/);
+                const sigEnd = sigMatch ? sigMatch[1].length : 0;
+
+                // Valid positions: end of chunk + after any \n that comes after the signature
+                const validPositions = [text.length];
+                for (let p = sigEnd; p < text.length; p++) {
+                    if (text[p] === '\n') {
+                        validPositions.push(p + 1);
+                    }
+                }
+
+                // Snap to closest valid position
+                let best = text.length;
+                let bestDist = Infinity;
+                for (const pos of validPositions) {
+                    const dist = Math.abs(pos - rawOffset);
+                    if (dist < bestDist) {
+                        bestDist = dist;
+                        best = pos;
+                    }
+                }
+
+                cursorAt = { chunkKey: chunk.key, charOffset: best };
             }
         } else {
             cursorAt = null;
@@ -625,11 +648,29 @@ function startPad() {
             cursorAt.charOffset = charOffset + typed.length;
             activeChunkKey = chunk.key;
         } else {
-            // Other's chunk: cursor is always at end (after their signature)
-            const order = getInsertOrder(chunkIdx + 1);
-            const ref = chunksRef.push({ author: myName, text: typed, order });
-            activeChunkKey = ref.key;
-            cursorAt = null;
+            // Other's chunk: cursor is after signature or on trailing empty lines
+            if (charOffset >= chunk.text.length) {
+                // After their chunk entirely
+                const order = getInsertOrder(chunkIdx + 1);
+                const ref = chunksRef.push({ author: myName, text: typed, order });
+                activeChunkKey = ref.key;
+                cursorAt = null;
+            } else {
+                // On an empty line in trailing whitespace — split chunk
+                const textBefore = chunk.text.slice(0, charOffset);
+                const textAfter = chunk.text.slice(charOffset);
+
+                chunksRef.child(chunk.key).update({ text: textBefore });
+
+                const orderMid = chunk.order + 0.3333;
+                const ref = chunksRef.push({ author: myName, text: typed, order: orderMid });
+                activeChunkKey = ref.key;
+
+                const orderAfter = chunk.order + 0.6666;
+                chunksRef.push({ author: chunk.author, text: textAfter, order: orderAfter });
+
+                cursorAt = null;
+            }
         }
     }
 
