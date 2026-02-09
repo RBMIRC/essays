@@ -60,12 +60,9 @@ tags:
 **Contamination:** Infused with {psychoanalytic pedagogy, infrastructure aesthetics, chronopolitics, feminist epistemology, decolonial critique}
 **Confidence:** Grounded in three decades of artistic practice, institutional teaching, and experimental pedagogy
 **Notes:** The teacher who hides their process maintains an unbridgeable gap; the teacher who exposes it opens the possibility of verification — and therefore of equality
+**Translation:** Cet article a été écrit en anglais avec l'assistance du LLM Mistral 7B.
 
 </details>
-
----
-
-*Cet article a été écrit en anglais avec l'assistance du LLM Mistral 7B.*
 
 ---
 
