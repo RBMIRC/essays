@@ -33,18 +33,18 @@ tags:
 <details class="heredoc-block">
 <summary>◈ CO-CREATIVITY v1.0</summary>
 
-**Title:** Creativity and Co-Creativity with Artificial Intelligence  
-**Subtitle:** Toward a Theory of Meta-Creativity  
-**Author:** Sylvain Couzinet-Jacques  
-**Date:** 2026  
-**Intent:** Proposing a theoretical framework for co-creative practice with large language models, treating AI not as tool or autonomous creator but as partner in a cybernetic loop where authorship is distributed across biological neurons and silicon weights  
-**Provenance:** How to work with AI  
-**Genealogy:** Plato (divine madness) → Kant (genius) → Kittler (discourse networks) → Plant (zeros and ones) → Hayles (technotexts) → Eshun (sonic fiction) → Simondon (individuation) → Barad (agential realism) → Boden (transformational creativity) → Nowotny (cre-activity) → Devis (embodied subjectivity) → Allado-McDowell (Air Age) → Borges (Pierre Menard) → Duchamp (readymade)  
-**Ethics:** Transparency · Platform critique · Ecological accountability · Statistical commons as collective inheritance  
-**License:** GPL-3.0-or-later Fork-chain: [Retcon Black Mountain] → current → [Creativity]  
-**Contamination:** Infused with {media archaeology, cybernetic aesthetics, post-humanist philosophy, affect theory, political economy of creativity, Oulipian constraint}  
-**Confidence:** Grounded in two decades of artistic practice with generative systems, archival fieldwork across BMC repositories, and experimental co-writing with purpose-trained LLMs  
-**Notes:** The writer who enters the latent space does not become a machine — but neither do they remain untransformed by the encounter. Pierre Menard can still write the Quixote.
+*Title:* Creativity and Co-Creativity with Artificial Intelligence  
+*Subtitle:* Toward a Theory of Meta-Creativity  
+*Author:* Sylvain Couzinet-Jacques  
+*Date:* 2026  
+*Intent:* Proposing a theoretical framework for co-creative practice with large language models, treating AI not as tool or autonomous creator but as partner in a cybernetic loop where authorship is distributed across biological neurons and silicon weights  
+*Provenance:* How to work with AI  
+*Genealogy:* Plato (divine madness) → Kant (genius) → Kittler (discourse networks) → Plant (zeros and ones) → Hayles (technotexts) → Eshun (sonic fiction) → Simondon (individuation) → Barad (agential realism) → Boden (transformational creativity) → Nowotny (cre-activity) → Devis (embodied subjectivity) → Allado-McDowell (Air Age) → Borges (Pierre Menard) → Duchamp (readymade)  
+*Ethics:* Transparency · Platform critique · Ecological accountability · Statistical commons as collective inheritance  
+*License:* GPL-3.0-or-later Fork-chain: [Retcon Black Mountain] → current → [Creativity]  
+*Contamination:* Infused with {media archaeology, cybernetic aesthetics, post-humanist philosophy, affect theory, political economy of creativity, Oulipian constraint}  
+*Confidence:* Grounded in two decades of artistic practice with generative systems, archival fieldwork across BMC repositories, and experimental co-writing with purpose-trained LLMs  
+*Notes:* The writer who enters the latent space does not become a machine — but neither do they remain untransformed by the encounter. Pierre Menard can still write the Quixote.
 
 *This article was originally written in English with the assistance of the LLM Mistral 7B.*
 
@@ -54,9 +54,9 @@ tags:
 
 ## Preamble
 
-Reading Ninon Devis's doctoral thesis, recently defended at Sorbonne Université in May 2025 under the supervision of Charlotte Truchet and Carlos Agon, proved to be one of the most stimulating encounters with research-creation I have experienced in recent years. Her rigorous analysis of co-creativity in musical composition resonates with my own practice: I have long worked with modular synthesizers and their generative possibilities, developing a piece entitled Sub Rosa (2020) that explores precisely the threshold between human intention and machinic process that Devis theorizes. Reading her work, I recognized a kindred attempt to think with instruments rather than merely about them.
+Reading Ninon Devis's doctoral thesis, recently defended at Sorbonne Université in May 2025 under the supervision of Charlotte Truchet and Carlos Agon, proved to be one of the most stimulating encounters with research-creation I have experienced in recent years. Her rigorous analysis of co-creativity in musical composition resonates with my own practice: I have long worked with modular synthesizers and their generative possibilities, developing a piece entitled *Sub Rosa* (2020) that explores precisely the threshold between human intention and machinic process that Devis theorizes. Reading her work, I recognized a kindred attempt to think with instruments rather than merely about them.
 
-The belated discovery of K Allado-McDowell's books — Air Age Blueprint (2022) in particular — proved equally generative; it was perhaps my most valuable reading of 2025, offering a vocabulary for what I had been groping toward in my own writing practice. Pharmako-AI (2020), then Air Age Blueprint, written in direct collaboration with GPT-3, are not merely books about co-creativity with AI but artifacts of it — each chapter emerging from iterative exchanges between human prompt and machinic completion. These works put to the test the question of whether the theoretical possibilities described by Kittler and Eshun can be realized in actual practice, and what such realization demands of the writer.
+The belated discovery of K Allado-McDowell's books — *Air Age Blueprint* (2022) in particular — proved equally generative; it was perhaps my most valuable reading of 2025, offering a vocabulary for what I had been groping toward in my own writing practice. *Pharmako-AI* (2020), then *Air Age Blueprint*, written in direct collaboration with GPT-3, are not merely books about co-creativity with AI but artifacts of it — each chapter emerging from iterative exchanges between human prompt and machinic completion. These works put to the test the question of whether the theoretical possibilities described by Kittler and Eshun can be realized in actual practice, and what such realization demands of the writer.
 
 Together, these works helped me articulate what I call "computational futurality": the sense that co-creative tools do not merely assist thought but open new temporal and conceptual horizons. This perspective informs the "retroactive continuity" methodology of my own thesis — a method that treats the archive not as a fixed past but as a field of virtual possibilities awaiting reactivation.
 
@@ -80,7 +80,7 @@ The argument advances the thesis that co-creativity constitutes neither the ecli
 
 The preceding preamble situated this inquiry within a practice: that of co-creative writing with a large language model, methodically and experimentally trained "by design." The question posed there — what becomes of authorship when writing proceeds no longer from the inscription of a thought but from the selection, inflection, and relaunching of a generative process? — is not merely theoretical. It emerges from a working experience in which inherited categories (author, tool, inspiration, technique) cease to function as they should.
 
-The integration of artificial intelligence into creative practice has inaugurated what may be the most significant transformation in the conditions of cultural production since Walter Benjamin diagnosed the consequences of mechanical reproduction. Yet the conceptual apparatus through which we attempt to grasp this transformation remains profoundly indebted to frameworks that predate not only AI but the very notion of computation. As Raunig, Ray, and Wuggenig observe in their introduction to Critique of Creativity:
+The integration of artificial intelligence into creative practice has inaugurated what may be the most significant transformation in the conditions of cultural production since Walter Benjamin diagnosed the consequences of mechanical reproduction. Yet the conceptual apparatus through which we attempt to grasp this transformation remains profoundly indebted to frameworks that predate not only AI but the very notion of computation. As Raunig, Ray, and Wuggenig observe in their introduction to *Critique of Creativity*:
 
 > "Creativity is astir: reborn, re-conjured, re-branded, resurgent. The old myths of creation and creators — the hallowed labors and privileged agencies of demiurges and prime movers, of Biblical world-makers and self-fashioning artist-geniuses — are back underway, producing effects, circulating appeals." (Raunig, Ray & Wuggenig, 2011, p. 1)
 
@@ -92,7 +92,7 @@ The stakes extend beyond aesthetic theory. They touch on what Longo, Punzi, and 
 
 Historically, creativity has been understood as a form of "divine madness," a sacred gift in which the poet or artist acts as a mere channel for an external muse or spiritual force. This conception — which we might call the "Platonic wound" — established a vision of the creator as a "solitary genius" whose inspirations seem to spring from a conceptual void rather than from systematic learning or technical mediation.
 
-Yet this myth ignores a reality that media archaeology has made impossible to evade: human thought has never been an entity separate from its technical prostheses. From the pen to the typewriter to the neural network, technology has "always already" mediated creation. As Nietzsche famously put it, our writing tools "work upon our thoughts" (Nietzsche's correspondence with Köselitz in 1882; Kittler elevated this to a founding aphorism of media archaeology). Creativity is not a disembodied spirit but what Hayles calls a "material metaphor" — the product of the dynamic interaction between a mindbody and its apparatus (Hayles, 2002).
+Yet this myth ignores a reality that media archaeology has made impossible to evade: human thought has never been an entity separate from its technical prostheses. From the pen to the typewriter to the neural network, technology has "always already" mediated creation. As Nietzsche famously put it, our writing tools "work upon our thoughts" (Nietzsche's correspondence with Köselitz in 1882; Kittler elevated this to a founding aphorism of media archaeology). Creativity is not a disembodied spirit but what Hayles calls a "material metaphor" — the product of the dynamic interaction between a *mindbody* and its apparatus (Hayles, 2002).
 
 Generative AI therefore does not break with a tradition of "pure" creation; it makes explicit what has always been the case — distributed agency, tool dependence, the technical mediation of thought — while radically transforming the terms of that distribution. It is this double operation — revelation and transformation — that this essay seeks to think through.
 
@@ -142,7 +142,7 @@ Any serious analysis of creativity must begin by acknowledging its theological o
 
 This schema positions the creator as analogous to the divine — "demiurge, prime cause, and world-maker" (Nowotny, 2011, pp. 15–16). Crucially, this theological heritage "has been less replaced by modern ideas of creativity connected with 'artistic creation' than assimilated by them — at least in a certain presumption of these ideas still in force today, which insists on the artist subject as a reality of creation withdrawn from the world, 'drawing on itself'" (Nowotny, 2011, p. 16).
 
-This theological structure traces back to the Greeks. The poet of Plato's Ion is "a light and winged and sacred thing, and is unable ever to indite until he has been inspired and put out of his senses" (Ion, 534b). As Devis traces in her thesis, this "divine madness" (theia mania) was not mere irrationality but a "catalytic force that unlocks deeper truths about harmony, the human psyche, and cosmic order" (Devis, 2025, p. 151). This framework — creativity as reception rather than production, as gift rather than accomplishment — persists in secularized form whenever creativity is attributed to "inspiration" or the "muse."
+This theological structure traces back to the Greeks. The poet of Plato's *Ion* is "a light and winged and sacred thing, and is unable ever to indite until he has been inspired and put out of his senses" (*Ion*, 534b). As Devis traces in her thesis, this "divine madness" (theia mania) was not mere irrationality but a "catalytic force that unlocks deeper truths about harmony, the human psyche, and cosmic order" (Devis, 2025, p. 151). This framework — creativity as reception rather than production, as gift rather than accomplishment — persists in secularized form whenever creativity is attributed to "inspiration" or the "muse."
 
 ## Before the Machine
 
@@ -154,9 +154,9 @@ A decisive point: creativity "does not arise from a conceptual void" (Esling & D
 
 The modern conception of creativity emerges through what can be described as a fundamental relocation of creative power from divine to human sources. The eighteenth and nineteenth centuries witnessed what might be called the "interiorization of genius": the divine source of creative power was not eliminated but relocated within the exceptional individual.
 
-Edward Young's Conjectures on Original Composition (1759) illustrates this transformation, declaring that originality "rises spontaneously from vital root of genius; it grows, it is not made" (Young, 1966). The organic metaphor is essential: genius is natural rather than acquired, spontaneous rather than learned, rooted in the unique nature of the individual rather than derived from external models or rules.
+Edward Young's *Conjectures on Original Composition* (1759) illustrates this transformation, declaring that originality "rises spontaneously from vital root of genius; it grows, it is not made" (Young, 1966). The organic metaphor is essential: genius is natural rather than acquired, spontaneous rather than learned, rooted in the unique nature of the individual rather than derived from external models or rules.
 
-Immanuel Kant's Critique of the Power of Judgment (1790) provides the philosophical foundation for this Romantic conception. Kant defines genius as "the talent (natural gift) that gives the rule to art" (Kant, 2000, §46). Several features of this definition prove decisive.
+Immanuel Kant's *Critique of the Power of Judgment* (1790) provides the philosophical foundation for this Romantic conception. Kant defines genius as "the talent (natural gift) that gives the rule to art" (Kant, 2000, §46). Several features of this definition prove decisive.
 
 First, genius is a natural gift — a talent that cannot be explained by prior causes nor acquired through education. Second, genius gives rules rather than follows them: it is not a matter of applying preexisting principles but of engendering new ones that later artists may imitate. Third — and most importantly for our purposes — genius is "completely opposed to imitation" and "cannot be learned." Genius operates through what Kant calls "original nonsense" — productions so unprecedented that no prior example could have guided their creation.
 
@@ -166,21 +166,17 @@ This Kantian framework establishes a problematic that persists in contemporary d
 
 Two classic arguments deny that creativity can be learned — arguments that resurface whenever we ask whether AI can "truly" create:
 
-The argument from imitation (after Gaut, 2010):
+**The argument from imitation** (after Gaut, 2010):
 
-1	All learning is a form of imitation.
+1. All learning is a form of imitation.
+2. Imitation is incompatible with creativity.
+3. Therefore, one cannot learn to be creative.
 
-2	Imitation is incompatible with creativity.
+**The argument from rules** (after Kant):
 
-3	Therefore, one cannot learn to be creative.
-
-The argument from rules (after Kant):
-
-1	All learning consists of following rules.
-
-2	Following rules is incompatible with creativity.
-
-3	Therefore, one cannot learn to be creative.
+1. All learning consists of following rules.
+2. Following rules is incompatible with creativity.
+3. Therefore, one cannot learn to be creative.
 
 Both arguments rest on a vision of creativity as "rupture" — a break with precedent that no systematic process can produce. As Devis observes, "whether the source of creativity is located in the divine, the unconscious, or the transcendental, these conceptions insist that authentic novelty cannot arise from something as prosaic as systematic learning" (2025, p. 156).
 
@@ -228,7 +224,7 @@ This conception rested on what Hayles identifies as a fundamental disavowal: the
 
 ## The Industrial Break and the Storage Revolution
 
-The typewriter, as Kittler demonstrates in Gramophone, Film, Typewriter, effected a revolution deeper than the printing press. Gutenberg mechanized the reproduction of text; Remington mechanized its production. For the first time, writing became "blind" — the typist's eyes no longer needed to follow the appearance of letters on the page. The hand no longer drew forms but struck keys; the body no longer inscribed but operated.
+The typewriter, as Kittler demonstrates in *Gramophone, Film, Typewriter*, effected a revolution deeper than the printing press. Gutenberg mechanized the reproduction of text; Remington mechanized its production. For the first time, writing became "blind" — the typist's eyes no longer needed to follow the appearance of letters on the page. The hand no longer drew forms but struck keys; the body no longer inscribed but operated.
 
 Nietzsche, one of the first philosopher-typists, noted the transformation: "Our writing tools work upon our thoughts." The aphorism, that compressed and percussive form, emerged not despite the machine but through it. The typewriter demanded economy, speed, the subordination of reflection to rhythm. Writing became less like painting and more like playing an instrument — or, prophetically, like programming.
 
@@ -272,7 +268,7 @@ The Pepsi Pavilion anticipated what we now call "immersive" or "interactive" art
 
 Cybernetics thus offered a new figure of authorship: not the genius expressing their interiority but the pilot (κυβερνήτης, kybernetes) navigating a dynamic system — participating in a process that exceeds individual control, responding to conditions in real time, making continuous adjustments to maintain a course that is itself subject to revision.
 
-Kittler's media archaeology, for all its power, remains bound to a certain historiography of discrete technological ruptures — the typewriter around 1900, the computer around 1945. Sadie Plant's Zeros and Ones (1997) offers a complementary genealogy that traces not ruptures but continuities: the "machinic phylum" running from the first weaving to the latest neural architectures. "Textiles themselves are very literally the software linings of all technology" (Plant, 1997, p. 12). The choice of "software" as adjective is deliberate: textiles are not merely precursors to software but its material substrate, the literal fabric from which the possibility of computation emerged.
+Kittler's media archaeology, for all its power, remains bound to a certain historiography of discrete technological ruptures — the typewriter around 1900, the computer around 1945. Sadie Plant's *Zeros and Ones* (1997) offers a complementary genealogy that traces not ruptures but continuities: the "machinic phylum" running from the first weaving to the latest neural architectures. "Textiles themselves are very literally the software linings of all technology" (Plant, 1997, p. 12). The choice of "software" as adjective is deliberate: textiles are not merely precursors to software but its material substrate, the literal fabric from which the possibility of computation emerged.
 
 The crucial figure here is the Jacquard loom, whose punch cards — anticipating both Babbage's engine and Hollerith's census machines — established the principle of automated pattern-making through binary encoding. But Plant's insight runs deeper than technological ancestry. What the loom demonstrates is the immanence of pattern to process: "The visible pattern is integral to the process which produced it; the program and the pattern are continuous" (p. 66). Unlike painting, where an image is imposed on a passive canvas, or writing, where signs are inscribed on a blank page, weaving produces patterns that emerge from the operation itself. The fabric does not represent; it is the crossing of threads.
 
@@ -334,11 +330,11 @@ The concept of embodied subjectivity does not claim that AI cannot produce valua
 
 The preceding synthesis calls, however, for further deepening. Affirming the irreducibility of embodied subjectivity is not enough: one must also understand how this subjectivity is constituted in and through technology, and what distinguishes authentic novelty from mechanical recombination.
 
-Bernard Stiegler's philosophy of technology adds a crucial dimension here. In Technics and Time, Stiegler argues that human existence is constitutively entangled with technical systems — that there is no "natural" human prior to technical mediation (Stiegler, 1998). This might seem to support the idea that AI represents simply the latest chapter in humanity's technical evolution. But Stiegler's analysis also insists on the specificity of different technical regimes and their differential effects on human temporality and memory.
+Bernard Stiegler's philosophy of technology adds a crucial dimension here. In *Technics and Time*, Stiegler argues that human existence is constitutively entangled with technical systems — that there is no "natural" human prior to technical mediation (Stiegler, 1998). This might seem to support the idea that AI represents simply the latest chapter in humanity's technical evolution. But Stiegler's analysis also insists on the specificity of different technical regimes and their differential effects on human temporality and memory.
 
 Digital technologies, for Stiegler, tend toward the "industrialization of memory" — the exteriorization of mnemonic functions that were previously sites of individuation and cultural transmission. Individuation, a concept borrowed from Simondon and reworked by Stiegler, designates the process by which an individual constitutes themselves as singular through their relations to the world and to others — a process that notably involves the appropriation and transformation of inherited knowledge. AI systems that generate on the basis of statistical patterns extracted from collective production represent an intensification of this tendency. The question is not whether technical mediation is acceptable (it is inevitable) but what forms of individuation and collective memory different technical regimes enable or prevent.
 
-Bergson provides a decisive complement. In Creative Evolution (1907), he opposes two modes of knowledge: analytical intelligence, which carves the real into discrete elements and recombines them — and intuition, which grasps duration as a continuous and indivisible flow. Authentic creativity belongs to the second: it is not the recombination of preexisting elements but the emergence of novelty through what he calls the élan vital — that thrust irreducible to mechanics by which life invents unprecedented forms (Bergson, 1907). Statistical pattern-matching, however sophisticated, belongs to the first: it carves language into tokens, recombines them according to probability distributions, and produces outputs that are, in the Bergsonian sense, intelligence without intuition — recombination without duration.
+Bergson provides a decisive complement. In *Creative Evolution* (1907), he opposes two modes of knowledge: analytical intelligence, which carves the real into discrete elements and recombines them — and intuition, which grasps duration as a continuous and indivisible flow. Authentic creativity belongs to the second: it is not the recombination of preexisting elements but the emergence of novelty through what he calls the élan vital — that thrust irreducible to mechanics by which life invents unprecedented forms (Bergson, 1907). Statistical pattern-matching, however sophisticated, belongs to the first: it carves language into tokens, recombines them according to probability distributions, and produces outputs that are, in the Bergsonian sense, intelligence without intuition — recombination without duration.
 
 Koestler's "bisociation" completes this picture by naming the creative operation itself: the sudden collision of two previously disconnected matrices of thought — two frames of reference, two logics, two registers — whose crossing produces insight (Koestler, 1964). When Duchamp places a urinal on a pedestal and industrial logic collides with museum logic, when Proust dips a madeleine in tea and present sensation explodes a past world that voluntary memory would never have retrieved — that is bisociation. AI can produce surprising combinations, but the appearance of bisociation in its outputs may reflect the human interpreter's projection rather than the system's understanding of the structural relationships between the connected matrices.
 
@@ -350,7 +346,7 @@ A reframing is called for here. Rather than debating endlessly whether the machi
 
 The phenomenological framework developed above — centered on intentionality, care (Sorge), and embodied subjectivity — faces a considerable challenge from post-humanist and neo-materialist theorists who argue that agency is always already distributed among human and nonhuman actors.
 
-N. Katherine Hayles's work on posthuman cognition argues against the assumption that consciousness and intentionality are uniquely human properties grounding creative agency. In How We Became Posthuman, Hayles traces how the liberal humanist subject — autonomous, bounded, self-directed — has always been a construction that occluded the material, technical, and informational processes constituting cognition (Hayles, 1999). From this perspective, the distinction between human intentionality and machinic processing may be less absolute than the phenomenological analysis suggests.
+N. Katherine Hayles's work on posthuman cognition argues against the assumption that consciousness and intentionality are uniquely human properties grounding creative agency. In *How We Became Posthuman*, Hayles traces how the liberal humanist subject — autonomous, bounded, self-directed — has always been a construction that occluded the material, technical, and informational processes constituting cognition (Hayles, 1999). From this perspective, the distinction between human intentionality and machinic processing may be less absolute than the phenomenological analysis suggests.
 
 Karen Barad's agential realism pushes further, arguing that agency does not belong to individual entities at all but emerges through "intra-action" — the mutual constitution of phenomena through their entanglement (Barad, 2007). The term "intra-action," coined by Barad in opposition to "interaction," insists that the entities in relation do not preexist their encounter: they mutually constitute one another in and through it. From this perspective, the question "does AI have agency?" is ill-formed; agency is not a property that entities possess but a dynamic that emerges through material-discursive practices. The human-AI assemblage in co-creative practice would constitute a site of distributed agency irreducible to either of its components.
 
@@ -358,7 +354,7 @@ The phenomenological insistence on human intentionality as the foundation of cre
 
 Yet the post-humanist challenge does not entirely dissolve the distinctions this essay draws. Even granting distributed agency, the particular configuration of the human-AI assemblage matters. The patterns of distribution — who or what exercises which capacities, under what conditions, with what consequences — remain open to analysis. The question shifts from "does the human or the AI possess creativity?" to "how is creative agency distributed across this assemblage, and what are the implications of this distribution?"
 
-The post-humanist emphasis on materiality points toward a dimension that conceptual analysis occludes: the material conditions of AI. As Crawford has documented in Atlas of AI, AI "is made from natural resources, fuel, human labor, infrastructures, logistics, histories, and classifications" (Crawford, 2021, p. 8). The discourse of meta-creativity risks obscuring this infrastructure — the energy consumption, the labor of annotators, the ecological devastation of mineral extraction.
+The post-humanist emphasis on materiality points toward a dimension that conceptual analysis occludes: the material conditions of AI. As Crawford has documented in *Atlas of AI*, AI "is made from natural resources, fuel, human labor, infrastructures, logistics, histories, and classifications" (Crawford, 2021, p. 8). The discourse of meta-creativity risks obscuring this infrastructure — the energy consumption, the labor of annotators, the ecological devastation of mineral extraction.
 
 ---
 
@@ -466,7 +462,7 @@ The emergence of large language models (LLMs) marks a third paradigmatic shift. 
 
 An LLM does not store text as a typewriter stores keystrokes or as a database stores entries. It stores statistical relationships — the probability distributions governing which tokens follow which others. "Text" exists not as a fixed sequence but as a navigable space of potential sequences, a "latent space" in which meaning is encoded geometrically. Writing with an LLM is neither retrieval nor recombination but modulation: shaping a continuous signal of potential language into a particular textual form.
 
-Kodwo Eshun's More Brilliant Than the Sun (1998) offers the most rigorous theorization of what it means to create through the synthesizer rather than merely with it. For Eshun, electronic music production is not the expression of a preexisting subject but the construction of what he calls "sonic fiction" — sound that does not represent experience but generates possible futures. The producer is not an author in the Romantic sense but a "conceptechnician" — someone who thinks through machines rather than despite them. "The synthesizer doesn't make you more human; it makes you more machine," Eshun writes — and this becoming-machine is not loss but transformation, the opening of subjective possibilities foreclosed by humanist frameworks.
+Kodwo Eshun's *More Brilliant Than the Sun* (1998) offers the most rigorous theorization of what it means to create through the synthesizer rather than merely with it. For Eshun, electronic music production is not the expression of a preexisting subject but the construction of what he calls "sonic fiction" — sound that does not represent experience but generates possible futures. The producer is not an author in the Romantic sense but a "conceptechnician" — someone who thinks through machines rather than despite them. "The synthesizer doesn't make you more human; it makes you more machine," Eshun writes — and this becoming-machine is not loss but transformation, the opening of subjective possibilities foreclosed by humanist frameworks.
 
 This Afrofuturist perspective — a cultural and philosophical current that, from Sun Ra to Octavia Butler, reimagines technologies from the Black diasporic experience — illuminates what the modulation paradigm offers beyond efficiency or augmentation. The latent space is not an archive of the past but a generator of sonic (or textual) fictions — configurations that have never existed, combinations no human would have produced, futures that emerge from the statistical sediment of collective language without being reducible to it. Writing with an LLM is engaging in conceptechnics: not expressing an interiority but navigating a machinic process that transforms the navigator in return.
 
@@ -476,13 +472,13 @@ The modulation paradigm illuminates the technical interface of neural text gener
 
 Temperature controls entropy: low values produce predictable, convergent output; high values introduce randomness, surprise, the "noise" that can become either creativity or incoherence. Psychologist Sarnoff Mednick's associative theory of creativity illuminates why: "more original ideas are usually produced late in the flow of ideation... remote from the starting point, and therefore distant" (Runco, 2010, p. 415). A high temperature forces the model to sample from those distant regions of its associative network — the statistical equivalent of reaching the far end of an associative chain where the unexpected resides. Top-K (retaining only the K most probable tokens at each generation step) and Top-P (retaining only the tokens whose cumulative probabilities reach a threshold P) parameters function as filters, constraining the vocabulary to the most likely tokens — cutting low-probability nonsense while preserving coherent prose. Frequency and presence penalties prevent repetition, forcing the output to advance. The "author" working with these parameters sculpts the texture of thought, adjusting the grain of language — just as a sound engineer, turning the knobs of an equalizer, transforms the timbre of a recording without changing its notes.
 
-A philosophical distinction sharpens the stakes of this modulation. Quentin Meillassoux — the French philosopher whose After Finitude (2006) catalyzed the "speculative realism" movement by attacking Kant's prohibition on thinking things in themselves — distinguishes chance from contingency. Chance operates within fixed parameters — a die has six faces, and while we cannot predict which will land, we know the space of possibilities. "The notion of chance is only thinkable under the condition of unalterable physical laws" (Meillassoux, 2006, p. 147). Contingency, by contrast, names an absolute openness to possibilities — including possibilities that exceed any predetermined framework, possibilities where "everything can really collapse—the trees as well as the stars, the stars as well as the laws, physical laws as well as logical laws" (p. 85). To put it another way: chance is what happens when you roll a die whose faces are known; contingency is what happens when the die itself might have an unknown number of faces, or cease to be a die.
+A philosophical distinction sharpens the stakes of this modulation. Quentin Meillassoux — the French philosopher whose *After Finitude* (2006) catalyzed the "speculative realism" movement by attacking Kant's prohibition on thinking things in themselves — distinguishes chance from contingency. Chance operates within fixed parameters — a die has six faces, and while we cannot predict which will land, we know the space of possibilities. "The notion of chance is only thinkable under the condition of unalterable physical laws" (Meillassoux, 2006, p. 147). Contingency, by contrast, names an absolute openness to possibilities — including possibilities that exceed any predetermined framework, possibilities where "everything can really collapse—the trees as well as the stars, the stars as well as the laws, physical laws as well as logical laws" (p. 85). To put it another way: chance is what happens when you roll a die whose faces are known; contingency is what happens when the die itself might have an unknown number of faces, or cease to be a die.
 
 The LLM's sampling parameters — temperature, Top-K, Top-P — clearly operate in the register of chance: they govern a distribution whose shape is known, manipulating probabilities within a fixed statistical space. But the latent space itself seems to tend toward contingency — at least from the human side of the interface: a high-dimensional manifold of potential meaning trained on billions of texts, encoding relations no individual could encompass, generating combinations no human had anticipated. Whether this constitutes authentic contingency or merely the appearance of contingency produced by our ignorance of the model's statistical bounds is a question that must be deferred. For now, one can say this: the co-creative writer works at the threshold between chance and what resembles contingency — adjusting parameters that govern a known distribution while navigating a space whose ultimate outputs cannot be fully calculated in advance.
 
 ## Allado-McDowell and the Air Age
 
-K Allado-McDowell's Pharmako-AI (2020) offers one of the most compelling practical explorations of this new regime. Written in collaboration with GPT-3, the book adopts a strict typographic convention: human input in serif, AI output in sans-serif. The visual distinction preserves the "agential cut" — the reader can trace exactly where biological cognition ends and silicon prediction begins.
+K Allado-McDowell's *Pharmako-AI* (2020) offers one of the most compelling practical explorations of this new regime. Written in collaboration with GPT-3, the book adopts a strict typographic convention: human input in serif, AI output in sans-serif. The visual distinction preserves the "agential cut" — the reader can trace exactly where biological cognition ends and silicon prediction begins.
 
 The process Allado-McDowell describes resembles musical improvisation: the human provides a prompt; the AI generates a block of text; the human prunes the output, selecting the most resonant passages and feeding them back as the next prompt.
 
@@ -496,7 +492,7 @@ Allado-McDowell's practice exemplifies what one might call quaternary authorship
 
 Yet the "Air Age" metaphor risks reproducing the very disembodiment that Hayles warns against. If we conceive of neural text generation as purely pneumatic — spirit without flesh, signal without substrate — we lose sight of the deep materiality conditioning its possibility: the server farms, the energy consumption, the labor of data annotation, the silicon architectures encoding statistical weights. Neural text is no less embodied than the printed book; it is differently embodied, its materiality distributed across networks rather than concentrated in a codex.
 
-Hayles's concept of the "technotext" proves crucial here. She defines technotexts as "literary works that strengthen, foreground, and thematize the connections between themselves as material artifacts and the imaginative realm of verbal/semiotic signifiers they instantiate" (Hayles, 2002, pp. 25–26). A technotext "opens a window on the larger connections that unite literature as a verbal art to its material forms" (Hayles, 2002, pp. 25–26). A technotext, in other words, is a text that does not let you forget it is an object — that draws your attention to the paper, the screen, the code, the device making it possible, and makes that attention part of the reading experience. Pharmako-AI, with its typographic distinction between human and machinic voice, is precisely such a technotext: it renders visible the apparatus of its own production, refusing the transparency that would allow readers to forget they are encountering a hybrid object.
+Hayles's concept of the "technotext" proves crucial here. She defines technotexts as "literary works that strengthen, foreground, and thematize the connections between themselves as material artifacts and the imaginative realm of verbal/semiotic signifiers they instantiate" (Hayles, 2002, pp. 25–26). A technotext "opens a window on the larger connections that unite literature as a verbal art to its material forms" (Hayles, 2002, pp. 25–26). A technotext, in other words, is a text that does not let you forget it is an object — that draws your attention to the paper, the screen, the code, the device making it possible, and makes that attention part of the reading experience. *Pharmako-AI*, with its typographic distinction between human and machinic voice, is precisely such a technotext: it renders visible the apparatus of its own production, refusing the transparency that would allow readers to forget they are encountering a hybrid object.
 
 > "Like all literature," Hayles insists, "technotext has a body (or rather many bodies), and the rich connections between its material properties and its content create it as a literary work in the full sense of the term" (p. 32). The co-creative text has many bodies indeed: the biological body of the human author, the silicon body of the GPU cluster, the electromagnetic body of the network, the phosphorescent body of the screen. None of these can be abstracted away without something essential to the work's meaning being lost.
 
@@ -608,9 +604,9 @@ Hayles provides the synthesis of these perspectives through her concept of "emer
 
 Applied to co-creative writing, this means that the "materiality" of an AI-generated text — its specific texture, resistance, affordances — emerges through the act of collaboration itself. The latent space has no predetermined materiality; it acquires material specificity through the parameters chosen, the prompts given, the iterations performed, the curation exercised. Materiality is not a substrate upon which meaning is inscribed but a phenomenon produced by the entanglement of human practice and computational process.
 
-Crucially, this engagement is not purely cognitive. Hayles insists on writing "mindbody" as a single word to emphasize that digital interaction engages the whole embodied being: "The mindbody is engaged, not merely mind or body alone. Hence the force of material metaphors, for they control, direct, and amplify this traffic between the physical actions the work calls forth and structures, and the imaginative world the artifact creates with all its verbal, visual, acoustic, kinesthetic, and functional properties" (p. 48). The co-creative writer types, scrolls, selects, copies, deletes — all physical actions that shape the emerging text as surely as conceptual decisions about tone and content. The hands on the keyboard, the eyes scanning the screen, the rhythmic alternation of prompt and response: none of this is incidental to co-creativity but constitutive of it.
+Crucially, this engagement is not purely cognitive. Hayles insists on writing "*mindbody*" as a single word to emphasize that digital interaction engages the whole embodied being: "The *mindbody* is engaged, not merely mind or body alone. Hence the force of material metaphors, for they control, direct, and amplify this traffic between the physical actions the work calls forth and structures, and the imaginative world the artifact creates with all its verbal, visual, acoustic, kinesthetic, and functional properties" (p. 48). The co-creative writer types, scrolls, selects, copies, deletes — all physical actions that shape the emerging text as surely as conceptual decisions about tone and content. The hands on the keyboard, the eyes scanning the screen, the rhythmic alternation of prompt and response: none of this is incidental to co-creativity but constitutive of it.
 
-Pierre Huyghe's installations extend this insight from the side of the visual arts. In Untilled (2012) and After ALife Ahead (2017), Huyghe creates not works but milieus: self-evolving ecosystems of living organisms, algorithms, and cultural fragments operating beyond the artist's control — exactly the kind of mindbody engagement that Hayles theorizes, but transposed to the scale of an entire environment. Analyzing Huyghe's working notes, Flora Katz identifies his concept of the work as a "compost of fictions": fragments of culture deposited and left to react through chain reactions exceeding their author's anticipation (Katz, 2022). The latent space is similarly a compost — texts from countless sources, decomposed into statistical relationships, awaiting prompts that will trigger unpredictable recombinations. What emerges is not a representation of the training data but a precipitation from the continuous metabolism of collective language — an ecosystem in which human intention participates but does not dominate.
+Pierre Huyghe's installations extend this insight from the side of the visual arts. In *Untilled* (2012) and *After ALife Ahead* (2017), Huyghe creates not works but milieus: self-evolving ecosystems of living organisms, algorithms, and cultural fragments operating beyond the artist's control — exactly the kind of *mindbody* engagement that Hayles theorizes, but transposed to the scale of an entire environment. Analyzing Huyghe's working notes, Flora Katz identifies his concept of the work as a "compost of fictions": fragments of culture deposited and left to react through chain reactions exceeding their author's anticipation (Katz, 2022). The latent space is similarly a compost — texts from countless sources, decomposed into statistical relationships, awaiting prompts that will trigger unpredictable recombinations. What emerges is not a representation of the training data but a precipitation from the continuous metabolism of collective language — an ecosystem in which human intention participates but does not dominate.
 
 ## The Hidden Third: Infrastructure and Enclosure
 
@@ -622,7 +618,7 @@ This reframes co-creation as rental, not ownership. The writer does not compose 
 
 This dependency raises a question that cannot be evaded: are we authors using a tool, or vectors of a propagation that uses us? Can one conceive of a cunning of the algorithm? AI has no intention, no strategy, no will to power. Yet it propagates. Every co-created text published increases its presence in the cultural world. Every use reinforces dependence, habituates practice, normalizes presence. AI does not "want" to insert itself; but it inserts itself — through us, by our means, thanks to our labor.
 
-The implications for practice are considerable. The "embodied subjectivity" that Devis identifies as irreducibly human operates within conditions it does not control. The creative agency we exercise is real, but it is agency within constraint. De Certeau, in The Practice of Everyday Life (1980), provides the precise vocabulary for this situation. Strategy, he writes, is "the calculation of power relationships that becomes possible as soon as a subject with will and power can be isolated from an 'environment.' It postulates a place that can be delimited as its own" (de Certeau, 1984, p. 36). OpenAI, Anthropic, Google possess such a proper place: the servers, the models, the terms of service, the pricing. Tactics, by contrast, "has no place other than that of the other. It must therefore play with the terrain imposed upon it, organized as it is by the law of an alien force. [...] In short, it is an art of the weak" (pp. 36–37).
+The implications for practice are considerable. The "embodied subjectivity" that Devis identifies as irreducibly human operates within conditions it does not control. The creative agency we exercise is real, but it is agency within constraint. De Certeau, in *The Practice of Everyday Life* (1980), provides the precise vocabulary for this situation. Strategy, he writes, is "the calculation of power relationships that becomes possible as soon as a subject with will and power can be isolated from an 'environment.' It postulates a place that can be delimited as its own" (de Certeau, 1984, p. 36). OpenAI, Anthropic, Google possess such a proper place: the servers, the models, the terms of service, the pricing. Tactics, by contrast, "has no place other than that of the other. It must therefore play with the terrain imposed upon it, organized as it is by the law of an alien force. [...] In short, it is an art of the weak" (pp. 36–37).
 
 The co-creative writer occupies this position: operating inside an enclosure they did not design, with a tool whose weights, updates, and continuity they do not control. The question is not whether to work within these enclosures — for now, there is no outside — but how to poach within them critically, attentively, without forgetting the third party that profits from every exchange.
 
@@ -658,7 +654,7 @@ If the paradigm of inscription demanded calligraphy and the paradigm of processi
 
 This is not a lesser form of authorship but a different one. The Romantic genius drew from the well of interiority; the modernist operator processed the materials of culture; the co-creative writer tunes the resonance between human intention and statistical pattern. Each regime produces texts the others could not.
 
-Michel de Certeau's concept of bricolage illuminates this discipline. The bricoleur, in de Certeau's account, makes do with what's at hand, improvising within constraints rather than designing from first principles (The Practice of Everyday Life, 1984). Unlike the engineer who commands resources, the bricoleur operates tactically within systems they do not control. The co-creative writer occupies precisely this position: they cannot rewrite the model's weights or redesign its architecture, but they can craft prompts that elicit unexpected responses, push parameters toward productive instability, and iterate against default behaviors. This is not passive consumption but active poaching — extracting from the latent space combinations the system was never designed to produce. Poaching, in de Certeau's sense, is the way a reader — or here, a user — diverts what is offered to them, traces their own paths through a territory belonging to others, and takes from it what they need for their own purposes.
+Michel de Certeau's concept of bricolage illuminates this discipline. The bricoleur, in de Certeau's account, makes do with what's at hand, improvising within constraints rather than designing from first principles (*The Practice of Everyday Life*, 1984). Unlike the engineer who commands resources, the bricoleur operates tactically within systems they do not control. The co-creative writer occupies precisely this position: they cannot rewrite the model's weights or redesign its architecture, but they can craft prompts that elicit unexpected responses, push parameters toward productive instability, and iterate against default behaviors. This is not passive consumption but active poaching — extracting from the latent space combinations the system was never designed to produce. Poaching, in de Certeau's sense, is the way a reader — or here, a user — diverts what is offered to them, traces their own paths through a territory belonging to others, and takes from it what they need for their own purposes.
 
 The discipline of co-creativity also includes a counter-practice: knowing when not to intervene. John Cage — the American composer whose use of chance operations, silence, and indeterminacy redefined mid-twentieth-century music — described his compositional goal as learning to "let the sounds go where they go, and to let them be what they are" (Cage, For the Birds, 1976, p. 80). This "letting be" does not mean passivity but rather a deliberate withdrawal from determination — creating the conditions for emergence rather than forcing outcomes. Applied to co-creative writing, this suggests a rhythm of intervention and withdrawal: prompt, then step back; prune, then allow proliferation; direct, then attend to what emerges unsolicited. The writer who overdetermines — who corrects every deviation, prunes every surprise, forces every output toward a predetermined goal — forecloses the contingency that makes co-creation generative. The tactical poaching de Certeau describes is complemented by moments of tactical retreat: allowing the model to develop through chain reactions exceeding authorial anticipation, treating the latent space not as a resource to be exploited but as an ecosystem whose dynamics the writer observes as much as directs.
 
@@ -670,7 +666,7 @@ AI cannot occupy this position — it cannot take responsibility for its product
 
 LLMs "hallucinate" — they generate outputs that sound plausible but are factually incorrect: citations that do not exist, events that never occurred. In a regime that values accuracy, hallucination is a failure. But in a regime that values creativity, hallucination is variance — the noise from which signal emerges.
 
-A poetics of the glitch revalues these fractures. Rosa Menkman's Glitch Studies Manifesto insists that "the dominant, continuing search for a noiseless channel has been — and will always be — no more than a regrettable, ill-fated dogma"; every medium carries its "inherent fingerprints of failure" (Menkman, 2011, p. 336). Legacy Russell's Glitch Feminism extends this technical insight into the political: "an error in a social system that has already been disrupted by economic, racial, social, sexual, and cultural stratification... is perhaps not, in fact, an error at all, but rather a much-needed erratum" (Russell, 2020, pp. 7–8). For Russell, "To glitch is to embrace malfunction, and to embrace malfunction is in and of itself an expression that starts with 'no'" (p. 29).
+A poetics of the glitch revalues these fractures. Rosa Menkman's *Glitch Studies Manifesto* insists that "the dominant, continuing search for a noiseless channel has been — and will always be — no more than a regrettable, ill-fated dogma"; every medium carries its "inherent fingerprints of failure" (Menkman, 2011, p. 336). Legacy Russell's *Glitch Feminism* extends this technical insight into the political: "an error in a social system that has already been disrupted by economic, racial, social, sexual, and cultural stratification... is perhaps not, in fact, an error at all, but rather a much-needed erratum" (Russell, 2020, pp. 7–8). For Russell, "To glitch is to embrace malfunction, and to embrace malfunction is in and of itself an expression that starts with 'no'" (p. 29).
 
 The co-creative writer inhabits both registers. Hallucination is a technical artifact — a window onto the model's statistical unconscious, where the seams of its training show through. But it is also an invitation to refuse the ideology of seamless output, to treat breakdown as breakthrough. The "clean" signal is predictable, lifeless; the glitched signal has texture, surprise, the potential for transformation. Managing hallucination as a parameter — sometimes welcoming its generative potential, sometimes filtering it out — is to practice a discipline of creative refusal within the proprietary enclosure.
 
@@ -682,7 +678,7 @@ The co-creative writer inhabits both registers. Hallucination is a technical art
 
 Significant creative work arises from deliberate, sustained engagement with its materials. This immersion not only refines technical skill but nourishes intrinsic motivation. When AI automates growing portions of the writing process — from research to drafting to revision — the writer risks sliding from craftsperson to curator, from one who makes to one who selects.
 
-> "Tasks once demanding reflective judgment and interpretive risk taking may devolve into a series of choices from algorithmically generated menus" (Devis, 2025, p. 192). The emotional resonance that emerges from struggling with material — what Richard Sennett, in The Craftsman (2008), calls "getting one's hands dirty" — recedes, replaced by the detached evaluation of machinic productions. Over time, this frictionless workflow can weaken intrinsic motivation as the writer's sense of creative agency gives way to what is effectively "an automated compilation of formal possibilities."
+> "Tasks once demanding reflective judgment and interpretive risk taking may devolve into a series of choices from algorithmically generated menus" (Devis, 2025, p. 192). The emotional resonance that emerges from struggling with material — what Richard Sennett, in *The Craftsman* (2008), calls "getting one's hands dirty" — recedes, replaced by the detached evaluation of machinic productions. Over time, this frictionless workflow can weaken intrinsic motivation as the writer's sense of creative agency gives way to what is effectively "an automated compilation of formal possibilities."
 
 Beyond individual craft, over-automation threatens the cultural ecosystem from which creativity draws its materials. The critique of the "culture industry" — standardized cultural products dulling critical faculties and reducing art to commodity — is intensified by AI-driven generation through what Devis calls "feedback loops of aesthetic self-replication" (2025, p. 192).
 
@@ -722,11 +718,11 @@ The very possibility of rupture — the kind that redefines the parameters of wh
 
 Yet this diagnosis must not end in resignation. If the danger of meta-creativity is the dissolution of commitment, the response must be a deliberate practice of re-commitment — strategies that restore existential weight to decisions made within the regime of infinite reversibility.
 
-The first counterweight is arbitrary constraint. The Oulipo — that Ouvroir de littérature potentielle (Workshop of Potential Literature) founded in 1960 by Raymond Queneau and François Le Lionnais, bringing together writers and mathematicians to explore the potentialities of literature under formal constraint — understood that creative freedom often emerges from self-imposed limitation: the lipogram (an entire text written without using a given letter, as in Perec's A Void, a novel of nearly 300 pages without the letter "e"), the palindrome, the constraint that forces the writer toward territories they would never have chosen. Mark Z. Danielewski pushes this logic to the point of vertigo in House of Leaves (2000), where constraint is no longer merely linguistic but architectural: the text folds back upon itself, footnotes refer to nonexistent sources, the layout itself — spirals, inverted passages, nearly empty pages — becomes a material labyrinth forcing the reader to physically inhabit the narrative's disorientation. Allado-McDowell, in Pharmako-AI, intuitively transposes this principle to co-creative writing: the rules of the game are set in advance — the initial prompt orients without determining, each GPT-3 output is accepted or trimmed but never regenerated indefinitely, the text advances without backtracking, like an improvisation recorded in a single take. Constraint reintroduces irreversibility by decree, restoring the stakes of decisions that the platform would otherwise make infinitely revisable.
+The first counterweight is arbitrary constraint. The Oulipo — that Ouvroir de littérature potentielle (Workshop of Potential Literature) founded in 1960 by Raymond Queneau and François Le Lionnais, bringing together writers and mathematicians to explore the potentialities of literature under formal constraint — understood that creative freedom often emerges from self-imposed limitation: the lipogram (an entire text written without using a given letter, as in Perec's A Void, a novel of nearly 300 pages without the letter "e"), the palindrome, the constraint that forces the writer toward territories they would never have chosen. Mark Z. Danielewski pushes this logic to the point of vertigo in *House of Leaves* (2000), where constraint is no longer merely linguistic but architectural: the text folds back upon itself, footnotes refer to nonexistent sources, the layout itself — spirals, inverted passages, nearly empty pages — becomes a material labyrinth forcing the reader to physically inhabit the narrative's disorientation. Allado-McDowell, in *Pharmako-AI*, intuitively transposes this principle to co-creative writing: the rules of the game are set in advance — the initial prompt orients without determining, each GPT-3 output is accepted or trimmed but never regenerated indefinitely, the text advances without backtracking, like an improvisation recorded in a single take. Constraint reintroduces irreversibility by decree, restoring the stakes of decisions that the platform would otherwise make infinitely revisable.
 
 The second counterweight is temporal commitment. The endless revisability of digital text can be interrupted by the imposition of deadlines, public declarations, the ritual of "shipping" that forces closure. To publish is to foreclose; to share is to commit. The tactical writer (in de Certeau's sense) can use these social forms to create the irreversibility that the technical apparatus dissolves.
 
-The third counterweight is embodied practice. As Hayles insists, the "mindbody" engages in co-creation — the hands on the keyboard, the rhythm of prompt and response. Cultivating awareness of this embodiment can counter the disembodied abstraction of endless iteration. When the body tires, when attention frays, when the hands want to stop — these signals can become invitations to commit rather than to refine further. Fatigue is a form of wisdom; it says enough.
+The third counterweight is embodied practice. As Hayles insists, the "*mindbody*" engages in co-creation — the hands on the keyboard, the rhythm of prompt and response. Cultivating awareness of this embodiment can counter the disembodied abstraction of endless iteration. When the body tires, when attention frays, when the hands want to stop — these signals can become invitations to commit rather than to refine further. Fatigue is a form of wisdom; it says enough.
 
 These counterweights do not escape the platform's enclosure; they operate within it. But they transform the practice from passive curation to active engagement, from skimming the latent space to making decisions that matter. The event, foreclosed by the apparatus, can be reintroduced by the practitioner who refuses the apparatus's invitation to infinite deferral.
 
@@ -736,13 +732,13 @@ We began with the question of the hand that writes. Through Kittler's media arch
 
 The modulation paradigm captures what is genuinely new about this situation: the writer shaping the texture of thought through the manipulation of parameters governing randomness, constraint, and flow. This is not the death of authorship but its redistribution — between biological neurons and silicon weights, between prompt and response, across the iterative loop of human intention and machinic pattern.
 
-Yet even in embracing the metaphor of modulation, one must remember that the traffic between human and machine is not purely symbolic. As Hayles insists, this is material metaphor — "the transfer takes place not between one word and another but rather between a symbol (more properly, a network of symbols) and material apparatus" (Hayles, 2002, p. 22). The co-creative writer does not manipulate disembodied ideas but engages with keyboards and screens, with the physical rhythm of prompting and waiting, with the embodied practice of reading and selecting. "The mindbody is engaged, not merely mind or body alone" (p. 48). To forget this materiality is to misunderstand what co-creation demands: not only cognitive flexibility but a new discipline of the hands, the eyes, the proprioceptive sense that dictates when to intervene and when to let the machine run.
+Yet even in embracing the metaphor of modulation, one must remember that the traffic between human and machine is not purely symbolic. As Hayles insists, this is material metaphor — "the transfer takes place not between one word and another but rather between a symbol (more properly, a network of symbols) and material apparatus" (Hayles, 2002, p. 22). The co-creative writer does not manipulate disembodied ideas but engages with keyboards and screens, with the physical rhythm of prompting and waiting, with the embodied practice of reading and selecting. "The *mindbody* is engaged, not merely mind or body alone" (p. 48). To forget this materiality is to misunderstand what co-creation demands: not only cognitive flexibility but a new discipline of the hands, the eyes, the proprioceptive sense that dictates when to intervene and when to let the machine run.
 
 Plant's textile genealogy offers a crucial corrective to narratives that would make co-creativity with AI appear unprecedented. The loom preceded the computer; distributed processing preceded the neural network; the recursion of the "cycle of cycles" was theorized by Ada Lovelace before any silicon chip existed to implement it. What appears as rupture is also continuity — the latest unfolding of a machinic phylum running from the spindle to the server. "The visible pattern is integral to the process which produced it; the program and the pattern are continuous" (Plant, 1997, p. 66). The co-creative text, like the woven textile, is not representation imposed on a substrate but pattern emergent from process.
 
 ## Pierre Menard, Author of the Quixote
 
-Before drawing final conclusions, we must examine a literary figure that anticipates, with uncanny precision, the paradoxes of co-creativity: Jorge Luis Borges's Pierre Menard. "Pierre Menard, Author of the Quixote" ("Pierre Menard, autor del Quijote"), first published in the Argentine journal Sur in May 1939 and later collected in Ficciones (1944), presents itself as an obituary notice written by a pedantic narrator, cataloguing the visible and invisible oeuvre of an obscure twentieth-century French Symbolist poet. The invisible oeuvre — the only one that matters — is an extraordinary project: to produce, not copy, not transcribe, but truly write — several chapters of Cervantes's Don Quixote. Not another Quixote, but the Quixote — word for word, comma for comma. The narrator insists on a crucial distinction:
+Before drawing final conclusions, we must examine a literary figure that anticipates, with uncanny precision, the paradoxes of co-creativity: Jorge Luis Borges's Pierre Menard. "Pierre Menard, Author of the Quixote" ("Pierre Menard, autor del Quijote"), first published in the Argentine journal Sur in May 1939 and later collected in *Ficciones* (1944), presents itself as an obituary notice written by a pedantic narrator, cataloguing the visible and invisible oeuvre of an obscure twentieth-century French Symbolist poet. The invisible oeuvre — the only one that matters — is an extraordinary project: to produce, not copy, not transcribe, but truly write — several chapters of Cervantes's *Don Quixote*. Not another Quixote, but the Quixote — word for word, comma for comma. The narrator insists on a crucial distinction:
 
 > "He did not want to compose another Quixote — which is easy — but the Quixote itself. Needless to say, he never contemplated a mechanical transcription of the original; he did not propose to copy it. His admirable ambition was to produce a few pages which would coincide — word for word and line for line — with those of Miguel de Cervantes." (Borges, 1944/1962, p. 39)
 
@@ -760,7 +756,7 @@ The co-creative practitioner who selects, refines, and presents AI-generated tex
 
 ## Duchamp and the Readymade: Selection as Creation
 
-Marcel Duchamp's readymades provide a complementary paradigm. If Menard shows that the same text changes meaning depending on the context of its production, Duchamp shows that the selection of an object can constitute a creative act in its own right. When he submitted an industrial urinal signed "R. Mutt" and titled Fountain to the Society of Independent Artists exhibition in April 1917, he accomplished a gesture that continues to reverberate through art theory. The anonymous text published in the Dadaist magazine The Blind Man in defense of the work — generally attributed to Duchamp himself — formulates the argument with definitive precision: "Whether Mr Mutt made the fountain with his own hands or not has no importance. He CHOSE it. He took an article of life, placed it so that its useful significance disappeared under the new title and point of view — created a new thought for that object" ("The Richard Mutt Case," The Blind Man, no. 2, May 1917, p. 5).
+Marcel Duchamp's readymades provide a complementary paradigm. If Menard shows that the same text changes meaning depending on the context of its production, Duchamp shows that the selection of an object can constitute a creative act in its own right. When he submitted an industrial urinal signed "R. Mutt" and titled Fountain to the Society of Independent Artists exhibition in April 1917, he accomplished a gesture that continues to reverberate through art theory. The anonymous text published in the Dadaist magazine *The Blind Man* in defense of the work — generally attributed to Duchamp himself — formulates the argument with definitive precision: "Whether Mr Mutt made the fountain with his own hands or not has no importance. He CHOSE it. He took an article of life, placed it so that its useful significance disappeared under the new title and point of view — created a new thought for that object" ("The Richard Mutt Case," *The Blind Man*, no. 2, May 1917, p. 5).
 
 The readymade establishes that creativity can operate entirely at the level of selection and recontextualization. The object need not be fabricated by the artist; what matters is the conceptual operation performed upon it. This logic extends directly to co-creativity with AI: the practitioner who selects, frames, and presents AI-generated material accomplishes a Duchampian gesture — creating "a new thought" for material they did not make with their own hands.
 
@@ -806,9 +802,9 @@ Pierre Menard can still write the Quixote; we will read it.
 
 ## Bibliography
 
-Allado-McDowell, K. Pharmako-AI. London: Ignota Books, 2020.
+Allado-McDowell, K. *Pharmako-AI*. London: Ignota Books, 2020.
 
-Allado-McDowell, K. Air Age Blueprint. London: Ignota Books, 2022.
+Allado-McDowell, K. *Air Age Blueprint*. London: Ignota Books, 2022.
 
 Amabile, Teresa M. The Social Psychology of Creativity. New York: Springer, 1983.
 
@@ -816,29 +812,29 @@ Amabile, Teresa M., and Michael G. Pratt. "The Dynamic Componential Model of Cre
 
 Assayag, Gérard. "Human-Machine Co-Creativity, a Reflection on Symbolic Indisciplines." In Artisticiel, Experiments in Cyber-Human Improvisations. JIM: Revue francophone d'informatique et musique, 2020.
 
-Barad, Karen. Meeting the Universe Halfway: Quantum Physics and the Entanglement of Matter and Meaning. Durham: Duke University Press, 2007.
+Barad, Karen. *Meeting the Universe Halfway*: Quantum Physics and the Entanglement of Matter and Meaning. Durham: Duke University Press, 2007.
 
-Bergson, Henri. Creative Evolution. Translated by Arthur Mitchell. New York: Henry Holt, 1911. [Originally published as L'Évolution créatrice. Paris: Félix Alcan, 1907.]
+Bergson, Henri. *Creative Evolution*. Translated by Arthur Mitchell. New York: Henry Holt, 1911. [Originally published as L'Évolution créatrice. Paris: Félix Alcan, 1907.]
 
 Boden, Margaret A. "Creativity and Artificial Intelligence." Artificial Intelligence 103, nos. 1–2 (1998): 347–356.
 
-Boden, Margaret A. The Creative Mind: Myths and Mechanisms. 2nd ed. London: Routledge, 2004.
+Boden, Margaret A. *The Creative Mind*: Myths and Mechanisms. 2nd ed. London: Routledge, 2004.
 
-Borges, Jorge Luis. "Pierre Menard, Author of the Quixote" [1939]. In Ficciones. Buenos Aires: Sur, 1944. [English edition: In Ficciones. Translated by Anthony Bonner et al. New York: Grove Press, 1962.]
+Borges, Jorge Luis. "Pierre Menard, Author of the Quixote" [1939]. In *Ficciones*. Buenos Aires: Sur, 1944. [English edition: In *Ficciones*. Translated by Anthony Bonner et al. New York: Grove Press, 1962.]
 
 Brentano, Franz. Psychology from an Empirical Standpoint. London: Routledge, 2012. [Originally published as Psychologie vom empirischen Standpunkt. Leipzig: Duncker & Humblot, 1874.]
 
 Burnham, Jack. "Systems Esthetics." Artforum 7, no. 1 (September 1968): 30–35.
 
-Cage, John. For the Birds: Conversations with Daniel Charles. Boston: Marion Boyars, 1981. [Originally published as Pour les oiseaux: entretiens avec Daniel Charles. Paris: L'Herne, 1976.]
+Cage, John. For the Birds: Conversations with Daniel Charles. Boston: Marion Boyars, 1981. [Originally published as *Pour les oiseaux*: entretiens avec Daniel Charles. Paris: L'Herne, 1976.]
 
 Craft, Anna. "The Limits to Creativity in Education: Dilemmas for the Educator." British Journal of Educational Studies 51, no. 2 (2003): 113–127.
 
-Crawford, Kate. Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence. New Haven: Yale University Press, 2021.
+Crawford, Kate. *Atlas of AI*: Power, Politics, and the Planetary Costs of Artificial Intelligence. New Haven: Yale University Press, 2021.
 
 Csikszentmihalyi, Mihaly. "The Systems Model of Creativity and Its Applications." In The Wiley Handbook of Genius, edited by Dean Keith Simonton, 533–545. Hoboken: Wiley, 2015.
 
-de Certeau, Michel. The Practice of Everyday Life. Translated by Steven Rendall. Berkeley: University of California Press, 1984. [Originally published as L'Invention du quotidien, 1: Arts de faire. Paris: Gallimard, 1980.]
+de Certeau, Michel. *The Practice of Everyday Life*. Translated by Steven Rendall. Berkeley: University of California Press, 1984. [Originally published as *L'Invention du quotidien*, 1: Arts de faire. Paris: Gallimard, 1980.]
 
 Devis, Ninon. "Creative Deep Learning on Real Time Embedded Architectures." PhD diss., Sorbonne Université, 2025.
 
@@ -846,37 +842,37 @@ Eno, Brian. "Scenius, or Communal Genius." In A Year with Swollen Appendices. Lo
 
 Esling, Philippe, and Ninon Devis. "Creativity in the Era of Artificial Intelligence." Preprint, arXiv:2008.05959, 2020.
 
-Eshun, Kodwo. More Brilliant Than the Sun: Adventures in Sonic Fiction. London: Quartet Books, 1998.
+Eshun, Kodwo. *More Brilliant Than the Sun*: Adventures in Sonic Fiction. London: Quartet Books, 1998.
 
 Flusser, Vilém. Towards a Philosophy of Photography. Translated by Anthony Mathews. London: Reaktion Books, 2000. [Originally published as Für eine Philosophie der Fotografie. Göttingen: European Photography, 1983.]
 
-Gabora, Liane, and Scott Barry Kaufman. "Evolutionary Approaches to Creativity." In The Cambridge Handbook of Creativity, edited by James C. Kaufman and Robert J. Sternberg, 279–300. Cambridge: Cambridge University Press, 2010.
+Gabora, Liane, and Scott Barry Kaufman. "Evolutionary Approaches to Creativity." In *The Cambridge Handbook of Creativity*, edited by James C. Kaufman and Robert J. Sternberg, 279–300. Cambridge: Cambridge University Press, 2010.
 
 Gaut, Berys. "Creativity and Rationality." The Journal of Aesthetics and Art Criticism 70, no. 3 (2012): 259–270.
 
-Hayles, N. Katherine. How We Became Posthuman: Virtual Bodies in Cybernetics, Literature, and Informatics. Chicago: University of Chicago Press, 1999.
+Hayles, N. Katherine. *How We Became Posthuman*: Virtual Bodies in Cybernetics, Literature, and Informatics. Chicago: University of Chicago Press, 1999.
 
-Hayles, N. Katherine. Writing Machines. Cambridge, MA: MIT Press, 2002.
+Hayles, N. Katherine. *Writing Machines*. Cambridge, MA: MIT Press, 2002.
 
-Heidegger, Martin. Being and Time. Translated by John Macquarrie and Edward Robinson. Oxford: Blackwell, 1993. [Originally published as Sein und Zeit. Tübingen: Max Niemeyer, 1927.]
+Heidegger, Martin. *Being and Time*. Translated by John Macquarrie and Edward Robinson. Oxford: Blackwell, 1993. [Originally published as Sein und Zeit. Tübingen: Max Niemeyer, 1927.]
 
 Heidegger, Martin. The Principle of Reason. Translated by Reginald Lilly. Bloomington: Indiana University Press, 1991. [Originally published as Der Satz vom Grund. Pfullingen: Neske, 1957.]
 
-Husserl, Edmund. Logical Investigations. London: Routledge, 2002. [Originally published as Logische Untersuchungen. Halle: Max Niemeyer, 1900–1901.]
+Husserl, Edmund. *Logical Investigations*. London: Routledge, 2002. [Originally published as Logische Untersuchungen. Halle: Max Niemeyer, 1900–1901.]
 
-Kant, Immanuel. Critique of the Power of Judgment. Translated by Paul Guyer. Cambridge: Cambridge University Press, 2000. [Originally published as Kritik der Urteilskraft. Berlin: Lagarde und Friedrich, 1790.]
+Kant, Immanuel. *Critique of the Power of Judgment*. Translated by Paul Guyer. Cambridge: Cambridge University Press, 2000. [Originally published as Kritik der Urteilskraft. Berlin: Lagarde und Friedrich, 1790.]
 
 Katz, Flora. "Les notes de Pierre Huyghe: émergence d'une œuvre non-anthropocentrée." PhD diss., Paris I Université 2022.
 
-Kaufman, James C., and Robert J. Sternberg, eds. The Cambridge Handbook of Creativity. Cambridge: Cambridge University Press, 2010.
+Kaufman, James C., and Robert J. Sternberg, eds. *The Cambridge Handbook of Creativity*. Cambridge: Cambridge University Press, 2010.
 
-Kittler, Friedrich. Discourse Networks 1800/1900. Stanford: Stanford University Press, 1990.
+Kittler, Friedrich. *Discourse Networks 1800/1900*. Stanford: Stanford University Press, 1990.
 
-Kittler, Friedrich. Gramophone, Film, Typewriter. Stanford: Stanford University Press, 1999.
+Kittler, Friedrich. *Gramophone, Film, Typewriter*. Stanford: Stanford University Press, 1999.
 
 Klüver, Billy. "The Pavilion." In Pavilion, edited by Billy Klüver, Julie Martin, and Barbara Rose, 73–99. New York: E.P. Dutton, 1972.
 
-Koestler, Arthur. The Act of Creation. London: Hutchinson, 1964.
+Koestler, Arthur. *The Act of Creation*. London: Hutchinson, 1964.
 
 Zaterini, Matteo Jacopo, Corrado Punzi, and Mariano Longo, eds. Creativity and Sociology: Doing Social Research with and on Artistic Sources. London: Routledge, 2025.
 
@@ -884,31 +880,31 @@ Manovich, Lev. "After AI Aesthetics: The Age of Prediction." Preface, forthcomin
 
 Martindale, Colin. "Biological Bases of Creativity." In Handbook of Creativity, edited by Robert J. Sternberg, 137–152. Cambridge: Cambridge University Press, 1999.
 
-Meillassoux, Quentin. After Finitude: An Essay on the Necessity of Contingency. Translated by Ray Brassier. London: Continuum, 2008. [Originally published as Après la finitude: essai sur la nécessité de la contingence. Paris: Seuil, 2006.]
+Meillassoux, Quentin. *After Finitude*: An Essay on the Necessity of Contingency. Translated by Ray Brassier. London: Continuum, 2008. [Originally published as Après la finitude: essai sur la nécessité de la contingence. Paris: Seuil, 2006.]
 
-Menkman, Rosa. "Glitch Studies Manifesto." In Video Vortex Reader II, edited by Geert Lovink and Rachel Somers Miles, 336–347. Amsterdam: Institute of Network Cultures, 2011.
+Menkman, Rosa. "*Glitch Studies Manifesto*." In Video Vortex Reader II, edited by Geert Lovink and Rachel Somers Miles, 336–347. Amsterdam: Institute of Network Cultures, 2011.
 
-Nowotny, Stefan. "The Curator Crosses the River: A Fable." In Critique of Creativity, edited by Gerald Raunig, Gene Ray, and Ulf Wuggenig, 9–26. London: Mayfly Books, 2011.
+Nowotny, Stefan. "The Curator Crosses the River: A Fable." In *Critique of Creativity*, edited by Gerald Raunig, Gene Ray, and Ulf Wuggenig, 9–26. London: Mayfly Books, 2011.
 
-Plant, Sadie. Zeros and Ones: Digital Women and the New Technoculture. New York: Doubleday, 1997.
+Plant, Sadie. *Zeros and Ones*: Digital Women and the New Technoculture. New York: Doubleday, 1997.
 
-Plucker, Jonathan A., and Matthew C. Makel. "Assessment of Creativity." In The Cambridge Handbook of Creativity, edited by Kaufman and Sternberg, 48–73. 2010.
+Plucker, Jonathan A., and Matthew C. Makel. "Assessment of Creativity." In *The Cambridge Handbook of Creativity*, edited by Kaufman and Sternberg, 48–73. 2010.
 
-Raunig, Gerald, Gene Ray, and Ulf Wuggenig, eds. Critique of Creativity: Precarity, Subjectivity, and Resistance in the 'Creative Industries'. London: Mayfly Books, 2011.
+Raunig, Gerald, Gene Ray, and Ulf Wuggenig, eds. *Critique of Creativity*: Precarity, Subjectivity, and Resistance in the 'Creative Industries'. London: Mayfly Books, 2011.
 
-Runco, Mark A. "Divergent Thinking, Creativity, and Ideation." In The Cambridge Handbook of Creativity, edited by Kaufman and Sternberg, 413–446. 2010.
+Runco, Mark A. "Divergent Thinking, Creativity, and Ideation." In *The Cambridge Handbook of Creativity*, edited by Kaufman and Sternberg, 413–446. 2010.
 
-Runco, Mark A., and Robert S. Albert. "Creativity Research: A Historical View." In The Cambridge Handbook of Creativity, edited by Kaufman and Sternberg, 3–19. 2010.
+Runco, Mark A., and Robert S. Albert. "Creativity Research: A Historical View." In *The Cambridge Handbook of Creativity*, edited by Kaufman and Sternberg, 3–19. 2010.
 
 Runco, Mark A., and Ivonne Chand. "Cognition and Creativity." Educational Psychology Review 7, no. 3 (1995): 243–267.
 
-Russell, Legacy. Glitch Feminism: A Manifesto. London: Verso Books, 2020.
+Russell, Legacy. *Glitch Feminism*: A Manifesto. London: Verso Books, 2020.
 
-Sennett, Richard. The Craftsman. New Haven: Yale University Press, 2008.
+Sennett, Richard. *The Craftsman*. New Haven: Yale University Press, 2008.
 
-Simondon, Gilbert. On the Mode of Existence of Technical Objects. Minneapolis: Univocal, 2017. [Originally published as Du mode d'existence des objets techniques. Paris: Aubier, 1958.]
+Simondon, Gilbert. *On the Mode of Existence of Technical Objects*. Minneapolis: Univocal, 2017. [Originally published as Du mode d'existence des objets techniques. Paris: Aubier, 1958.]
 
-Stiegler, Bernard. Technics and Time, 1: The Fault of Epimetheus. Stanford: Stanford University Press, 1998. [Originally published as La Technique et le Temps, 1: La Faute d'Épiméthée. Paris: Galilée, 1994.]
+Stiegler, Bernard. *Technics and Time*, 1: The Fault of Epimetheus. Stanford: Stanford University Press, 1998. [Originally published as La Technique et le Temps, 1: La Faute d'Épiméthée. Paris: Galilée, 1994.]
 
 Wallas, Graham. The Art of Thought. New York: Harcourt Brace, 1926.
 
@@ -916,4 +912,4 @@ Ward, Thomas B. "Structured Imagination: The Role of Category Structure in Exemp
 
 Wiener, Norbert. Cybernetics: Or Control and Communication in the Animal and the Machine. Cambridge, MA: MIT Press, 1948.
 
-Young, Edward. Conjectures on Original Composition [1759]. Leeds: Scolar Press, 1966.
+Young, Edward. *Conjectures on Original Composition* [1759]. Leeds: Scolar Press, 1966.
