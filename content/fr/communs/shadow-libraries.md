@@ -66,7 +66,6 @@ tags:
 
 ---
 
-# LES SHADOW LIBRARIES ET LES ARTS CONTEMPORAINS
 
 ---
 
