@@ -1,5 +1,5 @@
 ---
-title: "Bibliothèques de l'ombre et art contemporain"
+title: "Shadow Libraries et art contemporain"
 subtitle: ""
 translation: "/en/commons/shadow-libraries"
 author: "Sylvain Couzinet-Jacques"
