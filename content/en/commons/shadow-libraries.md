@@ -66,11 +66,10 @@ tags:
 
 ---
 
-# SHADOW LIBRARIES AND CONTEMPORARY ART
 
 ---
 
-## ABSTRACT
+## Abstract
 
 This essay argues that shadow libraries — informal digital infrastructures for sharing knowledge outside commercial and legal frameworks — share deep narratives with the place of the library in literature and contemporary art, and can accordingly be analyzed as a distinct practice at the intersection of conceptual art, institutional critique, and social sculpture. Drawing on three decades of shadow library development (1996–2025), this research positions these platforms not simply as piracy or activism, but as aesthetic projects that fundamentally reimagine the relationship between knowledge, access, and the commons. Through the analysis of major initiatives — UbuWeb, AAAAARG, Monoskop, Memory of the World, Bibliotecha, and Sci-Hub — as well as emerging Francophone practices such as "Les Nouveaux Habits du Colportage," this essay develops a critical vocabulary for understanding infrastructure as artistic medium. The central thesis is that *custodianship* — the ongoing acts of care, maintenance, and circulation that sustain these libraries — represents a form of artistic practice that challenges conventional notions of authorship, originality, and the artwork as discrete object.
 
@@ -78,7 +77,7 @@ This essay argues that shadow libraries — informal digital infrastructures for
 
 ---
 
-# I. INTRODUCTION — "Share this letter"
+## I. INTRODUCTION — "Share this letter"
 
 On November 30, 2015, a group of scholars, artists, and activists published an open letter entitled "In Solidarity with Library Genesis and Sci-Hub" [1]. The letter, hosted on custodians.online, was a response to the lawsuit filed by academic publisher Elsevier against two of the world's largest shadow libraries. What made this document remarkable was not simply its political stance, but its reconceptualization of what it means to care for knowledge. The signatories — among them Kenneth Goldsmith, Sean Dockray, Marcell Mars, Tomislav Medak, Dušan Barok, and Femke Snelting — positioned themselves not simply as activists or critics, but as *custodians*: guardians of a public good that institutions had failed to protect.
 
@@ -122,7 +121,7 @@ A caveat is in order, however, regarding the status of the argument itself. This
 
 ---
 
-# II. INFRASTRUCTURE
+## II. Infrastructure
 
 ## Toward an aesthetics of infrastructure
 
@@ -230,7 +229,7 @@ Andrea Francke and Eva Weinmayr's The Piracy Project (since 2010) [45] has expli
 
 ---
 
-# III. TYPOLOGIES
+## III. Typologies
 
 ## The curatorial library — UbuWeb
 
@@ -420,7 +419,7 @@ Judicial proceedings illustrate both the legal vulnerability of shadow libraries
 
 ---
 
-# IV. CARE
+## IV. Care
 
 ## Feminist servers and situated infrastructure
 
@@ -478,7 +477,7 @@ These autodidactic practices challenge the monopoly of accredited institutions o
 
 ---
 
-# V. CONCLUSION {#conclusion}
+## V. CONCLUSION {#conclusion}
 
 In 1959, the Xerox Corporation introduced the Model 914, the first automatic photocopier accessible to the general public. In under seven seconds, the machine produced a copy of any printed document. The effect was immediate and massive: in the United States, the number of annual copies rose from 20 million at the beginning of the decade to 14 billion in 1966 [54]. The publishers' reaction was swift. Scholarly journals, whose business model rested on the controlled scarcity of the subscription, saw in the photocopier a machine for destroying intellectual property. The legal scholar Melville Nimmer, professor at UCLA, predicted that "the day may not be far off when no one need purchase a book." The case of *Williams & Wilkins Co. v. United States* (1973) crystallized the conflict: the medical journal publisher sued the National Library of Medicine and the National Institutes of Health for large-scale photocopying of articles — 85,744 requests processed in 1970 alone, amounting to nearly one million pages [55]. The Court of Claims ruled in the libraries' favor, invoking fair use. The Supreme Court, on appeal in 1975, affirmed by an equally divided vote (4-4) — a "non-decision" that left the question open and precipitated the revision of the Copyright Act of 1976 [56].
 
@@ -496,7 +495,7 @@ The stakes are not nostalgic. It is not a matter of returning to a prior state o
 
 ---
 
-## NOTES
+## Notes
 
 [1] Custodians.online, "In Solidarity with Library Genesis and Sci-Hub," open letter, November 30, 2015. Access: https://custodians.online
 

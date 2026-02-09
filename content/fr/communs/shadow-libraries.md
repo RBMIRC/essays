@@ -78,7 +78,7 @@ Cet essai soutient que les shadow libraries — infrastructures numériques info
 
 ---
 
-# I. INTRODUCTION — « Share this letter »
+## I. INTRODUCTION — « Share this letter »
 
 Le 30 novembre 2015, un groupe de chercheur·ses, d'artistes et de militant·es a publié une lettre ouverte intitulée « In Solidarity with Library Genesis and Sci-Hub » [1]. La lettre, hébergée sur custodians.online, constituait une réponse au procès intenté par l'éditeur académique Elsevier contre deux des plus grandes shadow libraries du monde. Ce qui rendait ce document remarquable n'était pas simplement sa prise de position politique, mais sa reconceptualisation de ce que signifie prendre soin du savoir. Les signataires — parmi lesquel·les Kenneth Goldsmith, Sean Dockray, Marcell Mars, Tomislav Medak, Dušan Barok et Femke Snelting — ne se positionnaient pas simplement comme activistes ou critiques, mais comme *custodians* : gardien·nes d'un bien public que les institutions avaient échoué à protéger.
 
@@ -122,7 +122,7 @@ Une mise en garde s'impose cependant sur le statut de l'argument lui-même. Cet 
 
 ---
 
-# II. L'INFRASTRUCTURE
+## II. L'Infrastructure
 
 ## Vers une esthétique de l'infrastructure
 
@@ -230,7 +230,7 @@ The Piracy Project d'Andrea Francke et Eva Weinmayr (depuis 2010) [45] a explici
 
 ---
 
-# III. LES TYPOLOGIES
+## III. Les Typologies
 
 ## La bibliothèque curatoriale — UbuWeb
 
@@ -420,7 +420,7 @@ Les poursuites judiciaires illustrent à la fois la vulnérabilité juridique de
 
 ---
 
-# IV. LE SOIN
+## IV. Le Soin
 
 ## Serveurs féministes et infrastructure située
 
@@ -478,7 +478,7 @@ Ces pratiques autodidactes remettent en question le monopole des institutions ac
 
 ---
 
-# V. CONCLUSION {#conclusion}
+## V. CONCLUSION {#conclusion}
 
 En 1959, la Xerox Corporation commercialise le modèle 914, premier photocopieur automatique accessible au grand public. En moins de sept secondes, l'appareil produit une copie de n'importe quel document imprimé. L'effet est immédiat et massif : aux États-Unis, le nombre de copies annuelles passe de 20 millions au début de la décennie à 14 milliards en 1966 [54]. La réaction des éditeurs ne se fait pas attendre. Les revues savantes, dont le modèle économique repose sur la rareté contrôlée de l'abonnement, voient dans la photocopieuse une machine à détruire la propriété intellectuelle. Le juriste Melville Nimmer, professeur à UCLA, prédit que « le jour n'est peut-être pas loin où personne n'aura plus besoin d'acheter un livre ». L'affaire *Williams & Wilkins Co. v. United States* (1973) cristallise le conflit : l'éditeur de revues médicales attaque la National Library of Medicine et les National Institutes of Health pour avoir photocopié des articles à grande échelle — 85 744 demandes traitées pour la seule année 1970, soit près d'un million de pages [55]. La Cour des Claims tranche en faveur des bibliothèques, invoquant le *fair use*. La Cour suprême, saisie en appel en 1975, confirme par un vote partagé à égalité (4-4) — une « non-décision » qui laisse la question ouverte et précipite la révision du Copyright Act de 1976 [56].
 
@@ -496,7 +496,7 @@ L'enjeu n'est pas nostalgique. Il ne s'agit pas de revenir à un état antérieu
 
 ---
 
-## NOTES
+## Notes
 
 [1] Custodians.online, « In Solidarity with Library Genesis and Sci-Hub », lettre ouverte, 30 novembre 2015. Accès : https://custodians.online
 
