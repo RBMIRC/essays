@@ -1,6 +1,7 @@
 ---
 title: "The Exposed Teacher"
 subtitle: "Toward a Pedagogy of Assembly"
+description: "This essay was written following a workshop held at ERG (Brussels) with Damien Safie and Diego Thielemans in November 2025. It proposes the position of the exposed teacher as a condition for teaching and learning situations in art schools."
 translation: "/fr/communs/enseignant-expose"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"

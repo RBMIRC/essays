@@ -1,6 +1,7 @@
 ---
 title: "L'Enseignant·e Exposé·e"
 subtitle: "Vers une pédagogie de l'assemblée"
+description: "Cet essai a été écrit à la suite d'un workshop qui s'est tenu à l'ERG (Bruxelles) avec Damien Safie et Diego Thielemans en novembre 2025. Il propose la position de l'enseignant·e exposé·e comme condition aux situations d'enseignement et d'apprentissage en écoles d'art."
 translation: "/en/commons/exposed-teacher"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"

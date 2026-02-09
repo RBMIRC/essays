@@ -1,6 +1,7 @@
 ---
 title: "Shadow Libraries et art contemporain"
-subtitle: ""
+subtitle: "Analyser les bibliothèques de l'ombre comme projets esthétiques"
+description: "Analyser les bibliothèques de l'ombre comme projets esthétiques à l'intersection de l'art conceptuel, de la critique institutionnelle et de la sculpture sociale"
 translation: "/en/commons/shadow-libraries"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"

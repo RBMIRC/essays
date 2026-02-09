@@ -1,6 +1,7 @@
 ---
 title: "Shadow Libraries and Contemporary Art"
-subtitle: ""
+subtitle: "Analyzing shadow libraries as aesthetic projects"
+description: "Analyzing shadow libraries as aesthetic projects at the intersection of conceptual art, institutional critique, and social sculpture"
 translation: "/fr/communs/shadow-libraries"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"
