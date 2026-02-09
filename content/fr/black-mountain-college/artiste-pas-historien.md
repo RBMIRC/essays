@@ -200,7 +200,7 @@ Ce n'est pas un appel à ce que les artistes laissent les archives aux historien
 
 [^8]: Seumboy Vrainom :€, cité dans « On vous raconte l'histoire derrière la photo de ce colon battu par une indépendantiste noire », *Konbini*, septembre 2023. Disponible sur : https://www.konbini.com/popculture/on-vous-raconte-lhistoire-derriere-la-photo-de-ce-colon-battu-par-une-independantiste-noire/
 
-[^9]: Ibid.
+[^9]: Seumboy Vrainom :€, cité dans « On vous raconte l'histoire derrière la photo de ce colon battu par une indépendantiste noire », *Konbini*, septembre 2023. Disponible sur : https://www.konbini.com/popculture/on-vous-raconte-lhistoire-derriere-la-photo-de-ce-colon-battu-par-une-independantiste-noire/
 
 [^10]: Tero Heikkinen, Petri Kaverma et Denise Ziegler, « Taiteellinen tutkimus – jatkuva prototyyppi » [« La recherche artistique – le prototype continu »], *Tiede & Edistys*, n° 4 (2017). Disponible sur : http://urn.fi/URN:NBN:fi-fe202002246347. Concept présenté lors de l'atelier « Rethinking the Concept of Prototype – Demonstrating Artistic Research », groupe de travail méthodologique de l'EARN, 20 janvier 2021. Nous traduisons. L'original anglais est le suivant : « The Continuous Prototype is a conceptual method that enables to formulate the way artistic research practices work in the fields of fine art and critical design. It does not tell how to do artistic research methodologically but it points to possible conditions to fertilize it. »
 
