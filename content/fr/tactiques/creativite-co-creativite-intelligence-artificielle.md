@@ -8,14 +8,14 @@ lang: fr
 license: GPL-3.0-or-later
 provenance: "Méthodologie de recherche-création"
 tags:
-  - co-créativité
-  - intelligence-artificielle
-  - méta-créativité
-  - auctorialité
+  - co-creativity
+  - artificial-intelligence
+  - meta-creativity
+  - authorship
   - LLM
-  - archéologie-des-médias
-  - subjectivité-incarnée
-  - espace-latent
+  - media-archaeology
+  - embodied-subjectivity
+  - latent-space
   - modulation
   - _Kittler
   - _Hayles
@@ -26,27 +26,27 @@ tags:
   - _Allado-McDowell
   - _Devis
   - _Plant
-  - cybernétique
-  - créativité
+  - cybernetics
+  - creativity
 ---
 
 <details class="heredoc-block">
-<summary>◈ CO-CRÉATIVITÉ v1.0</summary>
+<summary>◈ CO-CREATIVITY v1.0</summary>
 
-**Titre :** Créativité et co-créativité avec l'intelligence artificielle  
-**Sous-titre :** Vers une théorie de la méta-créativité  
-**Auteur :** Sylvain Couzinet-Jacques  
-**Date :** 2026  
-**Intention :** Proposer un cadre théorique pour la pratique co-créative avec les grands modèles de langage, traitant l'IA non comme outil ou créateur autonome mais comme partenaire dans une boucle cybernétique où l'auctorialité est distribuée entre neurones biologiques et poids silicone  
-**Provenance :** Comment travailler avec l'IA  
-**Généalogie :** Platon (folie divine) → Kant (génie) → Kittler (réseaux de discours) → Plant (zéros et uns) → Hayles (technotextes) → Eshun (fiction sonique) → Simondon (individuation) → Barad (réalisme agentiel) → Boden (créativité transformationnelle) → Nowotny (cré-activité) → Devis (subjectivité incarnée) → Allado-McDowell (Ère de l'Air) → Borges (Pierre Ménard) → Duchamp (readymade)  
-**Éthique :** Transparence · Critique des plateformes · Responsabilité écologique · Communs statistiques comme héritage collectif  
-**Licence :** GPL-3.0-or-later Chaîne de fork : [Retcon Black Mountain] → actuel → [Créativité]  
-**Contamination :** Infusé de {archéologie des médias, esthétique cybernétique, philosophie post-humaniste, théorie de l'affect, économie politique de la créativité, contrainte oulipienne}  
-**Confiance :** Fondé sur deux décennies de pratique artistique avec des systèmes génératifs, un travail de terrain archivistique dans les fonds du BMC, et une co-écriture expérimentale avec des LLM entraînés à dessein  
-**Notes :** L'écrivain qui entre dans l'espace latent ne devient pas une machine — mais il ne sort pas non plus indemne de la rencontre. Pierre Ménard peut encore écrire le Quichotte.
+**Title:** Creativity and Co-Creativity with Artificial Intelligence
+**Subtitle:** Toward a Theory of Meta-Creativity
+**Author:** Sylvain Couzinet-Jacques
+**Date:** 2026
+**Intent:** Proposing a theoretical framework for co-creative practice with large language models, treating AI not as tool or autonomous creator but as partner in a cybernetic loop where authorship is distributed across biological neurons and silicon weights
+**Provenance:** How to work with AI
+**Genealogy:** Plato (divine madness) → Kant (genius) → Kittler (discourse networks) → Plant (zeros and ones) → Hayles (technotexts) → Eshun (sonic fiction) → Simondon (individuation) → Barad (agential realism) → Boden (transformational creativity) → Nowotny (cre-activity) → Devis (embodied subjectivity) → Allado-McDowell (Air Age) → Borges (Pierre Menard) → Duchamp (readymade)
+**Ethics:** Transparency · Platform critique · Ecological accountability · Statistical commons as collective inheritance
+**License:** GPL-3.0-or-later Fork-chain: [Retcon Black Mountain] → current → [Creativity]
+**Contamination:** Infused with {media archaeology, cybernetic aesthetics, post-humanist philosophy, affect theory, political economy of creativity, Oulipian constraint}
+**Confidence:** Grounded in two decades of artistic practice with generative systems, archival fieldwork across BMC repositories, and experimental co-writing with purpose-trained LLMs
+**Notes:** The writer who enters the latent space does not become a machine — but neither do they remain untransformed by the encounter. Pierre Menard can still write the Quixote.
 
-*Cet article a été initialement écrit en anglais avec l'assistance du LLM Mistral 7B.*
+*This article was originally written in English with the assistance of the LLM Mistral 7B.*
 
 </details>
 
