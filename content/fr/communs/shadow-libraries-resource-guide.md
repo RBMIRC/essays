@@ -1,6 +1,7 @@
 ---
 title: "Shadow Libraries — Guide de ressources"
-subtitle: "Cartographie annotée, répertoire & boîte à outils pédagogique"
+subtitle: "Document compagnon de Shadow Libraries et art contemporain"
+description: "Document compagnon de Shadow Libraries et art contemporain"
 translation: "/en/commons/shadow-libraries-resource-guide"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"
