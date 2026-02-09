@@ -9,6 +9,7 @@ Ces essais portent sur le Black Mountain College, d'un point de vue historique e
 
 ## Textes
 
+- [L'artiste n'est pas un historien](/fr/black-mountain-college/artiste-pas-historien) — Vers une méthodologie post-documentaire : de la spécificité de la production de connaissance artistique (2026)
 - [Retcon Black Mountain](/fr/black-mountain-college/retcon-black-mountain) — Peut-on faire revivre Black Mountain College aujourd'hui, et est-ce que les intelligences artificielles peuvent être utiles ? (Séminaire automnal du Bal / EHESS (Paris), organisé par Vanessa Brito, 2024)
 
 [← Retour aux Essais](/fr/)
