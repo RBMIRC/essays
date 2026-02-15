@@ -3,7 +3,7 @@ import { classNames } from "../util/lang"
 
 // Compact menu items
 const menuItems = [
-  { id: "intro", en: "Intro", fr: "Intro", path: "introduction" },
+  { id: "preamble", en: "Preamble", fr: "Préambule", path: { en: "preamble", fr: "preambule" } },
   { id: "bmc", en: "BMC", fr: "BMC", path: "black-mountain-college" },
   { id: "archives", en: "Archives", fr: "Archives", path: "archives" },
   { id: "images", en: "Images", fr: "Images", path: "images" },
