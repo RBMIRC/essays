@@ -1,6 +1,6 @@
 ---
-title: Introduction
-translation: "/fr/introduction"
+title: Preamble
+translation: "/fr/preambule"
 ---
 
 Introductory essays on the theoretical framework of Retcon Black Mountain research—differential automation, statistical commons, and the collective practices of AI-mediated knowledge production.

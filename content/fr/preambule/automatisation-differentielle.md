@@ -1,6 +1,6 @@
 ---
 title: "Introduction \u00e0 la recherche Retcon Black Mountain"
-translation: "/en/introduction/differential-automation"
+translation: "/en/preamble/differential-automation"
 subtitle: "Automatisation diff\u00e9rentielle et communs statistiques"
 author: "Sylvain Couzinet-Jacques"
 date: "2026"

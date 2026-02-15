@@ -444,4 +444,4 @@ Getty Research Institute, Black Mountain College Collection, Los Angeles, CA.
 
 ## Related Sections
 
-[Introduction](/en/introduction/) · [Archives](/en/archives/) · [Images](/en/images/) · [Tactics](/en/tactics/) · [Commons](/en/commons/) · [Lexicon](/en/lexicon/)
+[Preamble](/en/preamble/) · [Archives](/en/archives/) · [Images](/en/images/) · [Tactics](/en/tactics/) · [Commons](/en/commons/) · [Lexicon](/en/lexicon/)

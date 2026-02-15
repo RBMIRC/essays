@@ -10,7 +10,7 @@ translation: "/en"
 
 ## Sections
 
-- [Introduction](/fr/introduction/) — Automatisation différentielle et communs statistiques
+- [Préambule](/fr/preambule/) — Automatisation différentielle et communs statistiques
 - [Black Mountain College](/fr/black-mountain-college/) — Praxis de l'archive à l'ère de l'intelligence artificielle
 - [Archives](/fr/archives/) — Pratiques archivistiques et continuité rétroactive
 - [Images](/fr/images/) — Transformation de la photographie et des médias visuels

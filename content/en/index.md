@@ -10,7 +10,7 @@ Research writings accompanying the creation of Sylvain Couzinet-Jacques's work "
 
 ## Sections
 
-- [Introduction](/en/introduction/) — Differential automation and the statistical commons
+- [Preamble](/en/preamble/) — Differential automation and the statistical commons
 - [Black Mountain College](/en/black-mountain-college/) — Archival praxis in the age of AI
 - [Archives](/en/archives/) — Archival practices and retroactive continuity
 - [Images](/en/images/) — Transformation of photography and visual media
