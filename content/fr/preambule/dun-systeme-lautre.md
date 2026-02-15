@@ -19,7 +19,29 @@ tags:
   - transdisciplinarity
 ---
 
+<details class="heredoc-block">
+<summary>◈ SYSTEM-AFTER-ANOTHER v1.0</summary>
 
+**Title:** From One System to Another
+**Subtitle:** Theoretical Convocation as Prismatic Method in Research-Creation
+**Author:** Sylvain Couzinet-Jacques
+**Date:** 2026
+**Intent:** Naming a mode of transdisciplinary thought in which the passage between heterogeneous theoretical traditions operates by refraction rather than synthesis — each framework revealing a frequency of the problem none could render visible alone — and arguing this prismatic method is the form of thinking adequate to the shift from a linear to a neuronal epistemic paradigm
+**Provenance:** Retcon Black Mountain doctoral thesis
+**Genealogy:** Massumi (beings of relation) → Simondon (individuation) → Deleuze & Guattari (double becoming) → Eshun (conceptechnics) → Warburg (Nachleben) → Stiegler (tertiary retention) → Hui (recursivity) → Busta (neuronal paradigm) → Gerovitch (mouse/moth)
+**Ethics:** Opacity as condition of productivity · Conscious contamination against machinic indifferentiation · Attention to grain
+**License:** GPL-3.0-or-later
+**Fork-chain:** [Retcon Black Mountain] → current → [awaiting next fork]
+**Contamination:** Infused with {process philosophy, sonic fiction, assemblage theory, new materialisms, Warburgian iconology, philosophy of technology, postcolonial poetics, cybernetics history, sampling culture, speculative fabulation}
+**Confidence:** Reflective essay arising from pedagogical observation
+**Notes:** The reproach of flitting is the name the maze paradigm gives to an intelligence it does not recognize. The moth escapes the bat 70% of the time. Better to stutter than to s(t)ay the same.
+
+*This essay was originally written in French with the assistance of the LLM Mistral 7B.*
+
+</details>
+
+
+---
 
 par Sylvain Couzinet-Jacques
 

@@ -35,7 +35,8 @@ tags:
 **Contamination:** Infused with {process philosophy, sonic fiction, assemblage theory, new materialisms, Warburgian iconology, philosophy of technology, postcolonial poetics, cybernetics history, sampling culture, speculative fabulation}
 **Confidence:** Reflective essay arising from pedagogical observation
 **Notes:** The reproach of flitting is the name the maze paradigm gives to an intelligence it does not recognize. The moth escapes the bat 70% of the time. Better to stutter than to s(t)ay the same.
-**Writing:** This essay was originally written in French with the assistance of the LLM Mistral 7B.
+
+*This essay was originally written in French with the assistance of the LLM Mistral 7B.*
 
 </details>
 
