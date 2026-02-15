@@ -3,12 +3,13 @@ title: Préambule
 translation: "/en/preamble"
 ---
 
-Essais introductifs sur le cadre th\u00e9orique de la recherche Retcon Black Mountain \u2014 automatisation diff\u00e9rentielle, communs statistiques et pratiques collectives de production de savoir m\u00e9diatis\u00e9e par l\u2019IA.
+Essais introductifs sur le cadre théorique de la recherche Retcon Black Mountain — automatisation différentielle, communs statistiques et pratiques collectives de production de savoir médiatisée par l'IA.
 
 ---
 
 ## Textes
 
-- [[automatisation-differentielle|Introduction \u00e0 la recherche Retcon Black Mountain]] \u2014 Automatisation diff\u00e9rentielle et communs statistiques (2026)
+- [[automatisation-differentielle|Introduction à la recherche Retcon Black Mountain]] — Automatisation différentielle et communs statistiques (2026)
+- [[dun-systeme-lautre|D'un système l'autre]] — La convocation théorique comme méthode prismatique dans la recherche-création (2026)
 
-[\u2190 Retour aux Essais](/fr/)
+[← Retour aux Essais](/fr/)

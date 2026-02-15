@@ -10,5 +10,6 @@ Introductory essays on the theoretical framework of Retcon Black Mountain resear
 ## Texts
 
 - [[differential-automation|Introduction to Retcon Black Mountain Research]] — Differential Automation and the Statistical Commons (2026)
+- [[from-one-system-to-another|From One System to Another]] — Theoretical Convocation as Prismatic Method in Research-Creation (2026)
 
 [← Back to Essays](/en/)
