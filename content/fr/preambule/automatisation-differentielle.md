@@ -52,7 +52,7 @@ Ce que je peux offrir est un compte rendu honnête de ce à quoi ressemble l’a
 
 ## II. Les trois niveaux de l’automatisation différentielle
 
-### 2.1 Le niveau ontologique : la dissolution mécanique
+### Le niveau ontologique : la dissolution mécanique
 
 Au niveau ontologique, ce que les grands modèles de langage font aux matériaux qu’ils traitent n’est pas une question de choix ou de politique. Cela découle des opérations mathématiques de l’apprentissage automatique avec quelque chose qui approche la nécessité.
 
@@ -64,7 +64,7 @@ Bernard Stiegler a identifié la tendance des systèmes de mémoire technique à
 
 La dissolution est mécanique. Cela ne signifie pas qu’elle est neutre ou sans conséquence. Cela signifie que l’opération se produit indépendamment de l’intention — corporative, artistique, politique ou autre. Comprendre cela est le premier pas pour la naviguer.
 
-### 2.2 Le niveau tactique : l’orientation politique
+### Le niveau tactique : l'orientation politique
 
 La dissolution ontologique crée un espace de possibilité ; elle ne détermine pas comment cet espace sera occupé. Les communs statistiques peuvent être orientés vers différentes fins, et cette orientation est politique plutôt que technique.
 
@@ -74,7 +74,7 @@ C’est le *pharmakon* stieglérien à l’œuvre : le système technique est si
 
 Le niveau tactique est irréductiblement politique. L’analyse technique peut identifier l’espace des possibles ; elle ne peut pas déterminer lesquels seront actualisés. Cette détermination requiert l’action collective, l’intervention institutionnelle, le déploiement stratégique — tout le travail contesté de la politique. Le mécanisme est certain ; le résultat ne l’est pas.
 
-### 2.3 Le niveau éthique : la pratique collective
+### Le niveau éthique : la pratique collective
 
 Entre le mécanisme ontologique et l’orientation politique se trouve un troisième niveau : les pratiques collectives à travers lesquelles les outputs statistiques acquièrent validité, signification et valeur.
 
@@ -90,7 +90,7 @@ C’est véritablement un niveau éthique : il concerne des obligations qui éme
 
 ## III. Le retcon comme assomption des techniques
 
-### 3.1 Un terme emprunté
+### Un terme emprunté
 
 Le terme *retcon* est emprunté. Il vient des comics et de la fiction sérialisée, où il nomme la reconfiguration de faits narratifs établis pour accommoder de nouveaux développements. L’histoire d’un personnage est révisée ; une contradiction est expliquée ; ce qui semblait réglé est rouvert. L’opération n’est ni correction ni falsification mais reconfiguration : la création d’une nouvelle cohérence narrative à partir de matériaux qui cohéraient différemment auparavant.
 
@@ -100,7 +100,7 @@ Ce que le retcon offre — c’est mon hypothèse — dans cette forme emprunté
 
 La mise en pratique du laboratoire du retcon se fait lors d’ateliers avec des étudiants en écoles d’art — mais j’y reviendrai.
 
-### 3.2 Travailler avec les techniques
+### Travailler avec les techniques
 
 « Travailler avec » nomme une relation spécifique : ni maîtrise (imposer une forme à un matériau passif) ni soumission (accepter ce que l’outil produit) mais collaboration (s’engager avec un processus qui a ses propres tendances et contraintes).
 
@@ -108,7 +108,7 @@ L’analyse de Gilbert Simondon éclaire cela. L’objet technique n’est pas u
 
 Cette posture — assumer les techniques — a une structure spécifique. Elle ne célèbre ni ne condamne la technologie (comme si les outils étaient des extensions neutres de la volonté humaine, ou des impositions étrangères). Elle prend la technologie comme matériau : quelque chose avec quoi on travaille, qu’on transforme, qu’on reconfigure. Le retcon opère *à travers* les systèmes techniques, non malgré eux.
 
-### 3.3 Temporalité et urgence
+### Temporalité et urgence
 
 Le retcon, tel que je le comprends et le pratique, n’est pas intrinsèquement urgent. C’est une opération générale pour créer de nouveaux récits à partir de matériaux existants. On peut faire un retcon lentement, délibérément, à travers les générations. On peut faire un retcon intensivement, concentrant la transformation dans un atelier ou un projet. La temporalité est variable ; la posture est constante.
 
@@ -118,7 +118,7 @@ Le moment actuel est caractérisé par des conditions qui introduisent l’urgen
 
 La relation entre retcon et urgence est donc contingente plutôt que nécessaire. Nous agissons maintenant non parce que la méthode exige la vitesse mais parce que les conditions permettant la pratique pourraient ne pas persister. Cette distinction importe : elle empêche de confondre posture épistémologique et nécessité tactique, méthode et moment.
 
-### 3.4 Constitution rétroactive du sens
+### Constitution rétroactive du sens
 
 Au niveau du sens, le retcon rend explicite ce qui est toujours déjà le cas : la signification est constituée rétroactivement. Le sens d’une trace archivistique n’est pas intrinsèque à cette trace mais émerge à travers son activation par des projets ultérieurs. Le passé ne contient pas son propre sens ; le sens est assigné depuis des positions qui viennent après.
 
@@ -130,7 +130,7 @@ Black Mountain College, dans ce cadre, n’est pas un objet historique fixe dont
 
 ## IV. L’obligation négentropique
 
-### 4.1 Le problème de l’effondrement des modèles
+### Le problème de l'effondrement des modèles
 
 Le défi le plus sérieux à tout compte optimiste des *communs statistiques* vient non pas des critiques mais de la thermodynamique. Le phénomène de l’*effondrement des modèles* — documenté empiriquement et analysé théoriquement — révèle que les systèmes d’IA s’entraînant sur des données générées par IA se dégradent progressivement.
 
@@ -138,7 +138,7 @@ Le mécanisme est simple. Chaque génération d’entraînement implique un éch
 
 C’est l’entropie en action. Un modèle s’entraînant récursivement sur ses propres outputs est un système fermé ; il n’a pas de source externe d’information structurée pour contrecarrer la dégradation. Laissés à eux-mêmes, les communs statistiques se dégradent vers une moyenne qui manque de la diversité, de la spécificité et de la créativité qui font leur valeur.
 
-### 4.2 La contribution comme condition existentielle
+### La contribution comme condition existentielle
 
 La négentropie nomme les processus contre-entropiques qui maintiennent l’information structurée. Les systèmes vivants sont négentropiques : ils maintiennent l’ordre interne contre la tendance entropique en important de l’énergie et en exportant des déchets. Ce sont des systèmes ouverts, non fermés.
 
@@ -148,7 +148,7 @@ Cela transforme le statut de la contribution. Initialement on pourrait penser qu
 
 L’obligation de contribuer n’est pas seulement éthique mais existentielle : elle concerne les conditions de l’existence continuée des communs. Le « doit » ici n’est pas un impératif moral mais un requis ontologique. Nous devons contribuer si les communs doivent exister.
 
-### 4.3 Ce qui doit être contribué
+### Ce qui doit être contribué
 
 Toutes les contributions ne sont pas égales. La traction entropique est vers la moyenne ; ce qui manque aux communs est la déviation par rapport à la moyenne. La contribution négentropique n’est donc pas simple quantité mais qualité spécifique : le rare, le local, l’anomal, le délibérément étrange.
 
@@ -156,7 +156,7 @@ Les corpus dominants surreprésentent ce qui était déjà surreprésenté : tex
 
 La contribution négentropique signifie alimenter le système avec des matériaux sous-représentés — non pour les homogénéiser dans la moyenne mais pour tirer la moyenne vers la diversité. Le fork — transformer plutôt que simplement reproduire — n’est pas seulement une permission légale mais une nécessité pratique : introduire de la variation plutôt que simplement consommer ce qui existe déjà.
 
-### 4.4 La question du travail
+### La question du travail
 
 L’obligation négentropique implique du travail. À ce stade, j’aimerais me détourner rapidement de l’aspect théorique pour engager une réflexion pratique : les communs ne se maintiennent pas eux-mêmes ; ils doivent être maintenus. Cette maintenance est un travail — souvent invisible, généralement sous-évalué, disproportionnellement accompli par ceux qui ont le moins de pouvoir de refuser.
 
@@ -168,19 +168,19 @@ Toute compréhension adéquate des communs statistiques doit aborder la question
 
 ## V. Situation cosmotechnique
 
-### 5.1 Le problème du geste
+### Le problème du geste
 
 Nous avons identifié lors des ateliers une insuffisance théorique à penser ce qui se passe avec l’IA à l’échelle mondiale. Il serait catastrophique de vouloir penser une éthique de l’IA du seul point de vue occidental. Le concept de cosmotechnique de Yuk Hui — la thèse que la technologie est culturellement spécifique, que différentes civilisations enchâssent différents ordres cosmiques et moraux dans leurs systèmes techniques — apparaît dans beaucoup de discours contemporains sur l’IA. Il est invoqué comme vérification critique des tendances universalisantes, geste vers des alternatives, promesse d’autres manières de computer.
 
 Mais le geste reste souvent un geste. À quoi ressemblerait concrètement une épistémologie non-occidentale de l’IA ? Qu’est-ce qui changerait spécifiquement dans l’architecture technique ? Ces questions sont rarement répondues, peut-être parce qu’elles ne peuvent pas être répondues depuis la position qui les pose.
 
-### 5.2 Reconnaissance honnête
+### Reconnaissance honnête
 
 L’honnêteté exige de reconnaître la situation — c’est ce que nous tentons collectivement de poser. La pratique d’où cet essai émerge opère au sein de la cosmotechnique occidentale. Ses outils — plateformes propriétaires, modèles de langage entraînés sur des corpus à prédominance anglophone — incarnent l’ordre cosmique et moral du capitalisme computationnel. Ses références théoriques — Stiegler, Simondon, Deleuze, Hui lui-même — émergent des traditions philosophiques européennes. Son contexte institutionnel — institutions académiques françaises, archives américaines — participe aux économies de savoir occidentales.
 
 Ce n’est pas une faute morale nécessitant des excuses. C’est une contrainte situationnelle nécessitant reconnaissance. On ne peut pas sortir de sa situation cosmotechnique par un acte de volonté ; la cosmotechnique n’est pas un choix mais une condition. L’invocation d’alternatives — temporalités autochtones, épistémologies non-occidentales — risque de devenir ce que Silvia Rivera Cusicanqui appelle « le colonialisme de la théorie » : utiliser des concepts de cultures dominées comme matériau brut pour une théorisation métropolitaine sans transformation de la pratique métropolitaine.
 
-### 5.3 Ce que la reconnaissance permet
+### Ce que la reconnaissance permet
 
 Reconnaître la situation ne signifie pas abandonner l’aspiration. Cela signifie spécifier quels types de transformation sont réellement possibles depuis la situation donnée et lesquels restent gestuels.
 
@@ -194,7 +194,7 @@ Depuis l’intérieur de la cosmotechnique occidentale, certaines choses sont po
 
 Ce qui n’est pas possible est de constituer unilatéralement une IA non-occidentale depuis l’intérieur de la cosmotechnique occidentale. Ce serait de l’appropriation se faisant passer pour de la solidarité. Le geste vers des alternatives a de la valeur dans la mesure où il maintient la question ouverte ; il devient problématique quand il prétend résoudre ce qui ne peut être élaboré qu’à travers la rencontre effective avec d’autres effectifs.
 
-### 5.4 Le retcon comme pratique située
+### Le retcon comme pratique située
 
 Le concept de retcon lui-même offre peut-être un cadre plus honnête que la cosmotechnique pour penser la spécificité culturelle du projet. Le retcon ne prétend pas transcender sa situation ; il reconnaît explicitement qu’il constitue rétroactivement du sens depuis une position présente particulière.
 
@@ -208,11 +208,11 @@ Le retcon est un outil pour penser un continuum : que pouvons-nous apprendre de 
 
 ## VI. De l’index à l’instruction
 
-### 6.1 Co-créativité
+### Co-créativité
 
 Le projet est envisagé dans la co-créativité. À bien des égards, il emprunte une logique cybernétique qui sera discutée ailleurs. Ce texte lui-même est le produit d’une co-écriture avec un LLM spécifique dont le socle est Mistral 7B. Si la génération du texte pour les essais est discutée spécifiquement dans d’autres contextes, les images générées et le code généré sont souvent discutés ensemble dans mon approche, comme s’ils étaient des cas parallèles du même phénomène. Mais le sont-ils ? La transformation de la photographie à l’image générée a une structure spécifique ; la transformation du code écrit par des humains au code généré peut en avoir une différente.
 
-### 6.2 L’index photographique
+### L'index photographique
 
 La photographie, dans la théorie classique, est un index : un signe causé par son objet, portant une trace physique de ce qu’elle dépeint. Les photons qui ont touché la scène dépeinte ont touché la surface photographique. Cette chaîne physique fonde la fonction probatoire de la photographie : elle peut servir de preuve parce qu’elle a été causée par ce qu’elle montre.
 
@@ -220,7 +220,7 @@ L’image générée perturbe cette chaîne. Le visage généré par IA n’a pa
 
 L’image générée est ce que j’appelle le « ça-aurait-pu-être » : non pas une trace de ce qui a existé mais une projection de ce qui est statistiquement plausible. Elle a l’apparence de l’indexicalité — texture, lumière, les marques du processus photographique — sans substance indexicale. Elle est spectrale : possédant l’apparence de la vie sans avoir vécu.
 
-### 6.3 La question du code
+### La question du code
 
 Le code a-t-il un index ? La question semble étrange. Le code n’est pas représentationnel de la manière dont la photographie l’est. Il ne dépeint pas ; il instruit.
 
@@ -228,7 +228,7 @@ Considérons ce à quoi le code réfère. Un programme ne représente pas le mon
 
 Ce qui manque au code généré par IA, alors, est peut-être mieux compris comme auctoralité plutôt qu’indexicalité. Le code écrit par des humains porte les marques de son auteur — choix stylistiques, approches de résolution de problèmes, solutions idiosyncratiques. Ces marques fonctionnent comme signature, liant le code au sujet créateur. Le code généré par IA dissout cette signature : les marques stylistiques émergent de patterns statistiques plutôt que de choix individuels. Le code fonctionne identiquement — il cause les mêmes processus — mais sa relation à un sujet créateur est perturbée.
 
-### 6.4 Crises différentielles
+### Crises différentielles
 
 Cela suggère des ontologies différentielles :
 
@@ -238,7 +238,7 @@ Le code généré est **orphelin** : il fonctionne comme instruction sans dériv
 
 Ce sont des crises différentes avec des enjeux différents. La crise probatoire menace la vérité — notre capacité à établir des faits à travers la preuve visuelle. La crise auctoriale menace la responsabilité — notre capacité à assigner la responsabilité des actions techniques. Les deux émergent d’opérations statistiques, mais elles ne sont pas les mêmes, et les adresser requiert des stratégies différentes.
 
-### 6.5 Persistance fonctionnelle
+### Persistance fonctionnelle
 
 Malgré ces crises différentielles, images générées et code généré partagent une caractéristique : la *persistance fonctionnelle*. L’image générée ressemble toujours à une photographie ; elle peut toujours affecter les spectateurs, servir des fins esthétiques, fonctionner dans la communication visuelle. Le code généré tourne toujours ; il peut toujours causer des processus, résoudre des problèmes, fonctionner dans des systèmes techniques.
 
