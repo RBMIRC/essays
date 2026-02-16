@@ -52,7 +52,7 @@ What I can offer is an honest account of what differential automation looks like
 
 ## II. The Three Levels of Differential Automation
 
-### 2.1 The Ontological Level: Mechanical Dissolution
+### The Ontological Level: Mechanical Dissolution
 
 At the ontological level, what large language models do to the materials they process is not a matter of choice or policy. It follows from the mathematical operations of machine learning with something approaching necessity.
 
@@ -64,7 +64,7 @@ Bernard Stiegler identified the tendency of technical memory systems to transfor
 
 The dissolution is mechanical. This does not mean it is neutral or without consequence. It means that the operation occurs regardless of intention—corporate, artistic, political, or otherwise. Understanding this is the first step toward navigating it.
 
-### 2.2 The Tactical Level: Political Orientation
+### The Tactical Level: Political Orientation
 
 The ontological dissolution creates a space of possibility; it does not determine how that space will be occupied. The statistical commons can be oriented toward different ends, and this orientation is political rather than technical.
 
@@ -74,7 +74,7 @@ This is the Stieglerian *pharmakon* at work: the technical system is simultaneou
 
 The tactical level is irreducibly political. Technical analysis can identify the space of possibilities; it cannot determine which will be actualized. That determination requires collective action, institutional intervention, strategic deployment—all the contested work of politics. The mechanism is certain; the outcome is not.
 
-### 2.3 The Ethical Level: Collective Practice
+### The Ethical Level: Collective Practice
 
 Between the ontological mechanism and the political orientation lies a third level: the collective practices through which statistical outputs acquire validity, meaning, and value.
 
@@ -90,7 +90,7 @@ This is genuinely an ethical level: it concerns obligations arising from the str
 
 ## III. The Retcon as Assumption of Technics
 
-### 3.1 A Borrowed Term
+### A Borrowed Term
 
 The term *retcon* is borrowed. It comes from comics and serialized fiction, where it names the reconfiguration of established narrative facts to accommodate new developments. A character's backstory is revised; a contradiction is explained away; what seemed settled is reopened. The operation is neither correction nor falsification but reconfiguration: the creation of new narrative coherence from materials that previously cohered differently.
 
@@ -100,7 +100,7 @@ What the retcon offers—this is my hypothesis—in this borrowed and adapted fo
 
 The retcon laboratory is put into practice through workshops with students in art schools—but I will return to this.
 
-### 3.2 Working With Technics
+### Working With Technics
 
 "Working with" names a specific relation: neither mastery (imposing form on passive material) nor submission (accepting whatever the tool produces) but collaboration (engaging with a process that has its own tendencies and constraints).
 
@@ -108,7 +108,7 @@ Gilbert Simondon's analysis illuminates this. The technical object is not a pass
 
 This posture—assuming technics—has a specific structure. It neither celebrates technology (as if tools were neutral extensions of human will) nor condemns it (as if tools were alien impositions). It takes technology as material: something one works with, transforms, reconfigures. The retcon operates *through* technical systems, not despite them.
 
-### 3.3 Temporality and Urgency
+### Temporality and Urgency
 
 The retcon, as I understand and practice it, is not intrinsically urgent. It is a general operation for creating new narratives from existing materials. One can retcon slowly, deliberately, across generations. One can retcon intensively, concentrating transformation in a workshop or a project. The temporality is variable; the posture is constant.
 
@@ -118,7 +118,7 @@ The current moment is characterized by conditions that introduce urgency: legal 
 
 The relation between retcon and urgency is therefore contingent rather than necessary. We act now not because the method demands speed but because the conditions enabling the practice may not persist. This distinction matters: it prevents confusing epistemological posture with tactical necessity, method with moment.
 
-### 3.4 Retroactive Constitution of Meaning
+### Retroactive Constitution of Meaning
 
 At the level of meaning, the retcon makes explicit what is always already the case: significance is constituted retroactively. The meaning of an archival trace is not intrinsic to that trace but emerges through its activation by subsequent projects. The past does not contain its own meaning; meaning is assigned from positions that come after.
 
@@ -130,7 +130,7 @@ Black Mountain College, in this frame, is not a fixed historical object whose me
 
 ## IV. Negentropic Obligation
 
-### 4.1 The Problem of Model Collapse
+### The Problem of Model Collapse
 
 The most serious challenge to any optimistic account of *statistical commons* comes not from critics but from thermodynamics. The phenomenon of *model collapse*—documented empirically and analyzed theoretically—reveals that AI systems training on AI-generated data progressively degrade.
 
@@ -138,7 +138,7 @@ The mechanism is straightforward. Each generation of training involves sampling 
 
 This is entropy in action. A model training recursively on its own outputs is a closed system; it has no external source of structured information to counteract degradation. Left to itself, the statistical commons degrades toward a mean that lacks the diversity, specificity, and creativity that make it valuable.
 
-### 4.2 Contribution as Existential Condition
+### Contribution as Existential Condition
 
 Negentropy names the counter-entropic processes that maintain structured information. Living systems are negentropic: they maintain internal order against entropic tendency by importing energy and exporting waste. They are open systems, not closed ones.
 
@@ -148,7 +148,7 @@ This transforms the status of contribution. Initially one might think of contrib
 
 The obligation to contribute is not merely ethical but existential: it concerns the conditions of the commons' continued existence. The "must" here is not moral imperative but ontological requirement. We must contribute if the commons is to exist at all.
 
-### 4.3 What Must Be Contributed
+### What Must Be Contributed
 
 Not all contributions are equal. The entropic pull is toward the mean; what the commons lacks is deviation from the mean. The negentropic contribution is therefore not mere quantity but specific quality: the rare, the local, the anomalous, the deliberately strange.
 
@@ -156,7 +156,7 @@ The dominant corpora overrepresent what was already overrepresented: English-lan
 
 Negentropic contribution means feeding underrepresented materials into the system—not to homogenize them into the mean but to pull the mean toward diversity. Forking—transforming rather than merely reproducing—is not merely legal permission but practical necessity: to introduce variation rather than merely consume what already exists.
 
-### 4.4 The Labor Question
+### The Labor Question
 
 Negentropic obligation implies labor. At this point, I would like to step briefly away from the theoretical and engage a practical reflection: the commons does not maintain itself; it must be maintained. This maintenance is work—often invisible, usually undervalued, disproportionately performed by those with least power to refuse.
 
@@ -168,19 +168,19 @@ Any adequate understanding of statistical commons must address the labor questio
 
 ## V. Cosmotechnical Situatedness
 
-### 5.1 The Problem of Gesture
+### The Problem of Gesture
 
 During the workshops, we identified a theoretical insufficiency in thinking about what is happening with AI at a global scale. It would be catastrophic to conceive an ethics of AI solely from a Western point of view. Yuk Hui's concept of cosmotechnics—the thesis that technology is culturally specific, that different civilizations embed different cosmic and moral orders in their technical systems—appears in much contemporary discourse on AI. It is invoked as critical check on universalizing tendencies, gesture toward alternatives, promise of other ways of computing.
 
 But the gesture often remains a gesture. What would a non-Western AI epistemology actually look like? What specifically would change in the technical architecture? These questions are rarely answered, perhaps because they cannot be answered from within the position that poses them.
 
-### 5.2 Honest Acknowledgment
+### Honest Acknowledgment
 
 Honesty requires acknowledging the situation—this is what we are collectively attempting to establish. The practice from which this essay emerges operates within Western cosmotechnics. Its tools—proprietary platforms, language models trained on predominantly English-language corpora—embody the cosmic and moral order of computational capitalism. Its theoretical references—Stiegler, Simondon, Deleuze, even Hui himself—emerge from European philosophical traditions. Its institutional context—French academic institutions, American archives—participates in Western knowledge economies.
 
 This is not a moral failing requiring apology. It is a situational constraint requiring acknowledgment. One cannot step outside one's cosmotechnical situation by an act of will; cosmotechnics is not a choice but a condition. The invocation of alternatives—Indigenous temporalities, non-Western epistemologies—risks becoming what Silvia Rivera Cusicanqui calls "the colonialism of theory": using concepts from dominated cultures as raw material for metropolitan theorization without transformation of metropolitan practice.
 
-### 5.3 What Acknowledgment Enables
+### What Acknowledgment Enables
 
 Acknowledging situatedness does not mean abandoning aspiration. It means specifying what kinds of transformation are actually possible from the given situation and what kinds remain gestural.
 
@@ -194,7 +194,7 @@ From within Western cosmotechnics, certain things are possible:
 
 What is not possible is unilaterally constituting a non-Western AI from within Western cosmotechnics. That would be appropriation masquerading as solidarity. The gesture toward alternatives is valuable insofar as it keeps the question open; it becomes problematic when it claims to resolve what can only be worked out through actual encounter with actual others.
 
-### 5.4 The Retcon as Situated Practice
+### The Retcon as Situated Practice
 
 The concept of retcon itself may offer a more honest frame than cosmotechnics for thinking the project's cultural specificity. The retcon does not claim to transcend its situation; it explicitly acknowledges that it is retroactively constituting meaning from a particular present position.
 
@@ -208,11 +208,11 @@ The retcon is a tool for thinking a continuum: what can we learn from Black Moun
 
 ## VI. From Index to Instruction
 
-### 6.1 Co-creativity
+### Co-creativity
 
 The project is conceived through co-creativity. In many respects it borrows a cybernetic logic that will be discussed elsewhere. This text itself is the product of co-writing with a specific LLM based on Mistral 7B. While the generation of text for the essays is addressed specifically in other contexts, generated images and generated code are often discussed together in my approach, as if they were parallel cases of the same phenomenon. But are they? The transformation from photograph to generated image has a specific structure; the transformation from human-written code to generated code may have a different one.
 
-### 6.2 The Photographic Index
+### The Photographic Index
 
 The photograph, in classical theory, is an index: a sign caused by its object, bearing a physical trace of what it depicts. Photons that touched the depicted scene touched the photographic surface. This physical chain founds the photograph's evidentiary function: it can serve as proof because it was caused by what it shows.
 
@@ -220,7 +220,7 @@ The generated image disrupts this chain. The AI-generated face was not caused by
 
 The generated image is what I call the "that-could-have-been": not a trace of what existed but a projection of what is statistically plausible. It has the appearance of indexicality—texture, lighting, the marks of photographic process—without indexical substance. It is spectral: possessed of the appearance of life without having lived.
 
-### 6.3 The Question of Code
+### The Question of Code
 
 Does code have an index? The question seems strange. Code is not representational in the way photography is. It does not depict; it instructs.
 
@@ -228,7 +228,7 @@ Consider what code refers to. A program does not represent the world; it acts in
 
 What the AI-generated code lacks, then, is perhaps better understood as authorship rather than indexicality. Human-written code bears marks of its author—stylistic choices, problem-solving approaches, idiosyncratic solutions. These marks function as signature, linking code to creating subject. AI-generated code dissolves this signature: stylistic marks emerge from statistical patterns rather than individual choice. The code functions identically—it causes the same processes—but its relation to a creating subject is disrupted.
 
-### 6.4 Differential Crises
+### Differential Crises
 
 This suggests differential ontologies:
 
@@ -238,7 +238,7 @@ The generated code is **orphaned**: it functions as instruction without deriving
 
 These are different crises with different stakes. The evidentiary crisis threatens truth—our capacity to establish facts through visual evidence. The authorial crisis threatens accountability—our capacity to assign responsibility for technical actions. Both emerge from statistical operations, but they are not the same, and addressing them requires different strategies.
 
-### 6.5 Functional Persistence
+### Functional Persistence
 
 Despite these differential crises, both generated images and generated code share a feature: *functional persistence*. The generated image still looks like a photograph; it can still affect viewers, serve aesthetic purposes, function in visual communication. The generated code still runs; it can still cause processes, solve problems, function in technical systems.
 
