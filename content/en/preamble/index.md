@@ -11,5 +11,6 @@ Introductory essays on the theoretical framework of Retcon Black Mountain resear
 
 - [[differential-automation|Introduction to Retcon Black Mountain Research]] — Differential Automation and the Statistical Commons (2026)
 - [[from-one-system-to-another|From One System to Another]] — Theoretical Convocation as Prismatic Method in Research-Creation (2026)
+- [[retcon-as-method|Retcon as Method]] — A Tactical Method of Collective Re-localization (2026)
 
 [← Back to Essays](/en/)
