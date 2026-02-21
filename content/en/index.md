@@ -8,6 +8,16 @@ Research writings accompanying the creation of Sylvain Couzinet-Jacques's work "
 
 ---
 
+## Recent
+
+- **2026-02-21** — [[preamble/the-author-the-collective-the-remainder|The Author, the Collective, the Remainder]]
+- **2026-02-21** — [[preamble/retcon-as-method|Retcon as Method]]
+- **2026-02-15** — [[preamble/from-one-system-to-another|From One System to Another]]
+- **2026-02-15** — [[preamble/differential-automation|Differential Automation and the Statistical Commons]]
+- **2026-02-09** — [[commons/exposed-teacher|The Exposed Teacher]]
+
+---
+
 ## Sections
 
 - [Preamble](/en/preamble/) — Differential automation and the statistical commons

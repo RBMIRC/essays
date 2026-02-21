@@ -8,6 +8,16 @@ translation: "/en"
 
 ---
 
+## Récent
+
+- **2026-02-21** — [[preambule/auteur-collectif-reste|L'auteur, le collectif, le reste]]
+- **2026-02-21** — [[preambule/retcon-comme-methode|Le retcon comme méthode]]
+- **2026-02-15** — [[preambule/dun-systeme-lautre|D'un système l'autre]]
+- **2026-02-15** — [[preambule/automatisation-differentielle|Automatisation différentielle et communs statistiques]]
+- **2026-02-09** — [[communs/enseignant-expose|L'enseignant exposé]]
+
+---
+
 ## Sections
 
 - [Préambule](/fr/preambule/) — Automatisation différentielle et communs statistiques
