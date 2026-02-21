@@ -15,8 +15,8 @@ interface Options {
 
 const defaultOptions: Options = {
   title: "News",
-  titleFr: "Actualites",
-  limit: 3,
+  titleFr: "Actualités",
+  limit: 5,
 }
 
 export default ((userOpts?: Partial<Options>) => {
@@ -26,14 +26,29 @@ export default ((userOpts?: Partial<Options>) => {
     // News items - edit this array to update news
     const newsItems: NewsItem[] = [
       {
-        date: "2025-01-09",
-        text: "Nouvel essai: Retcon Black Mountain",
-        link: "/en/black-mountain-college/retcon-black-mountain",
+        date: "2026-02-21",
+        text: "The Author, the Collective, the Remainder",
+        link: "/en/preamble/the-author-the-collective-the-remainder",
       },
       {
-        date: "2025-01-05",
-        text: "Mise a jour du Lexicon",
-        link: "/en/lexicon",
+        date: "2026-02-21",
+        text: "Retcon as Method",
+        link: "/en/preamble/retcon-as-method",
+      },
+      {
+        date: "2026-02-15",
+        text: "From One System to Another",
+        link: "/en/preamble/from-one-system-to-another",
+      },
+      {
+        date: "2026-02-15",
+        text: "Differential Automation",
+        link: "/en/preamble/differential-automation",
+      },
+      {
+        date: "2026-02-09",
+        text: "The Exposed Teacher",
+        link: "/en/commons/exposed-teacher",
       },
     ]
 
