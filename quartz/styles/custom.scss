@@ -236,23 +236,26 @@ header {
 }
 
 .left.sidebar {
+  overflow-y: auto;
+  max-height: 100vh;
+
   .search {
     margin-bottom: 1rem;
-    
+
     input {
       font-size: 0.85rem;
       padding: 0.4rem 0.6rem;
     }
   }
-  
+
   .darkmode {
     margin-bottom: 1rem;
-    
+
     svg {
       width: 18px;
       height: 18px;
       opacity: 0.6;
-      
+
       &:hover {
         opacity: 1;
       }
