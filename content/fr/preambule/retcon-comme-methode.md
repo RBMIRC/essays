@@ -44,7 +44,7 @@ tags:
 
 ---
 
-## 1. Observation : le retcon est une opération culturelle ancienne
+## I. Observation : le retcon est une opération culturelle ancienne
 
 Dans *Retcon Game: Retroactive Continuity and the Hyperlinking of America* (2017), Andrew J. Friedenthal propose la première étude universitaire consacrée à la continuité rétroactive comme opération culturelle. Sa thèse est double. D'abord, une définition : le retcon est « un processus narratif par lequel le ou les créateurs et/ou producteurs d'un récit/monde fictionnel altèrent délibérément l'histoire de ce récit/monde de sorte que, à l'avenir, les récits futurs reflètent cette nouvelle histoire, ignorant complètement l'ancienne comme si elle n'avait jamais existé »¹. Ensuite, une généalogie : le retcon, comme pratique, est aussi ancien que la narration elle-même. Les cultures orales l'ignoraient comme concept mais le pratiquaient structurellement — chaque barde, chaque conteur modifiait les épopées à chaque performance, non par erreur mais par nécessité : « L'originalité consiste non pas dans l'introduction de nouveaux matériaux mais dans l'ajustement des matériaux traditionnels à chaque situation et/ou audience individuelle et unique »², écrivait déjà Walter Ong en décrivant le fonctionnement des récits oraux. La Bible, dans le passage de l'Ancien au Nouveau Testament, accomplit un retcon massif : le Dieu vengeur est reconfiguré en Dieu d'amour, sans que l'ancien texte soit effacé. La tradition rabbinique du *Midrash* pousse cette logique plus loin : on ne modifie pas la Torah, on ajoute des récits interprétatifs qui en reconfigurent rétroactivement le sens — collectivement, cumulativement, à l'intérieur d'une continuité sacrée qu'on ne prétend pas remplacer. Le Midrash est, structurellement, du même registre que le fandom contemporain — une reconfiguration collective d'un canon qu'elle révère sans le posséder. Conan Doyle retconne Sherlock Holmes en le ressuscitant après l'avoir tué — sous la pression de ses lecteurs, inaugurant le « Grand Jeu » sherlockien où des générations de fans traitent les récits comme des documents historiques et « reconstituent » ce qui s'est « vraiment passé ». C'est le premier fandom moderne — et la première pratique collective de retcon.
 
@@ -90,11 +90,11 @@ Travailler sur Black Mountain College aujourd'hui, c'est le faire en conscience 
 
 ---
 
-## 2. La phénoménologie du geste : entrer dans le mouvement
+## II. La phénoménologie du geste : entrer dans le mouvement
 
 Dans *Relationscapes: Movement, Art, Philosophy* (2009), Erin Manning développe une ontologie du mouvement relationnel à partir de la danse — le tango, l'improvisation, le travail de William Forsythe. Ce qu'elle décrit entre deux corps dansants est, presque mot pour mot, ce que le retcon fait entre un sujet (individuel ou collectif) et l'Histoire. Manning n'a pas pensé le retcon — mais sa phénoménologie en fournit la langue¹².
 
-### 2.1 Entrer dans l'intervalle
+### Entrer dans l'intervalle
 
 Manning pose que tout mouvement est *préaccéléré* : il n'a pas de moment zéro, il est toujours déjà en cours. « Préaccéléré parce qu'il ne peut y avoir ni début ni fin au mouvement. Le mouvement fait un avec le monde, non pas corps/monde, mais corps-mondant »¹³. Et il ne se déploie pas *dans* un temps préexistant — il *fait* du temps¹⁴. Le retcon entre dans l'Histoire comme un danseur entre dans le mouvement : il ne le *commence* pas, il y *intervient*. Une archive comme celle du BMC ne l'attend pas dans un état de repos — elle est déjà en mouvement, déjà reconfigurée par des décennies d'exégèses, d'expositions, de mythographies. Chaque historien, chaque commissaire, chaque artiste qui l'a touchée y a laissé des *faits têtus* — des intensités qui persistent et conditionnent les mouvements suivants.
 
@@ -102,7 +102,7 @@ Le mouvement relationnel ne réside dans aucun des deux danseurs : il se produit
 
 Le concept le plus directement opératoire est *l'élasticité du presque* (*the elasticity of the almost*) : « le prochain mouvement n'est pas encore venu, le mouvement passé est en train de passer. Aucun pas n'a été fait, et pourtant dans cet élastique la microperception de chaque pas possible peut presque être sentie »¹⁶. C'est l'espace où le retcon travaille : entre le document d'archive et la forme nouvelle que le workshop va produire, il y a un moment élastique où l'archive n'est plus simplement ce qu'elle était et pas encore ce qu'elle va devenir. Manning insiste : l'élasticité ne dure pas indéfiniment. Si on la laisse se dissiper, « le point élastique du mouvement s'évaporera et seul le pas sera senti »¹⁹ — on retombe dans la reproduction. Le retcon doit *sentir* le moment où l'élasticité se cristallise en forme. Ce qui est en jeu n'est pas un savoir sur l'archive mais une *perception* de ce qu'elle est en train de devenir.
 
-### 2.2 Le refrain : répéter l'avenir
+### Le refrain : répéter l'avenir
 
 La réactivation ne se fait pas une fois. Elle se *répète* — et c'est dans la répétition que le retcon se constitue comme territoire. Deleuze et Guattari, dans *Mille Plateaux*, définissent la ritournelle comme l'opération par laquelle « on trace un cercle autour du centre fragile et incertain, on organise un espace limité »²⁰ — c'est l'enfant qui chante dans le noir pour se rassurer, le geste qui, en se répétant, crée un chez-soi. Manning reprend ce concept : « Ce changement de forme de l'intervalle est un rythme qui revient comme un refrain, mettant en relief ce qui peuple l'entre-deux »²¹. La structure du refrain n'est pas celle de la ressemblance — c'est celle de la *différence*²². Manning condense : « Se mouvoir, c'est répéter l'avenir : danser le pas-encore »²³.
 
@@ -110,7 +110,7 @@ L'artiste britannique Tris Vonna-Michell (né en 1982), nommé pour le Turner Pr
 
 Le retcon opère comme une chorale qui tente de s'accorder sur un refrain entendu, reproduit de mémoire, et de l'arranger pour la réalité harmonique du groupe. Chacun a entendu quelque chose de légèrement différent — personne ne possède la version originale — et c'est dans la négociation collective entre ces souvenirs partiels qu'une forme émerge, reconnaissable mais transformée. Des années de retours au même terrain, aux mêmes archives, à la même question fondamentale — chaque retour est une répétition avec différence, parce qu'il faut s'adapter aux réalités contingentes : le groupe a changé, de nouveaux documents sont apparus, une technologie s'est imposée, une question a mûri ou s'est déplacée. Mais quelque chose revient — et c'est ce retour qui territorialise. C'est aussi ce qui distingue le retcon du geste ponctuel. Un atelier isolé n'est pas un retcon — c'est une intervention. Le retcon exige la *récurrence*, la sédimentation progressive d'un territoire de pratique. Il n'a de sens que *dans une série* — il est un *parasite nécessaire* : il a besoin d'un hôte (la série, l'archive, le récit institutionnel) pour exister, et en retour il transforme cet hôte. On y reviendra.
 
-### 2.3 Le pli : ni couche ni strate
+### Le pli : ni couche ni strate
 
 Manning, via Deleuze lisant Leibniz, pense le mouvement comme *pli* : « Le pliage défait la finalité de la forme. La forme devient un pliage-vers, une force-vers qui est un seuil »²⁴. Et sur la mémoire : « Se souvenir est l'activation d'un contraste qui infléchit le différentiel de l'expérience en dépliement, de sorte que l'*alors* est senti comme un aspect de la maintenant-ité de l'expérience »²⁵.
 
@@ -130,7 +130,7 @@ Mais Clover pousse l'argument plus loin encore — jusqu'à la langue elle-même
 
 Et c'est la poésie qui rend cette opération visible. Dans la prose — du latin *pro-vorsa*, tournée vers l'avant —, le mouvement rétroactif de la lecture est dissimulé sous l'apparence de la linéarité : on avance, phrase après phrase, et le sens semble se construire de gauche à droite. Le vers — du latin *versus*, le retournement — fait le contraire. Le *line break*, la coupure du vers, interrompt la syntaxe et force le lecteur à revenir en arrière : le sens d'un vers n'est pas complet tant qu'on n'a pas lu le vers suivant, qui peut le confirmer, le déplacer, ou le contredire. La poésie formalise ce que la prose naturalise : la rétroactivité du sens.
 
-### 2.4 Archéologie et topologie : deux modèles de l'archive
+### Archéologie et topologie : deux modèles de l'archive
 
 Reste à savoir ce que cette temporalité fait aux artefacts du passé, à l'archive elle-même — et d'abord, de quelle archive on parle. Non pas le dépôt institutionnel, ni le document d'État au sens juridique. Quelque chose de plus élémentaire : l'*indice* d'un état initial. Une photographie fixe un agencement de lumière à un instant donné ; un procès-verbal fixe un accord entre des parties ; un plan d'architecte fixe une intention spatiale. Ce sont des traces qui enregistrent un *moment* — et que le temps, en les séparant de leur contexte de production, rend disponibles pour autre chose que ce pour quoi elles ont été produites. C'est ce « autre chose » qui est en jeu. La question que le retcon pose à l'archive n'est pas : *ces traces disent-elles le vrai ?* C'est : *que deviennent-elles quand on les relocalise ?* L'archivistique classique — celle que Tom Nesmith résume en une formule — repose sur un modèle positiviste : l'archiviste est le « gardien et préservateur » neutre de documents qui possèdent une « intégrité spéciale, voire unique, comme moyen d'accès au passé »²⁹. Dans ce modèle, l'archive est un miroir — elle reflète le monde, et l'archiviste se contente de « lister, décrire, copier et retrouver les documents et, par là, le savoir déjà contenu en eux, de manière neutre, discrète et simplement factuelle ». Verne Harris montre que cette conception repose sur une métaphore optique : le savoir est lumière, l'ignorance est obscurité. « Ce dont nous nous souvenons, nous le gardons dans la lumière ; ce que nous oublions est relégué dans l'obscurité. Se souvenir, c'est archiver »³⁰. L'archive appartient au régime de la vision : on éclaire ou on laisse dans l'ombre, on retrouve ou on perd. C'est le modèle archéologique dans sa forme la plus pure — creuser pour mettre au jour ce qui est enfoui, éclairer ce qui était dans le noir.
 
@@ -138,7 +138,7 @@ Foucault détruit l'innocence de ce modèle. Dans *L'Archéologie du savoir* (19
 
 Mais Foucault décrit le système — il ne le reconfigure pas. Le retcon serait l'étape active de plus. Il ne creuse pas vers un original enfoui (modèle positiviste), il ne décrit pas les conditions du dicible (modèle foucaldien) — il *opère*. Il prend les éléments de l'archive et les *déplace* : d'un contexte à un autre, d'un support à un autre, d'une temporalité à une autre. C'est le modèle topologique. Le savoir ne s'y mesure pas à la profondeur atteinte (combien de couches avez-vous traversées ?) ni à l'exhaustivité de la description (combien de formations discursives avez-vous identifiées ?) mais à la qualité des connexions produites par le déplacement. Le retcon ne met pas l'archive « en lumière » — il la *plie* ailleurs, et c'est le pliage qui fait apparaître ce que la configuration antérieure rendait invisible. Non pas : « voici ce que l'archive cachait ». Mais : « voici ce que l'archive devient quand on la relocalise ». C'est une pratique de création spéculative, et il convient de la considérer comme telle.
 
-### 2.5 Le partenaire absent : danser avec l'Histoire
+### Le partenaire absent : danser avec l'Histoire
 
 Revenons à la métaphore de la danse pour décrire ce qui se joue concrètement dans la relation à l'histoire et à ses artefacts. Dans le tango de Manning, les deux partenaires sont co-présents, synchrones, vivants — chacun sent les préaccélérations de l'autre, chacun répond en temps réel. Dans le retcon, la situation est radicalement asymétrique : l'un des deux « corps » est une archive — un ensemble de traces partielles, dispersées, contradictoires, produites par des acteurs absents, parfois morts depuis des décennies. L'archive ne préaccélère pas comme un corps vivant. Elle ne répond pas au geste par un contre-geste. Elle répond autrement — par ses silences autant que par ses documents, par ses lacunes autant que par ses cohérences, par ce qu'elle n'a pas conservé autant que par ce qu'elle a gardé.
 
@@ -148,7 +148,7 @@ Manning : « Aucune chose n'est "ensemble" sinon dans l'expérience »³⁵. L'a
 
 ---
 
-## 3. Une scène
+## III. Une scène
 
 Vingt-cinq étudiant·e·s dans une salle. Le titre du workshop renvoie aux récits spéculatifs — il annonce que ce qui va se produire n'est ni un cours d'histoire ni un exercice de fiction, mais quelque chose entre les deux. Sur les écrans, quatre interfaces créées pour l'occasion : une double hélice qui tresse la météo quotidienne des Blue Ridge Mountains avec les événements du college jour par jour, de 1933 à 1957 ; un réseau de connexions vérifiées entre les personnes — enseignants, étudiants, familles, co-présences, productions communes — que l'on peut filtrer par discipline, par type de lien, par année ; une chronologie environnementale qui restitue l'écologie du site — les espèces, les saisons, la ferme, l'altitude, la composition forestière ; et une frise quotidienne qui superpose ce qui se passait au college, ce qui passait à la radio, ce qui se passait dans le pays et dans le monde. À côté des écrans, une collection d'images d'archives accessible en blockchain et en pair-à-pair — les photographies de la collection Dreier, les documents des Western Regional Archives, les correspondances numérisées.
 
@@ -160,7 +160,7 @@ Le soir, il y a vingt-cinq récits. Vingt-cinq journées au Black Mountain Colle
 
 ---
 
-## 4. Voisinages : du texte à l'installation
+## IV. Voisinages : du texte à l'installation
 
 Ce qui vient d'être décrit — un groupe qui spatialise le temps d'une archive, qui fait coexister des documents d'époques différentes et des formes nouvelles, qui travaille à l'intérieur d'une temporalité non-linéaire — n'est pas isolé. Le retcon comme opération culturelle traverse aujourd'hui des milieux très différents. Dans le texte littéraire, les réécritures postcoloniales de Jean Rhys (*Wide Sargasso Sea*³⁶, qui retconne *Jane Eyre* depuis le point de vue de la femme enfermée dans le grenier) ou de Kamel Daoud (*Meursault, contre-enquête*³⁷, qui retconne *L'Étranger* depuis la victime arabe) produisent des continuités rétroactives qui reconfigurent les originaux sans les effacer. Dans les comic books — le milieu d'origine du terme —, le retcon reste une pratique industrielle permanente, de *Crisis on Infinite Earths* (1985) aux reboots successifs de l'univers Marvel. Le manga et l'anime japonais ont développé leurs propres formes de reconfiguration rétroactive — de *Dragon Ball* à *Neon Genesis Evangelion*, où les *rebuilds* successifs reconfigurent le sens de la série originale. Sur Reddit et les forums de fans, des communautés entières se consacrent à produire des « fan theories » qui retconnent les fictions existantes — expliquant rétroactivement les incohérences, ajoutant des couches de sens que les créateurs originaux n'avaient pas prévues. Et la fan fiction, cette immense production parallèle que l'industrie culturelle a longtemps méprisée, est structurellement un retcon : elle travaille de l'intérieur d'une continuité qu'elle ne possède pas, elle la reconfigure sans mandat, elle montre ses coutures. Dans tous ces cas, la même structure : le présent agit sur le passé, depuis une position non-souveraine, en ajoutant de la complexité plutôt qu'en en retranchant.
 
@@ -188,7 +188,7 @@ Ce qui relie ces cinq pratiques au retcon n'est pas une identité de méthode �
 
 ---
 
-## 5. Technogenèse : les machines du retcon
+## V. Technogenèse : les machines du retcon
 
 Brian Massumi, dans *Architectures of the Unforeseen* (2019), formule un principe qui condense l'ensemble de ce que Manning décrit : « La filiation récursive approfondit la continuité intensive »³⁹. Chaque nouvelle forme est fille de ce qu'elle reconfigure, et en retour elle transforme sa source. La filiation récursive ne prolonge pas une série par extension linéaire mais par *intensification* : chaque retour au matériau en augmente la densité, la charge, la complexité — non pas en ajoutant un épisode *après* les précédents, mais en faisant passer une intensité nouvelle *à travers* eux. Le retcon ne rallonge pas la série — il l'intensifie.
 
@@ -200,7 +200,7 @@ Manning et Massumi, dans *Thought in the Act* (2014), posent que toute pratique 
 
 ---
 
-## 6. *Méthode tactique de re-localisation collective*
+## VI. *Méthode tactique de re-localisation collective*
 
 Chaque mot de cette expression porte un poids spécifique.
 
@@ -222,7 +222,7 @@ Mais si le retcon est une méthode, il doit pouvoir échouer — et on doit pouv
 
 ---
 
-## 7. Conclusion : retour au geste
+## VII. Conclusion : retour au geste
 
 Le retcon, écrit Friedenthal, est « typiquement motivé non pas par un manque de respect pour le passé, mais plutôt par un amour des œuvres passées, un désir de jouer avec elles, et une volonté de les moderniser, de les mettre à jour et de les incorporer dans de nouvelles œuvres »⁴⁹.
 

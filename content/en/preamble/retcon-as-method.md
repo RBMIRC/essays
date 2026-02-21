@@ -44,7 +44,7 @@ tags:
 
 ---
 
-## 1. Observation: The Retcon Is an Ancient Cultural Operation
+## I. Observation: The Retcon Is an Ancient Cultural Operation
 
 In *Retcon Game: Retroactive Continuity and the Hyperlinking of America* (2017), Andrew J. Friedenthal offers the first academic study devoted to retroactive continuity as a cultural operation. His thesis is twofold. First, a definition: the retcon is "a narrative process wherein the creator(s) and/or producer(s) of a fictional narrative/world deliberately alter the history of that narrative/world such that, going forward, future stories reflect this new history, completely ignoring the old as if it had never happened"¹. Second, a genealogy: the retcon, as a practice, is as old as narration itself. Oral cultures were unaware of it as a concept but practiced it structurally — every bard, every storyteller modified the epics at each performance, not by error but by necessity: "Originality consists not in the introduction of new materials but in fitting the traditional materials effectively into each individual, unique situation and/or audience"², as Walter Ong already wrote in describing how oral narratives function. The Bible, in the passage from the Old to the New Testament, accomplishes a massive retcon: the vengeful God is reconfigured into a God of love, without the earlier text being erased. The rabbinical tradition of *Midrash* pushes this logic further: one does not modify the Torah; one adds interpretive narratives that retroactively reconfigure its meaning — collectively, cumulatively, within a sacred continuity one does not claim to replace. Midrash is, structurally, of the same order as contemporary fandom — a collective reconfiguration of a canon it reveres without owning. Conan Doyle retcons Sherlock Holmes by resurrecting him after having killed him — under pressure from his readers, inaugurating the Sherlockian "Great Game" in which generations of fans treat the stories as historical documents and "reconstruct" what "really happened." This is the first modern fandom — and the first collective practice of retcon.
 
@@ -90,11 +90,11 @@ To work on Black Mountain College today is to do so in awareness of the narrativ
 
 ---
 
-## 2. The Phenomenology of the Gesture: Entering the Movement
+## II. The Phenomenology of the Gesture: Entering the Movement
 
 In *Relationscapes: Movement, Art, Philosophy* (2009), Erin Manning develops an ontology of relational movement starting from dance — tango, improvisation, the work of William Forsythe. What she describes between two dancing bodies is, almost word for word, what the retcon does between a subject (individual or collective) and History. Manning did not think the retcon — but her phenomenology provides its language¹².
 
-### 2.1 Entering the Interval
+### Entering the Interval
 
 Manning posits that all movement is *preaccelerated*: it has no zero moment; it is always already underway. "Preaccelerated because there can be no beginning or end to movement. Movement is one with the world, not body/world, but body-worlding"¹³. And it does not unfold *within* a pre-existing time — it *makes* time¹⁴. The retcon enters History as a dancer enters movement: it does not *begin* it; it *intervenes* in it. An archive like that of the BMC does not await it in a state of rest — it is already in motion, already reconfigured by decades of exegeses, exhibitions, mythographies. Every historian, every curator, every artist who has touched it has left *stubborn facts* there — intensities that persist and condition the movements that follow.
 
@@ -102,7 +102,7 @@ Relational movement resides in neither of the two dancers: it occurs in the *int
 
 The most directly operative concept is *the elasticity of the almost*: "The next movement has not yet come, the past movement is passing. No step has been taken, and yet in this elastic the microperception of every possible step can almost be felt"¹⁶. This is the space where the retcon works: between the archival document and the new form that the workshop will produce, there is an elastic moment where the archive is no longer simply what it was and not yet what it will become. Manning insists: elasticity does not last indefinitely. If one lets it dissipate, "the elastic point of the movement will evaporate and only the step will be felt"¹⁹ — one falls back into reproduction. The retcon must *sense* the moment when elasticity crystallizes into form. What is at stake is not a knowledge about the archive but a *perception* of what it is becoming.
 
-### 2.2 The Refrain: Repeating the Future
+### The Refrain: Repeating the Future
 
 Reactivation does not happen once. It *repeats* — and it is in repetition that the retcon constitutes itself as territory. Deleuze and Guattari, in *A Thousand Plateaus*, define the ritornello as the operation by which "one draws a circle around the fragile and uncertain center, one organizes a limited space"²⁰ — this is the child singing in the dark to reassure herself, the gesture that, by repeating, creates a home. Manning takes up this concept: "This shape-shifting of the interval is a rhythm that returns as a refrain, emphasizing that which populates the in-between"²¹. The structure of the refrain is not that of resemblance — it is that of *difference*²². Manning condenses: "Moving is repeating the future: dancing the not-yet"²³.
 
@@ -110,7 +110,7 @@ The British artist Tris Vonna-Michell (born 1982), nominated for the Turner Priz
 
 The retcon operates like a choir trying to agree on a refrain they have heard, reproduced from memory, and to arrange it for the harmonic reality of the group. Each person has heard something slightly different — no one possesses the original version — and it is in the collective negotiation between these partial memories that a form emerges, recognizable but transformed. Years of returns to the same terrain, the same archives, the same fundamental question — each return is a repetition with difference, because one must adapt to contingent realities: the group has changed, new documents have appeared, a technology has imposed itself, a question has matured or shifted. But something returns — and it is this return that territorializes. This is also what distinguishes the retcon from the punctual gesture. An isolated workshop is not a retcon — it is an intervention. The retcon demands *recurrence*, the progressive sedimentation of a territory of practice. It has meaning only *within a series* — it is a *necessary parasite*: it needs a host (the series, the archive, the institutional narrative) to exist, and in return it transforms that host. We will return to this.
 
-### 2.3 The Fold: Neither Layer nor Stratum
+### The Fold: Neither Layer nor Stratum
 
 Manning, via Deleuze reading Leibniz, thinks movement as *fold*: "Folding undoes the finality of form. Form becomes a folding-into, a force-toward that is a threshold"²⁴. And on memory: "Remembering is the activation of a contrast that inflects the differential of experience unfolding such that the *then* is felt as an aspect of the nowness of experience"²⁵.
 
@@ -130,7 +130,7 @@ But Clover pushes the argument further still — all the way to language itself.
 
 And it is poetry that makes this operation visible. In prose — from the Latin *pro-vorsa*, turned forward — the retroactive movement of reading is concealed beneath the appearance of linearity: one advances, sentence by sentence, and meaning seems to build from left to right. Verse — from the Latin *versus*, the turning — does the opposite. The line break interrupts the syntax and forces the reader to go back: the meaning of a verse is not complete until one has read the next, which may confirm, displace, or contradict it. Poetry formalizes what prose naturalizes: the retroactivity of meaning.
 
-### 2.4 Archaeology and Topology: Two Models of the Archive
+### Archaeology and Topology: Two Models of the Archive
 
 It remains to be seen what this temporality does to the artifacts of the past, to the archive itself — and first, which archive we are talking about. Not the institutional repository, nor the state document in the legal sense. Something more elementary: the *index* of an initial state. A photograph fixes an arrangement of light at a given instant; minutes fix an agreement between parties; an architect's plan fixes a spatial intention. These are traces that record a *moment* — and that time, by separating them from their context of production, makes available for something other than what they were produced for. It is this "something other" that is at stake. The question the retcon poses to the archive is not: *do these traces tell the truth?* It is: *what do they become when they are relocalized?* Classical archival science — the one Tom Nesmith summarizes in a formula — rests on a positivist model: the archivist is the neutral "keeper and preserver" of documents that possess a "special, even unique integrity as a means of access to the past"²⁹. In this model, the archive is a mirror — it reflects the world, and the archivist contents herself with "listing, describing, copying and retrieving the documents and, through them, the knowledge already contained in them, in a neutral, unobtrusive and simply factual manner." Verne Harris shows that this conception rests on an optical metaphor: knowledge is light, ignorance is darkness. "What we remember, we keep in the light; what we forget is consigned to the darkness. To remember is to archive"³⁰. The archive belongs to the regime of vision: one illuminates or one leaves in shadow, one retrieves or one loses. This is the archaeological model in its purest form — digging to bring to light what is buried, illuminating what was in the dark.
 
@@ -138,7 +138,7 @@ Foucault destroys the innocence of this model. In *The Archaeology of Knowledge*
 
 But Foucault describes the system — he does not reconfigure it. The retcon would be the next active step. It does not dig toward a buried original (positivist model), it does not describe the conditions of the sayable (Foucauldian model) — it *operates*. It takes the elements of the archive and *displaces* them: from one context to another, from one medium to another, from one temporality to another. This is the topological model. Knowledge is not measured here by the depth reached (how many layers have you traversed?) nor by the exhaustiveness of the description (how many discursive formations have you identified?) but by the quality of the connections produced by displacement. The retcon does not bring the archive "to light" — it *folds* it elsewhere, and it is the folding that reveals what the prior configuration rendered invisible. Not: "here is what the archive was hiding." But: "here is what the archive becomes when it is relocalized." It is a practice of speculative creation, and it should be considered as such.
 
-### 2.5 The Absent Partner: Dancing with History
+### The Absent Partner: Dancing with History
 
 Let us return to the metaphor of dance to describe what is concretely at play in the relation to history and its artifacts. In Manning's tango, the two partners are co-present, synchronous, alive — each senses the other's preaccelerations, each responds in real time. In the retcon, the situation is radically asymmetrical: one of the two "bodies" is an archive — a set of partial, dispersed, contradictory traces, produced by absent actors, sometimes dead for decades. The archive does not preaccelerate like a living body. It does not respond to a gesture with a counter-gesture. It responds otherwise — through its silences as much as its documents, through its gaps as much as its coherences, through what it has not preserved as much as what it has kept.
 
@@ -148,7 +148,7 @@ Manning: "No things are 'together' except in experience"³⁵. The archive and t
 
 ---
 
-## 3. A Scene
+## III. A Scene
 
 Twenty-five students in a room. The workshop's title refers to speculative narratives — it announces that what is about to happen is neither a history class nor a fiction exercise, but something between the two. On the screens, four interfaces created for the occasion: a double helix that braids the daily weather of the Blue Ridge Mountains with the events of the college day by day, from 1933 to 1957; a network of verified connections between people — teachers, students, families, co-presences, shared productions — that can be filtered by discipline, type of link, or year; an environmental timeline that renders the ecology of the site — the species, the seasons, the farm, the altitude, the forest composition; and a daily frieze that superimposes what was happening at the college, what was playing on the radio, what was happening in the country and in the world. Beside the screens, a collection of archival images accessible via blockchain and peer-to-peer — the photographs from the Dreier collection, the documents from the Western Regional Archives, the digitized correspondences.
 
@@ -160,7 +160,7 @@ By evening, there are twenty-five narratives. Twenty-five days at Black Mountain
 
 ---
 
-## 4. Proximities: From Text to Installation
+## IV. Proximities: From Text to Installation
 
 What has just been described — a group that spatializes the time of an archive, that makes documents from different eras coexist with new forms, that works within a non-linear temporality — is not isolated. The retcon as a cultural operation traverses very different milieus today. In literary text, the postcolonial rewritings of Jean Rhys (*Wide Sargasso Sea*³⁶, which retcons *Jane Eyre* from the point of view of the woman locked in the attic) or of Kamel Daoud (*Meursault, contre-enquête*³⁷, which retcons *The Stranger* from the Arab victim's perspective) produce retroactive continuities that reconfigure the originals without erasing them. In comic books — the term's milieu of origin — the retcon remains a permanent industrial practice, from *Crisis on Infinite Earths* (1985) to the successive reboots of the Marvel universe. Japanese manga and anime have developed their own forms of retroactive reconfiguration — from *Dragon Ball* to *Neon Genesis Evangelion*, where successive *rebuilds* reconfigure the meaning of the original series. On Reddit and fan forums, entire communities devote themselves to producing "fan theories" that retcon existing fictions — retroactively explaining inconsistencies, adding layers of meaning that the original creators had not foreseen. And fan fiction, that immense parallel production that the cultural industry long scorned, is structurally a retcon: it works from inside a continuity it does not own, it reconfigures it without mandate, it shows its seams. In all these cases, the same structure: the present acts on the past, from a non-sovereign position, adding complexity rather than subtracting.
 
@@ -188,7 +188,7 @@ What links these five practices to the retcon is not an identity of method — e
 
 ---
 
-## 5. Technogenesis: The Machines of the Retcon
+## V. Technogenesis: The Machines of the Retcon
 
 Brian Massumi, in *Architectures of the Unforeseen* (2019), formulates a principle that condenses everything Manning describes: "Recursive filiation furthers intensive continuity"³⁹. Each new form is the offspring of what it reconfigures, and in return it transforms its source. Recursive filiation does not extend a series by linear extension but by *intensification*: each return to the material increases its density, its charge, its complexity — not by adding an episode *after* the preceding ones, but by passing a new intensity *through* them. The retcon does not lengthen the series — it intensifies it.
 
@@ -200,7 +200,7 @@ Manning and Massumi, in *Thought in the Act* (2014), posit that every practice i
 
 ---
 
-## 6. *Tactical Method of Collective Re-localization*
+## VI. *Tactical Method of Collective Re-localization*
 
 Each word of this expression carries a specific weight.
 
@@ -222,7 +222,7 @@ But if the retcon is a method, it must be able to fail — and one must be able 
 
 ---
 
-## 7. Conclusion: Return to the Gesture
+## VII. Conclusion: Return to the Gesture
 
 The retcon, writes Friedenthal, is "not done out of disrespect for the past, but rather out of a love for past works, a desire to play with them, and a drive to modernize, update, and incorporate them into new works"⁴⁹.
 
