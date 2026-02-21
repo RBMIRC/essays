@@ -41,6 +41,7 @@ tags:
 
 ---
 
+The word *retcon* — a contraction of *retroactive continuity* — has existed for just over fifty years. It appeared in 1973 under the pen of theologian E. Frank Tupper, migrated to comic books in the 1980s, and settled into the vocabulary of popular culture at the turn of the century. But the narrative mechanism it designates is far older and goes by many names: *Midrash*, overpainting, pentimento, palimpsest, critical fabulation, retrocausality. The word *retcon* is a shell — an inherited, available form that nothing obliges us to inhabit as it has been. This work lodges itself within it and reconfigures it from the inside: this is already, in itself, a retcon. In the pages that follow, the word *retcon* is used interchangeably to designate the common term (the narrative operation of comic books and popular culture) and the appropriated concept (the tactical method of collective re-localization). There will be time, later, to find a typographic distinction so the two can be told apart — echoing, in particular, the technical dimension that this work confers upon the retcon, and which distinguishes it from its earlier uses.
 
 ---
 
