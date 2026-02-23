@@ -10,11 +10,11 @@ translation: "/en"
 
 ## Récent
 
-- **2026-02-21** — [[preambule/auteur-collectif-reste|L'auteur, le collectif, le reste]]
-- **2026-02-21** — [[preambule/retcon-comme-methode|Le retcon comme méthode]]
-- **2026-02-15** — [[preambule/dun-systeme-lautre|D'un système l'autre]]
-- **2026-02-15** — [[preambule/automatisation-differentielle|Automatisation différentielle et communs statistiques]]
-- **2026-02-09** — [[communs/enseignant-expose|L'enseignant exposé]]
+- **2026-02-21** — [L'auteur, le collectif, le reste](/fr/preambule/auteur-collectif-reste)
+- **2026-02-21** — [Le retcon comme méthode](/fr/preambule/retcon-comme-methode)
+- **2026-02-15** — [D'un système l'autre](/fr/preambule/dun-systeme-lautre)
+- **2026-02-15** — [Automatisation différentielle et communs statistiques](/fr/preambule/automatisation-differentielle)
+- **2026-02-09** — [L'enseignant exposé](/fr/communs/enseignant-expose)
 
 ---
 
