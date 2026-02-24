@@ -10,11 +10,11 @@ translation: "/en"
 
 ## Récent
 
+- **2026-02-24** — [Black Mountain, encore : essai sur le re-enactment](/fr/black-mountain-college/black-mountain-encore)
 - **2026-02-24** — [BMC comme épicentre proto-numérique](/fr/black-mountain-college/bmc-epicentre-proto-numerique)
 - **2026-02-21** — [L'auteur, le collectif, le reste](/fr/preambule/auteur-collectif-reste)
 - **2026-02-21** — [Le retcon comme méthode](/fr/preambule/retcon-comme-methode)
 - **2026-02-15** — [D'un système l'autre](/fr/preambule/dun-systeme-lautre)
-- **2026-02-15** — [Automatisation différentielle et communs statistiques](/fr/preambule/automatisation-differentielle)
 
 ---
 

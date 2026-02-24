@@ -27,6 +27,11 @@ export default ((userOpts?: Partial<Options>) => {
     const newsItems: NewsItem[] = [
       {
         date: "2026-02-24",
+        text: "Black Mountain, Encore: An Essay on Reenactment",
+        link: "/en/black-mountain-college/black-mountain-encore",
+      },
+      {
+        date: "2026-02-24",
         text: "BMC as Proto-Digital Epicenter",
         link: "/en/black-mountain-college/bmc-proto-digital-epicenter",
       },
@@ -44,11 +49,6 @@ export default ((userOpts?: Partial<Options>) => {
         date: "2026-02-15",
         text: "From One System to Another",
         link: "/en/preamble/from-one-system-to-another",
-      },
-      {
-        date: "2026-02-15",
-        text: "Differential Automation",
-        link: "/en/preamble/differential-automation",
       },
     ]
 
