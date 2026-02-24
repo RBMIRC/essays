@@ -10,11 +10,11 @@ translation: "/en"
 
 ## Récent
 
-- **2026-02-21** — [L'auteur, le collectif, le reste](https://rbmirc.github.io/essays/fr/preambule/auteur-collectif-reste)
-- **2026-02-21** — [Le retcon comme méthode](https://rbmirc.github.io/essays/fr/preambule/retcon-comme-methode)
-- **2026-02-15** — [D'un système l'autre](https://rbmirc.github.io/essays/fr/preambule/dun-systeme-lautre)
-- **2026-02-15** — [Automatisation différentielle et communs statistiques](https://rbmirc.github.io/essays/fr/preambule/automatisation-differentielle)
-- **2026-02-09** — [L'enseignant exposé](https://rbmirc.github.io/essays/fr/communs/enseignant-expose)
+- **2026-02-21** — [L'auteur, le collectif, le reste](/fr/preambule/auteur-collectif-reste)
+- **2026-02-21** — [Le retcon comme méthode](/fr/preambule/retcon-comme-methode)
+- **2026-02-15** — [D'un système l'autre](/fr/preambule/dun-systeme-lautre)
+- **2026-02-15** — [Automatisation différentielle et communs statistiques](/fr/preambule/automatisation-differentielle)
+- **2026-02-09** — [L'enseignant exposé](/fr/communs/enseignant-expose)
 
 ---
 
