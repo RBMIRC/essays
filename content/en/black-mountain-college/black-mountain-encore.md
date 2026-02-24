@@ -327,6 +327,10 @@ But this must be nuanced. If *symbolic* substantialization is dead — if no ree
 
 It is no longer a matter of knowing whether the olive tree is the "real one," but of knowing what grows when you replant it — and what city is built around it, however fragile and immaterial.
 
+---
+
+## Notes
+
 
 ---
 
