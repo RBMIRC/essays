@@ -10,11 +10,11 @@ Research writings accompanying the creation of Sylvain Couzinet-Jacques's work "
 
 ## Recent
 
+- **2026-02-24** — [BMC as Proto-Digital Epicenter](/en/black-mountain-college/bmc-proto-digital-epicenter)
 - **2026-02-21** — [The Author, the Collective, the Remainder](/en/preamble/the-author-the-collective-the-remainder)
 - **2026-02-21** — [Retcon as Method](/en/preamble/retcon-as-method)
 - **2026-02-15** — [From One System to Another](/en/preamble/from-one-system-to-another)
 - **2026-02-15** — [Differential Automation and the Statistical Commons](/en/preamble/differential-automation)
-- **2026-02-09** — [The Exposed Teacher](/en/commons/exposed-teacher)
 
 ---
 

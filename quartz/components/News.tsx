@@ -26,6 +26,11 @@ export default ((userOpts?: Partial<Options>) => {
     // News items - edit this array to update news
     const newsItems: NewsItem[] = [
       {
+        date: "2026-02-24",
+        text: "BMC as Proto-Digital Epicenter",
+        link: "/en/black-mountain-college/bmc-proto-digital-epicenter",
+      },
+      {
         date: "2026-02-21",
         text: "The Author, the Collective, the Remainder",
         link: "/en/preamble/the-author-the-collective-the-remainder",
@@ -44,11 +49,6 @@ export default ((userOpts?: Partial<Options>) => {
         date: "2026-02-15",
         text: "Differential Automation",
         link: "/en/preamble/differential-automation",
-      },
-      {
-        date: "2026-02-09",
-        text: "The Exposed Teacher",
-        link: "/en/commons/exposed-teacher",
       },
     ]
 
