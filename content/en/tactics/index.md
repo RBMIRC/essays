@@ -10,10 +10,10 @@ Essays on pedagogical practices and situated approaches to the inquiry of techni
 
 ## Texts
 
-- [[the-workshop-as-form|What is a workshop ?]] — Notes on two workshops conducted at ENSA-Versailles in 2024 and 2025, at the invitation of Alice Grégoire, Eléonore Morand, and Anthony Jammes
-- [[nodal-thinking|Nodal Thinking]] — Diagrammatic tools and nodal thought
-- [[de-universalizing-technics|De-Universalizing Technics]] — Toward a situated artistic practice on engaging cosmotechnics without extraction
-- [[creativity-co-creativity-artificial-intelligence|Creativity and Co-Creativity with Artificial Intelligence]] — Toward a theory of meta-creativity
+- [What is a workshop ?](/en/tactics/the-workshop-as-form) — Notes on two workshops conducted at ENSA-Versailles in 2024 and 2025, at the invitation of Alice Grégoire, Eléonore Morand, and Anthony Jammes
+- [Nodal Thinking](/en/tactics/nodal-thinking) — Diagrammatic tools and nodal thought
+- [De-Universalizing Technics](/en/tactics/de-universalizing-technics) — Toward a situated artistic practice on engaging cosmotechnics without extraction
+- [Creativity and Co-Creativity with Artificial Intelligence](/en/tactics/creativity-co-creativity-artificial-intelligence) — Toward a theory of meta-creativity
 
 [← Back to Essays](/en/)
 

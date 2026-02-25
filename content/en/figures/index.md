@@ -19,38 +19,38 @@ Key thinkers and theorists whose work informs the research project.
 
 ## Philosophy of Technology
 
-- [[Bernard Stiegler|Stiegler, Bernard]] — Tertiary retention, proletarianization, pharmacological
-- [[Yuk Hui|Hui, Yuk]] — Cosmotechnics, technodiversity, recursivity
-- [[Gilbert Simondon|Simondon, Gilbert]] — Individuation, transduction, technical mentality
+- [Stiegler, Bernard](/en/figures/Bernard Stiegler) — Tertiary retention, proletarianization, pharmacological
+- [Hui, Yuk](/en/figures/Yuk Hui) — Cosmotechnics, technodiversity, recursivity
+- [Simondon, Gilbert](/en/figures/Gilbert Simondon) — Individuation, transduction, technical mentality
 
 ## Media & Image Theory
 
-- [[Roland Barthes|Barthes, Roland]] — Punctum, studium, ça-a-été
-- [[Vilém Flusser|Flusser, Vilém]] — Technical images, apparatus, functionary
-- [[Walter Benjamin|Benjamin, Walter]] — Optical unconscious, aura, mechanical reproduction
+- [Barthes, Roland](/en/figures/Roland Barthes) — Punctum, studium, ça-a-été
+- [Flusser, Vilém](/en/figures/Vilém Flusser) — Technical images, apparatus, functionary
+- [Benjamin, Walter](/en/figures/Walter Benjamin) — Optical unconscious, aura, mechanical reproduction
 
 ## Critical Theory & Philosophy
 
-- [[Michel Foucault|Foucault, Michel]] — Archive, dispositif, archaeology
-- [[Jacques Derrida|Derrida, Jacques]] — Archive fever, spectral, trace
-- [[Mark Fisher|Fisher, Mark]] — Capitalist realism, hauntology, lost futures
+- [Foucault, Michel](/en/figures/Michel Foucault) — Archive, dispositif, archaeology
+- [Derrida, Jacques](/en/figures/Jacques Derrida) — Archive fever, spectral, trace
+- [Fisher, Mark](/en/figures/Mark Fisher) — Capitalist realism, hauntology, lost futures
 
 ## Science & Technology Studies
 
-- [[Donna Haraway|Haraway, Donna]] — Situated knowledge, diffraction, cyborg
-- [[Bruno Latour|Latour, Bruno]] — Actor-network theory, black box, inscription
-- [[Luciana Parisi|Parisi, Luciana]] — Abduction, incomputability, symbiotic architecture
+- [Haraway, Donna](/en/figures/Donna Haraway) — Situated knowledge, diffraction, cyborg
+- [Latour, Bruno](/en/figures/Bruno Latour) — Actor-network theory, black box, inscription
+- [Parisi, Luciana](/en/figures/Luciana Parisi) — Abduction, incomputability, symbiotic architecture
 
 ## Digital Studies & Surveillance
 
-- [[Antoinette Rouvroy|Rouvroy, Antoinette]] — Algorithmic governmentality
-- [[Shoshana Zuboff|Zuboff, Shoshana]] — Surveillance capitalism, behavioral surplus
-- [[Benjamin Bratton|Bratton, Benjamin]] — The Stack, platform sovereignty
+- [Rouvroy, Antoinette](/en/figures/Antoinette Rouvroy) — Algorithmic governmentality
+- [Zuboff, Shoshana](/en/figures/Shoshana Zuboff) — Surveillance capitalism, behavioral surplus
+- [Bratton, Benjamin](/en/figures/Benjamin Bratton) — The Stack, platform sovereignty
 
 ## Decolonial & Postcolonial Theory
 
-- [[Silvia Rivera Cusicanqui|Rivera Cusicanqui, Silvia]] — Ch'ixi, epistemic extractivism
-- [[Édouard Glissant|Glissant, Édouard]] — Opacity, relation, creolization
+- [Rivera Cusicanqui, Silvia](/en/figures/Silvia Rivera Cusicanqui) — Ch'ixi, epistemic extractivism
+- [Glissant, Édouard](/en/figures/Édouard Glissant) — Opacity, relation, creolization
 
 ---
 
