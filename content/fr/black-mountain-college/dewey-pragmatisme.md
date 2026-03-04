@@ -9,18 +9,18 @@ license: GPL-3.0-or-later
 provenance: "Retcon Black Mountain doctoral thesis, Eden (2015-2025)"
 tags:
   - Black-Mountain-College
-  - recherche-création
+  - research-creation
   - retcon
-  - continuité-rétroactive
-  - pédagogie-expérimentale
-  - désindustrialisation
-  - territoire
+  - retroactive-continuity
+  - experimental-pedagogy
+  - deindustrialization
+  - territory
   - Eden
-  - exocapitalisme
+  - exocapitalism
   - lift-drag-fold
-  - pragmatisme
-  - méliorisme
-  - mélancolie
+  - pragmatism
+  - meliorism
+  - melancholy
   - Dewey
   - Bourne
   - individuation
