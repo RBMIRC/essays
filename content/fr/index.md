@@ -10,6 +10,7 @@ translation: "/en"
 
 ## Récent
 
+- **2026-03-04** — [Black Mountain College, Eden et le pragmatisme de John Dewey](/fr/black-mountain-college/dewey-pragmatisme)
 - **2026-02-24** — [Black Mountain, encore : essai sur le re-enactment](/fr/black-mountain-college/black-mountain-encore)
 - **2026-02-24** — [BMC comme épicentre proto-numérique](/fr/black-mountain-college/bmc-epicentre-proto-numerique)
 - **2026-02-21** — [L'auteur, le collectif, le reste](/fr/preambule/auteur-collectif-reste)

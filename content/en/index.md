@@ -10,6 +10,7 @@ Research writings accompanying the creation of Sylvain Couzinet-Jacques's work "
 
 ## Recent
 
+- **2026-03-04** — [Black Mountain College, Eden, and John Dewey's Pragmatism](/en/black-mountain-college/dewey-pragmatism)
 - **2026-02-24** — [Black Mountain, Encore: An Essay on Reenactment](/en/black-mountain-college/black-mountain-encore)
 - **2026-02-24** — [BMC as Proto-Digital Epicenter](/en/black-mountain-college/bmc-proto-digital-epicenter)
 - **2026-02-21** — [The Author, the Collective, the Remainder](/en/preamble/the-author-the-collective-the-remainder)
