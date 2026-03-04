@@ -4,10 +4,12 @@ type: glossary
 aliases: []
 tags:
   - glossary
-  - author-term
-  - _the-recursive-archive
+  - archive
+  - methodology
 ---
 
-Author's term: an archive that does not merely document what was but opens onto what might have been and what might yet become. Treats documents not as testimonies of a closed past (what actually happened) but as virtualities awaiting actualization (what might be made to happen). Reverses presentism by reopening the temporal horizon—the past contains unrealized possibilities available for contemporary reactivation. (*The Recursive Archive*)
+*Author's term* for archive that projects forward rather than merely preserving backward; generates possible futures from documentary traces rather than fixing the past. Complements *entropic archive* (subject to decay) and *prismatic archive* (diffracting rather than reflecting). The speculative archive does not abandon documentary rigor but redirects it: evidence becomes not proof of what was but material for what might be. The Eden project's computational infrastructure (Theodore) operates as speculative archive—transforming BMC traces into outputs that could not have existed in the original context.
 
-See also: [[/en/lexicon/terms/lost-futures|Lost Futures]], [[/en/lexicon/terms/reactivation|Reactivation]], [[/en/lexicon/terms/retcon|Retcon]]
+**References:**
+- AZOULAY, Ariella. *Potential History: Unlearning Imperialism*. London: Verso, 2019.
+- ESHUN, Kodwo. "Further Considerations on Afrofuturism." *CR: The New Centennial Review* 3, no. 2 (2003): 287–302.
