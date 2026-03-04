@@ -4,11 +4,13 @@ type: glossary
 aliases: []
 tags:
   - glossary
-  - _de-universalizing-technics
+  - _Hartman
+  - methodology
+  - archive
 ---
 
-Saidiya Hartman's method: a form of historical speculation that gives voice to those who left no trace in archives designed to record their subjugation. Responding to the impossibility of recovering enslaved lives except through the archives of their destruction—ship manifests, auction records, punishment logs—critical fabulation uses narrative imagination to gesture toward what the archive cannot contain. Neither pure fiction nor conventional history but a practice at their intersection. (*De-Universalizing Technics*)
+Hartman's method of narrating lives absent from archives; speculation grounded in historical record that imagines possibilities the archive cannot confirm but also cannot exclude. Critical fabulation operates in the gap between what happened and what was recorded, using narrative to restore presence to those the archive rendered anonymous or invisible. Foundational for Author's "sourced speculation."
 
 **References:**
-- HARTMAN, Saidiya. Venus in Two Acts. *Small Axe*. 2008, vol. 12, no. 2, pp. 1–14.
-- HARTMAN, Saidiya. *Wayward Lives, Beautiful Experiments: Intimate Histories of Riotous Black Girls, Troublesome Women, and Queer Radicals*. New York: W.W. Norton, 2019. ISBN 978-0-393-28567-4.
+- HARTMAN, Saidiya. "Venus in Two Acts." *Small Axe* 26 (2008): 1–14.
+- HARTMAN, Saidiya. *Wayward Lives, Beautiful Experiments*. New York: W.W. Norton, 2019.

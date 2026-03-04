@@ -4,8 +4,12 @@ type: glossary
 aliases: []
 tags:
   - glossary
-  - author-term
-  - _nodal-thinking
+  - methodology
+  - diagram
 ---
 
-Author's term (provisional): the spontaneous diagrammatic practice observed among students—using arrows to connect images and concepts, forming clusters and rhizomatic constellations. Must be interrogated rather than celebrated, questioned for its presuppositions and blind spots. The knot may be a productive tangle (multiple connections creating density) or a confused mess (connections that obscure rather than reveal). (*Nodal Thinking*)
+*Author's term* for architectural cognition transformed by digital diagramming; thinking that proceeds through nodal connections rather than linear argument. Where linear thought moves from premise to conclusion, knotted thinking navigates networks of relation, discovering implications through connection. The knowledge graph embodies knotted thinking: traversal reveals what sequential exposition cannot.
+
+**References:**
+- Developed in "Nodal Thinking" (this corpus).
+- INGOLD, Tim. *Lines: A Brief History*. London: Routledge, 2007.

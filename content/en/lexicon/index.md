@@ -20,7 +20,7 @@ Key concepts and terminology used throughout the research project. Terms marked 
 ## Browse by Letter
 
 <span class="letter-nav">
-<a href="#a" data-no-popover="true">A</a> | <a href="#b" data-no-popover="true">B</a> | <a href="#c" data-no-popover="true">C</a> | <a href="#d" data-no-popover="true">D</a> | <a href="#e" data-no-popover="true">E</a> | <a href="#f" data-no-popover="true">F</a> | <a href="#g" data-no-popover="true">G</a> | <a href="#h" data-no-popover="true">H</a> | <a href="#i" data-no-popover="true">I</a> | <a href="#j" data-no-popover="true">J</a> | <a href="#k" data-no-popover="true">K</a> | <a href="#l" data-no-popover="true">L</a> | <a href="#m" data-no-popover="true">M</a> | <a href="#n" data-no-popover="true">N</a> | <a href="#o" data-no-popover="true">O</a> | <a href="#p" data-no-popover="true">P</a> | <a href="#r" data-no-popover="true">R</a> | <a href="#s" data-no-popover="true">S</a> | <a href="#t" data-no-popover="true">T</a> | <a href="#u" data-no-popover="true">U</a> | <a href="#v" data-no-popover="true">V</a> | <a href="#w" data-no-popover="true">W</a> | <a href="#y" data-no-popover="true">Y</a>
+<a href="#a" data-no-popover="true">A</a> | <a href="#b" data-no-popover="true">B</a> | <a href="#c" data-no-popover="true">C</a> | <a href="#d" data-no-popover="true">D</a> | <a href="#e" data-no-popover="true">E</a> | <a href="#f" data-no-popover="true">F</a> | <a href="#g" data-no-popover="true">G</a> | <a href="#h" data-no-popover="true">H</a> | <a href="#i" data-no-popover="true">I</a> | <a href="#j" data-no-popover="true">J</a> | <a href="#k" data-no-popover="true">K</a> | <a href="#l" data-no-popover="true">L</a> | <a href="#m" data-no-popover="true">M</a> | <a href="#n" data-no-popover="true">N</a> | <a href="#o" data-no-popover="true">O</a> | <a href="#p" data-no-popover="true">P</a> | <a href="#q" data-no-popover="true">Q</a> | <a href="#r" data-no-popover="true">R</a> | <a href="#s" data-no-popover="true">S</a> | <a href="#t" data-no-popover="true">T</a> | <a href="#u" data-no-popover="true">U</a> | <a href="#v" data-no-popover="true">V</a> | <a href="#w" data-no-popover="true">W</a> | <a href="#y" data-no-popover="true">Y</a>
 </span>
 
 ---
@@ -34,9 +34,11 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [Algorithmic Governmentality](/en/lexicon/terms/algorithmic-governmentality) — Rouvroy and Berns's concept (2010-2013) analyzing new forms of power operating through statistical prediction and pre-emption
 - [Algorithmic Hallucination](/en/lexicon/terms/algorithmic-hallucination) — Transposition of clinical "hallucination" to computational systems; describes AI filling archival gaps through statistical continuity, producing plausible but unfounded outputs. Term circulating in AI discourse; Author's specific application to archival theory
 - [Amplification (vs. Extraction)](/en/lexicon/terms/amplification-vs-extraction) — Author's term opposing extractivist logics (cf. Couldry/Mejias's Data Colonialism); directing attention toward sources rather than absorbing them into new outputs. Methodological counterpoint to appropriation
+- [(An)archive](/en/lexicon/terms/anarchive) — Wielocha's concept of open-ended rhizomatic structure where artwork identity is distributed across activations; neither fixed object nor pure event but ongoing process of becoming
 - [Apparatus (dispositif)](/en/lexicon/terms/apparatus-dispositif) — Foucault's concept of material-social arrangements
 - [Archival Phantasm](/en/lexicon/terms/archival-phantasm) — Author's term combining Derrida's archive (Archive Fever) with psychoanalytic phantasm; the spectral image produced from statistical distributions, neither present nor absent
 - [Artificial Neural Network](/en/lexicon/terms/artificial-neural-network) — Computational architecture composed of layers of interconnected "neurons." Knowledge compresses in the weights of these connections
+- [Associated Milieu](/en/lexicon/terms/associated-milieu) — Simondon's concept of the technical environment created by and necessary for an object's functioning; the technical object and its milieu co-constitute each other through ongoing individuation
 
 ## B
 
@@ -53,10 +55,14 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [Capabilities](/en/lexicon/terms/capabilities) — Sen/Nussbaum's concept of effective possibilities for action
 - [Capitalist Realism](/en/lexicon/terms/capitalist-realism) — Fisher's term for the impossibility of imagining alternatives
 - [Ch'ixi](/en/lexicon/terms/ch-ixi) — Rivera Cusicanqui's Aymara concept of productive contradiction
+- [Chaosmosis](/en/lexicon/terms/chaosmosis) — Guattari's concept of oscillation between chaos and emergence of provisional cosmos; creative process navigating between complete disorder and over-determined structure
 - [Chronopolitics](/en/lexicon/terms/chronopolitics) — The politics of time as instrument of power; term dating from 1970 (Social Forces), developed through Maier and Clark's historiography, and reappropriated by Rasheedah Phillips/Black Quantum Futurism (2016) to theorize "temporal ghettos" of racial capitalism and Afrofuturist counter-temporalities
 - [Circulationism](/en/lexicon/terms/circulationism) — Steyerl's term (2014) replacing Soviet productivism; value created not through making images but through post-producing, launching, and accelerating them across networks. Marks shift from production to circulation as site of meaning
 - [Cosmotechnics](/en/lexicon/terms/cosmotechnics) — Hui's concept of technology as cultural-cosmic articulation
+- [Conceptechnics](/en/lexicon/terms/conceptechnics) — Eshun's fusion of concept and sonic technique; sampling as mode of thought where citation becomes material transformation rather than mere reference
 - [Contracted Time](/en/lexicon/terms/contracted-time) — Author's term opposing "expanded time" of contemplation; intensive temporality of the workshop where compression generates pedagogical friction rather than reflection
+- [Copyleft](/en/lexicon/terms/copyleft) — Licensing mechanism ensuring that derivatives of collective production remain collectively available; uses copyright law against itself to prevent enclosure
+- [Critical Fabulation](/en/lexicon/terms/critical-fabulation) — Hartman's method of narrating lives absent from archives; speculation grounded in historical record that imagines possibilities the archive cannot confirm but also cannot exclude
 
 ## D
 
@@ -65,7 +71,9 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [Deep Learning](/en/lexicon/terms/deep-learning) — Machine learning through layered neural networks; depth makes extracting data provenance mathematically intractable
 - [Deproletarianization](/en/lexicon/terms/deproletarianization) — Stiegler's concept of recovering lost knowledge capacities
 - [Diffraction (Method)](/en/lexicon/terms/diffraction-method) — Haraway's alternative to reflection for thinking difference
+- [Differential Valence](/en/lexicon/terms/differential-valence) — Author's term for how the same technical process produces distinct ethical meanings depending on source materials' prior orientation; GPL-trained models differ ethically from proprietary-trained ones despite identical architecture
 - [Distributed Cognition](/en/lexicon/terms/distributed-cognition) — Hutchins's concept of thinking across human-technical systems
+- [Double Becoming](/en/lexicon/terms/double-becoming) — Deleuze/Guattari's concept of mutual alteration where both terms transform without one becoming the other; wasp and orchid each become something new through encounter
 - [Drag](/en/lexicon/terms/drag) — Poliks/Trillo's term (Exocapitalism, 2025) for the attempt to capture resources from structures that escape human scale; survival tactics in territories capital has abandoned (disability payments, platform gig work, informal economy)
 
 ## E
@@ -74,13 +82,18 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [Embodied Knowledge](/en/lexicon/terms/embodied-knowledge) — Knowledge held in the body through practice
 - [Embedding](/en/lexicon/terms/embedding) — Dense vector representation of an element in latent space; where "license ghosts" persist as spectral traces, now mathematically inextricable
 - [Epiphylogenesis](/en/lexicon/terms/epiphylogenesis) — Stiegler's concept of evolution through technical memory
+- [Elasticity of the Almost](/en/lexicon/terms/elasticity-of-the-almost) — Manning's concept of microperception sensing possible steps before they occur; the felt potential of movement not yet taken but already shaping present action
 - [Epistemic Extractivism](/en/lexicon/terms/epistemic-extractivism) — Rivera Cusicanqui's concept of knowledge appropriation
 - [Entropic Archive](/en/lexicon/terms/entropic-archive) — Author's term for archives subject to dissolution and decay; opposes the fantasy of perfect preservation while recognizing entropy as constitutive condition rather than threat
+- [Ethopoiesis](/en/lexicon/terms/ethopoiesis) — Despret's concept (via Massumi) of self-inventive becoming of forms of life in relation; how organisms create new modes of existence through encounter
 - [Exocapitalism](/en/lexicon/terms/exocapitalism) — Poliks/Trillo's concept (2025) describing capitalism operating as autonomous environment beyond human scale; capital as computational pluriverse functioning through lift, drag, and fold rather than through embodied labor
-- [Exposed Teacher](/en/lexicon/terms/exposed-teacher) — Author's term opposing the "master" who demonstrates finished competence; pedagogue who shows process, uncertainty, and vulnerability rather than mastery. Resonates with Rancière's ignorant schoolmaster but emphasizes visibility of struggle
+- [Exposed Teacher](/en/lexicon/terms/exposed-teacher)
+- [Extensive Continuum](/en/lexicon/terms/extensive-continuum) — Whitehead's concept of the relational field underlying all actual occasions; potentiality for connection prior to any particular actualization — Author's term opposing the "master" who demonstrates finished competence; pedagogue who shows process, uncertainty, and vulnerability rather than mastery. Resonates with Rancière's ignorant schoolmaster but emphasizes visibility of struggle
 
 ## F
 
+- [Fallibilism](/en/lexicon/terms/fallibilism) — Pragmatist principle that all knowledge claims are provisional and subject to revision; Peirce's foundational insight that certainty is unattainable but inquiry can still progress. What survives critique of meliorism: experimentation without guarantee
+- [Field of Belonging](/en/lexicon/terms/field-of-belonging) — Massumi's concept of the germinal plane where potentials coexist before differentiating; relational field from which individuations emerge
 - [Fork](/en/lexicon/terms/fork) — Copying a project entirely to create an independent version; maintains genealogical link with original while allowing autonomous evolution (a plant "cutting")
 - [Free Labor](/en/lexicon/terms/free-labor) — Terranova's concept of unpaid digital work
 - [Fold](/en/lexicon/terms/fold) — Poliks/Trillo's term (Exocapitalism, 2025) for computational operations that transform material into new configurations; neither lift (extraction) nor drag (resistance) but metamorphic recombination
@@ -100,12 +113,14 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 ## I
 
+- [In-formation](/en/lexicon/terms/in-formation) — Simondon/Massumi's concept of the process of taking form; plane of mutual inclusion prior to stabilized structure. Emphasizes becoming over being
 - [Image Continuum](/en/lexicon/terms/image-continuum) — Author's term for the ontological spectrum from indexical photography (Barthes's ça-a-été) to statistical generation (Steyerl's Mean Images); maps the transition rather than opposing the two poles
 - [Incomputability](/en/lexicon/terms/incomputability) — Chaitin's concept of irreducible complexity
 - [Indexical Dispensation](/en/lexicon/terms/indexical-dispensation) — Author's term for the historical regime of photography-as-evidence; the epistemological contract (now dissolving) that images testify to what was physically present before the lens
 - [Individuation](/en/lexicon/terms/individuation) — Simondon's concept of becoming through process
 - [Inference](/en/lexicon/terms/inference) — Phase where models generate new data in response to a prompt; the probabilistic process through which AI "manufactures public domain"
 - [Inflection](/en/lexicon/terms/inflection) — Deleuze's concept of intensive change within continuity
+- [Intercessor](/en/lexicon/terms/intercessor) — Deleuze's concept of the catalyst that creates conditions for mutual becoming; not mediator (standing between) but intercessor (intervening to transform both parties)
 
 ## J
 
@@ -115,6 +130,7 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 - [Kaitiakitanga](/en/lexicon/terms/kaitiakitanga) — Māori concept of responsible guardianship
 - [Know-How (vs. Know-That)](/en/lexicon/terms/know-how-vs-know-that) — Practical vs. propositional knowledge
+- [Knotted Thinking](/en/lexicon/terms/knotted-thinking) — Author's term for architectural cognition transformed by digital diagramming; thinking that proceeds through nodal connections rather than linear argument
 
 ## L
 
@@ -131,8 +147,10 @@ Key concepts and terminology used throughout the research project. Terms marked 
 ## M
 
 - [Machine Learning](/en/lexicon/terms/machine-learning) — AI subdomain where systems learn from data (patterns) rather than explicit programming; the paradigm that makes the dissolution of attribution possible
+- [Machinic Phylum](/en/lexicon/terms/machinic-phylum) — Deleuze/Guattari's concept of the lineage of technical problems that transmit by transforming; how innovations propagate across apparently unrelated domains
 - [Maintainers](/en/lexicon/terms/maintainers) — Guardians of original projects who decide which contributions to accept or reject; representing the central authority contested by the Heredoc Manifesto
-- [Mean Image](/en/lexicon/terms/mean-image) — Steyerl's term (2023) playing on "mean" as both mathematical average and cruelty; statistical composites in AI-generated images that erase singularity. Shows how generative models flatten difference into normative representations
+- [Mean Image](/en/lexicon/terms/mean-image)
+- [Metastable](/en/lexicon/terms/metastable) — Simondon's concept of a state of dynamic equilibrium containing unresolved tensions; system poised between stability and transformation, capable of individuation — Steyerl's term (2023) playing on "mean" as both mathematical average and cruelty; statistical composites in AI-generated images that erase singularity. Shows how generative models flatten difference into normative representations
 - [Melancholy (Structural)](/en/lexicon/terms/melancholy-structural) — Author's term drawing on Freud's distinction from mourning; condition where the lost object (industrial past, modernist promise) continues to structure the present without being able to be rejoined. Eden is sustained by this structural melancholy
 - [Meliorism](/en/lexicon/terms/meliorism) — Pragmatist conviction that human effort might improve conditions; Dewey's driving faith that intelligent action can address problems. Author argues meliorism "spins in a void" when capital has withdrawn the substrate for improvement
 - [Model Collapse](/en/lexicon/terms/model-collapse) — Shumailov et al.'s term (Nature, 2024) for degenerative process when generative models train recursively on synthetic data; causes irreversible loss of distributional tails and minority information. Also called "Habsburg AI" or "AI inbreeding"
@@ -142,6 +160,7 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 - [Nachleben](/en/lexicon/terms/nachleben) — Warburg's concept of "afterlife" or "survival" of images and forms; how visual formulas persist and transform across historical periods, reactivated in new contexts
 - [Negentropic Obligation](/en/lexicon/terms/negentropic-obligation) — Author's ethical term extending Stiegler's negentropy (Neganthropocene); where Stiegler theorizes negentropy as life's resistance to disorder, Author formulates the duty to maintain difference and singularity against homogenizing entropy
+- [Neuronal Paradigm](/en/lexicon/terms/neuronal-paradigm) — Author's term (after Busta) for the shift from linear to network-based cultural transmission; contents circulate by contagion, lateral connections replace vertical transmission, AI systems make paradigm visible
 - [New Aesthetic](/en/lexicon/terms/new-aesthetic) — Bridle's concept (SXSW 2012) describing the eruption of the digital into the physical world: glitches, pixelation, surveillance imagery becoming visible in everyday life
 
 ## O
@@ -154,13 +173,27 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [Parameter / Weight](/en/lexicon/terms/parameter-weight) — Adjustable floating-point number constituting neural network "memory"; encodes complex statistical correlations, the physical materialization of statistical commons
 - [Pharmacological](/en/lexicon/terms/pharmacological) — Stiegler's concept of technology as both poison and cure
 - [Pluriverse](/en/lexicon/terms/pluriverse) — Multiple coexisting cosmologies vs. single universe
-- [Poor Image](/en/lexicon/terms/poor-image) — Steyerl's concept (2009) of degraded, compressed, copied images that circulate freely; low resolution as condition of accessibility and democratic distribution, opposing the "rich image" of institutional custody
+- [Powers of the False](/en/lexicon/terms/powers-of-the-false) — Deleuze's concept of fabulation producing narratives that relaunch reality; falsity as creative force rather than mere negation of truth
+- [Poor Image](/en/lexicon/terms/poor-image)
+- [Pre-enactment](/en/lexicon/terms/pre-enactment) — Lütticken's concept of staging futures not yet taken place; shift from reenactment (restaging past) to anticipatory performance of unrealized possibilities
+- [Pre-individual](/en/lexicon/terms/pre-individual) — Simondon's concept of the ontological domain prior to individuation; field of potentials from which individuals emerge while never exhausting it
+- [Prehension](/en/lexicon/terms/prehension) — Whitehead's concept of how actual entities grasp or feel other entities; expanded perception beyond human consciousness to all relations — Steyerl's concept (2009) of degraded, compressed, copied images that circulate freely; low resolution as condition of accessibility and democratic distribution, opposing the "rich image" of institutional custody
 - [Post-Indexical Image](/en/lexicon/terms/post-indexical-image) — Author's term for images without indexical structure; neither "fake" (implying a true original) nor "synthetic" (implying artificiality), but operating in a different ontological register altogether
 - [Prismatic Archive](/en/lexicon/terms/prismatic-archive) — Author's term opposing both "dissolved" archive (lost to entropy) and "frozen" archive (fixed in time); archive that diffracts rather than dissolves, producing spectra rather than unities
-- [Proletarianization (of the Mind)](/en/lexicon/terms/proletarianization-of-the-mind) — Stiegler's concept of knowledge loss through automation
+- [Prismatic Method](/en/lexicon/terms/prismatic-method) — Author's term for refraction of heterogeneous frameworks revealing frequencies none could render visible alone; distinct from synthesis, which merges; prism separates and recombines
+- [Problem Situation](/en/lexicon/terms/problem-situation) — Dewey's concept of the indeterminate situation requiring intelligent action; inquiry begins not from doubt but from felt difficulty demanding resolution
+- [Procedural Generation](/en/lexicon/terms/procedural-generation) — Algorithmic generation of content through rules rather than manual creation; variation within constraint, anticipating AI generation
+- [Proletarianization (of the Mind)](/en/lexicon/terms/proletarianization-of-the-mind)
+- [Proprioceptive Poetics](/en/lexicon/terms/proprioceptive-poetics) — Olson's concept of poetry emphasizing bodily knowledge and breath; verse as extension of the poet's physiology onto the page
+- [Proto-computational](/en/lexicon/terms/proto-computational) — Author's term for structures anticipating computational aesthetics without computational machinery; BMC practices (weaving, chance operations, feedback) as pre-digital computation — Stiegler's concept of knowledge loss through automation
 - [Prompt Engineering](/en/lexicon/terms/prompt-engineering) — The art of formulating optimal instructions to obtain results from an LLM; the prompt as "new literacy" and "incantation" addressed to compressed collective intelligence
 - [Pull Request](/en/lexicon/terms/pull-request) — Modification proposal in software development: "Here are the improvements I made in my fork, would you like to integrate them into your version?"
 - [Pragmatism](/en/lexicon/terms/pragmatism) — American philosophical tradition (Peirce, James, Dewey) emphasizing experience, inquiry, and consequences over abstract truth. BMC's theoretical foundation; Author argues its meliorist assumptions require critique under exocapitalist conditions
+
+## Q
+
+- [Quasi-causal Technique](/en/lexicon/terms/quasi-causal-technique) — Massumi's concept of gesture creating conditions for event rather than mechanically producing it; enabling rather than determining
+- [Quasi-object](/en/lexicon/terms/quasi-object) — Latour's concept of hybrid entities belonging to no single discipline; circulating between human and non-human, nature and culture
 
 ## R
 
@@ -170,13 +203,21 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [Repository](/en/lexicon/terms/repository) — Digital space where a software project lives: a library containing all files, the history of modifications, and the project's rules
 - [Retcon](/en/lexicon/terms/retcon) — Retroactive continuity as creative-critical method
 - [Rhizome](/en/lexicon/terms/rhizome) — Deleuze/Guattari's concept (A Thousand Plateaus) materialized through technical architecture: structure without fixed center or hierarchy, where knowledge circulates between equal peers
+- [Ritornello](/en/lexicon/terms/ritornello) — Deleuze/Guattari's concept of the refrain; gesture creating territory through repetition with difference, establishing home while enabling departure
 
 ## S
 
+- [Sampling](/en/lexicon/terms/sampling) — Theoretical transposition of sonic practice to epistemology; extracting field of potential from existing materials, citation as material transformation
+
 - [Situated Knowledge](/en/lexicon/terms/situated-knowledge) — Haraway's concept of knowledge from embodied position
 - [Sourced Speculation](/en/lexicon/terms/sourced-speculation) — Author's term for imaginative extension grounded in archival evidence; speculation that amplifies rather than fabricates, maintaining accountability to sources while exploring unrealized possibilities
+- [Sedimented Tactic](/en/lexicon/terms/sedimented-tactic) — Author's term for tactic with duration and accumulated knowledge without becoming strategy; retains tactical flexibility while building on prior iterations
+- [Serial Endosymbiosis](/en/lexicon/terms/serial-endosymbiosis) — Margulis's theory of evolution through incorporation rather than competition; organisms evolve by integrating former parasites as organelles. Model for AI-human symbiosis
+- [Spectral Image](/en/lexicon/terms/spectral-image) — Author's term for images produced from statistical distributions; neither present nor absent, haunting the archive without indexical anchor
 - [Speculative Archive](/en/lexicon/terms/speculative-archive) — Author's term for archive that projects forward rather than merely preserving backward; generates possible futures from documentary traces rather than fixing the past
-- [Statistical Commons](/en/lexicon/terms/statistical-commons) — Author's term for shared probability distributions produced by AI training; commons created not through intentional sharing but through mechanical aggregation of human expression into collective statistical patterns
+- [Statistical Commons](/en/lexicon/terms/statistical-commons)
+- [Stochastic Process](/en/lexicon/terms/stochastic-process) — Random process governed by probability laws; mathematical foundation for generative AI, chance constrained by distribution
+- [Synergetics](/en/lexicon/terms/synergetics) — Fuller's systems thinking emphasizing geometric and energetic principles; whole-systems approach anticipating network theory — Author's term for shared probability distributions produced by AI training; commons created not through intentional sharing but through mechanical aggregation of human expression into collective statistical patterns
 - [Statistical Unconscious](/en/lexicon/terms/statistical-unconscious) — Schröter's term (2023) transposing Benjamin's Optical Unconscious to AI image generation; what machine learning reveals in aggregate patterns that escapes conscious human perception. Where Benjamin's camera revealed hidden gestures, AI reveals hidden distributions
 - [Statistics](/en/lexicon/terms/statistics) — Sciences of data analysis and interpretation (etym. "sciences of the State"); in AI context, emphasizes that knowledge emerges through sedimentation and probabilistic recombination
 - [Surveillance Capitalism](/en/lexicon/terms/surveillance-capitalism) — Zuboff's concept of economy based on behavioral prediction
@@ -186,7 +227,9 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 - [Tacit Knowledge](/en/lexicon/terms/tacit-knowledge) — Polanyi's concept of knowledge that cannot be fully articulated
 - [Tactical Urgency](/en/lexicon/terms/tactical-urgency) — Author's term combining de Certeau's tactics (The Practice of Everyday Life) with temporal pressure; time constraint as strategic resource rather than limitation, generating invention through compression
-- [Technical Culture](/en/lexicon/terms/technical-culture) — Simondon's concept of literacy about technical objects
+- [Technical Culture](/en/lexicon/terms/technical-culture)
+- [Tensegrity](/en/lexicon/terms/tensegrity) — Fuller/Snelson's concept of structural integrity through continuous tension and discontinuous compression; isolated components held in relation by tensional network
+- [That-could-have-been](/en/lexicon/terms/that-could-have-been) — Author's term for generated images as projections of statistical plausibility; spectral counterpart to Barthes's "that-has-been," without indexical substance — Simondon's concept of literacy about technical objects
 - [Technodiversity](/en/lexicon/terms/technodiversity) — Hui's concept of multiple technical traditions
 - [Tertiary Retention](/en/lexicon/terms/tertiary-retention) — Stiegler's concept of externalized technical memory
 - [Tertiary Protention](/en/lexicon/terms/tertiary-protention) — Hui's concept (2016) supplementing Stiegler's tertiary retention; where Stiegler theorized externalized memory (retention), Hui adds externalized anticipation—technologies that structure futurity, from debt to algorithmic prediction
@@ -212,6 +255,8 @@ Key concepts and terminology used throughout the research project. Terms marked 
 - [Whakapapa](/en/lexicon/terms/whakapapa) — Māori concept of genealogical interconnection
 - [Werklehre](/en/lexicon/terms/werklehre) — Albers's pedagogical method at BMC; learning through direct engagement with materials, approaching them with questions rather than plans. Embodied Deweyan fallibilism in artistic practice
 - [Workshop](/en/lexicon/terms/workshop) — *Author's term*: pedagogical dispositif of intensive collective making
+- [Worlding](/en/lexicon/terms/worlding) — Whitehead/Manning's concept of creating space through movement rather than occupying pre-existing space; world as ongoing process rather than container
+- [Wayfaring](/en/lexicon/terms/wayfaring) — Ingold's concept of exploratory walk that engenders path by walking; knowledge through movement rather than representation
 
 ## Y
 
