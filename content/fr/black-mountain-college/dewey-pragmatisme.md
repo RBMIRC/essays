@@ -3,7 +3,7 @@ title: "Black Mountain College, Eden et le pragmatisme de John Dewey"
 translation: "/en/black-mountain-college/dewey-pragmatism"
 subtitle: "Partie I : De Black Mountain College à Eden, NC"
 author: "Sylvain Couzinet-Jacques"
-date: "2026-06-01"
+date: "2026-03-04"
 lang: fr
 license: GPL-3.0-or-later
 provenance: "Retcon Black Mountain doctoral thesis, Eden (2015-2025)"
