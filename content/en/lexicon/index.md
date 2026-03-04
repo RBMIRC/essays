@@ -19,7 +19,9 @@ Key concepts and terminology used throughout the research project. Terms marked 
 
 ## Browse by Letter
 
-[A](#a) | [B](#b) | [C](#c) | [D](#d) | [E](#e) | [F](#f) | [G](#g) | [H](#h) | [I](#i) | [J](#j) | [K](#k) | [L](#l) | [M](#m) | [N](#n) | [O](#o) | [P](#p) | [R](#r) | [S](#s) | [T](#t) | [U](#u) | [V](#v) | [W](#w) | [Y](#y)
+<span class="letter-nav">
+<a href="#a" data-no-popover="true">A</a> | <a href="#b" data-no-popover="true">B</a> | <a href="#c" data-no-popover="true">C</a> | <a href="#d" data-no-popover="true">D</a> | <a href="#e" data-no-popover="true">E</a> | <a href="#f" data-no-popover="true">F</a> | <a href="#g" data-no-popover="true">G</a> | <a href="#h" data-no-popover="true">H</a> | <a href="#i" data-no-popover="true">I</a> | <a href="#j" data-no-popover="true">J</a> | <a href="#k" data-no-popover="true">K</a> | <a href="#l" data-no-popover="true">L</a> | <a href="#m" data-no-popover="true">M</a> | <a href="#n" data-no-popover="true">N</a> | <a href="#o" data-no-popover="true">O</a> | <a href="#p" data-no-popover="true">P</a> | <a href="#r" data-no-popover="true">R</a> | <a href="#s" data-no-popover="true">S</a> | <a href="#t" data-no-popover="true">T</a> | <a href="#u" data-no-popover="true">U</a> | <a href="#v" data-no-popover="true">V</a> | <a href="#w" data-no-popover="true">W</a> | <a href="#y" data-no-popover="true">Y</a>
+</span>
 
 ---
 
