@@ -100,7 +100,7 @@ Key concepts and terminology used throughout the research project. Terms marked 
 ## D
 
 - [Data Colonialism](/en/lexicon/data-colonialism) — Couldry/Mejias's concept of data as new form of colonial extraction
-- [De Beyter, Nicolas](/en/lexicon/de-beyter-nicolas) — Belgian artist; post-industrial landscapes and collective memory
+- [De Beyter, David](/en/lexicon/de-beyter-david) — Belgian artist; post-industrial landscapes and collective memory
 - [Deller, Jeremy](/en/lexicon/deller-jeremy) — British artist; reenactment and collective participation
 - [Derrida, Jacques](/en/lexicon/derrida-jacques) — French philosopher (1930-2004); archive fever and deconstruction
 - [Dataset / Training Corpus](/en/lexicon/dataset-training-corpus) — Massive set of data used to train models. The preponderance of open source code (~60%) imbues models with a "tropism toward sharing"

@@ -143,7 +143,7 @@ Concepts clés et terminologie utilisés dans le projet de recherche. Les termes
 ## D
 
 - [Dataset / Corpus d'entraînement](/fr/lexique/dataset-training-corpus)
-- [De Beyter, Nicolas](/fr/lexique/de-beyter-nicolas)
+- [De Beyter, David](/fr/lexique/de-beyter-david)
 - [Déboîtage](/fr/lexique/unboxing)
 - [Décolonial](/fr/lexique/decolonial)
 - [Défaut prismatique](/fr/lexique/prismatic-default)
