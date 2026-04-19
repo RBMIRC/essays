@@ -9,8 +9,9 @@ tags:
   - reenactment
 ---
 
-Artiste visuel français dont le travail investigue les paysages post-industriels et la mémoire collective. *Limousine* (2018) documente la reconstruction d'une Lincoln limousine dans un ancien site industriel à Eden — la voiture fonctionnant comme présence spectrale des aspirations américaines dans l'Europe désindustrialisée. Son travail résonne avec l'intérêt de l'Auteur pour le reenactment comme méthode et la mélancolie structurelle de la promesse industrielle abandonnée. Le véhicule de luxe comme à la fois objet et symbole de ce qui fut promis et retiré.
+Photographe français (né en 1985 à Roubaix). Diplômé de l'atelier de Photographie de La Cambre à Bruxelles (2008) et du Fresnoy, Studio national des arts contemporains (2010). Son approche, à la fois conceptuelle et documentaire, explore les frontières entre réalité et fiction. Son projet *Big Bangers* (2015-2018) documente une communauté du Nord de l'Europe pratiquant le crash de voitures comme art de vivre — les épaves résultantes étant appelées "auto-sculptures" dans le jargon amateur. Le travail mêle film, photographie et sculpture, interrogeant les rituels collectifs autour de l'obsolescence automobile. Résonance avec l'intérêt de l'Auteur pour le reenactment comme méthode et la mélancolie structurelle des paysages post-industriels.
 
 **Références :**
-- DE BEYTER, David. *Limousine*. Bruxelles : Bozar, 2018.
-- Documentation du projet : Eden, Belgique.
+- DE BEYTER, David. *Damaged Inc.* Paris : RVB Books, 2018.
+- FOAM Talent, Amsterdam/Paris/New York, 2017.
+- Eden Summer Institute, 2025.
